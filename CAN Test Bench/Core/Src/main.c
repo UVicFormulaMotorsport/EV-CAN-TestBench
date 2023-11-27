@@ -17,12 +17,19 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+
 #include "main.h"
 #include "can.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "bms.h"
+#include "dash.h"
+#include "imd.h"
+#include "motor_controller.h"
+#include "pdu.h"
+
 
 /* USER CODE END Includes */
 
