@@ -29,7 +29,7 @@ extern "C" {
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-
+#include "constants.h"
 /* USER CODE END Includes */
 
 extern CAN_HandleTypeDef hcan2;
@@ -38,7 +38,7 @@ extern CAN_HandleTypeDef hcan2;
 
 /* USER CODE END Private defines */
 
-void MX_CAN2_Init(CAN_TxHeaderTypeDef   TxHeader);
+void MX_CAN2_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 

@@ -17,13 +17,14 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-
 #include "main.h"
 #include "can.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+
+#include "constants.h"
 #include "bms.h"
 #include "dash.h"
 #include "imd.h"
@@ -51,12 +52,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-CAN_TxHeaderTypeDef   TxHeader;
-CAN_RxHeaderTypeDef   RxHeader;
 
-uint8_t               TxData[8];
-uint32_t              TxMailbox;
-uint8_t               RxData[8];
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -99,7 +95,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_CAN2_Init(TxHeader);
+  MX_CAN2_Init();
   /* USER CODE BEGIN 2 */
 
   // We are just setting a dummy variable here
@@ -125,6 +121,9 @@ int main(void)
 		/* Transmission request Error */
 		Error_Handler();
 	  }
+
+	  Update_RPM(2);
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
