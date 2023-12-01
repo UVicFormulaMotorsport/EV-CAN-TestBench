@@ -103,7 +103,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // We are just setting a dummy variable here
-  TxData[0] = 0x1C;
+  TxData[0] = 0x69;
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -113,6 +113,10 @@ int main(void)
 	  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_13);
 	  HAL_Delay(1000);
 
+	  // We are just setting a dummy variable here
+	  TxData[0] = 0x1C;
+
+	  // foo
 
 	  /* Start the Transmission process */
 	  // By using the HAL_CAN_ADD_TxMessage(args), a CAN message will try to be sent
