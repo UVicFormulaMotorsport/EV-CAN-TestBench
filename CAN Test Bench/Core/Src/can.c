@@ -21,13 +21,14 @@
 #include "can.h"
 
 /* USER CODE BEGIN 0 */
+#include "constants.h"
 
 /* USER CODE END 0 */
 
 CAN_HandleTypeDef hcan2;
 
 /* CAN2 init function */
-void MX_CAN2_Init(CAN_TxHeaderTypeDef   TxHeader)
+void MX_CAN2_Init(void)
 {
 
   /* USER CODE BEGIN CAN2_Init 0 */
