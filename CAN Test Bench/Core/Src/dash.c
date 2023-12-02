@@ -5,7 +5,9 @@
 #include "can.h"
 #include "main.h"
 
-void Update_RPM(int value){
+
+// If we pass it a negative number then a garbage number will show up
+void Update_RPM(int16_t value){
 
 	// Need ID
     TxHeader.StdId=0x80; // This is the CAN ID
@@ -13,10 +15,9 @@ void Update_RPM(int value){
 
 
 	// Need message
-    int foo = value;
+    TxData[0] = (value >> 8)& 0xFF;
+    TxData[1] = value & 0xFF;
 
-    TxData[0] = 0x00;
-    TxData[1] = 0x10;
 
 
 	  if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK)
