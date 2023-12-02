@@ -22,7 +22,7 @@
 
 // Need to define these
 
-void Update_RPM(int value);
+void Update_RPM(int16_t value);
 
 
 
