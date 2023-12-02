@@ -60,8 +60,8 @@ void MX_CAN2_Init(void)
     CAN_FilterTypeDef FilterConfig;
 
     // Set the data length and ID to a temporary value
-     TxHeader.DLC=1; // Data Length Code
-     TxHeader.StdId=0x244; // This is the CAN ID
+     TxHeader.DLC= 1; // Data Length Code
+     TxHeader.StdId= 0x244; // This is the CAN ID
 
      TxHeader.IDE=CAN_ID_STD; //set identifier to standard
      TxHeader.RTR=CAN_RTR_DATA;
@@ -131,6 +131,9 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef* canHandle)
     GPIO_InitStruct.Alternate = GPIO_AF9_CAN2;
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
+    /* CAN2 interrupt Init */
+    HAL_NVIC_SetPriority(CAN2_RX0_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(CAN2_RX0_IRQn);
   /* USER CODE BEGIN CAN2_MspInit 1 */
 
   /* USER CODE END CAN2_MspInit 1 */
@@ -155,6 +158,8 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
     */
     HAL_GPIO_DeInit(GPIOB, GPIO_PIN_12|GPIO_PIN_13);
 
+    /* CAN2 interrupt Deinit */
+    HAL_NVIC_DisableIRQ(CAN2_RX0_IRQn);
   /* USER CODE BEGIN CAN2_MspDeInit 1 */
 
   /* USER CODE END CAN2_MspDeInit 1 */
@@ -162,5 +167,57 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
 }
 
 /* USER CODE BEGIN 1 */
+
+// When a CAN message comes, the interrupt will call this function
+// We need to figure out what device sent it, what the data is, and handle it appropriately
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2)
+{
+  if (HAL_CAN_GetRxMessage(hcan2, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+
+  // Extract the ID
+       TxHeader.StdId = RxHeader.StdId; // This is the CAN ID
+
+	// Extract the data length
+       TxHeader.DLC = RxHeader.DLC; // Data Length Code
+
+
+       // The data length will be different for each message, so we need to handle the possibilities
+       for(int i = 0; i < TxHeader.DLC; ++i){
+    	   TxData[i] = RxData[i];
+       }
+
+	// Figure out what device sent the message
+   // Call the appropriate device function
+       switch (TxHeader.StdId){
+       	   case 0x710:
+       		   // PDU
+       		   // Call the associated function TODO
+    	   break;
+       	   case 0xA100100:
+       		   // This will not work ^ because of extended ID
+       		   // IMD
+		   break;
+		   // Need more IDs
+//       	   default:
+//       		   // Not a correct CAN ID
+//       		   Error_Handler();
+//		   break;
+       }
+
+
+       // for debugging purposes
+//         if (HAL_CAN_AddTxMessage(hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK)
+//         	  {
+//         		/* Transmission request Error */
+//         		Error_Handler();
+//         	  }
+
+}
+
+
 
 /* USER CODE END 1 */

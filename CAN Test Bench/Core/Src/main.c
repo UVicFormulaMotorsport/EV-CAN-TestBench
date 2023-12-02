@@ -24,6 +24,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+// The CAN info is defined in constants
+
 #include "constants.h"
 #include "bms.h"
 #include "dash.h"
@@ -109,20 +111,9 @@ int main(void)
 	  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_13);
 	  HAL_Delay(1000);
 
-	  // We are just setting a dummy variable here
-	  TxData[0] = 0x1C;
-
-	  // foo
-
-	  /* Start the Transmission process */
-	  // By using the HAL_CAN_ADD_TxMessage(args), a CAN message will try to be sent
-	  if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK)
-	  {
-		/* Transmission request Error */
-		Error_Handler();
-	  }
-
-	  Update_RPM(2);
+	  // Send out a chirp
+	  // RPM breaks if negative number
+	  Update_RPM(69);
 
     /* USER CODE END WHILE */
 

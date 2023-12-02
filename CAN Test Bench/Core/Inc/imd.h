@@ -4,3 +4,7 @@
 
 
 #include "main.h"
+
+
+// CAN ID is extended
+// ID=0x0A100100
