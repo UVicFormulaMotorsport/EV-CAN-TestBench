@@ -29,19 +29,6 @@ void speaker_chirp(){
 	}
 }
 
-void enable_brake_light(){
-
-	TxHeader.StdId=0x710;
-    TxHeader.DLC=1; // Data Length Code
-
-    TxData[0] = enable_brake_light_msg;
-
-	 if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK)
-	 {
-		 /* Transmission request Error */
-		 Error_Handler();
-	 }
-}
 
 void enable_brake_light(){
 
