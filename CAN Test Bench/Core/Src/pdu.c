@@ -29,7 +29,7 @@ void speaker_chirp(){
 	}
 }
 
-void toggle_brake_light(){
+void enable_brake_light(){
 
 	TxHeader.StdId=0x710;
     TxHeader.DLC=1; // Data Length Code

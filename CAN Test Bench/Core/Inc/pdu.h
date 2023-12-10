@@ -30,7 +30,7 @@ enum pdu_messages_20A{
 
 // PDU functions (5 Amp)
 void speaker_chirp();
-void toggle_brake_light();
+void enable_brake_light();
 void disable_brake_light();
 void enable_motor_controller();
 void disable_motor_controller();
