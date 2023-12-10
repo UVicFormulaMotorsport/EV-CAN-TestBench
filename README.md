@@ -16,7 +16,3 @@ Those can be changed with
 Refer to the CAN messages format & info spreadsheet under sharepoint System Specific -> Control System -> CAN Messages
 
 
-Known Issues: TxHeader declaration needs to be in main currently since the code sends out a chirp for debugging purposes. 
-TxHeader needs to be passed to CAN_Init function. If code is generated, it will turn the function to type void so needs to be changed in the can.c and can.h files
-
-
