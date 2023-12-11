@@ -18,7 +18,9 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "adc.h"
 #include "can.h"
+#include "dma.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -43,7 +45,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define ADC_BUF_LEN 4096
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -54,6 +56,8 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
+uint16_t adc_buf[ADC_BUF_LEN];
+int adc_conv_complete_flag = 0;
 
 /* USER CODE END PV */
 
@@ -97,8 +101,11 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_CAN2_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
+    HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf, ADC_BUF_LEN);
 
   // We are just setting a dummy variable here
   TxData[0] = 0x69;
@@ -114,6 +121,15 @@ int main(void)
 	  // Send out a chirp
 	  // RPM breaks if negative number
 	  Update_RPM(69);
+
+
+	  // when adc_conv_complete_flag is set to 1,
+	  // that means DMA conversion is completed
+	  if(adc_conv_complete_flag == 1){
+	  // into string and store in dma_result_buffer character array
+		  Update_RPM(adc_buf[0]);
+		  adc_conv_complete_flag = 0;
+	  }
 
     /* USER CODE END WHILE */
 
@@ -168,7 +184,16 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+// Called when first half of buffer is filled
+void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc) {
+  // could toggle and LED here
+}
 
+// Called when buffer is completely filled
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
+  // Could toggle an LED here
+	adc_conv_complete_flag = 1;
+}
 /* USER CODE END 4 */
 
 /**
