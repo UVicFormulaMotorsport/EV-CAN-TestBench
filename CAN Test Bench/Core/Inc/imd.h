@@ -100,15 +100,16 @@ enum manufacturer_requests{
 
 
 // Function declarations
-void IMD_Parse_Message(int DLC, int Data[8]);
+void IMD_Parse_Message(int DLC, int Data[]);
 
 
 // Functions to check states are okay
-void Check_Isolation_State(int Data[8]);
+void Check_Status_Bits(int Data);
+void Check_Error_Flags(int Data[]);
+void Check_Isolation_State(int Data[]);
 
-// Functions to read data from the IMD
-void Request_Isolation_State(void);
-void Request_Isolation_Resistances(void);
+// Function to read data from the IMD
+void IMD_Request_Status(int Status);
 
 
 
