@@ -22,6 +22,7 @@
 
 /* USER CODE BEGIN 0 */
 #include "constants.h"
+#include "imd.h"
 
 /* USER CODE END 0 */
 
@@ -177,29 +178,40 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2)
     Error_Handler();
   }
 
+  int Data[8] = {0};
+  int CAN_ID = 0;
+  int DLC = 0;
 
   // Extract the ID
-       TxHeader.StdId = RxHeader.StdId; // This is the CAN ID
+       CAN_ID = RxHeader.StdId; // This is the CAN ID
 
 	// Extract the data length
-       TxHeader.DLC = RxHeader.DLC; // Data Length Code
+       DLC = RxHeader.DLC; // Data Length Code
 
 
-       // The data length will be different for each message, so we need to handle the possibilities
-       for(int i = 0; i < TxHeader.DLC; ++i){
-    	   TxData[i] = RxData[i];
+   // The data length will be different for each message, so we need to handle the possibilities
+       for(int i = 0; i < RxHeader.DLC; ++i){
+    	   Data[i] = RxData[i];
        }
 
 	// Figure out what device sent the message
    // Call the appropriate device function
-       switch (TxHeader.StdId){
+       switch (CAN_ID){
+       	   case 0x69:
+			   // BMS TODO
+			   // Call the associated function TODO
+		   break;
        	   case 0x710:
        		   // PDU
        		   // Call the associated function TODO
     	   break;
-       	   case 0xA100100:
-       		   // This will not work ^ because of extended ID
+       	   case 0x181:
+			   // Motor Controller
+			   // Call the associated function TODO
+		   break;
+       	   case 0x24:
        		   // IMD
+       		   IMD_Parse_Message(DLC, Data);
 		   break;
 		   // Need more IDs
 //       	   default:
@@ -207,14 +219,6 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2)
 //       		   Error_Handler();
 //		   break;
        }
-
-
-       // for debugging purposes
-//         if (HAL_CAN_AddTxMessage(hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK)
-//         	  {
-//         		/* Transmission request Error */
-//         		Error_Handler();
-//         	  }
 
 }
 
