@@ -14,8 +14,6 @@
 #include "pdu.h"
 
 
-int IMD_CAN_ID = 0x23; // This is the ID for MCU sending msg to IMD
-// MCU will receive messages with id 0x24 from IMD
 
 uint8_t IMD_status_bits = 0;
 
@@ -33,61 +31,107 @@ void IMD_Parse_Message(int DLC, int Data[]){
 			Check_Status_Bits(Data[1]);
 			Check_Isolation_State(Data);
 		break;
+
 		case isolation_resistances:
 			Check_Status_Bits(Data[1]);
+			Check_Isolation_Resistances(Data);
 		break;
+
 		case isolation_capacitances:
 			Check_Status_Bits(Data[1]);
-			// do something
+			Check_Isolation_Capacitances(Data);
 		break;
+
 		case voltages_Vp_and_Vn:
 			Check_Status_Bits(Data[1]);
-			// do something
+			Check_Voltages_Vp_and_Vn(Data);
 		break;
+
 		case battery_voltage:
 			Check_Status_Bits(Data[1]);
-			// do something
+			Check_Battery_Voltage(Data);
 		break;
+
 		case Error_flags:
 			Check_Status_Bits(Data[1]);
 			Check_Error_Flags(Data);
-			// do something
 		break;
+
 		case safety_touch_energy:
 			Check_Status_Bits(Data[1]);
-			// do something
+			Check_Safety_Touch_Energy(Data);
 		break;
+
 		case safety_touch_current:
 			Check_Status_Bits(Data[1]);
-			// do something
+			Check_Safety_Touch_Current(Data);
 		break;
-		case Max_battery_working_voltage:
-			// do something
-		break;
+
 		case Vn_hi_res:
 			// do something
 		break;
+
 		case Vp_hi_res:
 			// do something
 		break;
+
 		case Vexc_hi_res:
 			// do something
 		break;
+
 		case Vb_hi_res:
 			// do something
 		break;
+
 		case Vpwr_hi_res:
 			// do something
 		break;
+
 		case Temperature:
 			// do something
 		break;
-		default:
+
+		case Max_battery_working_voltage:
+			Check_Max_Battery_Working_Voltage(Data);
+		break;
+
+
+
+		default: // This is a code that is not recognized (bad)
 			Error_Handler();
 		break;
 	}
 
 }
+
+
+// --------------------------------------------------------------------------------------
+// This sends the message to request data. The specific status requested is passed as arg
+// The IMD will then send a message with the same code and the data
+// --------------------------------------------------------------------------------------
+void IMD_Request_Status(int Status){
+	TxHeader.StdId = IMD_CAN_ID_Tx;
+	TxHeader.DLC = 1;
+	TxData[0] = Status;
+
+	if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK){
+		/* Transmission request Error */
+		Error_Handler();
+	  }
+}
+
+
+// --------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
 
 // --------------------------------------------------------------------------------------
 // Functions to check status
@@ -146,7 +190,26 @@ void Check_Error_Flags(int Data[]){
 	if (IMD_Error_Flags & Err_CH){
 		// print to dash I guess
 	}
+	if (IMD_Error_Flags & Err_VxR){
+		// print to dash I guess
+	}
+	if (IMD_Error_Flags & Err_Vexi){
+		// print to dash I guess
+	}
+	if (IMD_Error_Flags & Err_Vpwr){
+		// print to dash I guess
+	}
+	if (IMD_Error_Flags & Err_Watchdog){
+		// print to dash I guess
+	}
+	if (IMD_Error_Flags & Err_clock){
+		// print to dash I guess
+	}
+	if (IMD_Error_Flags & Err_temp){
+		// print to dash I guess
+	}
 }
+
 
 
 // This is the function that will be called when a CAN message is received that has the isolation state data
@@ -159,29 +222,54 @@ void Check_Isolation_State(int Data[]){
 		disable_shutdown_circuit();
 	}
 
-	// Can check tolerances and such but are far less important
-	// debugging
-	HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
+	// TODO check uncertainty in measurement
+
+}
+
+// Not sure if we necessarily need to check isolation resistances
+// check isolation state will be much more important
+void Check_Isolation_Resistances(int Data[]){
+	// TODO
+}
+
+
+void Check_Isolation_Capacitances(int Data[]){
+	// TODO
+}
+
+
+void Check_Voltages_Vp_and_Vn(int Data[]){
+	// TODO
+}
+
+
+void Check_Battery_Voltage(int Data[]){
+	// TODO
+}
+
+
+void Check_Safety_Touch_Energy(int Data[]){
+	// TODO
+}
+
+
+void Check_Safety_Touch_Current(int Data[]){
+	// TODO
 }
 
 
 
 
-// --------------------------------------------------------------------------------------
-// Function to send messages to the IMD (below)
-// These send the message to request data. The specific status requested is passed as arg
-// The IMD will then send a message with the same code and the data. This is read in functions above
-// --------------------------------------------------------------------------------------
-void IMD_Request_Status(int Status){
-	TxHeader.StdId = IMD_CAN_ID;
-	TxHeader.DLC = 1;
-	TxData[0] = Status;
+// ----------------------------------------------------------------------------
+// Data that could be checked on startup to make sure everything is good
 
-	if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK){
-		/* Transmission request Error */
-		Error_Handler();
-	  }
+void Check_Max_Battery_Working_Voltage(int Data[]){
+	// TODO
 }
+
+
+
+
 
 
 

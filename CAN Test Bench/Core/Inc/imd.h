@@ -79,18 +79,13 @@ enum error_flags{
 // Probably not useful and won't be used for a bit but may be useful in the future
 enum manufacturer_requests{
 	// The numbers get broken up over multiple bytes
-	Part_name_0 = 0x01,
-	Part_name_1 = 0x02,
-	Part_name_2 = 0x03,
-	Part_name_3 = 0x04,
-	Version_0 = 0x05,
-	Version_1 = 0x06,
-	Version_2 = 0x07,
-	Serial_number_0 = 0x08,
-	Serial_number_1 = 0x09,
-	Serial_number_2 = 0x0A,
-	Serial_number_3 = 0x0B,
+	Part_name = 0x01,
+	Version = 0x05,
+	Serial_number = 0x08,
 	Uptime_counter = 0x0C,
+};
+
+enum high_resolution_measurements{
 	Vn_hi_res = 0x60,
 	Vp_hi_res = 0x61,
 	Vexc_hi_res = 0x62,
@@ -98,17 +93,33 @@ enum manufacturer_requests{
 	Vpwr_hi_res = 0x65,
 };
 
-
+// ---------------------------------------------------------------
 // Function declarations
+
+// This will parse the data received from CAN message
 void IMD_Parse_Message(int DLC, int Data[]);
 
 
 // Functions to check states are okay
 void Check_Status_Bits(int Data);
 void Check_Error_Flags(int Data[]);
-void Check_Isolation_State(int Data[]);
 
-// Function to read data from the IMD
+// Functions to check values are okay
+void Check_Isolation_State(int Data[]);
+void Check_Isolation_Resistances(int Data[]);
+void Check_Isolation_Capacitances(int Data[]);
+void Check_Voltages_Vp_and_Vn(int Data[]);
+void Check_Battery_Voltage(int Data[]);
+void Check_Safety_Touch_Energy(int Data[]);
+void Check_Safety_Touch_Current(int Data[]);
+
+// Functions to check on startup
+void Check_Max_Battery_Working_Voltage(int Data[]);
+
+// High resolution measurements
+
+
+// Function to request data from the IMD
 void IMD_Request_Status(int Status);
 
 
