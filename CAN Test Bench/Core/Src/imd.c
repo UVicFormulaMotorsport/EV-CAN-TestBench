@@ -25,8 +25,9 @@ uint8_t IMD_error_flags_requested = 0;
 // Need a function to parse the CAN message data received from the IMD
 void IMD_Parse_Message(int DLC, int Data[]){
 	// The first step is to look at the first byte to figure out what we're looking at
-	// Need to make sure that Data[0] really is the first byte
+	// TODO Need to make sure that Data[0] really is the first byte
 	switch (Data[0]){
+		// important checks
 		case isolation_state:
 			Check_Status_Bits(Data[1]);
 			Check_Isolation_State(Data);
@@ -67,6 +68,7 @@ void IMD_Parse_Message(int DLC, int Data[]){
 			Check_Safety_Touch_Current(Data);
 		break;
 
+		// high resolution measurements
 		case Vn_hi_res:
 			// do something
 		break;
@@ -95,6 +97,30 @@ void IMD_Parse_Message(int DLC, int Data[]){
 			Check_Max_Battery_Working_Voltage(Data);
 		break;
 
+		// ugly syntax below
+		case Part_name_0:
+		case Part_name_1:
+		case Part_name_2:
+		case Part_name_3:
+			// call check part name
+		break;
+
+		case Version_0:
+		case Version_1:
+		case Version_2:
+			// call check version
+		break;
+
+		case Serial_number_0:
+		case Serial_number_1:
+		case Serial_number_2:
+		case Serial_number_3:
+			// call check serial number
+		break;
+
+		case Uptime_counter:
+			// call check uptime counter
+		break;
 
 
 		default: // This is a code that is not recognized (bad)

@@ -79,9 +79,17 @@ enum error_flags{
 // Probably not useful and won't be used for a bit but may be useful in the future
 enum manufacturer_requests{
 	// The numbers get broken up over multiple bytes
-	Part_name = 0x01,
-	Version = 0x05,
-	Serial_number = 0x08,
+	Part_name_0 = 0x01,
+	Part_name_1 = 0x02,
+	Part_name_2 = 0x03,
+	Part_name_3 = 0x04,
+	Version_0 = 0x05,
+	Version_1 = 0x06,
+	Version_2 = 0x07,
+	Serial_number_0 = 0x08,
+	Serial_number_1 = 0x09,
+	Serial_number_2 = 0x0A,
+	Serial_number_3 = 0x0B,
 	Uptime_counter = 0x0C,
 };
 
