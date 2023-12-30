@@ -120,9 +120,14 @@ void Check_Voltages_Vp_and_Vn(int Data[]);
 void Check_Battery_Voltage(int Data[]);
 void Check_Safety_Touch_Energy(int Data[]);
 void Check_Safety_Touch_Current(int Data[]);
+void Check_Temperature(int Data[]);
 
 // Functions to check on startup
 void Check_Max_Battery_Working_Voltage(int Data[]);
+void Check_Part_Name(int Data[]);
+void Check_Version(int Data[]);
+void Check_Serial_Number(int Data[]);
+void Check_Uptime(int Data[]);
 
 // High resolution measurements
 
