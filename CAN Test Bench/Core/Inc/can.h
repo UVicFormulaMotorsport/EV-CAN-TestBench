@@ -45,6 +45,7 @@ void MX_CAN2_Init(void);
 /* USER CODE BEGIN Prototypes */
 
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2);
+void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2);
 
 /* USER CODE END Prototypes */
 

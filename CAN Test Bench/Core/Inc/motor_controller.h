@@ -7,6 +7,7 @@
 
 
 // Need to add enums for human readable register addresses and such
+// See imd.h
 
 
 

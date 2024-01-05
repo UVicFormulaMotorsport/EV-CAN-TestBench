@@ -227,6 +227,9 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2)
 
 }
 
-
+// Here is where the second mailbox ISR would live
+void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2){
+	// do something
+}
 
 /* USER CODE END 1 */
