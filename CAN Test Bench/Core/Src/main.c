@@ -104,6 +104,7 @@ int main(void)
   MX_DMA_Init();
   MX_CAN2_Init();
   MX_ADC1_Init();
+  MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
     HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf, ADC_BUF_LEN);
 
@@ -130,6 +131,14 @@ int main(void)
 		  Update_RPM(adc_buf[0]);
 		  adc_conv_complete_flag = 0;
 	  }
+
+	  // The goal is to set some timers that will trigger interrupts for
+	  // less important tasks
+
+	  // Something like every second we check temperatures of things
+	  // Checking ADC inputs could be in the loop
+	  // Checking status of devices could be in an ISR for a timer
+
 
     /* USER CODE END WHILE */
 
