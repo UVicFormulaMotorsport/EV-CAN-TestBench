@@ -4,3 +4,14 @@
 
 
 #include "main.h"
+
+
+// Need to add enums for human readable register addresses and such
+
+
+
+
+
+
+// Function Declarations
+void MC_Parse_Message(int DLC, int Data[]);

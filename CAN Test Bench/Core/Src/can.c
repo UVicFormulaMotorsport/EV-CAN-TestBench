@@ -23,6 +23,8 @@
 /* USER CODE BEGIN 0 */
 #include "constants.h"
 #include "imd.h"
+#include "motor_controller.h"
+
 
 /* USER CODE END 0 */
 
@@ -71,7 +73,7 @@ void MX_CAN2_Init(void)
 
     //filter one (stack light blink)
      FilterConfig.FilterFIFOAssignment=CAN_RX_FIFO0; //set fifo assignment
-     FilterConfig.FilterIdHigh = 0x0000;
+     FilterConfig.FilterIdHigh = 0x0000; // filter of zero allows all messages
      FilterConfig.FilterIdLow = 0x0000;
      FilterConfig.FilterMaskIdHigh = 0x0000;
      FilterConfig.FilterMaskIdLow = 0x0000;
@@ -210,7 +212,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2)
     	   break;
        	   case 0x181:
 			   // Motor Controller
-			   // Call the associated function TODO
+			   MC_Parse_Message(DLC, Data);
 		   break;
        	   case 0x24:
        		   // IMD
