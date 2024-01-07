@@ -145,14 +145,16 @@ void IMD_Parse_Message(int DLC, int Data[]){
 // The IMD will then send a message with the same code and the data
 // --------------------------------------------------------------------------------------
 void IMD_Request_Status(int Status){
-	TxHeader.StdId = IMD_CAN_ID_Tx;
+	TxHeader.IDE = CAN_ID_EXT;
+	TxHeader.ExtId = IMD_CAN_ID_Tx;
 	TxHeader.DLC = 1;
 	TxData[0] = Status;
 
 	if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK){
 		/* Transmission request Error */
 		Error_Handler();
-	  }
+    }
+	TxHeader.IDE = CAN_ID_STD;
 }
 
 // --------------------------------------------------------------------------------------
