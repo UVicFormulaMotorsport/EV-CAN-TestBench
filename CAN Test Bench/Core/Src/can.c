@@ -23,6 +23,8 @@
 /* USER CODE BEGIN 0 */
 #include "constants.h"
 #include "imd.h"
+#include "motor_controller.h"
+
 
 /* USER CODE END 0 */
 
@@ -71,7 +73,7 @@ void MX_CAN2_Init(void)
 
     //filter one (stack light blink)
      FilterConfig.FilterFIFOAssignment=CAN_RX_FIFO0; //set fifo assignment
-     FilterConfig.FilterIdHigh = 0x0000;
+     FilterConfig.FilterIdHigh = 0x0000; // filter of zero allows all messages
      FilterConfig.FilterIdLow = 0x0000;
      FilterConfig.FilterMaskIdHigh = 0x0000;
      FilterConfig.FilterMaskIdLow = 0x0000;
@@ -135,6 +137,8 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef* canHandle)
     /* CAN2 interrupt Init */
     HAL_NVIC_SetPriority(CAN2_RX0_IRQn, 0, 0);
     HAL_NVIC_EnableIRQ(CAN2_RX0_IRQn);
+    HAL_NVIC_SetPriority(CAN2_RX1_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(CAN2_RX1_IRQn);
   /* USER CODE BEGIN CAN2_MspInit 1 */
 
   /* USER CODE END CAN2_MspInit 1 */
@@ -161,6 +165,7 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
 
     /* CAN2 interrupt Deinit */
     HAL_NVIC_DisableIRQ(CAN2_RX0_IRQn);
+    HAL_NVIC_DisableIRQ(CAN2_RX1_IRQn);
   /* USER CODE BEGIN CAN2_MspDeInit 1 */
 
   /* USER CODE END CAN2_MspDeInit 1 */
@@ -183,45 +188,55 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2)
   int DLC = 0;
 
   // Extract the ID
-       CAN_ID = RxHeader.StdId; // This is the CAN ID
+  if (RxHeader.IDE == CAN_ID_STD){
+	  CAN_ID = RxHeader.StdId;
+  }
 
-	// Extract the data length
-       DLC = RxHeader.DLC; // Data Length Code
+  if (RxHeader.IDE == CAN_ID_EXT){
+  	  CAN_ID = RxHeader.ExtId;
+  }
+
+
+  // Extract the data length
+  DLC = RxHeader.DLC; // Data Length Code
 
 
    // The data length will be different for each message, so we need to handle the possibilities
-       for(int i = 0; i < RxHeader.DLC; ++i){
-    	   Data[i] = RxData[i];
-       }
+   for (int i = 0; i < RxHeader.DLC; ++i){
+	   Data[i] = RxData[i];
+   }
 
 	// Figure out what device sent the message
    // Call the appropriate device function
-       switch (CAN_ID){
-       	   case 0x69:
-			   // BMS TODO
-			   // Call the associated function TODO
-		   break;
-       	   case 0x710:
-       		   // PDU
-       		   // Call the associated function TODO
-    	   break;
-       	   case 0x181:
-			   // Motor Controller
-			   // Call the associated function TODO
-		   break;
-       	   case 0x24:
-       		   // IMD
-       		   IMD_Parse_Message(DLC, Data);
-		   break;
-		   // Need more IDs
+   switch (CAN_ID){
+	   case 0x69:
+		   // BMS TODO
+		   // Call the associated function TODO
+	   break;
+	   case 0x710:
+		   // PDU
+		   // Call the associated function TODO
+	   break;
+	   case 0x181:
+		   // Motor Controller
+		   MC_Parse_Message(DLC, Data);
+	   break;
+	   case 0xA100100:
+		   // IMD
+		   IMD_Parse_Message(DLC, Data);
+	   break;
+	   // Need more IDs
 //       	   default:
 //       		   // Not a correct CAN ID
 //       		   Error_Handler();
 //		   break;
-       }
+   }
 
 }
 
-
+// Here is where the second mailbox ISR would live
+void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2){
+	// do something
+}
 
 /* USER CODE END 1 */

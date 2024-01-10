@@ -11,7 +11,7 @@
 
 // Faults
 // The first byte returned from a status request message will have 8 status bits and the data as the rest
-enum status_bits{
+enum imd_status_bits{
 	// I have just left this as plain binary. Could also be declared by bitshifting but I think this is easier
 	//	    					12345678
 	Isolation_status_bit0	= 0b00000001, // IS0
@@ -27,7 +27,7 @@ enum status_bits{
 
 // The MCU needs to send a message to the IMD requesting info
 // These are requests that will return status bits (defined above) & the value requested
-enum status_requests{
+enum imd_status_requests{
 	// The electrical isolation is in bytes 2 & 3
 	isolation_state = 0xE0,
 
@@ -63,7 +63,7 @@ enum status_requests{
 };
 
 // If one of the error flags is set, then the harware error bit will go to 1
-enum error_flags{
+enum imd_error_flags{
 	// Bits 0-6 are reserved
 	Err_temp = 0x0080, // HT high temperature (0 if temperature is below 105C)
 	Err_clock = 0x0100, // CE  (0 if clock is good)
@@ -77,7 +77,7 @@ enum error_flags{
 };
 
 // Probably not useful and won't be used for a bit but may be useful in the future
-enum manufacturer_requests{
+enum imd_manufacturer_requests{
 	// The numbers get broken up over multiple bytes
 	Part_name_0 = 0x01,
 	Part_name_1 = 0x02,
@@ -91,6 +91,9 @@ enum manufacturer_requests{
 	Serial_number_2 = 0x0A,
 	Serial_number_3 = 0x0B,
 	Uptime_counter = 0x0C,
+};
+
+enum imd_high_resolution_measurements{
 	Vn_hi_res = 0x60,
 	Vp_hi_res = 0x61,
 	Vexc_hi_res = 0x62,
@@ -98,17 +101,38 @@ enum manufacturer_requests{
 	Vpwr_hi_res = 0x65,
 };
 
-
+// ---------------------------------------------------------------
 // Function declarations
+
+// This will parse the data received from CAN message
 void IMD_Parse_Message(int DLC, int Data[]);
 
 
 // Functions to check states are okay
 void Check_Status_Bits(int Data);
 void Check_Error_Flags(int Data[]);
-void Check_Isolation_State(int Data[]);
 
-// Function to read data from the IMD
+// Functions to check values are okay
+void Check_Isolation_State(int Data[]);
+void Check_Isolation_Resistances(int Data[]);
+void Check_Isolation_Capacitances(int Data[]);
+void Check_Voltages_Vp_and_Vn(int Data[]);
+void Check_Battery_Voltage(int Data[]);
+void Check_Safety_Touch_Energy(int Data[]);
+void Check_Safety_Touch_Current(int Data[]);
+void Check_Temperature(int Data[]);
+
+// Functions to check on startup
+void Check_Max_Battery_Working_Voltage(int Data[]);
+void Check_Part_Name(int Data[]);
+void Check_Version(int Data[]);
+void Check_Serial_Number(int Data[]);
+void Check_Uptime(int Data[]);
+
+// High resolution measurements
+
+
+// Function to request data from the IMD
 void IMD_Request_Status(int Status);
 
 
