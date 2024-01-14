@@ -23,6 +23,7 @@
 // Need to define these
 
 void Update_RPM(int16_t value);
+void Update_Batt_Temp(uint8_t value);
 
 
 
