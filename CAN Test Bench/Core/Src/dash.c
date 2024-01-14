@@ -1,6 +1,5 @@
 // This where the code to handle displaying data, errors and such to the dash will go
 
-
 #include "dash.h"
 #include "can.h"
 #include "main.h"
@@ -18,8 +17,6 @@ void Update_RPM(int16_t value){
     TxData[0] = (value >> 8)& 0xFF;
     TxData[1] = value & 0xFF;
 
-
-
 	  if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK)
 	  {
 		/* Transmission request Error */
@@ -28,4 +25,21 @@ void Update_RPM(int16_t value){
 
 }
 
-// send/receive things
+// If we pass it a negative number then a garbage number will show up
+void Update_Batt_Temp(uint8_t value){
+
+	// Need ID
+    TxHeader.StdId=0x82; // This is the CAN ID
+    TxHeader.DLC=1; // Data Length Code
+
+
+	// Need message
+    TxData[0] = value;
+
+	  if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK)
+	  {
+		/* Transmission request Error */
+		Error_Handler();
+	  }
+
+}

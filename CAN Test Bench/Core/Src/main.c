@@ -45,6 +45,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+// 12 bit ADC resolution
 #define ADC_BUF_LEN 4096
 /* USER CODE END PD */
 
@@ -56,7 +57,12 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint16_t adc_buf[ADC_BUF_LEN];
+uint32_t adc_buf1[ADC_BUF_LEN]; // ADC1
+
+uint32_t adc1_1;
+uint32_t adc1_2;
+
+uint32_t adc_buf2[ADC_BUF_LEN]; // ADC2
 int adc_conv_complete_flag = 0;
 
 /* USER CODE END PV */
@@ -106,31 +112,26 @@ int main(void)
   MX_ADC1_Init();
   MX_ADC2_Init();
   /* USER CODE BEGIN 2 */
-    HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf, ADC_BUF_LEN);
+    HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC_BUF_LEN);
 
-  // We are just setting a dummy variable here
-  TxData[0] = 0x69;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+    Update_Batt_Temp(12);
   while (1)
   {
 	  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_13);
-	  HAL_Delay(1000);
-
-	  // Send out a chirp
-	  // RPM breaks if negative number
-	  Update_RPM(69);
-
 
 	  // when adc_conv_complete_flag is set to 1,
 	  // that means DMA conversion is completed
 	  if(adc_conv_complete_flag == 1){
 	  // into string and store in dma_result_buffer character array
-		  Update_RPM(adc_buf[0]);
+		  Update_RPM(adc1_1);
+		  Update_Batt_Temp(adc1_2);
 		  adc_conv_complete_flag = 0;
 	  }
+
 
 	  // The goal is to set some timers that will trigger interrupts for
 	  // less important tasks
@@ -193,15 +194,13 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
-// Called when first half of buffer is filled
-void HAL_ADC_ConvHalfCpltCallback(ADC_HandleTypeDef* hadc) {
-  // could toggle and LED here
-}
 
 // Called when buffer is completely filled
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
   // Could toggle an LED here
 	adc_conv_complete_flag = 1;
+	adc1_1 = adc_buf1[0];
+	adc1_2 = adc_buf1[1];
 }
 /* USER CODE END 4 */
 
