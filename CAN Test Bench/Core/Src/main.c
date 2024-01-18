@@ -128,7 +128,9 @@ int main(void)
 	  if(adc_conv_complete_flag == 1){
 	  // into string and store in dma_result_buffer character array
 		  Update_RPM(adc1_1);
-		  Update_Batt_Temp(adc1_2);
+		  HAL_Delay(1000);
+		  Update_RPM(adc1_2);
+		  HAL_Delay(1000);
 		  adc_conv_complete_flag = 0;
 	  }
 
