@@ -21,6 +21,7 @@
 #include "adc.h"
 #include "can.h"
 #include "dma.h"
+#include "tim.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
@@ -64,6 +65,7 @@ uint32_t adc1_2;
 
 uint32_t adc_buf2[ADC_BUF_LEN]; // ADC2
 int adc_conv_complete_flag = 0;
+int ready_to_drive = 0;
 
 /* USER CODE END PV */
 
@@ -111,6 +113,8 @@ int main(void)
   MX_CAN2_Init();
   MX_ADC1_Init();
   MX_ADC2_Init();
+  MX_TIM13_Init();
+  MX_TIM14_Init();
   /* USER CODE BEGIN 2 */
     HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC_BUF_LEN);
 
@@ -118,10 +122,28 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-    Update_Batt_Temp(12);
+
+    Update_Batt_Temp(12); // temp debugging
+
+    // This is the waiting to drive loop
+    // The driver needs to press the brake and the start button before driving the car
+    while (!ready_to_drive){
+    	// we can check miscellaneous stuff here
+    	// TODO - incorporate brake pedal input
+
+    	// The ISR at the bottom will get triggered when the button is pressed
+    	// That will set the ready to drive flag to 1 and this loop will exit
+    }
+    // After the car is ready to drive, we want to play the speaker chirp, then we can drive
+    speaker_chirp();
+
   while (1)
   {
 	  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_13);
+
+
+
+
 
 	  // when adc_conv_complete_flag is set to 1,
 	  // that means DMA conversion is completed
@@ -197,12 +219,21 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 
-// Called when buffer is completely filled
+// Called when adc dma buffer is completely filled
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
   // Could toggle an LED here
 	adc_conv_complete_flag = 1;
 	adc1_1 = adc_buf1[0];
 	adc1_2 = adc_buf1[1];
+}
+
+// EXTI gpio pin a0 External Interrupt ISR Handler
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+    if(GPIO_Pin == GPIO_PIN_0) // If The INT Source Is EXTI Line0 (A0 Pin)
+    {
+    	ready_to_drive = 1;
+    }
 }
 /* USER CODE END 4 */
 

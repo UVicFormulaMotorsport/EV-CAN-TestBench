@@ -26,7 +26,13 @@ enum motor_controller_temperatures{
 
 };
 
+enum motor_controller_errors{
+	todo69 = 69,
+};
 
+enum motor_controller_warnings{
+	todo123 = 123,
+};
 
 
 
