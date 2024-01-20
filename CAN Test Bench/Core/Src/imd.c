@@ -184,7 +184,7 @@ void Check_Status_Bits(int Data){
 	int mask = 0b100011111;
 
 	if ((Data & mask) != 0){
-		disable_shutdown_circuit();
+		PDU_disable_shutdown_circuit();
 
 		if ((Data & Isolation_status_bit0) || (Data & Isolation_status_bit1)){
 			// Isolation fault BAD
@@ -267,7 +267,7 @@ void Check_Isolation_State(int Data[]){
 	int isolation = (Data[2] << 8) | Data[3];
 
 	if ((isolation < 500) && (Data[4] <= 5)){
-		disable_shutdown_circuit();
+		PDU_disable_shutdown_circuit();
 		IMD_High_Uncertainty = 0;
 	}
 

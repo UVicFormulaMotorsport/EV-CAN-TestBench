@@ -9,8 +9,8 @@
 void Update_RPM(int16_t value){
 
 	// Need ID
-    TxHeader.StdId=0x80; // This is the CAN ID
-    TxHeader.DLC=2; // Data Length Code
+    TxHeader.StdId = Dash_RPM; // This is the CAN ID
+    TxHeader.DLC = 2; // Data Length Code
 
 
 	// Need message
@@ -29,8 +29,8 @@ void Update_RPM(int16_t value){
 void Update_Batt_Temp(uint8_t value){
 
 	// Need ID
-    TxHeader.StdId=0x82; // This is the CAN ID
-    TxHeader.DLC=1; // Data Length Code
+    TxHeader.StdId = Dash_Battery_Temperature; // This is the CAN ID
+    TxHeader.DLC = 1; // Data Length Code
 
 
 	// Need message
@@ -43,3 +43,26 @@ void Update_Batt_Temp(uint8_t value){
 	  }
 
 }
+
+
+void Update_State_Of_Charge(uint8_t value){
+
+	// Need ID
+    TxHeader.StdId = Dash_State_of_Charge; // This is the CAN ID
+    TxHeader.DLC = 1; // Data Length Code
+
+
+	// Need message
+    TxData[0] = value;
+
+	  if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK)
+	  {
+		/* Transmission request Error */
+		Error_Handler();
+	  }
+
+}
+
+
+
+

@@ -58,12 +58,14 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint32_t adc_buf1[ADC_BUF_LEN]; // ADC1
-
+volatile uint32_t adc_buf1[ADC_BUF_LEN]; // ADC1
 uint16_t adc1_1;
 uint16_t adc1_2;
 
-uint32_t adc_buf2[ADC_BUF_LEN]; // ADC2
+volatile uint32_t adc_buf2[ADC_BUF_LEN]; // ADC2
+uint16_t adc2_1;
+uint16_t adc2_2;
+
 int adc_conv_complete_flag = 0;
 int ready_to_drive = 0;
 
@@ -135,10 +137,11 @@ int main(void)
     	// That will set the ready to drive flag to 1 and this loop will exit
     }
     // After the car is ready to drive, we want to play the speaker chirp, then we can drive
-    speaker_chirp();
+    PDU_speaker_chirp();
 
   while (1)
   {
+	  // For debugging purposes
 	  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_13);
 
 

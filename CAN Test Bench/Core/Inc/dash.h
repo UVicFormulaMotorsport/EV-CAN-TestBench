@@ -8,7 +8,13 @@
 #include "main.h"
 
 
-// CAN IDs
+// CAN IDs correspond to specific values on the dash
+enum dash_can_ids{
+	Dash_RPM = 0x80,
+	Dash_Battery_Temperature = 0x82,
+	Dash_Motor_Temperature = 0x88,
+	Dash_State_of_Charge = 0x87,
+};
 
 // Battery Temperature 0x82
 
@@ -24,6 +30,7 @@
 
 void Update_RPM(int16_t value);
 void Update_Batt_Temp(uint8_t value);
+void Update_State_Of_Charge(uint8_t value);
 
 
 

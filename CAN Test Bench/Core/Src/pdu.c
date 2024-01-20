@@ -8,7 +8,7 @@
 
 
 // PDU commands for 5A Circuit
-void speaker_chirp(){
+void PDU_speaker_chirp(){
 /* Chirp to indicate vehicle ready to drive*/
     TxHeader.StdId = PDU_CAN_ID_Tx; // This is the CAN ID
     TxHeader.DLC = 1; // Data Length Code
@@ -31,7 +31,7 @@ void speaker_chirp(){
 }
 
 
-void enable_brake_light(){
+void PDU_enable_brake_light(){
 
 	TxHeader.StdId=PDU_CAN_ID_Tx; // PDU CAN ID
     TxHeader.DLC=1; // Data Length Code
@@ -45,7 +45,7 @@ void enable_brake_light(){
 	 }
 }
 
-void disable_brake_light(){
+void PDU_disable_brake_light(){
 
 	TxHeader.StdId=PDU_CAN_ID_Tx; // PDU CAN ID
     TxHeader.DLC=1; // Data Length Code
@@ -59,7 +59,7 @@ void disable_brake_light(){
 	 }
 }
 
-void enable_motor_controller(){
+void PDU_enable_motor_controller(){
 	TxHeader.StdId=PDU_CAN_ID_Tx; // PDU CAN ID
 	TxHeader.DLC=1; // Data Length Code
 
@@ -71,7 +71,7 @@ void enable_motor_controller(){
 		Error_Handler();
 	}
 }
-void disable_motor_controller(){
+void PDU_disable_motor_controller(){
 	TxHeader.StdId=PDU_CAN_ID_Tx; // PDU CAN ID
 	TxHeader.DLC=1; // Data Length Code
 
@@ -84,7 +84,7 @@ void disable_motor_controller(){
 	}
 }
 
-void enable_shutdown_circuit(){
+void PDU_enable_shutdown_circuit(){
 	TxHeader.StdId=PDU_CAN_ID_Tx; // PDU CAN ID
 	TxHeader.DLC=1; // Data Length Code
 
@@ -97,7 +97,7 @@ void enable_shutdown_circuit(){
 	}
 }
 
-void disable_shutdown_circuit(){
+void PDU_disable_shutdown_circuit(){
 	TxHeader.StdId=PDU_CAN_ID_Tx; // PDU CAN ID
 	TxHeader.DLC=1; // Data Length Code
 
@@ -112,7 +112,7 @@ void disable_shutdown_circuit(){
 
 
 // PDU commands for 20A Circuit
-void enable_cooling_fans(){
+void PDU_enable_cooling_fans(){
 	TxHeader.StdId=PDU_CAN_ID_Tx; // PDU CAN ID
 	TxHeader.DLC=1; // Data Length Code
 
@@ -133,7 +133,7 @@ void enable_cooling_fans(){
 	}
 }
 
-void disable_cooling_fans(){
+void PDU_disable_cooling_fans(){
 	TxHeader.StdId=PDU_CAN_ID_Tx; // PDU CAN ID
 	TxHeader.DLC=1; // Data Length Code
 
@@ -155,7 +155,7 @@ void disable_cooling_fans(){
 }
 
 
-void enable_coolant_pump(){
+void PDU_enable_coolant_pump(){
 	TxHeader.StdId=PDU_CAN_ID_Tx; // PDU CAN ID
 	TxHeader.DLC=1; // Data Length Code
 
@@ -167,7 +167,7 @@ void enable_coolant_pump(){
 		Error_Handler();
 	}
 }
-void disable_coolant_pump(){
+void PDU_disable_coolant_pump(){
 	TxHeader.StdId=PDU_CAN_ID_Tx; // PDU CAN ID
 	TxHeader.DLC=1; // Data Length Code
 

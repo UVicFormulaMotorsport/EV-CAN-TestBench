@@ -35,7 +35,18 @@ void MC_Parse_Message(int DLC, int Data[]){
 }
 
 // Need function to send message to motor controller
+void MC_Send_Message(int RegID){
 
+	TxHeader.StdId = MC_CAN_ID_Tx;
+	TxHeader.DLC = 1;
+	TxData[0] = RegID;
+
+	if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK){
+		/* Transmission request Error */
+		Error_Handler();
+	}
+
+}
 
 // Need functions to check specific values
 

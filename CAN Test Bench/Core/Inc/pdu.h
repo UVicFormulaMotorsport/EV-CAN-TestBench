@@ -29,17 +29,17 @@ enum pdu_messages_20A{
 
 
 // PDU functions (5 Amp)
-void speaker_chirp();
-void enable_brake_light();
-void disable_brake_light();
-void enable_motor_controller();
-void disable_motor_controller();
-void enable_shutdown_circuit();
-void disable_shutdown_circuit();
+void PDU_speaker_chirp();
+void PDU_enable_brake_light();
+void PDU_disable_brake_light();
+void PDU_enable_motor_controller();
+void PDU_disable_motor_controller();
+void PDU_enable_shutdown_circuit();
+void PDU_disable_shutdown_circuit();
 
 // PDU functions (20 Amp)
-void enable_cooling_fans();
-void disable_cooling_fans();
-void enable_coolant_pump();
-void disable_coolant_pump();
+void PDU_enable_cooling_fans();
+void PDU_disable_cooling_fans();
+void PDU_enable_coolant_pump();
+void PDU_disable_coolant_pump();
 

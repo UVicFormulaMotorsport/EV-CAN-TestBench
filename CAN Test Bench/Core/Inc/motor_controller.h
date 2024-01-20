@@ -45,3 +45,12 @@ enum motor_controller_warnings{
 
 // Function Declarations
 void MC_Parse_Message(int DLC, int Data[]);
+void MC_Send_Message(int RegID);
+
+
+
+
+
+
+
+
