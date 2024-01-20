@@ -47,7 +47,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 // 12 bit ADC resolution
-#define ADC_BUF_LEN 4096
+#define ADC_BUF_LEN 2
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -60,8 +60,8 @@
 /* USER CODE BEGIN PV */
 uint32_t adc_buf1[ADC_BUF_LEN]; // ADC1
 
-uint32_t adc1_1;
-uint32_t adc1_2;
+uint16_t adc1_1;
+uint16_t adc1_2;
 
 uint32_t adc_buf2[ADC_BUF_LEN]; // ADC2
 int adc_conv_complete_flag = 0;
@@ -123,7 +123,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-    Update_Batt_Temp(12); // temp debugging
+    Update_Batt_Temp(69); // temp debugging
 
     // This is the waiting to drive loop
     // The driver needs to press the brake and the start button before driving the car
