@@ -34,11 +34,29 @@ void MC_Parse_Message(int DLC, int Data[]){
 
 }
 
-// Need function to send message to motor controller
-void MC_Send_Message(int RegID){
+// this function is used to get data from the motor controller
+void MC_Request_Data(int RegID){
 
 	TxHeader.StdId = MC_CAN_ID_Tx;
-	TxHeader.DLC = 1;
+	TxHeader.DLC = 3;
+	TxData[0] = 0x3D;
+	TxData[1] = RegID;
+	TxData[2] = 0;
+
+	if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK){
+		/* Transmission request Error */
+		Error_Handler();
+	}
+
+}
+
+
+
+// We can either send 2 or 4 bytes of data
+void MC_Send_Data(int RegID, int data, int size){
+
+	TxHeader.StdId = MC_CAN_ID_Tx;
+	TxHeader.DLC = size;
 	TxData[0] = RegID;
 
 	if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK){
@@ -48,7 +66,7 @@ void MC_Send_Message(int RegID){
 
 }
 
-// Need functions to check specific values
+
 
 
 

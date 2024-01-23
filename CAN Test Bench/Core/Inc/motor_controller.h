@@ -34,9 +34,15 @@ enum motor_controller_warnings{
 	todo123 = 123,
 };
 
+enum motor_controller_io{
+	todo6969 = 6969,
+};
 
-
-
+// The motor controller can send data repeatedly if so desired
+enum motor_controller_repeating_time{
+	none = 0,
+	one_hundred_ms = 0x64,
+};
 
 
 
@@ -45,7 +51,8 @@ enum motor_controller_warnings{
 
 // Function Declarations
 void MC_Parse_Message(int DLC, int Data[]);
-void MC_Send_Message(int RegID);
+void MC_Request_Data(int RegID);
+void MC_Send_Data(int RegID, int data, int size);
 
 
 
