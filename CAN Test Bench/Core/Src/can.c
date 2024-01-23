@@ -24,6 +24,9 @@
 #include "constants.h"
 #include "imd.h"
 #include "motor_controller.h"
+#include "dash.h"
+#include "bms.h"
+#include "pdu.h"
 
 
 /* USER CODE END 0 */
@@ -176,8 +179,7 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
 
 // When a CAN message comes, the interrupt will call this function
 // We need to figure out what device sent it, what the data is, and handle it appropriately
-void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2)
-{
+void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
   if (HAL_CAN_GetRxMessage(hcan2, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
   {
     Error_Handler();
@@ -217,11 +219,11 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2)
 		   // PDU
 		   // Call the associated function TODO
 	   break;
-	   case 0x181:
+	   case MC_CAN_ID_Rx:
 		   // Motor Controller
 		   MC_Parse_Message(DLC, Data);
 	   break;
-	   case 0xA100100:
+	   case IMD_CAN_ID_Rx:
 		   // IMD
 		   IMD_Parse_Message(DLC, Data);
 	   break;

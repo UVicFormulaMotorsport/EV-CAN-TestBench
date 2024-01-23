@@ -58,12 +58,14 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-uint32_t adc_buf1[ADC_BUF_LEN]; // ADC1
-
+volatile uint32_t adc_buf1[ADC_BUF_LEN]; // ADC1
 uint16_t adc1_1;
 uint16_t adc1_2;
 
-uint32_t adc_buf2[ADC_BUF_LEN]; // ADC2
+volatile uint32_t adc_buf2[ADC_BUF_LEN]; // ADC2
+uint16_t adc2_1;
+uint16_t adc2_2;
+
 int adc_conv_complete_flag = 0;
 int ready_to_drive = 0;
 
@@ -135,10 +137,11 @@ int main(void)
     	// That will set the ready to drive flag to 1 and this loop will exit
     }
     // After the car is ready to drive, we want to play the speaker chirp, then we can drive
-    speaker_chirp();
+    PDU_speaker_chirp();
 
   while (1)
   {
+	  // For debugging purposes
 	  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_13);
 
 
@@ -147,14 +150,14 @@ int main(void)
 
 	  // when adc_conv_complete_flag is set to 1,
 	  // that means DMA conversion is completed
-	  if(adc_conv_complete_flag == 1){
+
 	  // into string and store in dma_result_buffer character array
-		  Update_RPM(adc1_1);
-		  HAL_Delay(1000);
-		  Update_RPM(adc1_2);
-		  HAL_Delay(1000);
-		  adc_conv_complete_flag = 0;
-	  }
+	  Update_RPM(adc1_1);
+	  HAL_Delay(1000);
+	  Update_RPM(adc1_2);
+	  HAL_Delay(1000);
+	  adc_conv_complete_flag = 0;
+
 
 
 	  // The goal is to set some timers that will trigger interrupts for
@@ -222,7 +225,6 @@ void SystemClock_Config(void)
 // Called when adc dma buffer is completely filled
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
   // Could toggle an LED here
-	adc_conv_complete_flag = 1;
 	adc1_1 = adc_buf1[0];
 	adc1_2 = adc_buf1[1];
 }
