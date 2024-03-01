@@ -27,6 +27,11 @@ enum CAN_IDs{
 	BMS_MSG_ID_3 = ((uint32_t)(0x380U + BMS_COBIE_ID)),
 };
 
+//useful defines for various programs to use
+#define MAX_ACCUMULATOR_TEMP 60
+#define MIN_ACCUMULATOR_TEMP 0
+#define MAX_BATTERY_VOLTAGE 4998 //the BMS multiplies voltage by 10 to send this, 499.8V in reality
+#define MIN_BATTERY_VOLTAGE 3570
 
 #endif
 

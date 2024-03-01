@@ -32,7 +32,7 @@ uint8_t IMD_error_flags_requested = 0;
 
 
 // Need a function to parse the CAN message data received from the IMD
-void IMD_Parse_Message(int DLC, int Data[]){
+void IMD_Parse_Message(int DLC, uint8_t Data[]){
 	// The first step is to look at the first byte to figure out what we're looking at
 	// TODO Need to make sure that Data[0] really is the first byte
 	switch (Data[0]){
@@ -177,7 +177,7 @@ void IMD_Request_Status(int Status){
 // A lot of the messages will include status bits
 // Check for faults
 // Then check what the error is to display it for driver
-void Check_Status_Bits(int Data){
+void Check_Status_Bits(uint8_t Data){
 	// The touch energy bit will be 1 when connected to batteries
 	// High uncertainty isn't also something we really care about
 	// No idea about excitation pulse
