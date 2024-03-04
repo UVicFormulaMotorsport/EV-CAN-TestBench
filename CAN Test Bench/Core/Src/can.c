@@ -185,7 +185,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
     Error_Handler();
   }
 
-  int Data[8] = {0};
+  uint8_t Data[8] = {0};
   int CAN_ID = 0;
   int DLC = 0;
 
@@ -212,8 +212,21 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
    // Call the appropriate device function
    switch (CAN_ID){
 	   case 0x69:
-		   // BMS TODO
-		   // Call the associated function TODO
+		   reset_BMS_WDT();
+
+	   break;
+	   case CAN_IDs.BMS_MSG_ID_1:
+	   	   reset_BMS_WDT();
+	   	   BMS_Parse_Message1(DLC, Data);
+
+	   break;
+	   case CAN_IDs.BMS_MSG_ID_2:
+	   	   reset_BMS_WDT();
+	   	   BMS_Parse_Message2(DLC, Data);
+	   break;
+	   case CAN_IDs.BMS_MSG_ID_3:
+	   	   reset_BMS_WDT();
+	   	   BMS_Parse_Message3(DLC, Data);
 	   break;
 	   case 0x710:
 		   // PDU

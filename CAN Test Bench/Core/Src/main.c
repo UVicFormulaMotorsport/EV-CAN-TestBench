@@ -117,6 +117,7 @@ int main(void)
   MX_ADC2_Init();
   MX_TIM13_Init();
   MX_TIM14_Init();
+  MX_TIM12_Init();
   /* USER CODE BEGIN 2 */
     HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC_BUF_LEN);
 
