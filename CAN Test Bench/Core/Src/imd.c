@@ -181,7 +181,7 @@ void Check_Status_Bits(uint8_t Data){
 	// The touch energy bit will be 1 when connected to batteries
 	// High uncertainty isn't also something we really care about
 	// No idea about excitation pulse
-	int mask = 0b100011111;
+	uint8_t mask = 0b100011111;
 
 	if ((Data & mask) != 0){
 		PDU_disable_shutdown_circuit();
@@ -225,7 +225,7 @@ void Check_Status_Bits(uint8_t Data){
 }
 
 // We need to look at the 2nd and 3rd bytes in the array for the error flags
-void Check_Error_Flags(int Data[]){
+void Check_Error_Flags(uint8_t Data[]){
 	// Need to check the bits to see what caused the hardware error
 	// Want to display message to dash for safety reasons
 	uint16_t IMD_Error_Flags = (Data[1] << 8) | Data[2];
@@ -262,7 +262,7 @@ void Check_Error_Flags(int Data[]){
 
 
 // This is the function that will be called when a CAN message is received that has the isolation state data
-void Check_Isolation_State(int Data[]){
+void Check_Isolation_State(uint8_t Data[]){
 
 	int isolation = (Data[2] << 8) | Data[3];
 
@@ -275,7 +275,7 @@ void Check_Isolation_State(int Data[]){
 
 // Not sure if we necessarily need to check isolation resistances
 // check isolation state will be much more important
-void Check_Isolation_Resistances(int Data[]){
+void Check_Isolation_Resistances(uint8_t Data[]){
 
 	// This won't necessarily be useful
 	// We need to know the voltages to determine if a fault has occurred
@@ -283,41 +283,41 @@ void Check_Isolation_Resistances(int Data[]){
 }
 
 
-void Check_Isolation_Capacitances(int Data[]){
+void Check_Isolation_Capacitances(uint8_t Data[]){
 
 	// I don't know how useful this will be
 
 }
 
 
-void Check_Voltages_Vp_and_Vn(int Data[]){
+void Check_Voltages_Vp_and_Vn(uint8_t Data[]){
 
 	// This could potentially be useful
 
 }
 
 
-void Check_Battery_Voltage(int Data[]){
+void Check_Battery_Voltage(uint8_t Data[]){
 
 	// This could be useful to compare with BMS and make sure things are working well
 
 }
 
-void Check_Temperature(int Data[]){
+void Check_Temperature(uint8_t Data[]){
 	// TODO
 }
 
 // -----------------------------------------------------------------------------------
 // These functions could check to see if stuff is safe to touch
 
-void Check_Safety_Touch_Energy(int Data[]){
+void Check_Safety_Touch_Energy(uint8_t Data[]){
 
 	// I don't really know how to make use of these functions
 
 }
 
 
-void Check_Safety_Touch_Current(int Data[]){
+void Check_Safety_Touch_Current(uint8_t Data[]){
 	// TODO
 }
 
@@ -329,7 +329,7 @@ void Check_Safety_Touch_Current(int Data[]){
 // ----------------------------------------------------------------------------
 // Data that could be checked on startup to make sure everything is good
 
-void Check_Max_Battery_Working_Voltage(int Data[]){
+void Check_Max_Battery_Working_Voltage(uint8_t Data[]){
 	int Max_Battery_Voltage = (Data[1] << 8) | Data[2];
 
 	if (Max_Battery_Voltage != 571){
@@ -338,7 +338,7 @@ void Check_Max_Battery_Working_Voltage(int Data[]){
 
 }
 
-void Check_Part_Name(int Data[]){
+void Check_Part_Name(uint8_t Data[]){
 	// TODO
 	int Part_Name[4];
 
@@ -377,15 +377,15 @@ void Check_Part_Name(int Data[]){
 
 }
 
-void Check_Version(int Data[]){
+void Check_Version(uint8_t Data[]){
 	// TODO
 }
 
-void Check_Serial_Number(int Data[]){
+void Check_Serial_Number(uint8_t Data[]){
 	// TODO
 }
 
-void Check_Uptime(int Data[]){
+void Check_Uptime(uint8_t Data[]){
 	// TODO
 }
 

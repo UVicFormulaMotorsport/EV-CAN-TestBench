@@ -7,6 +7,9 @@
 
 // Can ID: 0x710
 
+#ifndef __PDU_H__
+#define __PDU_H__
+
 enum pdu_messages_5A{
 	enable_speaker_msg = 0x1C,
 	disable_speaker_msg = 0x0C,
@@ -43,3 +46,4 @@ void PDU_disable_cooling_fans();
 void PDU_enable_coolant_pump();
 void PDU_disable_coolant_pump();
 
+#endif

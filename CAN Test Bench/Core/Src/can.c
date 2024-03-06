@@ -211,20 +211,20 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
 	// Figure out what device sent the message
    // Call the appropriate device function
    switch (CAN_ID){
-	   case 0x69:
+	   case BMS_HEARTBEAT_ID:
 		   reset_BMS_WDT();
 
 	   break;
-	   case CAN_IDs.BMS_MSG_ID_1:
+	   case BMS_CAN_ID_1:
 	   	   reset_BMS_WDT();
 	   	   BMS_Parse_Message1(DLC, Data);
 
 	   break;
-	   case CAN_IDs.BMS_MSG_ID_2:
+	   case BMS_CAN_ID_2:
 	   	   reset_BMS_WDT();
 	   	   BMS_Parse_Message2(DLC, Data);
 	   break;
-	   case CAN_IDs.BMS_MSG_ID_3:
+	   case BMS_CAN_ID_3:
 	   	   reset_BMS_WDT();
 	   	   BMS_Parse_Message3(DLC, Data);
 	   break;
