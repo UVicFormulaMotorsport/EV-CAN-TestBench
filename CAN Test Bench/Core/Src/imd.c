@@ -18,12 +18,34 @@
 uint8_t IMD_status_bits = 0;
 uint8_t IMD_High_Uncertainty = 0;
 
+
+
+// Declarations for the IMD part name to be checked on startup
+uint32_t IMD_Read_Part_Name[4];
+const uint32_t IMD_Expected_Part_Name[4];
+
+uint8_t IMD_Part_Name_0_Set = 0;
+uint8_t IMD_Part_Name_1_Set = 0;
+uint8_t IMD_Part_Name_2_Set = 0;
+uint8_t IMD_Part_Name_3_Set = 0;
 uint8_t IMD_Part_Name_Set = 0;
-char IMD_Part_Name[] = "TODO";
+
+const char IMD_Expected_Version[] = "TODO";
 
 
-const char IMD_Version[] = "TODO";
-const char IMD_Serial_Number[] = "TODO";
+// Declarations for the IMD serial number to be checked on startup
+uint32_t IMD_Read_Serial_Number[4];
+const uint32_t IMD_Expected_Serial_Number[4] = {0xB8DD9AF9,
+												0x6094F48B,
+												0x1F1C3794,
+												0xFCF9A95B};
+uint8_t IMD_Serial_Number_0_Set = 0;
+uint8_t IMD_Serial_Number_1_Set = 0;
+uint8_t IMD_Serial_Number_2_Set = 0;
+uint8_t IMD_Serial_Number_3_Set = 0;
+uint8_t IMD_Serial_Number_Set = 0;
+
+
 
 
 // If there is a hardware error, that one bit will be a 1 in the status bits -> read error flags
@@ -38,43 +60,43 @@ void IMD_Parse_Message(int DLC, uint8_t Data[]){
 	switch (Data[0]){
 		// important checks
 		case isolation_state:
-			Check_Status_Bits(Data[1]);
-			Check_Isolation_State(Data);
+			IMD_Check_Status_Bits(Data[1]);
+			IMD_Check_Isolation_State(Data);
 		break;
 
 		case isolation_resistances:
-			Check_Status_Bits(Data[1]);
-			Check_Isolation_Resistances(Data);
+			IMD_Check_Status_Bits(Data[1]);
+			IMD_Check_Isolation_Resistances(Data);
 		break;
 
 		case isolation_capacitances:
-			Check_Status_Bits(Data[1]);
-			Check_Isolation_Capacitances(Data);
+			IMD_Check_Status_Bits(Data[1]);
+			IMD_Check_Isolation_Capacitances(Data);
 		break;
 
 		case voltages_Vp_and_Vn:
-			Check_Status_Bits(Data[1]);
-			Check_Voltages_Vp_and_Vn(Data);
+			IMD_Check_Status_Bits(Data[1]);
+			IMD_Check_Voltages_Vp_and_Vn(Data);
 		break;
 
 		case battery_voltage:
-			Check_Status_Bits(Data[1]);
-			Check_Battery_Voltage(Data);
+			IMD_Check_Status_Bits(Data[1]);
+			IMD_Check_Battery_Voltage(Data);
 		break;
 
 		case Error_flags:
-			Check_Status_Bits(Data[1]);
-			Check_Error_Flags(Data);
+			IMD_Check_Status_Bits(Data[1]);
+			IMD_Check_Error_Flags(Data);
 		break;
 
 		case safety_touch_energy:
-			Check_Status_Bits(Data[1]);
-			Check_Safety_Touch_Energy(Data);
+			IMD_Check_Status_Bits(Data[1]);
+			IMD_Check_Safety_Touch_Energy(Data);
 		break;
 
 		case safety_touch_current:
-			Check_Status_Bits(Data[1]);
-			Check_Safety_Touch_Current(Data);
+			IMD_Check_Status_Bits(Data[1]);
+			IMD_Check_Safety_Touch_Current(Data);
 		break;
 
 		// high resolution measurements
@@ -99,11 +121,11 @@ void IMD_Parse_Message(int DLC, uint8_t Data[]){
 		break;
 
 		case Temperature:
-			// do something
+			IMD_Check_temperature(Data);
 		break;
 
 		case Max_battery_working_voltage:
-			Check_Max_Battery_Working_Voltage(Data);
+			IMD_Check_Max_Battery_Working_Voltage(Data);
 		break;
 
 		// ugly syntax below
@@ -111,20 +133,20 @@ void IMD_Parse_Message(int DLC, uint8_t Data[]){
 		case Part_name_1:
 		case Part_name_2:
 		case Part_name_3:
-			// call check part name
+			IMD_Check_Part_Name(Data);
 		break;
 
 		case Version_0:
 		case Version_1:
 		case Version_2:
-			// call check version
+			IMD_Check_Version(Data);
 		break;
 
 		case Serial_number_0:
 		case Serial_number_1:
 		case Serial_number_2:
 		case Serial_number_3:
-			// call check serial number
+			IMD_Check_Serial_Number(Data);
 		break;
 
 		case Uptime_counter:
@@ -177,14 +199,15 @@ void IMD_Request_Status(uint8_t Status){
 // A lot of the messages will include status bits
 // Check for faults
 // Then check what the error is to display it for driver
-void Check_Status_Bits(uint8_t Data){
+void IMD_Check_Status_Bits(uint8_t Data){
 	// The touch energy bit will be 1 when connected to batteries
 	// High uncertainty isn't also something we really care about
 	// No idea about excitation pulse
 	uint16_t mask = 0b100011111;
 
 	if ((Data & mask) != 0){
-		PDU_disable_shutdown_circuit();
+		// Send message to error handler to shutdown car
+		//Trigger_Shutdown_Circuit();
 
 		if ((Data & Isolation_status_bit0) || (Data & Isolation_status_bit1)){
 			// Isolation fault BAD
@@ -225,7 +248,7 @@ void Check_Status_Bits(uint8_t Data){
 }
 
 // We need to look at the 2nd and 3rd bytes in the array for the error flags
-void Check_Error_Flags(uint8_t Data[]){
+void IMD_Check_Error_Flags(uint8_t Data[]){
 	// Need to check the bits to see what caused the hardware error
 	// Want to display message to dash for safety reasons
 	uint16_t IMD_Error_Flags = (Data[1] << 8) | Data[2];
@@ -262,11 +285,11 @@ void Check_Error_Flags(uint8_t Data[]){
 
 
 // This is the function that will be called when a CAN message is received that has the isolation state data
-void Check_Isolation_State(uint8_t Data[]){
+void IMD_Check_Isolation_State(uint8_t Data[]){
 
-	int isolation = (Data[2] << 8) | Data[3];
+	uint16_t isolation = (Data[2] << 8) | Data[3];
 
-	if ((isolation < 500) && (Data[4] <= 5)){
+	if ( (isolation < 500) && (Data[4] <= 5) ){
 		PDU_disable_shutdown_circuit();
 		IMD_High_Uncertainty = 0;
 	}
@@ -275,7 +298,7 @@ void Check_Isolation_State(uint8_t Data[]){
 
 // Not sure if we necessarily need to check isolation resistances
 // check isolation state will be much more important
-void Check_Isolation_Resistances(uint8_t Data[]){
+void IMD_Check_Isolation_Resistances(uint8_t Data[]){
 
 	// This won't necessarily be useful
 	// We need to know the voltages to determine if a fault has occurred
@@ -283,41 +306,41 @@ void Check_Isolation_Resistances(uint8_t Data[]){
 }
 
 
-void Check_Isolation_Capacitances(uint8_t Data[]){
+void IMD_Check_Isolation_Capacitances(uint8_t Data[]){
 
 	// I don't know how useful this will be
 
 }
 
 
-void Check_Voltages_Vp_and_Vn(uint8_t Data[]){
+void IMD_Check_Voltages_Vp_and_Vn(uint8_t Data[]){
 
 	// This could potentially be useful
 
 }
 
 
-void Check_Battery_Voltage(uint8_t Data[]){
+void IMD_Check_Battery_Voltage(uint8_t Data[]){
 
 	// This could be useful to compare with BMS and make sure things are working well
 
 }
 
-void Check_Temperature(uint8_t Data[]){
+void IMD_Check_Temperature(uint8_t Data[]){
 	// TODO
 }
 
 // -----------------------------------------------------------------------------------
 // These functions could check to see if stuff is safe to touch
 
-void Check_Safety_Touch_Energy(uint8_t Data[]){
+void IMD_Check_Safety_Touch_Energy(uint8_t Data[]){
 
 	// I don't really know how to make use of these functions
 
 }
 
 
-void Check_Safety_Touch_Current(uint8_t Data[]){
+void IMD_Check_Safety_Touch_Current(uint8_t Data[]){
 	// TODO
 }
 
@@ -329,8 +352,8 @@ void Check_Safety_Touch_Current(uint8_t Data[]){
 // ----------------------------------------------------------------------------
 // Data that could be checked on startup to make sure everything is good
 
-void Check_Max_Battery_Working_Voltage(uint8_t Data[]){
-	int Max_Battery_Voltage = (Data[1] << 8) | Data[2];
+void IMD_Check_Max_Battery_Working_Voltage(uint8_t Data[]){
+	uint16_t Max_Battery_Voltage = (Data[1] << 8) | Data[2];
 
 	if (Max_Battery_Voltage != 571){
 		// Max_Battery_Voltage not configured properly
@@ -338,58 +361,127 @@ void Check_Max_Battery_Working_Voltage(uint8_t Data[]){
 
 }
 
-void Check_Part_Name(uint8_t Data[]){
-	// TODO
-	int Part_Name[4];
 
-	uint8_t Part_Name_0_Set = 0;
-	uint8_t Part_Name_1_Set = 0;
-	uint8_t Part_Name_2_Set = 0;
-	uint8_t Part_Name_3_Set = 0;
+// This function checks the part name of the IMD matches expected
+// The part name is split into 4 messages, each of 4 bytes
+// Because it is split over 4 messages, we need to compare only once we have read all messages
+void IMD_Check_Part_Name(uint8_t Data[]){
+	// TODO
+
+	// This function will be called from the CAN msg parser
+	// It will get the array of data bits. We need to check which part name
+	// We then store the 4 bytes in an array of 32 bit int to compare at the end
 
 	switch (Data[0]){
 		case Part_name_0:
-			Part_Name[0] = (Data[4] << 24) | (Data[3] << 16) | (Data[2] << 8) | Data[1];
-			Part_Name_0_Set = 1;
+			IMD_Read_Part_Name[0] = (Data[4] << 24) | (Data[3] << 16) | (Data[2] << 8) | Data[1];
+			IMD_Part_Name_0_Set = 1;
 		break;
 		case Part_name_1:
-			Part_Name[1] = (Data[4] << 24) | (Data[3] << 16) | (Data[2] << 8) | Data[1];
-			Part_Name_1_Set = 1;
+			IMD_Read_Part_Name[1] = (Data[4] << 24) | (Data[3] << 16) | (Data[2] << 8) | Data[1];
+			IMD_Part_Name_1_Set = 1;
 		break;
 		case Part_name_2:
-			Part_Name[2] = (Data[4] << 24) | (Data[3] << 16) | (Data[2] << 8) | Data[1];
-			Part_Name_2_Set = 1;
+			IMD_Read_Part_Name[2] = (Data[4] << 24) | (Data[3] << 16) | (Data[2] << 8) | Data[1];
+			IMD_Part_Name_2_Set = 1;
 		break;
 		case Part_name_3:
-			Part_Name[3] = (Data[4] << 24) | (Data[3] << 16) | (Data[2] << 8) | Data[1];
-			Part_Name_3_Set = 1;
+			IMD_Read_Part_Name[3] = (Data[4] << 24) | (Data[3] << 16) | (Data[2] << 8) | Data[1];
+			IMD_Part_Name_3_Set = 1;
 		break;
 	}
 
-	if (Part_Name_0_Set && Part_Name_1_Set && Part_Name_2_Set && Part_Name_3_Set){
+	if (IMD_Part_Name_0_Set && IMD_Part_Name_1_Set && IMD_Part_Name_2_Set && IMD_Part_Name_3_Set){
 		IMD_Part_Name_Set = 1;
 	}
 
 	if (IMD_Part_Name_Set){
 		// Check part number matches expected
+		if (IMD_Read_Part_Name[0] != IMD_Expected_Part_Name[0]){
+			//error
+		}
+		if (IMD_Read_Part_Name[1] != IMD_Expected_Part_Name[1]){
+			//error
+		}
+		if (IMD_Read_Part_Name[2] != IMD_Expected_Part_Name[2]){
+			//error
+		}
+		if (IMD_Read_Part_Name[3] != IMD_Expected_Part_Name[3]){
+			//error
+		}
+
+
 	}
 
 
 }
 
-void Check_Version(uint8_t Data[]){
+void IMD_Check_Version(uint8_t Data[]){
 	// TODO
 }
 
-void Check_Serial_Number(uint8_t Data[]){
+// This function checks the serial number of the IMD matches expected
+// The part name is split into 4 messages, each of 4 bytes
+// Because it is split over 4 messages, we need to compare only once we have read all messages
+void IMD_Check_Serial_Number(uint8_t Data[]){
+
+	// This function will be called from the CAN msg parser
+	// It will get the array of data bits. We need to check which serial number
+	// We then store the 4 bytes in an array of 32 bit int to compare at the end
+	// The serial number is found by concatenating 3 - 2 - 1 -0
+
+	switch (Data[0]){
+		case Serial_number_0:
+			IMD_Read_Serial_Number[0] = (Data[1] << 24) | (Data[2] << 16) | (Data[3] << 8) | Data[4];
+			IMD_Serial_Number_0_Set = 1;
+		break;
+		case Serial_number_1:
+			IMD_Read_Serial_Number[1] = (Data[1] << 24) | (Data[2] << 16) | (Data[3] << 8) | Data[4];
+			IMD_Serial_Number_1_Set = 1;
+		break;
+		case Serial_number_2:
+			IMD_Read_Serial_Number[2] = (Data[1] << 24) | (Data[2] << 16) | (Data[3] << 8) | Data[4];
+			IMD_Serial_Number_2_Set = 1;
+		break;
+		case Serial_number_3:
+			IMD_Read_Serial_Number[3] = (Data[1] << 24) | (Data[2] << 16) | (Data[3] << 8) | Data[4];
+			IMD_Serial_Number_3_Set = 1;
+		break;
+	}
+
+	if (IMD_Serial_Number_0_Set && IMD_Serial_Number_1_Set && IMD_Serial_Number_2_Set && IMD_Serial_Number_3_Set){
+		IMD_Serial_Number_Set = 1;
+	}
+
+	if (IMD_Serial_Number_Set){
+		// Check serial number matches expected
+		for (int i = 0; i < 4; ++i){
+			if (IMD_Read_Serial_Number[i] != IMD_Expected_Serial_Number[i]){
+				//error
+			}
+		}
+	}
+
+}
+
+void IMD_Check_Uptime(uint8_t Data[]){
 	// TODO
 }
 
-void Check_Uptime(uint8_t Data[]){
+void IMD_Startup(){
 	// TODO
+	// Run check for serial number, max voltage, and such
+
+	// The first check is the serial number
+
+	IMD_Request_Status(Serial_number_0);
+	IMD_Request_Status(Serial_number_1);
+	IMD_Request_Status(Serial_number_2);
+	IMD_Request_Status(Serial_number_3);
+
+	// Can check further things
+
 }
-
-
 
 
 
