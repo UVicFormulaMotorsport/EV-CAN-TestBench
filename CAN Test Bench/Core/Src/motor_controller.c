@@ -14,7 +14,7 @@
 #include "pdu.h"
 
 
-void MC_Parse_Message(int DLC, int Data[]){
+void MC_Parse_Message(int DLC, uint8_t Data[]){
 	// The first step is to look at the first byte to figure out what we're looking at
 	// TODO Need to make sure that Data[0] really is the first byte
 	switch (Data[0]){
@@ -53,7 +53,7 @@ void MC_Request_Data(int RegID){
 
 
 // We can either send 2 or 4 bytes of data
-void MC_Send_Data(int RegID, int data, int size){
+void MC_Send_Data(int RegID, uint8_t data, int size){
 
 	TxHeader.StdId = MC_CAN_ID_Tx;
 	TxHeader.DLC = size;
