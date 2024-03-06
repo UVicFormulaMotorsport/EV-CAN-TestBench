@@ -1,11 +1,12 @@
 // This where the code to handle BMS errors and such will go
 
-#include "main.c"
+#include "main.h"
 #include "bms.h"
 #include "constants.h"
 #include "pdu.h"
 #include "can.h"
 #include "tim.h"
+#include "dash.h"
 
 //BMS State Vars
 uint8_t BMS_discrete_inputs_1;
@@ -30,7 +31,7 @@ uint16_t BMS_battery_voltage;
 void BMS_Parse_Message1(int DLC, uint8_t Data[]){
 	//step 1: translate message into useful data
 	BMS_discrete_inputs_1 = BMS_MSG1_DISCRETE_INPUTS_1(Data);
-	BMS_Battery_current = BMS_MSG1_BATTERY_CURRENT(Data);
+	BMS_battery_current = BMS_MSG1_BATTERY_CURRENT(Data);
 	min_battery_temp = BMS_MSG1_MIN_BATTERY_TEMP(Data);
 	max_battery_temp = BMS_MSG1_MAX_BATTERY_TEMP(Data);
 	battery_SOC = BMS_MSG1_SOC(Data);
@@ -43,13 +44,16 @@ void BMS_Parse_Message1(int DLC, uint8_t Data[]){
 
 	}
 
-	if(min_battery_temp < 0){ //to cold to start
+	if(min_battery_temp < 0){ //too cold to start
 
 	}
 
 	if(max_battery_temp > 60){ //too hot
 
 	}
+
+	Update_Batt_Temp(max_battery_temp);
+	Update_State_Of_Charge(battery_SOC);
 
 //	if(battery_SOC > 95){
 //		//disable regen
@@ -76,8 +80,8 @@ void BMS_Parse_Message2(int DLC, uint8_t Data[]){
 }
 
 void BMS_Parse_Message3(int DLC, uint8_t Data[]){
-	BMS_errors_2 = BMS_MSG3_ERRORS_REGISTER_2(msg);
-	BMS_discrete_inputs_2 = BMS_MSG3_DISCRETE_INPUTS_2(msg);
+	BMS_errors_2 = BMS_MSG3_ERRORS_REGISTER_2(Data);
+	BMS_discrete_inputs_2 = BMS_MSG3_DISCRETE_INPUTS_2(Data);
 
 	if(BMS_errors_2 & BMS_ERRORS2_VEHICLE_SHTDWN_mask){//ruh roh scoobs, time to shut down the car
 

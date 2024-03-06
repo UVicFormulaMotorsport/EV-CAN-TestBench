@@ -24,10 +24,22 @@ void reset_BMS_WDT();
  *
  * By macro, it works kinda like a function
  */
+//useful defines for various programs to use
+#define MAX_ACCUMULATOR_TEMP 60
+#define MIN_ACCUMULATOR_TEMP 0
+#define MAX_BATTERY_VOLTAGE 4998 //the BMS multiplies voltage by 10 to send this, 499.8V in reality
+#define MIN_BATTERY_VOLTAGE 3570
+
+
+#define BMS_HEARTBEAT_ID 0x80
+#define BMS_CAN_ID_1 (0x180 + 0x20)
+#define BMS_CAN_ID_2 (0x280 + 0x20)
+#define BMS_CAN_ID_3 (0x380 + 0x20)
+
 
 #define BMS_ERRORS1_OVERCURRENT_index 0
 #define BMS_ERRORS1_OVERCURRENT_mask (uint32_t)(0x01U << BMS_ERRORS1_OVERCURRENT_index)
-#define BMS_ERRORS1_OVERCURRENT BMS_ERRORS1_OVERCURRENT_mask
+#define BMS_ERRORS1_OVERCURRENT (BMS_errors_1 & BMS_ERRORS1_OVERCURRENT_mask)
 
 #define BMS_ERRORS1_UNDERVOLTAGE_index 1
 #define BMS_ERRORS1_UNDERVOLTAGE_mask (uint32_t)(0x01U << BMS_ERRORS1_UNDERVOLTAGE_index)

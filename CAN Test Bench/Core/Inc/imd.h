@@ -105,29 +105,29 @@ enum imd_high_resolution_measurements{
 // Function declarations
 
 // This will parse the data received from CAN message
-void IMD_Parse_Message(int DLC, int Data[]);
+void IMD_Parse_Message(int DLC, uint8_t Data[]);
 
 
 // Functions to check states are okay
-void Check_Status_Bits(int Data);
-void Check_Error_Flags(int Data[]);
+void Check_Status_Bits(uint8_t Data);
+void Check_Error_Flags(uint8_t Data[]);
 
 // Functions to check values are okay
-void Check_Isolation_State(int Data[]);
-void Check_Isolation_Resistances(int Data[]);
-void Check_Isolation_Capacitances(int Data[]);
-void Check_Voltages_Vp_and_Vn(int Data[]);
-void Check_Battery_Voltage(int Data[]);
-void Check_Safety_Touch_Energy(int Data[]);
-void Check_Safety_Touch_Current(int Data[]);
-void Check_Temperature(int Data[]);
+void Check_Isolation_State(uint8_t Data[]);
+void Check_Isolation_Resistances(uint8_t Data[]);
+void Check_Isolation_Capacitances(uint8_t Data[]);
+void Check_Voltages_Vp_and_Vn(uint8_t Data[]);
+void Check_Battery_Voltage(uint8_t Data[]);
+void Check_Safety_Touch_Energy(uint8_t Data[]);
+void Check_Safety_Touch_Current(uint8_t Data[]);
+void Check_Temperature(uint8_t Data[]);
 
 // Functions to check on startup
-void Check_Max_Battery_Working_Voltage(int Data[]);
-void Check_Part_Name(int Data[]);
-void Check_Version(int Data[]);
-void Check_Serial_Number(int Data[]);
-void Check_Uptime(int Data[]);
+void Check_Max_Battery_Working_Voltage(uint8_t Data[]);
+void Check_Part_Name(uint8_t Data[]);
+void Check_Version(uint8_t Data[]);
+void Check_Serial_Number(uint8_t Data[]);
+void Check_Uptime(uint8_t Data[]);
 
 // High resolution measurements
 

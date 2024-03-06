@@ -7,6 +7,8 @@
 
 #include "main.h"
 
+#ifndef __DASH_H__
+#define __DASH_H__
 
 // CAN IDs correspond to specific values on the dash
 enum dash_can_ids{
@@ -32,5 +34,5 @@ void Update_RPM(int16_t value);
 void Update_Batt_Temp(uint8_t value);
 void Update_State_Of_Charge(uint8_t value);
 
-
+#endif
 

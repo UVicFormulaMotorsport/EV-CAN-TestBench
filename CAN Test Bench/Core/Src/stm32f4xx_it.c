@@ -58,7 +58,7 @@
 extern DMA_HandleTypeDef hdma_adc1;
 extern DMA_HandleTypeDef hdma_adc2;
 extern CAN_HandleTypeDef hcan2;
-extern TIM_HandleTypeDef htim12;
+extern TIM_HandleTypeDef htim6;
 extern TIM_HandleTypeDef htim13;
 extern TIM_HandleTypeDef htim14;
 /* USER CODE BEGIN EV */
@@ -218,20 +218,6 @@ void EXTI0_IRQHandler(void)
 }
 
 /**
-  * @brief This function handles TIM8 break interrupt and TIM12 global interrupt.
-  */
-void TIM8_BRK_TIM12_IRQHandler(void)
-{
-  /* USER CODE BEGIN TIM8_BRK_TIM12_IRQn 0 */
-
-  /* USER CODE END TIM8_BRK_TIM12_IRQn 0 */
-  HAL_TIM_IRQHandler(&htim12);
-  /* USER CODE BEGIN TIM8_BRK_TIM12_IRQn 1 */
-
-  /* USER CODE END TIM8_BRK_TIM12_IRQn 1 */
-}
-
-/**
   * @brief This function handles TIM8 update interrupt and TIM13 global interrupt.
   */
 void TIM8_UP_TIM13_IRQHandler(void)
@@ -257,6 +243,21 @@ void TIM8_TRG_COM_TIM14_IRQHandler(void)
   /* USER CODE BEGIN TIM8_TRG_COM_TIM14_IRQn 1 */
 
   /* USER CODE END TIM8_TRG_COM_TIM14_IRQn 1 */
+}
+
+/**
+  * @brief This function handles TIM6 global interrupt, DAC1 and DAC2 underrun error interrupts.
+  */
+void TIM6_DAC_IRQHandler(void)
+{
+  /* USER CODE BEGIN TIM6_DAC_IRQn 0 */
+	//Congrats the BMS timed out. Fuck.
+	//TODO: move to a better handling system
+  /* USER CODE END TIM6_DAC_IRQn 0 */
+  HAL_TIM_IRQHandler(&htim6);
+  /* USER CODE BEGIN TIM6_DAC_IRQn 1 */
+
+  /* USER CODE END TIM6_DAC_IRQn 1 */
 }
 
 /**
