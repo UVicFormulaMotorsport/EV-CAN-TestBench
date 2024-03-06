@@ -144,7 +144,7 @@ void IMD_Parse_Message(int DLC, uint8_t Data[]){
 // This sends the message to request data. The specific status requested is passed as arg
 // The IMD will then send a message with the same code and the data
 // --------------------------------------------------------------------------------------
-void IMD_Request_Status(int Status){
+void IMD_Request_Status(uint8_t Status){
 	TxHeader.IDE = CAN_ID_EXT;
 	TxHeader.ExtId = IMD_CAN_ID_Tx;
 	TxHeader.DLC = 1;
@@ -181,7 +181,7 @@ void Check_Status_Bits(uint8_t Data){
 	// The touch energy bit will be 1 when connected to batteries
 	// High uncertainty isn't also something we really care about
 	// No idea about excitation pulse
-	uint8_t mask = 0b100011111;
+	uint16_t mask = 0b100011111;
 
 	if ((Data & mask) != 0){
 		PDU_disable_shutdown_circuit();

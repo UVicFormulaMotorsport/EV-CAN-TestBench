@@ -5,6 +5,8 @@
 
 #include "main.h"
 
+#ifndef __MOTOR_CONTROLLER_H__
+#define __MOTOR_CONTROLLER_H__
 
 // Need to add enums for human readable register addresses and such
 
@@ -50,9 +52,9 @@ enum motor_controller_repeating_time{
 
 
 // Function Declarations
-void MC_Parse_Message(int DLC, int Data[]);
+void MC_Parse_Message(int DLC, uint8_t Data[]);
 void MC_Request_Data(int RegID);
-void MC_Send_Data(int RegID, int data, int size);
+void MC_Send_Data(int RegID, uint8_t data, int size);
 
 
 
@@ -60,4 +62,4 @@ void MC_Send_Data(int RegID, int data, int size);
 
 
 
-
+#endif

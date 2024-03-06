@@ -4,6 +4,8 @@
 
 #include "main.h"
 
+#ifndef __IMD_H__
+#define __IMD_H__
 
 // CAN ID is currently extended
 
@@ -133,10 +135,10 @@ void Check_Uptime(uint8_t Data[]);
 
 
 // Function to request data from the IMD
-void IMD_Request_Status(int Status);
+void IMD_Request_Status(uint8_t Status);
 
 
 
 
 
-
+#endif
