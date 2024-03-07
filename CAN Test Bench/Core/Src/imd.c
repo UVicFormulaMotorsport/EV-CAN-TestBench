@@ -30,7 +30,14 @@ uint8_t IMD_Part_Name_2_Set = 0;
 uint8_t IMD_Part_Name_3_Set = 0;
 uint8_t IMD_Part_Name_Set = 0;
 
-const char IMD_Expected_Version[] = "TODO";
+
+uint32_t IMD_Read_Version[3];
+const uint32_t IMD_Expected_Version[3];
+
+uint8_t IMD_Version_0_Set = 0;
+uint8_t IMD_Version_1_Set = 0;
+uint8_t IMD_Version_2_Set = 0;
+uint8_t IMD_Version_Set = 0;
 
 
 // Declarations for the IMD serial number to be checked on startup
@@ -46,6 +53,7 @@ uint8_t IMD_Serial_Number_3_Set = 0;
 uint8_t IMD_Serial_Number_Set = 0;
 
 
+int32_t IMD_Temperature;
 
 
 // If there is a hardware error, that one bit will be a 1 in the status bits -> read error flags
@@ -53,10 +61,12 @@ uint8_t IMD_Serial_Number_Set = 0;
 uint8_t IMD_error_flags_requested = 0;
 
 
+
+
 // Need a function to parse the CAN message data received from the IMD
 void IMD_Parse_Message(int DLC, uint8_t Data[]){
 	// The first step is to look at the first byte to figure out what we're looking at
-	// TODO Need to make sure that Data[0] really is the first byte
+
 	switch (Data[0]){
 		// important checks
 		case isolation_state:
@@ -121,7 +131,7 @@ void IMD_Parse_Message(int DLC, uint8_t Data[]){
 		break;
 
 		case Temperature:
-			IMD_Check_temperature(Data);
+			IMD_Check_Temperature(Data);
 		break;
 
 		case Max_battery_working_voltage:
@@ -203,7 +213,7 @@ void IMD_Check_Status_Bits(uint8_t Data){
 	// The touch energy bit will be 1 when connected to batteries
 	// High uncertainty isn't also something we really care about
 	// No idea about excitation pulse
-	uint16_t mask = 0b100011111;
+	uint8_t mask = 0b10001111;
 
 	if ((Data & mask) != 0){
 		// Send message to error handler to shutdown car
@@ -238,12 +248,7 @@ void IMD_Check_Status_Bits(uint8_t Data){
 	}
 	// Could check other faults we don't really care about
 
-	if (Data & High_Uncertainty){
-		IMD_High_Uncertainty = 1;
-	}
-	if (!(Data & High_Uncertainty)){
-		IMD_High_Uncertainty = 0;
-	}
+	IMD_High_Uncertainty = Data & High_Uncertainty;
 	// If we made it here then there is no error so exit to check rest of message
 }
 
@@ -289,8 +294,10 @@ void IMD_Check_Isolation_State(uint8_t Data[]){
 
 	uint16_t isolation = (Data[2] << 8) | Data[3];
 
+	// If the isolation is less than 500 Ohms / volt and the uncertainty is less than 5%
 	if ( (isolation < 500) && (Data[4] <= 5) ){
-		PDU_disable_shutdown_circuit();
+
+		// TODO disable shutdown circuit and display error
 		IMD_High_Uncertainty = 0;
 	}
 
@@ -298,11 +305,29 @@ void IMD_Check_Isolation_State(uint8_t Data[]){
 
 // Not sure if we necessarily need to check isolation resistances
 // check isolation state will be much more important
+// We should, however, check this on startup
 void IMD_Check_Isolation_Resistances(uint8_t Data[]){
 
-	// This won't necessarily be useful
-	// We need to know the voltages to determine if a fault has occurred
+	uint16_t Rp_resistance = (Data[2] << 8) | Data[3];
 
+	// If the isolation resistance between the positive terminal and the chassis
+	// is less than 250 kOhms and the uncertainty is less than 5%
+	if ( (Rp_resistance < 250) && (Data[4] <= 5) ){
+
+		// TODO disable shutdown circuit and display error
+		IMD_High_Uncertainty = 0;
+	}
+
+
+	uint16_t Rn_resistance = (Data[5] << 8) | Data[6];
+
+	// If the isolation resistance between the negative terminal and the chassis
+	// is less than 250 kOhms and the uncertainty is less than 5%
+	if ( (Rn_resistance < 250) && (Data[7] <= 5) ){
+
+		// TODO disable shutdown circuit and display error
+		IMD_High_Uncertainty = 0;
+	}
 }
 
 
@@ -315,7 +340,7 @@ void IMD_Check_Isolation_Capacitances(uint8_t Data[]){
 
 void IMD_Check_Voltages_Vp_and_Vn(uint8_t Data[]){
 
-	// This could potentially be useful
+	// This could potentially be useful on startup
 
 }
 
@@ -323,11 +348,16 @@ void IMD_Check_Voltages_Vp_and_Vn(uint8_t Data[]){
 void IMD_Check_Battery_Voltage(uint8_t Data[]){
 
 	// This could be useful to compare with BMS and make sure things are working well
+	// startup function really
 
 }
 
 void IMD_Check_Temperature(uint8_t Data[]){
 	// TODO
+
+	// byte 1-4 in motorola
+	IMD_Temperature = (Data[4] << 24) | (Data[3] << 16) | (Data[2] << 8) | Data[1];
+
 }
 
 // -----------------------------------------------------------------------------------
@@ -397,27 +427,51 @@ void IMD_Check_Part_Name(uint8_t Data[]){
 
 	if (IMD_Part_Name_Set){
 		// Check part number matches expected
-		if (IMD_Read_Part_Name[0] != IMD_Expected_Part_Name[0]){
-			//error
+		for (int i = 0; i < 4; ++i){
+			if (IMD_Read_Part_Name[0] != IMD_Expected_Part_Name[0]){
+				//error
+			}
 		}
-		if (IMD_Read_Part_Name[1] != IMD_Expected_Part_Name[1]){
-			//error
-		}
-		if (IMD_Read_Part_Name[2] != IMD_Expected_Part_Name[2]){
-			//error
-		}
-		if (IMD_Read_Part_Name[3] != IMD_Expected_Part_Name[3]){
-			//error
-		}
-
 
 	}
-
 
 }
 
 void IMD_Check_Version(uint8_t Data[]){
 	// TODO
+
+	// This function will be called from the CAN msg parser
+	// It will get the array of data bits. We need to check which firmware version
+	// We then store the 4 bytes in an array of 32 bit int to compare at the end
+
+	switch (Data[0]){
+		case Version_0:
+			IMD_Read_Version[0] = (Data[3] << 16) | (Data[2] << 8) | Data[1];
+			IMD_Version_0_Set = 1;
+		break;
+		case Version_1:
+			IMD_Read_Version[1] = (Data[3] << 16) | (Data[2] << 8) | Data[1];
+			IMD_Version_1_Set = 1;
+		break;
+		case Version_2:
+			IMD_Read_Version[2] = (Data[3] << 16) | (Data[2] << 8) | Data[1];
+			IMD_Version_2_Set = 1;
+		break;
+	}
+
+	if (IMD_Version_0_Set && IMD_Version_1_Set && IMD_Version_2_Set){
+		IMD_Version_Set = 1;
+	}
+
+	if (IMD_Version_Set){
+		// Check part number matches expected
+		for (int i = 0; i < 3; ++i){
+			if (IMD_Read_Version[0] != IMD_Expected_Version[0]){
+				//error
+			}
+		}
+
+	}
 }
 
 // This function checks the serial number of the IMD matches expected
@@ -479,6 +533,17 @@ void IMD_Startup(){
 	IMD_Request_Status(Serial_number_2);
 	IMD_Request_Status(Serial_number_3);
 
+	IMD_Request_Status(Version_0);
+	IMD_Request_Status(Version_1);
+	IMD_Request_Status(Version_2);
+
+	IMD_Request_Status(Part_name_0);
+	IMD_Request_Status(Part_name_1);
+	IMD_Request_Status(Part_name_2);
+	IMD_Request_Status(Part_name_3);
+
+	IMD_Request_Status(Max_battery_working_voltage);
+	IMD_Request_Status(isolation_state);
 	// Can check further things
 
 }
