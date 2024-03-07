@@ -6,3 +6,8 @@
  */
 
 
+void Check_Devices(){
+	IMD_Startup();
+	// TODO
+}
+

@@ -10,4 +10,9 @@
 
 
 
+
+
+void Check_Devices();
+
+
 #endif /* INC_STARTUP_H_ */
