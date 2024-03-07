@@ -111,25 +111,25 @@ void IMD_Parse_Message(int DLC, uint8_t Data[]);
 
 
 // Functions to check states are okay
-void Check_Status_Bits(uint8_t Data);
-void Check_Error_Flags(uint8_t Data[]);
+void IMD_Check_Status_Bits(uint8_t Data);
+void IMD_Check_Error_Flags(uint8_t Data[]);
 
 // Functions to check values are okay
-void Check_Isolation_State(uint8_t Data[]);
-void Check_Isolation_Resistances(uint8_t Data[]);
-void Check_Isolation_Capacitances(uint8_t Data[]);
-void Check_Voltages_Vp_and_Vn(uint8_t Data[]);
-void Check_Battery_Voltage(uint8_t Data[]);
-void Check_Safety_Touch_Energy(uint8_t Data[]);
-void Check_Safety_Touch_Current(uint8_t Data[]);
-void Check_Temperature(uint8_t Data[]);
+void IMD_Check_Isolation_State(uint8_t Data[]);
+void IMD_Check_Isolation_Resistances(uint8_t Data[]);
+void IMD_Check_Isolation_Capacitances(uint8_t Data[]);
+void IMD_Check_Voltages_Vp_and_Vn(uint8_t Data[]);
+void IMD_Check_Battery_Voltage(uint8_t Data[]);
+void IMD_Check_Safety_Touch_Energy(uint8_t Data[]);
+void IMD_Check_Safety_Touch_Current(uint8_t Data[]);
+void IMD_Check_Temperature(uint8_t Data[]);
 
 // Functions to check on startup
-void Check_Max_Battery_Working_Voltage(uint8_t Data[]);
-void Check_Part_Name(uint8_t Data[]);
-void Check_Version(uint8_t Data[]);
-void Check_Serial_Number(uint8_t Data[]);
-void Check_Uptime(uint8_t Data[]);
+void IMD_Check_Max_Battery_Working_Voltage(uint8_t Data[]);
+void IMD_Check_Part_Name(uint8_t Data[]);
+void IMD_Check_Version(uint8_t Data[]);
+void IMD_Check_Serial_Number(uint8_t Data[]);
+void IMD_Check_Uptime(uint8_t Data[]);
 
 // High resolution measurements
 
@@ -137,7 +137,8 @@ void Check_Uptime(uint8_t Data[]);
 // Function to request data from the IMD
 void IMD_Request_Status(uint8_t Status);
 
-
+// called on startup
+void IMD_Startup();
 
 
 
