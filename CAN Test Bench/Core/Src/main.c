@@ -66,8 +66,10 @@ volatile uint32_t adc_buf2[ADC_BUF_LEN]; // ADC2
 uint16_t adc2_1;
 uint16_t adc2_2;
 
-int adc_conv_complete_flag = 0;
+//int adc_conv_complete_flag = 0;
 int ready_to_drive = 0;
+int outofrange = 0;
+int hardbreak = 0;
 
 /* USER CODE END PV */
 
@@ -119,7 +121,7 @@ int main(void)
   MX_TIM14_Init();
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
-    HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC_BUF_LEN);
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC_BUF_LEN);
 
   /* USER CODE END 2 */
 
@@ -146,18 +148,11 @@ int main(void)
 	  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_13);
 
 
-
-
-
-	  // when adc_conv_complete_flag is set to 1,
-	  // that means DMA conversion is completed
-
 	  // into string and store in dma_result_buffer character array
 	  Update_RPM(adc1_1);
 	  HAL_Delay(1000);
 	  Update_RPM(adc1_2);
 	  HAL_Delay(1000);
-	  adc_conv_complete_flag = 0;
 
 
 
@@ -228,6 +223,11 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
   // Could toggle an LED here
 	adc1_1 = adc_buf1[0];
 	adc1_2 = adc_buf1[1];
+	if(adc1_1 > 3000){
+		hardbreak = 1;
+	}else{
+		hardbreak = 0;
+	}
 }
 
 // EXTI gpio pin a0 External Interrupt ISR Handler
@@ -238,6 +238,16 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     	ready_to_drive = 1;
     }
 }
+
+// Analog Watchdog Out-of-Range handler
+void HAL_ADC_LevelOutOfWindowCallback(ADC_HandleTypeDef* hadc){
+	HAL_GPIO_WritePin(Red_LED_GPIO_Port,Red_LED_Pin, GPIO_PIN_SET);
+	HAL_ADC_Stop_DMA(&hadc1);
+	adc1_1 = 0;
+	adc1_2 = 0;
+}
+
+
 /* USER CODE END 4 */
 
 /**
