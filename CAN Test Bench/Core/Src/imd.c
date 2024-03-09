@@ -258,6 +258,8 @@ void IMD_Check_Error_Flags(uint8_t Data[]){
 	// Want to display message to dash for safety reasons
 	uint16_t IMD_Error_Flags = (Data[1] << 8) | Data[2];
 
+	// We want to shutdown if any of these are true
+
 	if (IMD_Error_Flags & Err_Vx1){
 		// print to dash I guess
 	}
