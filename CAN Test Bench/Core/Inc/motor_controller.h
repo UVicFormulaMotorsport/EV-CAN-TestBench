@@ -16,7 +16,6 @@ enum motor_controller_speed_parameters{
 	N_cmd = 0x32, // command speed after ramp
 	N_error = 0x33, // speed error
 	N_lim = 0x34, // speed limit
-	accel = 0x35, // speed/torque accel ramp
 };
 
 enum motor_controller_current_parameters{
@@ -24,12 +23,18 @@ enum motor_controller_current_parameters{
 };
 
 enum motor_controller_temperatures{
-	todo = 69,
+	igbt_temperature = 0x4A,
 
 };
 
-enum motor_controller_errors{
-	todo69 = 69,
+enum motor_controller_measurements{
+
+};
+
+
+enum motor_controller_status_information_errors_warnings{
+	status_information_errors = 0x8F, // low byte, warnings are high byte
+	//Eprom_read_error = bit 0 - not usre of endianness
 };
 
 enum motor_controller_warnings{
@@ -40,6 +45,21 @@ enum motor_controller_io{
 	todo6969 = 6969,
 };
 
+enum motor_controller_PI_values{
+	// There are two different ramps, one for speed and moment,
+	// Each one corresponds to a high or low byte
+	accelerate_ramp = 0x35,
+	dismantling_ramp = 0xED,
+	recuperation_ramp = 0xC7,
+	proportional_gain = 0x1C,
+	integral_time_constant = 0x1D,
+	integral_memory_max = 0x2B,
+	proportional_gain_2 = 0xC9, // This is for when the current is more than max setpoint
+	current_feed_forward = 0xCB,
+	ramp_set_current = 0x25,
+
+};
+
 // The motor controller can send data repeatedly if so desired
 enum motor_controller_repeating_time{
 	none = 0,
@@ -47,7 +67,9 @@ enum motor_controller_repeating_time{
 };
 
 
-
+enum motor_controller_startup{
+	clear_errors = 0x8E //
+};
 
 
 

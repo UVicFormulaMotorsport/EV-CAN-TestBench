@@ -68,9 +68,9 @@ void MC_Send_Data(int RegID, uint8_t data, int size){
 
 
 
-
-
-// Need to worry about control algorithms in a bit
+void MC_Startup(){
+	// MC_Send_Data(...)
+}
 
 
 
