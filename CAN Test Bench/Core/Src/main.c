@@ -69,6 +69,9 @@ uint16_t adc2_2;
 int adc_conv_complete_flag = 0;
 int ready_to_drive = 0;
 
+uint8_t vehicle_state_changed = 0;
+enum vehicle_state_t vehicle_state = init;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -79,7 +82,9 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+void Set_Vehicle_State(enum vehicle_state_t newstate){
+	//used to set vehicle state
+}
 /* USER CODE END 0 */
 
 /**
@@ -167,6 +172,26 @@ int main(void)
 	  // Something like every second we check temperatures of things
 	  // Checking ADC inputs could be in the loop
 	  // Checking status of devices could be in an ISR for a timer
+
+	  switch(vehicle_state){
+	  case init:
+
+
+	  break;
+	  case ready:
+
+		 break;
+	  case suspended:
+
+		  break;
+	  case error:
+
+		  break;
+	  default:
+
+		  break;
+
+	  }
 
 
     /* USER CODE END WHILE */

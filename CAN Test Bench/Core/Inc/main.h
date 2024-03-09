@@ -36,6 +36,12 @@ extern "C" {
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
+enum vehicle_state_t{
+	init,
+	ready,
+	suspended,
+	error
+};
 
 /* USER CODE END ET */
 
@@ -53,7 +59,7 @@ extern "C" {
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+void Set_Vehicle_State(enum vehicle_state_t new_state);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

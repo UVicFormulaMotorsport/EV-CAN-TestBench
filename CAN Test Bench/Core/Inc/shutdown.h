@@ -9,8 +9,8 @@
 #define INC_SHUTDOWN_H_
 
 
-void Trigger_Shutdown_Circuit();
-void Disable_Motor_Controller();
+void _Shutdown();
+void _Suspend();
 
 
 
