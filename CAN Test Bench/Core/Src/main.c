@@ -182,6 +182,9 @@ int main(void)
 	  case error:
 
 		  break;
+	  case limp:
+
+		  break;
 	  default:
 
 		  break;

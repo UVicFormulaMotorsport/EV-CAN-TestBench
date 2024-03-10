@@ -16,5 +16,13 @@ void _Suspend();
 
 
 
+void Trigger_Shutdown_Circuit();
+void Disable_Motor_Controller();
+void Limp_Mode();
+
+
+
+
+
 
 #endif /* INC_SHUTDOWN_H_ */

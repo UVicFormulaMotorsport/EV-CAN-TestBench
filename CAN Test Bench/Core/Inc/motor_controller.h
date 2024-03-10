@@ -15,7 +15,6 @@ enum motor_controller_speed_parameters{
 	N_set = 0x31, // digital speed setpoint
 	N_cmd = 0x32, // command speed after ramp
 	N_error = 0x33, // speed error
-	N_lim = 0x34, // speed limit
 };
 
 enum motor_controller_current_parameters{
@@ -28,7 +27,7 @@ enum motor_controller_temperatures{
 };
 
 enum motor_controller_measurements{
-
+	todo_mains_voltage = 0x696969,
 };
 
 
@@ -66,6 +65,11 @@ enum motor_controller_repeating_time{
 	one_hundred_ms = 0x64,
 };
 
+enum motor_controller_limp_mode{
+	N_lim = 0x34,
+	N_lim_plus = 0x3F,
+	N_lim_minus = 0x3E,
+};
 
 enum motor_controller_startup{
 	clear_errors = 0x8E //
