@@ -7,7 +7,7 @@
 #include "pdu.h"
 
 
-
+// RFE (motor controller digital input) needs to be wired to shutdown circuit
 void Trigger_Shutdown_Circuit(){
 	PDU_disable_shutdown_circuit();
 }
@@ -18,4 +18,7 @@ void Disable_Motor_Controller(){
 }
 
 
-
+void Limp_Mode(){
+	// turn on limp mode for motor controller
+	// set max current output in BMS potentially
+}
