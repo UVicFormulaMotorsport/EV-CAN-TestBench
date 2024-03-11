@@ -21,13 +21,42 @@ enum motor_controller_current_parameters{
 	todo1 = 0x69,
 };
 
-enum motor_controller_temperatures{
-	igbt_temperature = 0x4A,
+enum motor_controller_motor_constants{
+	nominal_motor_frequency = 0x05,
+	nominal_motor_voltage = 0x06,
+	power_factor = 0x0e,
+	motor_max_current = 0x4D,
+	motor_continuous_current = 0x4E,
+	motor_pole_number = 0x4F,
+	motor_kt_constant = 0x87, //low,
+	motor_ke_constant = 0x87, //high, back emf
+	rated_motor_speed = 0x59,
+	motor_temperature_switch_off_point = 0xA3, // not sure if this is best in temp or not
+	stator_leakage_inductance = 0xB1,
+	nominal_magnitizing_current = 0xB2,
+	motor_magnetising_inductance = 0xB3,
+	rotor_resistance = 0xB4,
+	minimum_magnetising_current = 0xB5,
+	time_constant_rotor = 0xB6,
+	leakage_inductance_ph_ph = 0xBB,
+	stator_resistance_ph_ph = 0xBC,
+	time_constant_stator = 0xBD,
 
 };
 
+enum motor_controller_temperatures{
+	igbt_temperature = 0x4A,
+	motor_temperature = 0x49,
+	air_temperature = 0x4B,
+	current_derate_temperature = 0x4C,
+	temp_sensor_pt1 = 0x9C,
+	temp_sensor_pt2 = 0x9D,
+	temp_sensor_pt3 = 0x9E,
+	temp_sensor_pt4 = 0x9F,
+};
+
 enum motor_controller_measurements{
-	todo_mains_voltage = 0x696969,
+	DC_bus_voltage = 0xEB,
 };
 
 
@@ -72,7 +101,8 @@ enum motor_controller_limp_mode{
 };
 
 enum motor_controller_startup{
-	clear_errors = 0x8E //
+	clear_errors = 0x8E,
+	firmware_version = 0x1B,
 };
 
 
