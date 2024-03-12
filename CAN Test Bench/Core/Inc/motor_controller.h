@@ -61,13 +61,44 @@ enum motor_controller_measurements{
 
 
 enum motor_controller_status_information_errors_warnings{
-	status_information_errors = 0x8F, // low byte, warnings are high byte
-	//Eprom_read_error = bit 0 - not usre of endianness
+	motor_controller_errors_warnings = 0x8F, // low bytes, warnings are high bytes
+	// errors - the bit stuff is quite annoying. Look at can message excel sheet
+	eprom_read_error = 1<<8, // This is bit 0
+	hardware_fault = 1<<9, // bit 1
+	rotate_field_enable_not_present_run = 1<<10, // bit 2 // with run active
+	CAN_timeout_error = 1<<11, // bit 3
+	feedback_signal_error = 1<<12, // bit 4
+	mains_voltage_min_limit = 1<<13, // bit 5
+	motor_temp_max_limit = 1<<14, // bit 6
+	IGBT_temp_max_limit = 1<<15, // bit 7
+	mains_voltage_max_limit = 1, // bit 8
+	critical_AC_current = 1<<1, // bit 9
+	race_away_detected = 1<<2, // bit 10
+	ecode_timeout_error = 1<<3, // bit 11
+	watchdog_reset = 1<<4, // bit 12
+	AC_current_offset_fault = 1<<5, // bit 13
+	internal_hardware_voltage_problem = 1<<6, // bit 14
+	bleed_resistor_overload = 1<<7, // bit 15
+	// The high and low bytes will be split up and we'll check errors and warnings separately
+	// warnins - again, see can messages excel sheet / manuals
+	parameter_conflict_detected = 1<<8, // bit 16
+	special_CPU_fault = 1<<9, // bit 17
+	rotate_field_enable_not_present_norun = 1<<10, // bit 18 // without run active
+	auxiliary_voltage_min_limit = 1<<11, // bit 19
+	feedback_signal_problem = 1<<12, // bit 20
+	warning_5 = 1<<13, // bit 21 no idea what this warning is
+	motor_temperature_warning = 1<<14, // bit 22, >87%
+	IGBT_temperature_warning = 1<<15, // bit 23, >87%
+	Vout_saturation_max_limit = 1, // bit 24
+	warning_9 = 1<<1, // bit 25, no idea what this warning is either
+	speed_actual_resolution_limit = 1<<2, // bit 26
+	check_ecode_ID = 1<<3, // bit 27
+	tripzone_glitch_detected = 1<<4, // bit 28
+	ADC_sequencer_problem = 1<<5, // bit 29
+	ADC_measurement_problem = 1<<6, // bit 30
+	bleeder_resistor_warning = 1<<7, // bit 31
 };
 
-enum motor_controller_warnings{
-	todo123 = 123,
-};
 
 enum motor_controller_io{
 	todo6969 = 6969,
@@ -111,7 +142,7 @@ enum motor_controller_startup{
 void MC_Parse_Message(int DLC, uint8_t Data[]);
 void MC_Request_Data(int RegID);
 void MC_Send_Data(int RegID, uint8_t data, int size);
-
+void MC_Check_Error_Warning(uint8_t Data[]);
 
 
 
