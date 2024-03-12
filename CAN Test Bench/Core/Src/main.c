@@ -182,10 +182,10 @@ int main(void)
 	  case error:
 
 		  break;
-	  case limp:
+	  case limp: // aw hell naw, the car gone flacid
 
 		  break;
-	  default:
+	  default://physically how  are you here?
 
 		  break;
 
