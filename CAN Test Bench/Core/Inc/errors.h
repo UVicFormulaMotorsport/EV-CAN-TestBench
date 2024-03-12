@@ -29,7 +29,9 @@
 #define _SHUTDOWN Trigger_Shutdown_Circuit()
 #define _SUSPEND Disable_Motor_Controller()
 
-#define throw_error(x) _throw_error(x)
+
+
+//#define throw_error(x) _throw_error(x)
 //#define throw_error(x,y,type) _throw_error_ ##type(x,( ##type)y);
 
 typedef enum error_id{
@@ -39,6 +41,7 @@ typedef enum error_id{
 	imd_shutdown_cct_tripped,
 	coolant_temp_too_high,
 	coolant_pressure_too_high,
+	peepeepoopoo
 }error_id;
 
 
@@ -47,7 +50,7 @@ typedef struct error_struct{
 	char* msg;
 	uint8_t type_info;
 	void (*err_handler)(); //function pointer to a dedicated error handler
-	uint8_t* resume_condition; //function pointer for some function that decides whether to resume after suspended
+	uint8_t (*resume_condition)(); //function pointer for some function that decides whether to resume after suspended
 }error_struct;
 
 typedef struct error_log_entry_struct{
@@ -74,7 +77,8 @@ typedef struct error_journal{
 	void _log_error(error_struct e, char* params);
 #endif
 
-
+void _throw_error(enum error_id id);
+void error_loop();
 
 
 #endif /* INC_ERRORS_H_ */

@@ -12,7 +12,7 @@ void _throw_error(enum error_id id){
 	error_struct* error = _error_LUT[id];
 	if(error->type_info & ERR_SHUTDOWN_MASK ){ //Shutdown takes precedence over suspend
 		_SHUTDOWN;
-	}else if(error->type_info & ERR_SUSPEND_MASK){ //suspend takes precedence over limit
+	}else if(error->type_info & ERR_SUSPEND_MASK){ //suspend takes precedence over simple warnings, or log events
 		if(error->resume_condition != NULL){
 			_SUSPEND;
 		} else {
@@ -23,6 +23,8 @@ void _throw_error(enum error_id id){
 if(error->err_handler != NULL){ //ya'll better have defined the error handler, bitch
 	error->err_handler();
 }
+
+//update the bitfield
 
 #if _ERR_DISPLAY_ENABLE
 	if((error->type_info & ERR_DISPLAY_MASK) && (error.msg != NULL)){
@@ -56,8 +58,14 @@ void _throw_error_float(enum error_id id, float arg)
 
 #if _ERR_LOGGING_ENABLE
 	void _log_error(error_struct e, char* params){
-
+		//step 1:
 	}
 #endif
 
+void error_loop(){
+	//Do some final shutdown things here
+	while(1){ //there is no escape from the error loop. Most unfortunate. Get fucked. Only a hard reboot can save you now.
+
+	}
+}
 

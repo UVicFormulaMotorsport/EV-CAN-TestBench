@@ -10,7 +10,7 @@
 
 
 void _Shutdown();
-void _Suspend();
+void _Suspend(uint8_t (*cond)());
 
 
 
