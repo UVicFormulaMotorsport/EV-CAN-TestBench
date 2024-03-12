@@ -71,7 +71,7 @@ int ready_to_drive = 0;
 int outofrange = 0;
 int hardbreak = 0;
 
-uint8_t vehicle_state_changed = 0;
+//State of da vehicle
 enum vehicle_state_t vehicle_state = init;
 
 /* USER CODE END PV */
@@ -84,9 +84,7 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void Set_Vehicle_State(enum vehicle_state_t newstate){
-	//used to set vehicle state
-}
+
 /* USER CODE END 0 */
 
 /**
@@ -170,20 +168,23 @@ int main(void)
 
 	  switch(vehicle_state){
 	  case init:
-
+		  //startup, conduct device checks
 
 	  break;
 	  case ready:
+		  //waiting for you to start the car.
 
 		 break;
+	  case driving:
+		  //driving
+		  driving_loop();
+		  break;
 	  case suspended:
-
+		  //suspended
+		  suspended_loop();
 		  break;
 	  case error:
-
-		  break;
-	  case limp: // aw hell naw, the car gone flaccid
-
+		  error_loop();
 		  break;
 	  default://physically how  are you here?
 

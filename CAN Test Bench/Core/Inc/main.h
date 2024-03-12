@@ -32,6 +32,11 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include<stdarg.h>
+#include"driving_loop.h"
+#include"errors.h"
+#include"startup.h"
+#include"shutdown.h"
+#include"suspended.h"
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -39,9 +44,16 @@ extern "C" {
 enum vehicle_state_t{
 	init,
 	ready,
-	limp,
+	driving,
 	suspended,
 	error
+};
+
+enum driving_mode_t{
+	normal,
+	accel,
+	econ,
+	limp
 };
 
 /* USER CODE END ET */
