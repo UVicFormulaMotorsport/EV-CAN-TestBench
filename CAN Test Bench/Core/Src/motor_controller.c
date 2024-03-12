@@ -14,6 +14,10 @@
 #include "pdu.h"
 
 
+const uint32_t MC_Expected_Serial_Number = 0x627E7A01;
+const uint16_t MC_Expected_FW_Version = 0xDC01;
+
+
 void MC_Parse_Message(int DLC, uint8_t Data[]){
 	// The first step is to look at the first byte to figure out what we're looking at
 	// TODO Need to make sure that Data[0] really is the first byte
@@ -53,6 +57,7 @@ void MC_Request_Data(int RegID){
 
 
 // We can either send 2 or 4 bytes of data
+// TODO fix data size
 void MC_Send_Data(int RegID, uint8_t data, int size){
 
 	TxHeader.StdId = MC_CAN_ID_Tx;
@@ -64,6 +69,16 @@ void MC_Send_Data(int RegID, uint8_t data, int size){
 		Error_Handler();
 	}
 
+}
+
+// The speed/torque control will either take the ADC value from APPSs then do math and send msg
+// Or we'll do the math in the main and then just send motor controller message
+void MC_Torque_Control(int todo){
+	// Need to figure out best way to do this
+}
+
+void MC_Speed_Control(int todo){
+	// Need to figure out best way to do this
 }
 
 
@@ -193,7 +208,13 @@ void MC_Check_Error_Warning(uint8_t Data[]){
 	}
 }
 
+void MC_Check_Serial_Number(uint8_t Data[]){
+	// TODO
+}
 
+void MC_Check_Firmware(uint8_t Data[]){
+	// TODO
+}
 
 void MC_Startup(){
 	// MC_Send_Data(...)
