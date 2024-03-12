@@ -39,6 +39,7 @@ extern "C" {
 enum vehicle_state_t{
 	init,
 	ready,
+	limp,
 	suspended,
 	error
 };
