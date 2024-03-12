@@ -182,7 +182,7 @@ int main(void)
 	  case error:
 
 		  break;
-	  case limp: // aw hell naw, the car gone flacid
+	  case limp: // aw hell naw, the car gone flaccid
 
 		  break;
 	  default://physically how  are you here?

@@ -47,7 +47,7 @@ typedef struct error_struct{
 	char* msg;
 	uint8_t type_info;
 	void (*err_handler)(); //function pointer to a dedicated error handler
-	uint8_t* resume_condition; //function pointer for some function that decides whether to resume after suspended
+	uint8_t (*resume_condition)(); //function pointer for some function that decides whether to resume after suspended
 }error_struct;
 
 typedef struct error_log_entry_struct{

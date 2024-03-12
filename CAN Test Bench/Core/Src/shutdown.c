@@ -7,6 +7,14 @@
 #include "pdu.h"
 
 
+void _Shutdown(){
+
+}
+
+void _Suspend(){
+
+}
+
 // RFE (motor controller digital input) needs to be wired to shutdown circuit
 void Trigger_Shutdown_Circuit(){
 	PDU_disable_shutdown_circuit();
