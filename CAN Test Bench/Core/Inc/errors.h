@@ -16,6 +16,7 @@
 //Enable/disable flags for various functionality.
 #define _ERR_LOGGING_ENABLE 0
 #define _ERR_DISPLAY_ENABLE 0
+#define _ERR_ARGS_ENABLE 0
 
 //How this thing works, for byron's future memory
 #define ERR_SHUTDOWN_MASK 0b00000001
@@ -23,7 +24,7 @@
 //#define ERR_
 #define ERR_DISPLAY_MASK 0b00001000
 
-#define _ERR_LOG_CAPACITY 16
+
 
 #define _SHUTDOWN Trigger_Shutdown_Circuit()
 #define _SUSPEND Disable_Motor_Controller()
@@ -45,7 +46,7 @@ typedef enum error_id{
 typedef struct error_struct{
 	char* msg;
 	uint8_t type_info;
-	void *err_handler(); //function pointer to a dedicated error handler
+	void (*err_handler)(); //function pointer to a dedicated error handler
 	uint8_t* resume_condition; //function pointer for some function that decides whether to resume after suspended
 }error_struct;
 
@@ -55,16 +56,21 @@ typedef struct error_log_entry_struct{
 	char msg[];
 }error_log_entry_struct;
 
-typedef struct error_journal{
-	uint8_t num_entries;
-	error_log_entry_struct error_log[_ERR_LOG_CAPACITY];
-}error_journal;
+
 
 
 
 
 
 #if _ERR_LOGGING_ENABLE
+#define _ERR_LOG_CAPACITY 16
+
+
+typedef struct error_journal{
+	uint8_t num_entries;
+	error_log_entry_struct error_log[_ERR_LOG_CAPACITY];
+}error_journal;
+
 	void _log_error(error_struct e, char* params);
 #endif
 

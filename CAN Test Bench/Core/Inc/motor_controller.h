@@ -27,9 +27,9 @@ enum motor_controller_temperatures{
 
 };
 
-enum motor_controller_measurements{
+//enum motor_controller_measurements{
 
-};
+//};
 
 
 enum motor_controller_status_information_errors_warnings{
