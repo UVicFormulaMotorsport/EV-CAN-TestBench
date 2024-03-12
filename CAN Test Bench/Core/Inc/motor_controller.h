@@ -10,6 +10,7 @@
 
 // Need to add enums for human readable register addresses and such
 
+
 enum motor_controller_speed_parameters{
 	N_actual = 0x30, // actual motor speed rpm
 	N_set = 0x31, // digital speed setpoint
