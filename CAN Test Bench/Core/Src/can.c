@@ -241,10 +241,10 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
 		   IMD_Parse_Message(DLC, Data);
 	   break;
 	   // Need more IDs
-//       	   default:
-//       		   // Not a correct CAN ID
-//       		   Error_Handler();
-//		   break;
+       default:
+    		   // Not a correct CAN ID
+    	   Error_Handler();
+       break;
    }
 
 }

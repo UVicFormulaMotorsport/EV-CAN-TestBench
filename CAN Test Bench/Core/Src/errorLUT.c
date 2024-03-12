@@ -8,7 +8,7 @@
 #include "errorLUT.h"
 #include "errors.h"
 
-error_struct _error_LUT[_NUM_ERRORS_];
+error_struct* _error_LUT[_NUM_ERRORS_];
 
 
 
