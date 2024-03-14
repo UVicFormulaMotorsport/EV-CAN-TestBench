@@ -38,6 +38,17 @@ extern ADC_HandleTypeDef hadc2;
 
 /* USER CODE BEGIN Private defines */
 
+// 12 bit ADC resolution
+	// Buffer 1 has 4 channels, each is sampled 10 times per update
+#define ADC1_BUF_LEN 40
+#define ADC1_CHNL_CNT 4
+#define ADC1_SAMPLES 10
+
+	// Buffer 2 has 2 channels, each is sampled 1 time per update
+#define ADC2_BUF_LEN 2
+#define ADC2_CHNL_CNT 2
+#define ADC2_SAMPLES 1
+
 /* USER CODE END Private defines */
 
 void MX_ADC1_Init(void);
