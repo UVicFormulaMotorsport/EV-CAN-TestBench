@@ -46,8 +46,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-// 12 bit ADC resolution
-#define ADC_BUF_LEN 2
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -58,13 +57,17 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-volatile uint32_t adc_buf1[ADC_BUF_LEN]; // ADC1
-uint16_t adc1_1;
-uint16_t adc1_2;
+volatile uint32_t adc_buf1[ADC1_BUF_LEN]; // ADC1 - high priority readings
+//uint16_t adc1_1;	old buffer read variables
+//uint16_t adc1_2;
+uint16_t adc1_APPS1;
+uint16_t adc1_APPS2;
+uint16_t adc1_BPS1;
+uint16_t adc1_BPS2;
 
-volatile uint32_t adc_buf2[ADC_BUF_LEN]; // ADC2
-uint16_t adc2_1;
-uint16_t adc2_2;
+volatile uint32_t adc_buf2[ADC2_BUF_LEN]; // ADC2 - lower priority readings
+uint16_t adc2_CoolantTemp;
+uint16_t adc2_CoolantFlow;
 
 //int adc_conv_complete_flag = 0;
 int ready_to_drive = 0;
@@ -123,8 +126,10 @@ int main(void)
   MX_TIM13_Init();
   MX_TIM14_Init();
   MX_TIM6_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC_BUF_LEN);
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC1_BUF_LEN);
+  HAL_TIM_Base_Start_IT(&htim3);
 
   /* USER CODE END 2 */
 
@@ -152,9 +157,9 @@ int main(void)
 
 
 	  // into string and store in dma_result_buffer character array
-	  Update_RPM(adc1_1);
+	  Update_RPM(adc1_APPS1);
 	  HAL_Delay(1000);
-	  Update_RPM(adc1_2);
+	  Update_RPM(adc1_APPS2);
 	  HAL_Delay(1000);
 
 
@@ -246,16 +251,46 @@ void SystemClock_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+// called when timer 3 period elapsed
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+
+	// check that timer 3 created the interrupt
+	if (htim == &htim3){
+
+		// start a single round of ADC2 conversions
+		HAL_ADC_Start_DMA(&hadc2, (uint32_t*)adc_buf2, ADC2_BUF_LEN);
+
+		// restart timer
+		HAL_TIM_Base_Start_IT(&htim3);
+	}
+}
+
 
 // Called when adc dma buffer is completely filled
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
   // Could toggle an LED here
-	adc1_1 = adc_buf1[0];
-	adc1_2 = adc_buf1[1];
-	if(adc1_1 > 3000){
-		hardbreak = 1;
-	}else{
-		hardbreak = 0;
+	if(hadc->Instance == ADC1){
+		adc1_APPS1 = 0;
+		adc1_APPS2 = 0;
+		adc1_BPS1 = 0;
+		adc1_BPS2 = 0;
+
+		uint16_t* buf1_pointer = adc_buf1;
+
+		for(int i = 0; i < ADC1_SAMPLES; i++){
+			adc1_APPS1 += *buf1_pointer++;
+			adc1_APPS2 += *buf1_pointer++;
+			adc1_BPS1 += *buf1_pointer++;
+			adc1_BPS2 += *buf1_pointer++;
+		}
+
+		if(((adc1_APPS1 > 69)||(adc1_APPS2 > 69))&&((adc1_APPS1 > 69)||(adc1_APPS1 > 69))){
+			// checking for hard brake + accel
+		}
+	}
+	if (hadc->Instance == ADC2){
+		adc2_CoolantTemp = adc_buf2[0];
+		adc2_CoolantFlow = adc_buf2[1];
 	}
 }
 
@@ -268,12 +303,18 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     }
 }
 
-// Analog Watchdog Out-of-Range handler
+// Analog Watchdog Out-of-Range handler, ADC conversion values range from 0 to 4095
 void HAL_ADC_LevelOutOfWindowCallback(ADC_HandleTypeDef* hadc){
-	HAL_GPIO_WritePin(Red_LED_GPIO_Port,Red_LED_Pin, GPIO_PIN_SET);
-	HAL_ADC_Stop_DMA(&hadc1);
-	adc1_1 = 0;
-	adc1_2 = 0;
+	if(hadc->Instance == ADC1){
+		// triggered for voltages below 0.5V (below 400) or above 4.5V (above 3674)
+		HAL_GPIO_WritePin(Red_LED_GPIO_Port,Red_LED_Pin, GPIO_PIN_SET);
+		HAL_ADC_Stop_DMA(&hadc1);
+		adc1_APPS1 = 0;
+		adc1_APPS2 = 0;
+	}
+	if(hadc->Instance == ADC2){
+		// handle coolant sensors short error
+	}
 }
 
 
