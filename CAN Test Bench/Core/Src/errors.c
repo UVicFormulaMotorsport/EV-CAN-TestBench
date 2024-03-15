@@ -14,7 +14,7 @@ void _throw_error(enum error_id id){
 		_SHUTDOWN;
 	}else if(error->type_info & ERR_SUSPEND_MASK){ //suspend takes precedence over simple warnings, or log events
 		if(error->resume_condition != NULL){
-			_SUSPEND;
+			_SUSPEND(error->resume_condition);
 		} else {
 			_SHUTDOWN;
 		}
