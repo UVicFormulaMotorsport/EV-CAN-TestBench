@@ -81,7 +81,7 @@ void BMS_Parse_Message2(int DLC, uint8_t Data[]){
 		errcheck = errcheck << 1;
 	}
 
-	if (BMS_errors_1 & BMS_ERRORS1_RESERVED_MASK){
+	if (BMS_errors_1 & BMS_ERRORS1_RESERVED_mask){
 		_throw_error(default_shutdown);
 	}
 

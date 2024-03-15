@@ -165,7 +165,7 @@ void reset_BMS_WDT();
 
 //bits 30 and 31 are reserved
 #define BMS_ERRORS1_RESERVED_index
-#define BMS_ERRORS1_RESERVED_mask = 0xC000000
+#define BMS_ERRORS1_RESERVED_mask 0xC000000
 
 //start errors 2
 
