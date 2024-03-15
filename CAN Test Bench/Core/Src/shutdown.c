@@ -9,6 +9,7 @@ extern enum vehicle_state_t vehicle_state;
 
 void _Voluntary_Power_Down(){ //this for if the driver voluntarily wants to stop
 	PDU_disable_motor_controller();
+	//TODO: should this simply go to ready, or should it go to init instead? I dont really know, thtats a problem for future me
 	vehicle_state = ready;
 	HAL_delay(200);
 	PDU_disable_shutdown_circuit;
@@ -49,6 +50,8 @@ void Disable_Motor_Controller(){
 
 
 void Limp_Mode(){
+	//TODO: Figure out how this is going to work
 	// turn on limp mode for motor controller
 	// set max current output in BMS potentially - YOU CANNOT DO THAT
+
 }
