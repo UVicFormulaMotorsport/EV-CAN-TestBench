@@ -18,6 +18,8 @@ void _throw_error(enum error_id id){
 		} else {
 			_SHUTDOWN;
 		}
+	}else if(error->type_info & ERR_LIMP_MASK){
+		//TODO: Implement Limp Mode
 	}
 
 if(error->err_handler != NULL){ //ya'll better have defined the error handler, bitch

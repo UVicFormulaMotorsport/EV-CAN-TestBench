@@ -157,6 +157,10 @@ void reset_BMS_WDT();
 #define BMS_ERRORS1_SPIRIT_TRUCK_ERROR_mask (uint32_t)(0x01U << BMS_ERRORS1_SPIRIT_TRUCK_ERROR_index)
 #define BMS_ERRORS1_SPIRIT_TRUCK_ERROR BMS_ERRORS1_SPIRIT_TRUCK_ERROR_mask
 
+#define BMS_ERRORS1_FORKLIFT_mask (BMS_ERRORS1_COMBILIFT_FORKLIFT_mask | BMS_ERRORS1_HYG_FORKLIFT_mask | BMS_ERRORS1_CROWN_FORKLIFT_mask | BMS_ERRORS1_SPIRIT_TRUCK_ERROR_mask |)
+
+
+
 
 
 //bits 30 and 31 are reserved
@@ -212,6 +216,9 @@ void reset_BMS_WDT();
 #define BMS_ERRORS2_MAIN_CONTACTOR_FDBCK_index 11
 #define BMS_ERRORS2_MAIN_CONTACTOR_FDBCK_mask (uint32_t)(0x01U << BMS_ERRORS2_MAIN_CONTACTOR_FDBCK_index)
 #define BMS_ERRORS2_MAIN_CONTACTOR_FDBCK BMS_ERRORS2_MAIN_CONTACTOR_FDBCK_mask
+
+//yeah idek what happens over here, idk if theres forklift errors here
+#define BMS_ERRORS2_FORKLIFT_mask (uint32_t)()
 
 //Masks for cool and fun things :)
 //Determines whether errors warrant a full shutdown or just a temporary pause

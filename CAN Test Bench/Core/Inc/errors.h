@@ -21,13 +21,13 @@
 //How this thing works, for byron's future memory
 #define ERR_SHUTDOWN_MASK 0b00000001
 #define ERR_SUSPEND_MASK 0b00000010
-//#define ERR_
+#define ERR_LIMP_MASK 0b00000100
 #define ERR_DISPLAY_MASK 0b00001000
 
 
 
-#define _SHUTDOWN Trigger_Shutdown_Circuit()
-#define _SUSPEND Disable_Motor_Controller()
+#define _SHUTDOWN _Shutdown()
+#define _SUSPEND(x) _Suspend(x)
 
 
 
@@ -35,13 +35,20 @@
 //#define throw_error(x,y,type) _throw_error_ ##type(x,( ##type)y);
 
 typedef enum error_id{
-	shutdown_cct_tripped = 1, //shutdown circuit errors
+	default_shutdown = 0,
+	default_suspend,
+	default_limit,
+	shutdown_cct_tripped, //shutdown circuit errors
 	bms_shutdown_tripped,
 	bspd_shutdown_tripped,
 	imd_shutdown_cct_tripped,
 	coolant_temp_too_high,
 	coolant_pressure_too_high,
-	peepeepoopoo
+	peepeepoopoo,
+	BMS_Overcurrent,
+	BMS_reserved_bits,
+	BMS_low_charge_temp
+
 }error_id;
 
 

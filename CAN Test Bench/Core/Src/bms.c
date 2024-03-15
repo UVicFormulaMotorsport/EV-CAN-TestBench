@@ -70,11 +70,22 @@ void BMS_Parse_Message2(int DLC, uint8_t Data[]){
 	BMS_errors_1 = BMS_MSG2_ERRORS_REGISTER_1(Data);
 
 	//check the errors
-	if(BMS_errors_1 & BMS_ERRORS1_VEHICLE_SHTDWN_mask){//ruh roh scoobs, time to shut down the car
+	uint32_t errcheck = 0x01U;
+	for (int i = 0; i<30; i++){
 
+		if(BMS_errors_1 & (errcheck)){
+			//_throw_error(BMS_Overcurrent + i); //This is for when we actually get logging and differentiation between error types
+			_throw_error(default_shutdown);
+
+		}
+		errcheck = errcheck << 1;
 	}
 
-	if(BMS_internal_state & BMS_ILLEGAL_STATES){
+	if (BMS_errors_1 & BMS_ERRORS1_RESERVED_MASK){
+		_throw_error(default_shutdown);
+	}
+
+	if(BMS_internal_state & BMS_ILLEGAL_STATES){//illegal state for vehicle
 
 	}
 }
@@ -83,9 +94,17 @@ void BMS_Parse_Message3(int DLC, uint8_t Data[]){
 	BMS_errors_2 = BMS_MSG3_ERRORS_REGISTER_2(Data);
 	BMS_discrete_inputs_2 = BMS_MSG3_DISCRETE_INPUTS_2(Data);
 
-	if(BMS_errors_2 & BMS_ERRORS2_VEHICLE_SHTDWN_mask){//ruh roh scoobs, time to shut down the car
+	uint32_t errcheck = 0x01U;
+		for (int i = 0; i<30; i++){
 
+		if(BMS_errors_1 & (errcheck)){
+			_throw_error(BMS_Overcurrent + i);
+
+		}
+		errcheck = errcheck << 1;
 	}
+
+
 }
 
 void reset_BMS_WDT(){

@@ -24,12 +24,12 @@ void _add_condition(uint8_t (*cond)()){
 
 	}else{
 		//cry, piss yourself, shit and cum
-		throw_error(peepeepoopoo); //this will shut the car fully down
+		_throw_error(peepeepoopoo); //this will shut the car fully down
 	}
 }
 
-_check_suspension_conditions(){
-
+uint8_t _check_suspension_conditions(){
+	return 0;
 }
 
 void suspended_loop(){
