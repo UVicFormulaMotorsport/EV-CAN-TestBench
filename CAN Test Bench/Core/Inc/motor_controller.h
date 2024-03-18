@@ -141,8 +141,8 @@ enum motor_controller_startup{
 
 // Function Declarations
 void MC_Parse_Message(int DLC, uint8_t Data[]);
-void MC_Request_Data(int RegID);
-void MC_Send_Data(int RegID, uint8_t data, int size);
+void MC_Request_Data(uint8_t RegID);
+void MC_Send_Data(uint8_t RegID, uint8_t data_to_send[], uint8_t size);
 void MC_Torque_Control(int todo);
 void MC_Speed_Control(int todo);
 void MC_Check_Error_Warning(uint8_t Data[]);
