@@ -284,7 +284,19 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 			adc1_BPS2 += *buf1_pointer++;
 		}
 
-		if(((adc1_APPS1 > 69)||(adc1_APPS2 > 69))&&((adc1_APPS1 > 69)||(adc1_APPS1 > 69))){
+		// calculate APPS fraction travelled (see spreadsheet for equation derivation)
+		adc1_APPS1 = 0.8082*adc1_APPS1 - 0.3709;
+		adc1_APPS2 = 0.8405*adc1_APPS2 - 0.8747;
+
+		// APPS1 and APPS2 plausibility check
+			// suspend if error persists for 100 ms
+		if((adc1_APPS1-adc1_APPS2)>0.1 || (adc1_APPS1-adc1_APPS2)<-0.1){
+			//START TIMER FOR APPS IMPLAUSIBILITY
+		}
+
+		// APPS / BPS plausibility check
+			// immediate suspend if error occurs
+		if(((adc1_APPS1 > 0.25)||(adc1_APPS2 > 0.25))&&((adc1_BPS1 > 69)||(adc1_BPS2 > 69))){
 			// checking for hard brake + accel
 		}
 	}

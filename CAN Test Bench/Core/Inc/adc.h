@@ -49,6 +49,14 @@ extern ADC_HandleTypeDef hadc2;
 #define ADC2_CHNL_CNT 2
 #define ADC2_SAMPLES 1
 
+// Calculated voltage ranges for ADCs (may remove since specified in the ioc file
+	// ADC1 is for APPS and BPS sensors
+#define ADC1_MIN_VOLT 500
+#define ADC1_MAX_VOLT 2850
+	// ADC2 is for coolant temp and flow sensors
+#define ADC2_MIN_VOLT 69
+#define ADC2_MAX_VOLT 69
+
 /* USER CODE END Private defines */
 
 void MX_ADC1_Init(void);
