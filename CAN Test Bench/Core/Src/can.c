@@ -210,6 +210,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
 
 	// Figure out what device sent the message
    // Call the appropriate device function
+   // FOR THE LOVE OF GOD DECIDE ON HOW TO HAVE THE IDs, WHY IS PDU HARDCODED? HUH?
    switch (CAN_ID){
 	   case BMS_HEARTBEAT_ID:
 		   reset_BMS_WDT();

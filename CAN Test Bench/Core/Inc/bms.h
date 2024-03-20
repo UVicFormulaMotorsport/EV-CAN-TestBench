@@ -30,12 +30,13 @@ void reset_BMS_WDT();
 #define MAX_BATTERY_VOLTAGE 4998 //the BMS multiplies voltage by 10 to send this, 499.8V in reality
 #define MIN_BATTERY_VOLTAGE 3570
 
-
+//The BMS CAN ids
 #define BMS_HEARTBEAT_ID 0x80
 #define BMS_CAN_ID_1 (0x180 + 0x20)
 #define BMS_CAN_ID_2 (0x280 + 0x20)
 #define BMS_CAN_ID_3 (0x380 + 0x20)
 
+//BMS errors. Good luck reading this, bucko.
 
 #define BMS_ERRORS1_OVERCURRENT_index 0
 #define BMS_ERRORS1_OVERCURRENT_mask (uint32_t)(0x01U << BMS_ERRORS1_OVERCURRENT_index)
@@ -436,11 +437,11 @@ void reset_BMS_WDT();
 
 //BMS Message 1 contents:
 #define BMS_MSG1_DISCRETE_INPUTS_1(msg) (uint8_t) *(msg + BMS_MSG1_DISCRETE_INPUTS_1_index)
-#define BMS_MSG1_BATTERY_CURRENT(msg) (int16_t) *((int16_t*) (msg + BMS_MSG1_BATTERY_CURRENT_index))
+#define BMS_MSG1_BATTERY_CURRENT(msg) (int16_t) (msg[BMS_MSG1_BATTERY_CURRENT_index] << 8 | msg[BMS_MSG1_BATTERY_CURRENT_index + 1])
 #define BMS_MSG1_MIN_BATTERY_TEMP(msg) (int8_t) *((int8_t*) (msg + BMS_MSG1_MIN_BATTERY_TEMP_index))
 #define BMS_MSG1_MAX_BATTERY_TEMP(msg) (int8_t) *((int8_t*) (msg + BMS_MSG1_MAX_BATTERY_TEMP_index))
 #define BMS_MSG1_SOC(msg) (uint8_t) *((uint8_t*) (msg + BMS_MSG1_SOC_index))
-#define BMS_MSG1_BATTERY_VOLTAGE(msg) (uint16_t) *((uint16_t*) (msg + BMS_MSG1_BATTERY_VOLTAGE_index))
+#define BMS_MSG1_BATTERY_VOLTAGE(msg) (uint16_t) (msg[BMS_MSG1_BATTERY_VOLTAGE_index] << 8 | msg[BMS_MSG1_BATTERY_VOLTAGE_index + 1])
 
 
 //Indices of array:
@@ -454,16 +455,16 @@ void reset_BMS_WDT();
 
 
 //BMS Message 2 contents:
-#define BMS_MSG2_BMS_INTERNAL_STATE(msg) (uint32_t) *((uint32_t*) (msg + BMS_MSG2_BMS_INTERNAL_STATE_index))
-#define BMS_MSG2_ERRORS_REGISTER_1(msg) (uint32_t) *((uint32_t*) (msg + BMS_MSG2_ERRORS_REGISTER_1_index))
+#define BMS_MSG2_BMS_INTERNAL_STATE(msg) (uint32_t)(msg[BMS_MSG2_BMS_INTERNAL_STATE_index] <<24 | msg[BMS_MSG2_BMS_INTERNAL_STATE_index + 2] << 8 | msg[BMS_MSG2_BMS_INTERNAL_STATE_index + 3])
+#define BMS_MSG2_ERRORS_REGISTER_1(msg) (uint32_t)(msg[BMS_MSG3_ERRORS_REGISTER_2_index] <<24 | msg[BMS_MSG3_ERRORS_REGISTER_2_index + 1] << 16 | msg[BMS_MSG3_ERRORS_REGISTER_2_index + 2] << 8 | msg[BMS_MSG3_ERRORS_REGISTER_2_index + 3])
 
 //Indices of array:
 #define BMS_MSG2_BMS_INTERNAL_STATE_index 0
 #define BMS_MSG2_ERRORS_REGISTER_1_index 4
 
 //BMS Message 3 contents:
-#define BMS_MSG3_ERRORS_REGISTER_2(msg) (uint32_t) *((uint32_t*) (msg + BMS_MSG3_ERRORS_REGISTER_2_index))
-#define BMS_MSG3_DISCRETE_INPUTS_2(msg) (uint16_t) *((uint16_t*) (msg + BMS_MSG3_DISCRETE_INPUTS_2_index))
+#define BMS_MSG3_ERRORS_REGISTER_2(msg) (uint32_t)(msg[BMS_MSG3_ERRORS_REGISTER_2_index] <<24 | msg[BMS_MSG3_ERRORS_REGISTER_2_index + 1] << 16 | msg[BMS_MSG3_ERRORS_REGISTER_2_index + 2] << 8 | msg[BMS_MSG3_ERRORS_REGISTER_2_index + 3])
+#define BMS_MSG3_DISCRETE_INPUTS_2(msg) (uint16_t)(msg[BMS_MSG3_DISCRETE_INPUTS_2_index] << 8 | msg[BMS_MSG3_DISCRETE_INPUTS_2_index + 1])
 
 
 //Indices of array:

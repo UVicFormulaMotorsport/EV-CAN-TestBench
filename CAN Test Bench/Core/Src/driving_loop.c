@@ -10,7 +10,18 @@
 #include "motor_controller.h"
 #include "bms.h"
 
+enum driving_mode_t driving_mode = normal;
+
 extern enum vehicle_state_t vehicle_state;
+extern uint16_t adc1_APPS1;
+extern uint16_t adc1_APPS2;
+extern uint16_t adc1_BPS1;
+extern uint16_t adc1_BPS2;
+
+//This function takes ADC values and outputs a 16 bit integer which represents the requested speed/torque of the controller
+int16_t pedal_map(){
+
+}
 
 void driving_loop(){//this is where the main driving stuff happens
 	//code that executes once upon entry to driving loop goes here
@@ -20,6 +31,14 @@ void driving_loop(){//this is where the main driving stuff happens
 	//exit the driving loop, is if the vehicle state changes
 	while(vehicle_state == driving){
 		//Things that occur for us to drive
+
+
+		/* Step 1: Pedal position to motor controller output
+		 * Step 2: Send to motor controller
+		 *
+		 *
+		 *
+		 */
 
 
 
