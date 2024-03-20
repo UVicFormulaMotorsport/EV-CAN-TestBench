@@ -18,6 +18,13 @@ const uint32_t MC_Expected_Serial_Number = 0x627E7A01;
 const uint16_t MC_Expected_FW_Version = 0xDC01;
 
 
+const uint32_t max_motor_speed = 3277; // this limits rpm of motor for speed control setpoint
+uint8_t desired_motor_speed[2];
+
+// TODO need to figure out file with ADC stuff or use pointers and such
+uint32_t ADC_percentage;
+
+
 void MC_Parse_Message(int DLC, uint8_t Data[]){
 	// The first step is to look at the first byte to figure out what we're looking at
 	// TODO Need to make sure that Data[0] really is the first byte
@@ -39,11 +46,11 @@ void MC_Parse_Message(int DLC, uint8_t Data[]){
 }
 
 // this function is used to get data from the motor controller
-void MC_Request_Data(int RegID){
+void MC_Request_Data(uint8_t RegID){
 
 	TxHeader.StdId = MC_CAN_ID_Tx;
 	TxHeader.DLC = 3;
-	TxData[0] = 0x3D;
+	TxData[0] = 0x3D; // this is the code to request data from MC
 	TxData[1] = RegID;
 	TxData[2] = 0;
 
@@ -57,12 +64,33 @@ void MC_Request_Data(int RegID){
 
 
 // We can either send 2 or 4 bytes of data
-// TODO fix data size
-void MC_Send_Data(int RegID, uint8_t data, int size){
+// This will correspond to a DLC of 3 or 5, respectively
+// The first byte needs to be the register ID, then either 2 or 4 bytes of data
+// The number size is either 2 or 4 and is very important
+// If the motor controller wants 0x1234, the input to this function should be 0x1234
+void MC_Send_Data(uint8_t RegID, uint8_t data_to_send[], uint8_t size){
 
 	TxHeader.StdId = MC_CAN_ID_Tx;
 	TxHeader.DLC = size;
 	TxData[0] = RegID;
+
+	switch (size){
+	case 2:
+		TxData[1] = data_to_send[2];
+		TxData[2] = data_to_send[1];
+	break;
+
+	case 4:
+		TxData[1] = data_to_send[4];
+		TxData[2] = data_to_send[3];
+		TxData[3] = data_to_send[2];
+		TxData[4] = data_to_send[1];
+	break;
+
+	default:
+		// bad
+	break;
+	}
 
 	if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox) != HAL_OK){
 		/* Transmission request Error */
@@ -77,8 +105,16 @@ void MC_Torque_Control(int todo){
 	// Need to figure out best way to do this
 }
 
-void MC_Speed_Control(int todo){
-	// Need to figure out best way to do this
+void MC_Speed_Control(int ADC_value){
+
+	// TODO verify endian and deal with source of data
+	ADC_percentage = ADC_value / (0xFFF);
+	uint16_t scaled_motor_speed = ADC_percentage*max_motor_speed;
+
+	desired_motor_speed[0] = (scaled_motor_speed & 0xff00) >> 8;
+	desired_motor_speed[1] = scaled_motor_speed & 0x00ff;
+
+	MC_Send_Data(N_set, desired_motor_speed, 2);
 }
 
 
