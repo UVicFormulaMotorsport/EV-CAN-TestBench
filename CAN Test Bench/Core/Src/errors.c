@@ -3,30 +3,42 @@
 #include "errors.h"
 #include "errorLUT.h"
 
-extern error_struct* _error_LUT[];
+extern error_struct* _error_LUT[];//Lookup table for what to do with certain errors.
 
-uint32_t error_bitfield[8] = {0,0,0,0,0,0,0,0};
-
+//stores info about what errors are currently active. Better than scraping the logs.
+uint16_t error_bitfield[32] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
 
 void _throw_error(enum error_id id){
 	error_struct* error = _error_LUT[id];
 	if(error->type_info & ERR_SHUTDOWN_MASK ){ //Shutdown takes precedence over suspend
 		_SHUTDOWN;
 	}else if(error->type_info & ERR_SUSPEND_MASK){ //suspend takes precedence over simple warnings, or log events
-		if(error->resume_condition != NULL){
-			_SUSPEND(error->resume_condition);
+
+		if(error->resume_condition != NULL){ //if there is no way to recover from the suspended state, might as well shut down.
+
+			if(!(error_bitfield[id>>4] & 0x01<<(id & 0x000F))){//check if error is already active, no need for duplicates
+				_SUSPEND(error->resume_condition);
+			}
 		} else {
 			_SHUTDOWN;
 		}
-	}else if(error->type_info & ERR_LIMP_MASK){
+
+	}
+
+	if(error->type_info & ERR_LIMP_MASK){
 		//TODO: Implement Limp Mode
 	}
 
-if(error->err_handler != NULL){ //ya'll better have defined the error handler, bitch
-	error->err_handler();
-}
+
+	error_bitfield[id>>4] |= 0x01<<(id & 0x000F); //final 4 bits of id represent the individual bit, remaining bits represent index
+
+	if(error->err_handler != NULL){ //ya'll better have defined the error handler, bitch
+		error->err_handler(); //executes code specified by user if available. Will do it's thing
+	}
 
 //update the bitfield
+
+
 
 #if _ERR_DISPLAY_ENABLE
 	if((error->type_info & ERR_DISPLAY_MASK) && (error.msg != NULL)){

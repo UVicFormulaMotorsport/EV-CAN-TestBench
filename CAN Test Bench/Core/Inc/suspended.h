@@ -10,7 +10,7 @@
 
 #define _MAX_SUSPENSION_TIME_BEFORE_SHUTDOWN_ 500 //ms
 
-void _add_condition(uint8_t (*cond)());
+void _add_condition(int8_t (*cond)());
 void suspended_loop();
 
 
