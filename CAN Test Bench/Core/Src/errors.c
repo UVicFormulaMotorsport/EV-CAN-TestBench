@@ -17,10 +17,10 @@ void _throw_error(enum error_id id){
 		if(error->resume_condition != NULL){ //if there is no way to recover from the suspended state, might as well shut down.
 
 			if(!(error_bitfield[id>>4] & 0x01<<(id & 0x000F))){//check if error is already active, no need for duplicates
-				_SUSPEND(error->resume_condition);
+				_Suspend(error->resume_condition);
 			}
 		} else {
-			_SHUTDOWN;
+			_Shutdown();
 		}
 
 	}

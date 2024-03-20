@@ -9,6 +9,7 @@
 #include "errors.h"
 #include "motor_controller.h"
 #include "bms.h"
+#include "driving_loop.h"
 
 enum driving_mode_t driving_mode = normal;
 
@@ -18,10 +19,39 @@ extern uint16_t adc1_APPS2;
 extern uint16_t adc1_BPS1;
 extern uint16_t adc1_BPS2;
 
-//This function takes ADC values and outputs a 16 bit integer which represents the requested speed/torque of the controller
-int16_t pedal_map(){
+//use for easy toggle between torque control and speed control
+
+
+#if !TORQUE_CONTROL
+//This function takes ADC values and outputs a 16 bit integer which represents the requested speed of the controller.
+//Only works with linear speed control.
+static int16_t linear_pedal_speed_map(){
+	//check to make sure random values below the minimum dont put the car into reverse
+	if(adc1_APPS1 < MIN_PEDAL_ADC_VAL) return 0;
+	int16_t speed = 0;
+	switch(driving_mode){
+	case normal:
+
+		speed = ((adc1_APPS1 - MIN_PEDAL_ADC_VAL)*(MAX_RPM)) / (MAX_PEDAL_ADC_VAL - MIN_PEDAL_ADC_VAL);
+		break;
+	default:
+
+		break;
+	}
+
+	return speed;
 
 }
+
+#else
+
+int16_t pedal_torque_map(){
+	int16_t torque = 0;
+
+}
+
+#endif
+
 
 void driving_loop(){//this is where the main driving stuff happens
 	//code that executes once upon entry to driving loop goes here
@@ -39,6 +69,8 @@ void driving_loop(){//this is where the main driving stuff happens
 		 *
 		 *
 		 */
+
+		linear_pedal_speed_map();
 
 
 
