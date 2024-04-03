@@ -54,7 +54,7 @@ uint8_t IMD_Serial_Number_Set = 0;
 
 
 int32_t IMD_Temperature;
-uint32_t IMD_UpTime;
+uint32_t IMD_Uptime;
 
 
 // If there is a hardware error, that one bit will be a 1 in the status bits -> read error flags
