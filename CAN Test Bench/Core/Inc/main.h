@@ -32,29 +32,14 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include<stdarg.h>
-#include"driving_loop.h"
-#include"errors.h"
-#include"startup.h"
-#include"shutdown.h"
-#include"suspended.h"
+#include"uvfr_utils.h"
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
 /* USER CODE BEGIN ET */
-enum vehicle_state_t{
-	init,
-	ready,
-	driving,
-	suspended,
-	error
-};
 
-enum driving_mode_t{
-	normal,
-	accel,
-	econ,
-	limp
-};
+
 
 /* USER CODE END ET */
 
@@ -72,15 +57,13 @@ enum driving_mode_t{
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-void Set_Vehicle_State(enum vehicle_state_t new_state);
+//void Set_Vehicle_State(enum vehicle_state_t new_state);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
 #define Start_Button_Input_Pin GPIO_PIN_0
 #define Start_Button_Input_GPIO_Port GPIOA
 #define Start_Button_Input_EXTI_IRQn EXTI0_IRQn
-#define Green_LED_Pin GPIO_PIN_12
-#define Green_LED_GPIO_Port GPIOD
 #define Orange_LED_Pin GPIO_PIN_13
 #define Orange_LED_GPIO_Port GPIOD
 #define Red_LED_Pin GPIO_PIN_14
