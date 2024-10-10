@@ -1,0 +1,47 @@
+\hypertarget{can_8c}{}\doxysection{Core/\+Src/can.c File Reference}
+\label{can_8c}\index{Core/Src/can.c@{Core/Src/can.c}}
+
+
+This file provides code for the configuration of the C\+AN instances.  
+
+
+{\ttfamily \#include \char`\"{}can.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}imd.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motor\+\_\+controller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dash.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bms.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}pdu.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{can_8c_a2778ce7f3a2de42769b6de9fec4cedb9}{H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Msp\+Init}} (C\+A\+N\+\_\+\+Handle\+Type\+Def $\ast$can\+Handle)
+\item 
+void \mbox{\hyperlink{can_8c_a4b39e42353b2781bc75d83c018640b67}{H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Msp\+De\+Init}} (C\+A\+N\+\_\+\+Handle\+Type\+Def $\ast$can\+Handle)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides code for the configuration of the C\+AN instances. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2023 S\+T\+Microelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{can_8c_a4b39e42353b2781bc75d83c018640b67}\label{can_8c_a4b39e42353b2781bc75d83c018640b67}} 
+\index{can.c@{can.c}!HAL\_CAN\_MspDeInit@{HAL\_CAN\_MspDeInit}}
+\index{HAL\_CAN\_MspDeInit@{HAL\_CAN\_MspDeInit}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_CAN\_MspDeInit()}{HAL\_CAN\_MspDeInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{C\+A\+N\+\_\+\+Handle\+Type\+Def $\ast$}]{can\+Handle }\end{DoxyParamCaption})}
+
+C\+A\+N2 G\+P\+IO Configuration P\+B12 -\/-\/-\/---$>$ C\+A\+N2\+\_\+\+RX P\+B13 -\/-\/-\/---$>$ C\+A\+N2\+\_\+\+TX\mbox{\Hypertarget{can_8c_a2778ce7f3a2de42769b6de9fec4cedb9}\label{can_8c_a2778ce7f3a2de42769b6de9fec4cedb9}} 
+\index{can.c@{can.c}!HAL\_CAN\_MspInit@{HAL\_CAN\_MspInit}}
+\index{HAL\_CAN\_MspInit@{HAL\_CAN\_MspInit}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_CAN\_MspInit()}{HAL\_CAN\_MspInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{C\+A\+N\+\_\+\+Handle\+Type\+Def $\ast$}]{can\+Handle }\end{DoxyParamCaption})}
+
+C\+A\+N2 G\+P\+IO Configuration P\+B12 -\/-\/-\/---$>$ C\+A\+N2\+\_\+\+RX P\+B13 -\/-\/-\/---$>$ C\+A\+N2\+\_\+\+TX
