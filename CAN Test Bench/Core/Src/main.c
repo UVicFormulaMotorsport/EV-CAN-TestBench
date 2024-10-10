@@ -127,14 +127,15 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC1_BUF_LEN);
   //HAL_TIM_Base_Start_IT(&htim3); This is getting disabled, since measuring temp will now be an RTOS task
-  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14);
+  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14); // Just to prove we reached this point in the code
+
   //ANYTHING WE NEED TO DO BEFORE THE KERNEL TAKES OVER SHOULD HAPPEN HERE:
 
   /* Step 1: Initialize whatever else needs initializing. Check that all devices exist.
    * Do some diagnostics on ourselves while we at it.
    */
 
-  MC_Startup();
+  MC_Startup(); // Send all the needed CAN messages to the MC for it to be properly configured.
 
   /* USER CODE END 2 */
 

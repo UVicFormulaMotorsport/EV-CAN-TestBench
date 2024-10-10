@@ -25,7 +25,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "uvfr_utils.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -77,8 +77,8 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
 
 /**
   * @brief  FreeRTOS initialization
-  * @param  None
-  * @retval None
+  *
+  *
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
