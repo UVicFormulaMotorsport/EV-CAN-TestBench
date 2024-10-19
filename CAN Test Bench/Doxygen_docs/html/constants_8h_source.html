@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +54,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('constants_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,36 +85,31 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">constants.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SOME_UNIQUE_NAME_HERE</span></div>
+<a href="constants_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SOME_UNIQUE_NAME_HERE</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SOME_UNIQUE_NAME_HERE</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">// your declarations (and certain types of definitions) here</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">extern</span> CAN_TxHeaderTypeDef   TxHeader;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">extern</span> CAN_RxHeaderTypeDef   RxHeader;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">extern</span> CAN_TxHeaderTypeDef   <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">extern</span> CAN_RxHeaderTypeDef   <a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> uint8_t               TxData[8];</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">extern</span> uint32_t              TxMailbox;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">extern</span> uint8_t               RxData[8];</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">extern</span> uint8_t               <a class="code" href="constants_8h.html#af553c31425b32bd9c020380c942ed3bd">TxData</a>[8];</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">extern</span> uint32_t              <a class="code" href="constants_8h.html#aedd1e4ac418a9697f9f41a2713d49569">TxMailbox</a>;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">extern</span> uint8_t               <a class="code" href="constants_8h.html#a14629afcc7f0b2d62c2b617b07d98184">RxData</a>[8];</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">// For constant CAN IDs, might be easier to put them in here</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">enum</span> CAN_IDs{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    IMD_CAN_ID_Tx = 0xA100101, <span class="comment">// This is the ID for MCU sending msg to IMD</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    IMD_CAN_ID_Rx = 0xA100100,<span class="comment">// MCU will receive messages with this id from IMD</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    PDU_CAN_ID_Tx = 0x710, <span class="comment">// ID to send messages to the PDU</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    MC_CAN_ID_Tx = 0x201, <span class="comment">// We send messages to the motor controller with this ID</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    MC_CAN_ID_Rx = 0x181,</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272">   15</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272">CAN_IDs</a>{</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272a242c64f8aaa09a26d5f586483d692f83">   16</a></span>&#160;    <a class="code" href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272a242c64f8aaa09a26d5f586483d692f83">IMD_CAN_ID_Tx</a> = 0xA100101, <span class="comment">// This is the ID for MCU sending msg to IMD</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272a0bce8b96d081881e0395e5ed297850e1">   17</a></span>&#160;    <a class="code" href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272a0bce8b96d081881e0395e5ed297850e1">IMD_CAN_ID_Rx</a> = 0xA100100,<span class="comment">// MCU will receive messages with this id from IMD</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b">   18</a></span>&#160;    <a class="code" href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b">PDU_CAN_ID_Tx</a> = 0x710, <span class="comment">// ID to send messages to the PDU</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272ada3b10f39c76a2dc2b19e9f5b02952a5">   19</a></span>&#160;    <a class="code" href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272ada3b10f39c76a2dc2b19e9f5b02952a5">MC_CAN_ID_Tx</a> = 0x201, <span class="comment">// We send messages to the motor controller with this ID</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272a45b8c0a27ffd1b8b160dda4c491eaad9">   20</a></span>&#160;    <a class="code" href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272a45b8c0a27ffd1b8b160dda4c491eaad9">MC_CAN_ID_Rx</a> = 0x181,</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="comment">// TODO figure out BMS IDs</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="comment">//BMS_COBIE_ID = ((uint32_t)0x20U),</span></div>
@@ -106,11 +126,26 @@ $(function() {
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aconstants_8h_html_a1d489aa29fe8cf552f71b550e8088272a242c64f8aaa09a26d5f586483d692f83"><div class="ttname"><a href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272a242c64f8aaa09a26d5f586483d692f83">IMD_CAN_ID_Tx</a></div><div class="ttdef"><b>Definition:</b> <a href="constants_8h_source.html#l00016">constants.h:16</a></div></div>
+<div class="ttc" id="aconstants_8h_html_a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b"><div class="ttname"><a href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b">PDU_CAN_ID_Tx</a></div><div class="ttdef"><b>Definition:</b> <a href="constants_8h_source.html#l00018">constants.h:18</a></div></div>
+<div class="ttc" id="aconstants_8h_html_a1d489aa29fe8cf552f71b550e8088272ada3b10f39c76a2dc2b19e9f5b02952a5"><div class="ttname"><a href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272ada3b10f39c76a2dc2b19e9f5b02952a5">MC_CAN_ID_Tx</a></div><div class="ttdef"><b>Definition:</b> <a href="constants_8h_source.html#l00019">constants.h:19</a></div></div>
+<div class="ttc" id="aconstants_8h_html_a14629afcc7f0b2d62c2b617b07d98184"><div class="ttname"><a href="constants_8h.html#a14629afcc7f0b2d62c2b617b07d98184">RxData</a></div><div class="ttdeci">uint8_t RxData[8]</div><div class="ttdef"><b>Definition:</b> <a href="constants_8c_source.html#l00009">constants.c:9</a></div></div>
+<div class="ttc" id="aconstants_8h_html_a1d489aa29fe8cf552f71b550e8088272a0bce8b96d081881e0395e5ed297850e1"><div class="ttname"><a href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272a0bce8b96d081881e0395e5ed297850e1">IMD_CAN_ID_Rx</a></div><div class="ttdef"><b>Definition:</b> <a href="constants_8h_source.html#l00017">constants.h:17</a></div></div>
+<div class="ttc" id="aconstants_8h_html_a1d489aa29fe8cf552f71b550e8088272"><div class="ttname"><a href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272">CAN_IDs</a></div><div class="ttdeci">CAN_IDs</div><div class="ttdef"><b>Definition:</b> <a href="constants_8h_source.html#l00015">constants.h:15</a></div></div>
+<div class="ttc" id="aconstants_8h_html_a6ee6e13063b860648180eea65852cc71"><div class="ttname"><a href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a></div><div class="ttdeci">CAN_RxHeaderTypeDef RxHeader</div><div class="ttdef"><b>Definition:</b> <a href="constants_8c_source.html#l00005">constants.c:5</a></div></div>
+<div class="ttc" id="aconstants_8h_html_af553c31425b32bd9c020380c942ed3bd"><div class="ttname"><a href="constants_8h.html#af553c31425b32bd9c020380c942ed3bd">TxData</a></div><div class="ttdeci">uint8_t TxData[8]</div><div class="ttdef"><b>Definition:</b> <a href="constants_8c_source.html#l00007">constants.c:7</a></div></div>
+<div class="ttc" id="aconstants_8h_html_a3e35a666d459f2ac92fc7c35334ff0ff"><div class="ttname"><a href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a></div><div class="ttdeci">CAN_TxHeaderTypeDef TxHeader</div><div class="ttdef"><b>Definition:</b> <a href="constants_8c_source.html#l00004">constants.c:4</a></div></div>
+<div class="ttc" id="aconstants_8h_html_aedd1e4ac418a9697f9f41a2713d49569"><div class="ttname"><a href="constants_8h.html#aedd1e4ac418a9697f9f41a2713d49569">TxMailbox</a></div><div class="ttdeci">uint32_t TxMailbox</div><div class="ttdef"><b>Definition:</b> <a href="constants_8c_source.html#l00008">constants.c:8</a></div></div>
+<div class="ttc" id="aconstants_8h_html_a1d489aa29fe8cf552f71b550e8088272a45b8c0a27ffd1b8b160dda4c491eaad9"><div class="ttname"><a href="constants_8h.html#a1d489aa29fe8cf552f71b550e8088272a45b8c0a27ffd1b8b160dda4c491eaad9">MC_CAN_ID_Rx</a></div><div class="ttdef"><b>Definition:</b> <a href="constants_8h_source.html#l00020">constants.h:20</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.16
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li><li class="navelem"><a class="el" href="constants_8h.html">constants.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
 </body>
 </html>

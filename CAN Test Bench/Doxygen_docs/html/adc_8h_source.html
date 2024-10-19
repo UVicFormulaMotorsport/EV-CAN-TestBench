@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +54,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('adc_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,11 +85,6 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">adc.h</div>  </div>
@@ -87,30 +107,30 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/* USER CODE END Includes */</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> ADC_HandleTypeDef hadc1;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> ADC_HandleTypeDef <a class="code" href="adc_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> ADC_HandleTypeDef hadc2;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">extern</span> ADC_HandleTypeDef <a class="code" href="adc_8h.html#acd9221f1aa19aebfe0b744947f2daf49">hadc2</a>;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">/* USER CODE BEGIN Private defines */</span></div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// 12 bit ADC resolution</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// Buffer 1 has 4 channels, each is sampled 10 times per update</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="preprocessor">#define ADC1_BUF_LEN 40</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#define ADC1_CHNL_CNT 4</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#define ADC1_SAMPLES 10</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="adc_8h.html#a241b375208136bfc174d8aac59759293">   43</a></span>&#160;<span class="preprocessor">#define ADC1_BUF_LEN 40</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="adc_8h.html#a46b4eb4bfbaccfc34f278e2ab2c352ac">   44</a></span>&#160;<span class="preprocessor">#define ADC1_CHNL_CNT 4</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="adc_8h.html#a11f08a78cccde778b1effca3c3081b75">   45</a></span>&#160;<span class="preprocessor">#define ADC1_SAMPLES 10</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="comment">// Buffer 2 has 2 channels, each is sampled 1 time per update</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#define ADC2_BUF_LEN 2</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#define ADC2_CHNL_CNT 2</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define ADC2_SAMPLES 1</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="adc_8h.html#aa11cd6f12825030de59c9466913e011a">   48</a></span>&#160;<span class="preprocessor">#define ADC2_BUF_LEN 2</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="adc_8h.html#a20d15482f70e68722aeaa90e966382e2">   49</a></span>&#160;<span class="preprocessor">#define ADC2_CHNL_CNT 2</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="adc_8h.html#afc06e56ca77ce358966ae2f4e9262c7e">   50</a></span>&#160;<span class="preprocessor">#define ADC2_SAMPLES 1</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="comment">// Calculated voltage ranges for ADCs (may remove since specified in the ioc file</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="comment">// ADC1 is for APPS and BPS sensors</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#define ADC1_MIN_VOLT 500</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#define ADC1_MAX_VOLT 2850</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="adc_8h.html#a50325563168ba1c3159a0811adeeb568">   54</a></span>&#160;<span class="preprocessor">#define ADC1_MIN_VOLT 500</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="adc_8h.html#a1ba93de133b8e417fecbe7d598670e1d">   55</a></span>&#160;<span class="preprocessor">#define ADC1_MAX_VOLT 2850</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="comment">// ADC2 is for coolant temp and flow sensors</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor">#define ADC2_MIN_VOLT 69</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#define ADC2_MAX_VOLT 69</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="adc_8h.html#aa6d050ac0cee0697ae8dc052b6e43160">   57</a></span>&#160;<span class="preprocessor">#define ADC2_MIN_VOLT 69</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="adc_8h.html#a824204b3b4d276be32036d1618e42706">   58</a></span>&#160;<span class="preprocessor">#define ADC2_MAX_VOLT 69</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="comment">/* USER CODE END Private defines */</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
@@ -128,14 +148,20 @@ $(function() {
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __ADC_H__ */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aadc_8h_html_a101e2e3433dfe72bbbd0ae3a84489263"><div class="ttname"><a href="adc_8h.html#a101e2e3433dfe72bbbd0ae3a84489263">MX_ADC2_Init</a></div><div class="ttdeci">void MX_ADC2_Init(void)</div><div class="ttdef"><b>Definition:</b> adc.c:118</div></div>
-<div class="ttc" id="aadc_8h_html_acccd58aa70215a6b184ad242312ffd0c"><div class="ttname"><a href="adc_8h.html#acccd58aa70215a6b184ad242312ffd0c">MX_ADC1_Init</a></div><div class="ttdeci">void MX_ADC1_Init(void)</div><div class="ttdef"><b>Definition:</b> adc.c:32</div></div>
+</div><!-- doc-content -->
+<div class="ttc" id="aadc_8h_html_acd9221f1aa19aebfe0b744947f2daf49"><div class="ttname"><a href="adc_8h.html#acd9221f1aa19aebfe0b744947f2daf49">hadc2</a></div><div class="ttdeci">ADC_HandleTypeDef hadc2</div><div class="ttdef"><b>Definition:</b> <a href="adc_8c_source.html#l00028">adc.c:28</a></div></div>
+<div class="ttc" id="aadc_8h_html_a22b804736f5648d52f639b2647d4ed13"><div class="ttname"><a href="adc_8h.html#a22b804736f5648d52f639b2647d4ed13">hadc1</a></div><div class="ttdeci">ADC_HandleTypeDef hadc1</div><div class="ttdef"><b>Definition:</b> <a href="adc_8c_source.html#l00027">adc.c:27</a></div></div>
+<div class="ttc" id="aadc_8h_html_a101e2e3433dfe72bbbd0ae3a84489263"><div class="ttname"><a href="adc_8h.html#a101e2e3433dfe72bbbd0ae3a84489263">MX_ADC2_Init</a></div><div class="ttdeci">void MX_ADC2_Init(void)</div><div class="ttdef"><b>Definition:</b> <a href="adc_8c_source.html#l00118">adc.c:118</a></div></div>
+<div class="ttc" id="aadc_8h_html_acccd58aa70215a6b184ad242312ffd0c"><div class="ttname"><a href="adc_8h.html#acccd58aa70215a6b184ad242312ffd0c">MX_ADC1_Init</a></div><div class="ttdeci">void MX_ADC1_Init(void)</div><div class="ttdef"><b>Definition:</b> <a href="adc_8c_source.html#l00032">adc.c:32</a></div></div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">: Header for main.c file. This file contains the common defines of the application.</div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.16
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li><li class="navelem"><a class="el" href="adc_8h.html">adc.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
 </body>
 </html>

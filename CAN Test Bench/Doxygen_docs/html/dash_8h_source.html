@@ -9,6 +9,14 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+  $(document).ready(initResizable);
+/* @license-end */</script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +54,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('dash_8h_source.html','');});
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,17 +85,12 @@ $(function() {
 </iframe>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle">
 <div class="title">dash.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Code to make human readable CAN messages for the device</span></div>
+<a href="dash_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">// Code to make human readable CAN messages for the device</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">// This file will define message data as human readable stuff</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
@@ -83,11 +103,11 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define __DASH_H__</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">// CAN IDs correspond to specific values on the dash</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">enum</span> dash_can_ids{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Dash_RPM = 0x80,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Dash_Battery_Temperature = 0x82,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Dash_Motor_Temperature = 0x88,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Dash_State_of_Charge = 0x87,</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326">   14</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326">dash_can_ids</a>{</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326acf570e9fd481a65c750c9dff4f799db6">   15</a></span>&#160;    <a class="code" href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326acf570e9fd481a65c750c9dff4f799db6">Dash_RPM</a> = 0x80,</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326af40c0ecb9c7ec3c5bb9d7fe5db7a2c9f">   16</a></span>&#160;    <a class="code" href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326af40c0ecb9c7ec3c5bb9d7fe5db7a2c9f">Dash_Battery_Temperature</a> = 0x82,</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326ae8ee9a576cf2fea6eeda1948c522f8a8">   17</a></span>&#160;    <a class="code" href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326ae8ee9a576cf2fea6eeda1948c522f8a8">Dash_Motor_Temperature</a> = 0x88,</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326a0dabe76af82e2a49e2e60add5dd72dfc">   18</a></span>&#160;    <a class="code" href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326a0dabe76af82e2a49e2e60add5dd72dfc">Dash_State_of_Charge</a> = 0x87,</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="comment">// Battery Temperature 0x82</span></div>
@@ -102,19 +122,31 @@ $(function() {
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">// Need to define these</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> Update_RPM(int16_t value);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> Update_Batt_Temp(uint8_t value);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> Update_State_Of_Charge(uint8_t value);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keywordtype">void</span> <a class="code" href="dash_8h.html#ab26e477047a5166efc8f2b34dbd38872">Update_RPM</a>(int16_t value);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keywordtype">void</span> <a class="code" href="dash_8h.html#a66f84461e5c75202d12edfd8ea7c7f62">Update_Batt_Temp</a>(uint8_t value);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keywordtype">void</span> <a class="code" href="dash_8h.html#a30155b58ef3801f5693e953d4139d55f">Update_State_Of_Charge</a>(uint8_t value);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="adash_8h_html_a66f84461e5c75202d12edfd8ea7c7f62"><div class="ttname"><a href="dash_8h.html#a66f84461e5c75202d12edfd8ea7c7f62">Update_Batt_Temp</a></div><div class="ttdeci">void Update_Batt_Temp(uint8_t value)</div><div class="ttdef"><b>Definition:</b> <a href="dash_8c_source.html#l00029">dash.c:29</a></div></div>
+<div class="ttc" id="adash_8h_html_acef132540238e9f0c7d325f4ba6aa326af40c0ecb9c7ec3c5bb9d7fe5db7a2c9f"><div class="ttname"><a href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326af40c0ecb9c7ec3c5bb9d7fe5db7a2c9f">Dash_Battery_Temperature</a></div><div class="ttdef"><b>Definition:</b> <a href="dash_8h_source.html#l00016">dash.h:16</a></div></div>
+<div class="ttc" id="adash_8h_html_acef132540238e9f0c7d325f4ba6aa326"><div class="ttname"><a href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326">dash_can_ids</a></div><div class="ttdeci">dash_can_ids</div><div class="ttdef"><b>Definition:</b> <a href="dash_8h_source.html#l00014">dash.h:14</a></div></div>
+<div class="ttc" id="adash_8h_html_acef132540238e9f0c7d325f4ba6aa326ae8ee9a576cf2fea6eeda1948c522f8a8"><div class="ttname"><a href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326ae8ee9a576cf2fea6eeda1948c522f8a8">Dash_Motor_Temperature</a></div><div class="ttdef"><b>Definition:</b> <a href="dash_8h_source.html#l00017">dash.h:17</a></div></div>
+<div class="ttc" id="adash_8h_html_a30155b58ef3801f5693e953d4139d55f"><div class="ttname"><a href="dash_8h.html#a30155b58ef3801f5693e953d4139d55f">Update_State_Of_Charge</a></div><div class="ttdeci">void Update_State_Of_Charge(uint8_t value)</div><div class="ttdef"><b>Definition:</b> <a href="dash_8c_source.html#l00048">dash.c:48</a></div></div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">: Header for main.c file. This file contains the common defines of the application.</div></div>
+<div class="ttc" id="adash_8h_html_ab26e477047a5166efc8f2b34dbd38872"><div class="ttname"><a href="dash_8h.html#ab26e477047a5166efc8f2b34dbd38872">Update_RPM</a></div><div class="ttdeci">void Update_RPM(int16_t value)</div><div class="ttdef"><b>Definition:</b> <a href="dash_8c_source.html#l00009">dash.c:9</a></div></div>
+<div class="ttc" id="adash_8h_html_acef132540238e9f0c7d325f4ba6aa326acf570e9fd481a65c750c9dff4f799db6"><div class="ttname"><a href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326acf570e9fd481a65c750c9dff4f799db6">Dash_RPM</a></div><div class="ttdef"><b>Definition:</b> <a href="dash_8h_source.html#l00015">dash.h:15</a></div></div>
+<div class="ttc" id="adash_8h_html_acef132540238e9f0c7d325f4ba6aa326a0dabe76af82e2a49e2e60add5dd72dfc"><div class="ttname"><a href="dash_8h.html#acef132540238e9f0c7d325f4ba6aa326a0dabe76af82e2a49e2e60add5dd72dfc">Dash_State_of_Charge</a></div><div class="ttdef"><b>Definition:</b> <a href="dash_8h_source.html#l00018">dash.h:18</a></div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.16
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_c6310732a22f63c0c2fc5595561e68f1.html">Core</a></li><li class="navelem"><a class="el" href="dir_e2489e887f17afa3cbc07a4ec152cdd2.html">Inc</a></li><li class="navelem"><a class="el" href="dash_8h.html">dash.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.16 </li>
+  </ul>
+</div>
 </body>
 </html>

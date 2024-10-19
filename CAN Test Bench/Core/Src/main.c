@@ -73,7 +73,7 @@ uint16_t adc2_CoolantFlow;
 
 
 //State of da vehicle
-enum uv_vehicle_state_t vehicle_state = init; //TODO: Define new state machine logic
+enum uv_vehicle_state_t vehicle_state = UV_INIT; //TODO: Define new state machine logic
 
 /* USER CODE END PV */
 
@@ -92,6 +92,9 @@ void MX_FREERTOS_Init(void);
 /**
   * @brief  The application entry point.
   * @retval int
+  * This is the entry point of the application, and effectively only serves one purpose.
+  * It calls initialisation functions for all of the peripherals, checks the state of all
+  * drivers and devices, then passes control over to the RTOS scheduler.
   */
 int main(void)
 {

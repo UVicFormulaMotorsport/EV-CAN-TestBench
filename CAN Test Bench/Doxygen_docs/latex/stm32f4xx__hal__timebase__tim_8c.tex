@@ -16,6 +16,11 @@ void \mbox{\hyperlink{stm32f4xx__hal__timebase__tim_8c_aaf651af2afe688a991c657f6
 \begin{DoxyCompactList}\small\item\em Suspend Tick increment. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{stm32f4xx__hal__timebase__tim_8c_a24e0ee9dae1ec0f9d19200f5575ff790}{H\+A\+L\+\_\+\+Resume\+Tick}} (void)
 \begin{DoxyCompactList}\small\item\em Resume Tick increment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+T\+I\+M\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{stm32f4xx__hal__timebase__tim_8c_a25fc663547539bc49fecc0011bd76ab5}{htim1}}
+\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -52,6 +57,14 @@ This function is called automatically at the beginning of program after reset by
 {\em H\+AL} & status \\
 \hline
 \end{DoxyRetVals}
+
+
+Definition at line 41 of file stm32f4xx\+\_\+hal\+\_\+timebase\+\_\+tim.\+c.
+
+
+
+References htim1.
+
 \mbox{\Hypertarget{stm32f4xx__hal__timebase__tim_8c_a24e0ee9dae1ec0f9d19200f5575ff790}\label{stm32f4xx__hal__timebase__tim_8c_a24e0ee9dae1ec0f9d19200f5575ff790}} 
 \index{stm32f4xx\_hal\_timebase\_tim.c@{stm32f4xx\_hal\_timebase\_tim.c}!HAL\_ResumeTick@{HAL\_ResumeTick}}
 \index{HAL\_ResumeTick@{HAL\_ResumeTick}!stm32f4xx\_hal\_timebase\_tim.c@{stm32f4xx\_hal\_timebase\_tim.c}}
@@ -75,6 +88,14 @@ Enable the tick increment by Enabling T\+I\+M1 update interrupt.
 {\em None} & \\
 \hline
 \end{DoxyRetVals}
+
+
+Definition at line 121 of file stm32f4xx\+\_\+hal\+\_\+timebase\+\_\+tim.\+c.
+
+
+
+References htim1.
+
 \mbox{\Hypertarget{stm32f4xx__hal__timebase__tim_8c_aaf651af2afe688a991c657f64f8fa5f9}\label{stm32f4xx__hal__timebase__tim_8c_aaf651af2afe688a991c657f64f8fa5f9}} 
 \index{stm32f4xx\_hal\_timebase\_tim.c@{stm32f4xx\_hal\_timebase\_tim.c}!HAL\_SuspendTick@{HAL\_SuspendTick}}
 \index{HAL\_SuspendTick@{HAL\_SuspendTick}!stm32f4xx\_hal\_timebase\_tim.c@{stm32f4xx\_hal\_timebase\_tim.c}}
@@ -98,3 +119,28 @@ Disable the tick increment by disabling T\+I\+M1 update interrupt.
 {\em None} & \\
 \hline
 \end{DoxyRetVals}
+
+
+Definition at line 109 of file stm32f4xx\+\_\+hal\+\_\+timebase\+\_\+tim.\+c.
+
+
+
+References htim1.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{stm32f4xx__hal__timebase__tim_8c_a25fc663547539bc49fecc0011bd76ab5}\label{stm32f4xx__hal__timebase__tim_8c_a25fc663547539bc49fecc0011bd76ab5}} 
+\index{stm32f4xx\_hal\_timebase\_tim.c@{stm32f4xx\_hal\_timebase\_tim.c}!htim1@{htim1}}
+\index{htim1@{htim1}!stm32f4xx\_hal\_timebase\_tim.c@{stm32f4xx\_hal\_timebase\_tim.c}}
+\doxysubsubsection{\texorpdfstring{htim1}{htim1}}
+{\footnotesize\ttfamily T\+I\+M\+\_\+\+Handle\+Type\+Def htim1}
+
+
+
+Definition at line 28 of file stm32f4xx\+\_\+hal\+\_\+timebase\+\_\+tim.\+c.
+
+
+
+Referenced by H\+A\+L\+\_\+\+Init\+Tick(), H\+A\+L\+\_\+\+Resume\+Tick(), H\+A\+L\+\_\+\+Suspend\+Tick(), and T\+I\+M1\+\_\+\+U\+P\+\_\+\+T\+I\+M10\+\_\+\+I\+R\+Q\+Handler().
+

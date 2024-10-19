@@ -26,6 +26,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "uvfr_utils.h"
+#include "driving_loop.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,7 +47,7 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 // This is where the actual RTOS task handles are going to live
-
+osThreadId drivingLoopHandle;
 /* USER CODE END Variables */
 osThreadId ledTaskHandle;
 
@@ -77,11 +78,13 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
 
 /**
   * @brief  FreeRTOS initialization
-  *
+  * This is where we declare our RTOS tasks, mutexes, semaphores, and timers.
   *
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
+	//time to initialise everything :)
+
 
   /* USER CODE END Init */
 
@@ -108,6 +111,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+  osThreadDef(drivingLoop, StartDrivingLoop, osPriorityRealtime, 0, 128);
+  drivingLoopHandle = osThreadCreate(osThread(drivingLoop), NULL);
   /* USER CODE END RTOS_THREADS */
 
 }

@@ -1,0 +1,638 @@
+\hypertarget{imd_8h}{}\doxysection{Core/\+Inc/imd.h File Reference}
+\label{imd_8h}\index{Core/Inc/imd.h@{Core/Inc/imd.h}}
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{imd_8h_acf7b0534a43397021a0e474a499218be}{imd\+\_\+status\+\_\+bits}} \{ \newline
+\mbox{\hyperlink{imd_8h_acf7b0534a43397021a0e474a499218beafdb68e8ed34ae72c318cbd4a4d6fc250}{Isolation\+\_\+status\+\_\+bit0}} = 0b00000001, 
+\mbox{\hyperlink{imd_8h_acf7b0534a43397021a0e474a499218bea2d0990734ac774c2740c9e541e8700b3}{Isolation\+\_\+status\+\_\+bit1}} = 0b00000010, 
+\mbox{\hyperlink{imd_8h_acf7b0534a43397021a0e474a499218beacb8278060f1d4f8f423c3f7943618d0a}{Low\+\_\+\+Battery\+\_\+\+Voltage}} = 0b00000100, 
+\mbox{\hyperlink{imd_8h_acf7b0534a43397021a0e474a499218bea446905b0f3e9fe48a178f0a6799324b4}{High\+\_\+\+Battery\+\_\+\+Voltage}} = 0b00001000, 
+\newline
+\mbox{\hyperlink{imd_8h_acf7b0534a43397021a0e474a499218bea8e572e8f9a6be9d801c0db642ece2c2a}{Exc\+\_\+off}} = 0b00010000, 
+\mbox{\hyperlink{imd_8h_acf7b0534a43397021a0e474a499218bea4c7193d6f28bf43ed6de8e1291917846}{High\+\_\+\+Uncertainty}} = 0b00100000, 
+\mbox{\hyperlink{imd_8h_acf7b0534a43397021a0e474a499218bea5392342181b601c30b6e537a0f5a0a08}{Touch\+\_\+energy\+\_\+fault}} = 0b01000000, 
+\mbox{\hyperlink{imd_8h_acf7b0534a43397021a0e474a499218bea48e3e4678c927a799f113e4688ab7886}{Hardware\+\_\+\+Error}} = 0b10000000
+ \}
+\item 
+enum \mbox{\hyperlink{imd_8h_a0710286ee4b87e83845bd90c76e5c26a}{imd\+\_\+status\+\_\+requests}} \{ \newline
+\mbox{\hyperlink{imd_8h_a0710286ee4b87e83845bd90c76e5c26aabbce6aa84dd484b90a148c9893f29c38}{isolation\+\_\+state}} = 0x\+E0, 
+\mbox{\hyperlink{imd_8h_a0710286ee4b87e83845bd90c76e5c26aac4f56ef8fddf7442d16abdcef0ee35ae}{isolation\+\_\+resistances}} = 0x\+E1, 
+\mbox{\hyperlink{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa1f57f433823678afb675a0118355b41c}{isolation\+\_\+capacitances}} = 0x\+E2, 
+\mbox{\hyperlink{imd_8h_a0710286ee4b87e83845bd90c76e5c26aab731b0ae179fe84519337374868be1d1}{voltages\+\_\+\+Vp\+\_\+and\+\_\+\+Vn}} = 0x\+E3, 
+\newline
+\mbox{\hyperlink{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa88e842a14bd3662858b52abbefad1680}{battery\+\_\+voltage}} = 0x\+E4, 
+\mbox{\hyperlink{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa86fdcb1bb1742680706316d50c9b8fcf}{Error\+\_\+flags}} = 0x\+E5, 
+\mbox{\hyperlink{imd_8h_a0710286ee4b87e83845bd90c76e5c26aae62307414b8266d9beb9dcffc335f504}{safety\+\_\+touch\+\_\+energy}} = 0x\+E6, 
+\mbox{\hyperlink{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa64c31deedf3ed7b386711c4c6825456f}{safety\+\_\+touch\+\_\+current}} = 0x\+E7, 
+\newline
+\mbox{\hyperlink{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa194e665f65c42e02190f2871ecfd3eed}{Max\+\_\+battery\+\_\+working\+\_\+voltage}} = 0x\+F0, 
+\mbox{\hyperlink{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa636f89bb3814dde8c07ec0446f72d28f}{Temperature}} = 0x80
+ \}
+\item 
+enum \mbox{\hyperlink{imd_8h_a4456d255c2ceb447ad52b68087531b61}{imd\+\_\+error\+\_\+flags}} \{ \newline
+\mbox{\hyperlink{imd_8h_a4456d255c2ceb447ad52b68087531b61afa71f4893ad7f39c03d991a2eae95368}{Err\+\_\+temp}} = 0x0080, 
+\mbox{\hyperlink{imd_8h_a4456d255c2ceb447ad52b68087531b61a0bab46bce7066da8e52221c8283cccbd}{Err\+\_\+clock}} = 0x0100, 
+\mbox{\hyperlink{imd_8h_a4456d255c2ceb447ad52b68087531b61aec0ab5944a70662e09e795646e5987ca}{Err\+\_\+\+Watchdog}} = 0x0200, 
+\mbox{\hyperlink{imd_8h_a4456d255c2ceb447ad52b68087531b61a22c4b1756e0cf536391cc6e5547470f6}{Err\+\_\+\+Vpwr}} = 0x0400, 
+\newline
+\mbox{\hyperlink{imd_8h_a4456d255c2ceb447ad52b68087531b61a198b196da46ddeb177a05ed33f363df7}{Err\+\_\+\+Vexi}} = 0x0800, 
+\mbox{\hyperlink{imd_8h_a4456d255c2ceb447ad52b68087531b61aeccbe530442099dab4642a4dc399666f}{Err\+\_\+\+VxR}} = 0x1000, 
+\mbox{\hyperlink{imd_8h_a4456d255c2ceb447ad52b68087531b61ae3dc5d0132a955458e722cb04ccd3900}{Err\+\_\+\+CH}} = 0x2000, 
+\mbox{\hyperlink{imd_8h_a4456d255c2ceb447ad52b68087531b61a902d14d447c4552ea1f4f1634f2e4a61}{Err\+\_\+\+Vx1}} = 0x4000, 
+\newline
+\mbox{\hyperlink{imd_8h_a4456d255c2ceb447ad52b68087531b61a806c4e5614221c8b239f6620ab7d5d50}{Err\+\_\+\+Vx2}} = 0x8000
+ \}
+\item 
+enum \mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674e}{imd\+\_\+manufacturer\+\_\+requests}} \{ \newline
+\mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674ea9f7942276dd9e12e41f0463701086e7d}{Part\+\_\+name\+\_\+0}} = 0x01, 
+\mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674ea6172e87521e48caf627c729daa8b6f59}{Part\+\_\+name\+\_\+1}} = 0x02, 
+\mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674ea98d7a9f4550631a81ea2c5a4a215a981}{Part\+\_\+name\+\_\+2}} = 0x03, 
+\mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674ea086d70441c24f02a8abceeee41562cde}{Part\+\_\+name\+\_\+3}} = 0x04, 
+\newline
+\mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674ea5eb2adcd1cb7d65f6c590b6f6b7ee322}{Version\+\_\+0}} = 0x05, 
+\mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674eafcc458d57f1b3273ae319230922231a4}{Version\+\_\+1}} = 0x06, 
+\mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674eafb60bb95154ac28254f2e8dfbc82c638}{Version\+\_\+2}} = 0x07, 
+\mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674ea453d45b6245737d4987dd4b78a2e464a}{Serial\+\_\+number\+\_\+0}} = 0x08, 
+\newline
+\mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674ea29cf9ca0d526194e6ce71ff99120ee9e}{Serial\+\_\+number\+\_\+1}} = 0x09, 
+\mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674ea87fc8ea63ac933e1e441f105dce28cdb}{Serial\+\_\+number\+\_\+2}} = 0x0A, 
+\mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674eaf9d06047340a1a4185e714ca761f891e}{Serial\+\_\+number\+\_\+3}} = 0x0B, 
+\mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674eac87b1e30788367a709363dba4ad7f238}{Uptime\+\_\+counter}} = 0x0C
+ \}
+\item 
+enum \mbox{\hyperlink{imd_8h_af8e85b806bce9c9cad944c261ff0aa0c}{imd\+\_\+high\+\_\+resolution\+\_\+measurements}} \{ \newline
+\mbox{\hyperlink{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca781dcc0628d7284c0e9e0be67cd3365b}{Vn\+\_\+hi\+\_\+res}} = 0x60, 
+\mbox{\hyperlink{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca6b90089e224b90d87a6cf113e5e36f22}{Vp\+\_\+hi\+\_\+res}} = 0x61, 
+\mbox{\hyperlink{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca65563450695b30beae4032ff330f0e6f}{Vexc\+\_\+hi\+\_\+res}} = 0x62, 
+\mbox{\hyperlink{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca23a10ada814d11a9a1044ede3a821688}{Vb\+\_\+hi\+\_\+res}} = 0x63, 
+\newline
+\mbox{\hyperlink{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca6d4bdc992b68f8ee4aea88056639af5d}{Vpwr\+\_\+hi\+\_\+res}} = 0x65
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{imd_8h_a1f6181c5ab49d963007eb9a212672bbd}{I\+M\+D\+\_\+\+Parse\+\_\+\+Message}} (int D\+LC, uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_ab4e8b5af19cc6d0b08ace9185a542b01}{I\+M\+D\+\_\+\+Check\+\_\+\+Status\+\_\+\+Bits}} (uint8\+\_\+t Data)
+\item 
+void \mbox{\hyperlink{imd_8h_a0cfe9b1a6472c4a5d0ca154a4e9e7bb0}{I\+M\+D\+\_\+\+Check\+\_\+\+Error\+\_\+\+Flags}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_af81ff089b3fabafdfa49c3b816ded80e}{I\+M\+D\+\_\+\+Check\+\_\+\+Isolation\+\_\+\+State}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_adb4d085b7b1f3e5a860c45aa5a404294}{I\+M\+D\+\_\+\+Check\+\_\+\+Isolation\+\_\+\+Resistances}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_a686301a85070c84e89af3e1cc0a159ae}{I\+M\+D\+\_\+\+Check\+\_\+\+Isolation\+\_\+\+Capacitances}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_a0fc857559d80dd701aec763dd6911383}{I\+M\+D\+\_\+\+Check\+\_\+\+Voltages\+\_\+\+Vp\+\_\+and\+\_\+\+Vn}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_ac94e0b660190e6ce0d376d407627057e}{I\+M\+D\+\_\+\+Check\+\_\+\+Battery\+\_\+\+Voltage}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_abc49be24256f1a93674e290546384348}{I\+M\+D\+\_\+\+Check\+\_\+\+Safety\+\_\+\+Touch\+\_\+\+Energy}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_a00c843b8f3e8cf4569ea9008cd7db9d2}{I\+M\+D\+\_\+\+Check\+\_\+\+Safety\+\_\+\+Touch\+\_\+\+Current}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_a1a18f8d11173ee691822b5a712cf1617}{I\+M\+D\+\_\+\+Check\+\_\+\+Temperature}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_a6f6abcfa57cc41a7b1249c0157702a1c}{I\+M\+D\+\_\+\+Check\+\_\+\+Max\+\_\+\+Battery\+\_\+\+Working\+\_\+\+Voltage}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_a72a595e6320ceeb17de4f7ce2ec66d30}{I\+M\+D\+\_\+\+Check\+\_\+\+Part\+\_\+\+Name}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_a4a16ede06a18addd7ef3e67be2aaaf3d}{I\+M\+D\+\_\+\+Check\+\_\+\+Version}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_a6f1e850c527bdf0e1a7cfbc557b8501b}{I\+M\+D\+\_\+\+Check\+\_\+\+Serial\+\_\+\+Number}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_ae0177fe52ae013a36014be506fd1fa93}{I\+M\+D\+\_\+\+Check\+\_\+\+Uptime}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{imd_8h_aeb7c937639c5385f5d2b4e3a4e60250f}{I\+M\+D\+\_\+\+Request\+\_\+\+Status}} (uint8\+\_\+t Status)
+\item 
+void \mbox{\hyperlink{imd_8h_a80b26177d8aa0c0e803fac210eb456ac}{I\+M\+D\+\_\+\+Startup}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{imd_8h_a4456d255c2ceb447ad52b68087531b61}\label{imd_8h_a4456d255c2ceb447ad52b68087531b61}} 
+\index{imd.h@{imd.h}!imd\_error\_flags@{imd\_error\_flags}}
+\index{imd\_error\_flags@{imd\_error\_flags}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{imd\_error\_flags}{imd\_error\_flags}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{imd_8h_a4456d255c2ceb447ad52b68087531b61}{imd\+\_\+error\+\_\+flags}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Err\_temp@{Err\_temp}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Err\_temp@{Err\_temp}}}\mbox{\Hypertarget{imd_8h_a4456d255c2ceb447ad52b68087531b61afa71f4893ad7f39c03d991a2eae95368}\label{imd_8h_a4456d255c2ceb447ad52b68087531b61afa71f4893ad7f39c03d991a2eae95368}} 
+Err\+\_\+temp&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Err\_clock@{Err\_clock}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Err\_clock@{Err\_clock}}}\mbox{\Hypertarget{imd_8h_a4456d255c2ceb447ad52b68087531b61a0bab46bce7066da8e52221c8283cccbd}\label{imd_8h_a4456d255c2ceb447ad52b68087531b61a0bab46bce7066da8e52221c8283cccbd}} 
+Err\+\_\+clock&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Err\_Watchdog@{Err\_Watchdog}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Err\_Watchdog@{Err\_Watchdog}}}\mbox{\Hypertarget{imd_8h_a4456d255c2ceb447ad52b68087531b61aec0ab5944a70662e09e795646e5987ca}\label{imd_8h_a4456d255c2ceb447ad52b68087531b61aec0ab5944a70662e09e795646e5987ca}} 
+Err\+\_\+\+Watchdog&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Err\_Vpwr@{Err\_Vpwr}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Err\_Vpwr@{Err\_Vpwr}}}\mbox{\Hypertarget{imd_8h_a4456d255c2ceb447ad52b68087531b61a22c4b1756e0cf536391cc6e5547470f6}\label{imd_8h_a4456d255c2ceb447ad52b68087531b61a22c4b1756e0cf536391cc6e5547470f6}} 
+Err\+\_\+\+Vpwr&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Err\_Vexi@{Err\_Vexi}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Err\_Vexi@{Err\_Vexi}}}\mbox{\Hypertarget{imd_8h_a4456d255c2ceb447ad52b68087531b61a198b196da46ddeb177a05ed33f363df7}\label{imd_8h_a4456d255c2ceb447ad52b68087531b61a198b196da46ddeb177a05ed33f363df7}} 
+Err\+\_\+\+Vexi&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Err\_VxR@{Err\_VxR}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Err\_VxR@{Err\_VxR}}}\mbox{\Hypertarget{imd_8h_a4456d255c2ceb447ad52b68087531b61aeccbe530442099dab4642a4dc399666f}\label{imd_8h_a4456d255c2ceb447ad52b68087531b61aeccbe530442099dab4642a4dc399666f}} 
+Err\+\_\+\+VxR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Err\_CH@{Err\_CH}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Err\_CH@{Err\_CH}}}\mbox{\Hypertarget{imd_8h_a4456d255c2ceb447ad52b68087531b61ae3dc5d0132a955458e722cb04ccd3900}\label{imd_8h_a4456d255c2ceb447ad52b68087531b61ae3dc5d0132a955458e722cb04ccd3900}} 
+Err\+\_\+\+CH&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Err\_Vx1@{Err\_Vx1}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Err\_Vx1@{Err\_Vx1}}}\mbox{\Hypertarget{imd_8h_a4456d255c2ceb447ad52b68087531b61a902d14d447c4552ea1f4f1634f2e4a61}\label{imd_8h_a4456d255c2ceb447ad52b68087531b61a902d14d447c4552ea1f4f1634f2e4a61}} 
+Err\+\_\+\+Vx1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Err\_Vx2@{Err\_Vx2}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Err\_Vx2@{Err\_Vx2}}}\mbox{\Hypertarget{imd_8h_a4456d255c2ceb447ad52b68087531b61a806c4e5614221c8b239f6620ab7d5d50}\label{imd_8h_a4456d255c2ceb447ad52b68087531b61a806c4e5614221c8b239f6620ab7d5d50}} 
+Err\+\_\+\+Vx2&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 68 of file imd.\+h.
+
+\mbox{\Hypertarget{imd_8h_af8e85b806bce9c9cad944c261ff0aa0c}\label{imd_8h_af8e85b806bce9c9cad944c261ff0aa0c}} 
+\index{imd.h@{imd.h}!imd\_high\_resolution\_measurements@{imd\_high\_resolution\_measurements}}
+\index{imd\_high\_resolution\_measurements@{imd\_high\_resolution\_measurements}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{imd\_high\_resolution\_measurements}{imd\_high\_resolution\_measurements}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{imd_8h_af8e85b806bce9c9cad944c261ff0aa0c}{imd\+\_\+high\+\_\+resolution\+\_\+measurements}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vn\_hi\_res@{Vn\_hi\_res}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Vn\_hi\_res@{Vn\_hi\_res}}}\mbox{\Hypertarget{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca781dcc0628d7284c0e9e0be67cd3365b}\label{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca781dcc0628d7284c0e9e0be67cd3365b}} 
+Vn\+\_\+hi\+\_\+res&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vp\_hi\_res@{Vp\_hi\_res}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Vp\_hi\_res@{Vp\_hi\_res}}}\mbox{\Hypertarget{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca6b90089e224b90d87a6cf113e5e36f22}\label{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca6b90089e224b90d87a6cf113e5e36f22}} 
+Vp\+\_\+hi\+\_\+res&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vexc\_hi\_res@{Vexc\_hi\_res}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Vexc\_hi\_res@{Vexc\_hi\_res}}}\mbox{\Hypertarget{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca65563450695b30beae4032ff330f0e6f}\label{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca65563450695b30beae4032ff330f0e6f}} 
+Vexc\+\_\+hi\+\_\+res&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vb\_hi\_res@{Vb\_hi\_res}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Vb\_hi\_res@{Vb\_hi\_res}}}\mbox{\Hypertarget{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca23a10ada814d11a9a1044ede3a821688}\label{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca23a10ada814d11a9a1044ede3a821688}} 
+Vb\+\_\+hi\+\_\+res&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vpwr\_hi\_res@{Vpwr\_hi\_res}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Vpwr\_hi\_res@{Vpwr\_hi\_res}}}\mbox{\Hypertarget{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca6d4bdc992b68f8ee4aea88056639af5d}\label{imd_8h_af8e85b806bce9c9cad944c261ff0aa0ca6d4bdc992b68f8ee4aea88056639af5d}} 
+Vpwr\+\_\+hi\+\_\+res&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 98 of file imd.\+h.
+
+\mbox{\Hypertarget{imd_8h_a975959819df682c9adec7c667028674e}\label{imd_8h_a975959819df682c9adec7c667028674e}} 
+\index{imd.h@{imd.h}!imd\_manufacturer\_requests@{imd\_manufacturer\_requests}}
+\index{imd\_manufacturer\_requests@{imd\_manufacturer\_requests}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{imd\_manufacturer\_requests}{imd\_manufacturer\_requests}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{imd_8h_a975959819df682c9adec7c667028674e}{imd\+\_\+manufacturer\+\_\+requests}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Part\_name\_0@{Part\_name\_0}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Part\_name\_0@{Part\_name\_0}}}\mbox{\Hypertarget{imd_8h_a975959819df682c9adec7c667028674ea9f7942276dd9e12e41f0463701086e7d}\label{imd_8h_a975959819df682c9adec7c667028674ea9f7942276dd9e12e41f0463701086e7d}} 
+Part\+\_\+name\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Part\_name\_1@{Part\_name\_1}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Part\_name\_1@{Part\_name\_1}}}\mbox{\Hypertarget{imd_8h_a975959819df682c9adec7c667028674ea6172e87521e48caf627c729daa8b6f59}\label{imd_8h_a975959819df682c9adec7c667028674ea6172e87521e48caf627c729daa8b6f59}} 
+Part\+\_\+name\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Part\_name\_2@{Part\_name\_2}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Part\_name\_2@{Part\_name\_2}}}\mbox{\Hypertarget{imd_8h_a975959819df682c9adec7c667028674ea98d7a9f4550631a81ea2c5a4a215a981}\label{imd_8h_a975959819df682c9adec7c667028674ea98d7a9f4550631a81ea2c5a4a215a981}} 
+Part\+\_\+name\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Part\_name\_3@{Part\_name\_3}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Part\_name\_3@{Part\_name\_3}}}\mbox{\Hypertarget{imd_8h_a975959819df682c9adec7c667028674ea086d70441c24f02a8abceeee41562cde}\label{imd_8h_a975959819df682c9adec7c667028674ea086d70441c24f02a8abceeee41562cde}} 
+Part\+\_\+name\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Version\_0@{Version\_0}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Version\_0@{Version\_0}}}\mbox{\Hypertarget{imd_8h_a975959819df682c9adec7c667028674ea5eb2adcd1cb7d65f6c590b6f6b7ee322}\label{imd_8h_a975959819df682c9adec7c667028674ea5eb2adcd1cb7d65f6c590b6f6b7ee322}} 
+Version\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Version\_1@{Version\_1}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Version\_1@{Version\_1}}}\mbox{\Hypertarget{imd_8h_a975959819df682c9adec7c667028674eafcc458d57f1b3273ae319230922231a4}\label{imd_8h_a975959819df682c9adec7c667028674eafcc458d57f1b3273ae319230922231a4}} 
+Version\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Version\_2@{Version\_2}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Version\_2@{Version\_2}}}\mbox{\Hypertarget{imd_8h_a975959819df682c9adec7c667028674eafb60bb95154ac28254f2e8dfbc82c638}\label{imd_8h_a975959819df682c9adec7c667028674eafb60bb95154ac28254f2e8dfbc82c638}} 
+Version\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Serial\_number\_0@{Serial\_number\_0}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Serial\_number\_0@{Serial\_number\_0}}}\mbox{\Hypertarget{imd_8h_a975959819df682c9adec7c667028674ea453d45b6245737d4987dd4b78a2e464a}\label{imd_8h_a975959819df682c9adec7c667028674ea453d45b6245737d4987dd4b78a2e464a}} 
+Serial\+\_\+number\+\_\+0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Serial\_number\_1@{Serial\_number\_1}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Serial\_number\_1@{Serial\_number\_1}}}\mbox{\Hypertarget{imd_8h_a975959819df682c9adec7c667028674ea29cf9ca0d526194e6ce71ff99120ee9e}\label{imd_8h_a975959819df682c9adec7c667028674ea29cf9ca0d526194e6ce71ff99120ee9e}} 
+Serial\+\_\+number\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Serial\_number\_2@{Serial\_number\_2}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Serial\_number\_2@{Serial\_number\_2}}}\mbox{\Hypertarget{imd_8h_a975959819df682c9adec7c667028674ea87fc8ea63ac933e1e441f105dce28cdb}\label{imd_8h_a975959819df682c9adec7c667028674ea87fc8ea63ac933e1e441f105dce28cdb}} 
+Serial\+\_\+number\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Serial\_number\_3@{Serial\_number\_3}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Serial\_number\_3@{Serial\_number\_3}}}\mbox{\Hypertarget{imd_8h_a975959819df682c9adec7c667028674eaf9d06047340a1a4185e714ca761f891e}\label{imd_8h_a975959819df682c9adec7c667028674eaf9d06047340a1a4185e714ca761f891e}} 
+Serial\+\_\+number\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Uptime\_counter@{Uptime\_counter}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Uptime\_counter@{Uptime\_counter}}}\mbox{\Hypertarget{imd_8h_a975959819df682c9adec7c667028674eac87b1e30788367a709363dba4ad7f238}\label{imd_8h_a975959819df682c9adec7c667028674eac87b1e30788367a709363dba4ad7f238}} 
+Uptime\+\_\+counter&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 82 of file imd.\+h.
+
+\mbox{\Hypertarget{imd_8h_acf7b0534a43397021a0e474a499218be}\label{imd_8h_acf7b0534a43397021a0e474a499218be}} 
+\index{imd.h@{imd.h}!imd\_status\_bits@{imd\_status\_bits}}
+\index{imd\_status\_bits@{imd\_status\_bits}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{imd\_status\_bits}{imd\_status\_bits}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{imd_8h_acf7b0534a43397021a0e474a499218be}{imd\+\_\+status\+\_\+bits}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Isolation\_status\_bit0@{Isolation\_status\_bit0}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Isolation\_status\_bit0@{Isolation\_status\_bit0}}}\mbox{\Hypertarget{imd_8h_acf7b0534a43397021a0e474a499218beafdb68e8ed34ae72c318cbd4a4d6fc250}\label{imd_8h_acf7b0534a43397021a0e474a499218beafdb68e8ed34ae72c318cbd4a4d6fc250}} 
+Isolation\+\_\+status\+\_\+bit0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Isolation\_status\_bit1@{Isolation\_status\_bit1}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Isolation\_status\_bit1@{Isolation\_status\_bit1}}}\mbox{\Hypertarget{imd_8h_acf7b0534a43397021a0e474a499218bea2d0990734ac774c2740c9e541e8700b3}\label{imd_8h_acf7b0534a43397021a0e474a499218bea2d0990734ac774c2740c9e541e8700b3}} 
+Isolation\+\_\+status\+\_\+bit1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Low\_Battery\_Voltage@{Low\_Battery\_Voltage}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Low\_Battery\_Voltage@{Low\_Battery\_Voltage}}}\mbox{\Hypertarget{imd_8h_acf7b0534a43397021a0e474a499218beacb8278060f1d4f8f423c3f7943618d0a}\label{imd_8h_acf7b0534a43397021a0e474a499218beacb8278060f1d4f8f423c3f7943618d0a}} 
+Low\+\_\+\+Battery\+\_\+\+Voltage&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{High\_Battery\_Voltage@{High\_Battery\_Voltage}!imd.h@{imd.h}}\index{imd.h@{imd.h}!High\_Battery\_Voltage@{High\_Battery\_Voltage}}}\mbox{\Hypertarget{imd_8h_acf7b0534a43397021a0e474a499218bea446905b0f3e9fe48a178f0a6799324b4}\label{imd_8h_acf7b0534a43397021a0e474a499218bea446905b0f3e9fe48a178f0a6799324b4}} 
+High\+\_\+\+Battery\+\_\+\+Voltage&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Exc\_off@{Exc\_off}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Exc\_off@{Exc\_off}}}\mbox{\Hypertarget{imd_8h_acf7b0534a43397021a0e474a499218bea8e572e8f9a6be9d801c0db642ece2c2a}\label{imd_8h_acf7b0534a43397021a0e474a499218bea8e572e8f9a6be9d801c0db642ece2c2a}} 
+Exc\+\_\+off&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{High\_Uncertainty@{High\_Uncertainty}!imd.h@{imd.h}}\index{imd.h@{imd.h}!High\_Uncertainty@{High\_Uncertainty}}}\mbox{\Hypertarget{imd_8h_acf7b0534a43397021a0e474a499218bea4c7193d6f28bf43ed6de8e1291917846}\label{imd_8h_acf7b0534a43397021a0e474a499218bea4c7193d6f28bf43ed6de8e1291917846}} 
+High\+\_\+\+Uncertainty&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Touch\_energy\_fault@{Touch\_energy\_fault}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Touch\_energy\_fault@{Touch\_energy\_fault}}}\mbox{\Hypertarget{imd_8h_acf7b0534a43397021a0e474a499218bea5392342181b601c30b6e537a0f5a0a08}\label{imd_8h_acf7b0534a43397021a0e474a499218bea5392342181b601c30b6e537a0f5a0a08}} 
+Touch\+\_\+energy\+\_\+fault&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Hardware\_Error@{Hardware\_Error}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Hardware\_Error@{Hardware\_Error}}}\mbox{\Hypertarget{imd_8h_acf7b0534a43397021a0e474a499218bea48e3e4678c927a799f113e4688ab7886}\label{imd_8h_acf7b0534a43397021a0e474a499218bea48e3e4678c927a799f113e4688ab7886}} 
+Hardware\+\_\+\+Error&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 16 of file imd.\+h.
+
+\mbox{\Hypertarget{imd_8h_a0710286ee4b87e83845bd90c76e5c26a}\label{imd_8h_a0710286ee4b87e83845bd90c76e5c26a}} 
+\index{imd.h@{imd.h}!imd\_status\_requests@{imd\_status\_requests}}
+\index{imd\_status\_requests@{imd\_status\_requests}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{imd\_status\_requests}{imd\_status\_requests}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{imd_8h_a0710286ee4b87e83845bd90c76e5c26a}{imd\+\_\+status\+\_\+requests}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{isolation\_state@{isolation\_state}!imd.h@{imd.h}}\index{imd.h@{imd.h}!isolation\_state@{isolation\_state}}}\mbox{\Hypertarget{imd_8h_a0710286ee4b87e83845bd90c76e5c26aabbce6aa84dd484b90a148c9893f29c38}\label{imd_8h_a0710286ee4b87e83845bd90c76e5c26aabbce6aa84dd484b90a148c9893f29c38}} 
+isolation\+\_\+state&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{isolation\_resistances@{isolation\_resistances}!imd.h@{imd.h}}\index{imd.h@{imd.h}!isolation\_resistances@{isolation\_resistances}}}\mbox{\Hypertarget{imd_8h_a0710286ee4b87e83845bd90c76e5c26aac4f56ef8fddf7442d16abdcef0ee35ae}\label{imd_8h_a0710286ee4b87e83845bd90c76e5c26aac4f56ef8fddf7442d16abdcef0ee35ae}} 
+isolation\+\_\+resistances&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{isolation\_capacitances@{isolation\_capacitances}!imd.h@{imd.h}}\index{imd.h@{imd.h}!isolation\_capacitances@{isolation\_capacitances}}}\mbox{\Hypertarget{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa1f57f433823678afb675a0118355b41c}\label{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa1f57f433823678afb675a0118355b41c}} 
+isolation\+\_\+capacitances&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{voltages\_Vp\_and\_Vn@{voltages\_Vp\_and\_Vn}!imd.h@{imd.h}}\index{imd.h@{imd.h}!voltages\_Vp\_and\_Vn@{voltages\_Vp\_and\_Vn}}}\mbox{\Hypertarget{imd_8h_a0710286ee4b87e83845bd90c76e5c26aab731b0ae179fe84519337374868be1d1}\label{imd_8h_a0710286ee4b87e83845bd90c76e5c26aab731b0ae179fe84519337374868be1d1}} 
+voltages\+\_\+\+Vp\+\_\+and\+\_\+\+Vn&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{battery\_voltage@{battery\_voltage}!imd.h@{imd.h}}\index{imd.h@{imd.h}!battery\_voltage@{battery\_voltage}}}\mbox{\Hypertarget{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa88e842a14bd3662858b52abbefad1680}\label{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa88e842a14bd3662858b52abbefad1680}} 
+battery\+\_\+voltage&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error\_flags@{Error\_flags}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Error\_flags@{Error\_flags}}}\mbox{\Hypertarget{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa86fdcb1bb1742680706316d50c9b8fcf}\label{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa86fdcb1bb1742680706316d50c9b8fcf}} 
+Error\+\_\+flags&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{safety\_touch\_energy@{safety\_touch\_energy}!imd.h@{imd.h}}\index{imd.h@{imd.h}!safety\_touch\_energy@{safety\_touch\_energy}}}\mbox{\Hypertarget{imd_8h_a0710286ee4b87e83845bd90c76e5c26aae62307414b8266d9beb9dcffc335f504}\label{imd_8h_a0710286ee4b87e83845bd90c76e5c26aae62307414b8266d9beb9dcffc335f504}} 
+safety\+\_\+touch\+\_\+energy&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{safety\_touch\_current@{safety\_touch\_current}!imd.h@{imd.h}}\index{imd.h@{imd.h}!safety\_touch\_current@{safety\_touch\_current}}}\mbox{\Hypertarget{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa64c31deedf3ed7b386711c4c6825456f}\label{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa64c31deedf3ed7b386711c4c6825456f}} 
+safety\+\_\+touch\+\_\+current&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Max\_battery\_working\_voltage@{Max\_battery\_working\_voltage}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Max\_battery\_working\_voltage@{Max\_battery\_working\_voltage}}}\mbox{\Hypertarget{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa194e665f65c42e02190f2871ecfd3eed}\label{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa194e665f65c42e02190f2871ecfd3eed}} 
+Max\+\_\+battery\+\_\+working\+\_\+voltage&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Temperature@{Temperature}!imd.h@{imd.h}}\index{imd.h@{imd.h}!Temperature@{Temperature}}}\mbox{\Hypertarget{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa636f89bb3814dde8c07ec0446f72d28f}\label{imd_8h_a0710286ee4b87e83845bd90c76e5c26aa636f89bb3814dde8c07ec0446f72d28f}} 
+Temperature&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 32 of file imd.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{imd_8h_ac94e0b660190e6ce0d376d407627057e}\label{imd_8h_ac94e0b660190e6ce0d376d407627057e}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Battery\_Voltage@{IMD\_Check\_Battery\_Voltage}}
+\index{IMD\_Check\_Battery\_Voltage@{IMD\_Check\_Battery\_Voltage}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Battery\_Voltage()}{IMD\_Check\_Battery\_Voltage()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Battery\+\_\+\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 350 of file imd.\+c.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_a0cfe9b1a6472c4a5d0ca154a4e9e7bb0}\label{imd_8h_a0cfe9b1a6472c4a5d0ca154a4e9e7bb0}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Error\_Flags@{IMD\_Check\_Error\_Flags}}
+\index{IMD\_Check\_Error\_Flags@{IMD\_Check\_Error\_Flags}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Error\_Flags()}{IMD\_Check\_Error\_Flags()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Error\+\_\+\+Flags (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 256 of file imd.\+c.
+
+
+
+References Err\+\_\+\+CH, Err\+\_\+clock, Err\+\_\+temp, Err\+\_\+\+Vexi, Err\+\_\+\+Vpwr, Err\+\_\+\+Vx1, Err\+\_\+\+Vx2, Err\+\_\+\+VxR, and Err\+\_\+\+Watchdog.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_a686301a85070c84e89af3e1cc0a159ae}\label{imd_8h_a686301a85070c84e89af3e1cc0a159ae}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Isolation\_Capacitances@{IMD\_Check\_Isolation\_Capacitances}}
+\index{IMD\_Check\_Isolation\_Capacitances@{IMD\_Check\_Isolation\_Capacitances}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Isolation\_Capacitances()}{IMD\_Check\_Isolation\_Capacitances()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Isolation\+\_\+\+Capacitances (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 336 of file imd.\+c.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_adb4d085b7b1f3e5a860c45aa5a404294}\label{imd_8h_adb4d085b7b1f3e5a860c45aa5a404294}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Isolation\_Resistances@{IMD\_Check\_Isolation\_Resistances}}
+\index{IMD\_Check\_Isolation\_Resistances@{IMD\_Check\_Isolation\_Resistances}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Isolation\_Resistances()}{IMD\_Check\_Isolation\_Resistances()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Isolation\+\_\+\+Resistances (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 311 of file imd.\+c.
+
+
+
+References I\+M\+D\+\_\+\+High\+\_\+\+Uncertainty.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_af81ff089b3fabafdfa49c3b816ded80e}\label{imd_8h_af81ff089b3fabafdfa49c3b816ded80e}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Isolation\_State@{IMD\_Check\_Isolation\_State}}
+\index{IMD\_Check\_Isolation\_State@{IMD\_Check\_Isolation\_State}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Isolation\_State()}{IMD\_Check\_Isolation\_State()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Isolation\+\_\+\+State (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 295 of file imd.\+c.
+
+
+
+References I\+M\+D\+\_\+\+High\+\_\+\+Uncertainty.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_a6f6abcfa57cc41a7b1249c0157702a1c}\label{imd_8h_a6f6abcfa57cc41a7b1249c0157702a1c}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Max\_Battery\_Working\_Voltage@{IMD\_Check\_Max\_Battery\_Working\_Voltage}}
+\index{IMD\_Check\_Max\_Battery\_Working\_Voltage@{IMD\_Check\_Max\_Battery\_Working\_Voltage}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Max\_Battery\_Working\_Voltage()}{IMD\_Check\_Max\_Battery\_Working\_Voltage()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Max\+\_\+\+Battery\+\_\+\+Working\+\_\+\+Voltage (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 387 of file imd.\+c.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_a72a595e6320ceeb17de4f7ce2ec66d30}\label{imd_8h_a72a595e6320ceeb17de4f7ce2ec66d30}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Part\_Name@{IMD\_Check\_Part\_Name}}
+\index{IMD\_Check\_Part\_Name@{IMD\_Check\_Part\_Name}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Part\_Name()}{IMD\_Check\_Part\_Name()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Part\+\_\+\+Name (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 400 of file imd.\+c.
+
+
+
+References I\+M\+D\+\_\+\+Expected\+\_\+\+Part\+\_\+\+Name, I\+M\+D\+\_\+\+Part\+\_\+\+Name\+\_\+0\+\_\+\+Set, I\+M\+D\+\_\+\+Part\+\_\+\+Name\+\_\+1\+\_\+\+Set, I\+M\+D\+\_\+\+Part\+\_\+\+Name\+\_\+2\+\_\+\+Set, I\+M\+D\+\_\+\+Part\+\_\+\+Name\+\_\+3\+\_\+\+Set, I\+M\+D\+\_\+\+Part\+\_\+\+Name\+\_\+\+Set, I\+M\+D\+\_\+\+Read\+\_\+\+Part\+\_\+\+Name, Part\+\_\+name\+\_\+0, Part\+\_\+name\+\_\+1, Part\+\_\+name\+\_\+2, and Part\+\_\+name\+\_\+3.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_a00c843b8f3e8cf4569ea9008cd7db9d2}\label{imd_8h_a00c843b8f3e8cf4569ea9008cd7db9d2}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Safety\_Touch\_Current@{IMD\_Check\_Safety\_Touch\_Current}}
+\index{IMD\_Check\_Safety\_Touch\_Current@{IMD\_Check\_Safety\_Touch\_Current}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Safety\_Touch\_Current()}{IMD\_Check\_Safety\_Touch\_Current()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Safety\+\_\+\+Touch\+\_\+\+Current (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 375 of file imd.\+c.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_abc49be24256f1a93674e290546384348}\label{imd_8h_abc49be24256f1a93674e290546384348}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Safety\_Touch\_Energy@{IMD\_Check\_Safety\_Touch\_Energy}}
+\index{IMD\_Check\_Safety\_Touch\_Energy@{IMD\_Check\_Safety\_Touch\_Energy}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Safety\_Touch\_Energy()}{IMD\_Check\_Safety\_Touch\_Energy()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Safety\+\_\+\+Touch\+\_\+\+Energy (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 368 of file imd.\+c.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_a6f1e850c527bdf0e1a7cfbc557b8501b}\label{imd_8h_a6f1e850c527bdf0e1a7cfbc557b8501b}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Serial\_Number@{IMD\_Check\_Serial\_Number}}
+\index{IMD\_Check\_Serial\_Number@{IMD\_Check\_Serial\_Number}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Serial\_Number()}{IMD\_Check\_Serial\_Number()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Serial\+\_\+\+Number (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 482 of file imd.\+c.
+
+
+
+References I\+M\+D\+\_\+\+Expected\+\_\+\+Serial\+\_\+\+Number, I\+M\+D\+\_\+\+Read\+\_\+\+Serial\+\_\+\+Number, I\+M\+D\+\_\+\+Serial\+\_\+\+Number\+\_\+0\+\_\+\+Set, I\+M\+D\+\_\+\+Serial\+\_\+\+Number\+\_\+1\+\_\+\+Set, I\+M\+D\+\_\+\+Serial\+\_\+\+Number\+\_\+2\+\_\+\+Set, I\+M\+D\+\_\+\+Serial\+\_\+\+Number\+\_\+3\+\_\+\+Set, I\+M\+D\+\_\+\+Serial\+\_\+\+Number\+\_\+\+Set, Serial\+\_\+number\+\_\+0, Serial\+\_\+number\+\_\+1, Serial\+\_\+number\+\_\+2, and Serial\+\_\+number\+\_\+3.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_ab4e8b5af19cc6d0b08ace9185a542b01}\label{imd_8h_ab4e8b5af19cc6d0b08ace9185a542b01}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Status\_Bits@{IMD\_Check\_Status\_Bits}}
+\index{IMD\_Check\_Status\_Bits@{IMD\_Check\_Status\_Bits}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Status\_Bits()}{IMD\_Check\_Status\_Bits()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Status\+\_\+\+Bits (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 212 of file imd.\+c.
+
+
+
+References Error\+\_\+flags, Hardware\+\_\+\+Error, High\+\_\+\+Battery\+\_\+\+Voltage, High\+\_\+\+Uncertainty, I\+M\+D\+\_\+error\+\_\+flags\+\_\+requested, I\+M\+D\+\_\+\+High\+\_\+\+Uncertainty, I\+M\+D\+\_\+\+Request\+\_\+\+Status(), Isolation\+\_\+status\+\_\+bit0, Isolation\+\_\+status\+\_\+bit1, and Low\+\_\+\+Battery\+\_\+\+Voltage.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_a1a18f8d11173ee691822b5a712cf1617}\label{imd_8h_a1a18f8d11173ee691822b5a712cf1617}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Temperature@{IMD\_Check\_Temperature}}
+\index{IMD\_Check\_Temperature@{IMD\_Check\_Temperature}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Temperature()}{IMD\_Check\_Temperature()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Temperature (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 357 of file imd.\+c.
+
+
+
+References I\+M\+D\+\_\+\+Temperature.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_ae0177fe52ae013a36014be506fd1fa93}\label{imd_8h_ae0177fe52ae013a36014be506fd1fa93}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Uptime@{IMD\_Check\_Uptime}}
+\index{IMD\_Check\_Uptime@{IMD\_Check\_Uptime}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Uptime()}{IMD\_Check\_Uptime()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Uptime (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 523 of file imd.\+c.
+
+\mbox{\Hypertarget{imd_8h_a4a16ede06a18addd7ef3e67be2aaaf3d}\label{imd_8h_a4a16ede06a18addd7ef3e67be2aaaf3d}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Version@{IMD\_Check\_Version}}
+\index{IMD\_Check\_Version@{IMD\_Check\_Version}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Version()}{IMD\_Check\_Version()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Version (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 442 of file imd.\+c.
+
+
+
+References I\+M\+D\+\_\+\+Expected\+\_\+\+Version, I\+M\+D\+\_\+\+Read\+\_\+\+Version, I\+M\+D\+\_\+\+Version\+\_\+0\+\_\+\+Set, I\+M\+D\+\_\+\+Version\+\_\+1\+\_\+\+Set, I\+M\+D\+\_\+\+Version\+\_\+2\+\_\+\+Set, I\+M\+D\+\_\+\+Version\+\_\+\+Set, Version\+\_\+0, Version\+\_\+1, and Version\+\_\+2.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_a0fc857559d80dd701aec763dd6911383}\label{imd_8h_a0fc857559d80dd701aec763dd6911383}} 
+\index{imd.h@{imd.h}!IMD\_Check\_Voltages\_Vp\_and\_Vn@{IMD\_Check\_Voltages\_Vp\_and\_Vn}}
+\index{IMD\_Check\_Voltages\_Vp\_and\_Vn@{IMD\_Check\_Voltages\_Vp\_and\_Vn}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Check\_Voltages\_Vp\_and\_Vn()}{IMD\_Check\_Voltages\_Vp\_and\_Vn()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Check\+\_\+\+Voltages\+\_\+\+Vp\+\_\+and\+\_\+\+Vn (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 343 of file imd.\+c.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{imd_8h_a1f6181c5ab49d963007eb9a212672bbd}\label{imd_8h_a1f6181c5ab49d963007eb9a212672bbd}} 
+\index{imd.h@{imd.h}!IMD\_Parse\_Message@{IMD\_Parse\_Message}}
+\index{IMD\_Parse\_Message@{IMD\_Parse\_Message}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Parse\_Message()}{IMD\_Parse\_Message()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Parse\+\_\+\+Message (\begin{DoxyParamCaption}\item[{int}]{D\+LC,  }\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 67 of file imd.\+c.
+
+
+
+References battery\+\_\+voltage, Error\+\_\+flags, Error\+\_\+\+Handler(), I\+M\+D\+\_\+\+Check\+\_\+\+Battery\+\_\+\+Voltage(), I\+M\+D\+\_\+\+Check\+\_\+\+Error\+\_\+\+Flags(), I\+M\+D\+\_\+\+Check\+\_\+\+Isolation\+\_\+\+Capacitances(), I\+M\+D\+\_\+\+Check\+\_\+\+Isolation\+\_\+\+Resistances(), I\+M\+D\+\_\+\+Check\+\_\+\+Isolation\+\_\+\+State(), I\+M\+D\+\_\+\+Check\+\_\+\+Max\+\_\+\+Battery\+\_\+\+Working\+\_\+\+Voltage(), I\+M\+D\+\_\+\+Check\+\_\+\+Part\+\_\+\+Name(), I\+M\+D\+\_\+\+Check\+\_\+\+Safety\+\_\+\+Touch\+\_\+\+Current(), I\+M\+D\+\_\+\+Check\+\_\+\+Safety\+\_\+\+Touch\+\_\+\+Energy(), I\+M\+D\+\_\+\+Check\+\_\+\+Serial\+\_\+\+Number(), I\+M\+D\+\_\+\+Check\+\_\+\+Status\+\_\+\+Bits(), I\+M\+D\+\_\+\+Check\+\_\+\+Temperature(), I\+M\+D\+\_\+\+Check\+\_\+\+Version(), I\+M\+D\+\_\+\+Check\+\_\+\+Voltages\+\_\+\+Vp\+\_\+and\+\_\+\+Vn(), isolation\+\_\+capacitances, isolation\+\_\+resistances, isolation\+\_\+state, Max\+\_\+battery\+\_\+working\+\_\+voltage, Part\+\_\+name\+\_\+0, Part\+\_\+name\+\_\+1, Part\+\_\+name\+\_\+2, Part\+\_\+name\+\_\+3, safety\+\_\+touch\+\_\+current, safety\+\_\+touch\+\_\+energy, Serial\+\_\+number\+\_\+0, Serial\+\_\+number\+\_\+1, Serial\+\_\+number\+\_\+2, Serial\+\_\+number\+\_\+3, Temperature, Uptime\+\_\+counter, Vb\+\_\+hi\+\_\+res, Version\+\_\+0, Version\+\_\+1, Version\+\_\+2, Vexc\+\_\+hi\+\_\+res, Vn\+\_\+hi\+\_\+res, voltages\+\_\+\+Vp\+\_\+and\+\_\+\+Vn, Vp\+\_\+hi\+\_\+res, and Vpwr\+\_\+hi\+\_\+res.
+
+\mbox{\Hypertarget{imd_8h_aeb7c937639c5385f5d2b4e3a4e60250f}\label{imd_8h_aeb7c937639c5385f5d2b4e3a4e60250f}} 
+\index{imd.h@{imd.h}!IMD\_Request\_Status@{IMD\_Request\_Status}}
+\index{IMD\_Request\_Status@{IMD\_Request\_Status}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Request\_Status()}{IMD\_Request\_Status()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Request\+\_\+\+Status (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Status }\end{DoxyParamCaption})}
+
+
+
+Definition at line 179 of file imd.\+c.
+
+
+
+References Error\+\_\+\+Handler(), hcan2, I\+M\+D\+\_\+\+C\+A\+N\+\_\+\+I\+D\+\_\+\+Tx, Tx\+Data, Tx\+Header, and Tx\+Mailbox.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Status\+\_\+\+Bits(), and I\+M\+D\+\_\+\+Startup().
+
+\mbox{\Hypertarget{imd_8h_a80b26177d8aa0c0e803fac210eb456ac}\label{imd_8h_a80b26177d8aa0c0e803fac210eb456ac}} 
+\index{imd.h@{imd.h}!IMD\_Startup@{IMD\_Startup}}
+\index{IMD\_Startup@{IMD\_Startup}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{IMD\_Startup()}{IMD\_Startup()}}
+{\footnotesize\ttfamily void I\+M\+D\+\_\+\+Startup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 527 of file imd.\+c.
+
+
+
+References I\+M\+D\+\_\+\+Request\+\_\+\+Status(), isolation\+\_\+state, Max\+\_\+battery\+\_\+working\+\_\+voltage, Part\+\_\+name\+\_\+0, Part\+\_\+name\+\_\+1, Part\+\_\+name\+\_\+2, Part\+\_\+name\+\_\+3, Serial\+\_\+number\+\_\+0, Serial\+\_\+number\+\_\+1, Serial\+\_\+number\+\_\+2, Serial\+\_\+number\+\_\+3, Version\+\_\+0, Version\+\_\+1, and Version\+\_\+2.
+
