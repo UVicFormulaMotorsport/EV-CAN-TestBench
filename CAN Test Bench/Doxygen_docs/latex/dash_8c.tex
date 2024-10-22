@@ -1,0 +1,63 @@
+\hypertarget{dash_8c}{}\doxysection{Core/\+Src/dash.c File Reference}
+\label{dash_8c}\index{Core/Src/dash.c@{Core/Src/dash.c}}
+{\ttfamily \#include \char`\"{}dash.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}can.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{dash_8c_ab26e477047a5166efc8f2b34dbd38872}{Update\+\_\+\+R\+PM}} (int16\+\_\+t value)
+\item 
+void \mbox{\hyperlink{dash_8c_a66f84461e5c75202d12edfd8ea7c7f62}{Update\+\_\+\+Batt\+\_\+\+Temp}} (uint8\+\_\+t value)
+\item 
+void \mbox{\hyperlink{dash_8c_a30155b58ef3801f5693e953d4139d55f}{Update\+\_\+\+State\+\_\+\+Of\+\_\+\+Charge}} (uint8\+\_\+t value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dash_8c_a66f84461e5c75202d12edfd8ea7c7f62}\label{dash_8c_a66f84461e5c75202d12edfd8ea7c7f62}} 
+\index{dash.c@{dash.c}!Update\_Batt\_Temp@{Update\_Batt\_Temp}}
+\index{Update\_Batt\_Temp@{Update\_Batt\_Temp}!dash.c@{dash.c}}
+\doxysubsubsection{\texorpdfstring{Update\_Batt\_Temp()}{Update\_Batt\_Temp()}}
+{\footnotesize\ttfamily void Update\+\_\+\+Batt\+\_\+\+Temp (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file dash.\+c.
+
+
+
+References Dash\+\_\+\+Battery\+\_\+\+Temperature, Error\+\_\+\+Handler(), hcan2, Tx\+Data, Tx\+Header, and Tx\+Mailbox.
+
+\mbox{\Hypertarget{dash_8c_ab26e477047a5166efc8f2b34dbd38872}\label{dash_8c_ab26e477047a5166efc8f2b34dbd38872}} 
+\index{dash.c@{dash.c}!Update\_RPM@{Update\_RPM}}
+\index{Update\_RPM@{Update\_RPM}!dash.c@{dash.c}}
+\doxysubsubsection{\texorpdfstring{Update\_RPM()}{Update\_RPM()}}
+{\footnotesize\ttfamily void Update\+\_\+\+R\+PM (\begin{DoxyParamCaption}\item[{int16\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file dash.\+c.
+
+
+
+References Dash\+\_\+\+R\+PM, Error\+\_\+\+Handler(), hcan2, Tx\+Data, Tx\+Header, and Tx\+Mailbox.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{dash_8c_a30155b58ef3801f5693e953d4139d55f}\label{dash_8c_a30155b58ef3801f5693e953d4139d55f}} 
+\index{dash.c@{dash.c}!Update\_State\_Of\_Charge@{Update\_State\_Of\_Charge}}
+\index{Update\_State\_Of\_Charge@{Update\_State\_Of\_Charge}!dash.c@{dash.c}}
+\doxysubsubsection{\texorpdfstring{Update\_State\_Of\_Charge()}{Update\_State\_Of\_Charge()}}
+{\footnotesize\ttfamily void Update\+\_\+\+State\+\_\+\+Of\+\_\+\+Charge (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 48 of file dash.\+c.
+
+
+
+References Dash\+\_\+\+State\+\_\+of\+\_\+\+Charge, Error\+\_\+\+Handler(), hcan2, Tx\+Data, Tx\+Header, and Tx\+Mailbox.
+

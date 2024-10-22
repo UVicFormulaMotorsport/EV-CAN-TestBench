@@ -1,0 +1,95 @@
+\hypertarget{can_8h}{}\doxysection{Core/\+Inc/can.h File Reference}
+\label{can_8h}\index{Core/Inc/can.h@{Core/Inc/can.h}}
+
+
+This file contains all the function prototypes for the \mbox{\hyperlink{can_8c}{can.\+c}} file.  
+
+
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{can_8h_a1ee5cd592134235b6c07f676784d47c3}{M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{can_8h_a4e0742fef0f265347a75b7fa12012229}{H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback}} (C\+A\+N\+\_\+\+Handle\+Type\+Def $\ast$\mbox{\hyperlink{stm32f4xx__it_8c_ab77168d14df04ccca5d48612ee21ced8}{hcan2}})
+\item 
+void \mbox{\hyperlink{can_8h_a4c51ef84434a42d4c5f9524d361c0703}{H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo1\+Msg\+Pending\+Callback}} (C\+A\+N\+\_\+\+Handle\+Type\+Def $\ast$\mbox{\hyperlink{stm32f4xx__it_8c_ab77168d14df04ccca5d48612ee21ced8}{hcan2}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+C\+A\+N\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{can_8h_ab77168d14df04ccca5d48612ee21ced8}{hcan2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains all the function prototypes for the \mbox{\hyperlink{can_8c}{can.\+c}} file. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2023 S\+T\+Microelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{can_8h_a4e0742fef0f265347a75b7fa12012229}\label{can_8h_a4e0742fef0f265347a75b7fa12012229}} 
+\index{can.h@{can.h}!HAL\_CAN\_RxFifo0MsgPendingCallback@{HAL\_CAN\_RxFifo0MsgPendingCallback}}
+\index{HAL\_CAN\_RxFifo0MsgPendingCallback@{HAL\_CAN\_RxFifo0MsgPendingCallback}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_CAN\_RxFifo0MsgPendingCallback()}{HAL\_CAN\_RxFifo0MsgPendingCallback()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback (\begin{DoxyParamCaption}\item[{C\+A\+N\+\_\+\+Handle\+Type\+Def $\ast$}]{hcan2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 182 of file can.\+c.
+
+
+
+References Error\+\_\+\+Handler(), hcan2, Rx\+Data, and Rx\+Header.
+
+\mbox{\Hypertarget{can_8h_a4c51ef84434a42d4c5f9524d361c0703}\label{can_8h_a4c51ef84434a42d4c5f9524d361c0703}} 
+\index{can.h@{can.h}!HAL\_CAN\_RxFifo1MsgPendingCallback@{HAL\_CAN\_RxFifo1MsgPendingCallback}}
+\index{HAL\_CAN\_RxFifo1MsgPendingCallback@{HAL\_CAN\_RxFifo1MsgPendingCallback}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_CAN\_RxFifo1MsgPendingCallback()}{HAL\_CAN\_RxFifo1MsgPendingCallback()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo1\+Msg\+Pending\+Callback (\begin{DoxyParamCaption}\item[{C\+A\+N\+\_\+\+Handle\+Type\+Def $\ast$}]{hcan2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 249 of file can.\+c.
+
+\mbox{\Hypertarget{can_8h_a1ee5cd592134235b6c07f676784d47c3}\label{can_8h_a1ee5cd592134235b6c07f676784d47c3}} 
+\index{can.h@{can.h}!MX\_CAN2\_Init@{MX\_CAN2\_Init}}
+\index{MX\_CAN2\_Init@{MX\_CAN2\_Init}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{MX\_CAN2\_Init()}{MX\_CAN2\_Init()}}
+{\footnotesize\ttfamily void M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file can.\+c.
+
+
+
+References Error\+\_\+\+Handler(), hcan2, and Tx\+Header.
+
+
+
+Referenced by main().
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{can_8h_ab77168d14df04ccca5d48612ee21ced8}\label{can_8h_ab77168d14df04ccca5d48612ee21ced8}} 
+\index{can.h@{can.h}!hcan2@{hcan2}}
+\index{hcan2@{hcan2}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{hcan2}{hcan2}}
+{\footnotesize\ttfamily C\+A\+N\+\_\+\+Handle\+Type\+Def hcan2}
+
+
+
+Definition at line 34 of file can.\+c.
+
+
+
+Referenced by I\+M\+D\+\_\+\+Request\+\_\+\+Status(), M\+C\+\_\+\+Request\+\_\+\+Data(), M\+C\+\_\+\+Send\+\_\+\+Data(), P\+D\+U\+\_\+disable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+disable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+disable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+disable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+disable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+enable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+enable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+enable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+enable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+enable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+speaker\+\_\+chirp(), Update\+\_\+\+Batt\+\_\+\+Temp(), Update\+\_\+\+R\+P\+M(), and Update\+\_\+\+State\+\_\+\+Of\+\_\+\+Charge().
+

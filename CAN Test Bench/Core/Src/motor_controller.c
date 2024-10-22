@@ -244,6 +244,10 @@ void MC_Check_Error_Warning(uint8_t Data[]){
 	}
 }
 
+void MC_Validate(){
+
+}
+
 void MC_Check_Serial_Number(uint8_t Data[]){
 	// TODO
 }

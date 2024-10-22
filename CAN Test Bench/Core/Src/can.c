@@ -138,9 +138,9 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef* canHandle)
     HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
     /* CAN2 interrupt Init */
-    HAL_NVIC_SetPriority(CAN2_RX0_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(CAN2_RX0_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(CAN2_RX0_IRQn);
-    HAL_NVIC_SetPriority(CAN2_RX1_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(CAN2_RX1_IRQn, 5, 0);
     HAL_NVIC_EnableIRQ(CAN2_RX1_IRQn);
   /* USER CODE BEGIN CAN2_MspInit 1 */
 
@@ -211,42 +211,37 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
 	// Figure out what device sent the message
    // Call the appropriate device function
    // FOR THE LOVE OF GOD DECIDE ON HOW TO HAVE THE IDs, WHY IS PDU HARDCODED? HUH?
-   switch (CAN_ID){
-	   case BMS_HEARTBEAT_ID:
-		   reset_BMS_WDT();
-
-	   break;
-	   case BMS_CAN_ID_1:
-	   	   reset_BMS_WDT();
-	   	   BMS_Parse_Message1(DLC, Data);
-
-	   break;
-	   case BMS_CAN_ID_2:
-	   	   reset_BMS_WDT();
-	   	   BMS_Parse_Message2(DLC, Data);
-	   break;
-	   case BMS_CAN_ID_3:
-	   	   reset_BMS_WDT();
-	   	   BMS_Parse_Message3(DLC, Data);
-	   break;
-	   case 0x710:
-		   // PDU
-		   // Call the associated function TODO
-	   break;
-	   case MC_CAN_ID_Rx:
-		   // Motor Controller
-		   MC_Parse_Message(DLC, Data);
-	   break;
-	   case IMD_CAN_ID_Rx:
-		   // IMD
-		   IMD_Parse_Message(DLC, Data);
-	   break;
-	   // Need more IDs
-       default:
-    		   // Not a correct CAN ID
-    	   Error_Handler();
-       break;
-   }
+//   switch (CAN_ID){
+//	   case BMS_HEARTBEAT_ID:
+//
+//	   break;
+//	   case BMS_CAN_ID_1:
+//
+//
+//	   break;
+//	   case BMS_CAN_ID_2:
+//
+//	   case BMS_CAN_ID_3:
+//
+//	   break;
+//	   case 0x710:
+//		   // PDU
+//		   // Call the associated function TODO
+//	   break;
+//	   case MC_CAN_ID_Rx:
+//		   // Motor Controller
+//
+//	   break;
+//	   case IMD_CAN_ID_Rx:
+//		   // IMD
+//		   IMD_Parse_Message(DLC, Data);
+//	   break;
+//	   // Need more IDs
+//       default:
+//    		   // Not a correct CAN ID
+//    	   Error_Handler();
+//       break;
+//   }
 
 }
 

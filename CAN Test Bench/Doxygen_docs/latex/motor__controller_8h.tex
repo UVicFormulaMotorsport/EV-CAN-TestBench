@@ -1,0 +1,743 @@
+\hypertarget{motor__controller_8h}{}\doxysection{Core/\+Inc/motor\+\_\+controller.h File Reference}
+\label{motor__controller_8h}\index{Core/Inc/motor\_controller.h@{Core/Inc/motor\_controller.h}}
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268}{motor\+\_\+controller\+\_\+speed\+\_\+parameters}} \{ \mbox{\hyperlink{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268a74ac68aa19b65409fa9b18b8f2be3bf4}{N\+\_\+actual}} = 0x30, 
+\mbox{\hyperlink{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268aa53daf1b53f678af8159cba9238c5e6f}{N\+\_\+set}} = 0x31, 
+\mbox{\hyperlink{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268ac5a4f68a0000a0d2d5004ba1d2e4c27f}{N\+\_\+cmd}} = 0x32, 
+\mbox{\hyperlink{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268acc27e0901b9bd112a36ccf7e9620b09a}{N\+\_\+error}} = 0x33
+ \}
+\item 
+enum \mbox{\hyperlink{motor__controller_8h_aefe525453e2d5fb5ff19de9f98247c7c}{motor\+\_\+controller\+\_\+current\+\_\+parameters}} \{ \mbox{\hyperlink{motor__controller_8h_aefe525453e2d5fb5ff19de9f98247c7cafa32268e686878b8024c674367c01767}{todo1}} = 0x69
+ \}
+\item 
+enum \mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741}{motor\+\_\+controller\+\_\+motor\+\_\+constants}} \{ \newline
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a64170ba683e522d8933cc80a5cf28ecb}{nominal\+\_\+motor\+\_\+frequency}} = 0x05, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a2d43068942abe44d33fd0f89f4b8cbb9}{nominal\+\_\+motor\+\_\+voltage}} = 0x06, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741ad24139707ecedd81a10a96dea882f0a0}{power\+\_\+factor}} = 0x0e, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a0a0dac29c811eaa0c4bbe6ce120f2fad}{motor\+\_\+max\+\_\+current}} = 0x4D, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a3d1c48ec7fd442d23cce8a69daedc1a4}{motor\+\_\+continuous\+\_\+current}} = 0x4E, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a8f4b84ce5d69fac9a335424e0b9116af}{motor\+\_\+pole\+\_\+number}} = 0x4F, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a17387ca75642e4c739d600801685ba79}{motor\+\_\+kt\+\_\+constant}} = 0x87, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a7c57b72fe710e2325933ce1f6517dc80}{motor\+\_\+ke\+\_\+constant}} = 0x87, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a6c9ec3f524698f618635129709fd5ea2}{rated\+\_\+motor\+\_\+speed}} = 0x59, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a23fb6a0eae33554ae8bcec9a22c2e1ef}{motor\+\_\+temperature\+\_\+switch\+\_\+off\+\_\+point}} = 0x\+A3, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741af2bcc9a2d80a2655bf9adc22f9e6c062}{stator\+\_\+leakage\+\_\+inductance}} = 0x\+B1, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741aafacbc470ec36fccfec752fcf06ee691}{nominal\+\_\+magnitizing\+\_\+current}} = 0x\+B2, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a82f17224dfd9e9e77c740957f3ff4389}{motor\+\_\+magnetising\+\_\+inductance}} = 0x\+B3, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741ac3c230853d874dbfd67c8eb9217562c0}{rotor\+\_\+resistance}} = 0x\+B4, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a74c67f3ef363ff68efec4306188a40bf}{minimum\+\_\+magnetising\+\_\+current}} = 0x\+B5, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a66c32bb02597306fda2add0a5219ea7f}{time\+\_\+constant\+\_\+rotor}} = 0x\+B6, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a3ec5a6a666356eb8bb08c36f0066f1f1}{leakage\+\_\+inductance\+\_\+ph\+\_\+ph}} = 0x\+BB, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a0505769d343c974ce9b0ea5f645c4869}{stator\+\_\+resistance\+\_\+ph\+\_\+ph}} = 0x\+BC, 
+\mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741ae7211fe3a1246ef8f9c5881d3ecb8f0d}{time\+\_\+constant\+\_\+stator}} = 0x\+BD
+ \}
+\item 
+enum \mbox{\hyperlink{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645}{motor\+\_\+controller\+\_\+temperatures}} \{ \newline
+\mbox{\hyperlink{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a349799caa493b390c9527db251fd128c}{igbt\+\_\+temperature}} = 0x4A, 
+\mbox{\hyperlink{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645aeff9dce22875056570afa6b71fd23842}{motor\+\_\+temperature}} = 0x49, 
+\mbox{\hyperlink{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a5f67975cf91f5959212f095df271d9e5}{air\+\_\+temperature}} = 0x4B, 
+\mbox{\hyperlink{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645ac6969717754fedde42de1813b1ecddd0}{current\+\_\+derate\+\_\+temperature}} = 0x4C, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a2b29b0a0b81efd7300f900f65ef28071}{temp\+\_\+sensor\+\_\+pt1}} = 0x9C, 
+\mbox{\hyperlink{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645ad4a8ea69fc94ed6fb6fe1310a477805d}{temp\+\_\+sensor\+\_\+pt2}} = 0x9D, 
+\mbox{\hyperlink{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a4518ebfdfdcbae7be91b9b41b99ad2a4}{temp\+\_\+sensor\+\_\+pt3}} = 0x9E, 
+\mbox{\hyperlink{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a19e537ab9271f8ef8d455f7b3dd85a94}{temp\+\_\+sensor\+\_\+pt4}} = 0x9F
+ \}
+\item 
+enum \mbox{\hyperlink{motor__controller_8h_a2e6d114c8834f029dc4c48acf7ddf56f}{motor\+\_\+controller\+\_\+measurements}} \{ \mbox{\hyperlink{motor__controller_8h_a2e6d114c8834f029dc4c48acf7ddf56faf4addfc300b555b608c7501027073b64}{D\+C\+\_\+bus\+\_\+voltage}} = 0x\+EB
+ \}
+\item 
+enum \mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dff}{motor\+\_\+controller\+\_\+status\+\_\+information\+\_\+errors\+\_\+warnings}} \{ \newline
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa595211bb6640ca05c1c3344b47e2890f}{motor\+\_\+controller\+\_\+errors\+\_\+warnings}} = 0x8F, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa87ada8cd125ba521b447d565c12bb30e}{eprom\+\_\+read\+\_\+error}} = 1$<$$<$8, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffae9da794167969482cb67bfad83a04d71}{hardware\+\_\+fault}} = 1$<$$<$9, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffadae8b5f4fb6cd6712202d055529499ef}{rotate\+\_\+field\+\_\+enable\+\_\+not\+\_\+present\+\_\+run}} = 1$<$$<$10, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa425430d2585733363b6043ed70ebd7ab}{C\+A\+N\+\_\+timeout\+\_\+error}} = 1$<$$<$11, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa2a16f371b0570edeeb17214a398e4bfc}{feedback\+\_\+signal\+\_\+error}} = 1$<$$<$12, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa13726d0d6fc8dd12135f4ea92d1dcc92}{mains\+\_\+voltage\+\_\+min\+\_\+limit}} = 1$<$$<$13, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa2267f6ae60d8b9024ba418dd1f6d4b15}{motor\+\_\+temp\+\_\+max\+\_\+limit}} = 1$<$$<$14, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa54a5ca5981535fd231b00a1040622950}{I\+G\+B\+T\+\_\+temp\+\_\+max\+\_\+limit}} = 1$<$$<$15, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa229533ef674ddd4475b22e47eb506b49}{mains\+\_\+voltage\+\_\+max\+\_\+limit}} = 1, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa29aa452fe3c693b96c17c09849ee1633}{critical\+\_\+\+A\+C\+\_\+current}} = 1$<$$<$1, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa696b36face7279e19e2905b0fa9ecb68}{race\+\_\+away\+\_\+detected}} = 1$<$$<$2, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa0dd2c6834f96df064d7b152074a9f81f}{ecode\+\_\+timeout\+\_\+error}} = 1$<$$<$3, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa357611869a1ec791b38a36ec2dfe09b9}{watchdog\+\_\+reset}} = 1$<$$<$4, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa0dbc9540bf7a4c67b6a2810985bfb55d}{A\+C\+\_\+current\+\_\+offset\+\_\+fault}} = 1$<$$<$5, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa18df3363e2a0048a813dcef5a41785ce}{internal\+\_\+hardware\+\_\+voltage\+\_\+problem}} = 1$<$$<$6, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa150953c78b7fcc8ae97a50a5b5765264}{bleed\+\_\+resistor\+\_\+overload}} = 1$<$$<$7, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa2fbc7fdf1ab20514fac8d6418291a114}{parameter\+\_\+conflict\+\_\+detected}} = 1$<$$<$8, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa7483be8346bb7b2fdfb418383961fba7}{special\+\_\+\+C\+P\+U\+\_\+fault}} = 1$<$$<$9, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa3689755161fb5aa5fae86b270bfbf5fc}{rotate\+\_\+field\+\_\+enable\+\_\+not\+\_\+present\+\_\+norun}} = 1$<$$<$10, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa03e3fe1a981eecdeb19cd0589bdcc6f8}{auxiliary\+\_\+voltage\+\_\+min\+\_\+limit}} = 1$<$$<$11, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffab6733322e6c8c5197b108e853a58ad13}{feedback\+\_\+signal\+\_\+problem}} = 1$<$$<$12, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa3050ef440e4e82f9fb3973e1fb9faea7}{warning\+\_\+5}} = 1$<$$<$13, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa4e9b2370bf4b4680b4c2471d2f7d312e}{motor\+\_\+temperature\+\_\+warning}} = 1$<$$<$14, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa298d28f3aa38960b5d1349a04cbbca95}{I\+G\+B\+T\+\_\+temperature\+\_\+warning}} = 1$<$$<$15, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffaf06c0a389c1c73850def361e9bd7ffdc}{Vout\+\_\+saturation\+\_\+max\+\_\+limit}} = 1, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffad53242de6aeaa134a78749bc60fec984}{warning\+\_\+9}} = 1$<$$<$1, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa2c5d3b1ee0135916f17e89f331429ed5}{speed\+\_\+actual\+\_\+resolution\+\_\+limit}} = 1$<$$<$2, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa3d2e8b6cb27af4a0a1121c419594bbfa}{check\+\_\+ecode\+\_\+\+ID}} = 1$<$$<$3, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa618e6f62f2e284a9fec848782c9473c7}{tripzone\+\_\+glitch\+\_\+detected}} = 1$<$$<$4, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa9c77d3a416d8465efe129cf8ad401cfe}{A\+D\+C\+\_\+sequencer\+\_\+problem}} = 1$<$$<$5, 
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffac02a9e080dc6bde671fa915b7e254c67}{A\+D\+C\+\_\+measurement\+\_\+problem}} = 1$<$$<$6, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffae0c6a82b11d3fb69b758c350960f5a2a}{bleeder\+\_\+resistor\+\_\+warning}} = 1$<$$<$7
+ \}
+\item 
+enum \mbox{\hyperlink{motor__controller_8h_a1592f0c8dbd9d1c5d8304671b518a863}{motor\+\_\+controller\+\_\+io}} \{ \mbox{\hyperlink{motor__controller_8h_a1592f0c8dbd9d1c5d8304671b518a863a3a545dba8b1debc96a10c15f0e3bddf3}{todo6969}} = 6969
+ \}
+\item 
+enum \mbox{\hyperlink{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521}{motor\+\_\+controller\+\_\+\+P\+I\+\_\+values}} \{ \newline
+\mbox{\hyperlink{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a13f8ebd34ab57556217fbd235329a9e8}{accelerate\+\_\+ramp}} = 0x35, 
+\mbox{\hyperlink{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a3c22e464cac79207d52cf4ff8d64d430}{dismantling\+\_\+ramp}} = 0x\+ED, 
+\mbox{\hyperlink{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a013c38322d35d441c21920fc665d197a}{recuperation\+\_\+ramp}} = 0x\+C7, 
+\mbox{\hyperlink{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a2b83ac91fbacf438199c4515ae3dcb88}{proportional\+\_\+gain}} = 0x1C, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a39318ae4bc4582c26c32b7748f64c8d4}{integral\+\_\+time\+\_\+constant}} = 0x1D, 
+\mbox{\hyperlink{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521aa1022b52e56d3a918c7a62177a88bb9e}{integral\+\_\+memory\+\_\+max}} = 0x2B, 
+\mbox{\hyperlink{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521ac622cb0442074999655f1021ae456ef7}{proportional\+\_\+gain\+\_\+2}} = 0x\+C9, 
+\mbox{\hyperlink{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a4e45c20669f9d0f09fce08e26865cfa2}{current\+\_\+feed\+\_\+forward}} = 0x\+CB, 
+\newline
+\mbox{\hyperlink{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a5cde7e1c696e5ca92501b3e470b9ad88}{ramp\+\_\+set\+\_\+current}} = 0x25
+ \}
+\item 
+enum \mbox{\hyperlink{motor__controller_8h_aa7c35d6b7a8102a9104bd52eb92f9520}{motor\+\_\+controller\+\_\+repeating\+\_\+time}} \{ \mbox{\hyperlink{motor__controller_8h_aa7c35d6b7a8102a9104bd52eb92f9520ab7e4e0120a041dbe6528b050c04269e0}{none}} = 0, 
+\mbox{\hyperlink{motor__controller_8h_aa7c35d6b7a8102a9104bd52eb92f9520a1ccfd6fbab04e1f36f650d9a3350d799}{one\+\_\+hundred\+\_\+ms}} = 0x64
+ \}
+\item 
+enum \mbox{\hyperlink{motor__controller_8h_a0d9dfc4722aad3781f3bfda8afb41554}{motor\+\_\+controller\+\_\+limp\+\_\+mode}} \{ \mbox{\hyperlink{motor__controller_8h_a0d9dfc4722aad3781f3bfda8afb41554a284cfe285101d83f2add9282dc4a00ca}{N\+\_\+lim}} = 0x34, 
+\mbox{\hyperlink{motor__controller_8h_a0d9dfc4722aad3781f3bfda8afb41554a94404cce2e711f57d193195c55b59d36}{N\+\_\+lim\+\_\+plus}} = 0x3F, 
+\mbox{\hyperlink{motor__controller_8h_a0d9dfc4722aad3781f3bfda8afb41554a56b40f55bf4dd4257a674b58b3e75d11}{N\+\_\+lim\+\_\+minus}} = 0x3E
+ \}
+\item 
+enum \mbox{\hyperlink{motor__controller_8h_a0376dfd1eed1d027d96561fd24e48242}{motor\+\_\+controller\+\_\+startup}} \{ \mbox{\hyperlink{motor__controller_8h_a0376dfd1eed1d027d96561fd24e48242ae138a3e61cb9bb9076598775b7810347}{clear\+\_\+errors}} = 0x8E, 
+\mbox{\hyperlink{motor__controller_8h_a0376dfd1eed1d027d96561fd24e48242aed26e85027514bcd1ca8c3c17c03bef2}{firmware\+\_\+version}} = 0x1B
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{motor__controller_8h_afa93c7b7fa3dc12bd6bf860c54c564ee}{M\+C\+\_\+\+Parse\+\_\+\+Message}} (int D\+LC, uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{motor__controller_8h_af6b3a4911f1bdac54d84b4dcc7b7ec4a}{M\+C\+\_\+\+Request\+\_\+\+Data}} (uint8\+\_\+t Reg\+ID)
+\item 
+void \mbox{\hyperlink{motor__controller_8h_af2e573366a03a695a8ba760440848206}{M\+C\+\_\+\+Send\+\_\+\+Data}} (uint8\+\_\+t Reg\+ID, uint8\+\_\+t data\+\_\+to\+\_\+send\mbox{[}$\,$\mbox{]}, uint8\+\_\+t size)
+\item 
+void \mbox{\hyperlink{motor__controller_8h_aa7294768824898480b6bcf6e98daa926}{M\+C\+\_\+\+Torque\+\_\+\+Control}} (int todo)
+\item 
+void \mbox{\hyperlink{motor__controller_8h_a2e1d07308c1e5e2ed72857a078b73cdf}{M\+C\+\_\+\+Speed\+\_\+\+Control}} (int todo)
+\item 
+void \mbox{\hyperlink{motor__controller_8h_a40bf1b849ad7443bbe8af342006bb3cd}{M\+C\+\_\+\+Check\+\_\+\+Error\+\_\+\+Warning}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{motor__controller_8h_af34e05da8add9233de12150656dad092}{M\+C\+\_\+\+Check\+\_\+\+Serial\+\_\+\+Number}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{motor__controller_8h_a877a1b68c89c7eeecc3ed294e5dc8a73}{M\+C\+\_\+\+Check\+\_\+\+Firmware}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+\item 
+void \mbox{\hyperlink{motor__controller_8h_a92ca6a696bcc7e4e5618dcc9fbdad617}{M\+C\+\_\+\+Startup}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{motor__controller_8h_aefe525453e2d5fb5ff19de9f98247c7c}\label{motor__controller_8h_aefe525453e2d5fb5ff19de9f98247c7c}} 
+\index{motor\_controller.h@{motor\_controller.h}!motor\_controller\_current\_parameters@{motor\_controller\_current\_parameters}}
+\index{motor\_controller\_current\_parameters@{motor\_controller\_current\_parameters}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{motor\_controller\_current\_parameters}{motor\_controller\_current\_parameters}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{motor__controller_8h_aefe525453e2d5fb5ff19de9f98247c7c}{motor\+\_\+controller\+\_\+current\+\_\+parameters}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{todo1@{todo1}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!todo1@{todo1}}}\mbox{\Hypertarget{motor__controller_8h_aefe525453e2d5fb5ff19de9f98247c7cafa32268e686878b8024c674367c01767}\label{motor__controller_8h_aefe525453e2d5fb5ff19de9f98247c7cafa32268e686878b8024c674367c01767}} 
+todo1&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 21 of file motor\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{motor__controller_8h_a1592f0c8dbd9d1c5d8304671b518a863}\label{motor__controller_8h_a1592f0c8dbd9d1c5d8304671b518a863}} 
+\index{motor\_controller.h@{motor\_controller.h}!motor\_controller\_io@{motor\_controller\_io}}
+\index{motor\_controller\_io@{motor\_controller\_io}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{motor\_controller\_io}{motor\_controller\_io}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{motor__controller_8h_a1592f0c8dbd9d1c5d8304671b518a863}{motor\+\_\+controller\+\_\+io}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{todo6969@{todo6969}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!todo6969@{todo6969}}}\mbox{\Hypertarget{motor__controller_8h_a1592f0c8dbd9d1c5d8304671b518a863a3a545dba8b1debc96a10c15f0e3bddf3}\label{motor__controller_8h_a1592f0c8dbd9d1c5d8304671b518a863a3a545dba8b1debc96a10c15f0e3bddf3}} 
+todo6969&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 104 of file motor\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{motor__controller_8h_a0d9dfc4722aad3781f3bfda8afb41554}\label{motor__controller_8h_a0d9dfc4722aad3781f3bfda8afb41554}} 
+\index{motor\_controller.h@{motor\_controller.h}!motor\_controller\_limp\_mode@{motor\_controller\_limp\_mode}}
+\index{motor\_controller\_limp\_mode@{motor\_controller\_limp\_mode}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{motor\_controller\_limp\_mode}{motor\_controller\_limp\_mode}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{motor__controller_8h_a0d9dfc4722aad3781f3bfda8afb41554}{motor\+\_\+controller\+\_\+limp\+\_\+mode}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\_lim@{N\_lim}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!N\_lim@{N\_lim}}}\mbox{\Hypertarget{motor__controller_8h_a0d9dfc4722aad3781f3bfda8afb41554a284cfe285101d83f2add9282dc4a00ca}\label{motor__controller_8h_a0d9dfc4722aad3781f3bfda8afb41554a284cfe285101d83f2add9282dc4a00ca}} 
+N\+\_\+lim&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\_lim\_plus@{N\_lim\_plus}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!N\_lim\_plus@{N\_lim\_plus}}}\mbox{\Hypertarget{motor__controller_8h_a0d9dfc4722aad3781f3bfda8afb41554a94404cce2e711f57d193195c55b59d36}\label{motor__controller_8h_a0d9dfc4722aad3781f3bfda8afb41554a94404cce2e711f57d193195c55b59d36}} 
+N\+\_\+lim\+\_\+plus&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\_lim\_minus@{N\_lim\_minus}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!N\_lim\_minus@{N\_lim\_minus}}}\mbox{\Hypertarget{motor__controller_8h_a0d9dfc4722aad3781f3bfda8afb41554a56b40f55bf4dd4257a674b58b3e75d11}\label{motor__controller_8h_a0d9dfc4722aad3781f3bfda8afb41554a56b40f55bf4dd4257a674b58b3e75d11}} 
+N\+\_\+lim\+\_\+minus&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 129 of file motor\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{motor__controller_8h_a2e6d114c8834f029dc4c48acf7ddf56f}\label{motor__controller_8h_a2e6d114c8834f029dc4c48acf7ddf56f}} 
+\index{motor\_controller.h@{motor\_controller.h}!motor\_controller\_measurements@{motor\_controller\_measurements}}
+\index{motor\_controller\_measurements@{motor\_controller\_measurements}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{motor\_controller\_measurements}{motor\_controller\_measurements}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{motor__controller_8h_a2e6d114c8834f029dc4c48acf7ddf56f}{motor\+\_\+controller\+\_\+measurements}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DC\_bus\_voltage@{DC\_bus\_voltage}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!DC\_bus\_voltage@{DC\_bus\_voltage}}}\mbox{\Hypertarget{motor__controller_8h_a2e6d114c8834f029dc4c48acf7ddf56faf4addfc300b555b608c7501027073b64}\label{motor__controller_8h_a2e6d114c8834f029dc4c48acf7ddf56faf4addfc300b555b608c7501027073b64}} 
+D\+C\+\_\+bus\+\_\+voltage&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 59 of file motor\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741}} 
+\index{motor\_controller.h@{motor\_controller.h}!motor\_controller\_motor\_constants@{motor\_controller\_motor\_constants}}
+\index{motor\_controller\_motor\_constants@{motor\_controller\_motor\_constants}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{motor\_controller\_motor\_constants}{motor\_controller\_motor\_constants}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741}{motor\+\_\+controller\+\_\+motor\+\_\+constants}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nominal\_motor\_frequency@{nominal\_motor\_frequency}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!nominal\_motor\_frequency@{nominal\_motor\_frequency}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a64170ba683e522d8933cc80a5cf28ecb}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a64170ba683e522d8933cc80a5cf28ecb}} 
+nominal\+\_\+motor\+\_\+frequency&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nominal\_motor\_voltage@{nominal\_motor\_voltage}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!nominal\_motor\_voltage@{nominal\_motor\_voltage}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a2d43068942abe44d33fd0f89f4b8cbb9}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a2d43068942abe44d33fd0f89f4b8cbb9}} 
+nominal\+\_\+motor\+\_\+voltage&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{power\_factor@{power\_factor}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!power\_factor@{power\_factor}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741ad24139707ecedd81a10a96dea882f0a0}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741ad24139707ecedd81a10a96dea882f0a0}} 
+power\+\_\+factor&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{motor\_max\_current@{motor\_max\_current}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!motor\_max\_current@{motor\_max\_current}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a0a0dac29c811eaa0c4bbe6ce120f2fad}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a0a0dac29c811eaa0c4bbe6ce120f2fad}} 
+motor\+\_\+max\+\_\+current&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{motor\_continuous\_current@{motor\_continuous\_current}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!motor\_continuous\_current@{motor\_continuous\_current}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a3d1c48ec7fd442d23cce8a69daedc1a4}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a3d1c48ec7fd442d23cce8a69daedc1a4}} 
+motor\+\_\+continuous\+\_\+current&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{motor\_pole\_number@{motor\_pole\_number}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!motor\_pole\_number@{motor\_pole\_number}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a8f4b84ce5d69fac9a335424e0b9116af}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a8f4b84ce5d69fac9a335424e0b9116af}} 
+motor\+\_\+pole\+\_\+number&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{motor\_kt\_constant@{motor\_kt\_constant}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!motor\_kt\_constant@{motor\_kt\_constant}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a17387ca75642e4c739d600801685ba79}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a17387ca75642e4c739d600801685ba79}} 
+motor\+\_\+kt\+\_\+constant&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{motor\_ke\_constant@{motor\_ke\_constant}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!motor\_ke\_constant@{motor\_ke\_constant}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a7c57b72fe710e2325933ce1f6517dc80}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a7c57b72fe710e2325933ce1f6517dc80}} 
+motor\+\_\+ke\+\_\+constant&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rated\_motor\_speed@{rated\_motor\_speed}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!rated\_motor\_speed@{rated\_motor\_speed}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a6c9ec3f524698f618635129709fd5ea2}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a6c9ec3f524698f618635129709fd5ea2}} 
+rated\+\_\+motor\+\_\+speed&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{motor\_temperature\_switch\_off\_point@{motor\_temperature\_switch\_off\_point}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!motor\_temperature\_switch\_off\_point@{motor\_temperature\_switch\_off\_point}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a23fb6a0eae33554ae8bcec9a22c2e1ef}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a23fb6a0eae33554ae8bcec9a22c2e1ef}} 
+motor\+\_\+temperature\+\_\+switch\+\_\+off\+\_\+point&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stator\_leakage\_inductance@{stator\_leakage\_inductance}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!stator\_leakage\_inductance@{stator\_leakage\_inductance}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741af2bcc9a2d80a2655bf9adc22f9e6c062}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741af2bcc9a2d80a2655bf9adc22f9e6c062}} 
+stator\+\_\+leakage\+\_\+inductance&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nominal\_magnitizing\_current@{nominal\_magnitizing\_current}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!nominal\_magnitizing\_current@{nominal\_magnitizing\_current}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741aafacbc470ec36fccfec752fcf06ee691}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741aafacbc470ec36fccfec752fcf06ee691}} 
+nominal\+\_\+magnitizing\+\_\+current&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{motor\_magnetising\_inductance@{motor\_magnetising\_inductance}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!motor\_magnetising\_inductance@{motor\_magnetising\_inductance}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a82f17224dfd9e9e77c740957f3ff4389}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a82f17224dfd9e9e77c740957f3ff4389}} 
+motor\+\_\+magnetising\+\_\+inductance&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rotor\_resistance@{rotor\_resistance}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!rotor\_resistance@{rotor\_resistance}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741ac3c230853d874dbfd67c8eb9217562c0}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741ac3c230853d874dbfd67c8eb9217562c0}} 
+rotor\+\_\+resistance&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{minimum\_magnetising\_current@{minimum\_magnetising\_current}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!minimum\_magnetising\_current@{minimum\_magnetising\_current}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a74c67f3ef363ff68efec4306188a40bf}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a74c67f3ef363ff68efec4306188a40bf}} 
+minimum\+\_\+magnetising\+\_\+current&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{time\_constant\_rotor@{time\_constant\_rotor}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!time\_constant\_rotor@{time\_constant\_rotor}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a66c32bb02597306fda2add0a5219ea7f}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a66c32bb02597306fda2add0a5219ea7f}} 
+time\+\_\+constant\+\_\+rotor&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{leakage\_inductance\_ph\_ph@{leakage\_inductance\_ph\_ph}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!leakage\_inductance\_ph\_ph@{leakage\_inductance\_ph\_ph}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a3ec5a6a666356eb8bb08c36f0066f1f1}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a3ec5a6a666356eb8bb08c36f0066f1f1}} 
+leakage\+\_\+inductance\+\_\+ph\+\_\+ph&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stator\_resistance\_ph\_ph@{stator\_resistance\_ph\_ph}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!stator\_resistance\_ph\_ph@{stator\_resistance\_ph\_ph}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a0505769d343c974ce9b0ea5f645c4869}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741a0505769d343c974ce9b0ea5f645c4869}} 
+stator\+\_\+resistance\+\_\+ph\+\_\+ph&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{time\_constant\_stator@{time\_constant\_stator}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!time\_constant\_stator@{time\_constant\_stator}}}\mbox{\Hypertarget{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741ae7211fe3a1246ef8f9c5881d3ecb8f0d}\label{motor__controller_8h_ae5ebd6cc9310757a5488b935d21bc741ae7211fe3a1246ef8f9c5881d3ecb8f0d}} 
+time\+\_\+constant\+\_\+stator&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 25 of file motor\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521}\label{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521}} 
+\index{motor\_controller.h@{motor\_controller.h}!motor\_controller\_PI\_values@{motor\_controller\_PI\_values}}
+\index{motor\_controller\_PI\_values@{motor\_controller\_PI\_values}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{motor\_controller\_PI\_values}{motor\_controller\_PI\_values}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521}{motor\+\_\+controller\+\_\+\+P\+I\+\_\+values}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{accelerate\_ramp@{accelerate\_ramp}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!accelerate\_ramp@{accelerate\_ramp}}}\mbox{\Hypertarget{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a13f8ebd34ab57556217fbd235329a9e8}\label{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a13f8ebd34ab57556217fbd235329a9e8}} 
+accelerate\+\_\+ramp&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{dismantling\_ramp@{dismantling\_ramp}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!dismantling\_ramp@{dismantling\_ramp}}}\mbox{\Hypertarget{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a3c22e464cac79207d52cf4ff8d64d430}\label{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a3c22e464cac79207d52cf4ff8d64d430}} 
+dismantling\+\_\+ramp&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{recuperation\_ramp@{recuperation\_ramp}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!recuperation\_ramp@{recuperation\_ramp}}}\mbox{\Hypertarget{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a013c38322d35d441c21920fc665d197a}\label{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a013c38322d35d441c21920fc665d197a}} 
+recuperation\+\_\+ramp&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{proportional\_gain@{proportional\_gain}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!proportional\_gain@{proportional\_gain}}}\mbox{\Hypertarget{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a2b83ac91fbacf438199c4515ae3dcb88}\label{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a2b83ac91fbacf438199c4515ae3dcb88}} 
+proportional\+\_\+gain&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{integral\_time\_constant@{integral\_time\_constant}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!integral\_time\_constant@{integral\_time\_constant}}}\mbox{\Hypertarget{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a39318ae4bc4582c26c32b7748f64c8d4}\label{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a39318ae4bc4582c26c32b7748f64c8d4}} 
+integral\+\_\+time\+\_\+constant&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{integral\_memory\_max@{integral\_memory\_max}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!integral\_memory\_max@{integral\_memory\_max}}}\mbox{\Hypertarget{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521aa1022b52e56d3a918c7a62177a88bb9e}\label{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521aa1022b52e56d3a918c7a62177a88bb9e}} 
+integral\+\_\+memory\+\_\+max&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{proportional\_gain\_2@{proportional\_gain\_2}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!proportional\_gain\_2@{proportional\_gain\_2}}}\mbox{\Hypertarget{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521ac622cb0442074999655f1021ae456ef7}\label{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521ac622cb0442074999655f1021ae456ef7}} 
+proportional\+\_\+gain\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{current\_feed\_forward@{current\_feed\_forward}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!current\_feed\_forward@{current\_feed\_forward}}}\mbox{\Hypertarget{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a4e45c20669f9d0f09fce08e26865cfa2}\label{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a4e45c20669f9d0f09fce08e26865cfa2}} 
+current\+\_\+feed\+\_\+forward&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ramp\_set\_current@{ramp\_set\_current}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!ramp\_set\_current@{ramp\_set\_current}}}\mbox{\Hypertarget{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a5cde7e1c696e5ca92501b3e470b9ad88}\label{motor__controller_8h_a3f03fa29b56b9f1f2cf0a36f989f9521a5cde7e1c696e5ca92501b3e470b9ad88}} 
+ramp\+\_\+set\+\_\+current&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 108 of file motor\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{motor__controller_8h_aa7c35d6b7a8102a9104bd52eb92f9520}\label{motor__controller_8h_aa7c35d6b7a8102a9104bd52eb92f9520}} 
+\index{motor\_controller.h@{motor\_controller.h}!motor\_controller\_repeating\_time@{motor\_controller\_repeating\_time}}
+\index{motor\_controller\_repeating\_time@{motor\_controller\_repeating\_time}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{motor\_controller\_repeating\_time}{motor\_controller\_repeating\_time}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{motor__controller_8h_aa7c35d6b7a8102a9104bd52eb92f9520}{motor\+\_\+controller\+\_\+repeating\+\_\+time}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{none@{none}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!none@{none}}}\mbox{\Hypertarget{motor__controller_8h_aa7c35d6b7a8102a9104bd52eb92f9520ab7e4e0120a041dbe6528b050c04269e0}\label{motor__controller_8h_aa7c35d6b7a8102a9104bd52eb92f9520ab7e4e0120a041dbe6528b050c04269e0}} 
+none&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{one\_hundred\_ms@{one\_hundred\_ms}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!one\_hundred\_ms@{one\_hundred\_ms}}}\mbox{\Hypertarget{motor__controller_8h_aa7c35d6b7a8102a9104bd52eb92f9520a1ccfd6fbab04e1f36f650d9a3350d799}\label{motor__controller_8h_aa7c35d6b7a8102a9104bd52eb92f9520a1ccfd6fbab04e1f36f650d9a3350d799}} 
+one\+\_\+hundred\+\_\+ms&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 124 of file motor\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268}\label{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268}} 
+\index{motor\_controller.h@{motor\_controller.h}!motor\_controller\_speed\_parameters@{motor\_controller\_speed\_parameters}}
+\index{motor\_controller\_speed\_parameters@{motor\_controller\_speed\_parameters}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{motor\_controller\_speed\_parameters}{motor\_controller\_speed\_parameters}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268}{motor\+\_\+controller\+\_\+speed\+\_\+parameters}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\_actual@{N\_actual}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!N\_actual@{N\_actual}}}\mbox{\Hypertarget{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268a74ac68aa19b65409fa9b18b8f2be3bf4}\label{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268a74ac68aa19b65409fa9b18b8f2be3bf4}} 
+N\+\_\+actual&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\_set@{N\_set}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!N\_set@{N\_set}}}\mbox{\Hypertarget{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268aa53daf1b53f678af8159cba9238c5e6f}\label{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268aa53daf1b53f678af8159cba9238c5e6f}} 
+N\+\_\+set&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\_cmd@{N\_cmd}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!N\_cmd@{N\_cmd}}}\mbox{\Hypertarget{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268ac5a4f68a0000a0d2d5004ba1d2e4c27f}\label{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268ac5a4f68a0000a0d2d5004ba1d2e4c27f}} 
+N\+\_\+cmd&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{N\_error@{N\_error}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!N\_error@{N\_error}}}\mbox{\Hypertarget{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268acc27e0901b9bd112a36ccf7e9620b09a}\label{motor__controller_8h_a8cab19f0549eb777404ec1c7a3b56268acc27e0901b9bd112a36ccf7e9620b09a}} 
+N\+\_\+error&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 14 of file motor\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{motor__controller_8h_a0376dfd1eed1d027d96561fd24e48242}\label{motor__controller_8h_a0376dfd1eed1d027d96561fd24e48242}} 
+\index{motor\_controller.h@{motor\_controller.h}!motor\_controller\_startup@{motor\_controller\_startup}}
+\index{motor\_controller\_startup@{motor\_controller\_startup}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{motor\_controller\_startup}{motor\_controller\_startup}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{motor__controller_8h_a0376dfd1eed1d027d96561fd24e48242}{motor\+\_\+controller\+\_\+startup}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{clear\_errors@{clear\_errors}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!clear\_errors@{clear\_errors}}}\mbox{\Hypertarget{motor__controller_8h_a0376dfd1eed1d027d96561fd24e48242ae138a3e61cb9bb9076598775b7810347}\label{motor__controller_8h_a0376dfd1eed1d027d96561fd24e48242ae138a3e61cb9bb9076598775b7810347}} 
+clear\+\_\+errors&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{firmware\_version@{firmware\_version}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!firmware\_version@{firmware\_version}}}\mbox{\Hypertarget{motor__controller_8h_a0376dfd1eed1d027d96561fd24e48242aed26e85027514bcd1ca8c3c17c03bef2}\label{motor__controller_8h_a0376dfd1eed1d027d96561fd24e48242aed26e85027514bcd1ca8c3c17c03bef2}} 
+firmware\+\_\+version&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 135 of file motor\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dff}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dff}} 
+\index{motor\_controller.h@{motor\_controller.h}!motor\_controller\_status\_information\_errors\_warnings@{motor\_controller\_status\_information\_errors\_warnings}}
+\index{motor\_controller\_status\_information\_errors\_warnings@{motor\_controller\_status\_information\_errors\_warnings}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{motor\_controller\_status\_information\_errors\_warnings}{motor\_controller\_status\_information\_errors\_warnings}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dff}{motor\+\_\+controller\+\_\+status\+\_\+information\+\_\+errors\+\_\+warnings}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{motor\_controller\_errors\_warnings@{motor\_controller\_errors\_warnings}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!motor\_controller\_errors\_warnings@{motor\_controller\_errors\_warnings}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa595211bb6640ca05c1c3344b47e2890f}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa595211bb6640ca05c1c3344b47e2890f}} 
+motor\+\_\+controller\+\_\+errors\+\_\+warnings&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{eprom\_read\_error@{eprom\_read\_error}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!eprom\_read\_error@{eprom\_read\_error}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa87ada8cd125ba521b447d565c12bb30e}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa87ada8cd125ba521b447d565c12bb30e}} 
+eprom\+\_\+read\+\_\+error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{hardware\_fault@{hardware\_fault}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!hardware\_fault@{hardware\_fault}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffae9da794167969482cb67bfad83a04d71}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffae9da794167969482cb67bfad83a04d71}} 
+hardware\+\_\+fault&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rotate\_field\_enable\_not\_present\_run@{rotate\_field\_enable\_not\_present\_run}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!rotate\_field\_enable\_not\_present\_run@{rotate\_field\_enable\_not\_present\_run}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffadae8b5f4fb6cd6712202d055529499ef}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffadae8b5f4fb6cd6712202d055529499ef}} 
+rotate\+\_\+field\+\_\+enable\+\_\+not\+\_\+present\+\_\+run&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{CAN\_timeout\_error@{CAN\_timeout\_error}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!CAN\_timeout\_error@{CAN\_timeout\_error}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa425430d2585733363b6043ed70ebd7ab}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa425430d2585733363b6043ed70ebd7ab}} 
+C\+A\+N\+\_\+timeout\+\_\+error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{feedback\_signal\_error@{feedback\_signal\_error}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!feedback\_signal\_error@{feedback\_signal\_error}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa2a16f371b0570edeeb17214a398e4bfc}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa2a16f371b0570edeeb17214a398e4bfc}} 
+feedback\+\_\+signal\+\_\+error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mains\_voltage\_min\_limit@{mains\_voltage\_min\_limit}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!mains\_voltage\_min\_limit@{mains\_voltage\_min\_limit}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa13726d0d6fc8dd12135f4ea92d1dcc92}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa13726d0d6fc8dd12135f4ea92d1dcc92}} 
+mains\+\_\+voltage\+\_\+min\+\_\+limit&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{motor\_temp\_max\_limit@{motor\_temp\_max\_limit}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!motor\_temp\_max\_limit@{motor\_temp\_max\_limit}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa2267f6ae60d8b9024ba418dd1f6d4b15}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa2267f6ae60d8b9024ba418dd1f6d4b15}} 
+motor\+\_\+temp\+\_\+max\+\_\+limit&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IGBT\_temp\_max\_limit@{IGBT\_temp\_max\_limit}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!IGBT\_temp\_max\_limit@{IGBT\_temp\_max\_limit}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa54a5ca5981535fd231b00a1040622950}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa54a5ca5981535fd231b00a1040622950}} 
+I\+G\+B\+T\+\_\+temp\+\_\+max\+\_\+limit&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{mains\_voltage\_max\_limit@{mains\_voltage\_max\_limit}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!mains\_voltage\_max\_limit@{mains\_voltage\_max\_limit}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa229533ef674ddd4475b22e47eb506b49}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa229533ef674ddd4475b22e47eb506b49}} 
+mains\+\_\+voltage\+\_\+max\+\_\+limit&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{critical\_AC\_current@{critical\_AC\_current}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!critical\_AC\_current@{critical\_AC\_current}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa29aa452fe3c693b96c17c09849ee1633}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa29aa452fe3c693b96c17c09849ee1633}} 
+critical\+\_\+\+A\+C\+\_\+current&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{race\_away\_detected@{race\_away\_detected}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!race\_away\_detected@{race\_away\_detected}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa696b36face7279e19e2905b0fa9ecb68}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa696b36face7279e19e2905b0fa9ecb68}} 
+race\+\_\+away\+\_\+detected&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ecode\_timeout\_error@{ecode\_timeout\_error}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!ecode\_timeout\_error@{ecode\_timeout\_error}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa0dd2c6834f96df064d7b152074a9f81f}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa0dd2c6834f96df064d7b152074a9f81f}} 
+ecode\+\_\+timeout\+\_\+error&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{watchdog\_reset@{watchdog\_reset}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!watchdog\_reset@{watchdog\_reset}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa357611869a1ec791b38a36ec2dfe09b9}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa357611869a1ec791b38a36ec2dfe09b9}} 
+watchdog\+\_\+reset&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{AC\_current\_offset\_fault@{AC\_current\_offset\_fault}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!AC\_current\_offset\_fault@{AC\_current\_offset\_fault}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa0dbc9540bf7a4c67b6a2810985bfb55d}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa0dbc9540bf7a4c67b6a2810985bfb55d}} 
+A\+C\+\_\+current\+\_\+offset\+\_\+fault&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{internal\_hardware\_voltage\_problem@{internal\_hardware\_voltage\_problem}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!internal\_hardware\_voltage\_problem@{internal\_hardware\_voltage\_problem}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa18df3363e2a0048a813dcef5a41785ce}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa18df3363e2a0048a813dcef5a41785ce}} 
+internal\+\_\+hardware\+\_\+voltage\+\_\+problem&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bleed\_resistor\_overload@{bleed\_resistor\_overload}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!bleed\_resistor\_overload@{bleed\_resistor\_overload}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa150953c78b7fcc8ae97a50a5b5765264}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa150953c78b7fcc8ae97a50a5b5765264}} 
+bleed\+\_\+resistor\+\_\+overload&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{parameter\_conflict\_detected@{parameter\_conflict\_detected}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!parameter\_conflict\_detected@{parameter\_conflict\_detected}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa2fbc7fdf1ab20514fac8d6418291a114}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa2fbc7fdf1ab20514fac8d6418291a114}} 
+parameter\+\_\+conflict\+\_\+detected&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{special\_CPU\_fault@{special\_CPU\_fault}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!special\_CPU\_fault@{special\_CPU\_fault}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa7483be8346bb7b2fdfb418383961fba7}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa7483be8346bb7b2fdfb418383961fba7}} 
+special\+\_\+\+C\+P\+U\+\_\+fault&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{rotate\_field\_enable\_not\_present\_norun@{rotate\_field\_enable\_not\_present\_norun}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!rotate\_field\_enable\_not\_present\_norun@{rotate\_field\_enable\_not\_present\_norun}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa3689755161fb5aa5fae86b270bfbf5fc}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa3689755161fb5aa5fae86b270bfbf5fc}} 
+rotate\+\_\+field\+\_\+enable\+\_\+not\+\_\+present\+\_\+norun&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{auxiliary\_voltage\_min\_limit@{auxiliary\_voltage\_min\_limit}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!auxiliary\_voltage\_min\_limit@{auxiliary\_voltage\_min\_limit}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa03e3fe1a981eecdeb19cd0589bdcc6f8}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa03e3fe1a981eecdeb19cd0589bdcc6f8}} 
+auxiliary\+\_\+voltage\+\_\+min\+\_\+limit&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{feedback\_signal\_problem@{feedback\_signal\_problem}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!feedback\_signal\_problem@{feedback\_signal\_problem}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffab6733322e6c8c5197b108e853a58ad13}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffab6733322e6c8c5197b108e853a58ad13}} 
+feedback\+\_\+signal\+\_\+problem&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{warning\_5@{warning\_5}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!warning\_5@{warning\_5}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa3050ef440e4e82f9fb3973e1fb9faea7}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa3050ef440e4e82f9fb3973e1fb9faea7}} 
+warning\+\_\+5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{motor\_temperature\_warning@{motor\_temperature\_warning}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!motor\_temperature\_warning@{motor\_temperature\_warning}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa4e9b2370bf4b4680b4c2471d2f7d312e}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa4e9b2370bf4b4680b4c2471d2f7d312e}} 
+motor\+\_\+temperature\+\_\+warning&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{IGBT\_temperature\_warning@{IGBT\_temperature\_warning}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!IGBT\_temperature\_warning@{IGBT\_temperature\_warning}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa298d28f3aa38960b5d1349a04cbbca95}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa298d28f3aa38960b5d1349a04cbbca95}} 
+I\+G\+B\+T\+\_\+temperature\+\_\+warning&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Vout\_saturation\_max\_limit@{Vout\_saturation\_max\_limit}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!Vout\_saturation\_max\_limit@{Vout\_saturation\_max\_limit}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffaf06c0a389c1c73850def361e9bd7ffdc}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffaf06c0a389c1c73850def361e9bd7ffdc}} 
+Vout\+\_\+saturation\+\_\+max\+\_\+limit&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{warning\_9@{warning\_9}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!warning\_9@{warning\_9}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffad53242de6aeaa134a78749bc60fec984}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffad53242de6aeaa134a78749bc60fec984}} 
+warning\+\_\+9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{speed\_actual\_resolution\_limit@{speed\_actual\_resolution\_limit}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!speed\_actual\_resolution\_limit@{speed\_actual\_resolution\_limit}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa2c5d3b1ee0135916f17e89f331429ed5}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa2c5d3b1ee0135916f17e89f331429ed5}} 
+speed\+\_\+actual\+\_\+resolution\+\_\+limit&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{check\_ecode\_ID@{check\_ecode\_ID}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!check\_ecode\_ID@{check\_ecode\_ID}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa3d2e8b6cb27af4a0a1121c419594bbfa}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa3d2e8b6cb27af4a0a1121c419594bbfa}} 
+check\+\_\+ecode\+\_\+\+ID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{tripzone\_glitch\_detected@{tripzone\_glitch\_detected}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!tripzone\_glitch\_detected@{tripzone\_glitch\_detected}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa618e6f62f2e284a9fec848782c9473c7}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa618e6f62f2e284a9fec848782c9473c7}} 
+tripzone\+\_\+glitch\+\_\+detected&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_sequencer\_problem@{ADC\_sequencer\_problem}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!ADC\_sequencer\_problem@{ADC\_sequencer\_problem}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa9c77d3a416d8465efe129cf8ad401cfe}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffa9c77d3a416d8465efe129cf8ad401cfe}} 
+A\+D\+C\+\_\+sequencer\+\_\+problem&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ADC\_measurement\_problem@{ADC\_measurement\_problem}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!ADC\_measurement\_problem@{ADC\_measurement\_problem}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffac02a9e080dc6bde671fa915b7e254c67}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffac02a9e080dc6bde671fa915b7e254c67}} 
+A\+D\+C\+\_\+measurement\+\_\+problem&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{bleeder\_resistor\_warning@{bleeder\_resistor\_warning}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!bleeder\_resistor\_warning@{bleeder\_resistor\_warning}}}\mbox{\Hypertarget{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffae0c6a82b11d3fb69b758c350960f5a2a}\label{motor__controller_8h_a5e2fbf1b4105e76b330bcb6547533dffae0c6a82b11d3fb69b758c350960f5a2a}} 
+bleeder\+\_\+resistor\+\_\+warning&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 64 of file motor\+\_\+controller.\+h.
+
+\mbox{\Hypertarget{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645}\label{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645}} 
+\index{motor\_controller.h@{motor\_controller.h}!motor\_controller\_temperatures@{motor\_controller\_temperatures}}
+\index{motor\_controller\_temperatures@{motor\_controller\_temperatures}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{motor\_controller\_temperatures}{motor\_controller\_temperatures}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645}{motor\+\_\+controller\+\_\+temperatures}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{igbt\_temperature@{igbt\_temperature}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!igbt\_temperature@{igbt\_temperature}}}\mbox{\Hypertarget{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a349799caa493b390c9527db251fd128c}\label{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a349799caa493b390c9527db251fd128c}} 
+igbt\+\_\+temperature&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{motor\_temperature@{motor\_temperature}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!motor\_temperature@{motor\_temperature}}}\mbox{\Hypertarget{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645aeff9dce22875056570afa6b71fd23842}\label{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645aeff9dce22875056570afa6b71fd23842}} 
+motor\+\_\+temperature&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{air\_temperature@{air\_temperature}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!air\_temperature@{air\_temperature}}}\mbox{\Hypertarget{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a5f67975cf91f5959212f095df271d9e5}\label{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a5f67975cf91f5959212f095df271d9e5}} 
+air\+\_\+temperature&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{current\_derate\_temperature@{current\_derate\_temperature}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!current\_derate\_temperature@{current\_derate\_temperature}}}\mbox{\Hypertarget{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645ac6969717754fedde42de1813b1ecddd0}\label{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645ac6969717754fedde42de1813b1ecddd0}} 
+current\+\_\+derate\+\_\+temperature&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{temp\_sensor\_pt1@{temp\_sensor\_pt1}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!temp\_sensor\_pt1@{temp\_sensor\_pt1}}}\mbox{\Hypertarget{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a2b29b0a0b81efd7300f900f65ef28071}\label{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a2b29b0a0b81efd7300f900f65ef28071}} 
+temp\+\_\+sensor\+\_\+pt1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{temp\_sensor\_pt2@{temp\_sensor\_pt2}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!temp\_sensor\_pt2@{temp\_sensor\_pt2}}}\mbox{\Hypertarget{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645ad4a8ea69fc94ed6fb6fe1310a477805d}\label{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645ad4a8ea69fc94ed6fb6fe1310a477805d}} 
+temp\+\_\+sensor\+\_\+pt2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{temp\_sensor\_pt3@{temp\_sensor\_pt3}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!temp\_sensor\_pt3@{temp\_sensor\_pt3}}}\mbox{\Hypertarget{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a4518ebfdfdcbae7be91b9b41b99ad2a4}\label{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a4518ebfdfdcbae7be91b9b41b99ad2a4}} 
+temp\+\_\+sensor\+\_\+pt3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{temp\_sensor\_pt4@{temp\_sensor\_pt4}!motor\_controller.h@{motor\_controller.h}}\index{motor\_controller.h@{motor\_controller.h}!temp\_sensor\_pt4@{temp\_sensor\_pt4}}}\mbox{\Hypertarget{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a19e537ab9271f8ef8d455f7b3dd85a94}\label{motor__controller_8h_af56dfdd222f09bea78ac88fdf4ecf645a19e537ab9271f8ef8d455f7b3dd85a94}} 
+temp\+\_\+sensor\+\_\+pt4&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 48 of file motor\+\_\+controller.\+h.
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{motor__controller_8h_a40bf1b849ad7443bbe8af342006bb3cd}\label{motor__controller_8h_a40bf1b849ad7443bbe8af342006bb3cd}} 
+\index{motor\_controller.h@{motor\_controller.h}!MC\_Check\_Error\_Warning@{MC\_Check\_Error\_Warning}}
+\index{MC\_Check\_Error\_Warning@{MC\_Check\_Error\_Warning}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{MC\_Check\_Error\_Warning()}{MC\_Check\_Error\_Warning()}}
+{\footnotesize\ttfamily void M\+C\+\_\+\+Check\+\_\+\+Error\+\_\+\+Warning (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 121 of file motor\+\_\+controller.\+c.
+
+
+
+References A\+C\+\_\+current\+\_\+offset\+\_\+fault, A\+D\+C\+\_\+measurement\+\_\+problem, A\+D\+C\+\_\+sequencer\+\_\+problem, auxiliary\+\_\+voltage\+\_\+min\+\_\+limit, bleed\+\_\+resistor\+\_\+overload, bleeder\+\_\+resistor\+\_\+warning, C\+A\+N\+\_\+timeout\+\_\+error, check\+\_\+ecode\+\_\+\+ID, critical\+\_\+\+A\+C\+\_\+current, ecode\+\_\+timeout\+\_\+error, eprom\+\_\+read\+\_\+error, feedback\+\_\+signal\+\_\+error, feedback\+\_\+signal\+\_\+problem, hardware\+\_\+fault, I\+G\+B\+T\+\_\+temp\+\_\+max\+\_\+limit, I\+G\+B\+T\+\_\+temperature\+\_\+warning, internal\+\_\+hardware\+\_\+voltage\+\_\+problem, mains\+\_\+voltage\+\_\+max\+\_\+limit, mains\+\_\+voltage\+\_\+min\+\_\+limit, motor\+\_\+temp\+\_\+max\+\_\+limit, motor\+\_\+temperature\+\_\+warning, parameter\+\_\+conflict\+\_\+detected, race\+\_\+away\+\_\+detected, rotate\+\_\+field\+\_\+enable\+\_\+not\+\_\+present\+\_\+norun, rotate\+\_\+field\+\_\+enable\+\_\+not\+\_\+present\+\_\+run, special\+\_\+\+C\+P\+U\+\_\+fault, speed\+\_\+actual\+\_\+resolution\+\_\+limit, tripzone\+\_\+glitch\+\_\+detected, Vout\+\_\+saturation\+\_\+max\+\_\+limit, warning\+\_\+5, warning\+\_\+9, and watchdog\+\_\+reset.
+
+
+
+Referenced by M\+C\+\_\+\+Parse\+\_\+\+Message().
+
+\mbox{\Hypertarget{motor__controller_8h_a877a1b68c89c7eeecc3ed294e5dc8a73}\label{motor__controller_8h_a877a1b68c89c7eeecc3ed294e5dc8a73}} 
+\index{motor\_controller.h@{motor\_controller.h}!MC\_Check\_Firmware@{MC\_Check\_Firmware}}
+\index{MC\_Check\_Firmware@{MC\_Check\_Firmware}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{MC\_Check\_Firmware()}{MC\_Check\_Firmware()}}
+{\footnotesize\ttfamily void M\+C\+\_\+\+Check\+\_\+\+Firmware (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 255 of file motor\+\_\+controller.\+c.
+
+\mbox{\Hypertarget{motor__controller_8h_af34e05da8add9233de12150656dad092}\label{motor__controller_8h_af34e05da8add9233de12150656dad092}} 
+\index{motor\_controller.h@{motor\_controller.h}!MC\_Check\_Serial\_Number@{MC\_Check\_Serial\_Number}}
+\index{MC\_Check\_Serial\_Number@{MC\_Check\_Serial\_Number}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{MC\_Check\_Serial\_Number()}{MC\_Check\_Serial\_Number()}}
+{\footnotesize\ttfamily void M\+C\+\_\+\+Check\+\_\+\+Serial\+\_\+\+Number (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 251 of file motor\+\_\+controller.\+c.
+
+\mbox{\Hypertarget{motor__controller_8h_afa93c7b7fa3dc12bd6bf860c54c564ee}\label{motor__controller_8h_afa93c7b7fa3dc12bd6bf860c54c564ee}} 
+\index{motor\_controller.h@{motor\_controller.h}!MC\_Parse\_Message@{MC\_Parse\_Message}}
+\index{MC\_Parse\_Message@{MC\_Parse\_Message}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{MC\_Parse\_Message()}{MC\_Parse\_Message()}}
+{\footnotesize\ttfamily void M\+C\+\_\+\+Parse\+\_\+\+Message (\begin{DoxyParamCaption}\item[{int}]{D\+LC,  }\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file motor\+\_\+controller.\+c.
+
+
+
+References Error\+\_\+\+Handler(), M\+C\+\_\+\+Check\+\_\+\+Error\+\_\+\+Warning(), and motor\+\_\+controller\+\_\+errors\+\_\+warnings.
+
+\mbox{\Hypertarget{motor__controller_8h_af6b3a4911f1bdac54d84b4dcc7b7ec4a}\label{motor__controller_8h_af6b3a4911f1bdac54d84b4dcc7b7ec4a}} 
+\index{motor\_controller.h@{motor\_controller.h}!MC\_Request\_Data@{MC\_Request\_Data}}
+\index{MC\_Request\_Data@{MC\_Request\_Data}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{MC\_Request\_Data()}{MC\_Request\_Data()}}
+{\footnotesize\ttfamily void M\+C\+\_\+\+Request\+\_\+\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Reg\+ID }\end{DoxyParamCaption})}
+
+
+
+Definition at line 49 of file motor\+\_\+controller.\+c.
+
+
+
+References Error\+\_\+\+Handler(), hcan2, M\+C\+\_\+\+C\+A\+N\+\_\+\+I\+D\+\_\+\+Tx, Tx\+Data, Tx\+Header, and Tx\+Mailbox.
+
+\mbox{\Hypertarget{motor__controller_8h_af2e573366a03a695a8ba760440848206}\label{motor__controller_8h_af2e573366a03a695a8ba760440848206}} 
+\index{motor\_controller.h@{motor\_controller.h}!MC\_Send\_Data@{MC\_Send\_Data}}
+\index{MC\_Send\_Data@{MC\_Send\_Data}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{MC\_Send\_Data()}{MC\_Send\_Data()}}
+{\footnotesize\ttfamily void M\+C\+\_\+\+Send\+\_\+\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Reg\+ID,  }\item[{uint8\+\_\+t}]{data\+\_\+to\+\_\+send\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 71 of file motor\+\_\+controller.\+c.
+
+
+
+References Error\+\_\+\+Handler(), hcan2, M\+C\+\_\+\+C\+A\+N\+\_\+\+I\+D\+\_\+\+Tx, Tx\+Data, Tx\+Header, and Tx\+Mailbox.
+
+
+
+Referenced by M\+C\+\_\+\+Speed\+\_\+\+Control().
+
+\mbox{\Hypertarget{motor__controller_8h_a2e1d07308c1e5e2ed72857a078b73cdf}\label{motor__controller_8h_a2e1d07308c1e5e2ed72857a078b73cdf}} 
+\index{motor\_controller.h@{motor\_controller.h}!MC\_Speed\_Control@{MC\_Speed\_Control}}
+\index{MC\_Speed\_Control@{MC\_Speed\_Control}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{MC\_Speed\_Control()}{MC\_Speed\_Control()}}
+{\footnotesize\ttfamily void M\+C\+\_\+\+Speed\+\_\+\+Control (\begin{DoxyParamCaption}\item[{int}]{todo }\end{DoxyParamCaption})}
+
+
+
+Definition at line 108 of file motor\+\_\+controller.\+c.
+
+
+
+References A\+D\+C\+\_\+percentage, desired\+\_\+motor\+\_\+speed, max\+\_\+motor\+\_\+speed, M\+C\+\_\+\+Send\+\_\+\+Data(), and N\+\_\+set.
+
+\mbox{\Hypertarget{motor__controller_8h_a92ca6a696bcc7e4e5618dcc9fbdad617}\label{motor__controller_8h_a92ca6a696bcc7e4e5618dcc9fbdad617}} 
+\index{motor\_controller.h@{motor\_controller.h}!MC\_Startup@{MC\_Startup}}
+\index{MC\_Startup@{MC\_Startup}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{MC\_Startup()}{MC\_Startup()}}
+{\footnotesize\ttfamily void M\+C\+\_\+\+Startup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 259 of file motor\+\_\+controller.\+c.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{motor__controller_8h_aa7294768824898480b6bcf6e98daa926}\label{motor__controller_8h_aa7294768824898480b6bcf6e98daa926}} 
+\index{motor\_controller.h@{motor\_controller.h}!MC\_Torque\_Control@{MC\_Torque\_Control}}
+\index{MC\_Torque\_Control@{MC\_Torque\_Control}!motor\_controller.h@{motor\_controller.h}}
+\doxysubsubsection{\texorpdfstring{MC\_Torque\_Control()}{MC\_Torque\_Control()}}
+{\footnotesize\ttfamily void M\+C\+\_\+\+Torque\+\_\+\+Control (\begin{DoxyParamCaption}\item[{int}]{todo }\end{DoxyParamCaption})}
+
+
+
+Definition at line 104 of file motor\+\_\+controller.\+c.
+

@@ -1,0 +1,90 @@
+\hypertarget{uvfr__settings_8h}{}\doxysection{Core/\+Inc/uvfr\+\_\+settings.h File Reference}
+\label{uvfr__settings_8h}\index{Core/Inc/uvfr\_settings.h@{Core/Inc/uvfr\_settings.h}}
+{\ttfamily \#include \char`\"{}driving\+\_\+loop.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{uvfr__settings_8h_ac120024a956e1c9d9994c49c5383d440}{E\+N\+A\+B\+L\+E\+\_\+\+F\+L\+A\+S\+H\+\_\+\+S\+E\+T\+T\+I\+N\+GS}}~0
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}} \mbox{\hyperlink{uvfr__settings_8h_a8f74ad9b1298d57e4b432f80a0630e2b}{uv\+Vehicle\+Settings}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{uvfr__settings_8h_a4f169ff5098bcc893365c22da33269bc}{uv\+Settings\+Init}} ()
+\begin{DoxyCompactList}\small\item\em this function does one thing, and one thing only, it checks if we have custom settings, then it attempts to get them. If it fails, then we revert to factory defaults. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}} $\ast$ \mbox{\hyperlink{uvfr__settings_8h_ad7a6fe36c2429a9d37ecd0f35ba5a293}{uv\+Current\+Settings}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{uvfr__settings_8h_ac120024a956e1c9d9994c49c5383d440}\label{uvfr__settings_8h_ac120024a956e1c9d9994c49c5383d440}} 
+\index{uvfr\_settings.h@{uvfr\_settings.h}!ENABLE\_FLASH\_SETTINGS@{ENABLE\_FLASH\_SETTINGS}}
+\index{ENABLE\_FLASH\_SETTINGS@{ENABLE\_FLASH\_SETTINGS}!uvfr\_settings.h@{uvfr\_settings.h}}
+\doxysubsubsection{\texorpdfstring{ENABLE\_FLASH\_SETTINGS}{ENABLE\_FLASH\_SETTINGS}}
+{\footnotesize\ttfamily \#define E\+N\+A\+B\+L\+E\+\_\+\+F\+L\+A\+S\+H\+\_\+\+S\+E\+T\+T\+I\+N\+GS~0}
+
+
+
+Definition at line 16 of file uvfr\+\_\+settings.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{uvfr__settings_8h_a8f74ad9b1298d57e4b432f80a0630e2b}\label{uvfr__settings_8h_a8f74ad9b1298d57e4b432f80a0630e2b}} 
+\index{uvfr\_settings.h@{uvfr\_settings.h}!uvVehicleSettings@{uvVehicleSettings}}
+\index{uvVehicleSettings@{uvVehicleSettings}!uvfr\_settings.h@{uvfr\_settings.h}}
+\doxysubsubsection{\texorpdfstring{uvVehicleSettings}{uvVehicleSettings}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}} \mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uvfr__settings_8h_a4f169ff5098bcc893365c22da33269bc}\label{uvfr__settings_8h_a4f169ff5098bcc893365c22da33269bc}} 
+\index{uvfr\_settings.h@{uvfr\_settings.h}!uvSettingsInit@{uvSettingsInit}}
+\index{uvSettingsInit@{uvSettingsInit}!uvfr\_settings.h@{uvfr\_settings.h}}
+\doxysubsubsection{\texorpdfstring{uvSettingsInit()}{uvSettingsInit()}}
+{\footnotesize\ttfamily void uv\+Settings\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+this function does one thing, and one thing only, it checks if we have custom settings, then it attempts to get them. If it fails, then we revert to factory defaults. 
+
+
+
+Definition at line 20 of file uvfr\+\_\+settings.\+c.
+
+
+
+References setup\+\_\+default\+\_\+settings().
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{uvfr__settings_8h_ad7a6fe36c2429a9d37ecd0f35ba5a293}\label{uvfr__settings_8h_ad7a6fe36c2429a9d37ecd0f35ba5a293}} 
+\index{uvfr\_settings.h@{uvfr\_settings.h}!uvCurrentSettings@{uvCurrentSettings}}
+\index{uvCurrentSettings@{uvCurrentSettings}!uvfr\_settings.h@{uvfr\_settings.h}}
+\doxysubsubsection{\texorpdfstring{uvCurrentSettings}{uvCurrentSettings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}}$\ast$ uv\+Current\+Settings}
+
+
+
+Definition at line 13 of file uvfr\+\_\+settings.\+c.
+
+
+
+Referenced by setup\+\_\+default\+\_\+settings().
+

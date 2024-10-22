@@ -1,0 +1,161 @@
+\hypertarget{freertos_8c}{}\doxysection{Core/\+Src/freertos.c File Reference}
+\label{freertos_8c}\index{Core/Src/freertos.c@{Core/Src/freertos.c}}
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cmsis\+\_\+os.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driving\+\_\+loop.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{freertos_8c_a016544463b4842ced7191baf8f449cea}{Start\+Default\+Task}} (void const $\ast$argument)
+\begin{DoxyCompactList}\small\item\em Function implementing the led\+Task thread. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{freertos_8c_abade755e13d07c10889ae83143656158}{M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init}} (void)
+\begin{DoxyCompactList}\small\item\em Free\+R\+T\+OS initialization This is where we declare our R\+T\+OS tasks, mutexes, semaphores, and timers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{freertos_8c_a1988aa923b19fa6f31c93afa7773f793}{v\+Application\+Get\+Idle\+Task\+Memory}} (Static\+Task\+\_\+t $\ast$$\ast$ppx\+Idle\+Task\+T\+C\+B\+Buffer, Stack\+Type\+\_\+t $\ast$$\ast$ppx\+Idle\+Task\+Stack\+Buffer, uint32\+\_\+t $\ast$pul\+Idle\+Task\+Stack\+Size)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+os\+Thread\+Id \mbox{\hyperlink{freertos_8c_a899d413c8689b5553b7b2b18f3df13b9}{driving\+Loop\+Handle}}
+\item 
+os\+Thread\+Id \mbox{\hyperlink{freertos_8c_aec9177717ec2a3cff7bcdb9816e22a0f}{led\+Task\+Handle}}
+\item 
+static Static\+Task\+\_\+t \mbox{\hyperlink{freertos_8c_a2dd1013c5ef8f355ac2f1479e36ec659}{x\+Idle\+Task\+T\+C\+B\+Buffer}}
+\item 
+static Stack\+Type\+\_\+t \mbox{\hyperlink{freertos_8c_af311b04396149ce536fe1a3b5f127445}{x\+Idle\+Stack}} \mbox{[}\mbox{\hyperlink{_free_r_t_o_s_config_8h_a6c534a6cf8a00528fe0be42083484f9a}{config\+M\+I\+N\+I\+M\+A\+L\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{freertos_8c_abade755e13d07c10889ae83143656158}\label{freertos_8c_abade755e13d07c10889ae83143656158}} 
+\index{freertos.c@{freertos.c}!MX\_FREERTOS\_Init@{MX\_FREERTOS\_Init}}
+\index{MX\_FREERTOS\_Init@{MX\_FREERTOS\_Init}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{MX\_FREERTOS\_Init()}{MX\_FREERTOS\_Init()}}
+{\footnotesize\ttfamily void M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Free\+R\+T\+OS initialization This is where we declare our R\+T\+OS tasks, mutexes, semaphores, and timers. 
+
+
+
+Definition at line 84 of file freertos.\+c.
+
+
+
+References driving\+Loop\+Handle, led\+Task\+Handle, Start\+Default\+Task(), and Start\+Driving\+Loop().
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{freertos_8c_a016544463b4842ced7191baf8f449cea}\label{freertos_8c_a016544463b4842ced7191baf8f449cea}} 
+\index{freertos.c@{freertos.c}!StartDefaultTask@{StartDefaultTask}}
+\index{StartDefaultTask@{StartDefaultTask}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{StartDefaultTask()}{StartDefaultTask()}}
+{\footnotesize\ttfamily void Start\+Default\+Task (\begin{DoxyParamCaption}\item[{void const $\ast$}]{argument }\end{DoxyParamCaption})}
+
+
+
+Function implementing the led\+Task thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argument} & Not used \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 127 of file freertos.\+c.
+
+
+
+Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
+
+\mbox{\Hypertarget{freertos_8c_a1988aa923b19fa6f31c93afa7773f793}\label{freertos_8c_a1988aa923b19fa6f31c93afa7773f793}} 
+\index{freertos.c@{freertos.c}!vApplicationGetIdleTaskMemory@{vApplicationGetIdleTaskMemory}}
+\index{vApplicationGetIdleTaskMemory@{vApplicationGetIdleTaskMemory}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{vApplicationGetIdleTaskMemory()}{vApplicationGetIdleTaskMemory()}}
+{\footnotesize\ttfamily void v\+Application\+Get\+Idle\+Task\+Memory (\begin{DoxyParamCaption}\item[{Static\+Task\+\_\+t $\ast$$\ast$}]{ppx\+Idle\+Task\+T\+C\+B\+Buffer,  }\item[{Stack\+Type\+\_\+t $\ast$$\ast$}]{ppx\+Idle\+Task\+Stack\+Buffer,  }\item[{uint32\+\_\+t $\ast$}]{pul\+Idle\+Task\+Stack\+Size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 70 of file freertos.\+c.
+
+
+
+References config\+M\+I\+N\+I\+M\+A\+L\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, x\+Idle\+Stack, and x\+Idle\+Task\+T\+C\+B\+Buffer.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{freertos_8c_a899d413c8689b5553b7b2b18f3df13b9}\label{freertos_8c_a899d413c8689b5553b7b2b18f3df13b9}} 
+\index{freertos.c@{freertos.c}!drivingLoopHandle@{drivingLoopHandle}}
+\index{drivingLoopHandle@{drivingLoopHandle}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{drivingLoopHandle}{drivingLoopHandle}}
+{\footnotesize\ttfamily os\+Thread\+Id driving\+Loop\+Handle}
+
+File Name \+: \mbox{\hyperlink{freertos_8c}{freertos.\+c}} Description \+: Code for freertos applications
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2024 S\+T\+Microelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 
+
+Definition at line 50 of file freertos.\+c.
+
+
+
+Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
+
+\mbox{\Hypertarget{freertos_8c_aec9177717ec2a3cff7bcdb9816e22a0f}\label{freertos_8c_aec9177717ec2a3cff7bcdb9816e22a0f}} 
+\index{freertos.c@{freertos.c}!ledTaskHandle@{ledTaskHandle}}
+\index{ledTaskHandle@{ledTaskHandle}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{ledTaskHandle}{ledTaskHandle}}
+{\footnotesize\ttfamily os\+Thread\+Id led\+Task\+Handle}
+
+
+
+Definition at line 52 of file freertos.\+c.
+
+
+
+Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
+
+\mbox{\Hypertarget{freertos_8c_af311b04396149ce536fe1a3b5f127445}\label{freertos_8c_af311b04396149ce536fe1a3b5f127445}} 
+\index{freertos.c@{freertos.c}!xIdleStack@{xIdleStack}}
+\index{xIdleStack@{xIdleStack}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{xIdleStack}{xIdleStack}}
+{\footnotesize\ttfamily Stack\+Type\+\_\+t x\+Idle\+Stack\mbox{[}\mbox{\hyperlink{_free_r_t_o_s_config_8h_a6c534a6cf8a00528fe0be42083484f9a}{config\+M\+I\+N\+I\+M\+A\+L\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 68 of file freertos.\+c.
+
+
+
+Referenced by v\+Application\+Get\+Idle\+Task\+Memory().
+
+\mbox{\Hypertarget{freertos_8c_a2dd1013c5ef8f355ac2f1479e36ec659}\label{freertos_8c_a2dd1013c5ef8f355ac2f1479e36ec659}} 
+\index{freertos.c@{freertos.c}!xIdleTaskTCBBuffer@{xIdleTaskTCBBuffer}}
+\index{xIdleTaskTCBBuffer@{xIdleTaskTCBBuffer}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{xIdleTaskTCBBuffer}{xIdleTaskTCBBuffer}}
+{\footnotesize\ttfamily Static\+Task\+\_\+t x\+Idle\+Task\+T\+C\+B\+Buffer\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 67 of file freertos.\+c.
+
+
+
+Referenced by v\+Application\+Get\+Idle\+Task\+Memory().
+
