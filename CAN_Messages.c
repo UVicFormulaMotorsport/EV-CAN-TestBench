@@ -3,9 +3,9 @@
 
 #define table_size 100 //CHAANGE THIS TO HOW MANY CAN_MESSAGES YOU NEED TO HANDLE
 
-/** struct for CAN messages
+/** Strut for CAN messages
  * Contains a 32-bit CAN id 
- * Contains a funtion pointer that will point to whatever funciton the CAN id corresponds to
+ * Contains a function pointer that will point to whatever funciton the CAN id corresponds to
  * Contains a pointer to next, which is a handle for two CAN id's having the hash index
  * The next will be a pointer in the hash table at the hash index that is duplicate and will point to the CAN id of the thing with the same hash
 */
@@ -24,7 +24,7 @@ unsigned int create_hash_id(uint32_t Incoming_CAN_id) {
     uint32_t id = Incoming_CAN_id; 
    
     for (int i = 0; i < 4; i++) { 
-        hash += ((id >> (8 * i)) & 0xFF) * i;                                       //Scrabmle the id 
+        hash += ((id >> (8 * i)) & 0xFF) * i;                                       //Scramble the id
         hash = (hash * 31);
     }
     return hash % table_size; 
