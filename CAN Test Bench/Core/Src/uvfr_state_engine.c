@@ -11,7 +11,11 @@ uv_task_id next_task_id = 0;
 
 enum uv_vehicle_state_t vehicle_state = UV_BOOT;
 
-enum uv_status_t uvCreateTask(){
+enum uv_status_t uvCreateTask(uv_task_info** newtask){
+	void * idk = malloc(1);
+	free(idk);
+
+	return UV_OK;
 
 }
 
