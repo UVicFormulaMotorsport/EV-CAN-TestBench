@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 #include <stdint.h>
 
 #define table_size 100 //CHAANGE THIS TO HOW MANY CAN_MESSAGES YOU NEED TO HANDLE
@@ -37,7 +37,7 @@ int find_function_from_CAN_id(uint32_t CAN_id){
     if (CAN_message_table[index].CAN_id == CAN_id){ 
         void (*function_ptr)() = (void (*)())CAN_message_table[index].function;     //Cast to a void function pointer that takes no arguments? 
         if (function_ptr != NULL) {
-            function_ptr();                                                         // Call the function if it exisits
+            function_ptr();                                                         // Call the function if it exists
         }
         return 0;
     } else {
