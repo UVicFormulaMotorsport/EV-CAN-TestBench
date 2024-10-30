@@ -1,0 +1,243 @@
+\hypertarget{structuv__task__info}{}\doxysection{uv\+\_\+task\+\_\+info Struct Reference}
+\label{structuv__task__info}\index{uv\_task\_info@{uv\_task\_info}}
+
+
+This struct is designed to hold neccessary information about an R\+T\+OS task that will be managed by uvfr\+\_\+state\+\_\+engine.  
+
+
+
+
+{\ttfamily \#include $<$uvfr\+\_\+utils.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{uvfr__utils_8h_aa6ffd72eb4909ddb38c37a1369e13f09}{uv\+\_\+task\+\_\+id}} \mbox{\hyperlink{structuv__task__info_a8ed5c619d9eea62c2beb08fa2db6b092}{task\+\_\+id}}
+\item 
+char \mbox{\hyperlink{structuv__task__info_a6f9c05f76e932437a910d80cc00ae428}{task\+\_\+name}} \mbox{[}16\mbox{]}
+\item 
+os\+\_\+pthread \mbox{\hyperlink{structuv__task__info_ae9ecad59a963f586794668949f80cc91}{task\+\_\+function}}
+\item 
+os\+Priority \mbox{\hyperlink{structuv__task__info_aff45751f7189980589d55379d1d5a355}{task\+\_\+priority}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structuv__task__info_afc6ef587bd0db3b59341902a6b0597f9}{instances}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structuv__task__info_a353ec6bf2c42ab0920f3d1e671e568a3}{stack\+\_\+size}}
+\item 
+enum \mbox{\hyperlink{uvfr__utils_8h_ab9f26b43fdf8b666d2bf4fa7c154efca}{uv\+\_\+task\+\_\+state}} \mbox{\hyperlink{structuv__task__info_adb9ce4d06840a0757591b426fc791db7}{task\+\_\+state}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structuv__task__info_ab24dea3bde4de2d839bf15e65c2df0d6}{active\+\_\+states}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structuv__task__info_a6986d7216c7f889164931b37ab752c29}{deletion\+\_\+states}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structuv__task__info_aafd4e2d916f50b54b99fd02d63831e43}{suspension\+\_\+states}}
+\item 
+os\+Thread\+Id \mbox{\hyperlink{structuv__task__info_a60a6bd4260be8f1090be575c3fa43022}{task\+\_\+handle}}
+\item 
+struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$ \mbox{\hyperlink{structuv__task__info_aaf64a4af6aeefa2018168b194766784b}{next}}
+\item 
+\mbox{\hyperlink{uvfr__state__engine_8h_a81cd43c8eb07f488a7fbef0dc276e284}{uv\+\_\+task\+\_\+cmd}} \mbox{\hyperlink{structuv__task__info_af532b5031cd6a168a3ec45ab9ead4f23}{cmd\+\_\+data}}
+\item 
+void $\ast$ \mbox{\hyperlink{structuv__task__info_ae255dff9b38fc8c0754085060e8ae699}{task\+\_\+args}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This struct is designed to hold neccessary information about an R\+T\+OS task that will be managed by uvfr\+\_\+state\+\_\+engine. 
+
+@field task\+\_\+id is an internal ID assigned to every task and is used by uvfr\+\_\+utils. @field task\+\_\+name is the name of the task. This must be less than 15 characters, and ended with a null terminator.
+
+@field task\+\_\+function is a pointer to the function we want the task to run @field task\+\_\+priority is the priority of the task @field instances is the number of legal instances
+
+@field task\+\_\+state is an internal representation of what the task is up to. This is needed because the R\+T\+OS task may not actually exist. @field active\+\_\+states dictates when the states are active
+
+@field task\+\_\+handle is an os\+Thread\+Id created by Free\+R\+T\+OS when it initializes the task. @field next exists because this shit needs to exist in a linked list, and my ass is too lazy to create a generic struct with it
+
+@field cmd\+\_\+data stores the command we really want this task to execute 
+
+Definition at line 139 of file uvfr\+\_\+utils.\+h.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structuv__task__info_ab24dea3bde4de2d839bf15e65c2df0d6}\label{structuv__task__info_ab24dea3bde4de2d839bf15e65c2df0d6}} 
+\index{uv\_task\_info@{uv\_task\_info}!active\_states@{active\_states}}
+\index{active\_states@{active\_states}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{active\_states}{active\_states}}
+{\footnotesize\ttfamily uint16\+\_\+t uv\+\_\+task\+\_\+info\+::active\+\_\+states}
+
+
+
+Definition at line 151 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{structuv__task__info_af532b5031cd6a168a3ec45ab9ead4f23}\label{structuv__task__info_af532b5031cd6a168a3ec45ab9ead4f23}} 
+\index{uv\_task\_info@{uv\_task\_info}!cmd\_data@{cmd\_data}}
+\index{cmd\_data@{cmd\_data}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{cmd\_data}{cmd\_data}}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_a81cd43c8eb07f488a7fbef0dc276e284}{uv\+\_\+task\+\_\+cmd}} uv\+\_\+task\+\_\+info\+::cmd\+\_\+data}
+
+
+
+Definition at line 157 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{structuv__task__info_a6986d7216c7f889164931b37ab752c29}\label{structuv__task__info_a6986d7216c7f889164931b37ab752c29}} 
+\index{uv\_task\_info@{uv\_task\_info}!deletion\_states@{deletion\_states}}
+\index{deletion\_states@{deletion\_states}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{deletion\_states}{deletion\_states}}
+{\footnotesize\ttfamily uint16\+\_\+t uv\+\_\+task\+\_\+info\+::deletion\+\_\+states}
+
+
+
+Definition at line 152 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{structuv__task__info_afc6ef587bd0db3b59341902a6b0597f9}\label{structuv__task__info_afc6ef587bd0db3b59341902a6b0597f9}} 
+\index{uv\_task\_info@{uv\_task\_info}!instances@{instances}}
+\index{instances@{instances}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{instances}{instances}}
+{\footnotesize\ttfamily uint32\+\_\+t uv\+\_\+task\+\_\+info\+::instances}
+
+
+
+Definition at line 146 of file uvfr\+\_\+utils.\+h.
+
+
+
+Referenced by uv\+Start\+Task().
+
+\mbox{\Hypertarget{structuv__task__info_aaf64a4af6aeefa2018168b194766784b}\label{structuv__task__info_aaf64a4af6aeefa2018168b194766784b}} 
+\index{uv\_task\_info@{uv\_task\_info}!next@{next}}
+\index{next@{next}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}}$\ast$ uv\+\_\+task\+\_\+info\+::next}
+
+
+
+Definition at line 156 of file uvfr\+\_\+utils.\+h.
+
+
+
+Referenced by uv\+Create\+Task(), and uv\+Get\+Task\+By\+Id().
+
+\mbox{\Hypertarget{structuv__task__info_a353ec6bf2c42ab0920f3d1e671e568a3}\label{structuv__task__info_a353ec6bf2c42ab0920f3d1e671e568a3}} 
+\index{uv\_task\_info@{uv\_task\_info}!stack\_size@{stack\_size}}
+\index{stack\_size@{stack\_size}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{stack\_size}{stack\_size}}
+{\footnotesize\ttfamily uint32\+\_\+t uv\+\_\+task\+\_\+info\+::stack\+\_\+size}
+
+
+
+Definition at line 147 of file uvfr\+\_\+utils.\+h.
+
+
+
+Referenced by uv\+Start\+Task().
+
+\mbox{\Hypertarget{structuv__task__info_aafd4e2d916f50b54b99fd02d63831e43}\label{structuv__task__info_aafd4e2d916f50b54b99fd02d63831e43}} 
+\index{uv\_task\_info@{uv\_task\_info}!suspension\_states@{suspension\_states}}
+\index{suspension\_states@{suspension\_states}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{suspension\_states}{suspension\_states}}
+{\footnotesize\ttfamily uint16\+\_\+t uv\+\_\+task\+\_\+info\+::suspension\+\_\+states}
+
+
+
+Definition at line 153 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{structuv__task__info_ae255dff9b38fc8c0754085060e8ae699}\label{structuv__task__info_ae255dff9b38fc8c0754085060e8ae699}} 
+\index{uv\_task\_info@{uv\_task\_info}!task\_args@{task\_args}}
+\index{task\_args@{task\_args}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{task\_args}{task\_args}}
+{\footnotesize\ttfamily void$\ast$ uv\+\_\+task\+\_\+info\+::task\+\_\+args}
+
+
+
+Definition at line 159 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{structuv__task__info_ae9ecad59a963f586794668949f80cc91}\label{structuv__task__info_ae9ecad59a963f586794668949f80cc91}} 
+\index{uv\_task\_info@{uv\_task\_info}!task\_function@{task\_function}}
+\index{task\_function@{task\_function}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{task\_function}{task\_function}}
+{\footnotesize\ttfamily os\+\_\+pthread uv\+\_\+task\+\_\+info\+::task\+\_\+function}
+
+
+
+Definition at line 143 of file uvfr\+\_\+utils.\+h.
+
+
+
+Referenced by uv\+Start\+Task().
+
+\mbox{\Hypertarget{structuv__task__info_a60a6bd4260be8f1090be575c3fa43022}\label{structuv__task__info_a60a6bd4260be8f1090be575c3fa43022}} 
+\index{uv\_task\_info@{uv\_task\_info}!task\_handle@{task\_handle}}
+\index{task\_handle@{task\_handle}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{task\_handle}{task\_handle}}
+{\footnotesize\ttfamily os\+Thread\+Id uv\+\_\+task\+\_\+info\+::task\+\_\+handle}
+
+
+
+Definition at line 155 of file uvfr\+\_\+utils.\+h.
+
+
+
+Referenced by uv\+Start\+Task().
+
+\mbox{\Hypertarget{structuv__task__info_a8ed5c619d9eea62c2beb08fa2db6b092}\label{structuv__task__info_a8ed5c619d9eea62c2beb08fa2db6b092}} 
+\index{uv\_task\_info@{uv\_task\_info}!task\_id@{task\_id}}
+\index{task\_id@{task\_id}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{task\_id}{task\_id}}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__utils_8h_aa6ffd72eb4909ddb38c37a1369e13f09}{uv\+\_\+task\+\_\+id}} uv\+\_\+task\+\_\+info\+::task\+\_\+id}
+
+
+
+Definition at line 140 of file uvfr\+\_\+utils.\+h.
+
+
+
+Referenced by uv\+Create\+Task(), and uv\+Get\+Task\+By\+Id().
+
+\mbox{\Hypertarget{structuv__task__info_a6f9c05f76e932437a910d80cc00ae428}\label{structuv__task__info_a6f9c05f76e932437a910d80cc00ae428}} 
+\index{uv\_task\_info@{uv\_task\_info}!task\_name@{task\_name}}
+\index{task\_name@{task\_name}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{task\_name}{task\_name}}
+{\footnotesize\ttfamily char uv\+\_\+task\+\_\+info\+::task\+\_\+name\mbox{[}16\mbox{]}}
+
+
+
+Definition at line 141 of file uvfr\+\_\+utils.\+h.
+
+
+
+Referenced by uv\+Start\+Task().
+
+\mbox{\Hypertarget{structuv__task__info_aff45751f7189980589d55379d1d5a355}\label{structuv__task__info_aff45751f7189980589d55379d1d5a355}} 
+\index{uv\_task\_info@{uv\_task\_info}!task\_priority@{task\_priority}}
+\index{task\_priority@{task\_priority}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{task\_priority}{task\_priority}}
+{\footnotesize\ttfamily os\+Priority uv\+\_\+task\+\_\+info\+::task\+\_\+priority}
+
+
+
+Definition at line 144 of file uvfr\+\_\+utils.\+h.
+
+
+
+Referenced by uv\+Start\+Task().
+
+\mbox{\Hypertarget{structuv__task__info_adb9ce4d06840a0757591b426fc791db7}\label{structuv__task__info_adb9ce4d06840a0757591b426fc791db7}} 
+\index{uv\_task\_info@{uv\_task\_info}!task\_state@{task\_state}}
+\index{task\_state@{task\_state}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{task\_state}{task\_state}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_ab9f26b43fdf8b666d2bf4fa7c154efca}{uv\+\_\+task\+\_\+state}} uv\+\_\+task\+\_\+info\+::task\+\_\+state}
+
+
+
+Definition at line 150 of file uvfr\+\_\+utils.\+h.
+
+
+
+Referenced by uv\+Create\+Task().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+Inc/\mbox{\hyperlink{uvfr__utils_8h}{uvfr\+\_\+utils.\+h}}\end{DoxyCompactItemize}

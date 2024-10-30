@@ -244,6 +244,10 @@ void MC_Check_Error_Warning(uint8_t Data[]){
 	}
 }
 
+void MC_Validate(){
+
+}
+
 void MC_Check_Serial_Number(uint8_t Data[]){
 	// TODO
 }
@@ -252,7 +256,7 @@ void MC_Check_Firmware(uint8_t Data[]){
 	// TODO
 }
 
-void MC_Startup(){
+void MC_Startup(void* args){
 	// MC_Send_Data(...)
 }
 

@@ -1,0 +1,26 @@
+var uvfr__state__engine_8c =
+[
+    [ "state_change_daemon_args", "structstate__change__daemon__args.html", "structstate__change__daemon__args" ],
+    [ "UVFR_STATE_MACHINE_IMPLIMENTATION", "uvfr__state__engine_8c.html#a6cd439d1fb18334cd13cf3539aebca5c", null ],
+    [ "state_change_daemon_args", "uvfr__state__engine_8c.html#ac9bd88d7c454ec151183930fce544c9c", null ],
+    [ "_stateChangeDaemon", "uvfr__state__engine_8c.html#a45e3dba55fdad745f7394feb3764cd0a", null ],
+    [ "addTaskToTaskRegister", "uvfr__state__engine_8c.html#a1fedc882914ef3579d876c512f87506a", null ],
+    [ "changeVehicleState", "uvfr__state__engine_8c.html#a34bee422adb65dbf5f923281cf899601", null ],
+    [ "killEmAll", "uvfr__state__engine_8c.html#a20e6d890541b1349d47e1483394357ce", null ],
+    [ "updateRunningTasks", "uvfr__state__engine_8c.html#accc8a3290b8d5e61a3cc03d93f6bc394", null ],
+    [ "uvCreateTask", "uvfr__state__engine_8c.html#a99bfc92472cdc99e9005e9d3c792909a", null ],
+    [ "uvDeInitStateEngine", "uvfr__state__engine_8c.html#a96aa2907ccf1903b18613447c3e404a3", null ],
+    [ "uvDeleteTask", "uvfr__state__engine_8c.html#a51e5b37f4f6fa42966dc7587df0f9d31", null ],
+    [ "uvGetTaskById", "uvfr__state__engine_8c.html#adb600c27d12b67e26037441c061d7ccf", null ],
+    [ "uvInitStateEngine", "uvfr__state__engine_8c.html#ab907ac134ab31a8bcc534b1701304964", null ],
+    [ "uvPanic", "uvfr__state__engine_8c.html#a3bfd5a05cfd8a930a9db17d525d6610f", null ],
+    [ "uvStartStateMachine", "uvfr__state__engine_8c.html#a415f401ea7985271f803f935d925be34", null ],
+    [ "uvStartTask", "uvfr__state__engine_8c.html#a087d225cadaa024ccc02f534bbeff55f", null ],
+    [ "uvSuspendTask", "uvfr__state__engine_8c.html#a3f71d21fca610d86adcd9e15701ed875", null ],
+    [ "_final_task", "uvfr__state__engine_8c.html#a374b511e2c3caa6c664bcc3c6541ac18", null ],
+    [ "_next_task_id", "uvfr__state__engine_8c.html#af070a24ce066297b4a8276ddcb884b0c", null ],
+    [ "_task_register", "uvfr__state__engine_8c.html#a6b49ab568bed9d9189782eebb90545b5", null ],
+    [ "previous_state", "uvfr__state__engine_8c.html#a2ce6eef16a78c095592954d2fe68af2e", null ],
+    [ "state_change_queue", "uvfr__state__engine_8c.html#a6837d935e61f84062544da8971a18560", null ],
+    [ "vehicle_state", "uvfr__state__engine_8c.html#a2f58cf65b3566bc390600f877f8bed35", null ]
+];

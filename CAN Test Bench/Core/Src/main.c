@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "cmsis_os.h"
 #include "adc.h"
 #include "can.h"
 #include "dma.h"
@@ -58,9 +59,8 @@
 
 /* USER CODE BEGIN PV */
 volatile uint32_t adc_buf1[ADC1_BUF_LEN]; // ADC1 - high priority readings
-//uint16_t adc1_1;	old buffer read variables
-//uint16_t adc1_2;
-uint16_t adc1_APPS1;
+
+uint16_t adc1_APPS1; //These are the locations for the sensor inputs for APPS and BPS
 uint16_t adc1_APPS2;
 uint16_t adc1_BPS1;
 uint16_t adc1_BPS2;
@@ -70,17 +70,16 @@ uint16_t adc2_CoolantTemp;
 uint16_t adc2_CoolantFlow;
 
 //int adc_conv_complete_flag = 0;
-int ready_to_drive = 0;
-int outofrange = 0;
-int hardbreak = 0;
+
 
 //State of da vehicle
-enum vehicle_state_t vehicle_state = init;
+//enum uv_vehicle_state_t vehicle_state = UV_INIT; //TODO: Define new state machine logic
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -93,9 +92,13 @@ void SystemClock_Config(void);
 /**
   * @brief  The application entry point.
   * @retval int
+  * This is the entry point of the application, and effectively only serves one purpose.
+  * It calls initialisation functions for all of the peripherals, checks the state of all
+  * drivers and devices, then passes control over to the RTOS scheduler.
   */
 int main(void)
 {
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -123,34 +126,37 @@ int main(void)
   MX_CAN2_Init();
   MX_ADC1_Init();
   MX_ADC2_Init();
-  MX_TIM13_Init();
-  MX_TIM14_Init();
-  MX_TIM6_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC1_BUF_LEN);
-  HAL_TIM_Base_Start_IT(&htim3);
+  //HAL_TIM_Base_Start_IT(&htim3); This is getting disabled, since measuring temp will now be an RTOS task
+  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14); // Just to prove we reached this point in the code
+
+  //ANYTHING WE NEED TO DO BEFORE THE KERNEL TAKES OVER SHOULD HAPPEN HERE:
+
+  /* Step 1: Initialize whatever else needs initializing. Check that all devices exist.
+   * Do some diagnostics on ourselves while we at it.
+   */
+
+  //MC_Startup(); // Send all the needed CAN messages to the MC for it to be properly configured.
 
   /* USER CODE END 2 */
+
+  /* Call init function for freertos objects (in cmsis_os2.c) */
+  MX_FREERTOS_Init();
+
+  /* Start scheduler */
+  osKernelStart();
+
+  /* We should never get here as control is now taken by the scheduler */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-    Update_Batt_Temp(69); // temp debugging
+    //Update_Batt_Temp(69); // temp debugging
 
-    // This is the waiting to drive loop
-    // The driver needs to press the brake and the start button before driving the car
-    while (!ready_to_drive){
-    	// we can check miscellaneous stuff here
-    	// TODO - incorporate brake pedal input
 
-    	// The ISR at the bottom will get triggered when the button is pressed
-    	// That will set the ready to drive flag to 1 and this loop will exit
-    }
-    // After the car is ready to drive, we want to play the speaker chirp, then we can drive
-    PDU_speaker_chirp();
-
-  while (1)
+  while (1) //we should deadass never reach this point in the code lol
   {
 	  // For debugging purposes
 	  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_13);
@@ -163,39 +169,6 @@ int main(void)
 	  HAL_Delay(1000);
 
 
-
-	  // The goal is to set some timers that will trigger interrupts for
-	  // less important tasks
-
-	  // Something like every second we check temperatures of things
-	  // Checking ADC inputs could be in the loop
-	  // Checking status of devices could be in an ISR for a timer
-
-	  switch(vehicle_state){
-	  case init:
-		  //startup, conduct device checks
-
-	  break;
-	  case ready:
-		  //waiting for you to start the car.
-
-		 break;
-	  case driving:
-		  //driving
-		  driving_loop();
-		  break;
-	  case suspended:
-		  //suspended
-		  suspended_loop();
-		  break;
-	  case error:
-		  error_loop();
-		  break;
-	  default://physically how  are you here?
-
-		  break;
-
-	  }
 
 
     /* USER CODE END WHILE */
@@ -252,39 +225,44 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 // called when timer 3 period elapsed
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
-
-	// check that timer 3 created the interrupt
-	if (htim == &htim3){
-
-		// start a single round of ADC2 conversions
-		HAL_ADC_Start_DMA(&hadc2, (uint32_t*)adc_buf2, ADC2_BUF_LEN);
-
-		// restart timer
-		HAL_TIM_Base_Start_IT(&htim3);
-	}
-}
+//void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+//
+//	// check that timer 3 created the interrupt
+//	if (htim == &htim3){
+//
+//		// start a single round of ADC2 conversions
+//		HAL_ADC_Start_DMA(&hadc2, (uint32_t*)adc_buf2, ADC2_BUF_LEN);
+//
+//		// restart timer
+//		HAL_TIM_Base_Start_IT(&htim3);
+//	}
+//}
 
 
 // Called when adc dma buffer is completely filled
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
   // Could toggle an LED here
-	if(hadc->Instance == ADC1){
+	if(hadc->Instance == ADC1){ //TODO: Fix this so it is RTOS compatible
 		adc1_APPS1 = 0;
 		adc1_APPS2 = 0;
 		adc1_BPS1 = 0;
 		adc1_BPS2 = 0;
 
-		uint16_t* buf1_pointer = adc_buf1;
+		//Hmmm this should honestly probably be a 16 bit type but aint nobody got time for dat
+		uint32_t* buf1_pointer = adc_buf1;
 
-		for(int i = 0; i < ADC1_SAMPLES; i++){
+		for(int i = 0; i < ADC1_SAMPLES; i++){ //BUG: pointer incremented by one rather than the length of the datatype
 			adc1_APPS1 += *buf1_pointer++;
 			adc1_APPS2 += *buf1_pointer++;
 			adc1_BPS1 += *buf1_pointer++;
 			adc1_BPS2 += *buf1_pointer++;
 		}
 
+		//The above code is actually even worse than I originally suspected. Seriously, WTF. If multiple writes occur, then they get summed,
+		//Rather than initial writes getting overwritten by newer ones. UNDEFINED BEHAVIOR!
+
 		// calculate APPS fraction travelled (see spreadsheet for equation derivation)
+		// Byron here: I want these constants to be TUNABLE, this will need some debugging in the future
 		adc1_APPS1 = 0.8082*adc1_APPS1 - 0.3709;
 		adc1_APPS2 = 0.8405*adc1_APPS2 - 0.8747;
 
@@ -312,7 +290,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
     if(GPIO_Pin == GPIO_PIN_0) // If The INT Source Is EXTI Line0 (A0 Pin)
     {
-    	ready_to_drive = 1;
+//ready_to_drive = 1;
     }
 }
 
@@ -334,13 +312,41 @@ void HAL_ADC_LevelOutOfWindowCallback(ADC_HandleTypeDef* hadc){
 /* USER CODE END 4 */
 
 /**
+  * @brief  Period elapsed callback in non blocking mode
+  * @note   This function is called  when TIM1 interrupt took place, inside
+  * HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment
+  * a global variable "uwTick" used as application time base.
+  * @param  htim : TIM handle
+  * @retval None
+  */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+  /* USER CODE BEGIN Callback 0 */
+
+  /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM1) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
+  if (htim == &htim3){
+
+  		// start a single round of ADC2 conversions
+  		HAL_ADC_Start_DMA(&hadc2, (uint32_t*)adc_buf2, ADC2_BUF_LEN);
+
+  		// restart timer
+  		HAL_TIM_Base_Start_IT(&htim3);
+  	}
+  /* USER CODE END Callback 1 */
+}
+
+/**
   * @brief  This function is executed in case of error occurrence.
   * @retval None
   */
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
-	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_12);
+	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_12); //Me when the error is not being handled
   /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
   while (1)

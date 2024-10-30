@@ -1,101 +1,190 @@
-/*
- * Driving_Loop.c
+/** @file driving_loop.c
+ *  @brief File containing the meat and potatoes driving loop thread, and all supporting functions
  *
- *  Created on: Mar 12, 2024
- *      Author: byo10
  */
 
+
+
 #include "main.h"
-#include "errors.h"
+#include "uvfr_utils.h"
+#include "can.h"
 #include "motor_controller.h"
-#include "bms.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "main.h"
+#include "cmsis_os.h"
+
 #include "driving_loop.h"
 
-enum driving_mode_t driving_mode = normal;
-
-extern enum vehicle_state_t vehicle_state;
-extern uint16_t adc1_APPS1;
+//External Variables:
+extern uint16_t adc1_APPS1; //These are the locations for the sensor inputs for APPS and BPS
 extern uint16_t adc1_APPS2;
 extern uint16_t adc1_BPS1;
 extern uint16_t adc1_BPS2;
 
-//use for easy toggle between torque control and speed control
+enum uv_status_t initDrivingLoop(void const *argument){
+	uv_task_info* dl_task = createTask();
 
-
-#if !TORQUE_CONTROL
-//This function takes ADC values and outputs a 16 bit integer which represents the requested speed of the controller.
-//Only works with linear speed control.
-static int16_t linear_pedal_speed_map(){
-	//check to make sure random values below the minimum dont put the car into reverse
-	if(adc1_APPS1 < MIN_PEDAL_ADC_VAL) return 0;
-	int16_t speed = 0;
-	switch(driving_mode){
-	case normal:
-
-		speed = ((adc1_APPS1 - MIN_PEDAL_ADC_VAL)*(MAX_RPM)) / (MAX_PEDAL_ADC_VAL - MIN_PEDAL_ADC_VAL);
-		break;
-	default:
-
-		break;
+	if(dl_task == NULL){
+		//Oh dear lawd
+		return UV_ERROR;
 	}
 
-	return speed;
 
+	//DO NOT TOUCH ANY OF THE FIELDS WE HAVENT ALREADY MENTIONED HERE. FOR THE LOVE OF GOD.
+
+	//dl_task->task_name = malloc(16*sizeof(char));
+	//if(dl_task->task_name == NULL){
+		//return UV_ERROR; //failed to malloc the name of the thing
+	//}
+	dl_task->task_name = "Driving_Loop";
+
+
+	dl_task->task_function = StartDrivingLoop;
+	dl_task->task_priority = osPriorityHigh;
+
+	dl_task->instances = 1;
+	dl_task->stack_size = _UV_DEFAULT_TASK_STACK_SIZE;
+
+	dl_task->active_states = UV_DRIVING;
+	dl_task->suspension_states = 0x00;
+	dl_task->deletion_states = UV_READY | PROGRAMMING | UV_LAUNCH_CONTROL | UV_ERROR_STATE;
+
+	//
+
+	dl_task->task_args = NULL; //TODO: Add actual settings dipshit
+
+	return UV_OK;
 }
 
-#else
+/**@brief  Function implementing the ledTask thread.
+ * @param  argument: Not used for now. Will have configuration settings later.
+ * @retval None
+ *
+ * This function is made to be the meat and potatoes of the entire vehicle.
+ *
+ */
+void StartDrivingLoop(void const * argument){
+	//Initialize driving loop now
 
-int16_t pedal_torque_map(){
-	int16_t torque = 0;
+	/** The first thing we do here is create some local variables here, to cache whatever variables need cached.
+	 *	We will be caching variables that are used very frequently in every single loop iteration, and are not
+	 */
 
-}
+	uv_task_info* dl_metadata = (uv_task_info*) argument;
 
-#endif
+	uint16_t min_apps_value;
+	uint16_t max_apps_value;
+
+	uint16_t min_apps_offset;
+	uint16_t max_apps_offset;
+
+	enum DL_internal_state dl_status = Plausible;
+
+	/** This line extracts the specific driving loop parameters as specified in the
+	 * vehicle settings
+	 @code*/
+	driving_loop_args* dl_params = (driving_loop_args*) dl_metadata->task_args;
+	/**@endcode*/
 
 
-void driving_loop(){//this is where the main driving stuff happens
-	//code that executes once upon entry to driving loop goes here
+	min_apps_value = dl_params->min_apps_value;
+	max_apps_value = dl_params->max_apps_value;
+
+	min_apps_offset = dl_params->min_apps_offset; //minimum APPS offset
+	max_apps_offset = dl_params->max_apps_offset;
+
+	for(;;){
+		//Read stuff from the addresses
+
+		//Copy the values over into new local variables, in order to avoid messing up the APPS
+		uint16_t apps1_value = adc1_APPS1;
+		uint16_t apps2_value = adc1_APPS2;
+
+		uint16_t bps1_value = adc1_BPS1;
+		uint16_t bps2_value = adc1_BPS2;
 
 
-	//Howdy folks, here is the driving loop. Everything here is fun and cool. the way we
-	//exit the driving loop, is if the vehicle state changes
-	while(vehicle_state == driving){
-		//Things that occur for us to drive
+		//Perform input validation
+		if(apps1_value < dl_params->min_apps_value){
+			//APPS1 is probably unplugged. Act accordingly
+		}else if(apps1_value > dl_params->max_apps_value){
+			//indicative of APPS1 short
+			//goto DL_end;
+		}
+
+		if(apps2_value < dl_params->max_apps_value){
+			//APPS2 is probably unplugged. Act accordingly.
+		}else if(apps2_value > dl_params->max_apps_value){
+			//indicative of APPS2 short
+		}
+
+		uint16_t apps_diff = apps1_value - apps2_value;
+
+		if((apps_diff > dl_params->max_apps_offset)||(apps_diff < dl_params->min_apps_offset)){
+			//APPS1 and APPS2 are no longer in sync with each other
+		}
 
 
-		/* Step 1: Pedal position to motor controller output
-		 * Step 2: Send to motor controller
+
+		if(bps1_value < dl_params->min_BPS_value){
+
+		}else if(bps1_value > dl_params->max_BPS_value){
+
+		}
+
+
+		//Repeat these safety checks for BPS 2.
+		if(bps2_value < dl_params->min_BPS_value){
+
+		}else if(bps2_value > dl_params->max_BPS_value){
+
+		}
+
+		//Brake Plausibility Check
+
+		/** @heading Brake Plausibility Check
 		 *
+		 * The way that this works is that if the brake pressure is greater than some threshold,
+		 * and the accelerator pedal position is also greater than some threshold, the thing will
+		 * register that a brake implausibility has occurred. This is not very cash money.
 		 *
-		 *
+		 * If this happens, we want to set the torque/speed output to zero. This will only reset itself once
+		 * the brakes are set to less than a certain threshold. Honestly evil.
 		 */
 
-		linear_pedal_speed_map();
+		if((bps1_value > dl_params->bps_plausibility_check_threshold) && (apps1_value > dl_params->apps_plausibility_check_threshold)){
+			//This means that the pedal and brake are checked simultaneously
+			dl_status = Implausible;
+		}
+
+
+		//possible return to plausibility
+		if((dl_status == Implausible) && (1)){
+			dl_status = Plausible;
+		}
+
+		//Compute torque/velocity or whatever
+		if(dl_status == Plausible){
+
+		}
+
+
+		//Command the motor controller to do the thing
+		if(1){
+
+		}
+
+		DL_end:
+		//Set loose the ADC, and have it DMA the result into the variables
 
 
 
+
+		//Wait until next D.L. occurance
+		osDelay(DEFAULT_PERIOD);
 	}
-
-	switch(vehicle_state){
-	case error: // things that should happen if we are transitioning from driving to error
-
-		break;
-	case suspended: // things that should happen if we are transitioning from driving to suspended
-
-
-		break;
-	case ready:
-		// things that should happen if we are transitioning from driving to ready, i.e. voluntarily powering down
-
-
-		break;
-	case init:
-
-		break;
-	default: //Physically how did we get here?
-
-		break;
-	}
-
 
 }
+
+

@@ -1,0 +1,132 @@
+\hypertarget{driving__loop_8c}{}\doxysection{Core/\+Src/driving\+\_\+loop.c File Reference}
+\label{driving__loop_8c}\index{Core/Src/driving\_loop.c@{Core/Src/driving\_loop.c}}
+
+
+File containing the meat and potatoes driving loop thread, and all supporting functions.  
+
+
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}can.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}motor\+\_\+controller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cmsis\+\_\+os.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}driving\+\_\+loop.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{driving__loop_8c_adb031c91acd0bc6d700819cde7ec58f2}{Start\+Driving\+Loop}} (void const $\ast$argument)
+\begin{DoxyCompactList}\small\item\em Function implementing the led\+Task thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{driving__loop_8c_a549b3590f54dfc129d2eebf2604c16e8}{adc1\+\_\+\+A\+P\+P\+S1}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{driving__loop_8c_a8567d6e2f5ad8bd53f71ecc2b2b0ae30}{adc1\+\_\+\+A\+P\+P\+S2}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{driving__loop_8c_ad36d3aa4037203058df6816d56f4c186}{adc1\+\_\+\+B\+P\+S1}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{driving__loop_8c_a277f7921a7a1e0fb8a6f953943dc06dc}{adc1\+\_\+\+B\+P\+S2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+File containing the meat and potatoes driving loop thread, and all supporting functions. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{driving__loop_8c_adb031c91acd0bc6d700819cde7ec58f2}\label{driving__loop_8c_adb031c91acd0bc6d700819cde7ec58f2}} 
+\index{driving\_loop.c@{driving\_loop.c}!StartDrivingLoop@{StartDrivingLoop}}
+\index{StartDrivingLoop@{StartDrivingLoop}!driving\_loop.c@{driving\_loop.c}}
+\doxysubsubsection{\texorpdfstring{StartDrivingLoop()}{StartDrivingLoop()}}
+{\footnotesize\ttfamily void Start\+Driving\+Loop (\begin{DoxyParamCaption}\item[{void const $\ast$}]{argument }\end{DoxyParamCaption})}
+
+
+
+Function implementing the led\+Task thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em argument} & Not used for now. Will have configuration settings later. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & This function is made to be the meat and potatoes of the entire vehicle. \\
+\hline
+\end{DoxyRetVals}
+The first thing we do here is create some local variables here, to cache whatever variables need cached. We will be caching variables that are used very frequently in every single loop iteration, and are not
+
+@heading Brake Plausibility Check
+
+The way that this works is that if the brake pressure is greater than some threshold, and the accelerator pedal position is also greater than some threshold, the thing will register that a brake implausibility has occurred. This is not very cash money.
+
+If this happens, we want to set the torque/speed output to zero. This will only reset itself once the brakes are set to less than a certain threshold. Honestly evil.
+
+Definition at line 34 of file driving\+\_\+loop.\+c.
+
+
+
+References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, adc1\+\_\+\+B\+P\+S1, adc1\+\_\+\+B\+P\+S2, driving\+Loop\+Args\+::apps\+\_\+plausibility\+\_\+check\+\_\+threshold, driving\+Loop\+Args\+::bps\+\_\+plausibility\+\_\+check\+\_\+threshold, D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+E\+R\+I\+OD, Implausible, driving\+Loop\+Args\+::max\+\_\+apps\+\_\+offset, driving\+Loop\+Args\+::max\+\_\+apps\+\_\+value, driving\+Loop\+Args\+::max\+\_\+\+B\+P\+S\+\_\+value, driving\+Loop\+Args\+::min\+\_\+apps\+\_\+offset, driving\+Loop\+Args\+::min\+\_\+apps\+\_\+value, and Plausible.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{driving__loop_8c_a549b3590f54dfc129d2eebf2604c16e8}\label{driving__loop_8c_a549b3590f54dfc129d2eebf2604c16e8}} 
+\index{driving\_loop.c@{driving\_loop.c}!adc1\_APPS1@{adc1\_APPS1}}
+\index{adc1\_APPS1@{adc1\_APPS1}!driving\_loop.c@{driving\_loop.c}}
+\doxysubsubsection{\texorpdfstring{adc1\_APPS1}{adc1\_APPS1}}
+{\footnotesize\ttfamily uint16\+\_\+t adc1\+\_\+\+A\+P\+P\+S1}
+
+
+
+Definition at line 63 of file main.\+c.
+
+
+
+Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Level\+Out\+Of\+Window\+Callback(), main(), and Start\+Driving\+Loop().
+
+\mbox{\Hypertarget{driving__loop_8c_a8567d6e2f5ad8bd53f71ecc2b2b0ae30}\label{driving__loop_8c_a8567d6e2f5ad8bd53f71ecc2b2b0ae30}} 
+\index{driving\_loop.c@{driving\_loop.c}!adc1\_APPS2@{adc1\_APPS2}}
+\index{adc1\_APPS2@{adc1\_APPS2}!driving\_loop.c@{driving\_loop.c}}
+\doxysubsubsection{\texorpdfstring{adc1\_APPS2}{adc1\_APPS2}}
+{\footnotesize\ttfamily uint16\+\_\+t adc1\+\_\+\+A\+P\+P\+S2}
+
+
+
+Definition at line 64 of file main.\+c.
+
+
+
+Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Level\+Out\+Of\+Window\+Callback(), main(), and Start\+Driving\+Loop().
+
+\mbox{\Hypertarget{driving__loop_8c_ad36d3aa4037203058df6816d56f4c186}\label{driving__loop_8c_ad36d3aa4037203058df6816d56f4c186}} 
+\index{driving\_loop.c@{driving\_loop.c}!adc1\_BPS1@{adc1\_BPS1}}
+\index{adc1\_BPS1@{adc1\_BPS1}!driving\_loop.c@{driving\_loop.c}}
+\doxysubsubsection{\texorpdfstring{adc1\_BPS1}{adc1\_BPS1}}
+{\footnotesize\ttfamily uint16\+\_\+t adc1\+\_\+\+B\+P\+S1}
+
+
+
+Definition at line 65 of file main.\+c.
+
+
+
+Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), and Start\+Driving\+Loop().
+
+\mbox{\Hypertarget{driving__loop_8c_a277f7921a7a1e0fb8a6f953943dc06dc}\label{driving__loop_8c_a277f7921a7a1e0fb8a6f953943dc06dc}} 
+\index{driving\_loop.c@{driving\_loop.c}!adc1\_BPS2@{adc1\_BPS2}}
+\index{adc1\_BPS2@{adc1\_BPS2}!driving\_loop.c@{driving\_loop.c}}
+\doxysubsubsection{\texorpdfstring{adc1\_BPS2}{adc1\_BPS2}}
+{\footnotesize\ttfamily uint16\+\_\+t adc1\+\_\+\+B\+P\+S2}
+
+
+
+Definition at line 66 of file main.\+c.
+
+
+
+Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), and Start\+Driving\+Loop().
+
