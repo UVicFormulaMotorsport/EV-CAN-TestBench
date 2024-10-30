@@ -47,6 +47,10 @@ void MX_CAN2_Init(void);
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2);
 void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2);
 
+int call_function_from_CAN_id(uint32_t CAN_id, uint8_t* data, uint8_t length);
+void insert_CAN_message(CAN_Message message);
+void nuke_hash_table();
+
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
