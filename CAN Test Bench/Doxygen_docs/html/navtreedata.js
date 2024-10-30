@@ -36,7 +36,7 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "Globals", "globals.html", [
         [ "All", "globals.html", "globals_dup" ],
-        [ "Functions", "globals_func.html", null ],
+        [ "Functions", "globals_func.html", "globals_func" ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
@@ -50,9 +50,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_free_r_t_o_s_config_8h.html",
-"imd_8c.html#a5b8ada827e9888be105e0bc8c27006f3",
-"motor__controller_8h_source.html",
-"tim_8c_source.html"
+"group___s_t_m32_f4xx___system___private___variables.html#gaa3cd3e43291e81e795d642b79b6088e6",
+"motor__controller_8h.html#ae5ebd6cc9310757a5488b935d21bc741ad24139707ecedd81a10a96dea882f0a0",
+"structuv__task__info.html#adb9ce4d06840a0757591b426fc791db7"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -26,7 +26,7 @@ void \mbox{\hyperlink{motor__controller_8c_af34e05da8add9233de12150656dad092}{M\
 \item 
 void \mbox{\hyperlink{motor__controller_8c_a877a1b68c89c7eeecc3ed294e5dc8a73}{M\+C\+\_\+\+Check\+\_\+\+Firmware}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
 \item 
-void \mbox{\hyperlink{motor__controller_8c_a92ca6a696bcc7e4e5618dcc9fbdad617}{M\+C\+\_\+\+Startup}} ()
+void \mbox{\hyperlink{motor__controller_8c_aed1407e1e0fd59dc7c5e5d6db671f0ab}{M\+C\+\_\+\+Startup}} (void $\ast$args)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -142,11 +142,11 @@ Definition at line 108 of file motor\+\_\+controller.\+c.
 
 References A\+D\+C\+\_\+percentage, desired\+\_\+motor\+\_\+speed, max\+\_\+motor\+\_\+speed, M\+C\+\_\+\+Send\+\_\+\+Data(), and N\+\_\+set.
 
-\mbox{\Hypertarget{motor__controller_8c_a92ca6a696bcc7e4e5618dcc9fbdad617}\label{motor__controller_8c_a92ca6a696bcc7e4e5618dcc9fbdad617}} 
+\mbox{\Hypertarget{motor__controller_8c_aed1407e1e0fd59dc7c5e5d6db671f0ab}\label{motor__controller_8c_aed1407e1e0fd59dc7c5e5d6db671f0ab}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Startup@{MC\_Startup}}
 \index{MC\_Startup@{MC\_Startup}!motor\_controller.c@{motor\_controller.c}}
 \doxysubsubsection{\texorpdfstring{MC\_Startup()}{MC\_Startup()}}
-{\footnotesize\ttfamily void M\+C\+\_\+\+Startup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void M\+C\+\_\+\+Startup (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
 
 
 
@@ -154,7 +154,7 @@ Definition at line 259 of file motor\+\_\+controller.\+c.
 
 
 
-Referenced by main().
+Referenced by uv\+Init().
 
 \mbox{\Hypertarget{motor__controller_8c_aa7294768824898480b6bcf6e98daa926}\label{motor__controller_8c_aa7294768824898480b6bcf6e98daa926}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Torque\_Control@{MC\_Torque\_Control}}

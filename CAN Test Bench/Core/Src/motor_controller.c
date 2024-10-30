@@ -256,7 +256,7 @@ void MC_Check_Firmware(uint8_t Data[]){
 	// TODO
 }
 
-void MC_Startup(){
+void MC_Startup(void* args){
 	// MC_Send_Data(...)
 }
 

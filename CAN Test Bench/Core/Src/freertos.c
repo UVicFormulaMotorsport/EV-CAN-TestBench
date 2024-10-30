@@ -47,7 +47,7 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 // This is where the actual RTOS task handles are going to live
-osThreadId drivingLoopHandle;
+osThreadId initTaskHandle;
 /* USER CODE END Variables */
 osThreadId ledTaskHandle;
 
@@ -111,8 +111,8 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-  osThreadDef(drivingLoop, StartDrivingLoop, osPriorityRealtime, 0, 128);
-  drivingLoopHandle = osThreadCreate(osThread(drivingLoop), NULL);
+  osThreadDef(initTask, uvInit, osPriorityRealtime, 0, 128);
+  initTaskHandle = osThreadCreate(osThread(initTask), NULL);
   /* USER CODE END RTOS_THREADS */
 
 }

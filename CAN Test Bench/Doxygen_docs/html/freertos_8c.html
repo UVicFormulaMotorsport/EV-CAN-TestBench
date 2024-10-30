@@ -115,8 +115,9 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a899d413c8689b5553b7b2b18f3df13b9"><td class="memItemLeft" align="right" valign="top">osThreadId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freertos_8c.html#a899d413c8689b5553b7b2b18f3df13b9">drivingLoopHandle</a></td></tr>
-<tr class="separator:a899d413c8689b5553b7b2b18f3df13b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d14399b3d64f2ddb952cdac5b30da7d"><td class="memItemLeft" align="right" valign="top">osThreadId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freertos_8c.html#a2d14399b3d64f2ddb952cdac5b30da7d">initTaskHandle</a></td></tr>
+<tr class="memdesc:a2d14399b3d64f2ddb952cdac5b30da7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will initialize all of the uvfr wrappers, and system variables, as well as performing internal diagnostics.  <a href="freertos_8c.html#a2d14399b3d64f2ddb952cdac5b30da7d">More...</a><br /></td></tr>
+<tr class="separator:a2d14399b3d64f2ddb952cdac5b30da7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec9177717ec2a3cff7bcdb9816e22a0f"><td class="memItemLeft" align="right" valign="top">osThreadId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freertos_8c.html#aec9177717ec2a3cff7bcdb9816e22a0f">ledTaskHandle</a></td></tr>
 <tr class="separator:aec9177717ec2a3cff7bcdb9816e22a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dd1013c5ef8f355ac2f1479e36ec659"><td class="memItemLeft" align="right" valign="top">static StaticTask_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freertos_8c.html#a2dd1013c5ef8f355ac2f1479e36ec659">xIdleTaskTCBBuffer</a></td></tr>
@@ -145,7 +146,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="freertos_8c_source.html#l00084">84</a> of file <a class="el" href="freertos_8c_source.html">freertos.c</a>.</p>
 
-<p class="reference">References <a class="el" href="freertos_8c_source.html#l00050">drivingLoopHandle</a>, <a class="el" href="freertos_8c_source.html#l00052">ledTaskHandle</a>, <a class="el" href="freertos_8c_source.html#l00127">StartDefaultTask()</a>, and <a class="el" href="driving__loop_8c_source.html#l00032">StartDrivingLoop()</a>.</p>
+<p class="reference">References <a class="el" href="freertos_8c_source.html#l00050">initTaskHandle</a>, <a class="el" href="freertos_8c_source.html#l00052">ledTaskHandle</a>, <a class="el" href="freertos_8c_source.html#l00127">StartDefaultTask()</a>, and <a class="el" href="uvfr__utils_8c_source.html#l00030">uvInit()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00099">main()</a>.</p>
 
@@ -226,17 +227,19 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a899d413c8689b5553b7b2b18f3df13b9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a899d413c8689b5553b7b2b18f3df13b9">&#9670;&nbsp;</a></span>drivingLoopHandle</h2>
+<a id="a2d14399b3d64f2ddb952cdac5b30da7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d14399b3d64f2ddb952cdac5b30da7d">&#9670;&nbsp;</a></span>initTaskHandle</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">osThreadId drivingLoopHandle</td>
+          <td class="memname">osThreadId initTaskHandle</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>This function will initialize all of the uvfr wrappers, and system variables, as well as performing internal diagnostics. </p>
 <p>File Name : <a class="el" href="freertos_8c.html">freertos.c</a> Description : Code for freertos applications</p>
 <dl class="section attention"><dt>Attention</dt><dd></dd></dl>
 <p>Copyright (c) 2024 STMicroelectronics. All rights reserved.</p>
@@ -244,7 +247,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="freertos_8c_source.html#l00050">50</a> of file <a class="el" href="freertos_8c_source.html">freertos.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="freertos_8c_source.html#l00084">MX_FREERTOS_Init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="freertos_8c_source.html#l00084">MX_FREERTOS_Init()</a>, and <a class="el" href="uvfr__utils_8c_source.html#l00030">uvInit()</a>.</p>
 
 </div>
 </div>

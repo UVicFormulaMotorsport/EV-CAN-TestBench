@@ -15,6 +15,5 @@ var main_8c =
     [ "adc2_CoolantFlow", "main_8c.html#a9211365d419c877b3b4f8074ef19cb33", null ],
     [ "adc2_CoolantTemp", "main_8c.html#a05d60ecdd2dcf9cb28968d8027d1d5ce", null ],
     [ "adc_buf1", "main_8c.html#a8c60277435d9f53a21fed2e4ae28a66a", null ],
-    [ "adc_buf2", "main_8c.html#a820ab8aecc5744f003ca984a1d960da1", null ],
-    [ "vehicle_state", "main_8c.html#a2f58cf65b3566bc390600f877f8bed35", null ]
+    [ "adc_buf2", "main_8c.html#a820ab8aecc5744f003ca984a1d960da1", null ]
 ];

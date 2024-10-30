@@ -112,6 +112,6 @@ var motor__controller_8h =
     [ "MC_Request_Data", "motor__controller_8h.html#af6b3a4911f1bdac54d84b4dcc7b7ec4a", null ],
     [ "MC_Send_Data", "motor__controller_8h.html#af2e573366a03a695a8ba760440848206", null ],
     [ "MC_Speed_Control", "motor__controller_8h.html#a2e1d07308c1e5e2ed72857a078b73cdf", null ],
-    [ "MC_Startup", "motor__controller_8h.html#a92ca6a696bcc7e4e5618dcc9fbdad617", null ],
+    [ "MC_Startup", "motor__controller_8h.html#aed1407e1e0fd59dc7c5e5d6db671f0ab", null ],
     [ "MC_Torque_Control", "motor__controller_8h.html#aa7294768824898480b6bcf6e98daa926", null ]
 ];

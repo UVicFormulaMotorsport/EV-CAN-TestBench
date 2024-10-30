@@ -12,8 +12,24 @@
 
 
 //global variables for all to enjoy
-uvVehicleSettings* uvCurrentSettings = NULL;
+uv_vehicle_settings* current_vehicle_settings = NULL;
 
+enum uv_status_t getSettingsFromFlash(){
+	//if there exists settings in flash somewhere, then get them. Otherwise we use the defaults
+	return UV_ABORTED;
+}
+
+void setupDefaultSettings(){
+	//real trap shit
+	current_vehicle_settings = malloc(sizeof(uv_vehicle_settings));
+}
+
+void nukeSettings(uv_vehicle_settings** settings_to_delete){
+
+	//*uvVehicleSettings = NULL;
+
+
+}
 
 /** @brief this function does one thing, and one thing only, it checks if we have custom settings, then it attempts to get them.
  * If it fails, then we revert to factory defaults.
@@ -25,7 +41,7 @@ enum uv_status_t uvSettingsInit(){
 		setup_default_settings();
 	}
 #else
-	setup_default_settings();
+	setupDefaultSettings();
 #endif
 
 
@@ -33,19 +49,6 @@ enum uv_status_t uvSettingsInit(){
 
 }
 
-enum uv_status_t get_settings_from_flash(){
-	//if there exists settings in flash somewhere, then get them. Otherwise we use the defaults
-	return UV_OK;
-}
-
-void setup_default_settings(){
-	//real trap shit
-	uvCurrentSettings = (uvVehicleSettings*) malloc(sizeof(uvVehicleSettings*));
-}
-
-void nuke_settings(uvVehicleSettings** settings_to_delete){
-
-	//*uvVehicleSettings = NULL;
 
 
-}
+

@@ -8,7 +8,8 @@
 #ifndef INC_DRIVING_LOOP_H_
 #define INC_DRIVING_LOOP_H_
 
-#include"motor_controller.h"
+#include "motor_controller.h"
+#include "uvfr_utils.h"
 
 typedef uint16_t MC_Torque;
 typedef uint16_t MC_RPM;
@@ -51,6 +52,10 @@ typedef struct drivingModeParams{
 	uint8_t params[48];
 }drivingModeParams;
 
+
+/** @brief This is where the driving mode and the deivingModeParams are at
+ *
+ */
 typedef struct drivingMode{
 	char dm_name[16];
 	uint8_t is_speed_control;
@@ -68,7 +73,7 @@ typedef struct drivingMode{
  * GUI to change vehicle settings.
  *
  */
-typedef struct drivingLoopArgs{
+typedef struct driving_loop_args{
 	uint8_t period; // how often does the driving loop execute
 	uint8_t current_driving_mode; //what is the driving mode?
 	uint16_t min_apps_offset; //minimum APPS offset
@@ -90,9 +95,9 @@ typedef struct drivingLoopArgs{
 	uint8_t num_driving_modes;
 	drivingMode dmodes[8]; //This has the different driving modes. We have up to 8.
 
-}drivingLoopArgs;
+}driving_loop_args;
 
-
+enum uv_status_t initDrivingLoop(void const *argument);
 
 void StartDrivingLoop(void const *argument);
 

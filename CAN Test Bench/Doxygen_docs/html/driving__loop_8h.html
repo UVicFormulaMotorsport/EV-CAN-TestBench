@@ -103,6 +103,7 @@ $(document).ready(function(){initNavTree('driving__loop_8h.html','');});
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving_mode_params.html">drivingModeParams</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">this struct is designed to hold information about each drivingmode's map params  <a href="structdriving_mode_params.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving_mode.html">drivingMode</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -112,7 +113,7 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a19ae3417888a615aca7350e9e1ba0204"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#a19ae3417888a615aca7350e9e1ba0204">DEFAULT_PERIOD</a>&#160;&#160;&#160;50;</td></tr>
+<tr class="memitem:a19ae3417888a615aca7350e9e1ba0204"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#a19ae3417888a615aca7350e9e1ba0204">DEFAULT_PERIOD</a>&#160;&#160;&#160;50</td></tr>
 <tr class="memdesc:a19ae3417888a615aca7350e9e1ba0204"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL_PERIOD is meant to represent how often the driving loop executes, in ms.  <a href="driving__loop_8h.html#a19ae3417888a615aca7350e9e1ba0204">More...</a><br /></td></tr>
 <tr class="separator:a19ae3417888a615aca7350e9e1ba0204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -125,6 +126,7 @@ Typedefs</h2></td></tr>
 <tr class="memitem:a93f3b2b453b1ad01d8555f12e529dfed"><td class="memItemLeft" align="right" valign="top">typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#a93f3b2b453b1ad01d8555f12e529dfed">MC_POWER</a></td></tr>
 <tr class="separator:a93f3b2b453b1ad01d8555f12e529dfed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac1d30630084a642c9209dca3a961ef12"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structdriving_mode_params.html">drivingModeParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#ac1d30630084a642c9209dca3a961ef12">drivingModeParams</a></td></tr>
+<tr class="memdesc:ac1d30630084a642c9209dca3a961ef12"><td class="mdescLeft">&#160;</td><td class="mdescRight">this struct is designed to hold information about each drivingmode's map params  <a href="driving__loop_8h.html#ac1d30630084a642c9209dca3a961ef12">More...</a><br /></td></tr>
 <tr class="separator:ac1d30630084a642c9209dca3a961ef12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29e04283e579e9092d205b1937c785c6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structdriving_mode.html">drivingMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#a29e04283e579e9092d205b1937c785c6">drivingMode</a></td></tr>
 <tr class="separator:a29e04283e579e9092d205b1937c785c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,17 +138,17 @@ Enumerations</h2></td></tr>
 <tr class="memitem:a9d8fd287924cbb6baa4afd1c585da800"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800">map_mode</a> { <br />
 &#160;&#160;<a class="el" href="driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a24491cb716ed427ea52ef6cdbf415b52">linear_speed_map</a>, 
 <a class="el" href="driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a20916d6e654ff6402aa120d8710a81a0">s_curve_speed_map</a>, 
-<a class="el" href="driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800ae7760478fd46369d771c55e7a2e1d209">exp_speed_map</a>, 
+<a class="el" href="driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a260f2e914699db0b53b3cb852559b40f">exp_speed_map</a>, 
 <a class="el" href="driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a02e428d0c5cf187b04a2e9825079d26a">linear_torque_map</a>, 
 <br />
 &#160;&#160;<a class="el" href="driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a97cb36a9ac4fbbe2e7b481a2677993f9">s_curve_torque_map</a>, 
-<a class="el" href="driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800ae7760478fd46369d771c55e7a2e1d209">exp_speed_map</a>
+<a class="el" href="driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a22ffbb99cbb49917aac9c53aba81df32">exp_torque_map</a>
 <br />
  }</td></tr>
 <tr class="separator:a9d8fd287924cbb6baa4afd1c585da800"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adef4571b048b5b1f2b712713741296c7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7">DL_internal_state</a> { <a class="el" href="driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7a51000915ad3f7b4a5874322723d879ca">Plausible</a> = 1, 
-<a class="el" href="driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7a6425b90f597e6400cfb9422ec518334f">Implausible</a> = 2, 
-<a class="el" href="driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7abb3086179f14a3715ce589bd10c3ec98">Erroneous</a> = 4
+<tr class="memitem:adef4571b048b5b1f2b712713741296c7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7">DL_internal_state</a> { <a class="el" href="driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7a51000915ad3f7b4a5874322723d879ca">Plausible</a> = 0x01, 
+<a class="el" href="driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7a6425b90f597e6400cfb9422ec518334f">Implausible</a> = 0x02, 
+<a class="el" href="driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7abb3086179f14a3715ce589bd10c3ec98">Erroneous</a> = 0x04
  }</td></tr>
 <tr class="separator:adef4571b048b5b1f2b712713741296c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -164,7 +166,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define DEFAULT_PERIOD&#160;&#160;&#160;50;</td>
+          <td class="memname">#define DEFAULT_PERIOD&#160;&#160;&#160;50</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -217,6 +219,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>this struct is designed to hold information about each drivingmode's map params </p>
 
 </div>
 </div>
@@ -305,10 +309,10 @@ Functions</h2></td></tr>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9d8fd287924cbb6baa4afd1c585da800a24491cb716ed427ea52ef6cdbf415b52"></a>linear_speed_map&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a9d8fd287924cbb6baa4afd1c585da800a20916d6e654ff6402aa120d8710a81a0"></a>s_curve_speed_map&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9d8fd287924cbb6baa4afd1c585da800ae7760478fd46369d771c55e7a2e1d209"></a>exp_speed_map&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9d8fd287924cbb6baa4afd1c585da800a260f2e914699db0b53b3cb852559b40f"></a>exp_speed_map&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a9d8fd287924cbb6baa4afd1c585da800a02e428d0c5cf187b04a2e9825079d26a"></a>linear_torque_map&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a9d8fd287924cbb6baa4afd1c585da800a97cb36a9ac4fbbe2e7b481a2677993f9"></a>s_curve_torque_map&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a9d8fd287924cbb6baa4afd1c585da800ae7760478fd46369d771c55e7a2e1d209"></a>exp_speed_map&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a9d8fd287924cbb6baa4afd1c585da800a22ffbb99cbb49917aac9c53aba81df32"></a>exp_torque_map&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00031">31</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
@@ -350,11 +354,9 @@ Functions</h2></td></tr>
 <p>The way that this works is that if the brake pressure is greater than some threshold, and the accelerator pedal position is also greater than some threshold, the thing will register that a brake implausibility has occurred. This is not very cash money.</p>
 <p>If this happens, we want to set the torque/speed output to zero. This will only reset itself once the brakes are set to less than a certain threshold. Honestly evil.</p>
 
-<p class="definition">Definition at line <a class="el" href="driving__loop_8c_source.html#l00032">32</a> of file <a class="el" href="driving__loop_8c_source.html">driving_loop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driving__loop_8c_source.html#l00034">34</a> of file <a class="el" href="driving__loop_8c_source.html">driving_loop.c</a>.</p>
 
-<p class="reference">References <a class="el" href="main_8c_source.html#l00063">adc1_APPS1</a>, <a class="el" href="main_8c_source.html#l00065">adc1_BPS1</a>, <a class="el" href="main_8c_source.html#l00066">adc1_BPS2</a>, <a class="el" href="driving__loop_8h_source.html#l00082">drivingLoopArgs::apps_plausibility_check_threshold</a>, <a class="el" href="driving__loop_8h_source.html#l00083">drivingLoopArgs::bps_plausibility_check_threshold</a>, <a class="el" href="driving__loop_8h_source.html#l00042">Implausible</a>, <a class="el" href="driving__loop_8h_source.html#l00073">drivingLoopArgs::max_apps_offset</a>, <a class="el" href="driving__loop_8h_source.html#l00075">drivingLoopArgs::max_apps_value</a>, <a class="el" href="driving__loop_8h_source.html#l00077">drivingLoopArgs::max_BPS_value</a>, <a class="el" href="driving__loop_8h_source.html#l00072">drivingLoopArgs::min_apps_offset</a>, <a class="el" href="driving__loop_8h_source.html#l00074">drivingLoopArgs::min_apps_value</a>, and <a class="el" href="driving__loop_8h_source.html#l00041">Plausible</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="freertos_8c_source.html#l00084">MX_FREERTOS_Init()</a>.</p>
+<p class="reference">References <a class="el" href="main_8c_source.html#l00063">adc1_APPS1</a>, <a class="el" href="main_8c_source.html#l00064">adc1_APPS2</a>, <a class="el" href="main_8c_source.html#l00065">adc1_BPS1</a>, <a class="el" href="main_8c_source.html#l00066">adc1_BPS2</a>, <a class="el" href="driving__loop_8h_source.html#l00084">drivingLoopArgs::apps_plausibility_check_threshold</a>, <a class="el" href="driving__loop_8h_source.html#l00085">drivingLoopArgs::bps_plausibility_check_threshold</a>, <a class="el" href="driving__loop_8h_source.html#l00025">DEFAULT_PERIOD</a>, <a class="el" href="driving__loop_8h_source.html#l00042">Implausible</a>, <a class="el" href="driving__loop_8h_source.html#l00075">drivingLoopArgs::max_apps_offset</a>, <a class="el" href="driving__loop_8h_source.html#l00077">drivingLoopArgs::max_apps_value</a>, <a class="el" href="driving__loop_8h_source.html#l00079">drivingLoopArgs::max_BPS_value</a>, <a class="el" href="driving__loop_8h_source.html#l00074">drivingLoopArgs::min_apps_offset</a>, <a class="el" href="driving__loop_8h_source.html#l00076">drivingLoopArgs::min_apps_value</a>, and <a class="el" href="driving__loop_8h_source.html#l00041">Plausible</a>.</p>
 
 </div>
 </div>

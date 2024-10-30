@@ -103,43 +103,48 @@ $(document).ready(function(){initNavTree('uvfr__settings_8h_source.html','');});
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="driving__loop_8h.html">driving_loop.h</a>&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="uvfr__utils_8h.html">uvfr_utils.h</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="daq_8h.html">daq.h</a>&quot;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="uvfr__settings_8h.html#ac120024a956e1c9d9994c49c5383d440">   16</a></span>&#160;<span class="preprocessor">#define ENABLE_FLASH_SETTINGS 0</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="uvfr__settings_8h.html#ac120024a956e1c9d9994c49c5383d440">   17</a></span>&#160;<span class="preprocessor">#define ENABLE_FLASH_SETTINGS 0</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structuv_vehicle_settings.html">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structuv_vehicle_settings.html">uvVehicleSettings</a>{</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structuv_vehicle_settings.html#a5b4179a5f2cb728ab21e4c3d0a4c8451">   20</a></span>&#160;    <a class="code" href="structdriving_loop_args.html">drivingLoopArgs</a>* <a class="code" href="structuv_vehicle_settings.html#a5b4179a5f2cb728ab21e4c3d0a4c8451">drivingLoopSettings</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structuv_vehicle_settings.html#a21bc7d42747ba8b061dcf1b806e56b52">   21</a></span>&#160;    <a class="code" href="structdaq_loop_args.html">daqLoopArgs</a>* <a class="code" href="structuv_vehicle_settings.html#a21bc7d42747ba8b061dcf1b806e56b52">daqSettings</a>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}<a class="code" href="uvfr__settings_8h.html#a8f74ad9b1298d57e4b432f80a0630e2b">uvVehicleSettings</a>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structuv_vehicle_settings.html">   20</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structuv_vehicle_settings.html">uvVehicleSettings</a>{</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structuv_vehicle_settings.html#a5b4179a5f2cb728ab21e4c3d0a4c8451">   21</a></span>&#160;    <a class="code" href="structdriving_loop_args.html">drivingLoopArgs</a>* <a class="code" href="structuv_vehicle_settings.html#a5b4179a5f2cb728ab21e4c3d0a4c8451">drivingLoopSettings</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structuv_vehicle_settings.html#a21bc7d42747ba8b061dcf1b806e56b52">   22</a></span>&#160;    <a class="code" href="structdaq_loop_args.html">daqLoopArgs</a>* <a class="code" href="structuv_vehicle_settings.html#a21bc7d42747ba8b061dcf1b806e56b52">daqSettings</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}<a class="code" href="uvfr__settings_8h.html#a8f74ad9b1298d57e4b432f80a0630e2b">uvVehicleSettings</a>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">void</span> <a class="code" href="uvfr__settings_8h.html#a4f169ff5098bcc893365c22da33269bc">uvSettingsInit</a>();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INC_UVFR_SETTINGS_H_ */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">enum</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> <a class="code" href="uvfr__settings_8h.html#a80856a38d7040ca10b8106ff0fa4acf4">uvSettingsInit</a>();</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#ifndef SRC_UVFR_SETTINGS_C_</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="comment">//extern includes</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#ifndef SRC_UVFR_SETTINGS_C_</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">//extern includes</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> <a class="code" href="structuv_vehicle_settings.html">uvVehicleSettings</a>* <a class="code" href="uvfr__settings_8h.html#ad7a6fe36c2429a9d37ecd0f35ba5a293">uvCurrentSettings</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">extern</span> <a class="code" href="structuv_vehicle_settings.html">uvVehicleSettings</a>* <a class="code" href="uvfr__settings_8h.html#ad7a6fe36c2429a9d37ecd0f35ba5a293">uvCurrentSettings</a>;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INC_UVFR_SETTINGS_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="auvfr__utils_8h_html"><div class="ttname"><a href="uvfr__utils_8h.html">uvfr_utils.h</a></div></div>
+<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9e"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a></div><div class="ttdeci">uv_status_t</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00067">uvfr_utils.h:67</a></div></div>
 <div class="ttc" id="astructdaq_loop_args_html"><div class="ttname"><a href="structdaq_loop_args.html">daqLoopArgs</a></div><div class="ttdef"><b>Definition:</b> <a href="daq_8h_source.html#l00011">daq.h:11</a></div></div>
+<div class="ttc" id="auvfr__settings_8h_html_a80856a38d7040ca10b8106ff0fa4acf4"><div class="ttname"><a href="uvfr__settings_8h.html#a80856a38d7040ca10b8106ff0fa4acf4">uvSettingsInit</a></div><div class="ttdeci">enum uv_status_t uvSettingsInit()</div><div class="ttdoc">this function does one thing, and one thing only, it checks if we have custom settings,...</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8c_source.html#l00038">uvfr_settings.c:38</a></div></div>
 <div class="ttc" id="auvfr__settings_8h_html_a8f74ad9b1298d57e4b432f80a0630e2b"><div class="ttname"><a href="uvfr__settings_8h.html#a8f74ad9b1298d57e4b432f80a0630e2b">uvVehicleSettings</a></div><div class="ttdeci">struct uvVehicleSettings uvVehicleSettings</div></div>
-<div class="ttc" id="astructuv_vehicle_settings_html_a5b4179a5f2cb728ab21e4c3d0a4c8451"><div class="ttname"><a href="structuv_vehicle_settings.html#a5b4179a5f2cb728ab21e4c3d0a4c8451">uvVehicleSettings::drivingLoopSettings</a></div><div class="ttdeci">drivingLoopArgs * drivingLoopSettings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00020">uvfr_settings.h:20</a></div></div>
+<div class="ttc" id="astructuv_vehicle_settings_html_a5b4179a5f2cb728ab21e4c3d0a4c8451"><div class="ttname"><a href="structuv_vehicle_settings.html#a5b4179a5f2cb728ab21e4c3d0a4c8451">uvVehicleSettings::drivingLoopSettings</a></div><div class="ttdeci">drivingLoopArgs * drivingLoopSettings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00021">uvfr_settings.h:21</a></div></div>
+<div class="ttc" id="adaq_8h_html"><div class="ttname"><a href="daq_8h.html">daq.h</a></div></div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">: Header for main.c file. This file contains the common defines of the application.</div></div>
-<div class="ttc" id="auvfr__settings_8h_html_ad7a6fe36c2429a9d37ecd0f35ba5a293"><div class="ttname"><a href="uvfr__settings_8h.html#ad7a6fe36c2429a9d37ecd0f35ba5a293">uvCurrentSettings</a></div><div class="ttdeci">uvVehicleSettings * uvCurrentSettings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8c_source.html#l00013">uvfr_settings.c:13</a></div></div>
-<div class="ttc" id="auvfr__settings_8h_html_a4f169ff5098bcc893365c22da33269bc"><div class="ttname"><a href="uvfr__settings_8h.html#a4f169ff5098bcc893365c22da33269bc">uvSettingsInit</a></div><div class="ttdeci">void uvSettingsInit()</div><div class="ttdoc">this function does one thing, and one thing only, it checks if we have custom settings,...</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8c_source.html#l00020">uvfr_settings.c:20</a></div></div>
-<div class="ttc" id="astructuv_vehicle_settings_html"><div class="ttname"><a href="structuv_vehicle_settings.html">uvVehicleSettings</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00019">uvfr_settings.h:19</a></div></div>
+<div class="ttc" id="auvfr__settings_8h_html_ad7a6fe36c2429a9d37ecd0f35ba5a293"><div class="ttname"><a href="uvfr__settings_8h.html#ad7a6fe36c2429a9d37ecd0f35ba5a293">uvCurrentSettings</a></div><div class="ttdeci">uvVehicleSettings * uvCurrentSettings</div></div>
+<div class="ttc" id="astructuv_vehicle_settings_html"><div class="ttname"><a href="structuv_vehicle_settings.html">uvVehicleSettings</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00020">uvfr_settings.h:20</a></div></div>
 <div class="ttc" id="adriving__loop_8h_html"><div class="ttname"><a href="driving__loop_8h.html">driving_loop.h</a></div></div>
-<div class="ttc" id="astructdriving_loop_args_html"><div class="ttname"><a href="structdriving_loop_args.html">drivingLoopArgs</a></div><div class="ttdoc">Arguments for the driving loop. The reason this is a struct passed in as an argument,...</div><div class="ttdef"><b>Definition:</b> <a href="driving__loop_8h_source.html#l00069">driving_loop.h:69</a></div></div>
-<div class="ttc" id="astructuv_vehicle_settings_html_a21bc7d42747ba8b061dcf1b806e56b52"><div class="ttname"><a href="structuv_vehicle_settings.html#a21bc7d42747ba8b061dcf1b806e56b52">uvVehicleSettings::daqSettings</a></div><div class="ttdeci">daqLoopArgs * daqSettings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00021">uvfr_settings.h:21</a></div></div>
+<div class="ttc" id="astructdriving_loop_args_html"><div class="ttname"><a href="structdriving_loop_args.html">drivingLoopArgs</a></div><div class="ttdoc">Arguments for the driving loop. The reason this is a struct passed in as an argument,...</div><div class="ttdef"><b>Definition:</b> <a href="driving__loop_8h_source.html#l00071">driving_loop.h:71</a></div></div>
+<div class="ttc" id="astructuv_vehicle_settings_html_a21bc7d42747ba8b061dcf1b806e56b52"><div class="ttname"><a href="structuv_vehicle_settings.html#a21bc7d42747ba8b061dcf1b806e56b52">uvVehicleSettings::daqSettings</a></div><div class="ttdeci">daqLoopArgs * daqSettings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00022">uvfr_settings.h:22</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
