@@ -73,7 +73,7 @@ uint16_t adc2_CoolantFlow;
 
 
 //State of da vehicle
-enum uv_vehicle_state_t vehicle_state = UV_INIT; //TODO: Define new state machine logic
+//enum uv_vehicle_state_t vehicle_state = UV_INIT; //TODO: Define new state machine logic
 
 /* USER CODE END PV */
 
@@ -138,7 +138,7 @@ int main(void)
    * Do some diagnostics on ourselves while we at it.
    */
 
-  MC_Startup(); // Send all the needed CAN messages to the MC for it to be properly configured.
+  //MC_Startup(); // Send all the needed CAN messages to the MC for it to be properly configured.
 
   /* USER CODE END 2 */
 

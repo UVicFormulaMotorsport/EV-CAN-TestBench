@@ -18,10 +18,10 @@ var driving__loop_8h =
     [ "map_mode", "driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800", [
       [ "linear_speed_map", "driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a24491cb716ed427ea52ef6cdbf415b52", null ],
       [ "s_curve_speed_map", "driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a20916d6e654ff6402aa120d8710a81a0", null ],
-      [ "exp_speed_map", "driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800ae7760478fd46369d771c55e7a2e1d209", null ],
+      [ "exp_speed_map", "driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a260f2e914699db0b53b3cb852559b40f", null ],
       [ "linear_torque_map", "driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a02e428d0c5cf187b04a2e9825079d26a", null ],
       [ "s_curve_torque_map", "driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a97cb36a9ac4fbbe2e7b481a2677993f9", null ],
-      [ "exp_speed_map", "driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800ae7760478fd46369d771c55e7a2e1d209", null ]
+      [ "exp_torque_map", "driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a22ffbb99cbb49917aac9c53aba81df32", null ]
     ] ],
     [ "StartDrivingLoop", "driving__loop_8h.html#adb031c91acd0bc6d700819cde7ec58f2", null ]
 ];

@@ -208,6 +208,8 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
 	   Data[i] = RxData[i];
    }
 
+   //TANNER AND FLO CALL YOUR FUNCTION HERE TO DO STUFF
+
 	// Figure out what device sent the message
    // Call the appropriate device function
    // FOR THE LOVE OF GOD DECIDE ON HOW TO HAVE THE IDs, WHY IS PDU HARDCODED? HUH?

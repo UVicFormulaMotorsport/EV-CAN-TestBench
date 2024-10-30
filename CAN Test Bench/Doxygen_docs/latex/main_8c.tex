@@ -55,8 +55,6 @@ volatile uint32\+\_\+t \mbox{\hyperlink{main_8c_a820ab8aecc5744f003ca984a1d960da
 uint16\+\_\+t \mbox{\hyperlink{main_8c_a05d60ecdd2dcf9cb28968d8027d1d5ce}{adc2\+\_\+\+Coolant\+Temp}}
 \item 
 uint16\+\_\+t \mbox{\hyperlink{main_8c_a9211365d419c877b3b4f8074ef19cb33}{adc2\+\_\+\+Coolant\+Flow}}
-\item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4}{uv\+\_\+vehicle\+\_\+state\+\_\+t}} \mbox{\hyperlink{main_8c_a2f58cf65b3566bc390600f877f8bed35}{vehicle\+\_\+state}} = \mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a2e804b7c8163d212e6231f5228f73ce9}{init}}
 \end{DoxyCompactItemize}
 
 
@@ -184,7 +182,7 @@ Definition at line 99 of file main.\+c.
 
 
 
-References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, A\+D\+C1\+\_\+\+B\+U\+F\+\_\+\+L\+EN, adc\+\_\+buf1, hadc1, M\+C\+\_\+\+Startup(), M\+X\+\_\+\+A\+D\+C1\+\_\+\+Init(), M\+X\+\_\+\+A\+D\+C2\+\_\+\+Init(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), M\+X\+\_\+\+D\+M\+A\+\_\+\+Init(), M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init(), M\+X\+\_\+\+T\+I\+M3\+\_\+\+Init(), System\+Clock\+\_\+\+Config(), and Update\+\_\+\+R\+P\+M().
+References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, A\+D\+C1\+\_\+\+B\+U\+F\+\_\+\+L\+EN, adc\+\_\+buf1, hadc1, M\+X\+\_\+\+A\+D\+C1\+\_\+\+Init(), M\+X\+\_\+\+A\+D\+C2\+\_\+\+Init(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), M\+X\+\_\+\+D\+M\+A\+\_\+\+Init(), M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init(), M\+X\+\_\+\+T\+I\+M3\+\_\+\+Init(), System\+Clock\+\_\+\+Config(), and Update\+\_\+\+R\+P\+M().
 
 \mbox{\Hypertarget{main_8c_abade755e13d07c10889ae83143656158}\label{main_8c_abade755e13d07c10889ae83143656158}} 
 \index{main.c@{main.c}!MX\_FREERTOS\_Init@{MX\_FREERTOS\_Init}}
@@ -202,7 +200,7 @@ Definition at line 84 of file freertos.\+c.
 
 
 
-References driving\+Loop\+Handle, led\+Task\+Handle, Start\+Default\+Task(), and Start\+Driving\+Loop().
+References init\+Task\+Handle, led\+Task\+Handle, Start\+Default\+Task(), and uv\+Init().
 
 
 
@@ -268,7 +266,7 @@ Definition at line 64 of file main.\+c.
 
 
 
-Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Level\+Out\+Of\+Window\+Callback(), and main().
+Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Level\+Out\+Of\+Window\+Callback(), main(), and Start\+Driving\+Loop().
 
 \mbox{\Hypertarget{main_8c_ad36d3aa4037203058df6816d56f4c186}\label{main_8c_ad36d3aa4037203058df6816d56f4c186}} 
 \index{main.c@{main.c}!adc1\_BPS1@{adc1\_BPS1}}
@@ -353,14 +351,4 @@ Definition at line 68 of file main.\+c.
 
 
 Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), and H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+Period\+Elapsed\+Callback().
-
-\mbox{\Hypertarget{main_8c_a2f58cf65b3566bc390600f877f8bed35}\label{main_8c_a2f58cf65b3566bc390600f877f8bed35}} 
-\index{main.c@{main.c}!vehicle\_state@{vehicle\_state}}
-\index{vehicle\_state@{vehicle\_state}!main.c@{main.c}}
-\doxysubsubsection{\texorpdfstring{vehicle\_state}{vehicle\_state}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4}{uv\+\_\+vehicle\+\_\+state\+\_\+t}} vehicle\+\_\+state = \mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a2e804b7c8163d212e6231f5228f73ce9}{init}}}
-
-
-
-Definition at line 76 of file main.\+c.
 

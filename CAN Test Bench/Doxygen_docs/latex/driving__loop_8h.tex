@@ -5,7 +5,7 @@
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structdriving_mode_params}{driving\+Mode\+Params}}
-\item 
+\begin{DoxyCompactList}\small\item\em this struct is designed to hold information about each drivingmode\textquotesingle{}s map params \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structdriving_mode}{driving\+Mode}}
 \item 
 struct \mbox{\hyperlink{structdriving_loop_args}{driving\+Loop\+Args}}
@@ -13,7 +13,7 @@ struct \mbox{\hyperlink{structdriving_loop_args}{driving\+Loop\+Args}}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{driving__loop_8h_a19ae3417888a615aca7350e9e1ba0204}{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+E\+R\+I\+OD}}~50;
+\#define \mbox{\hyperlink{driving__loop_8h_a19ae3417888a615aca7350e9e1ba0204}{D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+E\+R\+I\+OD}}~50
 \begin{DoxyCompactList}\small\item\em D\+L\+\_\+\+P\+E\+R\+I\+OD is meant to represent how often the driving loop executes, in ms. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
@@ -25,7 +25,7 @@ typedef uint16\+\_\+t \mbox{\hyperlink{driving__loop_8h_abd1701d9bbc137696fe99b6
 typedef uint16\+\_\+t \mbox{\hyperlink{driving__loop_8h_a93f3b2b453b1ad01d8555f12e529dfed}{M\+C\+\_\+\+P\+O\+W\+ER}}
 \item 
 typedef struct \mbox{\hyperlink{structdriving_mode_params}{driving\+Mode\+Params}} \mbox{\hyperlink{driving__loop_8h_ac1d30630084a642c9209dca3a961ef12}{driving\+Mode\+Params}}
-\item 
+\begin{DoxyCompactList}\small\item\em this struct is designed to hold information about each drivingmode\textquotesingle{}s map params \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{structdriving_mode}{driving\+Mode}} \mbox{\hyperlink{driving__loop_8h_a29e04283e579e9092d205b1937c785c6}{driving\+Mode}}
 \item 
 typedef struct \mbox{\hyperlink{structdriving_loop_args}{driving\+Loop\+Args}} \mbox{\hyperlink{driving__loop_8h_a3decdbe473e5d736311930ce3d6360bd}{driving\+Loop\+Args}}
@@ -36,16 +36,16 @@ typedef struct \mbox{\hyperlink{structdriving_loop_args}{driving\+Loop\+Args}} \
 enum \mbox{\hyperlink{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800}{map\+\_\+mode}} \{ \newline
 \mbox{\hyperlink{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a24491cb716ed427ea52ef6cdbf415b52}{linear\+\_\+speed\+\_\+map}}, 
 \mbox{\hyperlink{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a20916d6e654ff6402aa120d8710a81a0}{s\+\_\+curve\+\_\+speed\+\_\+map}}, 
-\mbox{\hyperlink{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800ae7760478fd46369d771c55e7a2e1d209}{exp\+\_\+speed\+\_\+map}}, 
+\mbox{\hyperlink{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a260f2e914699db0b53b3cb852559b40f}{exp\+\_\+speed\+\_\+map}}, 
 \mbox{\hyperlink{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a02e428d0c5cf187b04a2e9825079d26a}{linear\+\_\+torque\+\_\+map}}, 
 \newline
 \mbox{\hyperlink{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a97cb36a9ac4fbbe2e7b481a2677993f9}{s\+\_\+curve\+\_\+torque\+\_\+map}}, 
-\mbox{\hyperlink{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800ae7760478fd46369d771c55e7a2e1d209}{exp\+\_\+speed\+\_\+map}}
+\mbox{\hyperlink{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a22ffbb99cbb49917aac9c53aba81df32}{exp\+\_\+torque\+\_\+map}}
  \}
 \item 
-enum \mbox{\hyperlink{driving__loop_8h_adef4571b048b5b1f2b712713741296c7}{D\+L\+\_\+internal\+\_\+state}} \{ \mbox{\hyperlink{driving__loop_8h_adef4571b048b5b1f2b712713741296c7a51000915ad3f7b4a5874322723d879ca}{Plausible}} = 1, 
-\mbox{\hyperlink{driving__loop_8h_adef4571b048b5b1f2b712713741296c7a6425b90f597e6400cfb9422ec518334f}{Implausible}} = 2, 
-\mbox{\hyperlink{driving__loop_8h_adef4571b048b5b1f2b712713741296c7abb3086179f14a3715ce589bd10c3ec98}{Erroneous}} = 4
+enum \mbox{\hyperlink{driving__loop_8h_adef4571b048b5b1f2b712713741296c7}{D\+L\+\_\+internal\+\_\+state}} \{ \mbox{\hyperlink{driving__loop_8h_adef4571b048b5b1f2b712713741296c7a51000915ad3f7b4a5874322723d879ca}{Plausible}} = 0x01, 
+\mbox{\hyperlink{driving__loop_8h_adef4571b048b5b1f2b712713741296c7a6425b90f597e6400cfb9422ec518334f}{Implausible}} = 0x02, 
+\mbox{\hyperlink{driving__loop_8h_adef4571b048b5b1f2b712713741296c7abb3086179f14a3715ce589bd10c3ec98}{Erroneous}} = 0x04
  \}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
@@ -60,7 +60,7 @@ void \mbox{\hyperlink{driving__loop_8h_adb031c91acd0bc6d700819cde7ec58f2}{Start\
 \index{driving\_loop.h@{driving\_loop.h}!DEFAULT\_PERIOD@{DEFAULT\_PERIOD}}
 \index{DEFAULT\_PERIOD@{DEFAULT\_PERIOD}!driving\_loop.h@{driving\_loop.h}}
 \doxysubsubsection{\texorpdfstring{DEFAULT\_PERIOD}{DEFAULT\_PERIOD}}
-{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+E\+R\+I\+OD~50;}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+E\+R\+I\+OD~50}
 
 
 
@@ -92,6 +92,10 @@ Definition at line 25 of file driving\+\_\+loop.\+h.
 \index{drivingModeParams@{drivingModeParams}!driving\_loop.h@{driving\_loop.h}}
 \doxysubsubsection{\texorpdfstring{drivingModeParams}{drivingModeParams}}
 {\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdriving_mode_params}{driving\+Mode\+Params}} \mbox{\hyperlink{structdriving_mode_params}{driving\+Mode\+Params}}}
+
+
+
+this struct is designed to hold information about each drivingmode\textquotesingle{}s map params 
 
 \mbox{\Hypertarget{driving__loop_8h_a93f3b2b453b1ad01d8555f12e529dfed}\label{driving__loop_8h_a93f3b2b453b1ad01d8555f12e529dfed}} 
 \index{driving\_loop.h@{driving\_loop.h}!MC\_POWER@{MC\_POWER}}
@@ -165,7 +169,7 @@ linear\+\_\+speed\+\_\+map&\\
 s\+\_\+curve\+\_\+speed\+\_\+map&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{exp\_speed\_map@{exp\_speed\_map}!driving\_loop.h@{driving\_loop.h}}\index{driving\_loop.h@{driving\_loop.h}!exp\_speed\_map@{exp\_speed\_map}}}\mbox{\Hypertarget{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800ae7760478fd46369d771c55e7a2e1d209}\label{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800ae7760478fd46369d771c55e7a2e1d209}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{exp\_speed\_map@{exp\_speed\_map}!driving\_loop.h@{driving\_loop.h}}\index{driving\_loop.h@{driving\_loop.h}!exp\_speed\_map@{exp\_speed\_map}}}\mbox{\Hypertarget{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a260f2e914699db0b53b3cb852559b40f}\label{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a260f2e914699db0b53b3cb852559b40f}} 
 exp\+\_\+speed\+\_\+map&\\
 \hline
 
@@ -177,8 +181,8 @@ linear\+\_\+torque\+\_\+map&\\
 s\+\_\+curve\+\_\+torque\+\_\+map&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{exp\_speed\_map@{exp\_speed\_map}!driving\_loop.h@{driving\_loop.h}}\index{driving\_loop.h@{driving\_loop.h}!exp\_speed\_map@{exp\_speed\_map}}}\mbox{\Hypertarget{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800ae7760478fd46369d771c55e7a2e1d209}\label{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800ae7760478fd46369d771c55e7a2e1d209}} 
-exp\+\_\+speed\+\_\+map&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{exp\_torque\_map@{exp\_torque\_map}!driving\_loop.h@{driving\_loop.h}}\index{driving\_loop.h@{driving\_loop.h}!exp\_torque\_map@{exp\_torque\_map}}}\mbox{\Hypertarget{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a22ffbb99cbb49917aac9c53aba81df32}\label{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a22ffbb99cbb49917aac9c53aba81df32}} 
+exp\+\_\+torque\+\_\+map&\\
 \hline
 
 \end{DoxyEnumFields}
@@ -217,13 +221,9 @@ The way that this works is that if the brake pressure is greater than some thres
 
 If this happens, we want to set the torque/speed output to zero. This will only reset itself once the brakes are set to less than a certain threshold. Honestly evil.
 
-Definition at line 32 of file driving\+\_\+loop.\+c.
+Definition at line 34 of file driving\+\_\+loop.\+c.
 
 
 
-References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+B\+P\+S1, adc1\+\_\+\+B\+P\+S2, driving\+Loop\+Args\+::apps\+\_\+plausibility\+\_\+check\+\_\+threshold, driving\+Loop\+Args\+::bps\+\_\+plausibility\+\_\+check\+\_\+threshold, Implausible, driving\+Loop\+Args\+::max\+\_\+apps\+\_\+offset, driving\+Loop\+Args\+::max\+\_\+apps\+\_\+value, driving\+Loop\+Args\+::max\+\_\+\+B\+P\+S\+\_\+value, driving\+Loop\+Args\+::min\+\_\+apps\+\_\+offset, driving\+Loop\+Args\+::min\+\_\+apps\+\_\+value, and Plausible.
-
-
-
-Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
+References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, adc1\+\_\+\+B\+P\+S1, adc1\+\_\+\+B\+P\+S2, driving\+Loop\+Args\+::apps\+\_\+plausibility\+\_\+check\+\_\+threshold, driving\+Loop\+Args\+::bps\+\_\+plausibility\+\_\+check\+\_\+threshold, D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+E\+R\+I\+OD, Implausible, driving\+Loop\+Args\+::max\+\_\+apps\+\_\+offset, driving\+Loop\+Args\+::max\+\_\+apps\+\_\+value, driving\+Loop\+Args\+::max\+\_\+\+B\+P\+S\+\_\+value, driving\+Loop\+Args\+::min\+\_\+apps\+\_\+offset, driving\+Loop\+Args\+::min\+\_\+apps\+\_\+value, and Plausible.
 

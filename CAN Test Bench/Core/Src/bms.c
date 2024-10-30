@@ -8,7 +8,9 @@
 #include "tim.h"
 #include "dash.h"
 
+void BMS_Init(void* args){
 
+}
 
 
 

@@ -1,6 +1,17 @@
 var searchData=
 [
-  ['warning_5f5_619',['warning_5',['../motor__controller_8h.html#a5e2fbf1b4105e76b330bcb6547533dffa3050ef440e4e82f9fb3973e1fb9faea7',1,'motor_controller.h']]],
-  ['warning_5f9_620',['warning_9',['../motor__controller_8h.html#a5e2fbf1b4105e76b330bcb6547533dffad53242de6aeaa134a78749bc60fec984',1,'motor_controller.h']]],
-  ['watchdog_5freset_621',['watchdog_reset',['../motor__controller_8h.html#a5e2fbf1b4105e76b330bcb6547533dffa357611869a1ec791b38a36ec2dfe09b9',1,'motor_controller.h']]]
+  ['vapplicationgetidletaskmemory_678',['vApplicationGetIdleTaskMemory',['../freertos_8c.html#a1988aa923b19fa6f31c93afa7773f793',1,'freertos.c']]],
+  ['vb_5fhi_5fres_679',['Vb_hi_res',['../imd_8h.html#af8e85b806bce9c9cad944c261ff0aa0ca23a10ada814d11a9a1044ede3a821688',1,'imd.h']]],
+  ['vdd_5fvalue_680',['VDD_VALUE',['../stm32f4xx__hal__conf_8h.html#aae550dad9f96d52cfce5e539adadbbb4',1,'stm32f4xx_hal_conf.h']]],
+  ['vehicle_5fstate_681',['vehicle_state',['../uvfr__state__engine_8h.html#a2f58cf65b3566bc390600f877f8bed35',1,'vehicle_state():&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#a2f58cf65b3566bc390600f877f8bed35',1,'vehicle_state():&#160;uvfr_state_engine.c']]],
+  ['version_5f0_682',['Version_0',['../imd_8h.html#a975959819df682c9adec7c667028674ea5eb2adcd1cb7d65f6c590b6f6b7ee322',1,'imd.h']]],
+  ['version_5f1_683',['Version_1',['../imd_8h.html#a975959819df682c9adec7c667028674eafcc458d57f1b3273ae319230922231a4',1,'imd.h']]],
+  ['version_5f2_684',['Version_2',['../imd_8h.html#a975959819df682c9adec7c667028674eafb60bb95154ac28254f2e8dfbc82c638',1,'imd.h']]],
+  ['vexc_5fhi_5fres_685',['Vexc_hi_res',['../imd_8h.html#af8e85b806bce9c9cad944c261ff0aa0ca65563450695b30beae4032ff330f0e6f',1,'imd.h']]],
+  ['vn_5fhi_5fres_686',['Vn_hi_res',['../imd_8h.html#af8e85b806bce9c9cad944c261ff0aa0ca781dcc0628d7284c0e9e0be67cd3365b',1,'imd.h']]],
+  ['voltages_5fvp_5fand_5fvn_687',['voltages_Vp_and_Vn',['../imd_8h.html#a0710286ee4b87e83845bd90c76e5c26aab731b0ae179fe84519337374868be1d1',1,'imd.h']]],
+  ['vout_5fsaturation_5fmax_5flimit_688',['Vout_saturation_max_limit',['../motor__controller_8h.html#a5e2fbf1b4105e76b330bcb6547533dffaf06c0a389c1c73850def361e9bd7ffdc',1,'motor_controller.h']]],
+  ['vp_5fhi_5fres_689',['Vp_hi_res',['../imd_8h.html#af8e85b806bce9c9cad944c261ff0aa0ca6b90089e224b90d87a6cf113e5e36f22',1,'imd.h']]],
+  ['vportsvchandler_690',['vPortSVCHandler',['../_free_r_t_o_s_config_8h.html#ad43047b3ea0a146673e30637488bf754',1,'FreeRTOSConfig.h']]],
+  ['vpwr_5fhi_5fres_691',['Vpwr_hi_res',['../imd_8h.html#af8e85b806bce9c9cad944c261ff0aa0ca6d4bdc992b68f8ee4aea88056639af5d',1,'imd.h']]]
 ];

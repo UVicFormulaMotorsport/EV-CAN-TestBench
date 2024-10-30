@@ -3,6 +3,7 @@
 {\ttfamily \#include \char`\"{}driving\+\_\+loop.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}daq.\+h\char`\"{}}\newline
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,7 +22,7 @@ typedef struct \mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{uvfr__settings_8h_a4f169ff5098bcc893365c22da33269bc}{uv\+Settings\+Init}} ()
+enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__settings_8h_a80856a38d7040ca10b8106ff0fa4acf4}{uv\+Settings\+Init}} ()
 \begin{DoxyCompactList}\small\item\em this function does one thing, and one thing only, it checks if we have custom settings, then it attempts to get them. If it fails, then we revert to factory defaults. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -39,7 +40,7 @@ void \mbox{\hyperlink{uvfr__settings_8h_a4f169ff5098bcc893365c22da33269bc}{uv\+S
 
 
 
-Definition at line 16 of file uvfr\+\_\+settings.\+h.
+Definition at line 17 of file uvfr\+\_\+settings.\+h.
 
 
 
@@ -53,11 +54,11 @@ Definition at line 16 of file uvfr\+\_\+settings.\+h.
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{uvfr__settings_8h_a4f169ff5098bcc893365c22da33269bc}\label{uvfr__settings_8h_a4f169ff5098bcc893365c22da33269bc}} 
+\mbox{\Hypertarget{uvfr__settings_8h_a80856a38d7040ca10b8106ff0fa4acf4}\label{uvfr__settings_8h_a80856a38d7040ca10b8106ff0fa4acf4}} 
 \index{uvfr\_settings.h@{uvfr\_settings.h}!uvSettingsInit@{uvSettingsInit}}
 \index{uvSettingsInit@{uvSettingsInit}!uvfr\_settings.h@{uvfr\_settings.h}}
 \doxysubsubsection{\texorpdfstring{uvSettingsInit()}{uvSettingsInit()}}
-{\footnotesize\ttfamily void uv\+Settings\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} uv\+Settings\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -65,11 +66,15 @@ this function does one thing, and one thing only, it checks if we have custom se
 
 
 
-Definition at line 20 of file uvfr\+\_\+settings.\+c.
+Definition at line 38 of file uvfr\+\_\+settings.\+c.
 
 
 
-References setup\+\_\+default\+\_\+settings().
+References setup\+Default\+Settings(), and U\+V\+\_\+\+OK.
+
+
+
+Referenced by uv\+Init().
 
 
 
@@ -79,12 +84,4 @@ References setup\+\_\+default\+\_\+settings().
 \index{uvCurrentSettings@{uvCurrentSettings}!uvfr\_settings.h@{uvfr\_settings.h}}
 \doxysubsubsection{\texorpdfstring{uvCurrentSettings}{uvCurrentSettings}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}}$\ast$ uv\+Current\+Settings}
-
-
-
-Definition at line 13 of file uvfr\+\_\+settings.\+c.
-
-
-
-Referenced by setup\+\_\+default\+\_\+settings().
 

@@ -1,2 +1,165 @@
 \hypertarget{uvfr__utils_8c}{}\doxysection{Core/\+Src/uvfr\+\_\+utils.c File Reference}
 \label{uvfr__utils_8c}\index{Core/Src/uvfr\_utils.c@{Core/Src/uvfr\_utils.c}}
+{\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{uvfr__utils_8c_a6d40598f9d8daa89ca159a2e87f4fd01}{uv\+Init}} (void $\ast$arguments)
+\begin{DoxyCompactList}\small\item\em \+: Function that initializes all of the car\textquotesingle{}s stuff. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__utils_8c_a02781145b4802ebdc7001800bbe6d994}{uv\+Utils\+Reset}} ()
+\begin{DoxyCompactList}\small\item\em This function is a soft-\/reboot of the uv\+\_\+utils\+\_\+backend and OS abstraction. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{uvfr__utils_8c_ab80c00a024c34da7f7926212ce10ef01}{setup\+\_\+extern\+\_\+devices}} (void $\ast$argument)
+\item 
+void \mbox{\hyperlink{uvfr__utils_8c_a3680dbdd328bffe299521c704147d587}{\+\_\+uv\+Init\+Panic}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+os\+Thread\+Id \mbox{\hyperlink{uvfr__utils_8c_a2d14399b3d64f2ddb952cdac5b30da7d}{init\+Task\+Handle}}
+\begin{DoxyCompactList}\small\item\em This function will initialize all of the uvfr wrappers, and system variables, as well as performing internal diagnostics. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uvfr__utils_8c_a3680dbdd328bffe299521c704147d587}\label{uvfr__utils_8c_a3680dbdd328bffe299521c704147d587}} 
+\index{uvfr\_utils.c@{uvfr\_utils.c}!\_uvInitPanic@{\_uvInitPanic}}
+\index{\_uvInitPanic@{\_uvInitPanic}!uvfr\_utils.c@{uvfr\_utils.c}}
+\doxysubsubsection{\texorpdfstring{\_uvInitPanic()}{\_uvInitPanic()}}
+{\footnotesize\ttfamily void \+\_\+uv\+Init\+Panic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 182 of file uvfr\+\_\+utils.\+c.
+
+\mbox{\Hypertarget{uvfr__utils_8c_ab80c00a024c34da7f7926212ce10ef01}\label{uvfr__utils_8c_ab80c00a024c34da7f7926212ce10ef01}} 
+\index{uvfr\_utils.c@{uvfr\_utils.c}!setup\_extern\_devices@{setup\_extern\_devices}}
+\index{setup\_extern\_devices@{setup\_extern\_devices}!uvfr\_utils.c@{uvfr\_utils.c}}
+\doxysubsubsection{\texorpdfstring{setup\_extern\_devices()}{setup\_extern\_devices()}}
+{\footnotesize\ttfamily void setup\+\_\+extern\+\_\+devices (\begin{DoxyParamCaption}\item[{void $\ast$}]{argument }\end{DoxyParamCaption})}
+
+
+
+Definition at line 177 of file uvfr\+\_\+utils.\+c.
+
+\mbox{\Hypertarget{uvfr__utils_8c_a6d40598f9d8daa89ca159a2e87f4fd01}\label{uvfr__utils_8c_a6d40598f9d8daa89ca159a2e87f4fd01}} 
+\index{uvfr\_utils.c@{uvfr\_utils.c}!uvInit@{uvInit}}
+\index{uvInit@{uvInit}!uvfr\_utils.c@{uvfr\_utils.c}}
+\doxysubsubsection{\texorpdfstring{uvInit()}{uvInit()}}
+{\footnotesize\ttfamily void uv\+Init (\begin{DoxyParamCaption}\item[{void $\ast$}]{arguments }\end{DoxyParamCaption})}
+
+
+
+\+: Function that initializes all of the car\textquotesingle{}s stuff. 
+
+This is an R\+T\+OS task, and it serves to setup all of the car\textquotesingle{}s different functions. at this point in our execution, we have already initialized all of our favorite hardware peripherals using H\+AL. Now we get to configure our convoluted system of O\+S-\/level settings and state machines. First on the block is our settings. The uv\+\_\+settings are a bit strange, in the following way. We will check if we have saved custom settings, or if these settings are the default or not. It will then perform a checksum on the settings, and validate them to ensure they are safe If it fails to validate the settings, it will attempt to return to factory default.
+
+If it is unable to return even to factory default settings, then we are in H\+U\+GE trouble, and some catastrophic bug has occurred. If it fails to even start this, it will not be safe to drive We must therefore panic.
+
+Next up we will attempt to initialize the state engine. If this fails, then we are in another case where we are genuinely unsafe to drive. This will create the prototypes for a bajillion tasks that will be started and stopped. Which tasks are currently running, depends on the whims of the state engine. Since the state engine is critical to our ability to handle errors and implausibilitys, we cannot proceed without a fully operational state engine.
+
+Once we have initialized the state engine, what we want to do is create the prototypes of all the tasks that will be running.
+
+Now we are going to create a bunch of tasks that will initialize our car\textquotesingle{}s external devices. The reason that these are R\+T\+OS tasks, is that it takes a buncha time to verify the existance of some devices. As a direct result, we can sorta just wait around and check that each task sends a message confirming that it has successfully executed. \+:) However, first we need to actually create a Queue for these tasks to use 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  /}
+\DoxyCodeLine{QueueHandle\_t init\_validation\_queue = xQueueCreate(8,\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structuv__init__task__response}{uv\_init\_task\_response}}));}
+\DoxyCodeLine{\textcolor{keywordflow}{if}(init\_validation\_queue == NULL)\{}
+\DoxyCodeLine{}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\end{DoxyCode}
+ The next big thing on our plate is checking the status of all external devices we need, and initializing them with appropriate parameters. These are split into tasks because it takes a bit of time, especially for devices that need to be configured via C\+A\+N\+Bus such as the motor controller. That is why it is split the way it is, to allow these to run somewhat concurrently 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  /}
+\DoxyCodeLine{}
+\DoxyCodeLine{osThreadDef\_t MC\_init\_thread = \{\textcolor{stringliteral}{"MC\_init"},\mbox{\hyperlink{motor__controller_8h_aed1407e1e0fd59dc7c5e5d6db671f0ab}{MC\_Startup}},osPriorityNormal,128,0\};}
+\DoxyCodeLine{\mbox{\hyperlink{structuv__init__task__args}{uv\_init\_task\_args}}* MC\_init\_args = malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structuv__init__task__args}{uv\_init\_task\_args}}));}
+\DoxyCodeLine{MC\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_adec47e7a54822cacfb8fcfc35a22157f}{init\_info\_queue}} = init\_validation\_queue;}
+\DoxyCodeLine{MC\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_a61a9b579a1e65a3875a4edf3201a39f3}{specific\_args}} = NULL;}
+\DoxyCodeLine{MC\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_a88f1a118daecda734281396afd5e6eb1}{meta\_task\_handle}} = osThreadCreate(\&MC\_init\_thread,MC\_init\_args);}
+\DoxyCodeLine{}
+\end{DoxyCode}
+ This thread is for initializing the B\+MS 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  /}
+\DoxyCodeLine{}
+\DoxyCodeLine{osThreadDef\_t BMS\_init\_thread = \{\textcolor{stringliteral}{"BMS\_init"},\mbox{\hyperlink{bms_8h_aa9af83736568f74c94d41f3f16adf513}{BMS\_Init}},osPriorityNormal,128,0\};}
+\DoxyCodeLine{\mbox{\hyperlink{structuv__init__task__args}{uv\_init\_task\_args}}* BMS\_init\_args = malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structuv__init__task__args}{uv\_init\_task\_args}}));}
+\DoxyCodeLine{BMS\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_adec47e7a54822cacfb8fcfc35a22157f}{init\_info\_queue}} = init\_validation\_queue;}
+\DoxyCodeLine{BMS\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_a61a9b579a1e65a3875a4edf3201a39f3}{specific\_args}} = NULL;}
+\DoxyCodeLine{BMS\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_a88f1a118daecda734281396afd5e6eb1}{meta\_task\_handle}} = osThreadCreate(\&BMS\_init\_thread,BMS\_init\_args);}
+\DoxyCodeLine{}
+\end{DoxyCode}
+ This variable is a tracker that tracks which devices have successfully initialized 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ /}
+\DoxyCodeLine{}
+\DoxyCodeLine{uint16\_t ext\_devices\_status = 0x000F; \textcolor{comment}{//Tracks which devices are currently setup}}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\end{DoxyCode}
+
+
+Wait for all the spawned in tasks to do their thing. This should not take that long, but we wanna be sure that everything is chill If we are say, missing a B\+MS, then it will not allow you to proceed past the initialisation step This is handled by a message buffer, that takes inputs from all of the tasks
+
+Clean up, clean up, everybody clean up, clean up, clean up, everybody do your share! The following code cleans up all the threads that were running, and free up used memory
+
+Definition at line 30 of file uvfr\+\_\+utils.\+c.
+
+
+
+References \+\_\+\+B\+V\+\_\+16, B\+M\+S\+\_\+\+Init(), uv\+\_\+init\+\_\+task\+\_\+response\+::device, uv\+\_\+init\+\_\+task\+\_\+response\+::errmsg, I\+N\+I\+T\+\_\+\+C\+H\+E\+C\+K\+\_\+\+P\+E\+R\+I\+OD, uv\+\_\+init\+\_\+task\+\_\+args\+::init\+\_\+info\+\_\+queue, init\+Task\+Handle, M\+A\+X\+\_\+\+I\+N\+I\+T\+\_\+\+T\+I\+ME, M\+C\+\_\+\+Startup(), uv\+\_\+init\+\_\+task\+\_\+args\+::meta\+\_\+task\+\_\+handle, uv\+\_\+init\+\_\+task\+\_\+response\+::nchar, uv\+\_\+init\+\_\+task\+\_\+args\+::specific\+\_\+args, uv\+\_\+init\+\_\+task\+\_\+response\+::status, U\+V\+\_\+\+OK, uv\+Init\+State\+Engine(), and uv\+Settings\+Init().
+
+
+
+Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
+
+\mbox{\Hypertarget{uvfr__utils_8c_a02781145b4802ebdc7001800bbe6d994}\label{uvfr__utils_8c_a02781145b4802ebdc7001800bbe6d994}} 
+\index{uvfr\_utils.c@{uvfr\_utils.c}!uvUtilsReset@{uvUtilsReset}}
+\index{uvUtilsReset@{uvUtilsReset}!uvfr\_utils.c@{uvfr\_utils.c}}
+\doxysubsubsection{\texorpdfstring{uvUtilsReset()}{uvUtilsReset()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} uv\+Utils\+Reset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This function is a soft-\/reboot of the uv\+\_\+utils\+\_\+backend and OS abstraction. 
+
+The idea here is to basically start from a blank slate and boot up everything. So therefore we must\+: Halt state machine. Nuke vehicle operation related tasks. Nuke the state machine Nuke old settings
+
+reinitialize uv\+\_\+utils 
+
+Definition at line 172 of file uvfr\+\_\+utils.\+c.
+
+
+
+References U\+V\+\_\+\+OK.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{uvfr__utils_8c_a2d14399b3d64f2ddb952cdac5b30da7d}\label{uvfr__utils_8c_a2d14399b3d64f2ddb952cdac5b30da7d}} 
+\index{uvfr\_utils.c@{uvfr\_utils.c}!initTaskHandle@{initTaskHandle}}
+\index{initTaskHandle@{initTaskHandle}!uvfr\_utils.c@{uvfr\_utils.c}}
+\doxysubsubsection{\texorpdfstring{initTaskHandle}{initTaskHandle}}
+{\footnotesize\ttfamily os\+Thread\+Id init\+Task\+Handle}
+
+
+
+This function will initialize all of the uvfr wrappers, and system variables, as well as performing internal diagnostics. 
+
+This function has 3 phases. 1) It loads up settings from flash if they exist. 2) It starts up the uv\+\_\+state\+\_\+engine
+
+File Name \+: \mbox{\hyperlink{freertos_8c}{freertos.\+c}} Description \+: Code for freertos applications
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2024 S\+T\+Microelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 
+
+Definition at line 50 of file freertos.\+c.
+
+
+
+Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), and uv\+Init().
+

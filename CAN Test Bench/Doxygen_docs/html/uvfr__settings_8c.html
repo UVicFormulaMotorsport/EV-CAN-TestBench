@@ -95,6 +95,8 @@ $(document).ready(function(){initNavTree('uvfr__settings_8c.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
+<code>#include &quot;stdlib.h&quot;</code><br />
 </div>
 <p><a href="uvfr__settings_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -105,18 +107,20 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4f169ff5098bcc893365c22da33269bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__settings_8c.html#a4f169ff5098bcc893365c22da33269bc">uvSettingsInit</a> ()</td></tr>
-<tr class="memdesc:a4f169ff5098bcc893365c22da33269bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function does one thing, and one thing only, it checks if we have custom settings, then it attempts to get them. If it fails, then we revert to factory defaults.  <a href="uvfr__settings_8c.html#a4f169ff5098bcc893365c22da33269bc">More...</a><br /></td></tr>
-<tr class="separator:a4f169ff5098bcc893365c22da33269bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12c5c08b278f3f54d27baa9fec54fc3b"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__settings_8c.html#a12c5c08b278f3f54d27baa9fec54fc3b">get_settings_from_flash</a> ()</td></tr>
-<tr class="separator:a12c5c08b278f3f54d27baa9fec54fc3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b474a10da1f38e1d32840a27ccbdcd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__settings_8c.html#a7b474a10da1f38e1d32840a27ccbdcd8">setup_default_settings</a> ()</td></tr>
-<tr class="separator:a7b474a10da1f38e1d32840a27ccbdcd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af13d8078183457319f43ca58b85314e4"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__settings_8c.html#af13d8078183457319f43ca58b85314e4">getSettingsFromFlash</a> ()</td></tr>
+<tr class="separator:af13d8078183457319f43ca58b85314e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42f7a1907bfe84d7b0f9fb4e2260018b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__settings_8c.html#a42f7a1907bfe84d7b0f9fb4e2260018b">setupDefaultSettings</a> ()</td></tr>
+<tr class="separator:a42f7a1907bfe84d7b0f9fb4e2260018b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafda361ebf9d9ec2d684daf784cd51d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__settings_8c.html#aafda361ebf9d9ec2d684daf784cd51d7">nukeSettings</a> (<a class="el" href="structuv_vehicle_settings.html">uvVehicleSettings</a> **settings_to_delete)</td></tr>
+<tr class="separator:aafda361ebf9d9ec2d684daf784cd51d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80856a38d7040ca10b8106ff0fa4acf4"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__settings_8c.html#a80856a38d7040ca10b8106ff0fa4acf4">uvSettingsInit</a> ()</td></tr>
+<tr class="memdesc:a80856a38d7040ca10b8106ff0fa4acf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">this function does one thing, and one thing only, it checks if we have custom settings, then it attempts to get them. If it fails, then we revert to factory defaults.  <a href="uvfr__settings_8c.html#a80856a38d7040ca10b8106ff0fa4acf4">More...</a><br /></td></tr>
+<tr class="separator:a80856a38d7040ca10b8106ff0fa4acf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ad7a6fe36c2429a9d37ecd0f35ba5a293"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structuv_vehicle_settings.html">uvVehicleSettings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__settings_8c.html#ad7a6fe36c2429a9d37ecd0f35ba5a293">uvCurrentSettings</a> = NULL</td></tr>
-<tr class="separator:ad7a6fe36c2429a9d37ecd0f35ba5a293"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e153352457eae875b90d8dce9c8c569"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structuv_vehicle_settings.html">uvVehicleSettings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__settings_8c.html#a7e153352457eae875b90d8dce9c8c569">current_vehicle_settings</a> = NULL</td></tr>
+<tr class="separator:a7e153352457eae875b90d8dce9c8c569"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a7350f4a84cab7a08d99c9e88b248a180"></a>
@@ -136,14 +140,14 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a12c5c08b278f3f54d27baa9fec54fc3b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12c5c08b278f3f54d27baa9fec54fc3b">&#9670;&nbsp;</a></span>get_settings_from_flash()</h2>
+<a id="af13d8078183457319f43ca58b85314e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af13d8078183457319f43ca58b85314e4">&#9670;&nbsp;</a></span>getSettingsFromFlash()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> get_settings_from_flash </td>
+          <td class="memname">enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> getSettingsFromFlash </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -151,18 +155,40 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__settings_8c_source.html#l00031">31</a> of file <a class="el" href="uvfr__settings_8c_source.html">uvfr_settings.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__settings_8c_source.html#l00017">17</a> of file <a class="el" href="uvfr__settings_8c_source.html">uvfr_settings.c</a>.</p>
+
+<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00068">UV_OK</a>.</p>
 
 </div>
 </div>
-<a id="a7b474a10da1f38e1d32840a27ccbdcd8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b474a10da1f38e1d32840a27ccbdcd8">&#9670;&nbsp;</a></span>setup_default_settings()</h2>
+<a id="aafda361ebf9d9ec2d684daf784cd51d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafda361ebf9d9ec2d684daf784cd51d7">&#9670;&nbsp;</a></span>nukeSettings()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void setup_default_settings </td>
+          <td class="memname">void nukeSettings </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structuv_vehicle_settings.html">uvVehicleSettings</a> **&#160;</td>
+          <td class="paramname"><em>settings_to_delete</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__settings_8c_source.html#l00027">27</a> of file <a class="el" href="uvfr__settings_8c_source.html">uvfr_settings.c</a>.</p>
+
+</div>
+</div>
+<a id="a42f7a1907bfe84d7b0f9fb4e2260018b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42f7a1907bfe84d7b0f9fb4e2260018b">&#9670;&nbsp;</a></span>setupDefaultSettings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void setupDefaultSettings </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -170,22 +196,22 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__settings_8c_source.html#l00035">35</a> of file <a class="el" href="uvfr__settings_8c_source.html">uvfr_settings.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__settings_8c_source.html#l00022">22</a> of file <a class="el" href="uvfr__settings_8c_source.html">uvfr_settings.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__settings_8c_source.html#l00013">uvCurrentSettings</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__settings_8c_source.html#l00015">current_vehicle_settings</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__settings_8c_source.html#l00020">uvSettingsInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__settings_8c_source.html#l00038">uvSettingsInit()</a>.</p>
 
 </div>
 </div>
-<a id="a4f169ff5098bcc893365c22da33269bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f169ff5098bcc893365c22da33269bc">&#9670;&nbsp;</a></span>uvSettingsInit()</h2>
+<a id="a80856a38d7040ca10b8106ff0fa4acf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80856a38d7040ca10b8106ff0fa4acf4">&#9670;&nbsp;</a></span>uvSettingsInit()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void uvSettingsInit </td>
+          <td class="memname">enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> uvSettingsInit </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -195,28 +221,30 @@ Variables</h2></td></tr>
 
 <p>this function does one thing, and one thing only, it checks if we have custom settings, then it attempts to get them. If it fails, then we revert to factory defaults. </p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__settings_8c_source.html#l00020">20</a> of file <a class="el" href="uvfr__settings_8c_source.html">uvfr_settings.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__settings_8c_source.html#l00038">38</a> of file <a class="el" href="uvfr__settings_8c_source.html">uvfr_settings.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__settings_8c_source.html#l00035">setup_default_settings()</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__settings_8c_source.html#l00022">setupDefaultSettings()</a>, and <a class="el" href="uvfr__utils_8h_source.html#l00068">UV_OK</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00030">uvInit()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ad7a6fe36c2429a9d37ecd0f35ba5a293"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad7a6fe36c2429a9d37ecd0f35ba5a293">&#9670;&nbsp;</a></span>uvCurrentSettings</h2>
+<a id="a7e153352457eae875b90d8dce9c8c569"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e153352457eae875b90d8dce9c8c569">&#9670;&nbsp;</a></span>current_vehicle_settings</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structuv_vehicle_settings.html">uvVehicleSettings</a>* uvCurrentSettings = NULL</td>
+          <td class="memname"><a class="el" href="structuv_vehicle_settings.html">uvVehicleSettings</a>* current_vehicle_settings = NULL</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__settings_8c_source.html#l00013">13</a> of file <a class="el" href="uvfr__settings_8c_source.html">uvfr_settings.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__settings_8c_source.html#l00015">15</a> of file <a class="el" href="uvfr__settings_8c_source.html">uvfr_settings.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__settings_8c_source.html#l00035">setup_default_settings()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__settings_8c_source.html#l00022">setupDefaultSettings()</a>.</p>
 
 </div>
 </div>

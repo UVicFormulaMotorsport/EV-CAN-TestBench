@@ -22,7 +22,40 @@ extern uint16_t adc1_APPS2;
 extern uint16_t adc1_BPS1;
 extern uint16_t adc1_BPS2;
 
+enum uv_status_t initDrivingLoop(void const *argument){
+	uv_task_info* dl_task = createTask();
 
+	if(dl_task == NULL){
+		//Oh dear lawd
+		return UV_ERROR;
+	}
+
+
+	//DO NOT TOUCH ANY OF THE FIELDS WE HAVENT ALREADY MENTIONED HERE. FOR THE LOVE OF GOD.
+
+	//dl_task->task_name = malloc(16*sizeof(char));
+	//if(dl_task->task_name == NULL){
+		//return UV_ERROR; //failed to malloc the name of the thing
+	//}
+	dl_task->task_name = "Driving_Loop";
+
+
+	dl_task->task_function = StartDrivingLoop;
+	dl_task->task_priority = osPriorityHigh;
+
+	dl_task->instances = 1;
+	dl_task->stack_size = _UV_DEFAULT_TASK_STACK_SIZE;
+
+	dl_task->active_states = UV_DRIVING;
+	dl_task->suspension_states = 0x00;
+	dl_task->deletion_states = UV_READY | PROGRAMMING | UV_LAUNCH_CONTROL | UV_ERROR_STATE;
+
+	//
+
+	dl_task->task_args = NULL; //TODO: Add actual settings dipshit
+
+	return UV_OK;
+}
 
 /**@brief  Function implementing the ledTask thread.
  * @param  argument: Not used for now. Will have configuration settings later.
@@ -37,6 +70,9 @@ void StartDrivingLoop(void const * argument){
 	/** The first thing we do here is create some local variables here, to cache whatever variables need cached.
 	 *	We will be caching variables that are used very frequently in every single loop iteration, and are not
 	 */
+
+	uv_task_info* dl_metadata = (uv_task_info*) argument;
+
 	uint16_t min_apps_value;
 	uint16_t max_apps_value;
 
@@ -45,18 +81,12 @@ void StartDrivingLoop(void const * argument){
 
 	enum DL_internal_state dl_status = Plausible;
 
+	/** This line extracts the specific driving loop parameters as specified in the
+	 * vehicle settings
+	 @code*/
+	driving_loop_args* dl_params = (driving_loop_args*) dl_metadata->task_args;
+	/**@endcode*/
 
-	drivingLoopArgs* dl_params = NULL;
-
-	drivingLoopArgs** arg = (drivingLoopArgs**) argument;
-
-	if(argument == NULL){
-		//argument = &default_dl_params;
-	}else{
-		dl_params = (drivingLoopArgs*) *arg;
-	}
-
-	dl_params = (drivingLoopArgs*) *arg;
 
 	min_apps_value = dl_params->min_apps_value;
 	max_apps_value = dl_params->max_apps_value;

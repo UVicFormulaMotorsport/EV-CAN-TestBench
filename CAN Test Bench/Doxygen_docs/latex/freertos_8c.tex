@@ -18,8 +18,8 @@ void \mbox{\hyperlink{freertos_8c_a1988aa923b19fa6f31c93afa7773f793}{v\+Applicat
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-os\+Thread\+Id \mbox{\hyperlink{freertos_8c_a899d413c8689b5553b7b2b18f3df13b9}{driving\+Loop\+Handle}}
-\item 
+os\+Thread\+Id \mbox{\hyperlink{freertos_8c_a2d14399b3d64f2ddb952cdac5b30da7d}{init\+Task\+Handle}}
+\begin{DoxyCompactList}\small\item\em This function will initialize all of the uvfr wrappers, and system variables, as well as performing internal diagnostics. \end{DoxyCompactList}\item 
 os\+Thread\+Id \mbox{\hyperlink{freertos_8c_aec9177717ec2a3cff7bcdb9816e22a0f}{led\+Task\+Handle}}
 \item 
 static Static\+Task\+\_\+t \mbox{\hyperlink{freertos_8c_a2dd1013c5ef8f355ac2f1479e36ec659}{x\+Idle\+Task\+T\+C\+B\+Buffer}}
@@ -45,7 +45,7 @@ Definition at line 84 of file freertos.\+c.
 
 
 
-References driving\+Loop\+Handle, led\+Task\+Handle, Start\+Default\+Task(), and Start\+Driving\+Loop().
+References init\+Task\+Handle, led\+Task\+Handle, Start\+Default\+Task(), and uv\+Init().
 
 
 
@@ -96,11 +96,15 @@ References config\+M\+I\+N\+I\+M\+A\+L\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, x\+
 
 
 \doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{freertos_8c_a899d413c8689b5553b7b2b18f3df13b9}\label{freertos_8c_a899d413c8689b5553b7b2b18f3df13b9}} 
-\index{freertos.c@{freertos.c}!drivingLoopHandle@{drivingLoopHandle}}
-\index{drivingLoopHandle@{drivingLoopHandle}!freertos.c@{freertos.c}}
-\doxysubsubsection{\texorpdfstring{drivingLoopHandle}{drivingLoopHandle}}
-{\footnotesize\ttfamily os\+Thread\+Id driving\+Loop\+Handle}
+\mbox{\Hypertarget{freertos_8c_a2d14399b3d64f2ddb952cdac5b30da7d}\label{freertos_8c_a2d14399b3d64f2ddb952cdac5b30da7d}} 
+\index{freertos.c@{freertos.c}!initTaskHandle@{initTaskHandle}}
+\index{initTaskHandle@{initTaskHandle}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{initTaskHandle}{initTaskHandle}}
+{\footnotesize\ttfamily os\+Thread\+Id init\+Task\+Handle}
+
+
+
+This function will initialize all of the uvfr wrappers, and system variables, as well as performing internal diagnostics. 
 
 File Name \+: \mbox{\hyperlink{freertos_8c}{freertos.\+c}} Description \+: Code for freertos applications
 
@@ -115,7 +119,7 @@ Definition at line 50 of file freertos.\+c.
 
 
 
-Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
+Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), and uv\+Init().
 
 \mbox{\Hypertarget{freertos_8c_aec9177717ec2a3cff7bcdb9816e22a0f}\label{freertos_8c_aec9177717ec2a3cff7bcdb9816e22a0f}} 
 \index{freertos.c@{freertos.c}!ledTaskHandle@{ledTaskHandle}}
