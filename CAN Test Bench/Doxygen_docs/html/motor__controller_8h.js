@@ -1,5 +1,8 @@
 var motor__controller_8h =
 [
+    [ "motor_controllor_settings", "structmotor__controllor__settings.html", "structmotor__controllor__settings" ],
+    [ "DEFAULT_MOTOR_CONTROLLER_CAN_TIMEOUT", "motor__controller_8h.html#acc0df233686dd4cf6256fcab0473860e", null ],
+    [ "motor_controller_settings", "motor__controller_8h.html#ac9389d71d481a5381fe1d1e23b1e4ecc", null ],
     [ "motor_controller_current_parameters", "motor__controller_8h.html#aefe525453e2d5fb5ff19de9f98247c7c", [
       [ "todo1", "motor__controller_8h.html#aefe525453e2d5fb5ff19de9f98247c7cafa32268e686878b8024c674367c01767", null ]
     ] ],

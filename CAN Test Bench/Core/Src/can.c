@@ -185,28 +185,28 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
     Error_Handler();
   }
 
-  uint8_t Data[8] = {0};
-  int CAN_ID = 0;
-  int DLC = 0;
+  //uint8_t Data[8] = {0};
+  //int CAN_ID = 0;
+  //int DLC = 0;
 
   // Extract the ID
-  if (RxHeader.IDE == CAN_ID_STD){
-	  CAN_ID = RxHeader.StdId;
-  }
-
-  if (RxHeader.IDE == CAN_ID_EXT){
-  	  CAN_ID = RxHeader.ExtId;
-  }
-
-
-  // Extract the data length
-  DLC = RxHeader.DLC; // Data Length Code
+//  if (RxHeader.IDE == CAN_ID_STD){
+//	  CAN_ID = RxHeader.StdId;
+//  }
+//
+//  if (RxHeader.IDE == CAN_ID_EXT){
+//  	  CAN_ID = RxHeader.ExtId;
+//  }
+//
+//
+//  // Extract the data length
+//  DLC = RxHeader.DLC; // Data Length Code
 
 
    // The data length will be different for each message, so we need to handle the possibilities
-   for (int i = 0; i < RxHeader.DLC; ++i){
-	   Data[i] = RxData[i];
-   }
+//   for (int i = 0; i < RxHeader.DLC; ++i){
+//	   Data[i] = RxData[i];
+//   }
 
    //TANNER AND FLO CALL YOUR FUNCTION HERE TO DO STUFF
 

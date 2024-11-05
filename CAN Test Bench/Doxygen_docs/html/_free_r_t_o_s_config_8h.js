@@ -27,6 +27,7 @@ var _free_r_t_o_s_config_8h =
     [ "configUSE_PORT_OPTIMISED_TASK_SELECTION", "_free_r_t_o_s_config_8h.html#aebb8c3a87d591f60f974772be0ee798d", null ],
     [ "configUSE_PREEMPTION", "_free_r_t_o_s_config_8h.html#adde83486022745409c40605922b0bdd6", null ],
     [ "configUSE_TICK_HOOK", "_free_r_t_o_s_config_8h.html#a23c5922c077106fad3f70b54d9071466", null ],
+    [ "INCLUDE_eTaskGetState", "_free_r_t_o_s_config_8h.html#a4fd1d67d54044ac86e8ffc890180f9f6", null ],
     [ "INCLUDE_uxTaskPriorityGet", "_free_r_t_o_s_config_8h.html#a1279eb797355460aeeec06aa524e91df", null ],
     [ "INCLUDE_vTaskCleanUpResources", "_free_r_t_o_s_config_8h.html#a7ee138825e57f243c8ee5fd4207b9e26", null ],
     [ "INCLUDE_vTaskDelay", "_free_r_t_o_s_config_8h.html#a24361a6eb816a965f1ee4e2e08e364f8", null ],

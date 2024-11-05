@@ -4,23 +4,21 @@
 {\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}cmsis\+\_\+os.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}driving\+\_\+loop.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{freertos_8c_a016544463b4842ced7191baf8f449cea}{Start\+Default\+Task}} (void const $\ast$argument)
-\begin{DoxyCompactList}\small\item\em Function implementing the led\+Task thread. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Function implementing the default\+Task thread. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{freertos_8c_abade755e13d07c10889ae83143656158}{M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init}} (void)
-\begin{DoxyCompactList}\small\item\em Free\+R\+T\+OS initialization This is where we declare our R\+T\+OS tasks, mutexes, semaphores, and timers. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Free\+R\+T\+OS initialization. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{freertos_8c_a1988aa923b19fa6f31c93afa7773f793}{v\+Application\+Get\+Idle\+Task\+Memory}} (Static\+Task\+\_\+t $\ast$$\ast$ppx\+Idle\+Task\+T\+C\+B\+Buffer, Stack\+Type\+\_\+t $\ast$$\ast$ppx\+Idle\+Task\+Stack\+Buffer, uint32\+\_\+t $\ast$pul\+Idle\+Task\+Stack\+Size)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-os\+Thread\+Id \mbox{\hyperlink{freertos_8c_a2d14399b3d64f2ddb952cdac5b30da7d}{init\+Task\+Handle}}
+Task\+Handle\+\_\+t \mbox{\hyperlink{freertos_8c_a142da7a698285a444ffffb0d1d791023}{init\+\_\+task\+\_\+handle}}
 \begin{DoxyCompactList}\small\item\em This function will initialize all of the uvfr wrappers, and system variables, as well as performing internal diagnostics. \end{DoxyCompactList}\item 
-os\+Thread\+Id \mbox{\hyperlink{freertos_8c_aec9177717ec2a3cff7bcdb9816e22a0f}{led\+Task\+Handle}}
+os\+Thread\+Id \mbox{\hyperlink{freertos_8c_aa658fe134a5d1309d7a15c8116fa142c}{default\+Task\+Handle}}
 \item 
 static Static\+Task\+\_\+t \mbox{\hyperlink{freertos_8c_a2dd1013c5ef8f355ac2f1479e36ec659}{x\+Idle\+Task\+T\+C\+B\+Buffer}}
 \item 
@@ -37,15 +35,25 @@ static Stack\+Type\+\_\+t \mbox{\hyperlink{freertos_8c_af311b04396149ce536fe1a3b
 
 
 
-Free\+R\+T\+OS initialization This is where we declare our R\+T\+OS tasks, mutexes, semaphores, and timers. 
+Free\+R\+T\+OS initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 82 of file freertos.\+c.
 
 
 
-Definition at line 84 of file freertos.\+c.
-
-
-
-References init\+Task\+Handle, led\+Task\+Handle, Start\+Default\+Task(), and uv\+Init().
+References default\+Task\+Handle, init\+\_\+task\+\_\+handle, Start\+Default\+Task(), and uv\+Init().
 
 
 
@@ -59,7 +67,7 @@ Referenced by main().
 
 
 
-Function implementing the led\+Task thread. 
+Function implementing the default\+Task thread. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -73,7 +81,7 @@ Function implementing the led\+Task thread.
 \end{DoxyRetVals}
 
 
-Definition at line 127 of file freertos.\+c.
+Definition at line 129 of file freertos.\+c.
 
 
 
@@ -87,7 +95,7 @@ Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
 
 
 
-Definition at line 70 of file freertos.\+c.
+Definition at line 68 of file freertos.\+c.
 
 
 
@@ -96,11 +104,25 @@ References config\+M\+I\+N\+I\+M\+A\+L\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, x\+
 
 
 \doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{freertos_8c_a2d14399b3d64f2ddb952cdac5b30da7d}\label{freertos_8c_a2d14399b3d64f2ddb952cdac5b30da7d}} 
-\index{freertos.c@{freertos.c}!initTaskHandle@{initTaskHandle}}
-\index{initTaskHandle@{initTaskHandle}!freertos.c@{freertos.c}}
-\doxysubsubsection{\texorpdfstring{initTaskHandle}{initTaskHandle}}
-{\footnotesize\ttfamily os\+Thread\+Id init\+Task\+Handle}
+\mbox{\Hypertarget{freertos_8c_aa658fe134a5d1309d7a15c8116fa142c}\label{freertos_8c_aa658fe134a5d1309d7a15c8116fa142c}} 
+\index{freertos.c@{freertos.c}!defaultTaskHandle@{defaultTaskHandle}}
+\index{defaultTaskHandle@{defaultTaskHandle}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{defaultTaskHandle}{defaultTaskHandle}}
+{\footnotesize\ttfamily os\+Thread\+Id default\+Task\+Handle}
+
+
+
+Definition at line 50 of file freertos.\+c.
+
+
+
+Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
+
+\mbox{\Hypertarget{freertos_8c_a142da7a698285a444ffffb0d1d791023}\label{freertos_8c_a142da7a698285a444ffffb0d1d791023}} 
+\index{freertos.c@{freertos.c}!init\_task\_handle@{init\_task\_handle}}
+\index{init\_task\_handle@{init\_task\_handle}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{init\_task\_handle}{init\_task\_handle}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t init\+\_\+task\+\_\+handle}
 
 
 
@@ -115,25 +137,11 @@ Copyright (c) 2024 S\+T\+Microelectronics. All rights reserved.
 
 This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 
 
-Definition at line 50 of file freertos.\+c.
+Definition at line 48 of file freertos.\+c.
 
 
 
 Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), and uv\+Init().
-
-\mbox{\Hypertarget{freertos_8c_aec9177717ec2a3cff7bcdb9816e22a0f}\label{freertos_8c_aec9177717ec2a3cff7bcdb9816e22a0f}} 
-\index{freertos.c@{freertos.c}!ledTaskHandle@{ledTaskHandle}}
-\index{ledTaskHandle@{ledTaskHandle}!freertos.c@{freertos.c}}
-\doxysubsubsection{\texorpdfstring{ledTaskHandle}{ledTaskHandle}}
-{\footnotesize\ttfamily os\+Thread\+Id led\+Task\+Handle}
-
-
-
-Definition at line 52 of file freertos.\+c.
-
-
-
-Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
 
 \mbox{\Hypertarget{freertos_8c_af311b04396149ce536fe1a3b5f127445}\label{freertos_8c_af311b04396149ce536fe1a3b5f127445}} 
 \index{freertos.c@{freertos.c}!xIdleStack@{xIdleStack}}
@@ -143,7 +151,7 @@ Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
 
 
 
-Definition at line 68 of file freertos.\+c.
+Definition at line 66 of file freertos.\+c.
 
 
 
@@ -157,7 +165,7 @@ Referenced by v\+Application\+Get\+Idle\+Task\+Memory().
 
 
 
-Definition at line 67 of file freertos.\+c.
+Definition at line 65 of file freertos.\+c.
 
 
 

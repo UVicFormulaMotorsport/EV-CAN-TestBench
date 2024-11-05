@@ -1,15 +1,16 @@
 \hypertarget{driving__loop_8h}{}\doxysection{Core/\+Inc/driving\+\_\+loop.h File Reference}
 \label{driving__loop_8h}\index{Core/Inc/driving\_loop.h@{Core/Inc/driving\_loop.h}}
 {\ttfamily \#include \char`\"{}motor\+\_\+controller.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structdriving_mode_params}{driving\+Mode\+Params}}
 \begin{DoxyCompactList}\small\item\em this struct is designed to hold information about each drivingmode\textquotesingle{}s map params \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structdriving_mode}{driving\+Mode}}
-\item 
-struct \mbox{\hyperlink{structdriving_loop_args}{driving\+Loop\+Args}}
-\begin{DoxyCompactList}\small\item\em Arguments for the driving loop. The reason this is a struct passed in as an argument, rather than a bunch of global variables or constants is to allow the code to take settings from flash memory, therefore allowing the team to meet it\textquotesingle{}s goal of having an actual G\+UI to change vehicle settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This is where the driving mode and the deiving\+Mode\+Params are at. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structdriving__loop__args}{driving\+\_\+loop\+\_\+args}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,8 +28,8 @@ typedef uint16\+\_\+t \mbox{\hyperlink{driving__loop_8h_a93f3b2b453b1ad01d8555f1
 typedef struct \mbox{\hyperlink{structdriving_mode_params}{driving\+Mode\+Params}} \mbox{\hyperlink{driving__loop_8h_ac1d30630084a642c9209dca3a961ef12}{driving\+Mode\+Params}}
 \begin{DoxyCompactList}\small\item\em this struct is designed to hold information about each drivingmode\textquotesingle{}s map params \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{structdriving_mode}{driving\+Mode}} \mbox{\hyperlink{driving__loop_8h_a29e04283e579e9092d205b1937c785c6}{driving\+Mode}}
-\item 
-typedef struct \mbox{\hyperlink{structdriving_loop_args}{driving\+Loop\+Args}} \mbox{\hyperlink{driving__loop_8h_a3decdbe473e5d736311930ce3d6360bd}{driving\+Loop\+Args}}
+\begin{DoxyCompactList}\small\item\em This is where the driving mode and the deiving\+Mode\+Params are at. \end{DoxyCompactList}\item 
+typedef struct \mbox{\hyperlink{structdriving__loop__args}{driving\+\_\+loop\+\_\+args}} \mbox{\hyperlink{driving__loop_8h_aa421e50f529a1770ef0b2a00a44a0601}{driving\+\_\+loop\+\_\+args}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -42,7 +43,7 @@ enum \mbox{\hyperlink{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800}{map\+\
 \mbox{\hyperlink{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a97cb36a9ac4fbbe2e7b481a2677993f9}{s\+\_\+curve\+\_\+torque\+\_\+map}}, 
 \mbox{\hyperlink{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a22ffbb99cbb49917aac9c53aba81df32}{exp\+\_\+torque\+\_\+map}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em enum meant to represent the different types of pedal map \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{driving__loop_8h_adef4571b048b5b1f2b712713741296c7}{D\+L\+\_\+internal\+\_\+state}} \{ \mbox{\hyperlink{driving__loop_8h_adef4571b048b5b1f2b712713741296c7a51000915ad3f7b4a5874322723d879ca}{Plausible}} = 0x01, 
 \mbox{\hyperlink{driving__loop_8h_adef4571b048b5b1f2b712713741296c7a6425b90f597e6400cfb9422ec518334f}{Implausible}} = 0x02, 
 \mbox{\hyperlink{driving__loop_8h_adef4571b048b5b1f2b712713741296c7abb3086179f14a3715ce589bd10c3ec98}{Erroneous}} = 0x04
@@ -51,7 +52,9 @@ enum \mbox{\hyperlink{driving__loop_8h_adef4571b048b5b1f2b712713741296c7}{D\+L\+
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{driving__loop_8h_adb031c91acd0bc6d700819cde7ec58f2}{Start\+Driving\+Loop}} (void const $\ast$argument)
+enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{driving__loop_8h_af580185fb5bb1cfba30ee1709d90628c}{init\+Driving\+Loop}} (void $\ast$argument)
+\item 
+void \mbox{\hyperlink{driving__loop_8h_a80cc48f06202edc29bcad26a956bcc98}{Start\+Driving\+Loop}} (void $\ast$argument)
 \begin{DoxyCompactList}\small\item\em Function implementing the led\+Task thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -66,26 +69,30 @@ void \mbox{\hyperlink{driving__loop_8h_adb031c91acd0bc6d700819cde7ec58f2}{Start\
 
 D\+L\+\_\+\+P\+E\+R\+I\+OD is meant to represent how often the driving loop executes, in ms. 
 
-@define D\+L\+\_\+\+P\+E\+R\+I\+OD This is a define since I would eventually like this to be configurable via a global variable, or possible be dynamic in the future.
+This is a define since I would eventually like this to be configurable via a global variable, or possible be dynamic in the future.
 
 Just replace the number with the name of the variable, and you\textquotesingle{}re all set. 
 
-Definition at line 25 of file driving\+\_\+loop.\+h.
+Definition at line 26 of file driving\+\_\+loop.\+h.
 
 
 
 \doxysubsection{Typedef Documentation}
-\mbox{\Hypertarget{driving__loop_8h_a3decdbe473e5d736311930ce3d6360bd}\label{driving__loop_8h_a3decdbe473e5d736311930ce3d6360bd}} 
-\index{driving\_loop.h@{driving\_loop.h}!drivingLoopArgs@{drivingLoopArgs}}
-\index{drivingLoopArgs@{drivingLoopArgs}!driving\_loop.h@{driving\_loop.h}}
-\doxysubsubsection{\texorpdfstring{drivingLoopArgs}{drivingLoopArgs}}
-{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdriving_loop_args}{driving\+Loop\+Args}} \mbox{\hyperlink{structdriving_loop_args}{driving\+Loop\+Args}}}
+\mbox{\Hypertarget{driving__loop_8h_aa421e50f529a1770ef0b2a00a44a0601}\label{driving__loop_8h_aa421e50f529a1770ef0b2a00a44a0601}} 
+\index{driving\_loop.h@{driving\_loop.h}!driving\_loop\_args@{driving\_loop\_args}}
+\index{driving\_loop\_args@{driving\_loop\_args}!driving\_loop.h@{driving\_loop.h}}
+\doxysubsubsection{\texorpdfstring{driving\_loop\_args}{driving\_loop\_args}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdriving__loop__args}{driving\+\_\+loop\+\_\+args}} \mbox{\hyperlink{structdriving__loop__args}{driving\+\_\+loop\+\_\+args}}}
 
 \mbox{\Hypertarget{driving__loop_8h_a29e04283e579e9092d205b1937c785c6}\label{driving__loop_8h_a29e04283e579e9092d205b1937c785c6}} 
 \index{driving\_loop.h@{driving\_loop.h}!drivingMode@{drivingMode}}
 \index{drivingMode@{drivingMode}!driving\_loop.h@{driving\_loop.h}}
 \doxysubsubsection{\texorpdfstring{drivingMode}{drivingMode}}
 {\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structdriving_mode}{driving\+Mode}} \mbox{\hyperlink{structdriving_mode}{driving\+Mode}}}
+
+
+
+This is where the driving mode and the deiving\+Mode\+Params are at. 
 
 \mbox{\Hypertarget{driving__loop_8h_ac1d30630084a642c9209dca3a961ef12}\label{driving__loop_8h_ac1d30630084a642c9209dca3a961ef12}} 
 \index{driving\_loop.h@{driving\_loop.h}!drivingModeParams@{drivingModeParams}}
@@ -105,7 +112,7 @@ this struct is designed to hold information about each drivingmode\textquotesing
 
 
 
-Definition at line 15 of file driving\+\_\+loop.\+h.
+Definition at line 16 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{driving__loop_8h_abd1701d9bbc137696fe99b6df6eb7d3e}\label{driving__loop_8h_abd1701d9bbc137696fe99b6df6eb7d3e}} 
 \index{driving\_loop.h@{driving\_loop.h}!MC\_RPM@{MC\_RPM}}
@@ -115,7 +122,7 @@ Definition at line 15 of file driving\+\_\+loop.\+h.
 
 
 
-Definition at line 14 of file driving\+\_\+loop.\+h.
+Definition at line 15 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{driving__loop_8h_a5ec2330fa2301c68498a6ff0825998c9}\label{driving__loop_8h_a5ec2330fa2301c68498a6ff0825998c9}} 
 \index{driving\_loop.h@{driving\_loop.h}!MC\_Torque@{MC\_Torque}}
@@ -125,7 +132,7 @@ Definition at line 14 of file driving\+\_\+loop.\+h.
 
 
 
-Definition at line 13 of file driving\+\_\+loop.\+h.
+Definition at line 14 of file driving\+\_\+loop.\+h.
 
 
 
@@ -152,13 +159,17 @@ Erroneous&\\
 \end{DoxyEnumFields}
 
 
-Definition at line 40 of file driving\+\_\+loop.\+h.
+Definition at line 42 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800}\label{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800}} 
 \index{driving\_loop.h@{driving\_loop.h}!map\_mode@{map\_mode}}
 \index{map\_mode@{map\_mode}!driving\_loop.h@{driving\_loop.h}}
 \doxysubsubsection{\texorpdfstring{map\_mode}{map\_mode}}
 {\footnotesize\ttfamily enum \mbox{\hyperlink{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800}{map\+\_\+mode}}}
+
+
+
+enum meant to represent the different types of pedal map 
 
 This enum is meant to represent different functions that map the torque to speed. \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{linear\_speed\_map@{linear\_speed\_map}!driving\_loop.h@{driving\_loop.h}}\index{driving\_loop.h@{driving\_loop.h}!linear\_speed\_map@{linear\_speed\_map}}}\mbox{\Hypertarget{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a24491cb716ed427ea52ef6cdbf415b52}\label{driving__loop_8h_a9d8fd287924cbb6baa4afd1c585da800a24491cb716ed427ea52ef6cdbf415b52}} 
@@ -188,16 +199,34 @@ exp\+\_\+torque\+\_\+map&\\
 \end{DoxyEnumFields}
 
 
-Definition at line 31 of file driving\+\_\+loop.\+h.
+Definition at line 33 of file driving\+\_\+loop.\+h.
 
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{driving__loop_8h_adb031c91acd0bc6d700819cde7ec58f2}\label{driving__loop_8h_adb031c91acd0bc6d700819cde7ec58f2}} 
+\mbox{\Hypertarget{driving__loop_8h_af580185fb5bb1cfba30ee1709d90628c}\label{driving__loop_8h_af580185fb5bb1cfba30ee1709d90628c}} 
+\index{driving\_loop.h@{driving\_loop.h}!initDrivingLoop@{initDrivingLoop}}
+\index{initDrivingLoop@{initDrivingLoop}!driving\_loop.h@{driving\_loop.h}}
+\doxysubsubsection{\texorpdfstring{initDrivingLoop()}{initDrivingLoop()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} init\+Driving\+Loop (\begin{DoxyParamCaption}\item[{void $\ast$}]{argument }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file driving\+\_\+loop.\+c.
+
+
+
+References \+\_\+\+U\+V\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, uv\+\_\+task\+\_\+info\+::active\+\_\+states, uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, uv\+\_\+task\+\_\+info\+::instances, P\+R\+O\+G\+R\+A\+M\+M\+I\+NG, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, Start\+Driving\+Loop(), uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+args, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+priority, U\+V\+\_\+\+D\+R\+I\+V\+I\+NG, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE, U\+V\+\_\+\+L\+A\+U\+N\+C\+H\+\_\+\+C\+O\+N\+T\+R\+OL, U\+V\+\_\+\+OK, U\+V\+\_\+\+R\+E\+A\+DY, and uv\+Create\+Task().
+
+
+
+Referenced by uv\+Init\+State\+Engine().
+
+\mbox{\Hypertarget{driving__loop_8h_a80cc48f06202edc29bcad26a956bcc98}\label{driving__loop_8h_a80cc48f06202edc29bcad26a956bcc98}} 
 \index{driving\_loop.h@{driving\_loop.h}!StartDrivingLoop@{StartDrivingLoop}}
 \index{StartDrivingLoop@{StartDrivingLoop}!driving\_loop.h@{driving\_loop.h}}
 \doxysubsubsection{\texorpdfstring{StartDrivingLoop()}{StartDrivingLoop()}}
-{\footnotesize\ttfamily void Start\+Driving\+Loop (\begin{DoxyParamCaption}\item[{void const $\ast$}]{argument }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Start\+Driving\+Loop (\begin{DoxyParamCaption}\item[{void $\ast$}]{argument }\end{DoxyParamCaption})}
 
 
 
@@ -215,15 +244,27 @@ Function implementing the led\+Task thread.
 \end{DoxyRetVals}
 The first thing we do here is create some local variables here, to cache whatever variables need cached. We will be caching variables that are used very frequently in every single loop iteration, and are not
 
+This line extracts the specific driving loop parameters as specified in the vehicle settings 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{\mbox{\hyperlink{structdriving__loop__args}{driving\_loop\_args}}* dl\_params = (\mbox{\hyperlink{structdriving__loop__args}{driving\_loop\_args}}*) dl\_metadata-\/>task\_args;}
+\DoxyCodeLine{\textcolor{comment}{/**}}
+\end{DoxyCode}
+
+
 @heading Brake Plausibility Check
 
 The way that this works is that if the brake pressure is greater than some threshold, and the accelerator pedal position is also greater than some threshold, the thing will register that a brake implausibility has occurred. This is not very cash money.
 
 If this happens, we want to set the torque/speed output to zero. This will only reset itself once the brakes are set to less than a certain threshold. Honestly evil.
 
-Definition at line 34 of file driving\+\_\+loop.\+c.
+Definition at line 67 of file driving\+\_\+loop.\+c.
 
 
 
-References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, adc1\+\_\+\+B\+P\+S1, adc1\+\_\+\+B\+P\+S2, driving\+Loop\+Args\+::apps\+\_\+plausibility\+\_\+check\+\_\+threshold, driving\+Loop\+Args\+::bps\+\_\+plausibility\+\_\+check\+\_\+threshold, D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+E\+R\+I\+OD, Implausible, driving\+Loop\+Args\+::max\+\_\+apps\+\_\+offset, driving\+Loop\+Args\+::max\+\_\+apps\+\_\+value, driving\+Loop\+Args\+::max\+\_\+\+B\+P\+S\+\_\+value, driving\+Loop\+Args\+::min\+\_\+apps\+\_\+offset, driving\+Loop\+Args\+::min\+\_\+apps\+\_\+value, and Plausible.
+References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, adc1\+\_\+\+B\+P\+S1, adc1\+\_\+\+B\+P\+S2, driving\+\_\+loop\+\_\+args\+::apps\+\_\+plausibility\+\_\+check\+\_\+threshold, driving\+\_\+loop\+\_\+args\+::bps\+\_\+plausibility\+\_\+check\+\_\+threshold, D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+E\+R\+I\+OD, Implausible, driving\+\_\+loop\+\_\+args\+::max\+\_\+apps\+\_\+offset, driving\+\_\+loop\+\_\+args\+::max\+\_\+apps\+\_\+value, driving\+\_\+loop\+\_\+args\+::max\+\_\+\+B\+P\+S\+\_\+value, driving\+\_\+loop\+\_\+args\+::min\+\_\+apps\+\_\+offset, driving\+\_\+loop\+\_\+args\+::min\+\_\+apps\+\_\+value, Plausible, and uv\+\_\+task\+\_\+info\+::task\+\_\+args.
+
+
+
+Referenced by init\+Driving\+Loop(), and init\+Temp\+Monitor().
 

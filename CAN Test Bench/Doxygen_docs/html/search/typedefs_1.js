@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['daqloopargs_994',['daqLoopArgs',['../daq_8h.html#a7ece1fadf80628cc8786d72b1fb0c814',1,'daq.h']]],
-  ['drivingloopargs_995',['drivingLoopArgs',['../driving__loop_8h.html#a3decdbe473e5d736311930ce3d6360bd',1,'driving_loop.h']]],
-  ['drivingmode_996',['drivingMode',['../driving__loop_8h.html#a29e04283e579e9092d205b1937c785c6',1,'driving_loop.h']]],
-  ['drivingmodeparams_997',['drivingModeParams',['../driving__loop_8h.html#ac1d30630084a642c9209dca3a961ef12',1,'driving_loop.h']]]
+  ['daq_5fdatapoint_1094',['daq_datapoint',['../daq_8h.html#ad3bc3bc1c9ab04b22cc999a6f7c82c40',1,'daq.h']]],
+  ['daq_5flog_5fentry_1095',['daq_log_entry',['../daq_8h.html#aed86f8ec15afd10cf046f83fcf7f327b',1,'daq.h']]],
+  ['daq_5floop_5fargs_1096',['daq_loop_args',['../daq_8h.html#a8895dc742d7ce8449057f317e7f9c81b',1,'daq.h']]],
+  ['daq_5ftype_1097',['daq_type',['../daq_8h.html#af3e1f11c0574282ff1e736d6fe360df6',1,'daq.h']]],
+  ['driving_5floop_5fargs_1098',['driving_loop_args',['../driving__loop_8h.html#aa421e50f529a1770ef0b2a00a44a0601',1,'driving_loop.h']]],
+  ['drivingmode_1099',['drivingMode',['../driving__loop_8h.html#a29e04283e579e9092d205b1937c785c6',1,'driving_loop.h']]],
+  ['drivingmodeparams_1100',['drivingModeParams',['../driving__loop_8h.html#ac1d30630084a642c9209dca3a961ef12',1,'driving_loop.h']]]
 ];

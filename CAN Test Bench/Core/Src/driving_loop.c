@@ -22,8 +22,8 @@ extern uint16_t adc1_APPS2;
 extern uint16_t adc1_BPS1;
 extern uint16_t adc1_BPS2;
 
-enum uv_status_t initDrivingLoop(void const *argument){
-	uv_task_info* dl_task = createTask();
+enum uv_status_t initDrivingLoop(void *argument){
+	uv_task_info* dl_task = uvCreateTask();
 
 	if(dl_task == NULL){
 		//Oh dear lawd
@@ -64,7 +64,7 @@ enum uv_status_t initDrivingLoop(void const *argument){
  * This function is made to be the meat and potatoes of the entire vehicle.
  *
  */
-void StartDrivingLoop(void const * argument){
+void StartDrivingLoop(void * argument){
 	//Initialize driving loop now
 
 	/** The first thing we do here is create some local variables here, to cache whatever variables need cached.

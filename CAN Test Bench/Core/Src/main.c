@@ -92,9 +92,6 @@ void MX_FREERTOS_Init(void);
 /**
   * @brief  The application entry point.
   * @retval int
-  * This is the entry point of the application, and effectively only serves one purpose.
-  * It calls initialisation functions for all of the peripherals, checks the state of all
-  * drivers and devices, then passes control over to the RTOS scheduler.
   */
 int main(void)
 {
@@ -128,9 +125,9 @@ int main(void)
   MX_ADC2_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC1_BUF_LEN);
+  //HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC1_BUF_LEN);
   //HAL_TIM_Base_Start_IT(&htim3); This is getting disabled, since measuring temp will now be an RTOS task
-  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14); // Just to prove we reached this point in the code
+   // Just to prove we reached this point in the code
 
   //ANYTHING WE NEED TO DO BEFORE THE KERNEL TAKES OVER SHOULD HAPPEN HERE:
 

@@ -20,11 +20,17 @@
 
 #define ENABLE_FLASH_SETTINGS 0
 
+typedef struct motor_controller_settings_t{
+	int param;
+}motor_controller_settings_t;
+
 
 typedef struct uv_vehicle_settings{
 	//struct motor_controller_settings mc_settings;
 	bms_settings_t bms_settings;
 	driving_loop_args driving_loop_settings;
+	daq_loop_args daq_settings;
+	struct motor_controller_settings_t motor_controller_settings;
 
 
 }uv_vehicle_settings;

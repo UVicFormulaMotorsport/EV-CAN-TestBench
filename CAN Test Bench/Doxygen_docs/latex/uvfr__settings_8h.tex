@@ -1,13 +1,15 @@
 \hypertarget{uvfr__settings_8h}{}\doxysection{Core/\+Inc/uvfr\+\_\+settings.h File Reference}
 \label{uvfr__settings_8h}\index{Core/Inc/uvfr\_settings.h@{Core/Inc/uvfr\_settings.h}}
+{\ttfamily \#include \char`\"{}motor\+\_\+controller.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}driving\+\_\+loop.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}daq.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}bms.\+h\char`\"{}}\newline
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}}
+struct \mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
@@ -17,7 +19,7 @@ struct \mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}} \mbox{\hyperlink{uvfr__settings_8h_a8f74ad9b1298d57e4b432f80a0630e2b}{uv\+Vehicle\+Settings}}
+typedef struct \mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}} \mbox{\hyperlink{uvfr__settings_8h_a1c41697a3618ce0a5236b7ccb250d967}{uv\+\_\+vehicle\+\_\+settings}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -27,7 +29,7 @@ enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}} $\ast$ \mbox{\hyperlink{uvfr__settings_8h_ad7a6fe36c2429a9d37ecd0f35ba5a293}{uv\+Current\+Settings}}
+\mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}} $\ast$ \mbox{\hyperlink{uvfr__settings_8h_a03566822d1b8893362970a459bd67daf}{current\+\_\+vehicle\+\_\+settings}}
 \end{DoxyCompactItemize}
 
 
@@ -40,16 +42,16 @@ enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+
 
 
 
-Definition at line 17 of file uvfr\+\_\+settings.\+h.
+Definition at line 21 of file uvfr\+\_\+settings.\+h.
 
 
 
 \doxysubsection{Typedef Documentation}
-\mbox{\Hypertarget{uvfr__settings_8h_a8f74ad9b1298d57e4b432f80a0630e2b}\label{uvfr__settings_8h_a8f74ad9b1298d57e4b432f80a0630e2b}} 
-\index{uvfr\_settings.h@{uvfr\_settings.h}!uvVehicleSettings@{uvVehicleSettings}}
-\index{uvVehicleSettings@{uvVehicleSettings}!uvfr\_settings.h@{uvfr\_settings.h}}
-\doxysubsubsection{\texorpdfstring{uvVehicleSettings}{uvVehicleSettings}}
-{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}} \mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}}}
+\mbox{\Hypertarget{uvfr__settings_8h_a1c41697a3618ce0a5236b7ccb250d967}\label{uvfr__settings_8h_a1c41697a3618ce0a5236b7ccb250d967}} 
+\index{uvfr\_settings.h@{uvfr\_settings.h}!uv\_vehicle\_settings@{uv\_vehicle\_settings}}
+\index{uv\_vehicle\_settings@{uv\_vehicle\_settings}!uvfr\_settings.h@{uvfr\_settings.h}}
+\doxysubsubsection{\texorpdfstring{uv\_vehicle\_settings}{uv\_vehicle\_settings}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}} \mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}}}
 
 
 
@@ -79,9 +81,17 @@ Referenced by uv\+Init().
 
 
 \doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{uvfr__settings_8h_ad7a6fe36c2429a9d37ecd0f35ba5a293}\label{uvfr__settings_8h_ad7a6fe36c2429a9d37ecd0f35ba5a293}} 
-\index{uvfr\_settings.h@{uvfr\_settings.h}!uvCurrentSettings@{uvCurrentSettings}}
-\index{uvCurrentSettings@{uvCurrentSettings}!uvfr\_settings.h@{uvfr\_settings.h}}
-\doxysubsubsection{\texorpdfstring{uvCurrentSettings}{uvCurrentSettings}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structuv_vehicle_settings}{uv\+Vehicle\+Settings}}$\ast$ uv\+Current\+Settings}
+\mbox{\Hypertarget{uvfr__settings_8h_a03566822d1b8893362970a459bd67daf}\label{uvfr__settings_8h_a03566822d1b8893362970a459bd67daf}} 
+\index{uvfr\_settings.h@{uvfr\_settings.h}!current\_vehicle\_settings@{current\_vehicle\_settings}}
+\index{current\_vehicle\_settings@{current\_vehicle\_settings}!uvfr\_settings.h@{uvfr\_settings.h}}
+\doxysubsubsection{\texorpdfstring{current\_vehicle\_settings}{current\_vehicle\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}}$\ast$ current\+\_\+vehicle\+\_\+settings}
+
+
+
+Definition at line 15 of file uvfr\+\_\+settings.\+c.
+
+
+
+Referenced by setup\+Default\+Settings().
 

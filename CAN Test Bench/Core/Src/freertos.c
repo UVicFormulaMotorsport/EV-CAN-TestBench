@@ -26,7 +26,6 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "uvfr_utils.h"
-#include "driving_loop.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -46,10 +45,12 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-// This is where the actual RTOS task handles are going to live
-osThreadId initTaskHandle;
+uv_init_struct init_settings;
+
+
+TaskHandle_t init_task_handle;
 /* USER CODE END Variables */
-osThreadId ledTaskHandle;
+osThreadId defaultTaskHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
@@ -62,6 +63,62 @@ void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* GetIdleTaskMemory prototype (linked to static allocation support) */
 void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
+
+/* Hook prototypes */
+void vApplicationTickHook(void);
+void vApplicationStackOverflowHook(xTaskHandle xTask, signed char *pcTaskName);
+void vApplicationMallocFailedHook(void);
+
+/* USER CODE BEGIN 3 */
+__weak void vApplicationTickHook( void )
+{
+   /* This function will be called by each tick interrupt if
+   configUSE_TICK_HOOK is set to 1 in FreeRTOSConfig.h. User code can be
+   added here, but the tick hook is called from an interrupt context, so
+   code must not attempt to block, and only the interrupt safe FreeRTOS API
+   functions can be used (those that end in FromISR()). */
+}
+/* USER CODE END 3 */
+
+/* USER CODE BEGIN 4 */
+__weak void vApplicationStackOverflowHook(xTaskHandle xTask, signed char *pcTaskName)
+{
+   /* Run time stack overflow checking is performed if
+   configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2. This hook function is
+   called if a stack overflow is detected. */
+	while(1){
+		//THIS IS VERY MUCH NOT GOOD. BIG SUCK
+		//double plus ungood
+
+	}
+}
+
+void vApplicationIdleHook( void ){
+	int i = 0;
+	i++;
+}
+/* USER CODE END 4 */
+
+/* USER CODE BEGIN 5 */
+__weak void vApplicationMallocFailedHook(void)
+{
+   /* vApplicationMallocFailedHook() will only be called if
+   configUSE_MALLOC_FAILED_HOOK is set to 1 in FreeRTOSConfig.h. It is a hook
+   function that will get called if a call to pvPortMalloc() fails.
+   pvPortMalloc() is called internally by the kernel whenever a task, queue,
+   timer or semaphore is created. It is also called by various parts of the
+   demo application. If heap_1.c or heap_2.c are used, then the size of the
+   heap available to pvPortMalloc() is defined by configTOTAL_HEAP_SIZE in
+   FreeRTOSConfig.h, and the xPortGetFreeHeapSize() API function can be used
+   to query the size of free heap space that remains (although it does not
+   provide information on how the remaining heap might be fragmented). */
+	while(1){
+			//THIS IS VERY MUCH NOT GOOD. BIG SUCK
+			//double plus ungood
+
+	}
+}
+/* USER CODE END 5 */
 
 /* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
 static StaticTask_t xIdleTaskTCBBuffer;
@@ -78,14 +135,12 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackTy
 
 /**
   * @brief  FreeRTOS initialization
-  * This is where we declare our RTOS tasks, mutexes, semaphores, and timers.
-  *
+  * @param  None
+  * @retval None
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */
-	//time to initialise everything :)
-
-
+	init_settings.use_default_settings = true;
   /* USER CODE END Init */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -102,24 +157,32 @@ void MX_FREERTOS_Init(void) {
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
+	//EVIL GOTO HACK - DO NOT TOUCH
+	goto MX_FREERTOS_INIT_IGNORE_CMSIS;
   /* USER CODE END RTOS_QUEUES */
 
   /* Create the thread(s) */
-  /* definition and creation of ledTask */
-  osThreadDef(ledTask, StartDefaultTask, osPriorityNormal, 0, 128);
-  ledTaskHandle = osThreadCreate(osThread(ledTask), NULL);
+  /* definition and creation of defaultTask */
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-  osThreadDef(initTask, uvInit, osPriorityRealtime, 0, 128);
-  initTaskHandle = osThreadCreate(osThread(initTask), NULL);
+  MX_FREERTOS_INIT_IGNORE_CMSIS:
+
+  BaseType_t x_task_return = xTaskCreate(uvInit,"init",1024,&init_settings,osPriorityNormal,&init_task_handle);
+  if(x_task_return != pdPASS){
+	  while(1){
+		  //AAA
+	  }
+  }
   /* USER CODE END RTOS_THREADS */
 
 }
 
 /* USER CODE BEGIN Header_StartDefaultTask */
 /**
-  * @brief  Function implementing the ledTask thread.
+  * @brief  Function implementing the defaultTask thread.
   * @param  argument: Not used
   * @retval None
   */
@@ -130,8 +193,7 @@ void StartDefaultTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_13);
-    osDelay(200);
+    osDelay(1);
   }
   /* USER CODE END StartDefaultTask */
 }

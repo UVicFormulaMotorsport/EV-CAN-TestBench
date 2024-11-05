@@ -27,11 +27,17 @@
 #include "motor_controller.h"
 #include "dash.h"
 #include "imd.h"
+#include "pdu.h"
+#include "daq.h"
+
+#include "driving_loop.h"
+#include "temp_monitoring.h"
 
 #include "FreeRTOSConfig.h"
 
-#include "stdlib.h"
+//#include "stdlib.h"
 #include "stdint.h"
+#include <stdlib.h>
 
 
 /* Some syntactic sugar for ya'll to use in your code
@@ -47,6 +53,17 @@
 #define endianSwap16(x) (((x & 0x00FF)<<8) | ((x & 0xFF00)>>8))
 #define endianSwap32(x) (((x & 0x000000FF)<<16)|((x & 0x0000FF00)<<8)|((x & 0x00FF0000)>>8)|((x & 0xFF000000)>>16))
 
+#define deserializeSmallE16(x,i) ((x[i])|(x[i+1]<<8))
+#define deserializeSmallE32(x,i) ((x[i])|(x[i+1]<<8)|(x[i+2]<<16)|(x[i+3]<<24))
+#define deserializeBigE16(x,i) ((x[i]<<8)|(x[i+1]))
+#define deserializeBigE32(x,i) ((x[i]<<24)|(x[i+1]<<16)|(x[i+2]<<8)|(x[i+3]))
+
+#define serializeSmallE16(x,d,i) x[i]=d&0x00FF; x[i+1]=(d&0xFF00)>>8
+#define serializeSmallE32(x,d,i) x[i]=d&0x000000FF; x[i+1]=(d&0x0000FF00)>>8; x[i+2]=(d&0x00FF0000)>>16; x[i+3]=(d&0xFF000000)>>24
+#define serializeBigE16(x,d,i) x[i+1]=d&0x00FF; x[i]=(d&0xFF00)>>8
+#define serializeBigE32(x,d,i)x[i+3]=d&0x000000FF; x[i+2]=(d&0x0000FF00)>>8; x[i+1]=(d&0x00FF0000)>>16; x[i]=(d&0xFF000000)>>24
+
+
 #define false 0
 #define true !false
 
@@ -56,15 +73,17 @@ typedef uint8_t uv_status;
 typedef uint8_t uv_ext_device_id;
 typedef uint32_t uv_timespan_ms;
 
-#define MAX_INIT_TIME 2500//if the car takes more than 2.5 seconds to boot, something seems a little fishy
 
+#define MAX_INIT_TIME 2500//if the car takes more than 2.5 seconds to boot, something seems a little fishy
 #define INIT_CHECK_PERIOD 100
 
 //TASK MANAGEMENT MACROS
 
 /**	@brief This is meant to be a return type from functions that indicates what is actually going on
  *
- * Use this for things like initializing characters or
+ * Use this as a return value for functions you want to know the success of. In general,
+ * any function you write must return something, as well as account for any possible errors
+ * that may have occurred.
  *
  */
 enum uv_status_t{
@@ -87,12 +106,12 @@ enum uv_task_state{
  *	The states are powers of two to make it easier to discern tasks that need to happen in multiple states
  */
 enum uv_vehicle_state_t{
-	UV_INIT = 0x0001,
-	UV_READY = 0x0002,
-	PROGRAMMING = 0x0004,
-	UV_DRIVING = 0x0008,
+	UV_INIT = 0x0001, //Vehicle is Initialising
+	UV_READY = 0x0002, //Vehicle is ready to drive, but not actually driving
+	PROGRAMMING = 0x0004, //Vehicle is in proccess programming
+	UV_DRIVING = 0x0008, //actively driving
 	UV_SUSPENDED = 0x0010,
-	UV_LAUNCH_CONTROL = 0x0020,
+	UV_LAUNCH_CONTROL = 0x0020, //Launch control doing it's thing
 	UV_ERROR_STATE = 0x0040,
 	UV_BOOT = 0x0080,
 	UV_HALT = 0x0100
@@ -106,6 +125,9 @@ enum uv_driving_mode_t{
 	limp
 };
 
+/** @brief ID for external devices, which allows us to know what's good with them.
+ *
+ */
 enum uv_external_device{
 	MOTOR_CONTROLLER = 0,
 	BMS = 1,
@@ -113,8 +135,12 @@ enum uv_external_device{
 	PDU = 3
 };
 
+
+/** contains info relevant to initializing the vehicle
+ *
+ */
 typedef struct uv_init_struct{
-	bool use_default_settings;
+	bool use_default_settings;//Flag for using default settings
 
 }uv_init_struct;
 
@@ -138,13 +164,15 @@ typedef struct uv_init_struct{
  * @c task_handle is an osThreadId created by FreeRTOS when it initializes the task.
  * @c next exists because this shit needs to exist in a linked list, and my ass is too lazy to create a generic struct with it
  *
- * @field cmd_data stores the command we really want this task to execute
+ * @c cmd_data stores the command we really want this task to execute
  */
 typedef struct uv_task_info{
 	uv_task_id task_id;
 	char* task_name;
 
-	os_pthread task_function; //the thread function
+	uv_timespan_ms task_period;
+
+	TaskFunction_t task_function; //the thread function
 	osPriority task_priority; //priority of the task
 
 	uint32_t instances; //max number of task instances running at any moment
@@ -156,12 +184,13 @@ typedef struct uv_task_info{
 	uint16_t deletion_states; //corresponds to the vehicle states where the task should be suspended
 	uint16_t suspension_states; //when should the task be suspended? When it should exist, but shouldnt be active.
 
-	osThreadId task_handle;
+	TaskHandle_t task_handle;
 	struct uv_task_info* next;
 	uv_task_cmd cmd_data; //every task gets it's own personal queue to have commands in it
 
-	void* task_args;
+	void* task_args; //specific arguments for that task. Probably comes from the vehicle settings.
 
+	QueueHandle_t manager;
 
 
 }uv_task_info;
@@ -173,9 +202,9 @@ typedef struct uv_task_info{
  *
  */
 typedef struct uv_init_task_args{
-	void* specific_args;
-	QueueHandle_t init_info_queue;
-	osThreadId meta_task_handle;
+	void* specific_args; //anything specific here? This probably comes from the device settings.
+	QueueHandle_t init_info_queue; //reference to the initialisation queue
+	TaskHandle_t meta_task_handle; //Handle to itself, which it can use to delete itself
 }uv_init_task_args;
 
 typedef struct uv_internal_params{
@@ -183,11 +212,18 @@ typedef struct uv_internal_params{
 
 }uv_internal_params;
 
+
+/** @brief Struct representing the response of one of the initialization tasks.
+ *
+ * Is returned in the initialization queue, and is read by @c uvInit() to determine
+ * whether the initialization of the internal device has failed or succeeded.
+ *
+ */
 typedef struct uv_init_task_response{
-	uv_status status;
-	uv_ext_device_id device;
+	uv_status status; //Did it succeed? This gets to be a UV_OK if success
+	uv_ext_device_id device; //Which device was it
 	uint8_t nchar;
-	char* errmsg;
+	char* errmsg; //if we didn't succeed, then what went wrong?
 }uv_init_task_response;
 
 void uvInit(void * arguments);

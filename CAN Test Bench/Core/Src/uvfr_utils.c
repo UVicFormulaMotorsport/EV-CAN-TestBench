@@ -15,7 +15,7 @@
  */
 #include "uvfr_utils.h"
 
-extern osThreadId initTaskHandle;
+extern TaskHandle_t init_task_handle;
 
 
 /** @brief: Function that initializes all of the car's stuff.
@@ -28,9 +28,12 @@ extern osThreadId initTaskHandle;
  *
  */
 void uvInit(void * arguments){
+	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15);
+	//GPIOA->ODR = 0xFFFFFFFF;
+	//osDelay(500);
 
 	char* error_msg = NULL;
-	uint8_t msg_length = 0;
+	//uint8_t msg_length = 0;
 
 	/** First on the block is our settings. The uv_settings are a bit strange, in the following way.
 	 * We will check if we have saved custom settings, or if these settings are the default or not.
@@ -43,17 +46,17 @@ void uvInit(void * arguments){
 	 *
 	 */
 
-	if(uvSettingsInit() != UV_OK){
-		_uvInitPanic();
-
-		/** Next up we will attempt to initialize the state engine. If this fails, then we are in another case where we are genuinely unsafe to drive.
-		 * This will create the prototypes for a bajillion tasks that will be started and stopped. Which tasks are currently running,
-		 * depends on the whims of the state engine. Since the state engine is critical to our ability to handle errors and implausibilitys,
-		 * we cannot proceed without a fully operational state engine.
-		 */
-	}else if(uvInitStateEngine() != UV_OK){
-		_uvInitPanic();
-	}
+//	if(uvSettingsInit() != UV_OK){
+//		_uvInitPanic();
+//
+//		/** Next up we will attempt to initialize the state engine. If this fails, then we are in another case where we are genuinely unsafe to drive.
+//		 * This will create the prototypes for a bajillion tasks that will be started and stopped. Which tasks are currently running,
+//		 * depends on the whims of the state engine. Since the state engine is critical to our ability to handle errors and implausibilitys,
+//		 * we cannot proceed without a fully operational state engine.
+//		 */
+//	}else if(uvInitStateEngine() != UV_OK){
+//		_uvInitPanic();
+//	}
 
 	/** Once we have initialized the state engine, what we want to do is create the prototypes of all the
 	 * tasks that will be running.
@@ -66,10 +69,10 @@ void uvInit(void * arguments){
 	 * However, first we need to actually create a Queue for these tasks to use
 	 * @code
 	 */
-	QueueHandle_t init_validation_queue = xQueueCreate(8,sizeof(uv_init_task_response));
-	if(init_validation_queue == NULL){
-
-	}
+//	QueueHandle_t init_validation_queue = xQueueCreate(8,sizeof(uv_init_task_response));
+//	if(init_validation_queue == NULL){
+//
+//	}
 
 	/** @endcode
 	 * The next big thing on our plate is checking the status of all external devices we need, and initializing them with appropriate parameters.
@@ -77,23 +80,33 @@ void uvInit(void * arguments){
 	 * That is why it is split the way it is, to allow these to run somewhat concurrently
 	 * @code */
 
-	osThreadDef_t MC_init_thread = {"MC_init",MC_Startup,osPriorityNormal,128,0};
-	uv_init_task_args* MC_init_args = malloc(sizeof(uv_init_task_args));
-	MC_init_args->init_info_queue = init_validation_queue;
-	MC_init_args->specific_args = NULL;
-	MC_init_args->meta_task_handle = osThreadCreate(&MC_init_thread,MC_init_args);
-
+//	BaseType_t retval;
+//	//osThreadDef_t MC_init_thread = {"MC_init",MC_Startup,osPriorityNormal,128,0};
+//	uv_init_task_args* MC_init_args = malloc(sizeof(uv_init_task_args));
+//	MC_init_args->init_info_queue = init_validation_queue;
+//	MC_init_args->specific_args = &(current_vehicle_settings->bms_settings);
+//	//MC_init_args->meta_task_handle = osThreadCreate(&MC_init_thread,MC_init_args);
+//	//vTaskResume( MC_init_args->meta_task_handle );
+//	retval = xTaskCreate(MC_Startup,"MC_init",1024,MC_init_args,osPriorityAboveNormal,&(MC_init_args->meta_task_handle));
+//	if(retval != pdPASS){
+//		//FUCK
+//		error_msg = "bruh";
+//	}
 	/** @endcode
 	 * This thread is for initializing the BMS
 	 * @code */
 
 
-	osThreadDef_t BMS_init_thread = {"BMS_init",BMS_Init,osPriorityNormal,128,0};
-	uv_init_task_args* BMS_init_args = malloc(sizeof(uv_init_task_args));
-	BMS_init_args->init_info_queue = init_validation_queue;
-	BMS_init_args->specific_args = NULL;
-	BMS_init_args->meta_task_handle = osThreadCreate(&BMS_init_thread,BMS_init_args);
-
+	//osThreadDef_t BMS_init_thread = {"BMS_init",BMS_Init,osPriorityNormal,128,0};
+//	uv_init_task_args* BMS_init_args = malloc(sizeof(uv_init_task_args));
+//	BMS_init_args->init_info_queue = init_validation_queue;
+//	BMS_init_args->specific_args = &(current_vehicle_settings->bms_settings);
+	//BMS_init_args->meta_task_handle = osThreadCreate(&BMS_init_thread,BMS_init_args);
+//	retval = xTaskCreate(MC_Startup,"BMS_init",1024,BMS_init_args,osPriorityAboveNormal,&(BMS_init_args->meta_task_handle));
+//	if(retval != pdPASS){
+//		//FUCK
+//		error_msg = "bruh";
+//	}
 	/** @endcode
 	* This variable is a tracker that tracks which devices have successfully initialized
 	* @code*/
@@ -110,36 +123,48 @@ void uvInit(void * arguments){
 	 *
 	 */
 
-	uv_init_task_response rx_response;
+	if(error_msg != NULL){
+		while(1){
+
+		}
+	}
+
+//	if(BMS_init_args->meta_task_handle == NULL || MC_init_args->meta_task_handle == NULL){
+//		_uvInitPanic();
+//	}
+
+	//uv_init_task_response rx_response;
+	TickType_t last_time = xTaskGetTickCount();
 	for(int i = 0; i< MAX_INIT_TIME/INIT_CHECK_PERIOD; i++){
+		vTaskDelayUntil(&last_time,pdMS_TO_TICKS(INIT_CHECK_PERIOD));
 
-		while(xQueueReceive(init_validation_queue,&rx_response,0) == pdPASS){
-			if(rx_response.status == UV_OK){
-				ext_devices_status &= ~(_BV_16(rx_response.device));
-			}else{
-				error_msg = rx_response.errmsg;
-				msg_length = rx_response.nchar;
+//		while(xQueueReceive(init_validation_queue,&rx_response,0) == pdPASS){
+//			if(rx_response.status == UV_OK){
+//				ext_devices_status &= ~(_BV_16(rx_response.device));
+//			}else{
+//				error_msg = rx_response.errmsg;
+//				msg_length = rx_response.nchar;
+//
+//			}
+//
+//		}
 
-			}
-
-		}
 
 
-
-		if(ext_devices_status == 0){
-			//SUCCESS
-			//Set vehicle state to "idle"
-			if(changeVehicleState(UV_READY) == UV_OK){
-				break;
-			}else{
-				uvPanic("Unable To Change State to Ready",0);
-			}
-
-			//GTFO
-			break;
-		}else{
-			osDelay(INIT_CHECK_PERIOD);
-		}
+//		if(ext_devices_status == 0){
+//			//SUCCESS
+//			//Set vehicle state to "idle"
+//			if(changeVehicleState(UV_READY) == UV_OK){
+//				break;
+//			}else{
+//				uvPanic("Unable To Change State to Ready",0);
+//			}
+//
+//			//GTFO
+//			break;
+//		}else{
+//
+//		}
 	}
 	//If we get here, then we have timed out
 
@@ -151,15 +176,15 @@ void uvInit(void * arguments){
 	 *
 	 */
 
-	vTaskDelete(MC_init_args->meta_task_handle);
-	free(MC_init_args);
+	//vTaskDelete(MC_init_args->meta_task_handle);
+	//free(MC_init_args);
 
-	vTaskDelete(BMS_init_args->meta_task_handle);
-	free(BMS_init_args);
+	//vTaskDelete(BMS_init_args->meta_task_handle);
+	//free(BMS_init_args);
 
-	vQueueDelete(init_validation_queue);
-
-	vTaskDelete(initTaskHandle);
+	//vQueueDelete(init_validation_queue);
+	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15);
+	vTaskDelete(init_task_handle);
 	return;
 
 }

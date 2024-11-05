@@ -17,6 +17,7 @@ var dir_e2489e887f17afa3cbc07a4ec152cdd2 =
     [ "pdu.h", "pdu_8h.html", "pdu_8h" ],
     [ "stm32f4xx_hal_conf.h", "stm32f4xx__hal__conf_8h.html", "stm32f4xx__hal__conf_8h" ],
     [ "stm32f4xx_it.h", "stm32f4xx__it_8h.html", "stm32f4xx__it_8h" ],
+    [ "temp_monitoring.h", "temp__monitoring_8h.html", "temp__monitoring_8h" ],
     [ "tim.h", "tim_8h.html", "tim_8h" ],
     [ "uvfr_settings.h", "uvfr__settings_8h.html", "uvfr__settings_8h" ],
     [ "uvfr_state_engine.h", "uvfr__state__engine_8h.html", "uvfr__state__engine_8h" ],

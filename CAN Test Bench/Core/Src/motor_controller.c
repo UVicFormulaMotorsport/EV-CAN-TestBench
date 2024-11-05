@@ -258,6 +258,36 @@ void MC_Check_Firmware(uint8_t Data[]){
 
 void MC_Startup(void* args){
 	// MC_Send_Data(...)
+	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14);
+	uv_init_task_args* params = (uv_init_task_args*) args;
+
+	osDelay(200);
+
+	uv_init_task_response response = {UV_OK,MOTOR_CONTROLLER,0,NULL};
+
+	if(xQueueSendToBack(params->init_info_queue,&response,100) != pdPASS){
+		//OOPS
+	}
+
+	osDelay(100);
+
+	uv_init_task_response response2 = {UV_OK,IMD,0,NULL};
+	uv_init_task_response response3 = {UV_OK,PDU,0,NULL};
+
+	if(xQueueSendToBack(params->init_info_queue,&response2,100) != pdPASS){
+			//OOPS
+	}
+
+	if(xQueueSendToBack(params->init_info_queue,&response3,100) != pdPASS){
+			//OOPS
+	}
+
+	//Kill yourself
+
+	while(1){
+		vTaskDelay(100);
+	}
+	vTaskSuspend(params->meta_task_handle);
 }
 
 
