@@ -1,3 +1,67 @@
 \hypertarget{bms_8h}{}\doxysection{Core/\+Inc/bms.h File Reference}
 \label{bms_8h}\index{Core/Inc/bms.h@{Core/Inc/bms.h}}
 {\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structbms__settings__t}{bms\+\_\+settings\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{bms_8h_a0c88019b9a80e0a2b9820fb387e9e084}{D\+E\+F\+A\+U\+L\+T\+\_\+\+B\+M\+S\+\_\+\+C\+A\+N\+\_\+\+T\+I\+M\+E\+O\+UT}}~((\mbox{\hyperlink{uvfr__utils_8h_af1ca0b89ee88cdf48a7640d6ec793350}{uv\+\_\+timespan\+\_\+ms}})200)
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structbms__settings__t}{bms\+\_\+settings\+\_\+t}} \mbox{\hyperlink{bms_8h_ac82cefe2ce193c00fc1e6af97476c54d}{bms\+\_\+settings\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{bms_8h_aa9af83736568f74c94d41f3f16adf513}{B\+M\+S\+\_\+\+Init}} (void $\ast$args)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{bms_8h_a0c88019b9a80e0a2b9820fb387e9e084}\label{bms_8h_a0c88019b9a80e0a2b9820fb387e9e084}} 
+\index{bms.h@{bms.h}!DEFAULT\_BMS\_CAN\_TIMEOUT@{DEFAULT\_BMS\_CAN\_TIMEOUT}}
+\index{DEFAULT\_BMS\_CAN\_TIMEOUT@{DEFAULT\_BMS\_CAN\_TIMEOUT}!bms.h@{bms.h}}
+\doxysubsubsection{\texorpdfstring{DEFAULT\_BMS\_CAN\_TIMEOUT}{DEFAULT\_BMS\_CAN\_TIMEOUT}}
+{\footnotesize\ttfamily \#define D\+E\+F\+A\+U\+L\+T\+\_\+\+B\+M\+S\+\_\+\+C\+A\+N\+\_\+\+T\+I\+M\+E\+O\+UT~((\mbox{\hyperlink{uvfr__utils_8h_af1ca0b89ee88cdf48a7640d6ec793350}{uv\+\_\+timespan\+\_\+ms}})200)}
+
+
+
+Definition at line 11 of file bms.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{bms_8h_ac82cefe2ce193c00fc1e6af97476c54d}\label{bms_8h_ac82cefe2ce193c00fc1e6af97476c54d}} 
+\index{bms.h@{bms.h}!bms\_settings\_t@{bms\_settings\_t}}
+\index{bms\_settings\_t@{bms\_settings\_t}!bms.h@{bms.h}}
+\doxysubsubsection{\texorpdfstring{bms\_settings\_t}{bms\_settings\_t}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structbms__settings__t}{bms\+\_\+settings\+\_\+t}} \mbox{\hyperlink{structbms__settings__t}{bms\+\_\+settings\+\_\+t}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{bms_8h_aa9af83736568f74c94d41f3f16adf513}\label{bms_8h_aa9af83736568f74c94d41f3f16adf513}} 
+\index{bms.h@{bms.h}!BMS\_Init@{BMS\_Init}}
+\index{BMS\_Init@{BMS\_Init}!bms.h@{bms.h}}
+\doxysubsubsection{\texorpdfstring{BMS\_Init()}{BMS\_Init()}}
+{\footnotesize\ttfamily void B\+M\+S\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file bms.\+c.
+
+
+
+References B\+MS, uv\+\_\+init\+\_\+task\+\_\+args\+::init\+\_\+info\+\_\+queue, uv\+\_\+init\+\_\+task\+\_\+args\+::meta\+\_\+task\+\_\+handle, and U\+V\+\_\+\+OK.
+
+
+
+Referenced by uv\+Init().
+

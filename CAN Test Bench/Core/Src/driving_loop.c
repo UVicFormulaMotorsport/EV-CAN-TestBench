@@ -22,7 +22,42 @@ extern uint16_t adc1_APPS2;
 extern uint16_t adc1_BPS1;
 extern uint16_t adc1_BPS2;
 
+enum uv_status_t initDrivingLoop(void *argument){
+	uv_task_info* dl_task = uvCreateTask();
 
+	if(dl_task == NULL){
+		//Oh dear lawd
+		return UV_ERROR;
+	}
+
+
+	//DO NOT TOUCH ANY OF THE FIELDS WE HAVENT ALREADY MENTIONED HERE. FOR THE LOVE OF GOD.
+
+	//dl_task->task_name = malloc(16*sizeof(char));
+	//if(dl_task->task_name == NULL){
+		//return UV_ERROR; //failed to malloc the name of the thing
+	//}
+	dl_task->task_name = "Driving_Loop";
+
+
+	dl_task->task_function = StartDrivingLoop;
+	dl_task->task_priority = osPriorityHigh;
+
+	dl_task->instances = 1;
+	dl_task->stack_size = 256;
+
+	dl_task->active_states = UV_DRIVING;
+	dl_task->suspension_states = 0x00;
+	dl_task->deletion_states = UV_READY | PROGRAMMING | UV_LAUNCH_CONTROL | UV_ERROR_STATE;
+
+	dl_task->task_period = 100;//0.1 seconds
+
+	//
+
+	dl_task->task_args = NULL; //TODO: Add actual settings dipshit
+
+	return UV_OK;
+}
 
 /**@brief  Function implementing the ledTask thread.
  * @param  argument: Not used for now. Will have configuration settings later.
@@ -31,12 +66,15 @@ extern uint16_t adc1_BPS2;
  * This function is made to be the meat and potatoes of the entire vehicle.
  *
  */
-void StartDrivingLoop(void const * argument){
+void StartDrivingLoop(void * argument){
 	//Initialize driving loop now
 
 	/** The first thing we do here is create some local variables here, to cache whatever variables need cached.
 	 *	We will be caching variables that are used very frequently in every single loop iteration, and are not
 	 */
+
+	uv_task_info* params = (uv_task_info*) argument;
+
 	uint16_t min_apps_value;
 	uint16_t max_apps_value;
 
@@ -45,18 +83,12 @@ void StartDrivingLoop(void const * argument){
 
 	enum DL_internal_state dl_status = Plausible;
 
+	/** This line extracts the specific driving loop parameters as specified in the
+	 * vehicle settings
+	 @code*/
+	driving_loop_args* dl_params = (driving_loop_args*) params->task_args;
+	/**@endcode*/
 
-	drivingLoopArgs* dl_params = NULL;
-
-	drivingLoopArgs** arg = (drivingLoopArgs**) argument;
-
-	if(argument == NULL){
-		//argument = &default_dl_params;
-	}else{
-		dl_params = (drivingLoopArgs*) *arg;
-	}
-
-	dl_params = (drivingLoopArgs*) *arg;
 
 	min_apps_value = dl_params->min_apps_value;
 	max_apps_value = dl_params->max_apps_value;
@@ -64,7 +96,24 @@ void StartDrivingLoop(void const * argument){
 	min_apps_offset = dl_params->min_apps_offset; //minimum APPS offset
 	max_apps_offset = dl_params->max_apps_offset;
 
+	/**These here lines set the delay. This task executes exactly at the period specified, regardless of how long the task
+		 * execution actually takes
+		 *
+		 @code*/
+	TickType_t tick_period = pdMS_TO_TICKS(params->task_period); //Convert ms of period to the RTOS ticks
+	TickType_t last_time = xTaskGetTickCount();
+	/**@endcode */
 	for(;;){
+
+
+		if(params->cmd_data == UV_KILL_CMD){
+			killSelf(params);
+		}else if(params->cmd_data == UV_SUSPEND_CMD){
+			suspendSelf(params);
+		}
+		vTaskDelayUntil( &last_time, tick_period); //Me and the boys on our way to wait for a set period
+
+		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
 		//Read stuff from the addresses
 
 		//Copy the values over into new local variables, in order to avoid messing up the APPS
@@ -145,14 +194,14 @@ void StartDrivingLoop(void const * argument){
 
 		}
 
-		DL_end:
+		//DL_end:
 		//Set loose the ADC, and have it DMA the result into the variables
 
 
 
 
 		//Wait until next D.L. occurance
-		osDelay(DEFAULT_PERIOD);
+		//osDelay(DEFAULT_PERIOD);
 	}
 
 }

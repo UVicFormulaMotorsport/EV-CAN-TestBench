@@ -185,63 +185,32 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
     Error_Handler();
   }
 
-  uint8_t Data[8] = {0};
-  int CAN_ID = 0;
-  int DLC = 0;
+  //uint8_t Data[8] = {0};
+  //int CAN_ID = 0;
+  //int DLC = 0;
 
   // Extract the ID
-  if (RxHeader.IDE == CAN_ID_STD){
-	  CAN_ID = RxHeader.StdId;
-  }
-
-  if (RxHeader.IDE == CAN_ID_EXT){
-  	  CAN_ID = RxHeader.ExtId;
-  }
-
-
-  // Extract the data length
-  DLC = RxHeader.DLC; // Data Length Code
+//  if (RxHeader.IDE == CAN_ID_STD){
+//	  CAN_ID = RxHeader.StdId;
+//  }
+//
+//  if (RxHeader.IDE == CAN_ID_EXT){
+//  	  CAN_ID = RxHeader.ExtId;
+//  }
+//
+//
+//  // Extract the data length
+//  DLC = RxHeader.DLC; // Data Length Code
 
 
    // The data length will be different for each message, so we need to handle the possibilities
-   for (int i = 0; i < RxHeader.DLC; ++i){
-	   Data[i] = RxData[i];
-   }
-
-	// Figure out what device sent the message
-   // Call the appropriate device function
-   // FOR THE LOVE OF GOD DECIDE ON HOW TO HAVE THE IDs, WHY IS PDU HARDCODED? HUH?
-//   switch (CAN_ID){
-//	   case BMS_HEARTBEAT_ID:
-//
-//	   break;
-//	   case BMS_CAN_ID_1:
-//
-//
-//	   break;
-//	   case BMS_CAN_ID_2:
-//
-//	   case BMS_CAN_ID_3:
-//
-//	   break;
-//	   case 0x710:
-//		   // PDU
-//		   // Call the associated function TODO
-//	   break;
-//	   case MC_CAN_ID_Rx:
-//		   // Motor Controller
-//
-//	   break;
-//	   case IMD_CAN_ID_Rx:
-//		   // IMD
-//		   IMD_Parse_Message(DLC, Data);
-//	   break;
-//	   // Need more IDs
-//       default:
-//    		   // Not a correct CAN ID
-//    	   Error_Handler();
-//       break;
+//   for (int i = 0; i < RxHeader.DLC; ++i){
+//	   Data[i] = RxData[i];
 //   }
+
+   //TANNER AND FLO CALL YOUR FUNCTION HERE TO DO STUFF
+
+
 
 }
 

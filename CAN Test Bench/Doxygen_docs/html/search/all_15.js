@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['xidlestack_622',['xIdleStack',['../freertos_8c.html#af311b04396149ce536fe1a3b5f127445',1,'freertos.c']]],
-  ['xidletasktcbbuffer_623',['xIdleTaskTCBBuffer',['../freertos_8c.html#a2dd1013c5ef8f355ac2f1479e36ec659',1,'freertos.c']]],
-  ['xportpendsvhandler_624',['xPortPendSVHandler',['../_free_r_t_o_s_config_8h.html#a6f30022da7d797dd31f1b8a11cae9a35',1,'FreeRTOSConfig.h']]],
-  ['xportsystickhandler_625',['xPortSysTickHandler',['../_free_r_t_o_s_config_8h.html#ae42e6318b5d564e44f97f8c765859448',1,'FreeRTOSConfig.h']]]
+  ['warning_5f5_775',['warning_5',['../motor__controller_8h.html#a5e2fbf1b4105e76b330bcb6547533dffa3050ef440e4e82f9fb3973e1fb9faea7',1,'motor_controller.h']]],
+  ['warning_5f9_776',['warning_9',['../motor__controller_8h.html#a5e2fbf1b4105e76b330bcb6547533dffad53242de6aeaa134a78749bc60fec984',1,'motor_controller.h']]],
+  ['watchdog_5freset_777',['watchdog_reset',['../motor__controller_8h.html#a5e2fbf1b4105e76b330bcb6547533dffa357611869a1ec791b38a36ec2dfe09b9',1,'motor_controller.h']]]
 ];

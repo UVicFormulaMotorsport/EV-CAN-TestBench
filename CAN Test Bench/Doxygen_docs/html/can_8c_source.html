@@ -252,72 +252,74 @@ $(document).ready(function(){initNavTree('can_8c_source.html','');});
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <a class="code" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  }</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  uint8_t Data[8] = {0};</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="keywordtype">int</span> CAN_ID = 0;</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="keywordtype">int</span> DLC = 0;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;  <span class="comment">//uint8_t Data[8] = {0};</span></div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="comment">//int CAN_ID = 0;</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="comment">//int DLC = 0;</span></div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="comment">// Extract the ID</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>.IDE == CAN_ID_STD){</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;      CAN_ID = <a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>.StdId;</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>.IDE == CAN_ID_EXT){</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;      CAN_ID = <a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>.ExtId;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  }</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  <span class="comment">// Extract the data length</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  DLC = <a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>.DLC; <span class="comment">// Data Length Code</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">//  if (RxHeader.IDE == CAN_ID_STD){</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="comment">//    CAN_ID = RxHeader.StdId;</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">//  }</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="comment">//  if (RxHeader.IDE == CAN_ID_EXT){</span></div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="comment">//        CAN_ID = RxHeader.ExtId;</span></div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="comment">//  }</span></div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">//  // Extract the data length</span></div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">//  DLC = RxHeader.DLC; // Data Length Code</span></div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
 <div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;   <span class="comment">// The data length will be different for each message, so we need to handle the possibilities</span></div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>.DLC; ++i){</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;       Data[i] = <a class="code" href="constants_8h.html#a14629afcc7f0b2d62c2b617b07d98184">RxData</a>[i];</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;   }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;<span class="comment">//   for (int i = 0; i &lt; RxHeader.DLC; ++i){</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">//     Data[i] = RxData[i];</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;<span class="comment">//   }</span></div>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="comment">// Figure out what device sent the message</span></div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;   <span class="comment">// Call the appropriate device function</span></div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;   <span class="comment">// FOR THE LOVE OF GOD DECIDE ON HOW TO HAVE THE IDs, WHY IS PDU HARDCODED? HUH?</span></div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">//   switch (CAN_ID){</span></div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;<span class="comment">//     case BMS_HEARTBEAT_ID:</span></div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">//     break;</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">//     case BMS_CAN_ID_1:</span></div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">//     break;</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">//     case BMS_CAN_ID_2:</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">//     case BMS_CAN_ID_3:</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;   <span class="comment">//TANNER AND FLO CALL YOUR FUNCTION HERE TO DO STUFF</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="comment">// Figure out what device sent the message</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;   <span class="comment">// Call the appropriate device function</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;   <span class="comment">// FOR THE LOVE OF GOD DECIDE ON HOW TO HAVE THE IDs, WHY IS PDU HARDCODED? HUH?</span></div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;<span class="comment">//   switch (CAN_ID){</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="comment">//     case BMS_HEARTBEAT_ID:</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">//     break;</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">//     case BMS_CAN_ID_1:</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">//     break;</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">//     case BMS_CAN_ID_2:</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">//     break;</span></div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">//     case 0x710:</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">//         // PDU</span></div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">//         // Call the associated function TODO</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">//     break;</span></div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">//     case MC_CAN_ID_Rx:</span></div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">//         // Motor Controller</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">//     break;</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">//     case IMD_CAN_ID_Rx:</span></div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">//         // IMD</span></div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">//         IMD_Parse_Message(DLC, Data);</span></div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">//     break;</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">//     // Need more IDs</span></div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">//       default:</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">//             // Not a correct CAN ID</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">//         Error_Handler();</span></div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">//       break;</span></div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">//   }</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160; </div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;}</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">//     case BMS_CAN_ID_3:</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">//     break;</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">//     case 0x710:</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment">//         // PDU</span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">//         // Call the associated function TODO</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">//     break;</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">//     case MC_CAN_ID_Rx:</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">//         // Motor Controller</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">//     break;</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">//     case IMD_CAN_ID_Rx:</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">//         // IMD</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;<span class="comment">//         IMD_Parse_Message(DLC, Data);</span></div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="comment">//     break;</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="comment">//     // Need more IDs</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;<span class="comment">//       default:</span></div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;<span class="comment">//             // Not a correct CAN ID</span></div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;<span class="comment">//         Error_Handler();</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;<span class="comment">//       break;</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;<span class="comment">//   }</span></div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160; </div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;<span class="comment">// Here is where the second mailbox ISR would live</span></div>
-<div class="line"><a name="l00249"></a><span class="lineno"><a class="line" href="can_8c.html#a4c51ef84434a42d4c5f9524d361c0703">  249</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a4c51ef84434a42d4c5f9524d361c0703">HAL_CAN_RxFifo1MsgPendingCallback</a>(CAN_HandleTypeDef *<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>){</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    <span class="comment">// do something</span></div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;}</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;<span class="comment">/* USER CODE END 1 */</span></div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;}</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160; </div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;<span class="comment">// Here is where the second mailbox ISR would live</span></div>
+<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="can_8c.html#a4c51ef84434a42d4c5f9524d361c0703">  251</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a4c51ef84434a42d4c5f9524d361c0703">HAL_CAN_RxFifo1MsgPendingCallback</a>(CAN_HandleTypeDef *<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>){</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">// do something</span></div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;}</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;<span class="comment">/* USER CODE END 1 */</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="acan_8c_html_ab77168d14df04ccca5d48612ee21ced8"><div class="ttname"><a href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a></div><div class="ttdeci">CAN_HandleTypeDef hcan2</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00034">can.c:34</a></div></div>
@@ -327,8 +329,8 @@ $(document).ready(function(){initNavTree('can_8c_source.html','');});
 <div class="ttc" id="apdu_8h_html"><div class="ttname"><a href="pdu_8h.html">pdu.h</a></div></div>
 <div class="ttc" id="aconstants_8h_html_a3e35a666d459f2ac92fc7c35334ff0ff"><div class="ttname"><a href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a></div><div class="ttdeci">CAN_TxHeaderTypeDef TxHeader</div><div class="ttdef"><b>Definition:</b> <a href="constants_8c_source.html#l00004">constants.c:4</a></div></div>
 <div class="ttc" id="amotor__controller_8h_html"><div class="ttname"><a href="motor__controller_8h.html">motor_controller.h</a></div></div>
-<div class="ttc" id="acan_8c_html_a4c51ef84434a42d4c5f9524d361c0703"><div class="ttname"><a href="can_8c.html#a4c51ef84434a42d4c5f9524d361c0703">HAL_CAN_RxFifo1MsgPendingCallback</a></div><div class="ttdeci">void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00249">can.c:249</a></div></div>
-<div class="ttc" id="amain_8h_html_a1730ffe1e560465665eb47d9264826f9"><div class="ttname"><a href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is executed in case of error occurrence.</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00346">main.c:346</a></div></div>
+<div class="ttc" id="acan_8c_html_a4c51ef84434a42d4c5f9524d361c0703"><div class="ttname"><a href="can_8c.html#a4c51ef84434a42d4c5f9524d361c0703">HAL_CAN_RxFifo1MsgPendingCallback</a></div><div class="ttdeci">void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00251">can.c:251</a></div></div>
+<div class="ttc" id="amain_8h_html_a1730ffe1e560465665eb47d9264826f9"><div class="ttname"><a href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is executed in case of error occurrence.</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00343">main.c:343</a></div></div>
 <div class="ttc" id="aconstants_8h_html"><div class="ttname"><a href="constants_8h.html">constants.h</a></div></div>
 <div class="ttc" id="acan_8c_html_a1ee5cd592134235b6c07f676784d47c3"><div class="ttname"><a href="can_8c.html#a1ee5cd592134235b6c07f676784d47c3">MX_CAN2_Init</a></div><div class="ttdeci">void MX_CAN2_Init(void)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00037">can.c:37</a></div></div>
 <div class="ttc" id="aimd_8h_html"><div class="ttname"><a href="imd_8h.html">imd.h</a></div></div>

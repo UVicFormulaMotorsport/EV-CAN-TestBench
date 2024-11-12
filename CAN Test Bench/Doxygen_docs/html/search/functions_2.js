@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['can2_5frx0_5firqhandler_696',['CAN2_RX0_IRQHandler',['../stm32f4xx__it_8h.html#abf0ada95bd65ea0a24a25606a59a319d',1,'CAN2_RX0_IRQHandler(void):&#160;stm32f4xx_it.c'],['../stm32f4xx__it_8c.html#abf0ada95bd65ea0a24a25606a59a319d',1,'CAN2_RX0_IRQHandler(void):&#160;stm32f4xx_it.c']]],
-  ['can2_5frx1_5firqhandler_697',['CAN2_RX1_IRQHandler',['../stm32f4xx__it_8h.html#ac67a8abbbb2e08b8c48726f65716295f',1,'CAN2_RX1_IRQHandler(void):&#160;stm32f4xx_it.c'],['../stm32f4xx__it_8c.html#ac67a8abbbb2e08b8c48726f65716295f',1,'CAN2_RX1_IRQHandler(void):&#160;stm32f4xx_it.c']]]
+  ['bms_5finit_872',['BMS_Init',['../bms_8h.html#aa9af83736568f74c94d41f3f16adf513',1,'BMS_Init(void *args):&#160;bms.c'],['../bms_8c.html#aa9af83736568f74c94d41f3f16adf513',1,'BMS_Init(void *args):&#160;bms.c']]],
+  ['busfault_5fhandler_873',['BusFault_Handler',['../stm32f4xx__it_8h.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;stm32f4xx_it.c'],['../stm32f4xx__it_8c.html#a850cefb17a977292ae5eb4cafa9976c3',1,'BusFault_Handler(void):&#160;stm32f4xx_it.c']]]
 ];

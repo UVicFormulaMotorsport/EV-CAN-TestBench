@@ -1,7 +1,7 @@
 var dir_e2489e887f17afa3cbc07a4ec152cdd2 =
 [
     [ "adc.h", "adc_8h.html", "adc_8h" ],
-    [ "bms.h", "bms_8h.html", null ],
+    [ "bms.h", "bms_8h.html", "bms_8h" ],
     [ "can.h", "can_8h.html", "can_8h" ],
     [ "constants.h", "constants_8h.html", "constants_8h" ],
     [ "daq.h", "daq_8h.html", "daq_8h" ],
@@ -17,7 +17,9 @@ var dir_e2489e887f17afa3cbc07a4ec152cdd2 =
     [ "pdu.h", "pdu_8h.html", "pdu_8h" ],
     [ "stm32f4xx_hal_conf.h", "stm32f4xx__hal__conf_8h.html", "stm32f4xx__hal__conf_8h" ],
     [ "stm32f4xx_it.h", "stm32f4xx__it_8h.html", "stm32f4xx__it_8h" ],
+    [ "temp_monitoring.h", "temp__monitoring_8h.html", "temp__monitoring_8h" ],
     [ "tim.h", "tim_8h.html", "tim_8h" ],
     [ "uvfr_settings.h", "uvfr__settings_8h.html", "uvfr__settings_8h" ],
+    [ "uvfr_state_engine.h", "uvfr__state__engine_8h.html", "uvfr__state__engine_8h" ],
     [ "uvfr_utils.h", "uvfr__utils_8h.html", "uvfr__utils_8h" ]
 ];

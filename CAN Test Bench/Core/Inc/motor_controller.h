@@ -3,10 +3,16 @@
 // This file will define message data as human readable stuff
 
 
-#include "main.h"
+
 
 #ifndef __MOTOR_CONTROLLER_H__
 #define __MOTOR_CONTROLLER_H__
+
+#include "main.h"
+#include "uvfr_utils.h"
+#include "uvfr_settings.h"
+
+#define DEFAULT_MOTOR_CONTROLLER_CAN_TIMEOUT ((uv_timespan_ms)200)
 
 // Need to add enums for human readable register addresses and such
 
@@ -137,7 +143,9 @@ enum motor_controller_startup{
 	firmware_version = 0x1B,
 };
 
-
+typedef struct motor_controllor_settings{
+	uint32_t mc_CAN_timeout;
+}motor_controller_settings;
 
 // Function Declarations
 void MC_Parse_Message(int DLC, uint8_t Data[]);
@@ -149,7 +157,7 @@ void MC_Check_Error_Warning(uint8_t Data[]);
 void MC_Check_Serial_Number(uint8_t Data[]);
 void MC_Check_Firmware(uint8_t Data[]);
 
-void MC_Startup();
+void MC_Startup(void* args);
 
 
 

@@ -1,9 +1,10 @@
 var dir_b596f468b52957496e4f78b80e029268 =
 [
     [ "adc.c", "adc_8c.html", "adc_8c" ],
-    [ "bms.c", "bms_8c.html", null ],
+    [ "bms.c", "bms_8c.html", "bms_8c" ],
     [ "can.c", "can_8c.html", "can_8c" ],
     [ "constants.c", "constants_8c.html", "constants_8c" ],
+    [ "daq.c", "daq_8c.html", "daq_8c" ],
     [ "dash.c", "dash_8c.html", "dash_8c" ],
     [ "dma.c", "dma_8c.html", "dma_8c" ],
     [ "driving_loop.c", "driving__loop_8c.html", "driving__loop_8c" ],
@@ -19,7 +20,9 @@ var dir_b596f468b52957496e4f78b80e029268 =
     [ "syscalls.c", "syscalls_8c.html", "syscalls_8c" ],
     [ "sysmem.c", "sysmem_8c.html", "sysmem_8c" ],
     [ "system_stm32f4xx.c", "system__stm32f4xx_8c.html", "system__stm32f4xx_8c" ],
+    [ "temp_monitoring.c", "temp__monitoring_8c.html", "temp__monitoring_8c" ],
     [ "tim.c", "tim_8c.html", "tim_8c" ],
     [ "uvfr_settings.c", "uvfr__settings_8c.html", "uvfr__settings_8c" ],
-    [ "uvfr_utils.c", "uvfr__utils_8c.html", null ]
+    [ "uvfr_state_engine.c", "uvfr__state__engine_8c.html", "uvfr__state__engine_8c" ],
+    [ "uvfr_utils.c", "uvfr__utils_8c.html", "uvfr__utils_8c" ]
 ];

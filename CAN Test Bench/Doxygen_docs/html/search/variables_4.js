@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['daqsettings_805',['daqSettings',['../structuv_vehicle_settings.html#a21bc7d42747ba8b061dcf1b806e56b52',1,'uvVehicleSettings']]],
-  ['default_5fstate_806',['default_state',['../structuv__init__struct.html#a339f7db225251755ea108f402bcba002',1,'uv_init_struct']]],
-  ['desired_5fmotor_5fspeed_807',['desired_motor_speed',['../motor__controller_8c.html#a4ace1e40a5ea83b51078f64f9c777e3f',1,'motor_controller.c']]],
-  ['dm_5fname_808',['dm_name',['../structdriving_mode_params.html#aac478473f56579576163179d9b82fb4c',1,'drivingModeParams::dm_name()'],['../structdriving_mode.html#afe09b8e23f97ae6d60c225a7ac8a7d9a',1,'drivingMode::dm_name()']]],
-  ['dmodes_809',['dmodes',['../structdriving_loop_args.html#a24c01f59d1543feccd5e652b2e0a5fcd',1,'drivingLoopArgs']]],
-  ['drivingloophandle_810',['drivingLoopHandle',['../freertos_8c.html#a899d413c8689b5553b7b2b18f3df13b9',1,'freertos.c']]],
-  ['drivingloopsettings_811',['drivingLoopSettings',['../structuv_vehicle_settings.html#a5b4179a5f2cb728ab21e4c3d0a4c8451',1,'uvVehicleSettings']]]
+  ['daq_5flog1_1020',['daq_log1',['../structdaq__datapoint.html#a163d37f8129a5bc4dc93e00914d63a68',1,'daq_datapoint']]],
+  ['daq_5flog2_1021',['daq_log2',['../structdaq__datapoint.html#a869937a402a7fd43b6754f19b9f40107',1,'daq_datapoint']]],
+  ['daq_5fsettings_1022',['daq_settings',['../structuv__vehicle__settings.html#acd46494ba38f60f0c3f311322d41109c',1,'uv_vehicle_settings']]],
+  ['daq_5ftype1_1023',['daq_type1',['../structdaq__datapoint.html#a6337e307003f4cedfdff54ec26e47e87',1,'daq_datapoint']]],
+  ['daq_5ftype2_1024',['daq_type2',['../structdaq__datapoint.html#ae79dd12cf775ade8e7008d2cf48c534f',1,'daq_datapoint']]],
+  ['defaulttaskhandle_1025',['defaultTaskHandle',['../freertos_8c.html#aa658fe134a5d1309d7a15c8116fa142c',1,'freertos.c']]],
+  ['deletion_5fstates_1026',['deletion_states',['../structuv__task__info.html#a6986d7216c7f889164931b37ab752c29',1,'uv_task_info']]],
+  ['desired_5fmotor_5fspeed_1027',['desired_motor_speed',['../motor__controller_8c.html#a4ace1e40a5ea83b51078f64f9c777e3f',1,'motor_controller.c']]],
+  ['device_1028',['device',['../structuv__init__task__response.html#adfcb943d08344e528ad3d49c5c428918',1,'uv_init_task_response']]],
+  ['dm_5fname_1029',['dm_name',['../structdriving_mode.html#afe09b8e23f97ae6d60c225a7ac8a7d9a',1,'drivingMode']]],
+  ['dmodes_1030',['dmodes',['../structdriving__loop__args.html#a5f2e74a032f39217dd49b9d6b10921ce',1,'driving_loop_args']]],
+  ['driving_5floop_5fsettings_1031',['driving_loop_settings',['../structuv__vehicle__settings.html#a30d811062369a0c13c09acf8a6dbd8fb',1,'uv_vehicle_settings']]]
 ];

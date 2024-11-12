@@ -1,0 +1,45 @@
+var uvfr__state__engine_8h =
+[
+    [ "uv_scd_response", "structuv__scd__response.html", "structuv__scd__response" ],
+    [ "_LONGEST_SC_TIME", "uvfr__state__engine_8h.html#a2b86418bd482f9d4a2a36f35e786798e", null ],
+    [ "_SC_DAEMON_PERIOD", "uvfr__state__engine_8h.html#a092c530d4a0cd880a59598dc0fca95d4", null ],
+    [ "_UV_DEFAULT_TASK_INSTANCES", "uvfr__state__engine_8h.html#a20115c3c236542d702abb10565f381f2", null ],
+    [ "_UV_DEFAULT_TASK_PERIOD", "uvfr__state__engine_8h.html#a3ecc1e9c72ff5ba01649bf037186b015", null ],
+    [ "_UV_DEFAULT_TASK_STACK_SIZE", "uvfr__state__engine_8h.html#a32571accb85a2d8f479c6066d7a46238", null ],
+    [ "_UV_MIN_TASK_PERIOD", "uvfr__state__engine_8h.html#a7aab8d4b97eeacffeb153a91f70b5e6b", null ],
+    [ "uv_scd_response", "uvfr__state__engine_8h.html#a856f7f6f3b6b92f655aafc552606ffea", null ],
+    [ "uv_status", "uvfr__state__engine_8h.html#a27e96c74597bf4e85f968da673622b31", null ],
+    [ "uv_task_cmd", "uvfr__state__engine_8h.html#a81cd43c8eb07f488a7fbef0dc276e284", null ],
+    [ "uv_task_id", "uvfr__state__engine_8h.html#aa6ffd72eb4909ddb38c37a1369e13f09", null ],
+    [ "uv_scd_response_e", "uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76", [
+      [ "UV_SUCCESSFUL_DELETION", "uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76a886d929188a37a7fdae4b18b65a261ca", null ],
+      [ "UV_SUCCESSFUL_SUSPENSION", "uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76a75d7f4415a6450a9c3d35aaf7b9577cd", null ],
+      [ "UV_COULDNT_DELETE", "uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76aa66da42f9355512e286812074433015b", null ],
+      [ "UV_COULDNT_SUSPEND", "uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76a3c33585e5ac7f76a9bc4dc1fccb764ec", null ],
+      [ "UV_UNSAFE_STATE", "uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76a0dd4e6d2bbbde83536ed21ac4ce2bd00", null ]
+    ] ],
+    [ "uv_task_cmd_e", "uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455c", [
+      [ "UV_NO_CMD", "uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455ca3641b5b35403903b66faf4d615c3199d", null ],
+      [ "UV_KILL_CMD", "uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6", null ],
+      [ "UV_SUSPEND_CMD", "uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077", null ]
+    ] ],
+    [ "_stateChangeDaemon", "uvfr__state__engine_8h.html#a45e3dba55fdad745f7394feb3764cd0a", null ],
+    [ "_uvValidateSpecificTask", "uvfr__state__engine_8h.html#aeb45f9e769808c80cf3a76d28ea7424b", null ],
+    [ "changeVehicleState", "uvfr__state__engine_8h.html#a34bee422adb65dbf5f923281cf899601", null ],
+    [ "killEmAll", "uvfr__state__engine_8h.html#a20e6d890541b1349d47e1483394357ce", null ],
+    [ "killSelf", "uvfr__state__engine_8h.html#a40337f99ed3553119614d722da7e765d", null ],
+    [ "suspendSelf", "uvfr__state__engine_8h.html#a1696080304a0a849ec9d4d92701f910f", null ],
+    [ "updateRunningTasks", "uvfr__state__engine_8h.html#accc8a3290b8d5e61a3cc03d93f6bc394", null ],
+    [ "uvCreateTask", "uvfr__state__engine_8h.html#a5fb34d3f66377a9939da1a3a345bb48c", null ],
+    [ "uvDeInitStateEngine", "uvfr__state__engine_8h.html#a96aa2907ccf1903b18613447c3e404a3", null ],
+    [ "uvDeleteTask", "uvfr__state__engine_8h.html#a4c37d133e033a1de858150253a62a10d", null ],
+    [ "uvGetTaskById", "uvfr__state__engine_8h.html#ac77de2c18076b8e04742d2ca927dbd55", null ],
+    [ "uvInitStateEngine", "uvfr__state__engine_8h.html#ab907ac134ab31a8bcc534b1701304964", null ],
+    [ "uvPanic", "uvfr__state__engine_8h.html#a37727411bc0a7aeb66e40f63e4866217", null ],
+    [ "uvRegisterTask", "uvfr__state__engine_8h.html#a61e8135ace497b0e7e89b9515942d390", null ],
+    [ "uvStartStateMachine", "uvfr__state__engine_8h.html#a415f401ea7985271f803f935d925be34", null ],
+    [ "uvStartTask", "uvfr__state__engine_8h.html#a670c601b0f61040ae49ef375daf543a8", null ],
+    [ "uvSuspendTask", "uvfr__state__engine_8h.html#ae553a8ada4f75a30c87b7e8e1d6b928e", null ],
+    [ "uvValidateManagedTasks", "uvfr__state__engine_8h.html#a8c1618caac0d7f29836107f1a44833e8", null ],
+    [ "vehicle_state", "uvfr__state__engine_8h.html#a2f58cf65b3566bc390600f877f8bed35", null ]
+];

@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['uv_5finit_5fstruct_630',['uv_init_struct',['../structuv__init__struct.html',1,'']]],
-  ['uv_5finternal_5fparams_631',['uv_internal_params',['../structuv__internal__params.html',1,'']]],
-  ['uv_5ftask_5finfo_632',['uv_task_info',['../structuv__task__info.html',1,'']]],
-  ['uvvehiclesettings_633',['uvVehicleSettings',['../structuv_vehicle_settings.html',1,'']]]
+  ['daq_5fdatapoint_783',['daq_datapoint',['../structdaq__datapoint.html',1,'']]],
+  ['daq_5floop_5fargs_784',['daq_loop_args',['../structdaq__loop__args.html',1,'']]],
+  ['daq_5ftype_785',['daq_type',['../uniondaq__type.html',1,'']]],
+  ['driving_5floop_5fargs_786',['driving_loop_args',['../structdriving__loop__args.html',1,'']]],
+  ['drivingloopargs_787',['drivingLoopArgs',['../structdriving_loop_args.html',1,'']]],
+  ['drivingmode_788',['drivingMode',['../structdriving_mode.html',1,'']]],
+  ['drivingmodeparams_789',['drivingModeParams',['../structdriving_mode_params.html',1,'']]]
 ];

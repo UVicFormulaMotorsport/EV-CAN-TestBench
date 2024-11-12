@@ -1,5 +1,8 @@
 var motor__controller_8h =
 [
+    [ "motor_controllor_settings", "structmotor__controllor__settings.html", "structmotor__controllor__settings" ],
+    [ "DEFAULT_MOTOR_CONTROLLER_CAN_TIMEOUT", "motor__controller_8h.html#acc0df233686dd4cf6256fcab0473860e", null ],
+    [ "motor_controller_settings", "motor__controller_8h.html#ac9389d71d481a5381fe1d1e23b1e4ecc", null ],
     [ "motor_controller_current_parameters", "motor__controller_8h.html#aefe525453e2d5fb5ff19de9f98247c7c", [
       [ "todo1", "motor__controller_8h.html#aefe525453e2d5fb5ff19de9f98247c7cafa32268e686878b8024c674367c01767", null ]
     ] ],
@@ -112,6 +115,6 @@ var motor__controller_8h =
     [ "MC_Request_Data", "motor__controller_8h.html#af6b3a4911f1bdac54d84b4dcc7b7ec4a", null ],
     [ "MC_Send_Data", "motor__controller_8h.html#af2e573366a03a695a8ba760440848206", null ],
     [ "MC_Speed_Control", "motor__controller_8h.html#a2e1d07308c1e5e2ed72857a078b73cdf", null ],
-    [ "MC_Startup", "motor__controller_8h.html#a92ca6a696bcc7e4e5618dcc9fbdad617", null ],
+    [ "MC_Startup", "motor__controller_8h.html#aed1407e1e0fd59dc7c5e5d6db671f0ab", null ],
     [ "MC_Torque_Control", "motor__controller_8h.html#aa7294768824898480b6bcf6e98daa926", null ]
 ];

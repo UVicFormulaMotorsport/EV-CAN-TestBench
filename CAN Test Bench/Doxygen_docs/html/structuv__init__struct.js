@@ -1,6 +1,4 @@
 var structuv__init__struct =
 [
-    [ "activestates", "structuv__init__struct.html#a57e72add1df2a857846e34ce41322b0d", null ],
-    [ "default_state", "structuv__init__struct.html#a339f7db225251755ea108f402bcba002", null ],
-    [ "task_handle", "structuv__init__struct.html#ad5f318a66451dbc67bd67989781239a4", null ]
+    [ "use_default_settings", "structuv__init__struct.html#a5275182451a7f4931006e5ff393f1cdb", null ]
 ];

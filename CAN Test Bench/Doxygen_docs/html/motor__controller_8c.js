@@ -7,7 +7,7 @@ var motor__controller_8c =
     [ "MC_Request_Data", "motor__controller_8c.html#af6b3a4911f1bdac54d84b4dcc7b7ec4a", null ],
     [ "MC_Send_Data", "motor__controller_8c.html#af2e573366a03a695a8ba760440848206", null ],
     [ "MC_Speed_Control", "motor__controller_8c.html#a3e61bae23f49ccade082cc420bf39876", null ],
-    [ "MC_Startup", "motor__controller_8c.html#a92ca6a696bcc7e4e5618dcc9fbdad617", null ],
+    [ "MC_Startup", "motor__controller_8c.html#aed1407e1e0fd59dc7c5e5d6db671f0ab", null ],
     [ "MC_Torque_Control", "motor__controller_8c.html#aa7294768824898480b6bcf6e98daa926", null ],
     [ "MC_Validate", "motor__controller_8c.html#ac592ffd65d2793aadca7ca158a3d2dbc", null ],
     [ "ADC_percentage", "motor__controller_8c.html#a58a0faab11d05a311fdbd7770a3d845b", null ],
