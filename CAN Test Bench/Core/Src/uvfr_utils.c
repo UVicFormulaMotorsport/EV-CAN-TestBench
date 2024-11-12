@@ -5,14 +5,8 @@
  *      Author: byo10
  */
 
-/** @brief This function will initialize all of the uvfr wrappers, and system variables, as well as performing
- * internal diagnostics.
- *
- * This function has 3 phases.
- * 1) It loads up settings from flash if they exist.
- * 2) It starts up the uv_state_engine
- *
- */
+
+#define UV_UTILS_SRC_IMPLIMENTATION
 #include "uvfr_utils.h"
 
 extern TaskHandle_t init_task_handle;
@@ -25,15 +19,22 @@ extern TaskHandle_t init_task_handle;
  * peripherals using HAL. Now we get to configure our convoluted system of OS-level
  * settings and state machines.
  *
+ * It executes the following functions, in order:
+ * - Load Vehicle Settings
+ * - Initialize and Start State Machine
+ * - Start Service Tasks
+ * - Initialize External Devices such as BMS, IMD, Motor Controller
+ * - Validate that these devices have actually booted up
+ * - Set vehicle state to @c UV_READY
  *
+ *	Pretty important shit if you ask me.
  */
 void uvInit(void * arguments){
-	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15);
-	//GPIOA->ODR = 0xFFFFFFFF;
-	//osDelay(500);
+	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15); //For debugging purposes, I wanna see if we actually end up here at some point
+
 
 	char* error_msg = NULL;
-	//uint8_t msg_length = 0;
+	uint8_t msg_length = 0;
 
 	/** First on the block is our settings. The uv_settings are a bit strange, in the following way.
 	 * We will check if we have saved custom settings, or if these settings are the default or not.
@@ -46,17 +47,23 @@ void uvInit(void * arguments){
 	 *
 	 */
 
-//	if(uvSettingsInit() != UV_OK){
-//		_uvInitPanic();
-//
-//		/** Next up we will attempt to initialize the state engine. If this fails, then we are in another case where we are genuinely unsafe to drive.
-//		 * This will create the prototypes for a bajillion tasks that will be started and stopped. Which tasks are currently running,
-//		 * depends on the whims of the state engine. Since the state engine is critical to our ability to handle errors and implausibilitys,
-//		 * we cannot proceed without a fully operational state engine.
-//		 */
-//	}else if(uvInitStateEngine() != UV_OK){
-//		_uvInitPanic();
-//	}
+	if(uvSettingsInit() != UV_OK){
+		__uvInitPanic();
+
+		/** Next up we will attempt to initialize the state engine. If this fails, then we are in another case where we are genuinely unsafe to drive.
+		 * This will create the prototypes for a bajillion tasks that will be started and stopped. Which tasks are currently running,
+		 * depends on the whims of the state engine. Since the state engine is critical to our ability to handle errors and implausibilitys,
+		 * we cannot proceed without a fully operational state engine.
+		 */
+	}else if(uvInitStateEngine() != UV_OK){
+		__uvInitPanic();
+
+		/** Once the state machine is initialized we get to actually start the thing.
+		 *
+		 */
+	}else if(uvStartStateMachine() != UV_OK){
+		__uvInitPanic();
+	}
 
 	/** Once we have initialized the state engine, what we want to do is create the prototypes of all the
 	 * tasks that will be running.
@@ -69,10 +76,10 @@ void uvInit(void * arguments){
 	 * However, first we need to actually create a Queue for these tasks to use
 	 * @code
 	 */
-//	QueueHandle_t init_validation_queue = xQueueCreate(8,sizeof(uv_init_task_response));
-//	if(init_validation_queue == NULL){
-//
-//	}
+	QueueHandle_t init_validation_queue = xQueueCreate(8,sizeof(uv_init_task_response));
+	if(init_validation_queue == NULL){
+
+	}
 
 	/** @endcode
 	 * The next big thing on our plate is checking the status of all external devices we need, and initializing them with appropriate parameters.
@@ -80,33 +87,33 @@ void uvInit(void * arguments){
 	 * That is why it is split the way it is, to allow these to run somewhat concurrently
 	 * @code */
 
-//	BaseType_t retval;
-//	//osThreadDef_t MC_init_thread = {"MC_init",MC_Startup,osPriorityNormal,128,0};
-//	uv_init_task_args* MC_init_args = malloc(sizeof(uv_init_task_args));
-//	MC_init_args->init_info_queue = init_validation_queue;
-//	MC_init_args->specific_args = &(current_vehicle_settings->bms_settings);
-//	//MC_init_args->meta_task_handle = osThreadCreate(&MC_init_thread,MC_init_args);
-//	//vTaskResume( MC_init_args->meta_task_handle );
-//	retval = xTaskCreate(MC_Startup,"MC_init",1024,MC_init_args,osPriorityAboveNormal,&(MC_init_args->meta_task_handle));
-//	if(retval != pdPASS){
-//		//FUCK
-//		error_msg = "bruh";
-//	}
+	BaseType_t retval;
+	//osThreadDef_t MC_init_thread = {"MC_init",MC_Startup,osPriorityNormal,128,0};
+	uv_init_task_args* MC_init_args = uvMalloc(sizeof(uv_init_task_args));
+	MC_init_args->init_info_queue = init_validation_queue;
+	MC_init_args->specific_args = &(current_vehicle_settings->bms_settings);
+	//MC_init_args->meta_task_handle = osThreadCreate(&MC_init_thread,MC_init_args);
+	//vTaskResume( MC_init_args->meta_task_handle );
+	retval = xTaskCreate(MC_Startup,"MC_init",256,MC_init_args,osPriorityAboveNormal,&(MC_init_args->meta_task_handle));
+	if(retval != pdPASS){
+		//FUCK
+		error_msg = "bruh";
+	}
 	/** @endcode
 	 * This thread is for initializing the BMS
 	 * @code */
 
 
 	//osThreadDef_t BMS_init_thread = {"BMS_init",BMS_Init,osPriorityNormal,128,0};
-//	uv_init_task_args* BMS_init_args = malloc(sizeof(uv_init_task_args));
-//	BMS_init_args->init_info_queue = init_validation_queue;
-//	BMS_init_args->specific_args = &(current_vehicle_settings->bms_settings);
+	uv_init_task_args* BMS_init_args = uvMalloc(sizeof(uv_init_task_args));
+	BMS_init_args->init_info_queue = init_validation_queue;
+	BMS_init_args->specific_args = &(current_vehicle_settings->bms_settings);
 	//BMS_init_args->meta_task_handle = osThreadCreate(&BMS_init_thread,BMS_init_args);
-//	retval = xTaskCreate(MC_Startup,"BMS_init",1024,BMS_init_args,osPriorityAboveNormal,&(BMS_init_args->meta_task_handle));
-//	if(retval != pdPASS){
-//		//FUCK
-//		error_msg = "bruh";
-//	}
+	retval = xTaskCreate(BMS_Init,"BMS_init",256,BMS_init_args,osPriorityAboveNormal,&(BMS_init_args->meta_task_handle));
+	if(retval != pdPASS){
+		//FUCK
+		error_msg = "bruh";
+	}
 	/** @endcode
 	* This variable is a tracker that tracks which devices have successfully initialized
 	* @code*/
@@ -124,47 +131,47 @@ void uvInit(void * arguments){
 	 */
 
 	if(error_msg != NULL){
-		while(1){
-
-		}
+		__uvInitPanic();
 	}
 
-//	if(BMS_init_args->meta_task_handle == NULL || MC_init_args->meta_task_handle == NULL){
-//		_uvInitPanic();
-//	}
-
-	//uv_init_task_response rx_response;
+	if(BMS_init_args->meta_task_handle == NULL || MC_init_args->meta_task_handle == NULL){
+		__uvInitPanic();
+	}
+	/** We allocate space for a response from the initialization.
+	 *
+	 */
+	uv_init_task_response rx_response;
 	TickType_t last_time = xTaskGetTickCount();
 	for(int i = 0; i< MAX_INIT_TIME/INIT_CHECK_PERIOD; i++){
 		vTaskDelayUntil(&last_time,pdMS_TO_TICKS(INIT_CHECK_PERIOD));
 
-//		while(xQueueReceive(init_validation_queue,&rx_response,0) == pdPASS){
-//			if(rx_response.status == UV_OK){
-//				ext_devices_status &= ~(_BV_16(rx_response.device));
-//			}else{
-//				error_msg = rx_response.errmsg;
-//				msg_length = rx_response.nchar;
-//
-//			}
-//
-//		}
+		while(xQueueReceive(init_validation_queue,&rx_response,0) == pdPASS){
+			if(rx_response.status == UV_OK){
+				ext_devices_status &= ~(0x01<<rx_response.device);
+			}else{
+				error_msg = rx_response.errmsg;
+				msg_length = rx_response.nchar;
+
+			}
+
+		}
 
 
 
-//		if(ext_devices_status == 0){
-//			//SUCCESS
-//			//Set vehicle state to "idle"
-//			if(changeVehicleState(UV_READY) == UV_OK){
-//				break;
-//			}else{
-//				uvPanic("Unable To Change State to Ready",0);
-//			}
-//
-//			//GTFO
-//			break;
-//		}else{
-//
-//		}
+		if(ext_devices_status == 0){
+			//SUCCESS
+			//Set vehicle state to "idle"
+			if(changeVehicleState(UV_READY) == UV_OK){
+				break;
+			}else{
+				uvPanic("Unable To Change State to Ready",0);
+			}
+
+			//GTFO
+			break;
+		}else{
+
+		}
 	}
 	//If we get here, then we have timed out
 
@@ -176,11 +183,11 @@ void uvInit(void * arguments){
 	 *
 	 */
 
-	//vTaskDelete(MC_init_args->meta_task_handle);
-	//free(MC_init_args);
+	vTaskDelete(MC_init_args->meta_task_handle);
+	free(MC_init_args);
 
-	//vTaskDelete(BMS_init_args->meta_task_handle);
-	//free(BMS_init_args);
+	vTaskDelete(BMS_init_args->meta_task_handle);
+	free(BMS_init_args);
 
 	//vQueueDelete(init_validation_queue);
 	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15);
@@ -192,10 +199,10 @@ void uvInit(void * arguments){
 /**@brief This function is a soft-reboot of the uv_utils_backend and OS abstraction.
  *
  * The idea here is to basically start from a blank slate and boot up everything. So therefore we must:
- * Halt state machine.
- * Nuke vehicle operation related tasks.
- * Nuke the state machine
- * Nuke old settings
+ * - Halt state machine.
+ * - Nuke vehicle operation related tasks.
+ * - Nuke the state machine
+ * - Nuke old settings
  *
  * reinitialize uv_utils
  *
@@ -205,7 +212,9 @@ enum uv_status_t uvUtilsReset(){
 	return UV_OK;
 }
 
-
+/** @deprecated I really dunno why this still exists
+ *
+ */
 void setup_extern_devices(void * argument){
 
 
@@ -218,7 +227,7 @@ void setup_extern_devices(void * argument){
  * the vehicle from entering an invalid state.
  *
  */
-void _uvInitPanic(){ //Shit is so fucked up the thing couldn't properly initialize itself even.
+void __uvInitPanic(){ //Shit is so fucked up the thing couldn't properly initialize itself even.
 	//Ensure vehicle defaults to safe state
 
 	//Kill all tasks
@@ -232,6 +241,177 @@ void _uvInitPanic(){ //Shit is so fucked up the thing couldn't properly initiali
 	while(1){//We want the program to straight up hang itself
 
 	}
+}
+
+/** @brief Wrapper function for @c malloc() that makes it thread safe
+ *
+ * This typically appears in a macro expansion from @c uvMalloc(x)
+ *
+ */
+void * __uvMallocCritSection(size_t memrequest){
+	void* ptr = NULL;
+	uint8_t oopsie_detected = 0;
+
+	if(memrequest == 0){
+		return NULL;
+	}
+
+	vTaskSuspendAll();
+
+	ptr = malloc(memrequest);
+
+	if(ptr == NULL){
+		oopsie_detected = 1;
+	}
+
+
+	if( xTaskResumeAll() == pdTRUE){
+
+
+	}else{
+
+	}
+
+	if(oopsie_detected){
+		return NULL;
+	}
+
+	return ptr;
+}
+
+/** @brief Thread-safe wrapper for @c free
+ *
+ * This is typically called from the macro expansion of @c uvFree(x)
+ *
+ */
+uv_status __uvFreeCritSection(void* ptr){
+	if(ptr == NULL){
+		return UV_ERROR;//Cant free something that doesnt exist
+	}
+
+	if(uvIsPTRValid(ptr)!= UV_OK){
+		return UV_ERROR;
+	}
+
+	vTaskSuspendAll();
+
+	free(ptr);
+
+	if(xTaskResumeAll() != pdTRUE){
+		//NOT A GOOD TIME
+		//uvPanic("couldnt restart scheduler",0);
+	}
+	return UV_OK;
+}
+
+/** @brief @c malloc() wrapper that calls pvPortMalloc() rather than malloc()
+ *
+ * The reason we might wanto to be using pvPortMalloc() rather than regular stdlib malloc()
+ * is to consolodate the heap between RTOS and non-RTOS functions.
+ *
+ */
+void* __uvMallocOS(size_t memrequest){
+	if(memrequest == 0){
+		return NULL;
+	}else if(memrequest > UV_MALLOC_LIMIT){
+		return NULL;
+	}
+
+	void* retval = NULL;
+
+	retval = pvPortMalloc(memrequest);
+
+	if(retval == NULL){
+		uvPanic("OS Malloc Failed",0);
+	}else if(uvISPTRValid(retval) != UV_OK){
+		return NULL;
+	}
+
+	return retval;
+}
+
+/** @brief OS-based free wrapper that calls pvPortFree
+ *
+ */
+uv_status __uvFreeOS(void* ptr){
+	if(ptr == NULL){
+		return UV_ERROR;
+	}
+
+	if(uvIsPTRValid(ptr) != UV_OK){
+		return UV_ERROR;
+	}
+
+	vPortFree(ptr);
+
+	return UV_OK;
+}
+
+/** @brief function that checks to make sure a pointer points to a place it is allowed to point to
+ *
+ * The primary motivation for this is to avoid trying to dereference a pointer that doesnt exist, and
+ * triggering the HardFaultHandler(). That is never a fun time.
+ * This allows us to exit gracefully instead of getting stuck in an IRQ handler
+ *
+ * Exiting gracefully can be pretty neat sometimes.
+ */
+uv_status uvIsPTRValid(void* ptr){
+	if(ptr == NULL){
+		return UV_WARNING;
+	}
+	uint32_t pval = (uint32_t)ptr;
+
+	//bool is_valid = false;
+
+	if(pval < 0x000FFFFF){ //Aliased to FLASH, systmem or SRAM
+		return UV_OK;
+	}
+
+	if((pval > 0x08000000)&& (pval < 0x080FFFFF)){ //Flash be like
+		return UV_OK;
+	}
+
+	if((pval > 0x10000000)&&(pval < 0x1000FFFF)){ //CCM Data RAM
+		return UV_OK;
+	}
+
+	if((pval > 0x1FFF0000)&&(pval < 0x1FFF7A0F)){ //System memory + OTP
+		return UV_OK;
+	}
+
+	if((pval > 0x1FFFC000)&&(pval < 0x1FFFC007)){ //option bytes (should these be user accessable under any circumstances?)
+		return UV_WARNING;
+	}
+
+	if((pval > 0x20000000)&&(pval < 0x2001FFFF)){ //SRAM :)
+		return UV_OK;
+	}
+
+	if((pval > 0x40000000)&&(pval < 0x40007FFF)){ //APB1
+		return UV_OK;
+	}
+
+	if((pval > 0x40010000)&&(pval < 0x400157FF)){ //APB2
+		return UV_OK;
+	}
+
+	if((pval > 0x40020000)&&(pval < 0x4007FFFF)){ //AHB1
+		return UV_OK;
+	}
+
+	if((pval > 0x50000000)&&(pval < 0x50060BFF)){//AHB2
+		return UV_OK;
+	}
+
+	if((pval > 0x60000000)&&(pval < 0xA0000FFF)){//AHB3
+		return UV_OK;
+	}
+
+	if((pval > 0xE0000000)&&(pval < 0xE00FFFFF)){//
+		return UV_OK;
+	}
+
+	return UV_ERROR;
 }
 
 

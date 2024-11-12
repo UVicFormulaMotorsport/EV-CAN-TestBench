@@ -35,7 +35,9 @@ var searchData=
   ['_5fuv_5fdefault_5ftask_5fperiod_32',['_UV_DEFAULT_TASK_PERIOD',['../uvfr__state__engine_8h.html#a3ecc1e9c72ff5ba01649bf037186b015',1,'uvfr_state_engine.h']]],
   ['_5fuv_5fdefault_5ftask_5fstack_5fsize_33',['_UV_DEFAULT_TASK_STACK_SIZE',['../uvfr__state__engine_8h.html#a32571accb85a2d8f479c6066d7a46238',1,'uvfr_state_engine.h']]],
   ['_5fuv_5fmin_5ftask_5fperiod_34',['_UV_MIN_TASK_PERIOD',['../uvfr__state__engine_8h.html#a7aab8d4b97eeacffeb153a91f70b5e6b',1,'uvfr_state_engine.h']]],
-  ['_5fuvinitpanic_35',['_uvInitPanic',['../uvfr__utils_8h.html#a3680dbdd328bffe299521c704147d587',1,'_uvInitPanic():&#160;uvfr_utils.c'],['../uvfr__utils_8c.html#a3680dbdd328bffe299521c704147d587',1,'_uvInitPanic():&#160;uvfr_utils.c']]],
-  ['_5fuvvalidatespecifictask_36',['_uvValidateSpecificTask',['../uvfr__state__engine_8h.html#aeb45f9e769808c80cf3a76d28ea7424b',1,'_uvValidateSpecificTask(uint8_t id):&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#af342326f88e8accc1efa35e02cdd6c37',1,'_uvValidateSpecificTask(uv_task_id id):&#160;uvfr_state_engine.c']]],
-  ['_5fwait_37',['_wait',['../syscalls_8c.html#aeef0c3372d04caa1bcc99fed2ab6ec72',1,'syscalls.c']]]
+  ['_5fuvfree_35',['_uvFree',['../uvfr__utils_8c.html#a4287e71d29c7f9620eab6764e494499f',1,'uvfr_utils.c']]],
+  ['_5fuvinitpanic_36',['_uvInitPanic',['../uvfr__utils_8h.html#a3680dbdd328bffe299521c704147d587',1,'_uvInitPanic():&#160;uvfr_utils.c'],['../uvfr__utils_8c.html#a3680dbdd328bffe299521c704147d587',1,'_uvInitPanic():&#160;uvfr_utils.c']]],
+  ['_5fuvmalloc_37',['_uvMalloc',['../uvfr__utils_8c.html#ac920b4bc5ef3767eba0b6d20ef68420d',1,'uvfr_utils.c']]],
+  ['_5fuvvalidatespecifictask_38',['_uvValidateSpecificTask',['../uvfr__state__engine_8h.html#aeb45f9e769808c80cf3a76d28ea7424b',1,'_uvValidateSpecificTask(uint8_t id):&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#af342326f88e8accc1efa35e02cdd6c37',1,'_uvValidateSpecificTask(uv_task_id id):&#160;uvfr_state_engine.c']]],
+  ['_5fwait_39',['_wait',['../syscalls_8c.html#aeef0c3372d04caa1bcc99fed2ab6ec72',1,'syscalls.c']]]
 ];

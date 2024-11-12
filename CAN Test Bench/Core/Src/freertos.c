@@ -158,6 +158,7 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
 	//EVIL GOTO HACK - DO NOT TOUCH
+	/**@attention DONT YOU FUCKING DARE DELETE THESE GOTO STATEMENTS, THEY ARE CRITICAL TO STOP THE OS FROM HANGING ITSELF */
 	goto MX_FREERTOS_INIT_IGNORE_CMSIS;
   /* USER CODE END RTOS_QUEUES */
 
@@ -170,10 +171,10 @@ void MX_FREERTOS_Init(void) {
   /* add threads, ... */
   MX_FREERTOS_INIT_IGNORE_CMSIS:
 
-  BaseType_t x_task_return = xTaskCreate(uvInit,"init",1024,&init_settings,osPriorityNormal,&init_task_handle);
+  BaseType_t x_task_return = xTaskCreate(uvInit,"init",512,&init_settings,osPriorityNormal,&init_task_handle);
   if(x_task_return != pdPASS){
 	  while(1){
-		  //AAA
+		  //Program hangs itself, like bro, we couldnt even create the INITIALISATION task, thats fucked
 	  }
   }
   /* USER CODE END RTOS_THREADS */
@@ -183,8 +184,7 @@ void MX_FREERTOS_Init(void) {
 /* USER CODE BEGIN Header_StartDefaultTask */
 /**
   * @brief  Function implementing the defaultTask thread.
-  * @param  argument: Not used
-  * @retval None
+  * @attention DO NOT EVER CALL THIS. IT EXISTS TO STOP A COMPILER ERROR IN THE MX_FREERTOS_INIT FUNCTION
   */
 /* USER CODE END Header_StartDefaultTask */
 void StartDefaultTask(void const * argument)

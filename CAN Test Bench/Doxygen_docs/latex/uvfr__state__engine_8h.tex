@@ -282,7 +282,7 @@ Wait for all the tasks that had changes made to respond.
 \DoxyCodeLine{}
 \DoxyCodeLine{BaseType\_t queue\_read\_status;}
 \DoxyCodeLine{\textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{uvfr__state__engine_8h_a2b86418bd482f9d4a2a36f35e786798e}{\_LONGEST\_SC\_TIME}}/\mbox{\hyperlink{uvfr__state__engine_8h_a092c530d4a0cd880a59598dc0fca95d4}{\_SC\_DAEMON\_PERIOD}}; i++)\{}
-\DoxyCodeLine{    osDelay(\mbox{\hyperlink{uvfr__state__engine_8h_a092c530d4a0cd880a59598dc0fca95d4}{\_SC\_DAEMON\_PERIOD}});}
+\DoxyCodeLine{    vTaskDelay(\mbox{\hyperlink{uvfr__state__engine_8h_a092c530d4a0cd880a59598dc0fca95d4}{\_SC\_DAEMON\_PERIOD}});}
 \DoxyCodeLine{    \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} j = 0; j<10;j++)\{}
 \DoxyCodeLine{        queue\_read\_status = xQueueReceive(incoming\_scd\_msg,\&response,0);}
 \DoxyCodeLine{        \textcolor{keywordflow}{if}(queue\_read\_status == pdPASS)\{}
@@ -301,7 +301,7 @@ Wait for all the tasks that had changes made to respond.
 
 If this is 0, then that means that all the tasks have successfully had their states validated. This means we can just exit and we\textquotesingle{}re chillin.
 
-Definition at line 501 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 507 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -345,7 +345,7 @@ Transition from {\ttfamily U\+V\+\_\+\+I\+N\+IT} to {\ttfamily U\+V\+\_\+\+R\+E\
 
 Transition from {\ttfamily U\+V\+\_\+\+I\+N\+IT} to {\ttfamily U\+V\+\_\+\+E\+R\+R\+OR} states
 
-Definition at line 315 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 318 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -367,7 +367,7 @@ The name should be pretty self explanatory.
 
 
 
-Definition at line 211 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 214 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -389,11 +389,15 @@ This function is called by a task to nuke itself. Is a wrapper function that is 
 
 First lets load up the queue and the values in it. These come from the task we are doing.
 
-Definition at line 384 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 390 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
 References uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, uv\+\_\+task\+\_\+info\+::manager, uv\+\_\+scd\+\_\+response\+::meta\+\_\+id, uv\+\_\+scd\+\_\+response\+::response\+\_\+val, uv\+\_\+task\+\_\+info\+::task\+\_\+handle, uv\+\_\+task\+\_\+info\+::task\+\_\+id, uv\+\_\+task\+\_\+info\+::task\+\_\+state, U\+V\+\_\+\+N\+O\+\_\+\+C\+MD, U\+V\+\_\+\+S\+U\+C\+C\+E\+S\+S\+F\+U\+L\+\_\+\+D\+E\+L\+E\+T\+I\+ON, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+D\+E\+L\+E\+T\+ED, and v\+Task\+Delete().
+
+
+
+Referenced by temp\+Monitor\+Task().
 
 \mbox{\Hypertarget{uvfr__state__engine_8h_a1696080304a0a849ec9d4d92701f910f}\label{uvfr__state__engine_8h_a1696080304a0a849ec9d4d92701f910f}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!suspendSelf@{suspendSelf}}
@@ -407,11 +411,15 @@ Called by a task that needs to suspend itself, once the task has determined it i
 
 
 
-Definition at line 424 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 430 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
 References uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, uv\+\_\+task\+\_\+info\+::manager, uv\+\_\+scd\+\_\+response\+::meta\+\_\+id, uv\+\_\+scd\+\_\+response\+::response\+\_\+val, uv\+\_\+task\+\_\+info\+::task\+\_\+handle, uv\+\_\+task\+\_\+info\+::task\+\_\+id, uv\+\_\+task\+\_\+info\+::task\+\_\+state, U\+V\+\_\+\+N\+O\+\_\+\+C\+MD, U\+V\+\_\+\+S\+U\+C\+C\+E\+S\+S\+F\+U\+L\+\_\+\+D\+E\+L\+E\+T\+I\+ON, and U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+D\+E\+L\+E\+T\+ED.
+
+
+
+Referenced by temp\+Monitor\+Task().
 
 \mbox{\Hypertarget{uvfr__state__engine_8h_accc8a3290b8d5e61a3cc03d93f6bc394}\label{uvfr__state__engine_8h_accc8a3290b8d5e61a3cc03d93f6bc394}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!updateRunningTasks@{updateRunningTasks}}
@@ -451,7 +459,7 @@ Referenced by init\+Driving\+Loop(), and init\+Temp\+Monitor().
 
 
 
-Definition at line 294 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 297 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -469,7 +477,7 @@ deletes a managed task via the system
 
 This function is the lowtier god of the program. It pulls up and is like \char`\"{}\+Y\+O\+U S\+H\+O\+U\+L\+D K\+I\+L\+L Y\+O\+U\+R\+S\+E\+L\+F, N\+O\+W!!\char`\"{} It sends a message to the task which tells it to kill itself. if we have reached this point in the function, then the task is active and ready to get nuked
 
-Definition at line 232 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 235 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -519,11 +527,11 @@ Something bad has occurred here now we in trouble.
 
 
 
-Definition at line 373 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 376 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-Referenced by \+\_\+state\+Change\+Daemon(), change\+Vehicle\+State(), uv\+Init(), and uv\+Suspend\+Task().
+Referenced by \+\_\+state\+Change\+Daemon(), change\+Vehicle\+State(), M\+C\+\_\+\+Startup(), uv\+Init(), and uv\+Suspend\+Task().
 
 \mbox{\Hypertarget{uvfr__state__engine_8h_a61e8135ace497b0e7e89b9515942d390}\label{uvfr__state__engine_8h_a61e8135ace497b0e7e89b9515942d390}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uvRegisterTask@{uvRegisterTask}}
@@ -543,7 +551,11 @@ Definition at line 204 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-References U\+V\+\_\+\+OK.
+References U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+OK, and uv\+Validate\+Managed\+Tasks().
+
+
+
+Referenced by uv\+Init().
 
 \mbox{\Hypertarget{uvfr__state__engine_8h_a670c601b0f61040ae49ef375daf543a8}\label{uvfr__state__engine_8h_a670c601b0f61040ae49ef375daf543a8}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uvStartTask@{uvStartTask}}
@@ -585,7 +597,7 @@ function to suspend one of the managed tasks
 
 
 
-Definition at line 281 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 284 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -612,6 +624,10 @@ Definition at line 99 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 References \+\_\+next\+\_\+task\+\_\+id, \+\_\+uv\+Validate\+Specific\+Task(), and U\+V\+\_\+\+OK.
+
+
+
+Referenced by uv\+Start\+State\+Machine().
 
 
 

@@ -32,6 +32,7 @@
 
 #include "driving_loop.h"
 #include "temp_monitoring.h"
+#include "odometer.h"
 
 #include "FreeRTOSConfig.h"
 
@@ -67,6 +68,8 @@
 #define false 0
 #define true !false
 
+//Typedefs used throughout vehicle
+
 typedef uint8_t bool;
 typedef uint8_t uv_task_id;
 typedef uint8_t uv_status;
@@ -74,10 +77,20 @@ typedef uint8_t uv_ext_device_id;
 typedef uint32_t uv_timespan_ms;
 
 
+
+//Time limits for the initialization. Car has 2.5 seconds to initialize all peripherals, before it decides that something has gone horrifically wrong
 #define MAX_INIT_TIME 2500//if the car takes more than 2.5 seconds to boot, something seems a little fishy
 #define INIT_CHECK_PERIOD 100
 
-//TASK MANAGEMENT MACROS
+//Memory management macros
+
+#ifndef UV_MALLOC_LIMIT
+#define UV_MALLOC_LIMIT 1024
+#endif
+
+#ifndef USE_OS_MEM_MGMT
+#define USE_OS_MEM_MGMT 0
+#endif
 
 /**	@brief This is meant to be a return type from functions that indicates what is actually going on
  *
@@ -207,7 +220,16 @@ typedef struct uv_init_task_args{
 	TaskHandle_t meta_task_handle; //Handle to itself, which it can use to delete itself
 }uv_init_task_args;
 
+
+/** @brief Data used by the uvfr_utils library to do what it needs to do :)
+ *
+ * This is a global variable that is initialized at some point at launch
+ *
+ */
 typedef struct uv_internal_params{
+	uv_init_struct* init_params;
+	uv_vehicle_settings* vehicle_settings;
+
 
 
 }uv_internal_params;
@@ -226,17 +248,40 @@ typedef struct uv_init_task_response{
 	char* errmsg; //if we didn't succeed, then what went wrong?
 }uv_init_task_response;
 
+#ifndef UV_UTILS_SRC_IMPLIMENTATION
+	extern uv_internal_params global_context;
+#endif
+
 void uvInit(void * arguments);
 
-void _uvInitPanic();
+void __uvInitPanic();
 
-//this works exactly the same way that malloc does
-void * uvMalloc(size_t size);
+#ifndef uvMalloc
+#if USE_OS_MEM_MGMT
+	void* __uvMallocOS(size_t memrequest);
+	#define uvMalloc(x) __uvMallocOS(x)
+#else //default to STDlib
+	void * __uvMallocCritSection(size_t memrequest);
+	#define uvMalloc(x) __uvMallocCritSection(x)
 
-//this works exactly the same way that free does
-//enum uv_status_t uvFree(void * mem);
-//
-//enum uv_status_t uvUtilsInit();
+#endif //OS mem mgmt?
+#endif //allow macro override
+
+#ifndef uvFree
+#if USE_OS_MEM_MGMT
+	uv_status __uvFreeOS(void* ptr);
+	#define uvFree(x) __uvFreeOS(x)
+
+#else
+	uv_status __uvFreeCritSection(void* ptr);
+	#define uvFree(x) __uvFreeCritSection(x)
+
+#endif //OS mem mgmt
+#endif //Allows macro overriding
+
+uv_status uvIsPTRValid(void* ptr);
+
+
 
 
 

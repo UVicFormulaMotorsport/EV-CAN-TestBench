@@ -19,7 +19,6 @@ void BMS_Init(void* args){
 			//OOPS
 	}
 
-	osDelay(400);
 
 
 

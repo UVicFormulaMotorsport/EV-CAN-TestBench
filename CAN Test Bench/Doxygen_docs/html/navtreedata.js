@@ -23,6 +23,7 @@ for the JavaScript code in this file
 var NAVTREE =
 [
   [ "EVRTOSProject", "index.html", [
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Modules", "modules.html", "modules" ],
     [ "Data Structures", "annotated.html", [
       [ "Data Structures", "annotated.html", "annotated_dup" ],
@@ -41,7 +42,7 @@ var NAVTREE =
         [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Enumerator", "globals_eval.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+        [ "Macros", "globals_defs.html", "globals_defs" ]
       ] ]
     ] ]
   ] ]
@@ -50,10 +51,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_free_r_t_o_s_config_8h.html",
-"gpio_8h.html",
-"motor__controller_8h.html#a8cab19f0549eb777404ec1c7a3b56268ac5a4f68a0000a0d2d5004ba1d2e4c27f",
-"structdriving__loop__args.html#aecaae9549609b56d961d739f91e73f92",
-"uvfr__utils_8h.html#ad70cbc8929c4ad7a5901cd9eef5ca9b0"
+"globals_func_f.html",
+"motor__controller_8h.html#a5e2fbf1b4105e76b330bcb6547533dffa150953c78b7fcc8ae97a50a5b5765264",
+"stm32f4xx__it_8h.html#a3150f74512510287a942624aa9b44cc5",
+"uvfr__utils_8h.html#a27e96c74597bf4e85f968da673622b31"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

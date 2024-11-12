@@ -8,13 +8,16 @@
 #define UVFR_STATE_MACHINE_IMPLIMENTATION
 
 #include "uvfr_utils.h"
+//#include "assert.h"
 
 #define MAX_NUM_MANAGED_TASKS 16
 
-uv_task_id _next_task_id = 0;
-uv_task_info _task_register[MAX_NUM_MANAGED_TASKS] = {0};
 
-QueueHandle_t state_change_queue = NULL;
+//Stores the data structure of the car, which is pretty nifty imo
+static uv_task_id _next_task_id = 0;
+static uv_task_info _task_register[MAX_NUM_MANAGED_TASKS] = {0};
+
+static QueueHandle_t state_change_queue = NULL;
 
 enum uv_vehicle_state_t vehicle_state = UV_BOOT;
 enum uv_vehicle_state_t previous_state = UV_BOOT;
@@ -119,8 +122,11 @@ uv_status uvValidateManagedTasks(){
  *	This bad boi gets called from the stateChangeDaemon because it's a special little snowflake.
  */
 enum uv_status_t uvStartTask(uint32_t* tracker,uv_task_info* t){
-	/** The first thing we will do is check
+	/** The first thing we will do is check if the task is running, since this could theoretically get called from literally anywhere.
+	 * If the task is running, then we check to see if @c t->task_handle is set to @c NULL . If it is null, that is a physically impossible_state.
+	 * Neither very mindful or very demure.
 	 *
+	 * That being said, if the task appears legit, then just update the corresponding bits in the tracker, and return that the task has aborted.
 	 */
 	if(t->task_state == UV_TASK_RUNNING){
 		if(t->task_handle == NULL){
@@ -136,7 +142,7 @@ enum uv_status_t uvStartTask(uint32_t* tracker,uv_task_info* t){
 	/** If a task has been suspended, we do not want to create a new instance
 	 * of the task, becuase then the task will go out of scope, and changing the task
 	 * handle to a new instance will result in the task never being de-initialized, therefore causing a
-	 * memory leak. If a task is in this boat then that's what will happen.
+	 * memory leak. We want to call @c vTaskResume instead, and just boot the task back into existence.
 	 *
 	 */
 	if(t->task_state == UV_TASK_SUSPENDED){
@@ -160,8 +166,6 @@ enum uv_status_t uvStartTask(uint32_t* tracker,uv_task_info* t){
 		return UV_ERROR;
 	}
 
-	//const osThreadDef_t new_thread = {t->task_name,t->task_function,t->task_priority,t->instances,t->stack_size};
-	//t->task_handle = osThreadCreate(&new_thread,(void*)t);
 	BaseType_t x_return = xTaskCreate(t->task_function,t->task_name,t->stack_size,t,t->task_priority,&(t->task_handle));
 
 	if(x_return != pdPASS){ //thats not very good, or very cash money of you
@@ -175,8 +179,8 @@ enum uv_status_t uvStartTask(uint32_t* tracker,uv_task_info* t){
 		return UV_ERROR;
 	}
 
-	//we may need to explicitely start a task
-
+	//we may need to explicitely start a task. Ha, JK
+	t->task_state = UV_TASK_RUNNING;
 	return UV_OK;
 }
 
@@ -192,6 +196,8 @@ enum uv_status_t uvInitStateEngine(){
 	initDrivingLoop(NULL); //create the main driving loop task
 	initTempMonitor(NULL); //create the temperature monitoring task
 	initDaqTask(NULL);
+	initOdometer(NULL);
+
 	return UV_OK;
 }
 
@@ -202,15 +208,22 @@ enum uv_status_t uvInitStateEngine(){
  *
  */
 enum uv_status_t uvStartStateMachine(){
+	if(uvValidateManagedTasks() != UV_OK){
+		return UV_ERROR;
+	}
+
+	previous_state = vehicle_state;
+	vehicle_state = UV_INIT;
+
 	return UV_OK;
 }
 
 /** @brief The name should be pretty self explanatory
  *
  */
-enum uv_status_t killEmAll(){
+static enum uv_status_t killEmAll(){
 	uint32_t tracker = 0x00000000;
-	QueueHandle_t incoming_scd_msg = xQueueCreate(8,sizeof(uv_init_task_response));
+	//QueueHandle_t incoming_scd_msg = xQueueCreate(8,sizeof(uv_init_task_response));
 	for(int i = 0; i<_next_task_id;i++){
 		tracker |= _BV_32(i);
 		uvDeleteTask(&tracker,&_task_register[i]);
@@ -230,8 +243,13 @@ enum uv_status_t killEmAll(){
  *
  */
 enum uv_status_t uvDeleteTask(uint32_t* tracker,uv_task_info* t){
+	if(t == NULL){
+		uvPanic("Null Task Info Struct",0);
+	}
+
 	if(t->task_state == UV_TASK_DELETED || t->task_state == UV_TASK_NOT_STARTED){
 		if(t->task_handle == NULL){
+			*tracker &= ~(0x01<<(t->task_id));
 			return UV_ABORTED;
 		}else{
 			return UV_ERROR;
@@ -246,6 +264,7 @@ enum uv_status_t uvDeleteTask(uint32_t* tracker,uv_task_info* t){
 		vTaskDelete(t->task_handle);
 		t->task_handle = NULL;
 		t->task_state = UV_TASK_DELETED;
+		*tracker &= ~(0x01<<(t->task_id));
 		return UV_OK;
 
 	}
@@ -257,13 +276,13 @@ enum uv_status_t uvDeleteTask(uint32_t* tracker,uv_task_info* t){
 		vTaskDelete(t->task_handle);
 		t->task_handle = NULL;
 		t->task_state = UV_TASK_DELETED;
-		*tracker &= ~_BV_32(t->task_id);
+		*tracker &= ~(0x01<<(t->task_id));
 		return UV_OK;
 
 	}else if(task_state == eDeleted){ //Should this be ok? I dont really know
 		t->task_handle = NULL;
 		t->task_state = UV_TASK_DELETED;
-		*tracker &= ~_BV_32(t->task_id);
+		*tracker &= ~(0x01<<(t->task_id));
 		return UV_OK;
 	}
 
@@ -275,22 +294,55 @@ enum uv_status_t uvDeleteTask(uint32_t* tracker,uv_task_info* t){
 
 	return UV_OK;
 }
+
 /** @brief function to suspend one of the managed tasks
  *
  */
 enum uv_status_t uvSuspendTask(uint32_t* tracker,uv_task_info* t){
-	eTaskState rtos_task_state = eTaskGetState(t->task_handle);
 
+	if(t == NULL){
+		uvPanic("Null Task Info Struct",0);
+	}
+
+	eTaskState rtos_task_state = eInvalid;
+
+	if(t->task_handle != NULL){
+		rtos_task_state = eTaskGetState(t->task_handle);
+	}else{
+		if((t->task_state == UV_TASK_DELETED)||(t->task_state == UV_TASK_NOT_STARTED)){
+			*tracker = *tracker & ~(0x01<<(t->task_id));
+			return UV_OK;
+		}else{
+			return UV_ERROR; //WHY IS IT NULL
+		}
+	}
 
 	if(t->task_state == UV_TASK_SUSPENDED){
 		if(rtos_task_state != eSuspended){ //SCD thinks this is suspended
-			uvPanic(NULL,0);
+			uvPanic("TState Not Match RTOS in UVsuspend",0);
+			return UV_ERROR;
+		}else{
+			*tracker &= ~(0x01<<(t->task_id));
+			return UV_OK;
 		}
 	}
+
+	if(t->task_state == UV_TASK_DELETED){
+		if(rtos_task_state != eDeleted){
+			uvPanic("State Engine Claim deleted but RTOS exist",0);
+			return UV_ERROR;
+		}
+		*tracker &= ~(0x01<<t->task_id);
+	}
+
+	t->cmd_data = UV_SUSPEND_CMD;
 
 	return UV_OK;
 }
 
+/** @brief Undoes what uvStartStateEngine, and uvInitStateEngine does
+ *
+ */
 enum uv_status_t uvDeInitStateEngine(){
 	killEmAll();
 
@@ -348,16 +400,14 @@ enum uv_status_t changeVehicleState(uint16_t state){
 			break;
 	}
 
-	//scd_args = malloc(sizeof(state_change_daemon_args));
-	//TaskHandle_t SCD_handle = NULL;
-	//TaskHandle_t SCD_thread = {"BMS_init",_stateChangeDaemon,osPriorityAboveNormal,128,0};
-	state_change_daemon_args* scd_args = malloc(sizeof(state_change_daemon_args));
+	state_change_daemon_args* scd_args = uvMalloc(sizeof(state_change_daemon_args));
 	scd_args->meta_task_handle = NULL;
 	BaseType_t retval;
 
-	retval = xTaskCreate(_stateChangeDaemon,"scd",_UV_DEFAULT_TASK_STACK_SIZE,scd_args,osPriorityAboveNormal,&(scd_args->meta_task_handle));
+	retval = xTaskCreate(_stateChangeDaemon,"scd",256,scd_args,osPriorityAboveNormal,&(scd_args->meta_task_handle));
 
 	if(retval != pdPASS || scd_args->meta_task_handle == NULL){
+		uvFree(scd_args);
 		uvPanic("State Transition Failed",0);
 	}
 	//scd_args->meta_task_handle = osThreadCreate(&SCD_thread,scd_args);
@@ -370,9 +420,12 @@ enum uv_status_t changeVehicleState(uint16_t state){
 /** @brief Something bad has occurred here now we in trouble
  *
  */
-void uvPanic(char* msg, uint8_t msg_len){
+void __uvPanic(char* msg, uint8_t msg_len, const char* file, const int line, const char* func){
 	//ruh roh, something has gone a little bit fucky wucky
+	vTaskSuspendAll();
+	while(1){
 
+	}
 
 }
 
@@ -387,26 +440,36 @@ void killSelf(uv_task_info* t){
 	 *
 	 */
 
+	if(t == NULL){
+		uvPanic("Null Task Info Struct",0);
+	}
 
 
-	QueueHandle_t status_queue = t->manager;
-	uv_scd_response response;
-	BaseType_t retval;
+
+	//QueueHandle_t status_queue = t->manager;
+	uv_scd_response* response = uvMalloc(sizeof(uv_scd_response));
+
+
+
+	if(response == NULL){
+		uvPanic("uvMalloc Failed",0);
+	}
 
 
 
 
 	t->task_state = UV_TASK_DELETED;
-	response.meta_id = t->task_id;
-	response.response_val = UV_SUCCESSFUL_DELETION;
+	response->meta_id = t->task_id;
+	response->response_val = UV_SUCCESSFUL_DELETION;
 
 
-	if(status_queue != NULL){
-		retval = xQueueSend(status_queue, &response, 10);
-
-		if(retval != pdPASS){
-		//ohdear
+	if(state_change_queue != NULL){
+		if(xQueueSend(state_change_queue, &response, 0) != pdPASS){
+			uvFree(response); //no memory leaks here sir :)
+			uvPanic("Failed to send scd queue msg",0);
 		}
+	}else{ //bro why tf is the queue null
+		uvPanic("Task Has invalid queue while SCD active",0);
 	}
 
 	t->cmd_data = UV_NO_CMD;
@@ -422,23 +485,31 @@ void killSelf(uv_task_info* t){
  *
  */
 void suspendSelf(uv_task_info* t){
-	QueueHandle_t status_queue = t->manager;
-	uv_scd_response response;
-	BaseType_t retval;
+
+	if(t == NULL){
+		uvPanic("Null Task Info Struct",0);
+	}
+	//QueueHandle_t status_queue = t->manager;
+	uv_scd_response* response = uvMalloc(sizeof(uv_scd_response));
 
 
+	if(response == NULL){
+		uvPanic("uvMalloc Failed",0);
+	}
 
-	t->task_state = UV_TASK_DELETED;
-	response.meta_id = t->task_id;
-	response.response_val = UV_SUCCESSFUL_DELETION;
+	t->task_state = UV_TASK_SUSPENDED;
+	response->meta_id = t->task_id;
+	response->response_val = UV_SUCCESSFUL_SUSPENSION;
 
 
-	if(status_queue != NULL){
-		retval = xQueueSend(status_queue, &response, 10);
-
-		if(retval != pdPASS){
-			//ohdear
+	if(state_change_queue != NULL){
+		if(xQueueSend(state_change_queue, &response, 0) != pdPASS){
+			uvFree(response);
+			uvPanic("Task couldn't send msg to scd queue",0);
 		}
+
+	}else{
+		uvPanic("Task Has invalid queue while SCD active",0);
 	}
 
 	t->cmd_data = UV_NO_CMD;
@@ -446,31 +517,51 @@ void suspendSelf(uv_task_info* t){
 	vTaskSuspend(t->task_handle);
 }
 
-uv_status proccessSCDMsg(uv_scd_response * msg){
+
+/** @brief Helper function for the SCD, that proccesses a message, and double checks to make sure the
+ * task that sent the message isn't straight up lying to us
+ *
+ * This function is responsible for the following functionality:
+ * - Make sure that the message claims that the deletion or suspension of a task is successful
+ * - If a task claims that it is deleted, or suspended, then we must verify that this is the case
+ *
+ *
+ */
+static uv_status proccessSCDMsg(uv_scd_response* msg){
 	if(msg == NULL){
 		return UV_ERROR;
 	}
 
-
+	/** Get the id of the message, then use that to index the _task_register
+	 *
+	 */
 	uv_task_id id = msg->meta_id;
 	enum uv_scd_response_e replystatus = msg->response_val;
 	uv_task_info* t = &(_task_register[id]);
-	eTaskState rtos_task_state;
+	eTaskState rtos_task_state =eInvalid;
+
+	if(t->task_handle != NULL){
+		rtos_task_state = eTaskGetState(t->task_handle);
+	}
 
 	if(replystatus == UV_SUCCESSFUL_DELETION){
 		if(t->task_state != UV_TASK_DELETED){
 			return UV_ERROR;
 		}
 
-		rtos_task_state = eTaskGetState(t->task_handle);
+		//rtos_task_state = eTaskGetState(t->task_handle); //HOL UP: MAYBE CHECK TO MAKE SURE THE TASK EXISTS LOL, otherwise null pointer dereference time
+
+		if(rtos_task_state != eDeleted){
+
+		}
 
 	}else if(replystatus == UV_SUCCESSFUL_SUSPENSION){
 		if(t->task_handle == NULL){
 			return UV_ERROR; //that sure aint good, imma go complain now.
 		}
 
-		rtos_task_state = eTaskGetState(t->task_handle);
-		if(rtos_task_state != eSuspended){
+		//rtos_task_state = eTaskGetState(t->task_handle);
+		if((rtos_task_state != eSuspended)&&(rtos_task_state != eBlocked)){
 			//The task is not actually suspended!!!
 		}
 
@@ -494,20 +585,27 @@ uv_status proccessSCDMsg(uv_scd_response * msg){
 }
 
 
-/** @brief: This collects all the data changing from different tasks, and makes sure that everything works properly
- * 	@attention: DO NOT EVER JUST CALL THIS FUNCTION. THIS SHOULD ONLY BE CALLED FROM changeVehicleState
+/** @brief This collects all the data changing from different tasks, and makes sure that everything works properly
  *
+ * 	@attention DO NOT EVER JUST CALL THIS FUNCTION. THIS SHOULD ONLY BE CALLED FROM changeVehicleState
+ *
+ * @param This accepts a @c void* pointer to avoid compile errors with freeRTOS, since freeRTOS expects
+ * a pointer to the function that accepts a void pointer
+ *
+ * This is a one-shot RTOS task that spawns in when we want to change the state of the vehicle state.
+ * It performs this in the following way
  */
 void _stateChangeDaemon(void * args){
+	uint32_t task_tracker = 0x00000000;
 	uv_task_info* tmp_task;
 
 	//BaseType_t rtos_status;
 
-	QueueHandle_t incoming_scd_msg = xQueueCreate(8,sizeof(uv_init_task_response));
+	state_change_queue = xQueueCreate(8,sizeof(uv_scd_response*));
 
-	uint32_t task_tracker;
 
-	uv_scd_response response;
+	uint32_t redundant_tracker = 0x000000000;
+
 
 	/** We get to iterate through all of the managed tasks.
 	 * Goes via IDs as well. We load up the array entry as a temp pointer to a task info struct.
@@ -520,29 +618,49 @@ void _stateChangeDaemon(void * args){
 	 *
 	 */
 	for(int i = 0; i<_next_task_id; i++){
+		/**Acquires pointer to task definition struct, then sets the queue in the struct to the SCD queue,
+		 * so that the task actually does task things. Love when that happens. Next it sets
+		 * the bit in the task_tracker corresponding to the task id, therefore marking that some action must be taken to either
+		 * - confirm that no action is neccessary
+		 * - bring the task state into the correct state
+		 *  @code */
 		tmp_task = &(_task_register[i]);
-		tmp_task->manager = incoming_scd_msg;
+		//tmp_task->manager = incoming_scd_msg; //No longer using this var, instead using the state_change_queue static global var
+		task_tracker |= 0x01<<i;
+		//redundant_tracker |= 0x01<<i;
+		/**@endcode*/
 		if(tmp_task->active_states & vehicle_state){
 			//should be active
 			if(tmp_task->task_state != UV_TASK_RUNNING){
 				//start dah task
-				uvStartTask(&task_tracker,tmp_task);
+				if(uvStartTask(&task_tracker,tmp_task) == UV_OK){
+					task_tracker &= ~(0x01<<i);
+				}else{
+					uvPanic("Failed to start task",0);
+				}
+			}else{
+				task_tracker &= ~(0x01<<i); //didnt need to do anything
 			}
 		}else if(tmp_task->deletion_states & vehicle_state){
 			//this task should not exist right now
 			if((tmp_task->task_state != UV_TASK_NOT_STARTED)&&(tmp_task->task_state != UV_TASK_DELETED)){
 				//gotta delete that task buddy
 				uvDeleteTask(&task_tracker,tmp_task);
+				//task_tracker &= ~(0x01<<i);
+			}else{
+				task_tracker &= ~(0x01<<i);
 			}
 		}else if(tmp_task->suspension_states & vehicle_state){
-			/**Now we suspend the task because it has been misbehaving in school
+			/** Now we suspend the task because it has been misbehaving in school
 			 *
 			 */
 			if(tmp_task->task_state != UV_TASK_SUSPENDED){
 				//Suspend that thang
 				uvSuspendTask(&task_tracker,tmp_task);
+				//task_tracker &= ~(0x01<<i);
 
-
+			}else{
+				task_tracker &= ~(0x01<<i);
 			}
 		}
 
@@ -550,36 +668,76 @@ void _stateChangeDaemon(void * args){
 
 	/**Wait for all the tasks that had changes made to respond.\code */
 
-	BaseType_t queue_read_status;
+	uv_scd_response* response = NULL;
+
 	for(int i = 0; i < _LONGEST_SC_TIME/_SC_DAEMON_PERIOD; i++){
-		osDelay(_SC_DAEMON_PERIOD);
+		vTaskDelay(_SC_DAEMON_PERIOD);
 		for(int j = 0; j<10;j++){
-			queue_read_status = xQueueReceive(incoming_scd_msg,&response,0);
-			if(queue_read_status == pdPASS){
-				if(proccessSCDMsg(&response)==UV_OK){
-					task_tracker &= ~_BV_32(response.meta_id);
-				}else{
-					//Not ok, idek what to do here
+
+			/** Attempt to read from the message queue. If successful, then
+			 * @c xQueueReceive() will return @c pdPASS and we will then be able to
+			 * interperet the message.
+			 *
+			 * @c xQueueReceive() copies a pointer to the response function to the address specified by &response
+			 *
+			 */
+			if(xQueueReceive(state_change_queue,&response,1) == pdPASS){
+
+				if(response == NULL){//definately not supposed to happen
+					uvPanic("null scd response",0);
 				}
+
+				/** Message interpretation happens in the @function proccessSCDMsg(), which is passed a pointer to
+				 * a response message struct. See the documentation for this function to learn about it's internals, and what
+				 * it actually looks like.
+				 *
+				 */
+				if(proccessSCDMsg(response)==UV_OK){
+//					if(task_tracker & 0xFFFFFFF0){
+//									//gotcha
+//						uvPanic("gotcha bitch proccessSCDMsg!!",0);
+//					}
+					//has_task_succeeded |= (0x01<<response->meta_id);
+					task_tracker &= ~(0x01<<response->meta_id);
+					if (_task_register[response->meta_id].task_state == UV_TASK_DELETED){
+						_task_register[response->meta_id].task_handle = NULL;
+					}
+
+
+				}else{
+					//Not ok, this means that process SCD has returned something weird. More detailed error_handling can be added later.
+					uvPanic("Task giving Sass to SCD",0);
+				}
+
+				/** Gotta free the response
+				 *
+				 */
+				if(uvFree(response)!=UV_OK){
+					uvPanic("failed to free memory", 0);
+				}
+				response = NULL;
 
 			}else{
 				break;
 			}
+
+
 		}
 		/** @endcode */
-
 		/** If this is 0, then that means that all the tasks have successfully had their states validated.
+		 *
 		 * This means we can just exit and we're chillin.
 		 *
-		 */
+		*/
 		if(task_tracker == 0){
 			goto END_OF_STATE_CHANGE_DAEMON;
 		}
 
+
 	}
 	//You timed out didnt you... Naughty naughty...
 
-	uvPanic(NULL,0);
+	uvPanic("SCD Timeout",0);
 
 	END_OF_STATE_CHANGE_DAEMON:
 
@@ -587,20 +745,20 @@ void _stateChangeDaemon(void * args){
 	 * That way if they for whatever reason try to call out of context, they just get hit with a NULL
 	 *
 	 */
-	for(int i = 0; i<_next_task_id; i++){
-		_task_register[i].manager = NULL;
-	}
+
 
 	TaskHandle_t scd_handle = ((state_change_daemon_args*)args)->meta_task_handle;
-	free(args);
+	uvFree(args);
 
-	/**This line deletes the queue to free up the memory @code*/
-
-	vQueueDelete(incoming_scd_msg);
-
+	/**This line deletes the queue to free up the memory @code */
+	vQueueDelete(state_change_queue);
+	state_change_queue = NULL;
 	/**@endcode*/
 
+
+	/**The final act of the SCD, is to delete itself @code */
 	vTaskDelete(scd_handle);
+	/** @endcode */
 
 }
 //end of SCD

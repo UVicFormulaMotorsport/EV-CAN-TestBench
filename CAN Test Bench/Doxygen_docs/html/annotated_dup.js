@@ -8,6 +8,7 @@ var annotated_dup =
     [ "drivingLoopArgs", "structdriving_loop_args.html", null ],
     [ "drivingMode", "structdriving_mode.html", "structdriving_mode" ],
     [ "drivingModeParams", "structdriving_mode_params.html", "structdriving_mode_params" ],
+    [ "motor_controller_settings_t", "structmotor__controller__settings__t.html", "structmotor__controller__settings__t" ],
     [ "motor_controllor_settings", "structmotor__controllor__settings.html", "structmotor__controllor__settings" ],
     [ "state_change_daemon_args", "structstate__change__daemon__args.html", "structstate__change__daemon__args" ],
     [ "uv_init_struct", "structuv__init__struct.html", "structuv__init__struct" ],

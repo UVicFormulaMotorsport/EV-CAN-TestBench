@@ -21,7 +21,7 @@ enum uv_status_t getSettingsFromFlash(){
 
 void setupDefaultSettings(){
 	//real trap shit
-	current_vehicle_settings = malloc(sizeof(uv_vehicle_settings));
+	current_vehicle_settings = uvMalloc(sizeof(uv_vehicle_settings));
 }
 
 void nukeSettings(uv_vehicle_settings** settings_to_delete){

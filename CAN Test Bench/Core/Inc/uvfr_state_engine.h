@@ -23,7 +23,7 @@ typedef uint8_t uv_task_id; //WHY DO I NEED TO DO THIS STUPID REDEFINITION HERE
 #define _UV_DEFAULT_TASK_PERIOD 100
 #define _UV_MIN_TASK_PERIOD 5
 
-#define _LONGEST_SC_TIME 100
+#define _LONGEST_SC_TIME 300
 #define _SC_DAEMON_PERIOD 10
 
 typedef uint8_t uv_task_cmd;
@@ -63,7 +63,7 @@ enum uv_status_t uvInitStateEngine();
 
 enum uv_status_t uvStartStateMachine();
 
-enum uv_status_t killEmAll();
+//static enum uv_status_t killEmAll();
 
 enum uv_status_t uvDeleteTask(uint32_t* tracker,struct uv_task_info * t);
 
@@ -75,7 +75,11 @@ enum uv_status_t updateRunningTasks();
 
 enum uv_status_t changeVehicleState(uint16_t state);
 
-void uvPanic(char* msg, uint8_t msg_len); //ruh roh scoobs, something has gone a little bit fucky wucky
+//void uvPanic(char* msg, uint8_t msg_len); //ruh roh scoobs, something has gone a little bit fucky wucky
+void __uvPanic(char* msg, uint8_t msg_len, const char* file, const int line, const char* func);
+
+#define uvPanic(x, y) __uvPanic(x, y, __FILE__,__LINE__,__FUNCTION__)
+
 
 void killSelf(struct uv_task_info * t);
 

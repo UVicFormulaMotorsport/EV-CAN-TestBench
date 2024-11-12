@@ -4,6 +4,7 @@
 {\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}cmsis\+\_\+os.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -12,9 +13,19 @@ void \mbox{\hyperlink{freertos_8c_a016544463b4842ced7191baf8f449cea}{Start\+Defa
 void \mbox{\hyperlink{freertos_8c_abade755e13d07c10889ae83143656158}{M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init}} (void)
 \begin{DoxyCompactList}\small\item\em Free\+R\+T\+OS initialization. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{freertos_8c_a1988aa923b19fa6f31c93afa7773f793}{v\+Application\+Get\+Idle\+Task\+Memory}} (Static\+Task\+\_\+t $\ast$$\ast$ppx\+Idle\+Task\+T\+C\+B\+Buffer, Stack\+Type\+\_\+t $\ast$$\ast$ppx\+Idle\+Task\+Stack\+Buffer, uint32\+\_\+t $\ast$pul\+Idle\+Task\+Stack\+Size)
+\item 
+void \mbox{\hyperlink{freertos_8c_a109d34fc5d6dd8982815445df5790016}{v\+Application\+Tick\+Hook}} (void)
+\item 
+void \mbox{\hyperlink{freertos_8c_af646b5639eb494882d42203f289f37ce}{v\+Application\+Stack\+Overflow\+Hook}} (x\+Task\+Handle x\+Task, signed char $\ast$pc\+Task\+Name)
+\item 
+void \mbox{\hyperlink{freertos_8c_a92b5bd8c1938973f010621d23aa88c3d}{v\+Application\+Malloc\+Failed\+Hook}} (void)
+\item 
+void \mbox{\hyperlink{freertos_8c_a97fd430f36f8b065226e2bff9bad1de5}{v\+Application\+Idle\+Hook}} (void)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structuv__init__struct}{uv\+\_\+init\+\_\+struct}} \mbox{\hyperlink{freertos_8c_a3afad2adffd2b662e26b56ede2b1ccc5}{init\+\_\+settings}}
 \item 
 Task\+Handle\+\_\+t \mbox{\hyperlink{freertos_8c_a142da7a698285a444ffffb0d1d791023}{init\+\_\+task\+\_\+handle}}
 \begin{DoxyCompactList}\small\item\em This function will initialize all of the uvfr wrappers, and system variables, as well as performing internal diagnostics. \end{DoxyCompactList}\item 
@@ -49,11 +60,11 @@ Free\+R\+T\+OS initialization.
 \end{DoxyRetVals}
 
 
-Definition at line 82 of file freertos.\+c.
+Definition at line 141 of file freertos.\+c.
 
 
 
-References default\+Task\+Handle, init\+\_\+task\+\_\+handle, Start\+Default\+Task(), and uv\+Init().
+References default\+Task\+Handle, init\+\_\+settings, init\+\_\+task\+\_\+handle, Start\+Default\+Task(), uv\+\_\+init\+\_\+struct\+::use\+\_\+default\+\_\+settings, and uv\+Init().
 
 
 
@@ -81,7 +92,7 @@ Function implementing the default\+Task thread.
 \end{DoxyRetVals}
 
 
-Definition at line 129 of file freertos.\+c.
+Definition at line 190 of file freertos.\+c.
 
 
 
@@ -95,11 +106,51 @@ Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
 
 
 
-Definition at line 68 of file freertos.\+c.
+Definition at line 127 of file freertos.\+c.
 
 
 
 References config\+M\+I\+N\+I\+M\+A\+L\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, x\+Idle\+Stack, and x\+Idle\+Task\+T\+C\+B\+Buffer.
+
+\mbox{\Hypertarget{freertos_8c_a97fd430f36f8b065226e2bff9bad1de5}\label{freertos_8c_a97fd430f36f8b065226e2bff9bad1de5}} 
+\index{freertos.c@{freertos.c}!vApplicationIdleHook@{vApplicationIdleHook}}
+\index{vApplicationIdleHook@{vApplicationIdleHook}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{vApplicationIdleHook()}{vApplicationIdleHook()}}
+{\footnotesize\ttfamily void v\+Application\+Idle\+Hook (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 96 of file freertos.\+c.
+
+\mbox{\Hypertarget{freertos_8c_a92b5bd8c1938973f010621d23aa88c3d}\label{freertos_8c_a92b5bd8c1938973f010621d23aa88c3d}} 
+\index{freertos.c@{freertos.c}!vApplicationMallocFailedHook@{vApplicationMallocFailedHook}}
+\index{vApplicationMallocFailedHook@{vApplicationMallocFailedHook}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{vApplicationMallocFailedHook()}{vApplicationMallocFailedHook()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+weak void v\+Application\+Malloc\+Failed\+Hook (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 103 of file freertos.\+c.
+
+\mbox{\Hypertarget{freertos_8c_af646b5639eb494882d42203f289f37ce}\label{freertos_8c_af646b5639eb494882d42203f289f37ce}} 
+\index{freertos.c@{freertos.c}!vApplicationStackOverflowHook@{vApplicationStackOverflowHook}}
+\index{vApplicationStackOverflowHook@{vApplicationStackOverflowHook}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{vApplicationStackOverflowHook()}{vApplicationStackOverflowHook()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+weak void v\+Application\+Stack\+Overflow\+Hook (\begin{DoxyParamCaption}\item[{x\+Task\+Handle}]{x\+Task,  }\item[{signed char $\ast$}]{pc\+Task\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 84 of file freertos.\+c.
+
+\mbox{\Hypertarget{freertos_8c_a109d34fc5d6dd8982815445df5790016}\label{freertos_8c_a109d34fc5d6dd8982815445df5790016}} 
+\index{freertos.c@{freertos.c}!vApplicationTickHook@{vApplicationTickHook}}
+\index{vApplicationTickHook@{vApplicationTickHook}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{vApplicationTickHook()}{vApplicationTickHook()}}
+{\footnotesize\ttfamily \+\_\+\+\_\+weak void v\+Application\+Tick\+Hook (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 73 of file freertos.\+c.
 
 
 
@@ -112,7 +163,28 @@ References config\+M\+I\+N\+I\+M\+A\+L\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, x\+
 
 
 
-Definition at line 50 of file freertos.\+c.
+Definition at line 53 of file freertos.\+c.
+
+
+
+Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
+
+\mbox{\Hypertarget{freertos_8c_a3afad2adffd2b662e26b56ede2b1ccc5}\label{freertos_8c_a3afad2adffd2b662e26b56ede2b1ccc5}} 
+\index{freertos.c@{freertos.c}!init\_settings@{init\_settings}}
+\index{init\_settings@{init\_settings}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{init\_settings}{init\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structuv__init__struct}{uv\+\_\+init\+\_\+struct}} init\+\_\+settings}
+
+File Name \+: \mbox{\hyperlink{freertos_8c}{freertos.\+c}} Description \+: Code for freertos applications
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2024 S\+T\+Microelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 
+
+Definition at line 48 of file freertos.\+c.
 
 
 
@@ -128,16 +200,9 @@ Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
 
 This function will initialize all of the uvfr wrappers, and system variables, as well as performing internal diagnostics. 
 
-File Name \+: \mbox{\hyperlink{freertos_8c}{freertos.\+c}} Description \+: Code for freertos applications
+This function has 3 phases. 1) It loads up settings from flash if they exist. 2) It starts up the uv\+\_\+state\+\_\+engine 
 
-\begin{DoxyAttention}{Attention}
-
-\end{DoxyAttention}
-Copyright (c) 2024 S\+T\+Microelectronics. All rights reserved.
-
-This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 
-
-Definition at line 48 of file freertos.\+c.
+Definition at line 51 of file freertos.\+c.
 
 
 
@@ -151,7 +216,7 @@ Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), and uv\+Init().
 
 
 
-Definition at line 66 of file freertos.\+c.
+Definition at line 125 of file freertos.\+c.
 
 
 
@@ -165,7 +230,7 @@ Referenced by v\+Application\+Get\+Idle\+Task\+Memory().
 
 
 
-Definition at line 65 of file freertos.\+c.
+Definition at line 124 of file freertos.\+c.
 
 
 

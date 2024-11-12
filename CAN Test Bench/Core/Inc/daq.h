@@ -51,5 +51,7 @@ typedef struct daq_loop_args{
 }daq_loop_args;
 
 enum uv_status_t initDaqTask(void * args);
+void daqMasterTask(void* args);
+
 
 #endif /* INC_DAQ_H_ */

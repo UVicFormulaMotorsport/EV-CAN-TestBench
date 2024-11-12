@@ -44,11 +44,13 @@ enum uv_status_t initDrivingLoop(void *argument){
 	dl_task->task_priority = osPriorityHigh;
 
 	dl_task->instances = 1;
-	dl_task->stack_size = _UV_DEFAULT_TASK_STACK_SIZE;
+	dl_task->stack_size = 256;
 
 	dl_task->active_states = UV_DRIVING;
 	dl_task->suspension_states = 0x00;
 	dl_task->deletion_states = UV_READY | PROGRAMMING | UV_LAUNCH_CONTROL | UV_ERROR_STATE;
+
+	dl_task->task_period = 100;//0.1 seconds
 
 	//
 
@@ -71,7 +73,7 @@ void StartDrivingLoop(void * argument){
 	 *	We will be caching variables that are used very frequently in every single loop iteration, and are not
 	 */
 
-	uv_task_info* dl_metadata = (uv_task_info*) argument;
+	uv_task_info* params = (uv_task_info*) argument;
 
 	uint16_t min_apps_value;
 	uint16_t max_apps_value;
@@ -84,7 +86,7 @@ void StartDrivingLoop(void * argument){
 	/** This line extracts the specific driving loop parameters as specified in the
 	 * vehicle settings
 	 @code*/
-	driving_loop_args* dl_params = (driving_loop_args*) dl_metadata->task_args;
+	driving_loop_args* dl_params = (driving_loop_args*) params->task_args;
 	/**@endcode*/
 
 
@@ -94,7 +96,24 @@ void StartDrivingLoop(void * argument){
 	min_apps_offset = dl_params->min_apps_offset; //minimum APPS offset
 	max_apps_offset = dl_params->max_apps_offset;
 
+	/**These here lines set the delay. This task executes exactly at the period specified, regardless of how long the task
+		 * execution actually takes
+		 *
+		 @code*/
+	TickType_t tick_period = pdMS_TO_TICKS(params->task_period); //Convert ms of period to the RTOS ticks
+	TickType_t last_time = xTaskGetTickCount();
+	/**@endcode */
 	for(;;){
+
+
+		if(params->cmd_data == UV_KILL_CMD){
+			killSelf(params);
+		}else if(params->cmd_data == UV_SUSPEND_CMD){
+			suspendSelf(params);
+		}
+		vTaskDelayUntil( &last_time, tick_period); //Me and the boys on our way to wait for a set period
+
+		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_14);
 		//Read stuff from the addresses
 
 		//Copy the values over into new local variables, in order to avoid messing up the APPS
@@ -175,14 +194,14 @@ void StartDrivingLoop(void * argument){
 
 		}
 
-		DL_end:
+		//DL_end:
 		//Set loose the ADC, and have it DMA the result into the variables
 
 
 
 
 		//Wait until next D.L. occurance
-		osDelay(DEFAULT_PERIOD);
+		//osDelay(DEFAULT_PERIOD);
 	}
 
 }

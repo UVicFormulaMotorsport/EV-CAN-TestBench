@@ -210,40 +210,7 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
 
    //TANNER AND FLO CALL YOUR FUNCTION HERE TO DO STUFF
 
-	// Figure out what device sent the message
-   // Call the appropriate device function
-   // FOR THE LOVE OF GOD DECIDE ON HOW TO HAVE THE IDs, WHY IS PDU HARDCODED? HUH?
-//   switch (CAN_ID){
-//	   case BMS_HEARTBEAT_ID:
-//
-//	   break;
-//	   case BMS_CAN_ID_1:
-//
-//
-//	   break;
-//	   case BMS_CAN_ID_2:
-//
-//	   case BMS_CAN_ID_3:
-//
-//	   break;
-//	   case 0x710:
-//		   // PDU
-//		   // Call the associated function TODO
-//	   break;
-//	   case MC_CAN_ID_Rx:
-//		   // Motor Controller
-//
-//	   break;
-//	   case IMD_CAN_ID_Rx:
-//		   // IMD
-//		   IMD_Parse_Message(DLC, Data);
-//	   break;
-//	   // Need more IDs
-//       default:
-//    		   // Not a correct CAN ID
-//    	   Error_Handler();
-//       break;
-//   }
+
 
 }
 
