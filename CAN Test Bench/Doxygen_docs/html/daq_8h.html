@@ -146,7 +146,10 @@ Enumerations</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:adecae26482eb2c3289131a2a486ac8b3"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="daq_8h.html#adecae26482eb2c3289131a2a486ac8b3">initDaqTask</a> (void *args)</td></tr>
+<tr class="memdesc:adecae26482eb2c3289131a2a486ac8b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">initializes the master DAQ task, all that fun stuff. This task probably manages a while plethora of smaller tasks  <a href="daq_8h.html#adecae26482eb2c3289131a2a486ac8b3">More...</a><br /></td></tr>
 <tr class="separator:adecae26482eb2c3289131a2a486ac8b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a433bb586ceab47aed8d633fa2ff8ce56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="daq_8h.html#a433bb586ceab47aed8d633fa2ff8ce56">daqMasterTask</a> (void *args)</td></tr>
+<tr class="separator:a433bb586ceab47aed8d633fa2ff8ce56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a81ace76d60c42037a62eaeb1687a96ce"></a>
@@ -254,6 +257,34 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="a433bb586ceab47aed8d633fa2ff8ce56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a433bb586ceab47aed8d633fa2ff8ce56">&#9670;&nbsp;</a></span>daqMasterTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void daqMasterTask </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>These here lines set the delay. This task executes exactly at the period specified, regardless of how long the task execution actually takes</p>
+<div class="fragment"><div class="line"> */</div>
+<div class="line">TickType_t tick_period = pdMS_TO_TICKS(params-&gt;task_period); <span class="comment">//Convert ms of period to the RTOS ticks</span></div>
+<div class="line"><span class="comment">//TickType_t last_time = xTaskGetTickCount();       /**</span></div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="daq_8c_source.html#l00044">44</a> of file <a class="el" href="daq_8c_source.html">daq.c</a>.</p>
+
+<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00376">changeVehicleState()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00204">uv_task_info::cmd_data</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00446">killSelf()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00496">suspendSelf()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00186">uv_task_info::task_period</a>, <a class="el" href="uvfr__utils_8h_source.html#l00125">UV_DRIVING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00128">UV_ERROR_STATE</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00033">UV_KILL_CMD</a>, <a class="el" href="uvfr__utils_8h_source.html#l00123">UV_READY</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00034">UV_SUSPEND_CMD</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00022">vehicle_state</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="daq_8c_source.html#l00010">initDaqTask()</a>.</p>
+
+</div>
+</div>
 <a id="adecae26482eb2c3289131a2a486ac8b3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adecae26482eb2c3289131a2a486ac8b3">&#9670;&nbsp;</a></span>initDaqTask()</h2>
 
@@ -270,11 +301,14 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="daq_8c_source.html#l00004">4</a> of file <a class="el" href="daq_8c_source.html">daq.c</a>.</p>
+<p>initializes the master DAQ task, all that fun stuff. This task probably manages a while plethora of smaller tasks </p>
+<p>This is a fairly standard function </p>
 
-<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00090">UV_OK</a>.</p>
+<p class="definition">Definition at line <a class="el" href="daq_8c_source.html#l00010">10</a> of file <a class="el" href="daq_8c_source.html">daq.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00189">uvInitStateEngine()</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__state__engine_8h_source.html#l00021">_UV_DEFAULT_TASK_STACK_SIZE</a>, <a class="el" href="uvfr__utils_8h_source.html#l00198">uv_task_info::active_states</a>, <a class="el" href="daq_8c_source.html#l00044">daqMasterTask()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00199">uv_task_info::deletion_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00191">uv_task_info::max_instances</a>, <a class="el" href="uvfr__utils_8h_source.html#l00124">PROGRAMMING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00192">uv_task_info::stack_size</a>, <a class="el" href="uvfr__utils_8h_source.html#l00200">uv_task_info::suspension_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00206">uv_task_info::task_args</a>, <a class="el" href="uvfr__utils_8h_source.html#l00188">uv_task_info::task_function</a>, <a class="el" href="uvfr__utils_8h_source.html#l00184">uv_task_info::task_name</a>, <a class="el" href="uvfr__utils_8h_source.html#l00186">uv_task_info::task_period</a>, <a class="el" href="uvfr__utils_8h_source.html#l00189">uv_task_info::task_priority</a>, <a class="el" href="uvfr__utils_8h_source.html#l00125">UV_DRIVING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00105">UV_ERROR</a>, <a class="el" href="uvfr__utils_8h_source.html#l00128">UV_ERROR_STATE</a>, <a class="el" href="uvfr__utils_8h_source.html#l00127">UV_LAUNCH_CONTROL</a>, <a class="el" href="uvfr__utils_8h_source.html#l00103">UV_OK</a>, <a class="el" href="uvfr__utils_8h_source.html#l00123">UV_READY</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00034">uvCreateTask()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00196">uvInitStateEngine()</a>.</p>
 
 </div>
 </div>

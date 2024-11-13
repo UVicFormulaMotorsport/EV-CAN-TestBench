@@ -12,6 +12,8 @@
 extern TaskHandle_t init_task_handle;
 
 
+
+
 /** @brief: Function that initializes all of the car's stuff.
  *
  * This is an RTOS task, and it serves to setup all of the car's different functions.
@@ -298,8 +300,7 @@ uv_status __uvFreeCritSection(void* ptr){
 	free(ptr);
 
 	if(xTaskResumeAll() != pdTRUE){
-		//NOT A GOOD TIME
-		//uvPanic("couldnt restart scheduler",0);
+
 	}
 	return UV_OK;
 }
@@ -323,7 +324,7 @@ void* __uvMallocOS(size_t memrequest){
 
 	if(retval == NULL){
 		uvPanic("OS Malloc Failed",0);
-	}else if(uvISPTRValid(retval) != UV_OK){
+	}else if(uvIsPTRValid(retval) != UV_OK){
 		return NULL;
 	}
 

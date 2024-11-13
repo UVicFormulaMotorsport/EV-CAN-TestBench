@@ -347,8 +347,8 @@ $(document).ready(function(){initNavTree('globals_u.html','');});
 : <a class="el" href="uvfr__utils_8h.html#ab9f26b43fdf8b666d2bf4fa7c154efcaaf6465f57e0b6515721c5cbebd769e691">uvfr_utils.h</a>
 </li>
 <li>uv_task_id
-: <a class="el" href="uvfr__state__engine_8h.html#aa6ffd72eb4909ddb38c37a1369e13f09">uvfr_state_engine.h</a>
-, <a class="el" href="uvfr__utils_8h.html#aa6ffd72eb4909ddb38c37a1369e13f09">uvfr_utils.h</a>
+: <a class="el" href="uvfr__utils_8h.html#aa6ffd72eb4909ddb38c37a1369e13f09">uvfr_utils.h</a>
+, <a class="el" href="uvfr__state__engine_8h.html#aa6ffd72eb4909ddb38c37a1369e13f09">uvfr_state_engine.h</a>
 </li>
 <li>uv_task_info
 : <a class="el" href="uvfr__utils_8h.html#aebe69bead1b7c3a1371ffe610708e0ef">uvfr_utils.h</a>
@@ -358,6 +358,9 @@ $(document).ready(function(){initNavTree('globals_u.html','');});
 </li>
 <li>UV_TASK_RUNNING
 : <a class="el" href="uvfr__utils_8h.html#ab9f26b43fdf8b666d2bf4fa7c154efcaad4da927019afea812b31d46d28b7354c">uvfr_utils.h</a>
+</li>
+<li>UV_TASK_START_CMD
+: <a class="el" href="uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455cabac2ecce11df7b3e4b872ba4d22f7564">uvfr_state_engine.h</a>
 </li>
 <li>uv_task_state
 : <a class="el" href="uvfr__utils_8h.html#ab9f26b43fdf8b666d2bf4fa7c154efca">uvfr_utils.h</a>
@@ -380,6 +383,9 @@ $(document).ready(function(){initNavTree('globals_u.html','');});
 <li>UV_UNSAFE_STATE
 : <a class="el" href="uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76a0dd4e6d2bbbde83536ed21ac4ce2bd00">uvfr_state_engine.h</a>
 </li>
+<li>UV_UTILS_SRC_IMPLIMENTATION
+: <a class="el" href="uvfr__utils_8c.html#af0c3770bb8c05b338afd53946909189c">uvfr_utils.c</a>
+</li>
 <li>uv_vehicle_settings
 : <a class="el" href="uvfr__settings_8h.html#a1c41697a3618ce0a5236b7ccb250d967">uvfr_settings.h</a>
 </li>
@@ -394,7 +400,7 @@ $(document).ready(function(){initNavTree('globals_u.html','');});
 , <a class="el" href="uvfr__state__engine_8h.html#a5fb34d3f66377a9939da1a3a345bb48c">uvfr_state_engine.h</a>
 </li>
 <li>uvDeInitStateEngine()
-: <a class="el" href="uvfr__state__engine_8c.html#a96aa2907ccf1903b18613447c3e404a3">uvfr_state_engine.c</a>
+: <a class="el" href="uvfr__state__engine_8c.html#a5cb739823b10b90a139315356aa6b22f">uvfr_state_engine.c</a>
 , <a class="el" href="uvfr__state__engine_8h.html#a96aa2907ccf1903b18613447c3e404a3">uvfr_state_engine.h</a>
 </li>
 <li>uvDeleteTask()
@@ -403,6 +409,9 @@ $(document).ready(function(){initNavTree('globals_u.html','');});
 </li>
 <li>UVFR_STATE_MACHINE_IMPLIMENTATION
 : <a class="el" href="uvfr__state__engine_8c.html#a6cd439d1fb18334cd13cf3539aebca5c">uvfr_state_engine.c</a>
+</li>
+<li>uvFree()
+: <a class="el" href="uvfr__state__engine_8c.html#a0b9e8325d1d8f1027a7f563e4e8f22cb">uvfr_state_engine.c</a>
 </li>
 <li>uvGetTaskById()
 : <a class="el" href="uvfr__state__engine_8h.html#ac77de2c18076b8e04742d2ca927dbd55">uvfr_state_engine.h</a>
@@ -415,19 +424,20 @@ $(document).ready(function(){initNavTree('globals_u.html','');});
 : <a class="el" href="uvfr__state__engine_8h.html#ab907ac134ab31a8bcc534b1701304964">uvfr_state_engine.h</a>
 , <a class="el" href="uvfr__state__engine_8c.html#ab907ac134ab31a8bcc534b1701304964">uvfr_state_engine.c</a>
 </li>
-<li>uvMalloc()
-: <a class="el" href="uvfr__utils_8h.html#ac967a99212834abc77085829f10dc27c">uvfr_utils.h</a>
+<li>uvIsPTRValid()
+: <a class="el" href="uvfr__utils_8c.html#a0186c036688c7852cf0ceaee96b343a3">uvfr_utils.c</a>
+, <a class="el" href="uvfr__utils_8h.html#a0186c036688c7852cf0ceaee96b343a3">uvfr_utils.h</a>
 </li>
-<li>uvPanic()
-: <a class="el" href="uvfr__state__engine_8h.html#a37727411bc0a7aeb66e40f63e4866217">uvfr_state_engine.h</a>
-, <a class="el" href="uvfr__state__engine_8c.html#a37727411bc0a7aeb66e40f63e4866217">uvfr_state_engine.c</a>
+<li>uvPanic
+: <a class="el" href="uvfr__state__engine_8h.html#a1c8372c34a1f81b8c691d19b290a79a4">uvfr_state_engine.h</a>
+, <a class="el" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvfr_state_engine.c</a>
 </li>
 <li>uvRegisterTask()
 : <a class="el" href="uvfr__state__engine_8h.html#a61e8135ace497b0e7e89b9515942d390">uvfr_state_engine.h</a>
 </li>
 <li>uvSettingsInit()
-: <a class="el" href="uvfr__settings_8c.html#a80856a38d7040ca10b8106ff0fa4acf4">uvfr_settings.c</a>
-, <a class="el" href="uvfr__settings_8h.html#a80856a38d7040ca10b8106ff0fa4acf4">uvfr_settings.h</a>
+: <a class="el" href="uvfr__settings_8h.html#a80856a38d7040ca10b8106ff0fa4acf4">uvfr_settings.h</a>
+, <a class="el" href="uvfr__settings_8c.html#a80856a38d7040ca10b8106ff0fa4acf4">uvfr_settings.c</a>
 </li>
 <li>uvStartStateMachine()
 : <a class="el" href="uvfr__state__engine_8c.html#a415f401ea7985271f803f935d925be34">uvfr_state_engine.c</a>
@@ -438,15 +448,18 @@ $(document).ready(function(){initNavTree('globals_u.html','');});
 , <a class="el" href="uvfr__state__engine_8h.html#a670c601b0f61040ae49ef375daf543a8">uvfr_state_engine.h</a>
 </li>
 <li>uvSuspendTask()
-: <a class="el" href="uvfr__state__engine_8c.html#a5a22d167f39d0ed98e20e2c5429b28fa">uvfr_state_engine.c</a>
-, <a class="el" href="uvfr__state__engine_8h.html#ae553a8ada4f75a30c87b7e8e1d6b928e">uvfr_state_engine.h</a>
+: <a class="el" href="uvfr__state__engine_8h.html#ae553a8ada4f75a30c87b7e8e1d6b928e">uvfr_state_engine.h</a>
+, <a class="el" href="uvfr__state__engine_8c.html#a5a22d167f39d0ed98e20e2c5429b28fa">uvfr_state_engine.c</a>
+</li>
+<li>uvTaskManager()
+: <a class="el" href="uvfr__state__engine_8c.html#a5671a47a9bd2a3938ac71e0aebd094ef">uvfr_state_engine.c</a>
 </li>
 <li>uvUtilsReset()
 : <a class="el" href="uvfr__utils_8c.html#a02781145b4802ebdc7001800bbe6d994">uvfr_utils.c</a>
 </li>
 <li>uvValidateManagedTasks()
-: <a class="el" href="uvfr__state__engine_8h.html#a8c1618caac0d7f29836107f1a44833e8">uvfr_state_engine.h</a>
-, <a class="el" href="uvfr__state__engine_8c.html#a8c1618caac0d7f29836107f1a44833e8">uvfr_state_engine.c</a>
+: <a class="el" href="uvfr__state__engine_8c.html#a8c1618caac0d7f29836107f1a44833e8">uvfr_state_engine.c</a>
+, <a class="el" href="uvfr__state__engine_8h.html#a8c1618caac0d7f29836107f1a44833e8">uvfr_state_engine.h</a>
 </li>
 </ul>
 </div><!-- contents -->

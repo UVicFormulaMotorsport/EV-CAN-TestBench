@@ -11,16 +11,23 @@
 //#include "assert.h"
 
 #define MAX_NUM_MANAGED_TASKS 16
+#define MAX_NUM_SVC_TASKS 8
 
 
 //Stores the data structure of the car, which is pretty nifty imo
 static uv_task_id _next_task_id = 0;
-static uv_task_info _task_register[MAX_NUM_MANAGED_TASKS] = {0};
+static uv_task_info* _task_register = NULL;
+static uv_task_info* _svc_task_register = NULL;
 
+
+static bool SCD_active = false;
 static QueueHandle_t state_change_queue = NULL;
 
 enum uv_vehicle_state_t vehicle_state = UV_BOOT;
 enum uv_vehicle_state_t previous_state = UV_BOOT;
+
+//Function prototypes
+uv_status killEmAll();
 
 
 /** @brief This function gets called when you want to create a task, and register it
@@ -52,7 +59,7 @@ uv_task_info *uvCreateTask(){
 	_newtask->task_function = NULL;
 	_newtask->task_priority = osPriorityNormal;
 
-	_newtask->instances = _UV_DEFAULT_TASK_INSTANCES;
+	_newtask->max_instances = _UV_DEFAULT_TASK_INSTANCES;
 	_newtask->stack_size = _UV_DEFAULT_TASK_STACK_SIZE;
 
 	_newtask->task_state = UV_TASK_NOT_STARTED;
@@ -62,11 +69,7 @@ uv_task_info *uvCreateTask(){
 
 	_newtask->next = NULL;
 
-
 	_newtask->task_handle = NULL;
-
-
-
 
 	return _newtask;
 }
@@ -79,18 +82,22 @@ uv_status _uvValidateSpecificTask(uv_task_id id){
 	uv_task_info* current_task = &(_task_register[id]);
 	if(current_task->active_states & current_task->deletion_states & current_task->suspension_states){
 				//Undefined behavior time, this should be 0
+		return UV_ERROR;
 	}
 
 	if(current_task->task_function == NULL){
 				//Invalid, since no task assigned
+		return UV_ERROR;
 	}
 
 	if(current_task->task_name == NULL){
 				//Invalid, task needs a name
+		return UV_ERROR;
 	}
 
-	if(current_task->instances == 0){
-				//FreeRTOS literally will not be able to run this if that is the case
+	if(current_task->max_instances == 0){
+		//FreeRTOS literally will not be able to run this if that is the case
+		return UV_ERROR;
 	}
 
 	return UV_OK;
@@ -111,7 +118,7 @@ uv_status uvValidateManagedTasks(){
 
 	}
 
-	return UV_OK;
+	return is_chill;
 }
 
 
@@ -192,6 +199,11 @@ enum uv_status_t uvStartTask(uint32_t* tracker,uv_task_info* t){
  */
 enum uv_status_t uvInitStateEngine(){
 	//create all the managed tasks :)
+	_task_register = uvMalloc(sizeof(uv_task_info)*MAX_NUM_MANAGED_TASKS);
+
+	if(_task_register == NULL){
+		__uvInitPanic();
+	}
 
 	initDrivingLoop(NULL); //create the main driving loop task
 	initTempMonitor(NULL); //create the temperature monitoring task
@@ -199,6 +211,15 @@ enum uv_status_t uvInitStateEngine(){
 	initOdometer(NULL);
 
 	return UV_OK;
+}
+
+/** @brief Stops and frees all resources used by uvfr_state_engine
+ *
+ * If we need to initialize the state engine, gotta de-initialize as well
+ *
+ */
+uv_status uvDeInitStateEngine(){
+	return killEmAll();
 }
 
 
@@ -221,7 +242,7 @@ enum uv_status_t uvStartStateMachine(){
 /** @brief The name should be pretty self explanatory
  *
  */
-static enum uv_status_t killEmAll(){
+uv_status killEmAll(){
 	uint32_t tracker = 0x00000000;
 	//QueueHandle_t incoming_scd_msg = xQueueCreate(8,sizeof(uv_init_task_response));
 	for(int i = 0; i<_next_task_id;i++){
@@ -340,15 +361,6 @@ enum uv_status_t uvSuspendTask(uint32_t* tracker,uv_task_info* t){
 	return UV_OK;
 }
 
-/** @brief Undoes what uvStartStateEngine, and uvInitStateEngine does
- *
- */
-enum uv_status_t uvDeInitStateEngine(){
-	killEmAll();
-
-
-	return UV_OK;
-}
 
 
 
@@ -361,7 +373,8 @@ typedef struct state_change_daemon_args{
 
 /** @brief Function for changing the state of the vehicle, as well as the list of active + inactive tasks.
  *
- * This function also changes out the tasks that are executing.
+ * This function also changes out the tasks that are executing, by invoking the legendary
+ * state_change_daemon
  *
  */
 enum uv_status_t changeVehicleState(uint16_t state){
@@ -596,15 +609,15 @@ static uv_status proccessSCDMsg(uv_scd_response* msg){
  * It performs this in the following way
  */
 void _stateChangeDaemon(void * args){
+	SCD_active = true;
+
+
 	uint32_t task_tracker = 0x00000000;
 	uv_task_info* tmp_task;
 
 	//BaseType_t rtos_status;
 
 	state_change_queue = xQueueCreate(8,sizeof(uv_scd_response*));
-
-
-	uint32_t redundant_tracker = 0x000000000;
 
 
 	/** We get to iterate through all of the managed tasks.
@@ -676,7 +689,7 @@ void _stateChangeDaemon(void * args){
 
 			/** Attempt to read from the message queue. If successful, then
 			 * @c xQueueReceive() will return @c pdPASS and we will then be able to
-			 * interperet the message.
+			 * interpret the message.
 			 *
 			 * @c xQueueReceive() copies a pointer to the response function to the address specified by &response
 			 *
@@ -741,10 +754,7 @@ void _stateChangeDaemon(void * args){
 
 	END_OF_STATE_CHANGE_DAEMON:
 
-	/** We reset the queue that all the tasks have in their arguments, that way we are chilling
-	 * That way if they for whatever reason try to call out of context, they just get hit with a NULL
-	 *
-	 */
+
 
 
 	TaskHandle_t scd_handle = ((state_change_daemon_args*)args)->meta_task_handle;
@@ -762,4 +772,24 @@ void _stateChangeDaemon(void * args){
 
 }
 //end of SCD
+
+
+/** @brief The big papa task that deals with handling all of the others
+ *
+ */
+void uvTaskManager(void* args){
+
+	for(;;){
+
+	}
+
+}
+
+void uvSVCTaskManager(void* args){
+
+	for(;;){
+
+	}
+
+}
 

@@ -14,7 +14,7 @@ var annotated_dup =
     [ "uv_init_struct", "structuv__init__struct.html", "structuv__init__struct" ],
     [ "uv_init_task_args", "structuv__init__task__args.html", "structuv__init__task__args" ],
     [ "uv_init_task_response", "structuv__init__task__response.html", "structuv__init__task__response" ],
-    [ "uv_internal_params", "structuv__internal__params.html", null ],
+    [ "uv_internal_params", "structuv__internal__params.html", "structuv__internal__params" ],
     [ "uv_scd_response", "structuv__scd__response.html", "structuv__scd__response" ],
     [ "uv_task_info", "structuv__task__info.html", "structuv__task__info" ],
     [ "uv_vehicle_settings", "structuv__vehicle__settings.html", "structuv__vehicle__settings" ]
