@@ -93,10 +93,10 @@ void uvInit(void * arguments){
 	//osThreadDef_t MC_init_thread = {"MC_init",MC_Startup,osPriorityNormal,128,0};
 	uv_init_task_args* MC_init_args = uvMalloc(sizeof(uv_init_task_args));
 	MC_init_args->init_info_queue = init_validation_queue;
-	MC_init_args->specific_args = &(current_vehicle_settings->bms_settings);
+	MC_init_args->specific_args = &(current_vehicle_settings->motor_controller_settings);
 	//MC_init_args->meta_task_handle = osThreadCreate(&MC_init_thread,MC_init_args);
 	//vTaskResume( MC_init_args->meta_task_handle );
-	retval = xTaskCreate(MC_Startup,"MC_init",256,MC_init_args,osPriorityAboveNormal,&(MC_init_args->meta_task_handle));
+	retval = xTaskCreate(MC_Startup,"MC_init",128,MC_init_args,osPriorityAboveNormal,&(MC_init_args->meta_task_handle));
 	if(retval != pdPASS){
 		//FUCK
 		error_msg = "bruh";
@@ -111,7 +111,7 @@ void uvInit(void * arguments){
 	BMS_init_args->init_info_queue = init_validation_queue;
 	BMS_init_args->specific_args = &(current_vehicle_settings->bms_settings);
 	//BMS_init_args->meta_task_handle = osThreadCreate(&BMS_init_thread,BMS_init_args);
-	retval = xTaskCreate(BMS_Init,"BMS_init",256,BMS_init_args,osPriorityAboveNormal,&(BMS_init_args->meta_task_handle));
+	retval = xTaskCreate(BMS_Init,"BMS_init",128,BMS_init_args,osPriorityAboveNormal,&(BMS_init_args->meta_task_handle));
 	if(retval != pdPASS){
 		//FUCK
 		error_msg = "bruh";
@@ -119,6 +119,24 @@ void uvInit(void * arguments){
 	/** @endcode
 	* This variable is a tracker that tracks which devices have successfully initialized
 	* @code*/
+
+	uv_init_task_args* IMD_init_args = uvMalloc(sizeof(uv_init_task_args));
+	IMD_init_args->init_info_queue = init_validation_queue;
+	IMD_init_args->specific_args = &(current_vehicle_settings->imd_settings);
+	retval = xTaskCreate(initIMD,"BMS_init",128,IMD_init_args,osPriorityAboveNormal,&(IMD_init_args->meta_task_handle));
+	if(retval != pdPASS){
+			//FUCK
+		error_msg = "bruh";
+	}
+
+	uv_init_task_args* PDU_init_args = uvMalloc(sizeof(uv_init_task_args));
+	PDU_init_args->init_info_queue = init_validation_queue;
+	PDU_init_args->specific_args = &(current_vehicle_settings->imd_settings);
+	retval = xTaskCreate(initPDU,"PDU_init",128,IMD_init_args,osPriorityAboveNormal,&(PDU_init_args->meta_task_handle));
+	if(retval != pdPASS){
+			//FUCK
+		error_msg = "bruh";
+	}
 
 
 	uint16_t ext_devices_status = 0x000F; //Tracks which devices are currently setup
@@ -186,10 +204,18 @@ void uvInit(void * arguments){
 	 */
 
 	vTaskDelete(MC_init_args->meta_task_handle);
-	free(MC_init_args);
+	uvFree(MC_init_args);
 
 	vTaskDelete(BMS_init_args->meta_task_handle);
-	free(BMS_init_args);
+	uvFree(BMS_init_args);
+
+	vTaskDelete(IMD_init_args->meta_task_handle);
+	uvFree(IMD_init_args);
+
+	vTaskDelete(PDU_init_args->meta_task_handle);
+	uvFree(PDU_init_args);
+
+
 
 	//vQueueDelete(init_validation_queue);
 	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15);
@@ -351,7 +377,7 @@ uv_status __uvFreeOS(void* ptr){
 /** @brief function that checks to make sure a pointer points to a place it is allowed to point to
  *
  * The primary motivation for this is to avoid trying to dereference a pointer that doesnt exist, and
- * triggering the HardFaultHandler(). That is never a fun time.
+ * triggering the @c HardFaultHandler(). That is never a fun time.
  * This allows us to exit gracefully instead of getting stuck in an IRQ handler
  *
  * Exiting gracefully can be pretty neat sometimes.

@@ -137,8 +137,11 @@ void IMD_Check_Uptime(uint8_t Data[]);
 // Function to request data from the IMD
 void IMD_Request_Status(uint8_t Status);
 
-// called on startup
+// called on startup @deprecated
 void IMD_Startup();
+
+
+void initIMD(void* args);
 
 
 

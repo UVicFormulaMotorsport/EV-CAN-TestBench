@@ -15,10 +15,10 @@
 #include "dma.h"
 #include "tim.h"
 #include "gpio.h"
+#include "spi.h"
 
 #include "FreeRTOS.h"
 #include "task.h"
-#include "cmsis_os.h"
 
 #include "uvfr_settings.h"
 #include "uvfr_state_engine.h"
@@ -30,6 +30,10 @@
 #include "pdu.h"
 #include "daq.h"
 
+//Only used for debugging
+#include "oled.h"
+
+//mainstay meat and potatoes tasks
 #include "driving_loop.h"
 #include "temp_monitoring.h"
 #include "odometer.h"
@@ -72,7 +76,8 @@
 
 typedef uint8_t bool;
 typedef uint8_t uv_task_id;
-typedef uint8_t uv_status;
+typedef enum uv_task_cmd_e uv_task_cmd;
+//typedef enum
 typedef uint8_t uv_ext_device_id;
 typedef uint32_t uv_timespan_ms;
 
@@ -92,6 +97,9 @@ typedef uint32_t uv_timespan_ms;
 #define USE_OS_MEM_MGMT 0
 #endif
 
+//Feature flags
+#define USE_OLED_DEBUG 1
+
 /**	@brief This is meant to be a return type from functions that indicates what is actually going on
  *
  * Use this as a return value for functions you want to know the success of. In general,
@@ -99,21 +107,21 @@ typedef uint32_t uv_timespan_ms;
  * that may have occurred.
  *
  */
-enum uv_status_t{
+typedef enum uv_status_t{
 	UV_OK,
 	UV_WARNING,
 	UV_ERROR,
 	UV_ABORTED
-};
+}uv_status;
 
 
 
-enum uv_task_state{
+typedef enum uv_task_state_t{
 	UV_TASK_NOT_STARTED,
 	UV_TASK_DELETED,
 	UV_TASK_RUNNING,
 	UV_TASK_SUSPENDED
-};
+} uv_task_status;
 
 /** Type made to represent the state of the vehicle, and the location in the state machine
  *	The states are powers of two to make it easier to discern tasks that need to happen in multiple states
@@ -241,7 +249,7 @@ typedef struct uv_task_info{
 	//Bit 6
 	//Bit 7
 
-	enum uv_task_state task_state; //tracks the internal state of the task
+	uv_task_status task_state; //tracks the internal state of the task
 	uint16_t active_states; //corresponds to the vehicle states where the task should be active
 	uint16_t deletion_states; //corresponds to the vehicle states where the task should be suspended
 	uint16_t suspension_states; //when should the task be suspended? When it should exist, but shouldnt be active.

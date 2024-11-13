@@ -128,7 +128,7 @@ uv_status uvValidateManagedTasks(){
  *
  *	This bad boi gets called from the stateChangeDaemon because it's a special little snowflake.
  */
-enum uv_status_t uvStartTask(uint32_t* tracker,uv_task_info* t){
+uv_status uvStartTask(uint32_t* tracker,uv_task_info* t){
 	/** The first thing we will do is check if the task is running, since this could theoretically get called from literally anywhere.
 	 * If the task is running, then we check to see if @c t->task_handle is set to @c NULL . If it is null, that is a physically impossible_state.
 	 * Neither very mindful or very demure.
@@ -197,7 +197,7 @@ enum uv_status_t uvStartTask(uint32_t* tracker,uv_task_info* t){
  * Who even fucking knows at this point
  *
  */
-enum uv_status_t uvInitStateEngine(){
+uv_status uvInitStateEngine(){
 	//create all the managed tasks :)
 	_task_register = uvMalloc(sizeof(uv_task_info)*MAX_NUM_MANAGED_TASKS);
 
@@ -228,7 +228,7 @@ uv_status uvDeInitStateEngine(){
 /** Actually starts up the state engine to do state engine things
  *
  */
-enum uv_status_t uvStartStateMachine(){
+uv_status uvStartStateMachine(){
 	if(uvValidateManagedTasks() != UV_OK){
 		return UV_ERROR;
 	}
@@ -263,7 +263,7 @@ uv_status killEmAll(){
  * It sends a message to the task which tells it to kill itself.
  *
  */
-enum uv_status_t uvDeleteTask(uint32_t* tracker,uv_task_info* t){
+uv_status uvDeleteTask(uint32_t* tracker,uv_task_info* t){
 	if(t == NULL){
 		uvPanic("Null Task Info Struct",0);
 	}
@@ -319,7 +319,7 @@ enum uv_status_t uvDeleteTask(uint32_t* tracker,uv_task_info* t){
 /** @brief function to suspend one of the managed tasks
  *
  */
-enum uv_status_t uvSuspendTask(uint32_t* tracker,uv_task_info* t){
+uv_status uvSuspendTask(uint32_t* tracker,uv_task_info* t){
 
 	if(t == NULL){
 		uvPanic("Null Task Info Struct",0);
@@ -377,7 +377,7 @@ typedef struct state_change_daemon_args{
  * state_change_daemon
  *
  */
-enum uv_status_t changeVehicleState(uint16_t state){
+uv_status changeVehicleState(uint16_t state){
 	/** If the state we wish to change to is the same as the state we're in, then
 	 * no need to be executing any of this fancy code
 	 *

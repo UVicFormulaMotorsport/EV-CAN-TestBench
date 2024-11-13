@@ -22,6 +22,7 @@
 #include "adc.h"
 #include "can.h"
 #include "dma.h"
+#include "spi.h"
 #include "tim.h"
 #include "gpio.h"
 
@@ -124,18 +125,13 @@ int main(void)
   MX_ADC1_Init();
   MX_ADC2_Init();
   MX_TIM3_Init();
+  MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
   //HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC1_BUF_LEN);
   //HAL_TIM_Base_Start_IT(&htim3); This is getting disabled, since measuring temp will now be an RTOS task
    // Just to prove we reached this point in the code
 
   //ANYTHING WE NEED TO DO BEFORE THE KERNEL TAKES OVER SHOULD HAPPEN HERE:
-
-  /* Step 1: Initialize whatever else needs initializing. Check that all devices exist.
-   * Do some diagnostics on ourselves while we at it.
-   */
-
-  //MC_Startup(); // Send all the needed CAN messages to the MC for it to be properly configured.
 
   /* USER CODE END 2 */
 
