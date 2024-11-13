@@ -6,10 +6,38 @@
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{uvfr__state__engine_8h_a27e96c74597bf4e85f968da673622b31}{uv\+\_\+status}} \mbox{\hyperlink{daq_8c_af2c619df9f3d115dcbc511b0bb738e87}{init\+Daq\+Task}} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em initializes the master D\+AQ task, all that fun stuff. This task probably manages a while plethora of smaller tasks \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{daq_8c_a433bb586ceab47aed8d633fa2ff8ce56}{daq\+Master\+Task}} (void $\ast$args)
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{daq_8c_a433bb586ceab47aed8d633fa2ff8ce56}\label{daq_8c_a433bb586ceab47aed8d633fa2ff8ce56}} 
+\index{daq.c@{daq.c}!daqMasterTask@{daqMasterTask}}
+\index{daqMasterTask@{daqMasterTask}!daq.c@{daq.c}}
+\doxysubsubsection{\texorpdfstring{daqMasterTask()}{daqMasterTask()}}
+{\footnotesize\ttfamily void daq\+Master\+Task (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+These here lines set the delay. This task executes exactly at the period specified, regardless of how long the task execution actually takes
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{TickType\_t tick\_period = pdMS\_TO\_TICKS(params-\/>task\_period); \textcolor{comment}{//Convert ms of period to the RTOS ticks}}
+\DoxyCodeLine{\textcolor{comment}{//TickType\_t last\_time = xTaskGetTickCount();       /**}}
+\end{DoxyCode}
+
+
+Definition at line 44 of file daq.\+c.
+
+
+
+References change\+Vehicle\+State(), uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, kill\+Self(), suspend\+Self(), uv\+\_\+task\+\_\+info\+::task\+\_\+period, U\+V\+\_\+\+D\+R\+I\+V\+I\+NG, U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE, U\+V\+\_\+\+K\+I\+L\+L\+\_\+\+C\+MD, U\+V\+\_\+\+R\+E\+A\+DY, U\+V\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+MD, and vehicle\+\_\+state.
+
+
+
+Referenced by init\+Daq\+Task().
+
 \mbox{\Hypertarget{daq_8c_af2c619df9f3d115dcbc511b0bb738e87}\label{daq_8c_af2c619df9f3d115dcbc511b0bb738e87}} 
 \index{daq.c@{daq.c}!initDaqTask@{initDaqTask}}
 \index{initDaqTask@{initDaqTask}!daq.c@{daq.c}}
@@ -18,11 +46,15 @@
 
 
 
-Definition at line 4 of file daq.\+c.
+initializes the master D\+AQ task, all that fun stuff. This task probably manages a while plethora of smaller tasks 
+
+This is a fairly standard function 
+
+Definition at line 10 of file daq.\+c.
 
 
 
-References U\+V\+\_\+\+OK.
+References \+\_\+\+U\+V\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, uv\+\_\+task\+\_\+info\+::active\+\_\+states, daq\+Master\+Task(), uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, uv\+\_\+task\+\_\+info\+::max\+\_\+instances, P\+R\+O\+G\+R\+A\+M\+M\+I\+NG, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+args, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+period, uv\+\_\+task\+\_\+info\+::task\+\_\+priority, U\+V\+\_\+\+D\+R\+I\+V\+I\+NG, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE, U\+V\+\_\+\+L\+A\+U\+N\+C\+H\+\_\+\+C\+O\+N\+T\+R\+OL, U\+V\+\_\+\+OK, U\+V\+\_\+\+R\+E\+A\+DY, and uv\+Create\+Task().
 
 
 

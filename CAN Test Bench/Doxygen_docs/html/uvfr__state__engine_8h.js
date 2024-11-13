@@ -7,6 +7,7 @@ var uvfr__state__engine_8h =
     [ "_UV_DEFAULT_TASK_PERIOD", "uvfr__state__engine_8h.html#a3ecc1e9c72ff5ba01649bf037186b015", null ],
     [ "_UV_DEFAULT_TASK_STACK_SIZE", "uvfr__state__engine_8h.html#a32571accb85a2d8f479c6066d7a46238", null ],
     [ "_UV_MIN_TASK_PERIOD", "uvfr__state__engine_8h.html#a7aab8d4b97eeacffeb153a91f70b5e6b", null ],
+    [ "uvPanic", "uvfr__state__engine_8h.html#a1c8372c34a1f81b8c691d19b290a79a4", null ],
     [ "uv_scd_response", "uvfr__state__engine_8h.html#a856f7f6f3b6b92f655aafc552606ffea", null ],
     [ "uv_status", "uvfr__state__engine_8h.html#a27e96c74597bf4e85f968da673622b31", null ],
     [ "uv_task_cmd", "uvfr__state__engine_8h.html#a81cd43c8eb07f488a7fbef0dc276e284", null ],
@@ -21,12 +22,13 @@ var uvfr__state__engine_8h =
     [ "uv_task_cmd_e", "uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455c", [
       [ "UV_NO_CMD", "uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455ca3641b5b35403903b66faf4d615c3199d", null ],
       [ "UV_KILL_CMD", "uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6", null ],
-      [ "UV_SUSPEND_CMD", "uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077", null ]
+      [ "UV_SUSPEND_CMD", "uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077", null ],
+      [ "UV_TASK_START_CMD", "uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455cabac2ecce11df7b3e4b872ba4d22f7564", null ]
     ] ],
+    [ "__uvPanic", "uvfr__state__engine_8h.html#ab2449f66698295ebfaff451c2f63607f", null ],
     [ "_stateChangeDaemon", "uvfr__state__engine_8h.html#a45e3dba55fdad745f7394feb3764cd0a", null ],
     [ "_uvValidateSpecificTask", "uvfr__state__engine_8h.html#aeb45f9e769808c80cf3a76d28ea7424b", null ],
     [ "changeVehicleState", "uvfr__state__engine_8h.html#a34bee422adb65dbf5f923281cf899601", null ],
-    [ "killEmAll", "uvfr__state__engine_8h.html#a20e6d890541b1349d47e1483394357ce", null ],
     [ "killSelf", "uvfr__state__engine_8h.html#a40337f99ed3553119614d722da7e765d", null ],
     [ "suspendSelf", "uvfr__state__engine_8h.html#a1696080304a0a849ec9d4d92701f910f", null ],
     [ "updateRunningTasks", "uvfr__state__engine_8h.html#accc8a3290b8d5e61a3cc03d93f6bc394", null ],
@@ -35,7 +37,6 @@ var uvfr__state__engine_8h =
     [ "uvDeleteTask", "uvfr__state__engine_8h.html#a4c37d133e033a1de858150253a62a10d", null ],
     [ "uvGetTaskById", "uvfr__state__engine_8h.html#ac77de2c18076b8e04742d2ca927dbd55", null ],
     [ "uvInitStateEngine", "uvfr__state__engine_8h.html#ab907ac134ab31a8bcc534b1701304964", null ],
-    [ "uvPanic", "uvfr__state__engine_8h.html#a37727411bc0a7aeb66e40f63e4866217", null ],
     [ "uvRegisterTask", "uvfr__state__engine_8h.html#a61e8135ace497b0e7e89b9515942d390", null ],
     [ "uvStartStateMachine", "uvfr__state__engine_8h.html#a415f401ea7985271f803f935d925be34", null ],
     [ "uvStartTask", "uvfr__state__engine_8h.html#a670c601b0f61040ae49ef375daf543a8", null ],

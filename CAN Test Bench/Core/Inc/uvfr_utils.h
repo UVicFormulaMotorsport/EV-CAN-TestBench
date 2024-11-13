@@ -148,6 +148,38 @@ enum uv_external_device{
 	PDU = 3
 };
 
+typedef enum access_control_t{
+	UV_NONE,
+	UV_DUMB_FLAG,
+	UV_MUTEX,
+	UV_BINARY_SEMAPHORE,
+	UV_SEMAPHORE
+}access_control_type;
+
+struct uv_mutex_info{
+	SemaphoreHandle_t handle;
+
+};
+
+struct uv_binary_semaphore_info{
+	SemaphoreHandle_t handle;
+
+};
+
+struct uv_semaphore_info{
+	SemaphoreHandle_t handle;
+
+};
+
+typedef union access_control_info{
+	struct uv_mutex_info mutex;
+	struct uv_binary_semaphore_info bin_semaphore;
+	struct uv_semaphore_info semaphore;
+
+}access_control_info;
+
+
+
 
 /** contains info relevant to initializing the vehicle
  *
@@ -158,6 +190,13 @@ typedef struct uv_init_struct{
 }uv_init_struct;
 
 
+#define UV_TASK_VEHICLE_APPLICATION 0b00000001
+#define UV_TASK_PERIODIC_SVC        0b00000010
+#define UV_TASK_DORMANT_SVC         0b00000011
+#define UV_TASK_MANAGER_MSK         0b00000011
+#define UV_TASK_LOG_START_STOP_TIME 0b00000100
+#define UV_TASK_LOG_MEM_USAGE		0b00001000
+#define UV_TASK_SCD_IGNORE			0b00010000
 
 
 /** @brief This struct is designed to hold neccessary information about an RTOS task that
@@ -169,7 +208,7 @@ typedef struct uv_init_struct{
  *
  * @c task_function is a pointer to the function we want the task to run
  * @c task_priority is the priority of the task
- * @c instances is the number of legal instances
+ * @c max_instances is the number of legal instances
  *
  * @c task_state is an internal representation of what the task is up to. This is needed because the RTOS task may not actually exist.
  * @c active_states dictates when the states are active
@@ -188,9 +227,19 @@ typedef struct uv_task_info{
 	TaskFunction_t task_function; //the thread function
 	osPriority task_priority; //priority of the task
 
-	uint32_t instances; //max number of task instances running at any moment
+	uint32_t max_instances; //max number of task instances running at any moment
 	uint32_t stack_size; //stack size allocated to task
 
+	uint8_t num_instances; //number of instances running
+
+	uint8_t task_flags; //Some task flags for ya
+	//Bits 0:1 - | Task MGMT | Vehicle Application task - 00 | Periodic SVC Task - 10 | Dormant SVC Task - 11
+	//Bit 2 - Log task start + stop time
+	//Bit 3 - Log mem usage
+	//Bit 4 - SCD ignore flag
+	//Bit 5
+	//Bit 6
+	//Bit 7
 
 	enum uv_task_state task_state; //tracks the internal state of the task
 	uint16_t active_states; //corresponds to the vehicle states where the task should be active
@@ -203,10 +252,25 @@ typedef struct uv_task_info{
 
 	void* task_args; //specific arguments for that task. Probably comes from the vehicle settings.
 
-	QueueHandle_t manager;
+	QueueHandle_t manager;//TODO: Fix type/impliment a better manager system than the SCD
 
 
 }uv_task_info;
+
+
+typedef struct tm_data{
+	//
+
+}task_management_data;
+
+
+
+
+typedef struct p_status{
+	uv_status peripheral_status;
+	TickType_t activation_time;
+
+}p_status;
 
 
 /** @brief Struct designed to act like the @c uv_task_info struct,

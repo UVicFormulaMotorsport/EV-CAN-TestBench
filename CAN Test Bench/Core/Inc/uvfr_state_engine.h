@@ -31,7 +31,8 @@ typedef uint8_t uv_task_cmd;
 enum uv_task_cmd_e{
 	UV_NO_CMD,
 	UV_KILL_CMD,
-	UV_SUSPEND_CMD
+	UV_SUSPEND_CMD,
+	UV_TASK_START_CMD
 };
 
 enum uv_scd_response_e{

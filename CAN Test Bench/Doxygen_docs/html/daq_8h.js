@@ -18,5 +18,6 @@ var daq_8h =
       [ "UV_FLOAT", "daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9", null ],
       [ "UV_DOUBLE", "daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038", null ]
     ] ],
+    [ "daqMasterTask", "daq_8h.html#a433bb586ceab47aed8d633fa2ff8ce56", null ],
     [ "initDaqTask", "daq_8h.html#adecae26482eb2c3289131a2a486ac8b3", null ]
 ];

@@ -125,7 +125,6 @@ Variables</h2></td></tr>
 <tr class="memitem:a3afad2adffd2b662e26b56ede2b1ccc5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structuv__init__struct.html">uv_init_struct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freertos_8c.html#a3afad2adffd2b662e26b56ede2b1ccc5">init_settings</a></td></tr>
 <tr class="separator:a3afad2adffd2b662e26b56ede2b1ccc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a142da7a698285a444ffffb0d1d791023"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freertos_8c.html#a142da7a698285a444ffffb0d1d791023">init_task_handle</a></td></tr>
-<tr class="memdesc:a142da7a698285a444ffffb0d1d791023"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function will initialize all of the uvfr wrappers, and system variables, as well as performing internal diagnostics.  <a href="freertos_8c.html#a142da7a698285a444ffffb0d1d791023">More...</a><br /></td></tr>
 <tr class="separator:a142da7a698285a444ffffb0d1d791023"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa658fe134a5d1309d7a15c8116fa142c"><td class="memItemLeft" align="right" valign="top">osThreadId&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="freertos_8c.html#aa658fe134a5d1309d7a15c8116fa142c">defaultTaskHandle</a></td></tr>
 <tr class="separator:aa658fe134a5d1309d7a15c8116fa142c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -164,10 +163,11 @@ Variables</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section attention"><dt>Attention</dt><dd>DONT YOU FUCKING DARE DELETE THESE GOTO STATEMENTS, THEY ARE CRITICAL TO STOP THE OS FROM HANGING ITSELF</dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="freertos_8c_source.html#l00141">141</a> of file <a class="el" href="freertos_8c_source.html">freertos.c</a>.</p>
 
-<p class="reference">References <a class="el" href="freertos_8c_source.html#l00053">defaultTaskHandle</a>, <a class="el" href="freertos_8c_source.html#l00048">init_settings</a>, <a class="el" href="freertos_8c_source.html#l00051">init_task_handle</a>, <a class="el" href="freertos_8c_source.html#l00190">StartDefaultTask()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00143">uv_init_struct::use_default_settings</a>, and <a class="el" href="uvfr__utils_8c_source.html#l00030">uvInit()</a>.</p>
+<p class="reference">References <a class="el" href="freertos_8c_source.html#l00053">defaultTaskHandle</a>, <a class="el" href="freertos_8c_source.html#l00048">init_settings</a>, <a class="el" href="freertos_8c_source.html#l00051">init_task_handle</a>, <a class="el" href="freertos_8c_source.html#l00190">StartDefaultTask()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00156">uv_init_struct::use_default_settings</a>, and <a class="el" href="uvfr__utils_8c_source.html#l00032">uvInit()</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00096">main()</a>.</p>
 
@@ -190,18 +190,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Function implementing the defaultTask thread. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">argument</td><td>Not used </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">None</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section attention"><dt>Attention</dt><dd>DO NOT EVER CALL THIS. IT EXISTS TO STOP A COMPILER ERROR IN THE MX_FREERTOS_INIT FUNCTION </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="freertos_8c_source.html#l00190">190</a> of file <a class="el" href="freertos_8c_source.html">freertos.c</a>.</p>
 
@@ -390,12 +379,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This function will initialize all of the uvfr wrappers, and system variables, as well as performing internal diagnostics. </p>
-<p>This function has 3 phases. 1) It loads up settings from flash if they exist. 2) It starts up the uv_state_engine </p>
-
 <p class="definition">Definition at line <a class="el" href="freertos_8c_source.html#l00051">51</a> of file <a class="el" href="freertos_8c_source.html">freertos.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="freertos_8c_source.html#l00141">MX_FREERTOS_Init()</a>, and <a class="el" href="uvfr__utils_8c_source.html#l00030">uvInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="freertos_8c_source.html#l00141">MX_FREERTOS_Init()</a>, and <a class="el" href="uvfr__utils_8c_source.html#l00032">uvInit()</a>.</p>
 
 </div>
 </div>

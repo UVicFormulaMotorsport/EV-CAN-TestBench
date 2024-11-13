@@ -28,7 +28,7 @@ void \mbox{\hyperlink{freertos_8c_a97fd430f36f8b065226e2bff9bad1de5}{v\+Applicat
 \mbox{\hyperlink{structuv__init__struct}{uv\+\_\+init\+\_\+struct}} \mbox{\hyperlink{freertos_8c_a3afad2adffd2b662e26b56ede2b1ccc5}{init\+\_\+settings}}
 \item 
 Task\+Handle\+\_\+t \mbox{\hyperlink{freertos_8c_a142da7a698285a444ffffb0d1d791023}{init\+\_\+task\+\_\+handle}}
-\begin{DoxyCompactList}\small\item\em This function will initialize all of the uvfr wrappers, and system variables, as well as performing internal diagnostics. \end{DoxyCompactList}\item 
+\item 
 os\+Thread\+Id \mbox{\hyperlink{freertos_8c_aa658fe134a5d1309d7a15c8116fa142c}{default\+Task\+Handle}}
 \item 
 static Static\+Task\+\_\+t \mbox{\hyperlink{freertos_8c_a2dd1013c5ef8f355ac2f1479e36ec659}{x\+Idle\+Task\+T\+C\+B\+Buffer}}
@@ -58,6 +58,9 @@ Free\+R\+T\+OS initialization.
 {\em None} & \\
 \hline
 \end{DoxyRetVals}
+\begin{DoxyAttention}{Attention}
+D\+O\+NT Y\+OU F\+U\+C\+K\+I\+NG D\+A\+RE D\+E\+L\+E\+TE T\+H\+E\+SE G\+O\+TO S\+T\+A\+T\+E\+M\+E\+N\+TS, T\+H\+EY A\+RE C\+R\+I\+T\+I\+C\+AL TO S\+T\+OP T\+HE OS F\+R\+OM H\+A\+N\+G\+I\+NG I\+T\+S\+E\+LF
+\end{DoxyAttention}
 
 
 Definition at line 141 of file freertos.\+c.
@@ -80,16 +83,9 @@ Referenced by main().
 
 Function implementing the default\+Task thread. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em argument} & Not used \\
-\hline
-\end{DoxyParams}
-
-\begin{DoxyRetVals}{Return values}
-{\em None} & \\
-\hline
-\end{DoxyRetVals}
+\begin{DoxyAttention}{Attention}
+DO N\+OT E\+V\+ER C\+A\+LL T\+H\+IS. IT E\+X\+I\+S\+TS TO S\+T\+OP A C\+O\+M\+P\+I\+L\+ER E\+R\+R\+OR IN T\+HE M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+I\+N\+IT F\+U\+N\+C\+T\+I\+ON 
+\end{DoxyAttention}
 
 
 Definition at line 190 of file freertos.\+c.
@@ -197,10 +193,6 @@ Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
 {\footnotesize\ttfamily Task\+Handle\+\_\+t init\+\_\+task\+\_\+handle}
 
 
-
-This function will initialize all of the uvfr wrappers, and system variables, as well as performing internal diagnostics. 
-
-This function has 3 phases. 1) It loads up settings from flash if they exist. 2) It starts up the uv\+\_\+state\+\_\+engine 
 
 Definition at line 51 of file freertos.\+c.
 

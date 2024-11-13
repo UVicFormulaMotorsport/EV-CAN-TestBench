@@ -25,7 +25,7 @@ uv_status initTempMonitor(void * arguments){
 	tm_task->task_function = tempMonitorTask;
 	tm_task->task_priority = osPriorityNormal;
 
-	tm_task->instances = 1;
+	tm_task->max_instances = 1;
 	tm_task->stack_size = _UV_DEFAULT_TASK_STACK_SIZE;
 
 	tm_task->active_states = UV_READY | UV_DRIVING | UV_ERROR_STATE;
@@ -54,7 +54,6 @@ void tempMonitorTask(void* args){
 	 @code*/
 	TickType_t tick_period = pdMS_TO_TICKS(params->task_period); //Convert ms of period to the RTOS ticks
 	TickType_t last_time = xTaskGetTickCount();
-	//BaseType_t task_on_time;
 	/**@endcode */
 	for(;;){
 		if(params->cmd_data == UV_KILL_CMD){

@@ -3,7 +3,7 @@ var uvfr__utils_8h =
     [ "uv_init_struct", "structuv__init__struct.html", "structuv__init__struct" ],
     [ "uv_task_info", "structuv__task__info.html", "structuv__task__info" ],
     [ "uv_init_task_args", "structuv__init__task__args.html", "structuv__init__task__args" ],
-    [ "uv_internal_params", "structuv__internal__params.html", null ],
+    [ "uv_internal_params", "structuv__internal__params.html", "structuv__internal__params" ],
     [ "uv_init_task_response", "structuv__init__task__response.html", "structuv__init__task__response" ],
     [ "_BV", "uvfr__utils_8h.html#a483c9de27db573099572f5485ef841c9", null ],
     [ "_BV_16", "uvfr__utils_8h.html#aa17e4b09cf528c30099398ddedc48955", null ],
@@ -70,7 +70,8 @@ var uvfr__utils_8h =
       [ "UV_BOOT", "uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4afdfc4cdb8c5210e05bdfdc3df51f80ff", null ],
       [ "UV_HALT", "uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4a2d3dc239e61931f9f779b71e84005b1b", null ]
     ] ],
-    [ "_uvInitPanic", "uvfr__utils_8h.html#a3680dbdd328bffe299521c704147d587", null ],
+    [ "__uvInitPanic", "uvfr__utils_8h.html#a92b5ac44171d49acd084c274385a043a", null ],
     [ "uvInit", "uvfr__utils_8h.html#a6d40598f9d8daa89ca159a2e87f4fd01", null ],
-    [ "uvMalloc", "uvfr__utils_8h.html#ac967a99212834abc77085829f10dc27c", null ]
+    [ "uvIsPTRValid", "uvfr__utils_8h.html#a0186c036688c7852cf0ceaee96b343a3", null ],
+    [ "global_context", "uvfr__utils_8h.html#a660f31748ce0b90d471a4f5441ee3cb1", null ]
 ];

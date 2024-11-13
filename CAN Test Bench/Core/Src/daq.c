@@ -23,7 +23,7 @@ uv_status initDaqTask(void * args){
 	daq_task->task_function = daqMasterTask;
 	daq_task->task_priority = osPriorityNormal;
 
-	daq_task->instances = 1;
+	daq_task->max_instances = 1;
 	daq_task->stack_size = _UV_DEFAULT_TASK_STACK_SIZE;
 
 	daq_task->active_states = UV_READY | UV_DRIVING | UV_ERROR_STATE;

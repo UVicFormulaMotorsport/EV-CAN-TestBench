@@ -14,6 +14,7 @@ var dir_e2489e887f17afa3cbc07a4ec152cdd2 =
     [ "imd.h", "imd_8h.html", "imd_8h" ],
     [ "main.h", "main_8h.html", "main_8h" ],
     [ "motor_controller.h", "motor__controller_8h.html", "motor__controller_8h" ],
+    [ "odometer.h", "odometer_8h.html", "odometer_8h" ],
     [ "pdu.h", "pdu_8h.html", "pdu_8h" ],
     [ "stm32f4xx_hal_conf.h", "stm32f4xx__hal__conf_8h.html", "stm32f4xx__hal__conf_8h" ],
     [ "stm32f4xx_it.h", "stm32f4xx__it_8h.html", "stm32f4xx__it_8h" ],

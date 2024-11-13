@@ -43,7 +43,7 @@ enum uv_status_t initDrivingLoop(void *argument){
 	dl_task->task_function = StartDrivingLoop;
 	dl_task->task_priority = osPriorityHigh;
 
-	dl_task->instances = 1;
+	dl_task->max_instances = 1;
 	dl_task->stack_size = 256;
 
 	dl_task->active_states = UV_DRIVING;
