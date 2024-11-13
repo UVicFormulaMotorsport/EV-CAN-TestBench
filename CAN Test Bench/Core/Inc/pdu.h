@@ -46,4 +46,6 @@ void PDU_disable_cooling_fans();
 void PDU_enable_coolant_pump();
 void PDU_disable_coolant_pump();
 
+void initPDU(void* args);
+
 #endif

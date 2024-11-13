@@ -21,8 +21,6 @@ const uint16_t MC_Expected_FW_Version = 0xDC01;
 const uint32_t max_motor_speed = 3277; // this limits rpm of motor for speed control setpoint
 uint8_t desired_motor_speed[2];
 
-// TODO need to figure out file with ADC stuff or use pointers and such
-uint32_t ADC_percentage;
 
 
 void MC_Parse_Message(int DLC, uint8_t Data[]){
@@ -105,6 +103,8 @@ void MC_Torque_Control(int todo){
 	// Need to figure out best way to do this
 }
 
+//NGL, probably want these in driving loop instead
+#if 0
 void MC_Speed_Control(int ADC_value){
 
 	// TODO verify endian and deal with source of data
@@ -116,6 +116,7 @@ void MC_Speed_Control(int ADC_value){
 
 	MC_Send_Data(N_set, desired_motor_speed, 2);
 }
+#endif
 
 
 void MC_Check_Error_Warning(uint8_t Data[]){
@@ -261,37 +262,23 @@ void MC_Startup(void* args){
 	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14);
 	uv_init_task_args* params = (uv_init_task_args*) args;
 
-	vTaskDelay(200);
-
 	uv_init_task_response response = {UV_OK,MOTOR_CONTROLLER,0,NULL};
+	//We need to do a bunch of stuff to actually initialize the motor controller here
+
+	motor_controller_settings* settings = (motor_controller_settings*) params->specific_args;
+
+
 
 	if(xQueueSendToBack(params->init_info_queue,&response,100) != pdPASS){
 		//OOPS
 		uvPanic("Failed to enqueue MC OK Response",0);
 	}
 
-	vTaskDelay(100);
 
-	uv_init_task_response response2 = {UV_OK,IMD,0,NULL};
-	uv_init_task_response response3 = {UV_OK,PDU,0,NULL};
 
-	if(xQueueSendToBack(params->init_info_queue,&response2,100) != pdPASS){
-			//OOPS
-		uvPanic("Failed to enqueue IMD OK Response",0);
-	}
 
-	vTaskDelay(5);
-
-	if(xQueueSendToBack(params->init_info_queue,&response3,100) != pdPASS){
-			//OOPS
-		uvPanic("Failed to enqueue PDU OK Response",0);
-	}
 
 	//Kill yourself
-
-//	while(1){
-//		vTaskDelay(100);
-//	}
 	vTaskSuspend(params->meta_task_handle);
 }
 
