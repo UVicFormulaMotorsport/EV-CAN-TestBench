@@ -90,12 +90,16 @@ typedef uint32_t uv_timespan_ms;
 //Memory management macros
 
 #ifndef UV_MALLOC_LIMIT
-#define UV_MALLOC_LIMIT 1024
+#define UV_MALLOC_LIMIT ((size_t)1024)
 #endif
 
 #ifndef USE_OS_MEM_MGMT
 #define USE_OS_MEM_MGMT 0
 #endif
+
+//Some fun CAN macros
+#define UV_CAN1
+#define UV_CAN2
 
 //Feature flags
 #define USE_OLED_DEBUG 1
@@ -187,6 +191,17 @@ typedef union access_control_info{
 }access_control_info;
 
 
+#define UV_CAN_EXTENDED_ID 0x01
+#define UV_CAN_CHANNEL_MASK 0b00000110
+typedef struct uv_CAN_msg{
+	uint8_t flags;
+	//Bit 0: extended id?
+	//Bit [1:2]: which actual CANbus do I use?
+	//Bit 3: dynamically allocated
+	uint8_t dlc;
+	uint32_t msg_id;
+	uint8_t data[8];
+}uv_CAN_msg;
 
 
 /** contains info relevant to initializing the vehicle
@@ -201,7 +216,7 @@ typedef struct uv_init_struct{
 #define UV_TASK_VEHICLE_APPLICATION 0b00000001
 #define UV_TASK_PERIODIC_SVC        0b00000010
 #define UV_TASK_DORMANT_SVC         0b00000011
-#define UV_TASK_MANAGER_MSK         0b00000011
+#define UV_TASK_MANAGER_MASK        0b00000011
 #define UV_TASK_LOG_START_STOP_TIME 0b00000100
 #define UV_TASK_LOG_MEM_USAGE		0b00001000
 #define UV_TASK_SCD_IGNORE			0b00010000
@@ -235,13 +250,13 @@ typedef struct uv_task_info{
 	TaskFunction_t task_function; //the thread function
 	osPriority task_priority; //priority of the task
 
-	uint32_t max_instances; //max number of task instances running at any moment
+	uint8_t max_instances; //max number of task instances running at any moment
 	uint32_t stack_size; //stack size allocated to task
 
 	uint8_t num_instances; //number of instances running
 
 	uint8_t task_flags; //Some task flags for ya
-	//Bits 0:1 - | Task MGMT | Vehicle Application task - 00 | Periodic SVC Task - 10 | Dormant SVC Task - 11
+	//Bits 0:1 - | Task MGMT | Vehicle Application task - 01 | Periodic SVC Task - 10 | Dormant SVC Task - 11
 	//Bit 2 - Log task start + stop time
 	//Bit 3 - Log mem usage
 	//Bit 4 - SCD ignore flag
@@ -301,6 +316,7 @@ typedef struct uv_init_task_args{
 typedef struct uv_internal_params{
 	uv_init_struct* init_params;
 	uv_vehicle_settings* vehicle_settings;
+	p_status peripheral_status[];
 
 
 
@@ -319,6 +335,8 @@ typedef struct uv_init_task_response{
 	uint8_t nchar;
 	char* errmsg; //if we didn't succeed, then what went wrong?
 }uv_init_task_response;
+
+
 
 #ifndef UV_UTILS_SRC_IMPLIMENTATION
 	extern uv_internal_params global_context;

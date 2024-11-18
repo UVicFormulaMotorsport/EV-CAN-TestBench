@@ -14,13 +14,15 @@
 #define MAX_NUM_SVC_TASKS 8
 
 
-//Stores the data structure of the car, which is pretty nifty imo
+//Stores the actual task info
 static uv_task_id _next_task_id = 0;
 static uv_task_info* _task_register = NULL;
+
+static uv_task_id _next_svc_task_id = 0;
 static uv_task_info* _svc_task_register = NULL;
 
 
-static bool SCD_active = false;
+static volatile bool SCD_active = false;
 static QueueHandle_t state_change_queue = NULL;
 
 enum uv_vehicle_state_t vehicle_state = UV_BOOT;
@@ -46,7 +48,7 @@ uv_task_info *uvCreateTask(){
 	}
 
 	/** Acquire the pointer to the spot in the array, we are doing this since we need to
-	 * return the pointer anyways
+	 * return the pointer anyways, and it cleans up the syntax a little.
 	 *
 	 */
 
@@ -257,6 +259,21 @@ uv_status killEmAll(){
 }
 
 
+/** @brief if a task refuses to comply with the SCD, then it has no choice but to be deleted. There
+ * is nothing that can be done.
+ *
+ * You will not win against the operating system.
+ *
+ */
+static uv_status uvKillTaskViolently(){
+	/** The first thing that needs to happen, is we will tell the kernel to
+	 * release any resources owned by the task.
+	 *
+	 */
+	return UV_OK;
+}
+
+
 /**@brief deletes a managed task via the system
  *
  * This function is the lowtier god of the program. It pulls up and is like "YOU SHOULD KILL YOURSELF, NOW!!"
@@ -290,7 +307,10 @@ uv_status uvDeleteTask(uint32_t* tracker,uv_task_info* t){
 
 	}
 
-
+	/** This checks with the RTOS kernel to see that the task
+	 * as stated by the scheduler matches the state known by uvfr_utils
+	 *
+	 */
 	eTaskState task_state = eTaskGetState(t->task_handle);
 
 	if((task_state == eSuspended)&&(task_state != eBlocked)){
@@ -639,7 +659,14 @@ void _stateChangeDaemon(void * args){
 		 *  @code */
 		tmp_task = &(_task_register[i]);
 		//tmp_task->manager = incoming_scd_msg; //No longer using this var, instead using the state_change_queue static global var
-		task_tracker |= 0x01<<i;
+		if(((tmp_task->task_flags)&(UV_TASK_MANAGER_MASK | UV_TASK_SCD_IGNORE)) == UV_TASK_VEHICLE_APPLICATION){
+			task_tracker |= 0x01<<i;
+		}else{
+			//If we get here that means that either:
+			//This task has the SCD ignore flag active
+			//This is a SVC task
+			continue; //This is not the task you want
+		}
 		//redundant_tracker |= 0x01<<i;
 		/**@endcode*/
 		if(tmp_task->active_states & vehicle_state){
@@ -785,11 +812,109 @@ void uvTaskManager(void* args){
 
 }
 
+uv_task_info* uvCreateServiceTask(){
+	return NULL;
+}
+
+/** @brief Function to start a service task specifically
+ *
+ */
+uv_status uvStartSVCTask(){
+
+	return UV_OK;
+
+}
+
+/** @brief Function that suspends a service task
+ *
+ */
+uv_status uvSuspendSVCTask(){
+	return UV_OK;
+}
+
+/** @brief For when you need to delete a service task... for some reason...
+ *
+ */
+uv_status uvDeleteSVCTask(){
+
+	return UV_OK;
+}
+
+/** @brief Function that takes a service part that may be messed up and tries to reboot it to recover
+ *
+ * This may be neccessary if a SVC task is not responding. Be careful though, since this has the potential to delay more important tasks :o
+ * Therefore, this technique should be used sparingly, and each task gets a limited number of attempts within a certain time period.
+ */
+uv_status uvRestartSVCTask(){
+	//force task to relinquish resources
+
+	//ask nicely for task to be deleted
+
+	//if that fails, forcibly delete task
+	uvKillTaskViolently();
+	//try to start the task again
+	uvStartSVCTask();
+	return UV_OK;
+
+}
+
+/** @brief oversees all of the service tasks, and makes sure that theyre alright
+ *
+ *
+ */
 void uvSVCTaskManager(void* args){
 
-	for(;;){
 
+
+	/** Start all of the service tasks. This involves allocating neccessary memory,
+	 * setting the appropriate task parameters, and saying "fuck it we ball" and adding the tasks to the
+	 * central task tracking data structure.
+	 *
+	 *
+	 */
+
+	//TODO: Determine whether or not service tasks should actually use the same struct as vehicle application tasks, since they behave completely differently
+	_svc_task_register = uvMalloc(sizeof(uv_task_info)); //allocate mem for the svc task register
+
+
+	if(_svc_task_register == NULL){
+		__uvInitPanic(); //Double Plus Ungood
 	}
 
+
+	//super basic for now, just need something working
+
+
+
+	//iterate through the list
+
+	for(;;){
+		//Hold for a command
+
+		//Do different things depending on what the value of the command is
+
+		//update various parameters that need updated
+	}
+
+	/** Now we deinitialize the svcTaskManager.
+	 * This is done by doing the following:
+	 * - actually shut down the svc tasks
+	 * - double check that the tasks have acually shut down
+	 * - if any svc tasks are resisting nature's call, they will be shut down forcibly
+	 * - deallocate data structures specific to @c uvSVCTaskManager
+	 *
+	 * Lovely times for all
+	 *
+	 */
+
+	uvFree(_svc_task_register); //Free this to avoid mem leaks
+	//vTaskDelete();
+}
+
+/** Sometimes you just gottta deal with it lol
+ *
+ */
+uv_task_id getSVCTaskID(char* tsk_name){
+	return 0xFF;
 }
 

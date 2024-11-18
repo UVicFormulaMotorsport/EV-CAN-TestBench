@@ -344,6 +344,9 @@ void* __uvMallocOS(size_t memrequest){
 		return NULL;
 	}
 
+	//Does the scheduler actually need to be running for this?
+	//Should maybe double check
+
 	void* retval = NULL;
 
 	retval = pvPortMalloc(memrequest);

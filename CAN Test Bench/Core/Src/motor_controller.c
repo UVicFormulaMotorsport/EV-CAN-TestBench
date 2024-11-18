@@ -269,6 +269,15 @@ void MC_Startup(void* args){
 
 
 
+
+
+
+
+
+
+
+
+
 	if(xQueueSendToBack(params->init_info_queue,&response,100) != pdPASS){
 		//OOPS
 		uvPanic("Failed to enqueue MC OK Response",0);

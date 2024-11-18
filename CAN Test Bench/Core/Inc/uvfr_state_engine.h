@@ -26,6 +26,8 @@ typedef uint8_t uv_task_id; //WHY DO I NEED TO DO THIS STUPID REDEFINITION HERE
 #define _LONGEST_SC_TIME 300
 #define _SC_DAEMON_PERIOD 10
 
+#define SVC_TASK_MAX_CHECKIN_PERIOD 500
+
 //typedef uint8_t uv_task_cmd;
 
 typedef enum uv_task_cmd_e{
@@ -47,6 +49,18 @@ typedef struct uv_scd_response{
 	enum uv_scd_response_e response_val;
 	uv_task_id meta_id;
 }uv_scd_response;
+
+typedef struct uv_svc_task_tcb{
+	struct uv_task_info; // editable by user
+	//State engine private fields below
+};
+
+typedef union uv_svc_task{
+	struct uv_task_info; // user task info
+	struct uv_svc_task_tcb;
+};
+
+
 
 struct uv_task_info* uvCreateTask();
 
@@ -90,11 +104,17 @@ void suspendSelf(struct uv_task_info * t);
 #ifndef UVFR_STATE_MACHINE_IMPLIMENTATION
 
 //EXTERNAL VARIABLES
-extern enum uv_vehicle_state_t vehicle_state;
+extern enum uv_vehicle_state_t vehicle_state; //This is the one that ya'll are permitted to know
 #else
 //These shuold only be visible in the implimentation file
+
 #endif
+
 void _stateChangeDaemon(void * args);
+
+void uvSVCTaskManager(void* args);
+
+uv_task_id getSVCTaskID(char* tsk_name);
 #endif /* INC_UVFR_STATE_ENGINE_H_ */
 
 

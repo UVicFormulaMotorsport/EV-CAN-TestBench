@@ -27,11 +27,16 @@
 #include "dash.h"
 #include "bms.h"
 #include "pdu.h"
+#include "uvfr_utils.h"
+#include "main.h"
 
 
 /* USER CODE END 0 */
 
 CAN_HandleTypeDef hcan2;
+
+static QueueHandle_t Tx_msg_queue;
+
 
 /* CAN2 init function */
 void MX_CAN2_Init(void)
@@ -116,7 +121,7 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef* canHandle)
 {
 
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-  if(canHandle->Instance==CAN2)
+  if(canHandle->Instance == CAN2 )
   {
   /* USER CODE BEGIN CAN2_MspInit 0 */
 
@@ -217,6 +222,113 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
 // Here is where the second mailbox ISR would live
 void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2){
 	// do something
+}
+
+uv_status __uvCANtxCritSection(){
+
+}
+
+
+/** @brief Function to send can message.
+ *
+ * This function is the canonical team method of sending a CAN message.
+ * It invokes the canTxDaemon, to avoid any conflicts due to a context switch mid transmission
+ * Is it a little bit convoluted? Yes.
+ * Is that worth it? Still yes.
+ */
+uv_status uvSendCanMSG(uv_CAN_msg* msg){
+
+	static TaskHandle_t can_tx_daemon_handle = NULL;
+	static uv_task_id can_tx_daemon_task_id;
+
+	if(can_tx_daemon_handle == NULL ){
+		can_tx_daemon_task_id = getSVCTaskID(CAN_TX_DAEMON_NAME);
+	}
+
+	/** Check that the CAN Tx daemon is actually active
+	 *
+	 */
+
+	if(msg == NULL){
+		return UV_ERROR;
+	}
+
+	BaseType_t higher_priority_task_woken = pdFALSE;
+
+	if(xQueueSendToBack(Tx_msg_queue,&msg,1) != pdPASS){
+		uvPanic("couldnt enqueue CAN message",0);
+	}else if(xTaskNotify(can_tx_daemon_handle, 0x00, eNoAction) != pdPASS){
+		//Do something
+	}
+
+}
+
+/** @brief Background task that handles any CAN messages that are being sent
+ *
+ * This task sits idle, until the time is right (it receives a notification from the uvSendCanMSG function)
+ * Once this condition has been met, it will actually call the @c HAL_CAN_AddTxMessage function.
+ * This is a very high priority task, meaning that it will pause whatever other code is going in order to run
+ *
+ */
+void CANbusTxSvcDaemon(void* args){
+
+	//CAN_TxHeaderTypeDef tx_header;
+
+	Tx_msg_queue = xQueueCreate(8,sizeof(uv_CAN_msg*));
+
+	//BaseType_t retval;
+
+	uv_CAN_msg* tx_msg = NULL;
+
+	//tx_header.TransmitGlobalTime = DISABLE;
+
+
+	BaseType_t wait_result;
+	uint32_t notif_val = 0;
+	for(;;){
+		wait_result = xTaskNotifyWait(pdFALSE,0xffffffff,&notif_val,portMAX_DELAY);
+		if(wait_result == pdPASS){
+			while(xQueueReceive(Tx_msg_queue,&tx_msg,0) == pdPASS){
+				if(tx_msg == NULL){
+
+				}
+
+				if((tx_msg->flags)& UV_CAN_EXTENDED_ID){
+					TxHeader.IDE = CAN_ID_EXT;
+					TxHeader.ExtId = tx_msg->msg_id;
+				}else{
+					TxHeader.IDE = CAN_ID_STD;
+					TxHeader.StdId = tx_msg->msg_id;
+				}
+
+				TxHeader.DLC = tx_msg->dlc;
+
+
+
+
+				if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, tx_msg->data, &TxMailbox) != HAL_OK){
+								/* Transmission request Error */
+					uvPanic("Unable to Transmit CAN msg",0);
+				}
+
+
+
+			}
+
+		}else{
+			//I dont know how we got here
+		}
+
+
+	}//main for loop
+
+}
+
+void CANbusRxSVCDaemon(void* args){
+
+	for(;;){
+
+	}
 }
 
 /* USER CODE END 1 */
