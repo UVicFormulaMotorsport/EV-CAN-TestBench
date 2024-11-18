@@ -2,12 +2,17 @@
 \label{structuv__init__task__response}\index{uv\_init\_task\_response@{uv\_init\_task\_response}}
 
 
+Struct representing the response of one of the initialization tasks.  
+
+
+
+
 {\ttfamily \#include $<$uvfr\+\_\+utils.\+h$>$}
 
 \doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{uvfr__utils_8h_a27e96c74597bf4e85f968da673622b31}{uv\+\_\+status}} \mbox{\hyperlink{structuv__init__task__response_a56b3df74c10cdc59e8e1b9d4c1f36af7}{status}}
+\mbox{\hyperlink{uvfr__state__engine_8h_a27e96c74597bf4e85f968da673622b31}{uv\+\_\+status}} \mbox{\hyperlink{structuv__init__task__response_a56b3df74c10cdc59e8e1b9d4c1f36af7}{status}}
 \item 
 \mbox{\hyperlink{uvfr__utils_8h_a96651e94773864de5bcf9028ab64ad19}{uv\+\_\+ext\+\_\+device\+\_\+id}} \mbox{\hyperlink{structuv__init__task__response_adfcb943d08344e528ad3d49c5c428918}{device}}
 \item 
@@ -18,9 +23,11 @@ char $\ast$ \mbox{\hyperlink{structuv__init__task__response_af29fdddeaddc456d202
 
 
 \doxysubsection{Detailed Description}
+Struct representing the response of one of the initialization tasks. 
 
+Is returned in the initialization queue, and is read by {\ttfamily \mbox{\hyperlink{uvfr__utils_8h_a6d40598f9d8daa89ca159a2e87f4fd01}{uv\+Init()}}} to determine whether the initialization of the internal device has failed or succeeded. 
 
-Definition at line 182 of file uvfr\+\_\+utils.\+h.
+Definition at line 246 of file uvfr\+\_\+utils.\+h.
 
 
 
@@ -33,7 +40,7 @@ Definition at line 182 of file uvfr\+\_\+utils.\+h.
 
 
 
-Definition at line 184 of file uvfr\+\_\+utils.\+h.
+Definition at line 248 of file uvfr\+\_\+utils.\+h.
 
 
 
@@ -47,7 +54,7 @@ Referenced by uv\+Init().
 
 
 
-Definition at line 186 of file uvfr\+\_\+utils.\+h.
+Definition at line 250 of file uvfr\+\_\+utils.\+h.
 
 
 
@@ -61,7 +68,7 @@ Referenced by uv\+Init().
 
 
 
-Definition at line 185 of file uvfr\+\_\+utils.\+h.
+Definition at line 249 of file uvfr\+\_\+utils.\+h.
 
 
 
@@ -71,11 +78,11 @@ Referenced by uv\+Init().
 \index{uv\_init\_task\_response@{uv\_init\_task\_response}!status@{status}}
 \index{status@{status}!uv\_init\_task\_response@{uv\_init\_task\_response}}
 \doxysubsubsection{\texorpdfstring{status}{status}}
-{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__utils_8h_a27e96c74597bf4e85f968da673622b31}{uv\+\_\+status}} uv\+\_\+init\+\_\+task\+\_\+response\+::status}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_a27e96c74597bf4e85f968da673622b31}{uv\+\_\+status}} uv\+\_\+init\+\_\+task\+\_\+response\+::status}
 
 
 
-Definition at line 183 of file uvfr\+\_\+utils.\+h.
+Definition at line 247 of file uvfr\+\_\+utils.\+h.
 
 
 

@@ -24,7 +24,7 @@
 void \mbox{\hyperlink{main_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
 \begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{main_8c_abade755e13d07c10889ae83143656158}{M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init}} (void)
-\begin{DoxyCompactList}\small\item\em Free\+R\+T\+OS initialization This is where we declare our R\+T\+OS tasks, mutexes, semaphores, and timers. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Free\+R\+T\+OS initialization. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
 \begin{DoxyCompactList}\small\item\em The application entry point. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{main_8c_af20a88180db1113be1e89266917d148b}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback}} (A\+D\+C\+\_\+\+Handle\+Type\+Def $\ast$hadc)
@@ -86,7 +86,7 @@ This function is executed in case of error occurrence.
 \end{DoxyRetVals}
 
 
-Definition at line 346 of file main.\+c.
+Definition at line 343 of file main.\+c.
 
 
 
@@ -100,7 +100,7 @@ Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Msp\+Init(), H\+A\+L\+\_\+\+C\+A\+N\
 
 
 
-Definition at line 243 of file main.\+c.
+Definition at line 240 of file main.\+c.
 
 
 
@@ -114,7 +114,7 @@ References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, adc1\+\_\+\+B\+P\+S
 
 
 
-Definition at line 298 of file main.\+c.
+Definition at line 295 of file main.\+c.
 
 
 
@@ -128,7 +128,7 @@ References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, hadc1, Red\+\_\+\+L
 
 
 
-Definition at line 289 of file main.\+c.
+Definition at line 286 of file main.\+c.
 
 \mbox{\Hypertarget{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}\label{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}} 
 \index{main.c@{main.c}!HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}}
@@ -155,7 +155,7 @@ This function is called when T\+I\+M1 interrupt took place, inside H\+A\+L\+\_\+
 \end{DoxyRetVals}
 
 
-Definition at line 322 of file main.\+c.
+Definition at line 319 of file main.\+c.
 
 
 
@@ -173,16 +173,16 @@ The application entry point.
 
 
 \begin{DoxyRetVals}{Return values}
-{\em int} & This is the entry point of the application, and effectively only serves one purpose. It calls initialisation functions for all of the peripherals, checks the state of all drivers and devices, then passes control over to the R\+T\+OS scheduler. \\
+{\em int} & \\
 \hline
 \end{DoxyRetVals}
 
 
-Definition at line 99 of file main.\+c.
+Definition at line 96 of file main.\+c.
 
 
 
-References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, A\+D\+C1\+\_\+\+B\+U\+F\+\_\+\+L\+EN, adc\+\_\+buf1, hadc1, M\+X\+\_\+\+A\+D\+C1\+\_\+\+Init(), M\+X\+\_\+\+A\+D\+C2\+\_\+\+Init(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), M\+X\+\_\+\+D\+M\+A\+\_\+\+Init(), M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init(), M\+X\+\_\+\+T\+I\+M3\+\_\+\+Init(), System\+Clock\+\_\+\+Config(), and Update\+\_\+\+R\+P\+M().
+References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, M\+X\+\_\+\+A\+D\+C1\+\_\+\+Init(), M\+X\+\_\+\+A\+D\+C2\+\_\+\+Init(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), M\+X\+\_\+\+D\+M\+A\+\_\+\+Init(), M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init(), M\+X\+\_\+\+T\+I\+M3\+\_\+\+Init(), System\+Clock\+\_\+\+Config(), and Update\+\_\+\+R\+P\+M().
 
 \mbox{\Hypertarget{main_8c_abade755e13d07c10889ae83143656158}\label{main_8c_abade755e13d07c10889ae83143656158}} 
 \index{main.c@{main.c}!MX\_FREERTOS\_Init@{MX\_FREERTOS\_Init}}
@@ -192,15 +192,28 @@ References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, A\+D\+C1\+\_\+\+B\+
 
 
 
-Free\+R\+T\+OS initialization This is where we declare our R\+T\+OS tasks, mutexes, semaphores, and timers. 
+Free\+R\+T\+OS initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em None} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\begin{DoxyAttention}{Attention}
+D\+O\+NT Y\+OU F\+U\+C\+K\+I\+NG D\+A\+RE D\+E\+L\+E\+TE T\+H\+E\+SE G\+O\+TO S\+T\+A\+T\+E\+M\+E\+N\+TS, T\+H\+EY A\+RE C\+R\+I\+T\+I\+C\+AL TO S\+T\+OP T\+HE OS F\+R\+OM H\+A\+N\+G\+I\+NG I\+T\+S\+E\+LF
+\end{DoxyAttention}
+
+
+Definition at line 141 of file freertos.\+c.
 
 
 
-Definition at line 84 of file freertos.\+c.
-
-
-
-References init\+Task\+Handle, led\+Task\+Handle, Start\+Default\+Task(), and uv\+Init().
+References default\+Task\+Handle, init\+\_\+settings, init\+\_\+task\+\_\+handle, Start\+Default\+Task(), uv\+\_\+init\+\_\+struct\+::use\+\_\+default\+\_\+settings, and uv\+Init().
 
 
 
@@ -227,7 +240,7 @@ Initializes the R\+CC Oscillators according to the specified parameters in the R
 
 Initializes the C\+PU, A\+HB and A\+PB buses clocks
 
-Definition at line 185 of file main.\+c.
+Definition at line 182 of file main.\+c.
 
 
 
@@ -336,7 +349,7 @@ Definition at line 61 of file main.\+c.
 
 
 
-Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), and main().
+Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback().
 
 \mbox{\Hypertarget{main_8c_a820ab8aecc5744f003ca984a1d960da1}\label{main_8c_a820ab8aecc5744f003ca984a1d960da1}} 
 \index{main.c@{main.c}!adc\_buf2@{adc\_buf2}}

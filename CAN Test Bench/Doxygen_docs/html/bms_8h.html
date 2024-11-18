@@ -87,20 +87,71 @@ $(document).ready(function(){initNavTree('bms_8h.html','');});
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">bms.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>&quot;</code><br />
 </div>
 <p><a href="bms_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structbms__settings__t.html">bms_settings_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a0c88019b9a80e0a2b9820fb387e9e084"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bms_8h.html#a0c88019b9a80e0a2b9820fb387e9e084">DEFAULT_BMS_CAN_TIMEOUT</a>&#160;&#160;&#160;((<a class="el" href="uvfr__utils_8h.html#af1ca0b89ee88cdf48a7640d6ec793350">uv_timespan_ms</a>)200)</td></tr>
+<tr class="separator:a0c88019b9a80e0a2b9820fb387e9e084"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ac82cefe2ce193c00fc1e6af97476c54d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structbms__settings__t.html">bms_settings_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bms_8h.html#ac82cefe2ce193c00fc1e6af97476c54d">bms_settings_t</a></td></tr>
+<tr class="separator:ac82cefe2ce193c00fc1e6af97476c54d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:aa9af83736568f74c94d41f3f16adf513"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bms_8h.html#aa9af83736568f74c94d41f3f16adf513">BMS_Init</a> (void *args)</td></tr>
 <tr class="separator:aa9af83736568f74c94d41f3f16adf513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a0c88019b9a80e0a2b9820fb387e9e084"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c88019b9a80e0a2b9820fb387e9e084">&#9670;&nbsp;</a></span>DEFAULT_BMS_CAN_TIMEOUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define DEFAULT_BMS_CAN_TIMEOUT&#160;&#160;&#160;((<a class="el" href="uvfr__utils_8h.html#af1ca0b89ee88cdf48a7640d6ec793350">uv_timespan_ms</a>)200)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bms_8h_source.html#l00011">11</a> of file <a class="el" href="bms_8h_source.html">bms.h</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ac82cefe2ce193c00fc1e6af97476c54d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac82cefe2ce193c00fc1e6af97476c54d">&#9670;&nbsp;</a></span>bms_settings_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structbms__settings__t.html">bms_settings_t</a> <a class="el" href="structbms__settings__t.html">bms_settings_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aa9af83736568f74c94d41f3f16adf513"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa9af83736568f74c94d41f3f16adf513">&#9670;&nbsp;</a></span>BMS_Init()</h2>
@@ -120,7 +171,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="bms_8c_source.html#l00011">11</a> of file <a class="el" href="bms_8c_source.html">bms.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00030">uvInit()</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00146">BMS</a>, <a class="el" href="uvfr__utils_8h_source.html#l00221">uv_init_task_args::init_info_queue</a>, <a class="el" href="uvfr__utils_8h_source.html#l00222">uv_init_task_args::meta_task_handle</a>, and <a class="el" href="uvfr__utils_8h_source.html#l00103">UV_OK</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00032">uvInit()</a>.</p>
 
 </div>
 </div>

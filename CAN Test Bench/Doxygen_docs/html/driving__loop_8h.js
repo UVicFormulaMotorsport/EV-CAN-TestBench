@@ -2,9 +2,9 @@ var driving__loop_8h =
 [
     [ "drivingModeParams", "structdriving_mode_params.html", "structdriving_mode_params" ],
     [ "drivingMode", "structdriving_mode.html", "structdriving_mode" ],
-    [ "drivingLoopArgs", "structdriving_loop_args.html", "structdriving_loop_args" ],
+    [ "driving_loop_args", "structdriving__loop__args.html", "structdriving__loop__args" ],
     [ "DEFAULT_PERIOD", "driving__loop_8h.html#a19ae3417888a615aca7350e9e1ba0204", null ],
-    [ "drivingLoopArgs", "driving__loop_8h.html#a3decdbe473e5d736311930ce3d6360bd", null ],
+    [ "driving_loop_args", "driving__loop_8h.html#aa421e50f529a1770ef0b2a00a44a0601", null ],
     [ "drivingMode", "driving__loop_8h.html#a29e04283e579e9092d205b1937c785c6", null ],
     [ "drivingModeParams", "driving__loop_8h.html#ac1d30630084a642c9209dca3a961ef12", null ],
     [ "MC_POWER", "driving__loop_8h.html#a93f3b2b453b1ad01d8555f12e529dfed", null ],
@@ -23,5 +23,6 @@ var driving__loop_8h =
       [ "s_curve_torque_map", "driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a97cb36a9ac4fbbe2e7b481a2677993f9", null ],
       [ "exp_torque_map", "driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a22ffbb99cbb49917aac9c53aba81df32", null ]
     ] ],
-    [ "StartDrivingLoop", "driving__loop_8h.html#adb031c91acd0bc6d700819cde7ec58f2", null ]
+    [ "initDrivingLoop", "driving__loop_8h.html#af580185fb5bb1cfba30ee1709d90628c", null ],
+    [ "StartDrivingLoop", "driving__loop_8h.html#a80cc48f06202edc29bcad26a956bcc98", null ]
 ];

@@ -109,9 +109,11 @@ $(document).ready(function(){initNavTree('driving__loop_8c.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:adb031c91acd0bc6d700819cde7ec58f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8c.html#adb031c91acd0bc6d700819cde7ec58f2">StartDrivingLoop</a> (void const *argument)</td></tr>
-<tr class="memdesc:adb031c91acd0bc6d700819cde7ec58f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function implementing the ledTask thread.  <a href="driving__loop_8c.html#adb031c91acd0bc6d700819cde7ec58f2">More...</a><br /></td></tr>
-<tr class="separator:adb031c91acd0bc6d700819cde7ec58f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af580185fb5bb1cfba30ee1709d90628c"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8c.html#af580185fb5bb1cfba30ee1709d90628c">initDrivingLoop</a> (void *argument)</td></tr>
+<tr class="separator:af580185fb5bb1cfba30ee1709d90628c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80cc48f06202edc29bcad26a956bcc98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8c.html#a80cc48f06202edc29bcad26a956bcc98">StartDrivingLoop</a> (void *argument)</td></tr>
+<tr class="memdesc:a80cc48f06202edc29bcad26a956bcc98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function implementing the ledTask thread.  <a href="driving__loop_8c.html#a80cc48f06202edc29bcad26a956bcc98">More...</a><br /></td></tr>
+<tr class="separator:a80cc48f06202edc29bcad26a956bcc98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -129,8 +131,32 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition in file <a class="el" href="driving__loop_8c_source.html">driving_loop.c</a>.</p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="adb031c91acd0bc6d700819cde7ec58f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb031c91acd0bc6d700819cde7ec58f2">&#9670;&nbsp;</a></span>StartDrivingLoop()</h2>
+<a id="af580185fb5bb1cfba30ee1709d90628c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af580185fb5bb1cfba30ee1709d90628c">&#9670;&nbsp;</a></span>initDrivingLoop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> initDrivingLoop </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>argument</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driving__loop_8c_source.html#l00025">25</a> of file <a class="el" href="driving__loop_8c_source.html">driving_loop.c</a>.</p>
+
+<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00198">uv_task_info::active_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00199">uv_task_info::deletion_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00191">uv_task_info::max_instances</a>, <a class="el" href="uvfr__utils_8h_source.html#l00124">PROGRAMMING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00192">uv_task_info::stack_size</a>, <a class="el" href="driving__loop_8c_source.html#l00069">StartDrivingLoop()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00200">uv_task_info::suspension_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00206">uv_task_info::task_args</a>, <a class="el" href="uvfr__utils_8h_source.html#l00188">uv_task_info::task_function</a>, <a class="el" href="uvfr__utils_8h_source.html#l00184">uv_task_info::task_name</a>, <a class="el" href="uvfr__utils_8h_source.html#l00186">uv_task_info::task_period</a>, <a class="el" href="uvfr__utils_8h_source.html#l00189">uv_task_info::task_priority</a>, <a class="el" href="uvfr__utils_8h_source.html#l00125">UV_DRIVING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00105">UV_ERROR</a>, <a class="el" href="uvfr__utils_8h_source.html#l00128">UV_ERROR_STATE</a>, <a class="el" href="uvfr__utils_8h_source.html#l00127">UV_LAUNCH_CONTROL</a>, <a class="el" href="uvfr__utils_8h_source.html#l00103">UV_OK</a>, <a class="el" href="uvfr__utils_8h_source.html#l00123">UV_READY</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00034">uvCreateTask()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00196">uvInitStateEngine()</a>.</p>
+
+</div>
+</div>
+<a id="a80cc48f06202edc29bcad26a956bcc98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80cc48f06202edc29bcad26a956bcc98">&#9670;&nbsp;</a></span>StartDrivingLoop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -138,7 +164,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void StartDrivingLoop </td>
           <td>(</td>
-          <td class="paramtype">void const *&#160;</td>
+          <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>argument</em></td><td>)</td>
           <td></td>
         </tr>
@@ -159,13 +185,23 @@ Variables</h2></td></tr>
   </dd>
 </dl>
 <p>The first thing we do here is create some local variables here, to cache whatever variables need cached. We will be caching variables that are used very frequently in every single loop iteration, and are not</p>
-<p>@heading Brake Plausibility Check</p>
+<p>This line extracts the specific driving loop parameters as specified in the vehicle settings </p><div class="fragment"><div class="line"> */</div>
+<div class="line"><a class="code" href="structdriving__loop__args.html">driving_loop_args</a>* dl_params = (<a class="code" href="structdriving__loop__args.html">driving_loop_args</a>*) params-&gt;task_args;</div>
+<div class="line"><span class="comment">/**</span></div>
+</div><!-- fragment --><p>These here lines set the delay. This task executes exactly at the period specified, regardless of how long the task execution actually takes</p>
+<div class="fragment"><div class="line"> */</div>
+<div class="line">TickType_t tick_period = pdMS_TO_TICKS(params-&gt;task_period); <span class="comment">//Convert ms of period to the RTOS ticks</span></div>
+<div class="line">TickType_t last_time = xTaskGetTickCount();</div>
+<div class="line"><span class="comment">/**</span></div>
+</div><!-- fragment --><p>@heading Brake Plausibility Check</p>
 <p>The way that this works is that if the brake pressure is greater than some threshold, and the accelerator pedal position is also greater than some threshold, the thing will register that a brake implausibility has occurred. This is not very cash money.</p>
 <p>If this happens, we want to set the torque/speed output to zero. This will only reset itself once the brakes are set to less than a certain threshold. Honestly evil.</p>
 
-<p class="definition">Definition at line <a class="el" href="driving__loop_8c_source.html#l00034">34</a> of file <a class="el" href="driving__loop_8c_source.html">driving_loop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driving__loop_8c_source.html#l00069">69</a> of file <a class="el" href="driving__loop_8c_source.html">driving_loop.c</a>.</p>
 
-<p class="reference">References <a class="el" href="main_8c_source.html#l00063">adc1_APPS1</a>, <a class="el" href="main_8c_source.html#l00064">adc1_APPS2</a>, <a class="el" href="main_8c_source.html#l00065">adc1_BPS1</a>, <a class="el" href="main_8c_source.html#l00066">adc1_BPS2</a>, <a class="el" href="driving__loop_8h_source.html#l00084">drivingLoopArgs::apps_plausibility_check_threshold</a>, <a class="el" href="driving__loop_8h_source.html#l00085">drivingLoopArgs::bps_plausibility_check_threshold</a>, <a class="el" href="driving__loop_8h_source.html#l00025">DEFAULT_PERIOD</a>, <a class="el" href="driving__loop_8h_source.html#l00042">Implausible</a>, <a class="el" href="driving__loop_8h_source.html#l00075">drivingLoopArgs::max_apps_offset</a>, <a class="el" href="driving__loop_8h_source.html#l00077">drivingLoopArgs::max_apps_value</a>, <a class="el" href="driving__loop_8h_source.html#l00079">drivingLoopArgs::max_BPS_value</a>, <a class="el" href="driving__loop_8h_source.html#l00074">drivingLoopArgs::min_apps_offset</a>, <a class="el" href="driving__loop_8h_source.html#l00076">drivingLoopArgs::min_apps_value</a>, and <a class="el" href="driving__loop_8h_source.html#l00041">Plausible</a>.</p>
+<p class="reference">References <a class="el" href="main_8c_source.html#l00063">adc1_APPS1</a>, <a class="el" href="main_8c_source.html#l00064">adc1_APPS2</a>, <a class="el" href="main_8c_source.html#l00065">adc1_BPS1</a>, <a class="el" href="main_8c_source.html#l00066">adc1_BPS2</a>, <a class="el" href="driving__loop_8h_source.html#l00090">driving_loop_args::apps_plausibility_check_threshold</a>, <a class="el" href="driving__loop_8h_source.html#l00091">driving_loop_args::bps_plausibility_check_threshold</a>, <a class="el" href="uvfr__utils_8h_source.html#l00204">uv_task_info::cmd_data</a>, <a class="el" href="driving__loop_8h_source.html#l00044">Implausible</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00446">killSelf()</a>, <a class="el" href="driving__loop_8h_source.html#l00081">driving_loop_args::max_apps_offset</a>, <a class="el" href="driving__loop_8h_source.html#l00083">driving_loop_args::max_apps_value</a>, <a class="el" href="driving__loop_8h_source.html#l00085">driving_loop_args::max_BPS_value</a>, <a class="el" href="driving__loop_8h_source.html#l00080">driving_loop_args::min_apps_offset</a>, <a class="el" href="driving__loop_8h_source.html#l00082">driving_loop_args::min_apps_value</a>, <a class="el" href="driving__loop_8h_source.html#l00043">Plausible</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00496">suspendSelf()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00206">uv_task_info::task_args</a>, <a class="el" href="uvfr__utils_8h_source.html#l00186">uv_task_info::task_period</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00033">UV_KILL_CMD</a>, and <a class="el" href="uvfr__state__engine_8h_source.html#l00034">UV_SUSPEND_CMD</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="driving__loop_8c_source.html#l00025">initDrivingLoop()</a>.</p>
 
 </div>
 </div>
@@ -184,7 +220,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00063">63</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00243">HAL_ADC_ConvCpltCallback()</a>, <a class="el" href="main_8c_source.html#l00298">HAL_ADC_LevelOutOfWindowCallback()</a>, <a class="el" href="main_8c_source.html#l00099">main()</a>, and <a class="el" href="driving__loop_8c_source.html#l00034">StartDrivingLoop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00240">HAL_ADC_ConvCpltCallback()</a>, <a class="el" href="main_8c_source.html#l00295">HAL_ADC_LevelOutOfWindowCallback()</a>, <a class="el" href="main_8c_source.html#l00096">main()</a>, and <a class="el" href="driving__loop_8c_source.html#l00069">StartDrivingLoop()</a>.</p>
 
 </div>
 </div>
@@ -202,7 +238,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00064">64</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00243">HAL_ADC_ConvCpltCallback()</a>, <a class="el" href="main_8c_source.html#l00298">HAL_ADC_LevelOutOfWindowCallback()</a>, <a class="el" href="main_8c_source.html#l00099">main()</a>, and <a class="el" href="driving__loop_8c_source.html#l00034">StartDrivingLoop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00240">HAL_ADC_ConvCpltCallback()</a>, <a class="el" href="main_8c_source.html#l00295">HAL_ADC_LevelOutOfWindowCallback()</a>, <a class="el" href="main_8c_source.html#l00096">main()</a>, and <a class="el" href="driving__loop_8c_source.html#l00069">StartDrivingLoop()</a>.</p>
 
 </div>
 </div>
@@ -220,7 +256,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00065">65</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00243">HAL_ADC_ConvCpltCallback()</a>, and <a class="el" href="driving__loop_8c_source.html#l00034">StartDrivingLoop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00240">HAL_ADC_ConvCpltCallback()</a>, and <a class="el" href="driving__loop_8c_source.html#l00069">StartDrivingLoop()</a>.</p>
 
 </div>
 </div>
@@ -238,12 +274,13 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="main_8c_source.html#l00066">66</a> of file <a class="el" href="main_8c_source.html">main.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00243">HAL_ADC_ConvCpltCallback()</a>, and <a class="el" href="driving__loop_8c_source.html#l00034">StartDrivingLoop()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00240">HAL_ADC_ConvCpltCallback()</a>, and <a class="el" href="driving__loop_8c_source.html#l00069">StartDrivingLoop()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="astructdriving__loop__args_html"><div class="ttname"><a href="structdriving__loop__args.html">driving_loop_args</a></div><div class="ttdef"><b>Definition:</b> <a href="driving__loop_8h_source.html#l00077">driving_loop.h:77</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

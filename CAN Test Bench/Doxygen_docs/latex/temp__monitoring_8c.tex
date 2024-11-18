@@ -1,0 +1,63 @@
+\hypertarget{temp__monitoring_8c}{}\doxysection{Core/\+Src/temp\+\_\+monitoring.c File Reference}
+\label{temp__monitoring_8c}\index{Core/Src/temp\_monitoring.c@{Core/Src/temp\_monitoring.c}}
+{\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gpio.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{uvfr__state__engine_8h_a27e96c74597bf4e85f968da673622b31}{uv\+\_\+status}} \mbox{\hyperlink{temp__monitoring_8c_a979dc6ff14a3ef1f72e3cbea884871b0}{init\+Temp\+Monitor}} (void $\ast$arguments)
+\item 
+void \mbox{\hyperlink{temp__monitoring_8c_a2a1d7fee4cea6ce07e4d4acc1b2ca752}{temp\+Monitor\+Task}} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Monitors the temperatures of various points in the tractive system, and activates various cooling systems and such accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{temp__monitoring_8c_a979dc6ff14a3ef1f72e3cbea884871b0}\label{temp__monitoring_8c_a979dc6ff14a3ef1f72e3cbea884871b0}} 
+\index{temp\_monitoring.c@{temp\_monitoring.c}!initTempMonitor@{initTempMonitor}}
+\index{initTempMonitor@{initTempMonitor}!temp\_monitoring.c@{temp\_monitoring.c}}
+\doxysubsubsection{\texorpdfstring{initTempMonitor()}{initTempMonitor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_a27e96c74597bf4e85f968da673622b31}{uv\+\_\+status}} init\+Temp\+Monitor (\begin{DoxyParamCaption}\item[{void $\ast$}]{arguments }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file temp\+\_\+monitoring.\+c.
+
+
+
+References \+\_\+\+U\+V\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, uv\+\_\+task\+\_\+info\+::active\+\_\+states, uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, uv\+\_\+task\+\_\+info\+::max\+\_\+instances, P\+R\+O\+G\+R\+A\+M\+M\+I\+NG, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+args, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+period, uv\+\_\+task\+\_\+info\+::task\+\_\+priority, temp\+Monitor\+Task(), U\+V\+\_\+\+D\+R\+I\+V\+I\+NG, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE, U\+V\+\_\+\+L\+A\+U\+N\+C\+H\+\_\+\+C\+O\+N\+T\+R\+OL, U\+V\+\_\+\+OK, U\+V\+\_\+\+R\+E\+A\+DY, and uv\+Create\+Task().
+
+
+
+Referenced by uv\+Init\+State\+Engine().
+
+\mbox{\Hypertarget{temp__monitoring_8c_a2a1d7fee4cea6ce07e4d4acc1b2ca752}\label{temp__monitoring_8c_a2a1d7fee4cea6ce07e4d4acc1b2ca752}} 
+\index{temp\_monitoring.c@{temp\_monitoring.c}!tempMonitorTask@{tempMonitorTask}}
+\index{tempMonitorTask@{tempMonitorTask}!temp\_monitoring.c@{temp\_monitoring.c}}
+\doxysubsubsection{\texorpdfstring{tempMonitorTask()}{tempMonitorTask()}}
+{\footnotesize\ttfamily void temp\+Monitor\+Task (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Monitors the temperatures of various points in the tractive system, and activates various cooling systems and such accordingly. 
+
+Atm, this is mostly serving as an example of a task These here lines set the delay. This task executes exactly at the period specified, regardless of how long the task execution actually takes
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{TickType\_t tick\_period = pdMS\_TO\_TICKS(params-\/>task\_period); \textcolor{comment}{//Convert ms of period to the RTOS ticks}}
+\DoxyCodeLine{TickType\_t last\_time = xTaskGetTickCount();}
+\DoxyCodeLine{\textcolor{comment}{/**}}
+\end{DoxyCode}
+
+
+Definition at line 48 of file temp\+\_\+monitoring.\+c.
+
+
+
+References uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, kill\+Self(), suspend\+Self(), uv\+\_\+task\+\_\+info\+::task\+\_\+period, U\+V\+\_\+\+K\+I\+L\+L\+\_\+\+C\+MD, and U\+V\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+MD.
+
+
+
+Referenced by init\+Temp\+Monitor().
+

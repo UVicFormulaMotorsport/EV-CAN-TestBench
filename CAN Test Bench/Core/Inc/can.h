@@ -36,7 +36,8 @@ extern CAN_HandleTypeDef hcan2;
 
 /* USER CODE BEGIN Private defines */
 
-
+#define CAN_TX_DAEMON_NAME "CanTxDaemon"
+#define CAN_RX_DAEMON_NAME "CanRxDaemon"
 
 /* USER CODE END Private defines */
 

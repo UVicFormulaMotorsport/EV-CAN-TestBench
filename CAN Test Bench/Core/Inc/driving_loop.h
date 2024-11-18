@@ -15,7 +15,7 @@ typedef uint16_t MC_Torque;
 typedef uint16_t MC_RPM;
 typedef uint16_t MC_POWER;
 
-/** @define DL_PERIOD
+/**
  * @brief DL_PERIOD is meant to represent how often the driving loop executes, in ms
  *
  * This is a define since I would eventually like this to be configurable via a global variable,
@@ -25,7 +25,8 @@ typedef uint16_t MC_POWER;
  */
 #define DEFAULT_PERIOD 50
 
-/**@enum map_mode
+/**@brief enum meant to represent the different types of pedal map
+ *
  * This enum is meant to represent different functions that map the torque to speed.
  *
  */
@@ -97,8 +98,8 @@ typedef struct driving_loop_args{
 
 }driving_loop_args;
 
-enum uv_status_t initDrivingLoop(void const *argument);
+enum uv_status_t initDrivingLoop(void *argument);
 
-void StartDrivingLoop(void const *argument);
+void StartDrivingLoop(void *argument);
 
 #endif /* INC_DRIVING_LOOP_H_ */

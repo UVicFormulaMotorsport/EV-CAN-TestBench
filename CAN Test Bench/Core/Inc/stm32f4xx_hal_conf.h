@@ -1,7 +1,7 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file    stm32f4xx_hal_conf_template.h
+  * @file    stm32f4xx_hal_conf.h
   * @author  MCD Application Team
   * @brief   HAL configuration template file.
   *          This file should be copied to the application folder and renamed
@@ -62,7 +62,7 @@
 /* #define HAL_SAI_MODULE_ENABLED */
 /* #define HAL_SD_MODULE_ENABLED */
 /* #define HAL_MMC_MODULE_ENABLED */
-/* #define HAL_SPI_MODULE_ENABLED */
+#define HAL_SPI_MODULE_ENABLED
 #define HAL_TIM_MODULE_ENABLED
 /* #define HAL_UART_MODULE_ENABLED */
 /* #define HAL_USART_MODULE_ENABLED */

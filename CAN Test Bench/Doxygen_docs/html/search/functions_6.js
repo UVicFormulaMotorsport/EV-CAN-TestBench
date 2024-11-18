@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getsettingsfromflash_785',['getSettingsFromFlash',['../uvfr__settings_8c.html#af13d8078183457319f43ca58b85314e4',1,'uvfr_settings.c']]]
+  ['getsettingsfromflash_904',['getSettingsFromFlash',['../uvfr__settings_8c.html#af13d8078183457319f43ca58b85314e4',1,'uvfr_settings.c']]]
 ];

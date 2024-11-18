@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['params_967',['params',['../structdriving_mode_params.html#a8bc3ea07efa4e063a0b03965b0f4a1b0',1,'drivingModeParams']]],
-  ['period_968',['period',['../structdriving_loop_args.html#a55d5ac3c7a3593b53fe7104776ef631b',1,'drivingLoopArgs']]],
-  ['previous_5fstate_969',['previous_state',['../uvfr__state__engine_8c.html#a2ce6eef16a78c095592954d2fe68af2e',1,'uvfr_state_engine.c']]]
+  ['nchar_1113',['nchar',['../structuv__init__task__response.html#ab0bb4394cc62070f8d366ab3a55ff227',1,'uv_init_task_response']]],
+  ['next_1114',['next',['../structuv__task__info.html#aaf64a4af6aeefa2018168b194766784b',1,'uv_task_info']]],
+  ['num_5fdriving_5fmodes_1115',['num_driving_modes',['../structdriving__loop__args.html#af726a5bebacb81eb0c4aff8697007aba',1,'driving_loop_args']]],
+  ['num_5finstances_1116',['num_instances',['../structuv__task__info.html#af50dd07dbcae819e4d4ffc3f764794ad',1,'uv_task_info']]]
 ];
