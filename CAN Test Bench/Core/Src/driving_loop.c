@@ -74,13 +74,13 @@ void StartDrivingLoop(void * argument){
 	 */
 
 	uv_task_info* params = (uv_task_info*) argument;
-
+	/*
 	uint16_t min_apps_value;
 	uint16_t max_apps_value;
 
 	uint16_t min_apps_offset;
 	uint16_t max_apps_offset;
-
+	*/
 	enum DL_internal_state dl_status = Plausible;
 
 	/** This line extracts the specific driving loop parameters as specified in the
@@ -89,12 +89,13 @@ void StartDrivingLoop(void * argument){
 	driving_loop_args* dl_params = (driving_loop_args*) params->task_args;
 	/**@endcode*/
 
-
+	/*
 	min_apps_value = dl_params->min_apps_value;
 	max_apps_value = dl_params->max_apps_value;
 
 	min_apps_offset = dl_params->min_apps_offset; //minimum APPS offset
 	max_apps_offset = dl_params->max_apps_offset;
+	*/
 
 	/**These here lines set the delay. This task executes exactly at the period specified, regardless of how long the task
 		 * execution actually takes

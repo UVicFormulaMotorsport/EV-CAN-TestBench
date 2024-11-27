@@ -8,6 +8,8 @@
 #ifndef INC_UVFR_UTILS_H_
 #define INC_UVFR_UTILS_H_
 
+#include "uvfr_global_config.h"
+
 #include "main.h"
 #include "cmsis_os.h"
 #include "adc.h"
@@ -89,13 +91,7 @@ typedef uint32_t uv_timespan_ms;
 
 //Memory management macros
 
-#ifndef UV_MALLOC_LIMIT
-#define UV_MALLOC_LIMIT ((size_t)1024)
-#endif
 
-#ifndef USE_OS_MEM_MGMT
-#define USE_OS_MEM_MGMT 0
-#endif
 
 //Some fun CAN macros
 #define UV_CAN1
@@ -115,7 +111,7 @@ typedef enum uv_status_t{
 	UV_OK,
 	UV_WARNING,
 	UV_ERROR,
-	UV_ABORTED
+	UV_ABORTED //nothing wrong per say,
 }uv_status;
 
 
@@ -127,10 +123,20 @@ typedef enum uv_task_state_t{
 	UV_TASK_SUSPENDED
 } uv_task_status;
 
+typedef enum task_priority{
+	IDLE_TASK_PRIORITY,
+	LOW_PRIORITY,
+	BELOW_NORMAL,
+	MEDIUM_PRIORITY,
+	ABOVE_NORMAL,
+	HIGH_PRIORITY,
+	REALTIME_PRIORITY
+}task_priority;
+
 /** Type made to represent the state of the vehicle, and the location in the state machine
  *	The states are powers of two to make it easier to discern tasks that need to happen in multiple states
  */
-enum uv_vehicle_state_t{
+typedef enum uv_vehicle_state_t{
 	UV_INIT = 0x0001, //Vehicle is Initialising
 	UV_READY = 0x0002, //Vehicle is ready to drive, but not actually driving
 	PROGRAMMING = 0x0004, //Vehicle is in proccess programming
@@ -140,7 +146,7 @@ enum uv_vehicle_state_t{
 	UV_ERROR_STATE = 0x0040,
 	UV_BOOT = 0x0080,
 	UV_HALT = 0x0100
-};
+}vehicle_state;
 
 //not really sure how I want this implemented yet. Variable number of driving modes?
 enum uv_driving_mode_t{

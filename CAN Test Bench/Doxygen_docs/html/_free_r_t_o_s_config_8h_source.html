@@ -184,9 +184,9 @@ $(document).ready(function(){initNavTree('_free_r_t_o_s_config_8h_source.html','
 <div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="_free_r_t_o_s_config_8h.html#ad6858ac8aaf726007fd19752956ef1bd">   92</a></span>&#160;<span class="preprocessor">#define INCLUDE_vTaskPrioritySet             1</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="_free_r_t_o_s_config_8h.html#a1279eb797355460aeeec06aa524e91df">   93</a></span>&#160;<span class="preprocessor">#define INCLUDE_uxTaskPriorityGet            1</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="_free_r_t_o_s_config_8h.html#a5ae1434fdf995108dc749ff9329f53bd">   94</a></span>&#160;<span class="preprocessor">#define INCLUDE_vTaskDelete                  1</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="_free_r_t_o_s_config_8h.html#a7ee138825e57f243c8ee5fd4207b9e26">   95</a></span>&#160;<span class="preprocessor">#define INCLUDE_vTaskCleanUpResources        1</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="_free_r_t_o_s_config_8h.html#a7ee138825e57f243c8ee5fd4207b9e26">   95</a></span>&#160;<span class="preprocessor">#define INCLUDE_vTaskCleanUpResources        0</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="_free_r_t_o_s_config_8h.html#aef8fbb97819ad3d962f334ac298206d1">   96</a></span>&#160;<span class="preprocessor">#define INCLUDE_vTaskSuspend                 1</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="_free_r_t_o_s_config_8h.html#ae8459bfd5b428319bb10de9f504a53aa">   97</a></span>&#160;<span class="preprocessor">#define INCLUDE_vTaskDelayUntil              1</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="_free_r_t_o_s_config_8h.html#ae8459bfd5b428319bb10de9f504a53aa">   97</a></span>&#160;<span class="preprocessor">#define INCLUDE_vTaskDelayUntil              0</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="_free_r_t_o_s_config_8h.html#a24361a6eb816a965f1ee4e2e08e364f8">   98</a></span>&#160;<span class="preprocessor">#define INCLUDE_vTaskDelay                   1</span></div>
 <div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="_free_r_t_o_s_config_8h.html#a9ed60ede556830584e6bfd4a3ab4f9de">   99</a></span>&#160;<span class="preprocessor">#define INCLUDE_xTaskGetSchedulerState       1</span></div>
 <div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="_free_r_t_o_s_config_8h.html#ad221128595137414579be33cf8e446d8">  100</a></span>&#160;<span class="preprocessor">#define INCLUDE_xSemaphoreGetMutexHolder     1</span></div>
@@ -240,10 +240,15 @@ $(document).ready(function(){initNavTree('_free_r_t_o_s_config_8h_source.html','
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">/* USER CODE BEGIN Defines */</span></div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment">/* Section where parameter definitions can be added (for instance, to override default ones in FreeRTOS.h) */</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="_free_r_t_o_s_config_8h.html#a488bcb8b6f5f076d88cf6650f4e15796">  151</a></span>&#160;<span class="preprocessor">#define INCLUDE_xTaskDelayUntil 1</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">/* USER CODE END Defines */</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FREERTOS_CONFIG_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="_free_r_t_o_s_config_8h.html#a488bcb8b6f5f076d88cf6650f4e15796">  151</a></span>&#160;<span class="preprocessor">#define INCLUDE_xTaskDelayUntil   1</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">//#define configUSE_TIMERS        1</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">//#define configTIMER_TASK_PRIORITY 6</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="comment">//#define configTIMER_QUEUE_LENGTH  8</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="comment">//#define configTIMER_TASK_STACK_DEPTH 128</span></div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="comment">/* USER CODE END Defines */</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FREERTOS_CONFIG_H */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="agroup___s_t_m32_f4xx___system___private___variables_html_gaa3cd3e43291e81e795d642b79b6088e6"><div class="ttname"><a href="group___s_t_m32_f4xx___system___private___variables.html#gaa3cd3e43291e81e795d642b79b6088e6">SystemCoreClock</a></div><div class="ttdeci">uint32_t SystemCoreClock</div><div class="ttdef"><b>Definition:</b> <a href="system__stm32f4xx_8c_source.html#l00137">system_stm32f4xx.c:137</a></div></div>

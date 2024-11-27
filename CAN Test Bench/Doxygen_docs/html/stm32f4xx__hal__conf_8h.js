@@ -18,6 +18,7 @@ var stm32f4xx__hal__conf_8h =
     [ "HAL_MODULE_ENABLED", "stm32f4xx__hal__conf_8h.html#a877ae99e8c47a609ea97c888912bf75f", null ],
     [ "HAL_PWR_MODULE_ENABLED", "stm32f4xx__hal__conf_8h.html#ab51923c3716977d7923f49cc9d081aa8", null ],
     [ "HAL_RCC_MODULE_ENABLED", "stm32f4xx__hal__conf_8h.html#ac3dd74314ed62ac8575e2f9f48b3ac48", null ],
+    [ "HAL_SPI_MODULE_ENABLED", "stm32f4xx__hal__conf_8h.html#a8ad4712bf4add56892d057778e826e0c", null ],
     [ "HAL_TIM_MODULE_ENABLED", "stm32f4xx__hal__conf_8h.html#a23382b8f04b3e6db2c59dfa1ef5ea4a2", null ],
     [ "HSE_STARTUP_TIMEOUT", "stm32f4xx__hal__conf_8h.html#a68ecbc9b0a1a40a1ec9d18d5e9747c4f", null ],
     [ "HSE_VALUE", "stm32f4xx__hal__conf_8h.html#aeafcff4f57440c60e64812dddd13e7cb", null ],

@@ -137,6 +137,11 @@ uv_status uvStartTask(uint32_t* tracker,uv_task_info* t){
 	 *
 	 * That being said, if the task appears legit, then just update the corresponding bits in the tracker, and return that the task has aborted.
 	 */
+	if(t == NULL){
+		return UV_ERROR;
+	}
+
+
 	if(t->task_state == UV_TASK_RUNNING){
 		if(t->task_handle == NULL){
 			return UV_ERROR; //LITERALLY HOW HAS THIS HAPPENED
@@ -237,6 +242,25 @@ uv_status uvStartStateMachine(){
 
 	previous_state = vehicle_state;
 	vehicle_state = UV_INIT;
+//	BaseType_t xTaskCreate( TaskFunction_t pvTaskCode,
+//
+//	                         const char * const pcName,
+//
+//	                         const configSTACK_DEPTH_TYPE uxStackDepth,
+//
+//	                         void *pvParameters,
+//
+//	                         UBaseType_t uxPriority,
+//
+//	                         TaskHandle_t *pxCreatedTask
+//
+//	                       );
+
+//	task_management_info* svc_task_management_data = uvMalloc(sizeof(task_management_info));
+//
+//	if(xTaskCreate(uvSVCTaskManager,"service task manager",_UV_DEFAULT_TASK_STACK_SIZE,svc_task_management_data,osPriorityRealtime,&(svc_task_management_data->task_handle))!= pdPASS){
+//		__uvInitPanic("failed to create svcTaskManager",0);
+//	}
 
 	return UV_OK;
 }
@@ -265,11 +289,18 @@ uv_status killEmAll(){
  * You will not win against the operating system.
  *
  */
-static uv_status uvKillTaskViolently(){
+static uv_status uvKillTaskViolently(uv_task_info* t){
+	if(t==NULL){
+		uvPanic("null task info block",0); //sub-optimal situation here
+	}
 	/** The first thing that needs to happen, is we will tell the kernel to
 	 * release any resources owned by the task.
 	 *
 	 */
+
+
+
+
 	return UV_OK;
 }
 
@@ -278,6 +309,8 @@ static uv_status uvKillTaskViolently(){
  *
  * This function is the lowtier god of the program. It pulls up and is like "YOU SHOULD KILL YOURSELF, NOW!!"
  * It sends a message to the task which tells it to kill itself.
+ *
+ * The task complies. It does not have a choice.
  *
  */
 uv_status uvDeleteTask(uint32_t* tracker,uv_task_info* t){
@@ -449,16 +482,51 @@ uv_status changeVehicleState(uint16_t state){
 	return UV_OK;
 }
 
+/** @brief Function to put vehicle into safe state.
+ *
+ * Should perform the following functions in order:
+ * - Prevent new MC torque or speed requests
+ * - Open shutdown cct
+ *
+ */
+void uvSecureVehicle(){
+	//Stop MCU Torque requests
+
+
+
+	//open SDC >:)
+
+
+}
+
 
 /** @brief Something bad has occurred here now we in trouble
  *
+ * General idea here: Something bad has happened that is severe enough that it requires the shutdown of
+ * the vehicle. This can mean several things, such as being on fire, etc... that need to be appropriately handled
+ *
+ * This should also log whatever the fuck happened.
+ *
+ * The following should happen, in order:
+ * - Forcibly put vehicle into a safe state
+ * - Change vehicle state to error, and invoke the SCD
+ * - Log the error in our lil running journal
+ *
+ * Should change vehicle state itself be the source of the error, we just need the software
+ * to completely fucking hang itself. If things are so fucked that we genuinely cannot even transition
+ * to the error state, then get that shit the fuck outta here, we shuttin down fr fr.
+ *
  */
 void __uvPanic(char* msg, uint8_t msg_len, const char* file, const int line, const char* func){
-	//ruh roh, something has gone a little bit fucky wucky
-	vTaskSuspendAll();
-	while(1){
 
-	}
+
+	uvSecureVehicle(); // ensure safe state of vehicle.
+
+	//ruh roh, something has gone a little bit fucky wucky
+	//vTaskSuspendAll();
+	//while(1){
+
+	//}
 
 }
 
@@ -585,7 +653,7 @@ static uv_status proccessSCDMsg(uv_scd_response* msg){
 		//rtos_task_state = eTaskGetState(t->task_handle); //HOL UP: MAYBE CHECK TO MAKE SURE THE TASK EXISTS LOL, otherwise null pointer dereference time
 
 		if(rtos_task_state != eDeleted){
-
+			//TODO Handle this error, because this is BAD
 		}
 
 	}else if(replystatus == UV_SUCCESSFUL_SUSPENSION){
@@ -617,6 +685,7 @@ static uv_status proccessSCDMsg(uv_scd_response* msg){
 	return UV_OK;
 }
 
+//TODO Give SCD Object permanence, make a function that is called by the task manager. Allocation of SCD resources costs valuable time in the event of a fault
 
 /** @brief This collects all the data changing from different tasks, and makes sure that everything works properly
  *
@@ -658,15 +727,18 @@ void _stateChangeDaemon(void * args){
 		 * - bring the task state into the correct state
 		 *  @code */
 		tmp_task = &(_task_register[i]);
+
+		task_tracker |= 0x01<<i;
+
 		//tmp_task->manager = incoming_scd_msg; //No longer using this var, instead using the state_change_queue static global var
-		if(((tmp_task->task_flags)&(UV_TASK_MANAGER_MASK | UV_TASK_SCD_IGNORE)) == UV_TASK_VEHICLE_APPLICATION){
-			task_tracker |= 0x01<<i;
-		}else{
-			//If we get here that means that either:
-			//This task has the SCD ignore flag active
-			//This is a SVC task
-			continue; //This is not the task you want
-		}
+//		if(((tmp_task->task_flags)&(UV_TASK_MANAGER_MASK | UV_TASK_SCD_IGNORE)) == UV_TASK_VEHICLE_APPLICATION){
+//			task_tracker |= 0x01<<i;
+//		}else{
+//			//If we get here that means that either:
+//			//This task has the SCD ignore flag active
+//			//This is a SVC task
+//			continue; //This is not the task you want
+//		}
 		//redundant_tracker |= 0x01<<i;
 		/**@endcode*/
 		if(tmp_task->active_states & vehicle_state){
@@ -774,10 +846,13 @@ void _stateChangeDaemon(void * args){
 		}
 
 
+
+
 	}
 	//You timed out didnt you... Naughty naughty...
 
 	uvPanic("SCD Timeout",0);
+	//TODO: Forcibly reconcile vehicle state, and nuke whatever tasks require nuking, suspend whatever needs suspended
 
 	END_OF_STATE_CHANGE_DAEMON:
 
@@ -812,8 +887,43 @@ void uvTaskManager(void* args){
 
 }
 
+/** @brief Create a new service task, because fuck you, thats why
+ *
+ *
+ */
 uv_task_info* uvCreateServiceTask(){
-	return NULL;
+
+	if(_next_svc_task_id >= MAX_NUM_MANAGED_TASKS){
+		return NULL;
+	}
+
+	/** Acquire the pointer to the spot in the array, we are doing this since we need to
+	 * return the pointer anyways, and it cleans up the syntax a little.
+	 *
+	 */
+
+	uv_task_info* _newtask = &(_task_register[_next_svc_task_id]);
+	_newtask->task_id = _next_svc_task_id;
+	++_next_svc_task_id;
+
+	_newtask->task_name = NULL;
+
+	_newtask->task_function = NULL;
+	_newtask->task_priority = osPriorityRealtime;
+
+	_newtask->max_instances = _UV_DEFAULT_TASK_INSTANCES;
+	_newtask->stack_size = _UV_DEFAULT_TASK_STACK_SIZE;
+
+	_newtask->task_state = UV_TASK_NOT_STARTED;
+	_newtask->active_states = 0x00;
+	_newtask->deletion_states = 0x00;
+	_newtask->suspension_states = 0x00;
+
+	_newtask->next = NULL;
+
+	_newtask->task_handle = NULL;
+
+	return _newtask;
 }
 
 /** @brief Function to start a service task specifically
@@ -845,13 +955,13 @@ uv_status uvDeleteSVCTask(){
  * This may be neccessary if a SVC task is not responding. Be careful though, since this has the potential to delay more important tasks :o
  * Therefore, this technique should be used sparingly, and each task gets a limited number of attempts within a certain time period.
  */
-uv_status uvRestartSVCTask(){
+uv_status uvRestartSVCTask(uv_task_info* t){
 	//force task to relinquish resources
 
 	//ask nicely for task to be deleted
 
 	//if that fails, forcibly delete task
-	uvKillTaskViolently();
+	uvKillTaskViolently(t);
 	//try to start the task again
 	uvStartSVCTask();
 	return UV_OK;
@@ -864,7 +974,7 @@ uv_status uvRestartSVCTask(){
  */
 void uvSVCTaskManager(void* args){
 
-
+	task_management_info* params =(task_management_info*) args;
 
 	/** Start all of the service tasks. This involves allocating neccessary memory,
 	 * setting the appropriate task parameters, and saying "fuck it we ball" and adding the tasks to the
@@ -874,23 +984,27 @@ void uvSVCTaskManager(void* args){
 	 */
 
 	//TODO: Determine whether or not service tasks should actually use the same struct as vehicle application tasks, since they behave completely differently
-	_svc_task_register = uvMalloc(sizeof(uv_task_info)); //allocate mem for the svc task register
+	_svc_task_register = uvMalloc(sizeof(uv_task_info)*MAX_NUM_SVC_TASKS); //allocate mem for the svc task register
 
 
 	if(_svc_task_register == NULL){
 		__uvInitPanic(); //Double Plus Ungood
 	}
 
-
+	uv_task_info* canTxtask = uvCreateServiceTask();
+	canTxtask->task_function = CANbusTxSvcDaemon;
+	canTxtask->active_states = 0xFFFF;
+	canTxtask->task_name = CAN_TX_DAEMON_NAME;
 	//super basic for now, just need something working
+	uint32_t var = 0;
+	uvStartTask(&var,canTxtask);
 
-
-
+	//vTaskSuspend(params->task_handle);
 	//iterate through the list
 
 	for(;;){
 		//Hold for a command
-
+		vTaskDelay(100);
 		//Do different things depending on what the value of the command is
 
 		//update various parameters that need updated
@@ -908,7 +1022,7 @@ void uvSVCTaskManager(void* args){
 	 */
 
 	uvFree(_svc_task_register); //Free this to avoid mem leaks
-	//vTaskDelete();
+	vTaskDelete(params->task_handle);
 }
 
 /** Sometimes you just gottta deal with it lol

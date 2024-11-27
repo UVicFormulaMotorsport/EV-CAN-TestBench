@@ -50,16 +50,21 @@ typedef struct uv_scd_response{
 	uv_task_id meta_id;
 }uv_scd_response;
 
-typedef struct uv_svc_task_tcb{
-	struct uv_task_info; // editable by user
-	//State engine private fields below
-};
+//typedef struct uv_svc_task_tcb{
+//	struct uv_task_info; // editable by user
+//	//State engine private fields below
+//}b;
+//
+//typedef union uv_svc_task{
+//	struct uv_task_info; // user task info
+//	struct uv_svc_task_tcb;
+//}a;
 
-typedef union uv_svc_task{
-	struct uv_task_info; // user task info
-	struct uv_svc_task_tcb;
-};
 
+typedef struct task_management_info{
+	TaskHandle_t task_handle;
+	QueueHandle_t task_management_queue;
+}task_management_info;
 
 
 struct uv_task_info* uvCreateTask();

@@ -11,10 +11,8 @@
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__settings_8c_af13d8078183457319f43ca58b85314e4}{get\+Settings\+From\+Flash}} ()
-\item 
 void \mbox{\hyperlink{uvfr__settings_8c_a42f7a1907bfe84d7b0f9fb4e2260018b}{setup\+Default\+Settings}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Function that allocates the neccessary space for all the vehicle settings, and handles sets all of the settings structs to defaults. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{uvfr__settings_8c_a4648237563030182a8309d8c75e12205}{nuke\+Settings}} (\mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}} $\ast$$\ast$settings\+\_\+to\+\_\+delete)
 \item 
 enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__settings_8c_a80856a38d7040ca10b8106ff0fa4acf4}{uv\+Settings\+Init}} ()
@@ -40,20 +38,6 @@ Definition at line 7 of file uvfr\+\_\+settings.\+c.
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{uvfr__settings_8c_af13d8078183457319f43ca58b85314e4}\label{uvfr__settings_8c_af13d8078183457319f43ca58b85314e4}} 
-\index{uvfr\_settings.c@{uvfr\_settings.c}!getSettingsFromFlash@{getSettingsFromFlash}}
-\index{getSettingsFromFlash@{getSettingsFromFlash}!uvfr\_settings.c@{uvfr\_settings.c}}
-\doxysubsubsection{\texorpdfstring{getSettingsFromFlash()}{getSettingsFromFlash()}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} get\+Settings\+From\+Flash (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 17 of file uvfr\+\_\+settings.\+c.
-
-
-
-References U\+V\+\_\+\+A\+B\+O\+R\+T\+ED.
-
 \mbox{\Hypertarget{uvfr__settings_8c_a4648237563030182a8309d8c75e12205}\label{uvfr__settings_8c_a4648237563030182a8309d8c75e12205}} 
 \index{uvfr\_settings.c@{uvfr\_settings.c}!nukeSettings@{nukeSettings}}
 \index{nukeSettings@{nukeSettings}!uvfr\_settings.c@{uvfr\_settings.c}}
@@ -62,7 +46,11 @@ References U\+V\+\_\+\+A\+B\+O\+R\+T\+ED.
 
 
 
-Definition at line 27 of file uvfr\+\_\+settings.\+c.
+Definition at line 45 of file uvfr\+\_\+settings.\+c.
+
+
+
+References uv\+Free().
 
 \mbox{\Hypertarget{uvfr__settings_8c_a42f7a1907bfe84d7b0f9fb4e2260018b}\label{uvfr__settings_8c_a42f7a1907bfe84d7b0f9fb4e2260018b}} 
 \index{uvfr\_settings.c@{uvfr\_settings.c}!setupDefaultSettings@{setupDefaultSettings}}
@@ -72,7 +60,11 @@ Definition at line 27 of file uvfr\+\_\+settings.\+c.
 
 
 
-Definition at line 22 of file uvfr\+\_\+settings.\+c.
+Function that allocates the neccessary space for all the vehicle settings, and handles sets all of the settings structs to defaults. 
+
+
+
+Definition at line 40 of file uvfr\+\_\+settings.\+c.
 
 
 
@@ -94,11 +86,11 @@ this function does one thing, and one thing only, it checks if we have custom se
 
 
 
-Definition at line 38 of file uvfr\+\_\+settings.\+c.
+Definition at line 58 of file uvfr\+\_\+settings.\+c.
 
 
 
-References setup\+Default\+Settings(), and U\+V\+\_\+\+OK.
+References setup\+Default\+Settings(), U\+V\+\_\+\+A\+B\+O\+R\+T\+ED, U\+V\+\_\+\+E\+R\+R\+OR, and U\+V\+\_\+\+OK.
 
 
 

@@ -56,6 +56,10 @@ void tempMonitorTask(void* args){
 	TickType_t last_time = xTaskGetTickCount();
 	/**@endcode */
 	for(;;){
+		/** This is an example of a task control point, which is the spot in the task where the task
+		 * decides what needs to be done, based on the commands it has received from the task manager and the SCD
+		 *
+		 */
 		if(params->cmd_data == UV_KILL_CMD){
 			killSelf(params);
 		}else if(params->cmd_data == UV_SUSPEND_CMD){
@@ -63,6 +67,39 @@ void tempMonitorTask(void* args){
 		}
 		vTaskDelayUntil( &last_time, tick_period);
 
+		//Mohak code here
+		TxData[0] = 0b10101010;
+			TxData[1] = 0b10101010;
+			TxData[2] = 0b10101010;
+			TxData[3] = 1;
+			TxData[4] = 2;
+			TxData[5] = 3;
+			TxData[6] = 0b10101010;
+			TxData[7] = 0b10101010;
+
+
+			HAL_StatusTypeDef can_send_status;
+
+					//vTaskDelay(400);
+
+
+
+					TxHeader.IDE = CAN_ID_EXT;
+					TxHeader.ExtId = 0x1234;
+
+
+					TxHeader.DLC = 8;
+
+
+					//taskENTER_CRITICAL();
+					can_send_status = HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox);
+					//taskEXIT_CRITICAL();
+
+					if (can_send_status != HAL_OK){
+													/* Transmission request Error */
+						//uvPanic("Unable to Transmit CAN msg",can_send_status);
+						handleCANbusError(&hcan2, 0);
+					}
 
 
 		HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15); //BLUE

@@ -10,6 +10,7 @@
 {\ttfamily \#include \char`\"{}adc.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}can.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}dma.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}spi.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}tim.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}gpio.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
@@ -86,11 +87,11 @@ This function is executed in case of error occurrence.
 \end{DoxyRetVals}
 
 
-Definition at line 343 of file main.\+c.
+Definition at line 341 of file main.\+c.
 
 
 
-Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Msp\+Init(), H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback(), I\+M\+D\+\_\+\+Parse\+\_\+\+Message(), I\+M\+D\+\_\+\+Request\+\_\+\+Status(), M\+C\+\_\+\+Parse\+\_\+\+Message(), M\+C\+\_\+\+Request\+\_\+\+Data(), M\+C\+\_\+\+Send\+\_\+\+Data(), M\+X\+\_\+\+A\+D\+C1\+\_\+\+Init(), M\+X\+\_\+\+A\+D\+C2\+\_\+\+Init(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), M\+X\+\_\+\+T\+I\+M3\+\_\+\+Init(), P\+D\+U\+\_\+disable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+disable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+disable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+disable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+disable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+enable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+enable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+enable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+enable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+enable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+speaker\+\_\+chirp(), System\+Clock\+\_\+\+Config(), Update\+\_\+\+Batt\+\_\+\+Temp(), Update\+\_\+\+R\+P\+M(), and Update\+\_\+\+State\+\_\+\+Of\+\_\+\+Charge().
+Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Msp\+Init(), H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback(), I\+M\+D\+\_\+\+Parse\+\_\+\+Message(), I\+M\+D\+\_\+\+Request\+\_\+\+Status(), M\+C\+\_\+\+Parse\+\_\+\+Message(), M\+C\+\_\+\+Request\+\_\+\+Data(), M\+C\+\_\+\+Send\+\_\+\+Data(), M\+X\+\_\+\+A\+D\+C1\+\_\+\+Init(), M\+X\+\_\+\+A\+D\+C2\+\_\+\+Init(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), M\+X\+\_\+\+S\+P\+I1\+\_\+\+Init(), M\+X\+\_\+\+T\+I\+M3\+\_\+\+Init(), P\+D\+U\+\_\+disable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+disable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+disable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+disable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+disable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+enable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+enable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+enable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+enable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+enable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+speaker\+\_\+chirp(), System\+Clock\+\_\+\+Config(), Update\+\_\+\+Batt\+\_\+\+Temp(), Update\+\_\+\+R\+P\+M(), and Update\+\_\+\+State\+\_\+\+Of\+\_\+\+Charge().
 
 \mbox{\Hypertarget{main_8c_af20a88180db1113be1e89266917d148b}\label{main_8c_af20a88180db1113be1e89266917d148b}} 
 \index{main.c@{main.c}!HAL\_ADC\_ConvCpltCallback@{HAL\_ADC\_ConvCpltCallback}}
@@ -100,7 +101,7 @@ Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Msp\+Init(), H\+A\+L\+\_\+\+C\+A\+N\
 
 
 
-Definition at line 240 of file main.\+c.
+Definition at line 238 of file main.\+c.
 
 
 
@@ -114,7 +115,7 @@ References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, adc1\+\_\+\+B\+P\+S
 
 
 
-Definition at line 295 of file main.\+c.
+Definition at line 293 of file main.\+c.
 
 
 
@@ -128,7 +129,7 @@ References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, hadc1, Red\+\_\+\+L
 
 
 
-Definition at line 286 of file main.\+c.
+Definition at line 284 of file main.\+c.
 
 \mbox{\Hypertarget{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}\label{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}} 
 \index{main.c@{main.c}!HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}}
@@ -155,7 +156,7 @@ This function is called when T\+I\+M1 interrupt took place, inside H\+A\+L\+\_\+
 \end{DoxyRetVals}
 
 
-Definition at line 319 of file main.\+c.
+Definition at line 317 of file main.\+c.
 
 
 
@@ -178,11 +179,11 @@ The application entry point.
 \end{DoxyRetVals}
 
 
-Definition at line 96 of file main.\+c.
+Definition at line 97 of file main.\+c.
 
 
 
-References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, M\+X\+\_\+\+A\+D\+C1\+\_\+\+Init(), M\+X\+\_\+\+A\+D\+C2\+\_\+\+Init(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), M\+X\+\_\+\+D\+M\+A\+\_\+\+Init(), M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init(), M\+X\+\_\+\+T\+I\+M3\+\_\+\+Init(), System\+Clock\+\_\+\+Config(), and Update\+\_\+\+R\+P\+M().
+References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, M\+X\+\_\+\+A\+D\+C1\+\_\+\+Init(), M\+X\+\_\+\+A\+D\+C2\+\_\+\+Init(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), M\+X\+\_\+\+D\+M\+A\+\_\+\+Init(), M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init(), M\+X\+\_\+\+S\+P\+I1\+\_\+\+Init(), M\+X\+\_\+\+T\+I\+M3\+\_\+\+Init(), System\+Clock\+\_\+\+Config(), and Update\+\_\+\+R\+P\+M().
 
 \mbox{\Hypertarget{main_8c_abade755e13d07c10889ae83143656158}\label{main_8c_abade755e13d07c10889ae83143656158}} 
 \index{main.c@{main.c}!MX\_FREERTOS\_Init@{MX\_FREERTOS\_Init}}
@@ -240,7 +241,7 @@ Initializes the R\+CC Oscillators according to the specified parameters in the R
 
 Initializes the C\+PU, A\+HB and A\+PB buses clocks
 
-Definition at line 182 of file main.\+c.
+Definition at line 180 of file main.\+c.
 
 
 
@@ -261,7 +262,7 @@ Referenced by main().
 
 
 
-Definition at line 63 of file main.\+c.
+Definition at line 64 of file main.\+c.
 
 
 
@@ -275,7 +276,7 @@ Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), H\+A\+L\+\_\
 
 
 
-Definition at line 64 of file main.\+c.
+Definition at line 65 of file main.\+c.
 
 
 
@@ -289,7 +290,7 @@ Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), H\+A\+L\+\_\
 
 
 
-Definition at line 65 of file main.\+c.
+Definition at line 66 of file main.\+c.
 
 
 
@@ -303,7 +304,7 @@ Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), and Start\+D
 
 
 
-Definition at line 66 of file main.\+c.
+Definition at line 67 of file main.\+c.
 
 
 
@@ -317,7 +318,7 @@ Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), and Start\+D
 
 
 
-Definition at line 70 of file main.\+c.
+Definition at line 71 of file main.\+c.
 
 
 
@@ -331,7 +332,7 @@ Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback().
 
 
 
-Definition at line 69 of file main.\+c.
+Definition at line 70 of file main.\+c.
 
 
 
@@ -345,7 +346,7 @@ Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback().
 
 
 
-Definition at line 61 of file main.\+c.
+Definition at line 62 of file main.\+c.
 
 
 
@@ -359,7 +360,7 @@ Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback().
 
 
 
-Definition at line 68 of file main.\+c.
+Definition at line 69 of file main.\+c.
 
 
 

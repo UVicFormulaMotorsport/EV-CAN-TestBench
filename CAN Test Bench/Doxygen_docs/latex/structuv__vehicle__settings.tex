@@ -7,11 +7,17 @@
 \doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
+Semaphore\+Handle\+\_\+t \mbox{\hyperlink{structuv__vehicle__settings_aee52de8970f15250a8d64338714b0660}{settings\+\_\+mutex}}
+\item 
 \mbox{\hyperlink{structbms__settings__t}{bms\+\_\+settings\+\_\+t}} \mbox{\hyperlink{structuv__vehicle__settings_a0eeeba4e1c97c6bf86257c612da451e5}{bms\+\_\+settings}}
 \item 
 \mbox{\hyperlink{structdriving__loop__args}{driving\+\_\+loop\+\_\+args}} \mbox{\hyperlink{structuv__vehicle__settings_a30d811062369a0c13c09acf8a6dbd8fb}{driving\+\_\+loop\+\_\+settings}}
 \item 
 \mbox{\hyperlink{structdaq__loop__args}{daq\+\_\+loop\+\_\+args}} \mbox{\hyperlink{structuv__vehicle__settings_acd46494ba38f60f0c3f311322d41109c}{daq\+\_\+settings}}
+\item 
+void $\ast$ \mbox{\hyperlink{structuv__vehicle__settings_a5b56318f394bef60ff7da0b4995183e0}{imd\+\_\+settings}}
+\item 
+void $\ast$ \mbox{\hyperlink{structuv__vehicle__settings_afbb4746468289d0e88ee03e325917fb3}{pdu\+\_\+settings}}
 \item 
 struct \mbox{\hyperlink{structmotor__controller__settings__t}{motor\+\_\+controller\+\_\+settings\+\_\+t}} \mbox{\hyperlink{structuv__vehicle__settings_afe1add4c8e85f7fa1da768b50dee7b88}{motor\+\_\+controller\+\_\+settings}}
 \end{DoxyCompactItemize}
@@ -20,7 +26,7 @@ struct \mbox{\hyperlink{structmotor__controller__settings__t}{motor\+\_\+control
 \doxysubsection{Detailed Description}
 
 
-Definition at line 28 of file uvfr\+\_\+settings.\+h.
+Definition at line 32 of file uvfr\+\_\+settings.\+h.
 
 
 
@@ -33,7 +39,7 @@ Definition at line 28 of file uvfr\+\_\+settings.\+h.
 
 
 
-Definition at line 30 of file uvfr\+\_\+settings.\+h.
+Definition at line 35 of file uvfr\+\_\+settings.\+h.
 
 
 
@@ -47,7 +53,7 @@ Referenced by uv\+Init().
 
 
 
-Definition at line 32 of file uvfr\+\_\+settings.\+h.
+Definition at line 37 of file uvfr\+\_\+settings.\+h.
 
 \mbox{\Hypertarget{structuv__vehicle__settings_a30d811062369a0c13c09acf8a6dbd8fb}\label{structuv__vehicle__settings_a30d811062369a0c13c09acf8a6dbd8fb}} 
 \index{uv\_vehicle\_settings@{uv\_vehicle\_settings}!driving\_loop\_settings@{driving\_loop\_settings}}
@@ -57,13 +63,51 @@ Definition at line 32 of file uvfr\+\_\+settings.\+h.
 
 
 
-Definition at line 31 of file uvfr\+\_\+settings.\+h.
+Definition at line 36 of file uvfr\+\_\+settings.\+h.
+
+\mbox{\Hypertarget{structuv__vehicle__settings_a5b56318f394bef60ff7da0b4995183e0}\label{structuv__vehicle__settings_a5b56318f394bef60ff7da0b4995183e0}} 
+\index{uv\_vehicle\_settings@{uv\_vehicle\_settings}!imd\_settings@{imd\_settings}}
+\index{imd\_settings@{imd\_settings}!uv\_vehicle\_settings@{uv\_vehicle\_settings}}
+\doxysubsubsection{\texorpdfstring{imd\_settings}{imd\_settings}}
+{\footnotesize\ttfamily void$\ast$ uv\+\_\+vehicle\+\_\+settings\+::imd\+\_\+settings}
+
+
+
+Definition at line 38 of file uvfr\+\_\+settings.\+h.
+
+
+
+Referenced by uv\+Init().
 
 \mbox{\Hypertarget{structuv__vehicle__settings_afe1add4c8e85f7fa1da768b50dee7b88}\label{structuv__vehicle__settings_afe1add4c8e85f7fa1da768b50dee7b88}} 
 \index{uv\_vehicle\_settings@{uv\_vehicle\_settings}!motor\_controller\_settings@{motor\_controller\_settings}}
 \index{motor\_controller\_settings@{motor\_controller\_settings}!uv\_vehicle\_settings@{uv\_vehicle\_settings}}
 \doxysubsubsection{\texorpdfstring{motor\_controller\_settings}{motor\_controller\_settings}}
 {\footnotesize\ttfamily struct \mbox{\hyperlink{structmotor__controller__settings__t}{motor\+\_\+controller\+\_\+settings\+\_\+t}} uv\+\_\+vehicle\+\_\+settings\+::motor\+\_\+controller\+\_\+settings}
+
+
+
+Definition at line 40 of file uvfr\+\_\+settings.\+h.
+
+
+
+Referenced by uv\+Init().
+
+\mbox{\Hypertarget{structuv__vehicle__settings_afbb4746468289d0e88ee03e325917fb3}\label{structuv__vehicle__settings_afbb4746468289d0e88ee03e325917fb3}} 
+\index{uv\_vehicle\_settings@{uv\_vehicle\_settings}!pdu\_settings@{pdu\_settings}}
+\index{pdu\_settings@{pdu\_settings}!uv\_vehicle\_settings@{uv\_vehicle\_settings}}
+\doxysubsubsection{\texorpdfstring{pdu\_settings}{pdu\_settings}}
+{\footnotesize\ttfamily void$\ast$ uv\+\_\+vehicle\+\_\+settings\+::pdu\+\_\+settings}
+
+
+
+Definition at line 39 of file uvfr\+\_\+settings.\+h.
+
+\mbox{\Hypertarget{structuv__vehicle__settings_aee52de8970f15250a8d64338714b0660}\label{structuv__vehicle__settings_aee52de8970f15250a8d64338714b0660}} 
+\index{uv\_vehicle\_settings@{uv\_vehicle\_settings}!settings\_mutex@{settings\_mutex}}
+\index{settings\_mutex@{settings\_mutex}!uv\_vehicle\_settings@{uv\_vehicle\_settings}}
+\doxysubsubsection{\texorpdfstring{settings\_mutex}{settings\_mutex}}
+{\footnotesize\ttfamily Semaphore\+Handle\+\_\+t uv\+\_\+vehicle\+\_\+settings\+::settings\+\_\+mutex}
 
 
 
