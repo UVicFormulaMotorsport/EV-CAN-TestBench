@@ -191,7 +191,7 @@ void StartDrivingLoop(void * argument){
 
 
 		//Command the motor controller to do the thing
-		if(1){
+		if(1){//if(1) reminds me that there should be a
 
 		}
 

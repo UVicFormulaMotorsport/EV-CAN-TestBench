@@ -69,37 +69,37 @@ void tempMonitorTask(void* args){
 
 		//Mohak code here
 		TxData[0] = 0b10101010;
-			TxData[1] = 0b10101010;
-			TxData[2] = 0b10101010;
-			TxData[3] = 1;
-			TxData[4] = 2;
-			TxData[5] = 3;
-			TxData[6] = 0b10101010;
-			TxData[7] = 0b10101010;
+		TxData[1] = 0b10101010;
+		TxData[2] = 0b10101010;
+		TxData[3] = 1;
+		TxData[4] = 2;
+		TxData[5] = 3;
+		TxData[6] = 0b10101010;
+		TxData[7] = 0b10101010;
 
 
-			HAL_StatusTypeDef can_send_status;
+		HAL_StatusTypeDef can_send_status;
 
 					//vTaskDelay(400);
 
 
 
-					TxHeader.IDE = CAN_ID_EXT;
-					TxHeader.ExtId = 0x1234;
+		TxHeader.IDE = CAN_ID_EXT;
+		TxHeader.ExtId = 0x1234;
 
 
-					TxHeader.DLC = 8;
+		TxHeader.DLC = 8;
 
 
-					//taskENTER_CRITICAL();
-					can_send_status = HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox);
-					//taskEXIT_CRITICAL();
+		//taskENTER_CRITICAL();
+		can_send_status = HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox);
+		//taskEXIT_CRITICAL();
 
-					if (can_send_status != HAL_OK){
-													/* Transmission request Error */
-						//uvPanic("Unable to Transmit CAN msg",can_send_status);
-						handleCANbusError(&hcan2, 0);
-					}
+		if (can_send_status != HAL_OK){
+			/* Transmission request Error */
+			//uvPanic("Unable to Transmit CAN msg",can_send_status);
+			handleCANbusError(&hcan2, 0);
+		}
 
 
 		HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15); //BLUE

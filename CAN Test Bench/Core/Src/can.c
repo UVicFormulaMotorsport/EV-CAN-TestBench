@@ -133,7 +133,7 @@ void MX_CAN2_Init(void)
   hcan2.Init.TimeSeg1 = CAN_BS1_12TQ;
   hcan2.Init.TimeSeg2 = CAN_BS2_8TQ;
   hcan2.Init.TimeTriggeredMode = DISABLE;
-  hcan2.Init.AutoBusOff = ENABLE;
+  hcan2.Init.AutoBusOff = DISABLE;
   hcan2.Init.AutoWakeUp = DISABLE;
   hcan2.Init.AutoRetransmission = DISABLE;
   hcan2.Init.ReceiveFifoLocked = DISABLE;
@@ -369,31 +369,35 @@ void CANbusTxSvcDaemon(void* args){
 
 
 	BaseType_t result;
-	uint32_t notif_val = 0;
+	//uint32_t notif_val = 0;
 	for(;;){
 
 
 		result = xQueueReceive(Tx_msg_queue,&tx_msg,portMAX_DELAY);
-		if(tx_msg == NULL){
-			uvPanic("cannot send null CAN msg",0);
-		}
 
-		if((tx_msg->flags)& UV_CAN_EXTENDED_ID){
-			TxHeader.IDE = CAN_ID_EXT;
-			TxHeader.ExtId = tx_msg->msg_id;
-		}else{
-			TxHeader.IDE = CAN_ID_STD;
-			TxHeader.StdId = tx_msg->msg_id;
-		}
+		if(result == pdTRUE){
 
-		TxHeader.DLC = tx_msg->dlc;
+			if(tx_msg == NULL){
+				uvPanic("cannot send null CAN msg",0);
+			}
+
+			if((tx_msg->flags)& UV_CAN_EXTENDED_ID){
+				TxHeader.IDE = CAN_ID_EXT;
+				TxHeader.ExtId = tx_msg->msg_id;
+			}else{
+				TxHeader.IDE = CAN_ID_STD;
+				TxHeader.StdId = tx_msg->msg_id;
+			}
+
+			TxHeader.DLC = tx_msg->dlc;
 
 
 
 
-		if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, tx_msg->data, &TxMailbox) != HAL_OK){
+			if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, tx_msg->data, &TxMailbox) != HAL_OK){
 								/* Transmission request Error */
-			uvPanic("Unable to Transmit CAN msg",0);
+				uvPanic("Unable to Transmit CAN msg",0);
+			}
 		}
 
 	}//main for loop

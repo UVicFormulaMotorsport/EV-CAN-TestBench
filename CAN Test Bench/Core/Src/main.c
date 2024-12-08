@@ -48,7 +48,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define DEBUG_CAN_IN_MAIN 1
+#define DEBUG_CAN_IN_MAIN 0
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/

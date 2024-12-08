@@ -60,11 +60,18 @@ typedef struct uv_scd_response{
 //	struct uv_svc_task_tcb;
 //}a;
 
-
+/** @brief Struct to contain data about a parent task
+ *
+ * This contains the information required for the child task to communicate with it's parent.
+ *
+ * This will be a queue, since one parent task can in theory have several child tasks
+ *
+ */
 typedef struct task_management_info{
 	TaskHandle_t task_handle;
 	QueueHandle_t task_management_queue;
 }task_management_info;
+
 
 
 struct uv_task_info* uvCreateTask();

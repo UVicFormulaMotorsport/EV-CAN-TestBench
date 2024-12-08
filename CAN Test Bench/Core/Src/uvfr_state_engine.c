@@ -30,6 +30,8 @@ enum uv_vehicle_state_t previous_state = UV_BOOT;
 
 //Function prototypes
 uv_status killEmAll();
+void uvSVCTaskManager(void* args);
+void uvTaskManager(void* args);
 
 
 /** @brief This function gets called when you want to create a task, and register it
@@ -112,7 +114,7 @@ uv_status uvValidateManagedTasks(){
 	uv_status is_chill;
 	for(int i = 0; i < _next_task_id; i++){
 
-		is_chill = _uvValidateSpecificTask(i);
+		is_chill = _uvValidateSpecificTask(i); //probably a slightly more elegant way to do this than have it immediately hang itself
 
 		if(is_chill != UV_OK){
 			return is_chill;
@@ -257,10 +259,33 @@ uv_status uvStartStateMachine(){
 //	                       );
 
 //	task_management_info* svc_task_management_data = uvMalloc(sizeof(task_management_info));
-//
-//	if(xTaskCreate(uvSVCTaskManager,"service task manager",_UV_DEFAULT_TASK_STACK_SIZE,svc_task_management_data,osPriorityRealtime,&(svc_task_management_data->task_handle))!= pdPASS){
-//		__uvInitPanic("failed to create svcTaskManager",0);
-//	}
+	uv_task_info* svc_task_manager = uvMalloc(sizeof(uv_task_info));
+	uv_task_info* task_manager = uvMalloc(sizeof(uv_task_info));
+
+
+	svc_task_manager->task_name = "svcTaskManager"; //Task info for the svc task manager struct
+	svc_task_manager->task_flags = 0x0000U | UV_TASK_MISSION_CRITICAL | UV_TASK_SCD_IGNORE;
+	svc_task_manager->task_function = uvSVCTaskManager;
+	svc_task_manager->stack_size = 256;
+
+	task_manager->task_name = "taskManager"; //Task info for regular uvTaskManager struct
+	task_manager->task_flags = 0x0000U;
+	task_manager->task_function = uvTaskManager;
+	task_manager->stack_size = 256;
+
+	BaseType_t retval;
+
+	retval = xTaskCreate(svc_task_manager->task_function,svc_task_manager->task_name,svc_task_manager->stack_size,svc_task_manager,4,&(svc_task_manager->task_handle));
+
+	if(retval != pdPASS){
+		return UV_ERROR;
+	}
+
+	retval = xTaskCreate(task_manager->task_function,task_manager->task_name,task_manager->stack_size,task_manager,4,&(task_manager->task_handle));
+
+	if(retval != pdPASS){
+		return UV_ERROR;//very much ++ ungoods
+	}
 
 	return UV_OK;
 }
@@ -369,6 +394,16 @@ uv_status uvDeleteTask(uint32_t* tracker,uv_task_info* t){
 	return UV_OK;
 }
 
+uv_status uvScheduleTaskDeletion(uint32_t* tracker, uv_task_info* t){
+	if(t == NULL){
+		return UV_ERROR;
+	}
+
+	if(t->task_state == UV_TASK_DELETED){
+		*tracker &= ~(0x0001U<<(t->task_id));
+	}
+}
+
 /** @brief function to suspend one of the managed tasks
  *
  */
@@ -431,10 +466,13 @@ typedef struct state_change_daemon_args{
  *
  */
 uv_status changeVehicleState(uint16_t state){
+
+	if(!(isPowerOfTwo(state))){
+		return UV_ERROR; //literally not a possible state, since all vehicle states are powers of two
+	}
+
 	/** If the state we wish to change to is the same as the state we're in, then
 	 * no need to be executing any of this fancy code
-	 *
-	 *
 	 */
 	if(state == vehicle_state){
 		return UV_ABORTED;
@@ -544,25 +582,16 @@ void killSelf(uv_task_info* t){
 	if(t == NULL){
 		uvPanic("Null Task Info Struct",0);
 	}
-
-
-
 	//QueueHandle_t status_queue = t->manager;
 	uv_scd_response* response = uvMalloc(sizeof(uv_scd_response));
-
-
 
 	if(response == NULL){
 		uvPanic("uvMalloc Failed",0);
 	}
 
-
-
-
 	t->task_state = UV_TASK_DELETED;
 	response->meta_id = t->task_id;
 	response->response_val = UV_SUCCESSFUL_DELETION;
-
 
 	if(state_change_queue != NULL){
 		if(xQueueSend(state_change_queue, &response, 0) != pdPASS){
@@ -634,7 +663,7 @@ static uv_status proccessSCDMsg(uv_scd_response* msg){
 	}
 
 	/** Get the id of the message, then use that to index the _task_register
-	 *
+	 * Mission critical stuff that stops ev from driving into a wall
 	 */
 	uv_task_id id = msg->meta_id;
 	enum uv_scd_response_e replystatus = msg->response_val;
@@ -691,13 +720,13 @@ static uv_status proccessSCDMsg(uv_scd_response* msg){
  *
  * 	@attention DO NOT EVER JUST CALL THIS FUNCTION. THIS SHOULD ONLY BE CALLED FROM changeVehicleState
  *
- * @param This accepts a @c void* pointer to avoid compile errors with freeRTOS, since freeRTOS expects
+ * @param args This accepts a @c void* pointer to avoid compile errors with freeRTOS, since freeRTOS expects
  * a pointer to the function that accepts a void pointer
  *
  * This is a one-shot RTOS task that spawns in when we want to change the state of the vehicle state.
  * It performs this in the following way
  */
-void _stateChangeDaemon(void * args){
+void _stateChangeDaemon(void * args) PRIVILEGED_FUNCTION{
 	SCD_active = true;
 
 
@@ -750,6 +779,8 @@ void _stateChangeDaemon(void * args){
 				}else{
 					uvPanic("Failed to start task",0);
 				}
+			}else if(tmp_task->task_flags & UV_TASK_AWAITING_DELETION){
+				//FUCK, GO BACK!!
 			}else{
 				task_tracker &= ~(0x01<<i); //didnt need to do anything
 			}
@@ -757,7 +788,11 @@ void _stateChangeDaemon(void * args){
 			//this task should not exist right now
 			if((tmp_task->task_state != UV_TASK_NOT_STARTED)&&(tmp_task->task_state != UV_TASK_DELETED)){
 				//gotta delete that task buddy
-				uvDeleteTask(&task_tracker,tmp_task);
+				if(tmp_task->task_flags & UV_TASK_DEFER_DELETION){
+					uvScheduleTaskDeletion(&task_tracker, tmp_task);
+				}else{
+					uvDeleteTask(&task_tracker,tmp_task);
+				}
 				//task_tracker &= ~(0x01<<i);
 			}else{
 				task_tracker &= ~(0x01<<i);
@@ -867,7 +902,7 @@ void _stateChangeDaemon(void * args){
 	state_change_queue = NULL;
 	/**@endcode*/
 
-
+	SCD_active = false;
 	/**The final act of the SCD, is to delete itself @code */
 	vTaskDelete(scd_handle);
 	/** @endcode */
@@ -876,12 +911,59 @@ void _stateChangeDaemon(void * args){
 //end of SCD
 
 
-/** @brief The big papa task that deals with handling all of the others
+/** @brief The big papa task that deals with handling all of the others.
+ *
+ * The responsibilities of this task are as follows:
+ * - Monitor tasks to ensure they are on schedule
+ * - Setup inter-task communication channels
+ * - Invoke SCD if necessary
+ * - Track mem usage if needed
  *
  */
-void uvTaskManager(void* args){
+void uvTaskManager(void* args) PRIVILEGED_FUNCTION{
+
+	//Init the variables we need
+
+	uv_msg_type incoming_msg_type;
+	uv_task_msg* incoming_msg;
 
 	for(;;){
+		/** Wait for incoming instructions from tasks
+		 *
+		 */
+		switch(incoming_msg_type){
+		case UV_TASK_STATUS_REPORT:
+			//this means that we have an incoming TSB
+			//read the TSB and ensure that everything is within appropriate
+			//parameters, and that there isnt any catasrophic problems.
+
+
+
+			break;
+
+
+		case UV_COMMAND_ACKNOWLEDGEMENT:
+
+
+			break;
+
+		case UV_ERROR_REPORT:
+			previous_state = vehicle_state;
+			vehicle_state = UV_ERROR_STATE;
+
+
+
+			break;
+
+		case UV_SC_COMMAND:
+
+			break;
+
+		default:
+
+			break;
+		}
+
 
 	}
 
@@ -929,7 +1011,32 @@ uv_task_info* uvCreateServiceTask(){
 /** @brief Function to start a service task specifically
  *
  */
-uv_status uvStartSVCTask(){
+uv_status uvStartSVCTask(uv_task_info* t){
+	if(t == NULL){
+		return UV_ERROR;
+	}
+
+	if(!(t->task_flags & UV_TASK_GENERIC_SVC)){ //not a svc task
+		return UV_ERROR;
+	}
+
+	if(t->task_state == UV_TASK_RUNNING){
+		if(t->task_handle == NULL){
+			return UV_ERROR;
+		}
+		return UV_ABORTED; //only one instance of this particular task is permitted
+	}
+
+	if(t->task_state == UV_TASK_SUSPENDED){
+		if(t->task_handle == NULL){
+			return UV_ERROR;
+		}
+		vTaskResume(t->task_handle);
+	}
+
+	BaseType_t retval;
+	retval = xTaskCreate(t->task_function,t->task_name,t->stack_size,t->task_args,t->task_priority,&(t->task_handle));
+	//This creates a task cause the necessary conditions have been met
 
 	return UV_OK;
 
@@ -938,14 +1045,39 @@ uv_status uvStartSVCTask(){
 /** @brief Function that suspends a service task
  *
  */
-uv_status uvSuspendSVCTask(){
+uv_status uvSuspendSVCTask(uv_task_info* t){
+	if(t == NULL){
+		return UV_ERROR;
+	}
+
+	if(t->task_state = UV_TASK_SUSPENDED){
+		return UV_ABORTED;
+	}
+
 	return UV_OK;
 }
 
 /** @brief For when you need to delete a service task... for some reason...
  *
  */
-uv_status uvDeleteSVCTask(){
+uv_status uvDeleteSVCTask(uv_task_info* t){
+	if(t == NULL){
+		return UV_ERROR;
+	}
+
+	if((t->task_state == UV_TASK_NOT_STARTED) || (t->task_state == UV_TASK_DELETED)){
+		return UV_ABORTED;
+	}
+
+	if((t->task_state) == UV_TASK_SUSPENDED){
+		//Somebody has suspended the task. Get it's ass
+		vTaskDelete(t->task_handle);
+		return UV_OK;
+	}
+
+	if(t->task_state == UV_TASK_RUNNING){
+		//kindly tell it to fucking stop
+	}
 
 	return UV_OK;
 }
@@ -960,11 +1092,21 @@ uv_status uvRestartSVCTask(uv_task_info* t){
 
 	//ask nicely for task to be deleted
 
-	//if that fails, forcibly delete task
-	uvKillTaskViolently(t);
+	if(uvDeleteSVCTask(t) != UV_OK){
+		//if that fails, forcibly delete task
+		uvKillTaskViolently(t);
+	}
+
+
+
+
 	//try to start the task again
-	uvStartSVCTask();
-	return UV_OK;
+	if(uvStartSVCTask(t) == UV_OK){
+		return UV_OK;
+	}
+
+	return UV_ERROR;
+
 
 }
 

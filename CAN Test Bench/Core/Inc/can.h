@@ -41,6 +41,7 @@ extern CAN_HandleTypeDef hcan2;
 #define CAN_RX_DAEMON_NAME "CanRxDaemon"
 
 typedef struct uv_CAN_msg uv_CAN_msg;
+typedef enum uv_status_t uv_status;
 
 /* USER CODE END Private defines */
 
@@ -51,7 +52,7 @@ void MX_CAN2_Init(void);
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2);
 void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2);
 
-enum uv_status_t uvSendCanMSG(uv_CAN_msg * msg);
+uv_status uvSendCanMSG(uv_CAN_msg * msg);
 
 void CANbusTxSvcDaemon(void* args);
 /* USER CODE END Prototypes */
