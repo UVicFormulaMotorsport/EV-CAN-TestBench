@@ -105,39 +105,51 @@ $(document).ready(function(){initNavTree('can_8h_source.html','');});
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="comment">/* USER CODE BEGIN Includes */</span></div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="constants_8h.html">constants.h</a>&quot;</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="comment">/* USER CODE END Includes */</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">extern</span> CAN_HandleTypeDef <a class="code" href="can_8h.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="comment">/* USER CODE BEGIN Private defines */</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="uvfr__utils_8h.html">uvfr_utils.h</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="comment">/* USER CODE END Includes */</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">extern</span> CAN_HandleTypeDef <a class="code" href="can_8h.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">/* USER CODE BEGIN Private defines */</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">/* USER CODE END Private defines */</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="can_8h.html#a8258cafd2b5e0bfb1e4228e7a45750bf">   40</a></span>&#160;<span class="preprocessor">#define CAN_TX_DAEMON_NAME &quot;CanTxDaemon&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="can_8h.html#a3cb7727094f40357f18ece08758738cc">   41</a></span>&#160;<span class="preprocessor">#define CAN_RX_DAEMON_NAME &quot;CanRxDaemon&quot;</span></div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8h.html#a1ee5cd592134235b6c07f676784d47c3">MX_CAN2_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="can_8h.html#ad857192b5d0529e73642f1293d6bed75">   43</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a> <a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/* USER CODE BEGIN Prototypes */</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">/* USER CODE END Private defines */</span></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8h.html#a4e0742fef0f265347a75b7fa12012229">HAL_CAN_RxFifo0MsgPendingCallback</a>(CAN_HandleTypeDef *<a class="code" href="can_8h.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8h.html#a4c51ef84434a42d4c5f9524d361c0703">HAL_CAN_RxFifo1MsgPendingCallback</a>(CAN_HandleTypeDef *<a class="code" href="can_8h.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="comment">/* USER CODE END Prototypes */</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8h.html#a1ee5cd592134235b6c07f676784d47c3">MX_CAN2_Init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="comment">/* USER CODE BEGIN Prototypes */</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8h.html#a4e0742fef0f265347a75b7fa12012229">HAL_CAN_RxFifo0MsgPendingCallback</a>(CAN_HandleTypeDef *<a class="code" href="can_8h.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8h.html#a4c51ef84434a42d4c5f9524d361c0703">HAL_CAN_RxFifo1MsgPendingCallback</a>(CAN_HandleTypeDef *<a class="code" href="can_8h.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">enum</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> <a class="code" href="can_8h.html#a84a12245a474f90efeaa14a546811ec4">uvSendCanMSG</a>(<a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a> * msg);</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __CAN_H__ */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8h.html#a2357e197a9ac26277eec808769fe409f">CANbusTxSvcDaemon</a>(<span class="keywordtype">void</span>* args);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">/* USER CODE END Prototypes */</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* __CAN_H__ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="acan_8h_html_ab77168d14df04ccca5d48612ee21ced8"><div class="ttname"><a href="can_8h.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a></div><div class="ttdeci">CAN_HandleTypeDef hcan2</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00034">can.c:34</a></div></div>
+<div class="ttc" id="auvfr__utils_8h_html"><div class="ttname"><a href="uvfr__utils_8h.html">uvfr_utils.h</a></div></div>
+<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9e"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a></div><div class="ttdeci">uv_status_t</div><div class="ttdoc">This is meant to be a return type from functions that indicates what is actually going on.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00114">uvfr_utils.h:114</a></div></div>
+<div class="ttc" id="acan_8h_html_a84a12245a474f90efeaa14a546811ec4"><div class="ttname"><a href="can_8h.html#a84a12245a474f90efeaa14a546811ec4">uvSendCanMSG</a></div><div class="ttdeci">enum uv_status_t uvSendCanMSG(uv_CAN_msg *msg)</div><div class="ttdoc">Function to send can message.</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00318">can.c:318</a></div></div>
+<div class="ttc" id="acan_8h_html_ab77168d14df04ccca5d48612ee21ced8"><div class="ttname"><a href="can_8h.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a></div><div class="ttdeci">CAN_HandleTypeDef hcan2</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00114">can.c:114</a></div></div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">: Header for main.c file. This file contains the common defines of the application.</div></div>
 <div class="ttc" id="aconstants_8h_html"><div class="ttname"><a href="constants_8h.html">constants.h</a></div></div>
-<div class="ttc" id="acan_8h_html_a4c51ef84434a42d4c5f9524d361c0703"><div class="ttname"><a href="can_8h.html#a4c51ef84434a42d4c5f9524d361c0703">HAL_CAN_RxFifo1MsgPendingCallback</a></div><div class="ttdeci">void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00251">can.c:251</a></div></div>
-<div class="ttc" id="acan_8h_html_a4e0742fef0f265347a75b7fa12012229"><div class="ttname"><a href="can_8h.html#a4e0742fef0f265347a75b7fa12012229">HAL_CAN_RxFifo0MsgPendingCallback</a></div><div class="ttdeci">void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00182">can.c:182</a></div></div>
-<div class="ttc" id="acan_8h_html_a1ee5cd592134235b6c07f676784d47c3"><div class="ttname"><a href="can_8h.html#a1ee5cd592134235b6c07f676784d47c3">MX_CAN2_Init</a></div><div class="ttdeci">void MX_CAN2_Init(void)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00037">can.c:37</a></div></div>
+<div class="ttc" id="acan_8h_html_a2357e197a9ac26277eec808769fe409f"><div class="ttname"><a href="can_8h.html#a2357e197a9ac26277eec808769fe409f">CANbusTxSvcDaemon</a></div><div class="ttdeci">void CANbusTxSvcDaemon(void *args)</div><div class="ttdoc">Background task that handles any CAN messages that are being sent.</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00356">can.c:356</a></div></div>
+<div class="ttc" id="acan_8h_html_a4c51ef84434a42d4c5f9524d361c0703"><div class="ttname"><a href="can_8h.html#a4c51ef84434a42d4c5f9524d361c0703">HAL_CAN_RxFifo1MsgPendingCallback</a></div><div class="ttdeci">void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00301">can.c:301</a></div></div>
+<div class="ttc" id="acan_8h_html_a4e0742fef0f265347a75b7fa12012229"><div class="ttname"><a href="can_8h.html#a4e0742fef0f265347a75b7fa12012229">HAL_CAN_RxFifo0MsgPendingCallback</a></div><div class="ttdeci">void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00265">can.c:265</a></div></div>
+<div class="ttc" id="astructuv___c_a_n__msg_html"><div class="ttname"><a href="structuv___c_a_n__msg.html">uv_CAN_msg</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00206">uvfr_utils.h:206</a></div></div>
+<div class="ttc" id="acan_8h_html_a1ee5cd592134235b6c07f676784d47c3"><div class="ttname"><a href="can_8h.html#a1ee5cd592134235b6c07f676784d47c3">MX_CAN2_Init</a></div><div class="ttdeci">void MX_CAN2_Init(void)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00117">can.c:117</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

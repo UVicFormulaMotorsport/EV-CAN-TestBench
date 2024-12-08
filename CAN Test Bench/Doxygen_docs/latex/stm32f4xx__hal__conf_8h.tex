@@ -1,5 +1,10 @@
 \hypertarget{stm32f4xx__hal__conf_8h}{}\doxysection{Core/\+Inc/stm32f4xx\+\_\+hal\+\_\+conf.h File Reference}
 \label{stm32f4xx__hal__conf_8h}\index{Core/Inc/stm32f4xx\_hal\_conf.h@{Core/Inc/stm32f4xx\_hal\_conf.h}}
+
+
+H\+AL configuration template file. This file should be copied to the application folder and renamed to \mbox{\hyperlink{stm32f4xx__hal__conf_8h}{stm32f4xx\+\_\+hal\+\_\+conf.\+h}}.  
+
+
 {\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal\+\_\+rcc.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal\+\_\+gpio.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal\+\_\+exti.\+h\char`\"{}}\newline
@@ -9,6 +14,7 @@
 {\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal\+\_\+can.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal\+\_\+flash.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal\+\_\+pwr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal\+\_\+spi.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}stm32f4xx\+\_\+hal\+\_\+tim.\+h\char`\"{}}\newline
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
@@ -18,6 +24,8 @@
 \#define \mbox{\hyperlink{stm32f4xx__hal__conf_8h_a476f1655c969ae57e89a74d98c75f43f}{H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+E\+N\+A\+B\+L\+ED}}
 \item 
 \#define \mbox{\hyperlink{stm32f4xx__hal__conf_8h_ad6ee4556883fa38d3a2c26d9a624a109}{H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+E\+N\+A\+B\+L\+ED}}
+\item 
+\#define \mbox{\hyperlink{stm32f4xx__hal__conf_8h_a8ad4712bf4add56892d057778e826e0c}{H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+E\+N\+A\+B\+L\+ED}}
 \item 
 \#define \mbox{\hyperlink{stm32f4xx__hal__conf_8h_a23382b8f04b3e6db2c59dfa1ef5ea4a2}{H\+A\+L\+\_\+\+T\+I\+M\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+E\+N\+A\+B\+L\+ED}}
 \item 
@@ -211,6 +219,19 @@
 \begin{DoxyCompactList}\small\item\em Include module\textquotesingle{}s header file. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+H\+AL configuration template file. This file should be copied to the application folder and renamed to \mbox{\hyperlink{stm32f4xx__hal__conf_8h}{stm32f4xx\+\_\+hal\+\_\+conf.\+h}}. 
+
+\begin{DoxyAuthor}{Author}
+M\+CD Application Team 
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2017 S\+T\+Microelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 
+
 \doxysubsection{Macro Definition Documentation}
 \mbox{\Hypertarget{stm32f4xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}\label{stm32f4xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}} 
 \index{stm32f4xx\_hal\_conf.h@{stm32f4xx\_hal\_conf.h}!assert\_param@{assert\_param}}
@@ -403,6 +424,16 @@ Definition at line 89 of file stm32f4xx\+\_\+hal\+\_\+conf.\+h.
 
 
 Definition at line 87 of file stm32f4xx\+\_\+hal\+\_\+conf.\+h.
+
+\mbox{\Hypertarget{stm32f4xx__hal__conf_8h_a8ad4712bf4add56892d057778e826e0c}\label{stm32f4xx__hal__conf_8h_a8ad4712bf4add56892d057778e826e0c}} 
+\index{stm32f4xx\_hal\_conf.h@{stm32f4xx\_hal\_conf.h}!HAL\_SPI\_MODULE\_ENABLED@{HAL\_SPI\_MODULE\_ENABLED}}
+\index{HAL\_SPI\_MODULE\_ENABLED@{HAL\_SPI\_MODULE\_ENABLED}!stm32f4xx\_hal\_conf.h@{stm32f4xx\_hal\_conf.h}}
+\doxysubsubsection{\texorpdfstring{HAL\_SPI\_MODULE\_ENABLED}{HAL\_SPI\_MODULE\_ENABLED}}
+{\footnotesize\ttfamily \#define H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+M\+O\+D\+U\+L\+E\+\_\+\+E\+N\+A\+B\+L\+ED}
+
+
+
+Definition at line 65 of file stm32f4xx\+\_\+hal\+\_\+conf.\+h.
 
 \mbox{\Hypertarget{stm32f4xx__hal__conf_8h_a23382b8f04b3e6db2c59dfa1ef5ea4a2}\label{stm32f4xx__hal__conf_8h_a23382b8f04b3e6db2c59dfa1ef5ea4a2}} 
 \index{stm32f4xx\_hal\_conf.h@{stm32f4xx\_hal\_conf.h}!HAL\_TIM\_MODULE\_ENABLED@{HAL\_TIM\_MODULE\_ENABLED}}

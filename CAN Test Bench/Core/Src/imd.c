@@ -9,6 +9,7 @@
 #include "can.h"
 #include "main.h"
 #include "constants.h"
+#include "uvfr_utils.h"
 
 // We need to include pdu.h for the shutdown circuit
 #include "pdu.h"
@@ -548,6 +549,20 @@ void IMD_Startup(){
 	IMD_Request_Status(isolation_state);
 	// Can check further things
 
+}
+
+void initIMD(void* args){
+	uv_init_task_args* params = (uv_init_task_args*) args;
+	uv_init_task_response response = {UV_OK,IMD,0,NULL};
+	vTaskDelay(100); //Pretend to be doing something for now
+
+	if(xQueueSendToBack(params->init_info_queue,&response,100) != pdPASS){
+			//OOPS
+		uvPanic("Failed to enqueue IMD OK Response",0);
+	}
+
+
+	vTaskSuspend(params->meta_task_handle);
 }
 
 

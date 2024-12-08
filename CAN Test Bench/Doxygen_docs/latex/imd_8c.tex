@@ -4,6 +4,7 @@
 {\ttfamily \#include \char`\"{}can.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}pdu.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -43,6 +44,8 @@ void \mbox{\hyperlink{imd_8c_a6f1e850c527bdf0e1a7cfbc557b8501b}{I\+M\+D\+\_\+\+C
 void \mbox{\hyperlink{imd_8c_ae0177fe52ae013a36014be506fd1fa93}{I\+M\+D\+\_\+\+Check\+\_\+\+Uptime}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
 \item 
 void \mbox{\hyperlink{imd_8c_a80b26177d8aa0c0e803fac210eb456ac}{I\+M\+D\+\_\+\+Startup}} ()
+\item 
+void \mbox{\hyperlink{imd_8c_a19b4fd879f065cfe6e1b7bb3400cd0c3}{init\+I\+MD}} (void $\ast$args)
 \end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -106,7 +109,7 @@ uint8\+\_\+t \mbox{\hyperlink{imd_8c_a208e957d0a18b23cb59f4eedd1c855cc}{I\+M\+D\
 
 
 
-Definition at line 350 of file imd.\+c.
+Definition at line 351 of file imd.\+c.
 
 
 
@@ -120,7 +123,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 256 of file imd.\+c.
+Definition at line 257 of file imd.\+c.
 
 
 
@@ -138,7 +141,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 336 of file imd.\+c.
+Definition at line 337 of file imd.\+c.
 
 
 
@@ -152,7 +155,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 311 of file imd.\+c.
+Definition at line 312 of file imd.\+c.
 
 
 
@@ -170,7 +173,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 295 of file imd.\+c.
+Definition at line 296 of file imd.\+c.
 
 
 
@@ -188,7 +191,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 387 of file imd.\+c.
+Definition at line 388 of file imd.\+c.
 
 
 
@@ -202,7 +205,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 400 of file imd.\+c.
+Definition at line 401 of file imd.\+c.
 
 
 
@@ -220,7 +223,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 375 of file imd.\+c.
+Definition at line 376 of file imd.\+c.
 
 
 
@@ -234,7 +237,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 368 of file imd.\+c.
+Definition at line 369 of file imd.\+c.
 
 
 
@@ -248,7 +251,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 482 of file imd.\+c.
+Definition at line 483 of file imd.\+c.
 
 
 
@@ -266,7 +269,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 212 of file imd.\+c.
+Definition at line 213 of file imd.\+c.
 
 
 
@@ -284,7 +287,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 357 of file imd.\+c.
+Definition at line 358 of file imd.\+c.
 
 
 
@@ -302,7 +305,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 523 of file imd.\+c.
+Definition at line 524 of file imd.\+c.
 
 \mbox{\Hypertarget{imd_8c_a4a16ede06a18addd7ef3e67be2aaaf3d}\label{imd_8c_a4a16ede06a18addd7ef3e67be2aaaf3d}} 
 \index{imd.c@{imd.c}!IMD\_Check\_Version@{IMD\_Check\_Version}}
@@ -312,7 +315,7 @@ Definition at line 523 of file imd.\+c.
 
 
 
-Definition at line 442 of file imd.\+c.
+Definition at line 443 of file imd.\+c.
 
 
 
@@ -330,7 +333,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 343 of file imd.\+c.
+Definition at line 344 of file imd.\+c.
 
 
 
@@ -344,7 +347,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 67 of file imd.\+c.
+Definition at line 68 of file imd.\+c.
 
 
 
@@ -358,7 +361,7 @@ References battery\+\_\+voltage, Error\+\_\+flags, Error\+\_\+\+Handler(), I\+M\
 
 
 
-Definition at line 179 of file imd.\+c.
+Definition at line 180 of file imd.\+c.
 
 
 
@@ -376,11 +379,29 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Status\+\_\+\+Bits(), and I\+M\+D\+\_\
 
 
 
-Definition at line 527 of file imd.\+c.
+Definition at line 528 of file imd.\+c.
 
 
 
 References I\+M\+D\+\_\+\+Request\+\_\+\+Status(), isolation\+\_\+state, Max\+\_\+battery\+\_\+working\+\_\+voltage, Part\+\_\+name\+\_\+0, Part\+\_\+name\+\_\+1, Part\+\_\+name\+\_\+2, Part\+\_\+name\+\_\+3, Serial\+\_\+number\+\_\+0, Serial\+\_\+number\+\_\+1, Serial\+\_\+number\+\_\+2, Serial\+\_\+number\+\_\+3, Version\+\_\+0, Version\+\_\+1, and Version\+\_\+2.
+
+\mbox{\Hypertarget{imd_8c_a19b4fd879f065cfe6e1b7bb3400cd0c3}\label{imd_8c_a19b4fd879f065cfe6e1b7bb3400cd0c3}} 
+\index{imd.c@{imd.c}!initIMD@{initIMD}}
+\index{initIMD@{initIMD}!imd.c@{imd.c}}
+\doxysubsubsection{\texorpdfstring{initIMD()}{initIMD()}}
+{\footnotesize\ttfamily void init\+I\+MD (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 554 of file imd.\+c.
+
+
+
+References I\+MD, uv\+\_\+init\+\_\+task\+\_\+args\+::init\+\_\+info\+\_\+queue, uv\+\_\+init\+\_\+task\+\_\+args\+::meta\+\_\+task\+\_\+handle, U\+V\+\_\+\+OK, and uv\+Panic().
+
+
+
+Referenced by uv\+Init().
 
 
 
@@ -393,7 +414,7 @@ References I\+M\+D\+\_\+\+Request\+\_\+\+Status(), isolation\+\_\+state, Max\+\_
 
 
 
-Definition at line 61 of file imd.\+c.
+Definition at line 62 of file imd.\+c.
 
 
 
@@ -407,7 +428,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Status\+\_\+\+Bits().
 
 
 
-Definition at line 25 of file imd.\+c.
+Definition at line 26 of file imd.\+c.
 
 
 
@@ -429,7 +450,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Part\+\_\+\+Name().
 \end{DoxyCode}
 
 
-Definition at line 45 of file imd.\+c.
+Definition at line 46 of file imd.\+c.
 
 
 
@@ -443,7 +464,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Serial\+\_\+\+Number().
 
 
 
-Definition at line 35 of file imd.\+c.
+Definition at line 36 of file imd.\+c.
 
 
 
@@ -457,7 +478,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Version().
 
 
 
-Definition at line 19 of file imd.\+c.
+Definition at line 20 of file imd.\+c.
 
 
 
@@ -471,7 +492,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Isolation\+\_\+\+Resistances(), I\+M\+
 
 
 
-Definition at line 27 of file imd.\+c.
+Definition at line 28 of file imd.\+c.
 
 
 
@@ -485,7 +506,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Part\+\_\+\+Name().
 
 
 
-Definition at line 28 of file imd.\+c.
+Definition at line 29 of file imd.\+c.
 
 
 
@@ -499,7 +520,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Part\+\_\+\+Name().
 
 
 
-Definition at line 29 of file imd.\+c.
+Definition at line 30 of file imd.\+c.
 
 
 
@@ -513,7 +534,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Part\+\_\+\+Name().
 
 
 
-Definition at line 30 of file imd.\+c.
+Definition at line 31 of file imd.\+c.
 
 
 
@@ -527,7 +548,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Part\+\_\+\+Name().
 
 
 
-Definition at line 31 of file imd.\+c.
+Definition at line 32 of file imd.\+c.
 
 
 
@@ -541,7 +562,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Part\+\_\+\+Name().
 
 
 
-Definition at line 24 of file imd.\+c.
+Definition at line 25 of file imd.\+c.
 
 
 
@@ -555,7 +576,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Part\+\_\+\+Name().
 
 
 
-Definition at line 44 of file imd.\+c.
+Definition at line 45 of file imd.\+c.
 
 
 
@@ -569,7 +590,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Serial\+\_\+\+Number().
 
 
 
-Definition at line 34 of file imd.\+c.
+Definition at line 35 of file imd.\+c.
 
 
 
@@ -583,7 +604,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Version().
 
 
 
-Definition at line 49 of file imd.\+c.
+Definition at line 50 of file imd.\+c.
 
 
 
@@ -597,7 +618,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Serial\+\_\+\+Number().
 
 
 
-Definition at line 50 of file imd.\+c.
+Definition at line 51 of file imd.\+c.
 
 
 
@@ -611,7 +632,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Serial\+\_\+\+Number().
 
 
 
-Definition at line 51 of file imd.\+c.
+Definition at line 52 of file imd.\+c.
 
 
 
@@ -625,7 +646,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Serial\+\_\+\+Number().
 
 
 
-Definition at line 52 of file imd.\+c.
+Definition at line 53 of file imd.\+c.
 
 
 
@@ -639,7 +660,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Serial\+\_\+\+Number().
 
 
 
-Definition at line 53 of file imd.\+c.
+Definition at line 54 of file imd.\+c.
 
 
 
@@ -653,7 +674,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Serial\+\_\+\+Number().
 
 
 
-Definition at line 18 of file imd.\+c.
+Definition at line 19 of file imd.\+c.
 
 \mbox{\Hypertarget{imd_8c_a5b8ada827e9888be105e0bc8c27006f3}\label{imd_8c_a5b8ada827e9888be105e0bc8c27006f3}} 
 \index{imd.c@{imd.c}!IMD\_Temperature@{IMD\_Temperature}}
@@ -663,7 +684,7 @@ Definition at line 18 of file imd.\+c.
 
 
 
-Definition at line 56 of file imd.\+c.
+Definition at line 57 of file imd.\+c.
 
 
 
@@ -677,7 +698,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Temperature().
 
 
 
-Definition at line 37 of file imd.\+c.
+Definition at line 38 of file imd.\+c.
 
 
 
@@ -691,7 +712,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Version().
 
 
 
-Definition at line 38 of file imd.\+c.
+Definition at line 39 of file imd.\+c.
 
 
 
@@ -705,7 +726,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Version().
 
 
 
-Definition at line 39 of file imd.\+c.
+Definition at line 40 of file imd.\+c.
 
 
 
@@ -719,7 +740,7 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Version().
 
 
 
-Definition at line 40 of file imd.\+c.
+Definition at line 41 of file imd.\+c.
 
 
 

@@ -22,6 +22,7 @@
 #include "adc.h"
 #include "can.h"
 #include "dma.h"
+#include "spi.h"
 #include "tim.h"
 #include "gpio.h"
 
@@ -47,7 +48,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define DEBUG_CAN_IN_MAIN 0
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -92,9 +93,6 @@ void MX_FREERTOS_Init(void);
 /**
   * @brief  The application entry point.
   * @retval int
-  * This is the entry point of the application, and effectively only serves one purpose.
-  * It calls initialisation functions for all of the peripherals, checks the state of all
-  * drivers and devices, then passes control over to the RTOS scheduler.
   */
 int main(void)
 {
@@ -127,19 +125,53 @@ int main(void)
   MX_ADC1_Init();
   MX_ADC2_Init();
   MX_TIM3_Init();
+  MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
-  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC1_BUF_LEN);
+  //HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf1, ADC1_BUF_LEN);
   //HAL_TIM_Base_Start_IT(&htim3); This is getting disabled, since measuring temp will now be an RTOS task
-  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14); // Just to prove we reached this point in the code
+   // Just to prove we reached this point in the code
 
   //ANYTHING WE NEED TO DO BEFORE THE KERNEL TAKES OVER SHOULD HAPPEN HERE:
 
-  /* Step 1: Initialize whatever else needs initializing. Check that all devices exist.
-   * Do some diagnostics on ourselves while we at it.
-   */
+  //HAL_NVIC_PriorityGroupConfig( NVIC_PRIORITYGROUP_4 ); ///< This one is a fun function to do some NVIC tomfoolery because we need to
+#if DEBUG_CAN_IN_MAIN
+  while(1){
+	  HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14);
+	  TxData[0] = 0b10101010;
+	  TxData[1] = 0b10101010;
+	  TxData[2] = 0b10101010;
+	  TxData[3] = 1;
+	  TxData[4] = 2;
+	  TxData[5] = 3;
+	  TxData[6] = 0b10101010;
+	  TxData[7] = 0b10101010;
 
-  //MC_Startup(); // Send all the needed CAN messages to the MC for it to be properly configured.
 
+	  HAL_StatusTypeDef can_send_status;
+
+	  					//vTaskDelay(400);
+
+	  HAL_Delay(200);
+
+	  TxHeader.IDE = CAN_ID_EXT;
+	  TxHeader.ExtId = 0x1234;
+
+
+	  TxHeader.DLC = 8;
+
+	  //No need for a critical section when we out here in main without a scheduler running :)
+	  //taskENTER_CRITICAL();
+	  can_send_status = HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox);
+	  //taskEXIT_CRITICAL();
+
+	  if (can_send_status != HAL_OK){
+	  													/* Transmission request Error */
+	  						//uvPanic("Unable to Transmit CAN msg",can_send_status);
+	  		handleCANbusError(&hcan2, 0);
+	  }
+
+  }
+#endif
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in cmsis_os2.c) */

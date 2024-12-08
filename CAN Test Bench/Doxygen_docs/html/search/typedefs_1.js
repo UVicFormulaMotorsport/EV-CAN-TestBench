@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['daqloopargs_994',['daqLoopArgs',['../daq_8h.html#a7ece1fadf80628cc8786d72b1fb0c814',1,'daq.h']]],
-  ['drivingloopargs_995',['drivingLoopArgs',['../driving__loop_8h.html#a3decdbe473e5d736311930ce3d6360bd',1,'driving_loop.h']]],
-  ['drivingmode_996',['drivingMode',['../driving__loop_8h.html#a29e04283e579e9092d205b1937c785c6',1,'driving_loop.h']]],
-  ['drivingmodeparams_997',['drivingModeParams',['../driving__loop_8h.html#ac1d30630084a642c9209dca3a961ef12',1,'driving_loop.h']]]
+  ['bms_5fsettings_5ft_1291',['bms_settings_t',['../bms_8h.html#ac82cefe2ce193c00fc1e6af97476c54d',1,'bms.h']]],
+  ['bool_1292',['bool',['../uvfr__utils_8h.html#a0ecf26b576b9a54eca656b9be7ba6a06',1,'uvfr_utils.h']]]
 ];

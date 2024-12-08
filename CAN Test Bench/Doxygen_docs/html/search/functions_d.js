@@ -1,10 +1,15 @@
 var searchData=
 [
-  ['setup_5fextern_5fdevices_855',['setup_extern_devices',['../uvfr__utils_8c.html#ab80c00a024c34da7f7926212ce10ef01',1,'uvfr_utils.c']]],
-  ['setupdefaultsettings_856',['setupDefaultSettings',['../uvfr__settings_8c.html#a42f7a1907bfe84d7b0f9fb4e2260018b',1,'uvfr_settings.c']]],
-  ['startdefaulttask_857',['StartDefaultTask',['../freertos_8c.html#a016544463b4842ced7191baf8f449cea',1,'freertos.c']]],
-  ['startdrivingloop_858',['StartDrivingLoop',['../driving__loop_8h.html#adb031c91acd0bc6d700819cde7ec58f2',1,'StartDrivingLoop(void const *argument):&#160;driving_loop.c'],['../driving__loop_8c.html#adb031c91acd0bc6d700819cde7ec58f2',1,'StartDrivingLoop(void const *argument):&#160;driving_loop.c']]],
-  ['systemclock_5fconfig_859',['SystemClock_Config',['../main_8c.html#a70af21c671abfcc773614a9a4f63d920',1,'main.c']]],
-  ['systemcoreclockupdate_860',['SystemCoreClockUpdate',['../group___s_t_m32_f4xx___system___private___functions.html#gae0c36a9591fe6e9c45ecb21a794f0f0f',1,'system_stm32f4xx.c']]],
-  ['systeminit_861',['SystemInit',['../group___s_t_m32_f4xx___system___private___functions.html#ga93f514700ccf00d08dbdcff7f1224eb2',1,'system_stm32f4xx.c']]]
+  ['pdu_5fdisable_5fbrake_5flight_1083',['PDU_disable_brake_light',['../pdu_8h.html#ad7b67b3c1618a7c50a5d6d9f9e13a89f',1,'PDU_disable_brake_light():&#160;pdu.c'],['../pdu_8c.html#ad7b67b3c1618a7c50a5d6d9f9e13a89f',1,'PDU_disable_brake_light():&#160;pdu.c']]],
+  ['pdu_5fdisable_5fcoolant_5fpump_1084',['PDU_disable_coolant_pump',['../pdu_8h.html#aebeb35957c80be85dc938efe72c8e825',1,'PDU_disable_coolant_pump():&#160;pdu.c'],['../pdu_8c.html#aebeb35957c80be85dc938efe72c8e825',1,'PDU_disable_coolant_pump():&#160;pdu.c']]],
+  ['pdu_5fdisable_5fcooling_5ffans_1085',['PDU_disable_cooling_fans',['../pdu_8h.html#a3c665494b7f9fb4e025ff31d24c97072',1,'PDU_disable_cooling_fans():&#160;pdu.c'],['../pdu_8c.html#a3c665494b7f9fb4e025ff31d24c97072',1,'PDU_disable_cooling_fans():&#160;pdu.c']]],
+  ['pdu_5fdisable_5fmotor_5fcontroller_1086',['PDU_disable_motor_controller',['../pdu_8h.html#a6b189c4013c1cb97ff696a9bc05def5e',1,'PDU_disable_motor_controller():&#160;pdu.c'],['../pdu_8c.html#a6b189c4013c1cb97ff696a9bc05def5e',1,'PDU_disable_motor_controller():&#160;pdu.c']]],
+  ['pdu_5fdisable_5fshutdown_5fcircuit_1087',['PDU_disable_shutdown_circuit',['../pdu_8h.html#a67ed21c50014c891cc0031655a30aef9',1,'PDU_disable_shutdown_circuit():&#160;pdu.c'],['../pdu_8c.html#a67ed21c50014c891cc0031655a30aef9',1,'PDU_disable_shutdown_circuit():&#160;pdu.c']]],
+  ['pdu_5fenable_5fbrake_5flight_1088',['PDU_enable_brake_light',['../pdu_8h.html#aa5479c0d6ab8d58683e99bf102d60db8',1,'PDU_enable_brake_light():&#160;pdu.c'],['../pdu_8c.html#aa5479c0d6ab8d58683e99bf102d60db8',1,'PDU_enable_brake_light():&#160;pdu.c']]],
+  ['pdu_5fenable_5fcoolant_5fpump_1089',['PDU_enable_coolant_pump',['../pdu_8h.html#aef2fd854287906cac1734f08a6edcf2a',1,'PDU_enable_coolant_pump():&#160;pdu.c'],['../pdu_8c.html#aef2fd854287906cac1734f08a6edcf2a',1,'PDU_enable_coolant_pump():&#160;pdu.c']]],
+  ['pdu_5fenable_5fcooling_5ffans_1090',['PDU_enable_cooling_fans',['../pdu_8h.html#a9d736981007eb7fc9691275dc7b6c05c',1,'PDU_enable_cooling_fans():&#160;pdu.c'],['../pdu_8c.html#a9d736981007eb7fc9691275dc7b6c05c',1,'PDU_enable_cooling_fans():&#160;pdu.c']]],
+  ['pdu_5fenable_5fmotor_5fcontroller_1091',['PDU_enable_motor_controller',['../pdu_8h.html#ae3eaaae4438e04d63fe04cc23a201810',1,'PDU_enable_motor_controller():&#160;pdu.c'],['../pdu_8c.html#ae3eaaae4438e04d63fe04cc23a201810',1,'PDU_enable_motor_controller():&#160;pdu.c']]],
+  ['pdu_5fenable_5fshutdown_5fcircuit_1092',['PDU_enable_shutdown_circuit',['../pdu_8h.html#a0f2b86f2db7ee86b014ccc246c8b674d',1,'PDU_enable_shutdown_circuit():&#160;pdu.c'],['../pdu_8c.html#a0f2b86f2db7ee86b014ccc246c8b674d',1,'PDU_enable_shutdown_circuit():&#160;pdu.c']]],
+  ['pdu_5fspeaker_5fchirp_1093',['PDU_speaker_chirp',['../pdu_8h.html#a42e33c33fc1dea26555ff7b20984b186',1,'PDU_speaker_chirp():&#160;pdu.c'],['../pdu_8c.html#a42e33c33fc1dea26555ff7b20984b186',1,'PDU_speaker_chirp():&#160;pdu.c']]],
+  ['proccessscdmsg_1094',['proccessSCDMsg',['../uvfr__state__engine_8c.html#a2e8a31626909ac17be499f2941d359d0',1,'uvfr_state_engine.c']]]
 ];

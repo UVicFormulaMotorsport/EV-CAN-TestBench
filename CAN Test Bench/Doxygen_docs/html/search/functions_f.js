@@ -1,22 +1,11 @@
 var searchData=
 [
-  ['update_5fbatt_5ftemp_863',['Update_Batt_Temp',['../dash_8h.html#a66f84461e5c75202d12edfd8ea7c7f62',1,'Update_Batt_Temp(uint8_t value):&#160;dash.c'],['../dash_8c.html#a66f84461e5c75202d12edfd8ea7c7f62',1,'Update_Batt_Temp(uint8_t value):&#160;dash.c']]],
-  ['update_5frpm_864',['Update_RPM',['../dash_8h.html#ab26e477047a5166efc8f2b34dbd38872',1,'Update_RPM(int16_t value):&#160;dash.c'],['../dash_8c.html#ab26e477047a5166efc8f2b34dbd38872',1,'Update_RPM(int16_t value):&#160;dash.c']]],
-  ['update_5fstate_5fof_5fcharge_865',['Update_State_Of_Charge',['../dash_8h.html#a30155b58ef3801f5693e953d4139d55f',1,'Update_State_Of_Charge(uint8_t value):&#160;dash.c'],['../dash_8c.html#a30155b58ef3801f5693e953d4139d55f',1,'Update_State_Of_Charge(uint8_t value):&#160;dash.c']]],
-  ['updaterunningtasks_866',['updateRunningTasks',['../uvfr__state__engine_8h.html#accc8a3290b8d5e61a3cc03d93f6bc394',1,'updateRunningTasks():&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#accc8a3290b8d5e61a3cc03d93f6bc394',1,'updateRunningTasks():&#160;uvfr_state_engine.c']]],
-  ['usagefault_5fhandler_867',['UsageFault_Handler',['../stm32f4xx__it_8h.html#a1d98923de2ed6b7309b66f9ba2971647',1,'UsageFault_Handler(void):&#160;stm32f4xx_it.c'],['../stm32f4xx__it_8c.html#a1d98923de2ed6b7309b66f9ba2971647',1,'UsageFault_Handler(void):&#160;stm32f4xx_it.c']]],
-  ['uvcreatetask_868',['uvCreateTask',['../uvfr__state__engine_8h.html#a5fb34d3f66377a9939da1a3a345bb48c',1,'uvCreateTask():&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#a99bfc92472cdc99e9005e9d3c792909a',1,'uvCreateTask():&#160;uvfr_state_engine.c']]],
-  ['uvdeinitstateengine_869',['uvDeInitStateEngine',['../uvfr__state__engine_8h.html#a96aa2907ccf1903b18613447c3e404a3',1,'uvDeInitStateEngine():&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#a96aa2907ccf1903b18613447c3e404a3',1,'uvDeInitStateEngine():&#160;uvfr_state_engine.c']]],
-  ['uvdeletetask_870',['uvDeleteTask',['../uvfr__state__engine_8h.html#a51e5b37f4f6fa42966dc7587df0f9d31',1,'uvDeleteTask():&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#a51e5b37f4f6fa42966dc7587df0f9d31',1,'uvDeleteTask():&#160;uvfr_state_engine.c']]],
-  ['uvgettaskbyid_871',['uvGetTaskById',['../uvfr__state__engine_8h.html#ac77de2c18076b8e04742d2ca927dbd55',1,'uvGetTaskById(uint8_t id):&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#adb600c27d12b67e26037441c061d7ccf',1,'uvGetTaskById(uv_task_id id):&#160;uvfr_state_engine.c']]],
-  ['uvinit_872',['uvInit',['../uvfr__utils_8h.html#a6d40598f9d8daa89ca159a2e87f4fd01',1,'uvInit(void *arguments):&#160;uvfr_utils.c'],['../uvfr__utils_8c.html#a6d40598f9d8daa89ca159a2e87f4fd01',1,'uvInit(void *arguments):&#160;uvfr_utils.c']]],
-  ['uvinitstateengine_873',['uvInitStateEngine',['../uvfr__state__engine_8h.html#ab907ac134ab31a8bcc534b1701304964',1,'uvInitStateEngine():&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#ab907ac134ab31a8bcc534b1701304964',1,'uvInitStateEngine():&#160;uvfr_state_engine.c']]],
-  ['uvmalloc_874',['uvMalloc',['../uvfr__utils_8h.html#ac967a99212834abc77085829f10dc27c',1,'uvfr_utils.h']]],
-  ['uvpanic_875',['uvPanic',['../uvfr__state__engine_8h.html#a3bfd5a05cfd8a930a9db17d525d6610f',1,'uvPanic():&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#a3bfd5a05cfd8a930a9db17d525d6610f',1,'uvPanic():&#160;uvfr_state_engine.c']]],
-  ['uvregistertask_876',['uvRegisterTask',['../uvfr__state__engine_8h.html#a61e8135ace497b0e7e89b9515942d390',1,'uvfr_state_engine.h']]],
-  ['uvsettingsinit_877',['uvSettingsInit',['../uvfr__settings_8h.html#a80856a38d7040ca10b8106ff0fa4acf4',1,'uvSettingsInit():&#160;uvfr_settings.c'],['../uvfr__settings_8c.html#a80856a38d7040ca10b8106ff0fa4acf4',1,'uvSettingsInit():&#160;uvfr_settings.c']]],
-  ['uvstartstatemachine_878',['uvStartStateMachine',['../uvfr__state__engine_8h.html#a415f401ea7985271f803f935d925be34',1,'uvStartStateMachine():&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#a415f401ea7985271f803f935d925be34',1,'uvStartStateMachine():&#160;uvfr_state_engine.c']]],
-  ['uvstarttask_879',['uvStartTask',['../uvfr__state__engine_8c.html#a087d225cadaa024ccc02f534bbeff55f',1,'uvfr_state_engine.c']]],
-  ['uvsuspendtask_880',['uvSuspendTask',['../uvfr__state__engine_8h.html#a3f71d21fca610d86adcd9e15701ed875',1,'uvSuspendTask():&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#a3f71d21fca610d86adcd9e15701ed875',1,'uvSuspendTask():&#160;uvfr_state_engine.c']]],
-  ['uvutilsreset_881',['uvUtilsReset',['../uvfr__utils_8c.html#a02781145b4802ebdc7001800bbe6d994',1,'uvfr_utils.c']]]
+  ['setup_5fextern_5fdevices_1096',['setup_extern_devices',['../uvfr__utils_8c.html#ab80c00a024c34da7f7926212ce10ef01',1,'uvfr_utils.c']]],
+  ['setupdefaultsettings_1097',['setupDefaultSettings',['../uvfr__settings_8c.html#a42f7a1907bfe84d7b0f9fb4e2260018b',1,'uvfr_settings.c']]],
+  ['startdefaulttask_1098',['StartDefaultTask',['../freertos_8c.html#a016544463b4842ced7191baf8f449cea',1,'freertos.c']]],
+  ['startdrivingloop_1099',['StartDrivingLoop',['../driving__loop_8h.html#a80cc48f06202edc29bcad26a956bcc98',1,'StartDrivingLoop(void *argument):&#160;driving_loop.c'],['../driving__loop_8c.html#a80cc48f06202edc29bcad26a956bcc98',1,'StartDrivingLoop(void *argument):&#160;driving_loop.c']]],
+  ['suspendself_1100',['suspendSelf',['../uvfr__state__engine_8h.html#a1696080304a0a849ec9d4d92701f910f',1,'suspendSelf(struct uv_task_info *t):&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#ad6117850b55ad52be51d93915bcc313c',1,'suspendSelf(uv_task_info *t):&#160;uvfr_state_engine.c']]],
+  ['systemclock_5fconfig_1101',['SystemClock_Config',['../main_8c.html#a70af21c671abfcc773614a9a4f63d920',1,'main.c']]],
+  ['systemcoreclockupdate_1102',['SystemCoreClockUpdate',['../group___s_t_m32_f4xx___system___private___functions.html#gae0c36a9591fe6e9c45ecb21a794f0f0f',1,'system_stm32f4xx.c']]],
+  ['systeminit_1103',['SystemInit',['../group___s_t_m32_f4xx___system___private___functions.html#ga93f514700ccf00d08dbdcff7f1224eb2',1,'system_stm32f4xx.c']]]
 ];

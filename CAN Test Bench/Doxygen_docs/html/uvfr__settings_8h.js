@@ -1,8 +1,11 @@
 var uvfr__settings_8h =
 [
-    [ "uvVehicleSettings", "structuv_vehicle_settings.html", "structuv_vehicle_settings" ],
+    [ "motor_controller_settings_t", "structmotor__controller__settings__t.html", "structmotor__controller__settings__t" ],
+    [ "uv_vehicle_settings", "structuv__vehicle__settings.html", "structuv__vehicle__settings" ],
     [ "ENABLE_FLASH_SETTINGS", "uvfr__settings_8h.html#ac120024a956e1c9d9994c49c5383d440", null ],
-    [ "uvVehicleSettings", "uvfr__settings_8h.html#a8f74ad9b1298d57e4b432f80a0630e2b", null ],
+    [ "motor_controller_settings_t", "uvfr__settings_8h.html#a2035a63c537a1aaf8eb33fb45bd1b29a", null ],
+    [ "uv_vehicle_settings", "uvfr__settings_8h.html#a1c41697a3618ce0a5236b7ccb250d967", null ],
+    [ "nukeSettings", "uvfr__settings_8h.html#a4648237563030182a8309d8c75e12205", null ],
     [ "uvSettingsInit", "uvfr__settings_8h.html#a80856a38d7040ca10b8106ff0fa4acf4", null ],
-    [ "uvCurrentSettings", "uvfr__settings_8h.html#ad7a6fe36c2429a9d37ecd0f35ba5a293", null ]
+    [ "current_vehicle_settings", "uvfr__settings_8h.html#a03566822d1b8893362970a459bd67daf", null ]
 ];

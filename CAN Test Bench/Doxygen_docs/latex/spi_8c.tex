@@ -1,0 +1,90 @@
+\hypertarget{spi_8c}{}\doxysection{Core/\+Src/spi.c File Reference}
+\label{spi_8c}\index{Core/Src/spi.c@{Core/Src/spi.c}}
+
+
+This file provides code for the configuration of the S\+PI instances.  
+
+
+{\ttfamily \#include \char`\"{}spi.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{spi_8c_af81398f9775695df0b172367651ca3e6}{M\+X\+\_\+\+S\+P\+I1\+\_\+\+Init}} (void)
+\item 
+void \mbox{\hyperlink{spi_8c_a8e1dadd744299fa6f8bca0e1bcbd2c00}{H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+Msp\+Init}} (S\+P\+I\+\_\+\+Handle\+Type\+Def $\ast$spi\+Handle)
+\item 
+void \mbox{\hyperlink{spi_8c_af9af6cae4cb9386b709196d3a3ab4f78}{H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+Msp\+De\+Init}} (S\+P\+I\+\_\+\+Handle\+Type\+Def $\ast$spi\+Handle)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+S\+P\+I\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{spi_8c_a9c6222bae4d0328dd843ae099623b40b}{hspi1}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides code for the configuration of the S\+PI instances. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2024 S\+T\+Microelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{spi_8c_af9af6cae4cb9386b709196d3a3ab4f78}\label{spi_8c_af9af6cae4cb9386b709196d3a3ab4f78}} 
+\index{spi.c@{spi.c}!HAL\_SPI\_MspDeInit@{HAL\_SPI\_MspDeInit}}
+\index{HAL\_SPI\_MspDeInit@{HAL\_SPI\_MspDeInit}!spi.c@{spi.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_SPI\_MspDeInit()}{HAL\_SPI\_MspDeInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{S\+P\+I\+\_\+\+Handle\+Type\+Def $\ast$}]{spi\+Handle }\end{DoxyParamCaption})}
+
+S\+P\+I1 G\+P\+IO Configuration P\+A7 -\/-\/-\/---$>$ S\+P\+I1\+\_\+\+M\+O\+SI P\+B3 -\/-\/-\/---$>$ S\+P\+I1\+\_\+\+S\+CK P\+B4 -\/-\/-\/---$>$ S\+P\+I1\+\_\+\+M\+I\+SO
+
+Definition at line 101 of file spi.\+c.
+
+\mbox{\Hypertarget{spi_8c_a8e1dadd744299fa6f8bca0e1bcbd2c00}\label{spi_8c_a8e1dadd744299fa6f8bca0e1bcbd2c00}} 
+\index{spi.c@{spi.c}!HAL\_SPI\_MspInit@{HAL\_SPI\_MspInit}}
+\index{HAL\_SPI\_MspInit@{HAL\_SPI\_MspInit}!spi.c@{spi.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_SPI\_MspInit()}{HAL\_SPI\_MspInit()}}
+{\footnotesize\ttfamily void H\+A\+L\+\_\+\+S\+P\+I\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{S\+P\+I\+\_\+\+Handle\+Type\+Def $\ast$}]{spi\+Handle }\end{DoxyParamCaption})}
+
+S\+P\+I1 G\+P\+IO Configuration P\+A7 -\/-\/-\/---$>$ S\+P\+I1\+\_\+\+M\+O\+SI P\+B3 -\/-\/-\/---$>$ S\+P\+I1\+\_\+\+S\+CK P\+B4 -\/-\/-\/---$>$ S\+P\+I1\+\_\+\+M\+I\+SO
+
+Definition at line 62 of file spi.\+c.
+
+\mbox{\Hypertarget{spi_8c_af81398f9775695df0b172367651ca3e6}\label{spi_8c_af81398f9775695df0b172367651ca3e6}} 
+\index{spi.c@{spi.c}!MX\_SPI1\_Init@{MX\_SPI1\_Init}}
+\index{MX\_SPI1\_Init@{MX\_SPI1\_Init}!spi.c@{spi.c}}
+\doxysubsubsection{\texorpdfstring{MX\_SPI1\_Init()}{MX\_SPI1\_Init()}}
+{\footnotesize\ttfamily void M\+X\+\_\+\+S\+P\+I1\+\_\+\+Init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file spi.\+c.
+
+
+
+References Error\+\_\+\+Handler(), and hspi1.
+
+
+
+Referenced by main().
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{spi_8c_a9c6222bae4d0328dd843ae099623b40b}\label{spi_8c_a9c6222bae4d0328dd843ae099623b40b}} 
+\index{spi.c@{spi.c}!hspi1@{hspi1}}
+\index{hspi1@{hspi1}!spi.c@{spi.c}}
+\doxysubsubsection{\texorpdfstring{hspi1}{hspi1}}
+{\footnotesize\ttfamily S\+P\+I\+\_\+\+Handle\+Type\+Def hspi1}
+
+
+
+Definition at line 27 of file spi.\+c.
+
+
+
+Referenced by M\+X\+\_\+\+S\+P\+I1\+\_\+\+Init().
+

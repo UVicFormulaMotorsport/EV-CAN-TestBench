@@ -16,7 +16,9 @@ File containing the meat and potatoes driving loop thread, and all supporting fu
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{driving__loop_8c_adb031c91acd0bc6d700819cde7ec58f2}{Start\+Driving\+Loop}} (void const $\ast$argument)
+enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{driving__loop_8c_af580185fb5bb1cfba30ee1709d90628c}{init\+Driving\+Loop}} (void $\ast$argument)
+\item 
+void \mbox{\hyperlink{driving__loop_8c_a80cc48f06202edc29bcad26a956bcc98}{Start\+Driving\+Loop}} (void $\ast$argument)
 \begin{DoxyCompactList}\small\item\em Function implementing the led\+Task thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -37,11 +39,29 @@ File containing the meat and potatoes driving loop thread, and all supporting fu
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{driving__loop_8c_adb031c91acd0bc6d700819cde7ec58f2}\label{driving__loop_8c_adb031c91acd0bc6d700819cde7ec58f2}} 
+\mbox{\Hypertarget{driving__loop_8c_af580185fb5bb1cfba30ee1709d90628c}\label{driving__loop_8c_af580185fb5bb1cfba30ee1709d90628c}} 
+\index{driving\_loop.c@{driving\_loop.c}!initDrivingLoop@{initDrivingLoop}}
+\index{initDrivingLoop@{initDrivingLoop}!driving\_loop.c@{driving\_loop.c}}
+\doxysubsubsection{\texorpdfstring{initDrivingLoop()}{initDrivingLoop()}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} init\+Driving\+Loop (\begin{DoxyParamCaption}\item[{void $\ast$}]{argument }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file driving\+\_\+loop.\+c.
+
+
+
+References uv\+\_\+task\+\_\+info\+::active\+\_\+states, uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, uv\+\_\+task\+\_\+info\+::max\+\_\+instances, P\+R\+O\+G\+R\+A\+M\+M\+I\+NG, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, Start\+Driving\+Loop(), uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+args, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+period, uv\+\_\+task\+\_\+info\+::task\+\_\+priority, U\+V\+\_\+\+D\+R\+I\+V\+I\+NG, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE, U\+V\+\_\+\+L\+A\+U\+N\+C\+H\+\_\+\+C\+O\+N\+T\+R\+OL, U\+V\+\_\+\+OK, U\+V\+\_\+\+R\+E\+A\+DY, and uv\+Create\+Task().
+
+
+
+Referenced by uv\+Init\+State\+Engine().
+
+\mbox{\Hypertarget{driving__loop_8c_a80cc48f06202edc29bcad26a956bcc98}\label{driving__loop_8c_a80cc48f06202edc29bcad26a956bcc98}} 
 \index{driving\_loop.c@{driving\_loop.c}!StartDrivingLoop@{StartDrivingLoop}}
 \index{StartDrivingLoop@{StartDrivingLoop}!driving\_loop.c@{driving\_loop.c}}
 \doxysubsubsection{\texorpdfstring{StartDrivingLoop()}{StartDrivingLoop()}}
-{\footnotesize\ttfamily void Start\+Driving\+Loop (\begin{DoxyParamCaption}\item[{void const $\ast$}]{argument }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void Start\+Driving\+Loop (\begin{DoxyParamCaption}\item[{void $\ast$}]{argument }\end{DoxyParamCaption})}
 
 
 
@@ -59,17 +79,40 @@ Function implementing the led\+Task thread.
 \end{DoxyRetVals}
 The first thing we do here is create some local variables here, to cache whatever variables need cached. We will be caching variables that are used very frequently in every single loop iteration, and are not
 
+This line extracts the specific driving loop parameters as specified in the vehicle settings 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{\mbox{\hyperlink{structdriving__loop__args}{driving\_loop\_args}}* dl\_params = (\mbox{\hyperlink{structdriving__loop__args}{driving\_loop\_args}}*) params-\/>task\_args;}
+\DoxyCodeLine{\textcolor{comment}{/**}}
+\end{DoxyCode}
+
+
+These here lines set the delay. This task executes exactly at the period specified, regardless of how long the task execution actually takes
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{ */}
+\DoxyCodeLine{TickType\_t tick\_period = pdMS\_TO\_TICKS(params-\/>task\_period); \textcolor{comment}{//Convert ms of period to the RTOS ticks}}
+\DoxyCodeLine{TickType\_t last\_time = xTaskGetTickCount();}
+\DoxyCodeLine{\textcolor{comment}{/**}}
+\end{DoxyCode}
+
+
 @heading Brake Plausibility Check
 
 The way that this works is that if the brake pressure is greater than some threshold, and the accelerator pedal position is also greater than some threshold, the thing will register that a brake implausibility has occurred. This is not very cash money.
 
 If this happens, we want to set the torque/speed output to zero. This will only reset itself once the brakes are set to less than a certain threshold. Honestly evil.
 
-Definition at line 34 of file driving\+\_\+loop.\+c.
+Definition at line 69 of file driving\+\_\+loop.\+c.
 
 
 
-References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, adc1\+\_\+\+B\+P\+S1, adc1\+\_\+\+B\+P\+S2, driving\+Loop\+Args\+::apps\+\_\+plausibility\+\_\+check\+\_\+threshold, driving\+Loop\+Args\+::bps\+\_\+plausibility\+\_\+check\+\_\+threshold, D\+E\+F\+A\+U\+L\+T\+\_\+\+P\+E\+R\+I\+OD, Implausible, driving\+Loop\+Args\+::max\+\_\+apps\+\_\+offset, driving\+Loop\+Args\+::max\+\_\+apps\+\_\+value, driving\+Loop\+Args\+::max\+\_\+\+B\+P\+S\+\_\+value, driving\+Loop\+Args\+::min\+\_\+apps\+\_\+offset, driving\+Loop\+Args\+::min\+\_\+apps\+\_\+value, and Plausible.
+References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, adc1\+\_\+\+B\+P\+S1, adc1\+\_\+\+B\+P\+S2, driving\+\_\+loop\+\_\+args\+::apps\+\_\+plausibility\+\_\+check\+\_\+threshold, driving\+\_\+loop\+\_\+args\+::bps\+\_\+plausibility\+\_\+check\+\_\+threshold, uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, Implausible, kill\+Self(), driving\+\_\+loop\+\_\+args\+::max\+\_\+apps\+\_\+offset, driving\+\_\+loop\+\_\+args\+::max\+\_\+apps\+\_\+value, driving\+\_\+loop\+\_\+args\+::max\+\_\+\+B\+P\+S\+\_\+value, driving\+\_\+loop\+\_\+args\+::min\+\_\+apps\+\_\+offset, driving\+\_\+loop\+\_\+args\+::min\+\_\+apps\+\_\+value, Plausible, suspend\+Self(), uv\+\_\+task\+\_\+info\+::task\+\_\+args, uv\+\_\+task\+\_\+info\+::task\+\_\+period, U\+V\+\_\+\+K\+I\+L\+L\+\_\+\+C\+MD, and U\+V\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+MD.
+
+
+
+Referenced by init\+Driving\+Loop().
 
 
 
@@ -82,7 +125,7 @@ References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, adc1\+\_\+\+B\+P\+S
 
 
 
-Definition at line 63 of file main.\+c.
+Definition at line 64 of file main.\+c.
 
 
 
@@ -96,7 +139,7 @@ Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), H\+A\+L\+\_\
 
 
 
-Definition at line 64 of file main.\+c.
+Definition at line 65 of file main.\+c.
 
 
 
@@ -110,7 +153,7 @@ Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), H\+A\+L\+\_\
 
 
 
-Definition at line 65 of file main.\+c.
+Definition at line 66 of file main.\+c.
 
 
 
@@ -124,7 +167,7 @@ Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Conv\+Cplt\+Callback(), and Start\+D
 
 
 
-Definition at line 66 of file main.\+c.
+Definition at line 67 of file main.\+c.
 
 
 

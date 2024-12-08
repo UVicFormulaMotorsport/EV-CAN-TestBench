@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['getsettingsfromflash_213',['getSettingsFromFlash',['../uvfr__settings_8c.html#af13d8078183457319f43ca58b85314e4',1,'uvfr_settings.c']]],
-  ['gpio_2ec_214',['gpio.c',['../gpio_8c.html',1,'']]],
-  ['gpio_2eh_215',['gpio.h',['../gpio_8h.html',1,'']]]
+  ['getsvctaskid_262',['getSVCTaskID',['../uvfr__state__engine_8h.html#a502ae7695a8539242b8b18c2eb61c1c7',1,'getSVCTaskID(char *tsk_name):&#160;uvfr_state_engine.c'],['../uvfr__state__engine_8c.html#a502ae7695a8539242b8b18c2eb61c1c7',1,'getSVCTaskID(char *tsk_name):&#160;uvfr_state_engine.c']]],
+  ['global_5fcontext_263',['global_context',['../uvfr__utils_8h.html#a660f31748ce0b90d471a4f5441ee3cb1',1,'uvfr_utils.h']]],
+  ['gpio_2ec_264',['gpio.c',['../gpio_8c.html',1,'']]],
+  ['gpio_2eh_265',['gpio.h',['../gpio_8h.html',1,'']]]
 ];

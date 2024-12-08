@@ -30,13 +30,18 @@ extern "C" {
 
 /* USER CODE BEGIN Includes */
 #include "constants.h"
+#include "uvfr_utils.h"
 /* USER CODE END Includes */
 
 extern CAN_HandleTypeDef hcan2;
 
 /* USER CODE BEGIN Private defines */
 
+#define CAN_TX_DAEMON_NAME "CanTxDaemon"
+#define CAN_RX_DAEMON_NAME "CanRxDaemon"
 
+typedef struct uv_CAN_msg uv_CAN_msg;
+typedef enum uv_status_t uv_status;
 
 /* USER CODE END Private defines */
 
@@ -47,6 +52,9 @@ void MX_CAN2_Init(void);
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2);
 void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2);
 
+uv_status uvSendCanMSG(uv_CAN_msg * msg);
+
+void CANbusTxSvcDaemon(void* args);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

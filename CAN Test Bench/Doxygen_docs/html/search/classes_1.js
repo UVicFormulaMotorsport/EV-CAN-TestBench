@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['state_5fchange_5fdaemon_5fargs_703',['state_change_daemon_args',['../structstate__change__daemon__args.html',1,'']]]
+  ['bms_5fsettings_5ft_888',['bms_settings_t',['../structbms__settings__t.html',1,'']]]
 ];

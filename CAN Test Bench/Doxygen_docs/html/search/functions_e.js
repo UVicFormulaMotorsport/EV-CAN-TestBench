@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['tim1_5fup_5ftim10_5firqhandler_862',['TIM1_UP_TIM10_IRQHandler',['../stm32f4xx__it_8h.html#ad1fd361bc5ad89facee67c76d1ff8dc0',1,'TIM1_UP_TIM10_IRQHandler(void):&#160;stm32f4xx_it.c'],['../stm32f4xx__it_8c.html#ad1fd361bc5ad89facee67c76d1ff8dc0',1,'TIM1_UP_TIM10_IRQHandler(void):&#160;stm32f4xx_it.c']]]
+  ['refresh_5foled_1095',['refresh_OLED',['../oled_8h.html#a1682d608b1f9752ad8db39d13327fd37',1,'oled.h']]]
 ];
