@@ -92,12 +92,14 @@ to exclude the API function. */
 #define INCLUDE_vTaskPrioritySet             1
 #define INCLUDE_uxTaskPriorityGet            1
 #define INCLUDE_vTaskDelete                  1
-#define INCLUDE_vTaskCleanUpResources        1
+#define INCLUDE_vTaskCleanUpResources        0
 #define INCLUDE_vTaskSuspend                 1
 #define INCLUDE_vTaskDelayUntil              1
 #define INCLUDE_vTaskDelay                   1
 #define INCLUDE_xTaskGetSchedulerState       1
+#define INCLUDE_xQueueGetMutexHolder         1
 #define INCLUDE_xSemaphoreGetMutexHolder     1
+#define INCLUDE_pcTaskGetTaskName            1
 #define INCLUDE_uxTaskGetStackHighWaterMark  1
 #define INCLUDE_uxTaskGetStackHighWaterMark2 1
 #define INCLUDE_xTaskGetCurrentTaskHandle    1
@@ -148,7 +150,12 @@ standard names. */
 
 /* USER CODE BEGIN Defines */
 /* Section where parameter definitions can be added (for instance, to override default ones in FreeRTOS.h) */
-#define INCLUDE_xTaskDelayUntil 1
+#define INCLUDE_xTaskDelayUntil   1
+//#define configUSE_TIMERS		  1
+//#define configTIMER_TASK_PRIORITY 6
+//#define configTIMER_QUEUE_LENGTH  8
+//#define configTIMER_TASK_STACK_DEPTH 128
+
 /* USER CODE END Defines */
 
 #endif /* FREERTOS_CONFIG_H */

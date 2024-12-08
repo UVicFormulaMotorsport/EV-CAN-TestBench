@@ -8,6 +8,8 @@
 #ifndef INC_UVFR_UTILS_H_
 #define INC_UVFR_UTILS_H_
 
+#include "uvfr_global_config.h"
+
 #include "main.h"
 #include "cmsis_os.h"
 #include "adc.h"
@@ -68,6 +70,12 @@
 #define serializeBigE16(x,d,i) x[i+1]=d&0x00FF; x[i]=(d&0xFF00)>>8
 #define serializeBigE32(x,d,i)x[i+3]=d&0x000000FF; x[i+2]=(d&0x0000FF00)>>8; x[i+1]=(d&0x00FF0000)>>16; x[i]=(d&0xFF000000)>>24
 
+#define setBits(x,msk,data) (x&(~msk)|data)
+
+#define isPowerOfTwo(x) (x&&(!(x&(x-1))))
+
+#define safePtrRead(x) (*((x)?x:uvPanic("nullptr_deref",0)))
+#define safePtrWrite(p,x) (*((p)?p:&x))
 
 #define false 0
 #define true !false
@@ -83,19 +91,18 @@ typedef uint32_t uv_timespan_ms;
 
 
 
+
 //Time limits for the initialization. Car has 2.5 seconds to initialize all peripherals, before it decides that something has gone horrifically wrong
 #define MAX_INIT_TIME 2500//if the car takes more than 2.5 seconds to boot, something seems a little fishy
 #define INIT_CHECK_PERIOD 100
 
 //Memory management macros
 
-#ifndef UV_MALLOC_LIMIT
-#define UV_MALLOC_LIMIT 1024
-#endif
 
-#ifndef USE_OS_MEM_MGMT
-#define USE_OS_MEM_MGMT 0
-#endif
+
+//Some fun CAN macros
+#define UV_CAN1
+#define UV_CAN2
 
 //Feature flags
 #define USE_OLED_DEBUG 1
@@ -111,7 +118,7 @@ typedef enum uv_status_t{
 	UV_OK,
 	UV_WARNING,
 	UV_ERROR,
-	UV_ABORTED
+	UV_ABORTED //nothing wrong per say,
 }uv_status;
 
 
@@ -123,10 +130,20 @@ typedef enum uv_task_state_t{
 	UV_TASK_SUSPENDED
 } uv_task_status;
 
+typedef enum task_priority{
+	IDLE_TASK_PRIORITY,
+	LOW_PRIORITY,
+	BELOW_NORMAL,
+	MEDIUM_PRIORITY,
+	ABOVE_NORMAL,
+	HIGH_PRIORITY,
+	REALTIME_PRIORITY
+}task_priority;
+
 /** Type made to represent the state of the vehicle, and the location in the state machine
  *	The states are powers of two to make it easier to discern tasks that need to happen in multiple states
  */
-enum uv_vehicle_state_t{
+typedef enum uv_vehicle_state_t{
 	UV_INIT = 0x0001, //Vehicle is Initialising
 	UV_READY = 0x0002, //Vehicle is ready to drive, but not actually driving
 	PROGRAMMING = 0x0004, //Vehicle is in proccess programming
@@ -136,7 +153,9 @@ enum uv_vehicle_state_t{
 	UV_ERROR_STATE = 0x0040,
 	UV_BOOT = 0x0080,
 	UV_HALT = 0x0100
-};
+}uv_vehicle_state;
+
+
 
 //not really sure how I want this implemented yet. Variable number of driving modes?
 enum uv_driving_mode_t{
@@ -164,6 +183,24 @@ typedef enum access_control_t{
 	UV_SEMAPHORE
 }access_control_type;
 
+/**
+ *
+ */
+typedef enum uv_msg_type_t{
+	UV_TASK_START_COMMAND,
+	UV_TASK_DELETE_COMMAND,
+	UV_TASK_SUSPEND_COMMAND,
+	UV_COMMAND_ACKNOWLEDGEMENT,
+	UV_TASK_STATUS_REPORT,
+	UV_ERROR_REPORT,
+	UV_WAKEUP,
+	UV_PARAM_REQUEST,
+	UV_PARAM_READY,
+	UV_RAW_DATA_TRANSFER,
+	UV_SC_COMMAND
+
+}uv_msg_type;
+
 struct uv_mutex_info{
 	SemaphoreHandle_t handle;
 
@@ -187,6 +224,18 @@ typedef union access_control_info{
 }access_control_info;
 
 
+#define UV_CAN_EXTENDED_ID 0x01
+#define UV_CAN_CHANNEL_MASK 0b00000110
+#define UV_CAN_DYNAMIC_MEM  0b00001000
+typedef struct uv_CAN_msg{
+	uint8_t flags;
+	//Bit 0: extended id?
+	//Bit [1:2]: which actual CANbus do I use?
+	//Bit 3: dynamically allocated
+	uint8_t dlc;
+	uint32_t msg_id;
+	uint8_t data[8];
+}uv_CAN_msg;
 
 
 /** contains info relevant to initializing the vehicle
@@ -198,13 +247,29 @@ typedef struct uv_init_struct{
 }uv_init_struct;
 
 
-#define UV_TASK_VEHICLE_APPLICATION 0b00000001
-#define UV_TASK_PERIODIC_SVC        0b00000010
-#define UV_TASK_DORMANT_SVC         0b00000011
-#define UV_TASK_MANAGER_MSK         0b00000011
-#define UV_TASK_LOG_START_STOP_TIME 0b00000100
-#define UV_TASK_LOG_MEM_USAGE		0b00001000
-#define UV_TASK_SCD_IGNORE			0b00010000
+
+
+
+#define UV_TASK_VEHICLE_APPLICATION    0x0001U<<(0)
+#define UV_TASK_PERIODIC_SVC           0x0001U<<(1)
+#define UV_TASK_DORMANT_SVC            0b0000000000000011
+#define UV_TASK_GENERIC_SVC			   0x0001U<<(2)
+#define UV_TASK_MANAGER_MASK           0b0000000000000011
+#define UV_TASK_LOG_START_STOP_TIME    0x0001U<<(2)
+#define UV_TASK_LOG_MEM_USAGE		   0x0001U<<(3)
+#define UV_TASK_SCD_IGNORE			   0x0001U<<(4)
+#define UV_TASK_IS_PARENT			   0x0001U<<(5)
+#define UV_TASK_IS_CHILD			   0x0001U<<(6)
+#define UV_TASK_IS_ORPHAN			   0x0001U<<(7)
+#define UV_TASK_ERR_IN_CHILD		   0x0001U<<(8)
+#define UV_TASK_AWAITING_DELETION	   0x0001U<<(9)
+#define UV_TASK_DEFER_DELETION		   0x0001U<<(10)
+#define UV_TASK_DEADLINE_NOT_ENFORCED  0x00
+#define UV_TASK_PRIO_INCREMENTATION    0x0001U<<(11)
+#define UV_TASK_DEADLINE_FIRM		   0x0001U<<(12)
+#define UV_TASK_DEADLINE_HARD		   (0x0001U<<(11)|0x0001U<<(12))
+#define UV_TASK_DEADLINE_MASK		   (0x0001U<<(11)|0x0001U<<(12))
+#define UV_TASK_MISSION_CRITICAL	   0x0001U<<(13)
 
 
 /** @brief This struct is designed to hold neccessary information about an RTOS task that
@@ -231,23 +296,29 @@ typedef struct uv_task_info{
 	char* task_name;
 
 	uv_timespan_ms task_period;
+	uv_timespan_ms deletion_delay;
 
 	TaskFunction_t task_function; //the thread function
 	osPriority task_priority; //priority of the task
 
-	uint32_t max_instances; //max number of task instances running at any moment
+	uint8_t max_instances; //max number of task instances running at any moment
 	uint32_t stack_size; //stack size allocated to task
 
 	uint8_t num_instances; //number of instances running
 
-	uint8_t task_flags; //Some task flags for ya
-	//Bits 0:1 - | Task MGMT | Vehicle Application task - 00 | Periodic SVC Task - 10 | Dormant SVC Task - 11
-	//Bit 2 - Log task start + stop time
-	//Bit 3 - Log mem usage
-	//Bit 4 - SCD ignore flag
-	//Bit 5
-	//Bit 6
-	//Bit 7
+	uint16_t task_flags; //Some task flags for ya
+	//Bits 0:1 - | Task MGMT | Vehicle Application task - 01 | Periodic SVC Task - 10 | Dormant SVC Task - 11
+	//Bit 2  - Log task start + stop time
+	//Bit 3  - Log mem usage
+	//Bit 4  - SCD ignore flag (only use if task is application layer
+	//Bit 5  - is parent
+	//Bit 6	 - is child
+	//Bit 7  - is orphaned
+	//Bit 8	 - error in child task
+	//Bit 9	 - awaiting deferred deletion
+	//Bit 10 - deferred deletion enabled
+	//Bits 11:12 - Deadline firmness | No enforcement - 00 | Gradual Priority Incrimentation - 01 | Firm deadline 10 | Critical Deadline - 11
+	//Bit 13 - mission critical, if this specific task crashes, the car will not continue to run
 
 	uv_task_status task_state; //tracks the internal state of the task
 	uint16_t active_states; //corresponds to the vehicle states where the task should be active
@@ -265,11 +336,21 @@ typedef struct uv_task_info{
 
 }uv_task_info;
 
+/** @brief Struct containing a message between two tasks
+ *
+ */
+typedef struct uv_task_msg_t{
+	uint32_t message_type;
+	uv_task_info* sender;
+	uv_task_info* intended_recipient;
+	TickType_t time_sent;
+	size_t message_size;
+	void* msg_contents;
 
-typedef struct tm_data{
-	//
+}uv_task_msg;
 
-}task_management_data;
+
+
 
 
 
@@ -301,6 +382,7 @@ typedef struct uv_init_task_args{
 typedef struct uv_internal_params{
 	uv_init_struct* init_params;
 	uv_vehicle_settings* vehicle_settings;
+	p_status peripheral_status[];
 
 
 
@@ -319,6 +401,8 @@ typedef struct uv_init_task_response{
 	uint8_t nchar;
 	char* errmsg; //if we didn't succeed, then what went wrong?
 }uv_init_task_response;
+
+
 
 #ifndef UV_UTILS_SRC_IMPLIMENTATION
 	extern uv_internal_params global_context;

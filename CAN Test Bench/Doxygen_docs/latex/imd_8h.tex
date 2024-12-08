@@ -109,6 +109,8 @@ void \mbox{\hyperlink{imd_8h_ae0177fe52ae013a36014be506fd1fa93}{I\+M\+D\+\_\+\+C
 void \mbox{\hyperlink{imd_8h_aeb7c937639c5385f5d2b4e3a4e60250f}{I\+M\+D\+\_\+\+Request\+\_\+\+Status}} (uint8\+\_\+t Status)
 \item 
 void \mbox{\hyperlink{imd_8h_a80b26177d8aa0c0e803fac210eb456ac}{I\+M\+D\+\_\+\+Startup}} ()
+\item 
+void \mbox{\hyperlink{imd_8h_a19b4fd879f065cfe6e1b7bb3400cd0c3}{init\+I\+MD}} (void $\ast$args)
 \end{DoxyCompactItemize}
 
 
@@ -360,7 +362,7 @@ Definition at line 32 of file imd.\+h.
 
 
 
-Definition at line 350 of file imd.\+c.
+Definition at line 351 of file imd.\+c.
 
 
 
@@ -374,7 +376,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 256 of file imd.\+c.
+Definition at line 257 of file imd.\+c.
 
 
 
@@ -392,7 +394,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 336 of file imd.\+c.
+Definition at line 337 of file imd.\+c.
 
 
 
@@ -406,7 +408,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 311 of file imd.\+c.
+Definition at line 312 of file imd.\+c.
 
 
 
@@ -424,7 +426,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 295 of file imd.\+c.
+Definition at line 296 of file imd.\+c.
 
 
 
@@ -442,7 +444,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 387 of file imd.\+c.
+Definition at line 388 of file imd.\+c.
 
 
 
@@ -456,7 +458,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 400 of file imd.\+c.
+Definition at line 401 of file imd.\+c.
 
 
 
@@ -474,7 +476,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 375 of file imd.\+c.
+Definition at line 376 of file imd.\+c.
 
 
 
@@ -488,7 +490,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 368 of file imd.\+c.
+Definition at line 369 of file imd.\+c.
 
 
 
@@ -502,7 +504,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 482 of file imd.\+c.
+Definition at line 483 of file imd.\+c.
 
 
 
@@ -520,7 +522,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 212 of file imd.\+c.
+Definition at line 213 of file imd.\+c.
 
 
 
@@ -538,7 +540,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 357 of file imd.\+c.
+Definition at line 358 of file imd.\+c.
 
 
 
@@ -556,7 +558,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 523 of file imd.\+c.
+Definition at line 524 of file imd.\+c.
 
 \mbox{\Hypertarget{imd_8h_a4a16ede06a18addd7ef3e67be2aaaf3d}\label{imd_8h_a4a16ede06a18addd7ef3e67be2aaaf3d}} 
 \index{imd.h@{imd.h}!IMD\_Check\_Version@{IMD\_Check\_Version}}
@@ -566,7 +568,7 @@ Definition at line 523 of file imd.\+c.
 
 
 
-Definition at line 442 of file imd.\+c.
+Definition at line 443 of file imd.\+c.
 
 
 
@@ -584,7 +586,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 343 of file imd.\+c.
+Definition at line 344 of file imd.\+c.
 
 
 
@@ -598,7 +600,7 @@ Referenced by I\+M\+D\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 67 of file imd.\+c.
+Definition at line 68 of file imd.\+c.
 
 
 
@@ -612,7 +614,7 @@ References battery\+\_\+voltage, Error\+\_\+flags, Error\+\_\+\+Handler(), I\+M\
 
 
 
-Definition at line 179 of file imd.\+c.
+Definition at line 180 of file imd.\+c.
 
 
 
@@ -630,9 +632,27 @@ Referenced by I\+M\+D\+\_\+\+Check\+\_\+\+Status\+\_\+\+Bits(), and I\+M\+D\+\_\
 
 
 
-Definition at line 527 of file imd.\+c.
+Definition at line 528 of file imd.\+c.
 
 
 
 References I\+M\+D\+\_\+\+Request\+\_\+\+Status(), isolation\+\_\+state, Max\+\_\+battery\+\_\+working\+\_\+voltage, Part\+\_\+name\+\_\+0, Part\+\_\+name\+\_\+1, Part\+\_\+name\+\_\+2, Part\+\_\+name\+\_\+3, Serial\+\_\+number\+\_\+0, Serial\+\_\+number\+\_\+1, Serial\+\_\+number\+\_\+2, Serial\+\_\+number\+\_\+3, Version\+\_\+0, Version\+\_\+1, and Version\+\_\+2.
+
+\mbox{\Hypertarget{imd_8h_a19b4fd879f065cfe6e1b7bb3400cd0c3}\label{imd_8h_a19b4fd879f065cfe6e1b7bb3400cd0c3}} 
+\index{imd.h@{imd.h}!initIMD@{initIMD}}
+\index{initIMD@{initIMD}!imd.h@{imd.h}}
+\doxysubsubsection{\texorpdfstring{initIMD()}{initIMD()}}
+{\footnotesize\ttfamily void init\+I\+MD (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 554 of file imd.\+c.
+
+
+
+References I\+MD, uv\+\_\+init\+\_\+task\+\_\+args\+::init\+\_\+info\+\_\+queue, uv\+\_\+init\+\_\+task\+\_\+args\+::meta\+\_\+task\+\_\+handle, U\+V\+\_\+\+OK, and uv\+Panic().
+
+
+
+Referenced by uv\+Init().
 

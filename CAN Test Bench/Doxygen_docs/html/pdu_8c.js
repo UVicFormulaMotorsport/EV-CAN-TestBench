@@ -1,5 +1,6 @@
 var pdu_8c =
 [
+    [ "initPDU", "pdu_8c.html#afaa6671d51bcd0687c87ac635ff70d95", null ],
     [ "PDU_disable_brake_light", "pdu_8c.html#ad7b67b3c1618a7c50a5d6d9f9e13a89f", null ],
     [ "PDU_disable_coolant_pump", "pdu_8c.html#aebeb35957c80be85dc938efe72c8e825", null ],
     [ "PDU_disable_cooling_fans", "pdu_8c.html#a3c665494b7f9fb4e025ff31d24c97072", null ],

@@ -16,8 +16,6 @@ void \mbox{\hyperlink{motor__controller_8c_af2e573366a03a695a8ba760440848206}{M\
 \item 
 void \mbox{\hyperlink{motor__controller_8c_aa7294768824898480b6bcf6e98daa926}{M\+C\+\_\+\+Torque\+\_\+\+Control}} (int todo)
 \item 
-void \mbox{\hyperlink{motor__controller_8c_a3e61bae23f49ccade082cc420bf39876}{M\+C\+\_\+\+Speed\+\_\+\+Control}} (int A\+D\+C\+\_\+value)
-\item 
 void \mbox{\hyperlink{motor__controller_8c_a40bf1b849ad7443bbe8af342006bb3cd}{M\+C\+\_\+\+Check\+\_\+\+Error\+\_\+\+Warning}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
 \item 
 void \mbox{\hyperlink{motor__controller_8c_ac592ffd65d2793aadca7ca158a3d2dbc}{M\+C\+\_\+\+Validate}} ()
@@ -38,8 +36,6 @@ const uint16\+\_\+t \mbox{\hyperlink{motor__controller_8c_a8f25ebbc9bf59980fdc04
 const uint32\+\_\+t \mbox{\hyperlink{motor__controller_8c_a347eaa173dae5d48ae87a4bc5532adfc}{max\+\_\+motor\+\_\+speed}} = 3277
 \item 
 uint8\+\_\+t \mbox{\hyperlink{motor__controller_8c_a4ace1e40a5ea83b51078f64f9c777e3f}{desired\+\_\+motor\+\_\+speed}} \mbox{[}2\mbox{]}
-\item 
-uint32\+\_\+t \mbox{\hyperlink{motor__controller_8c_a58a0faab11d05a311fdbd7770a3d845b}{A\+D\+C\+\_\+percentage}}
 \end{DoxyCompactItemize}
 
 
@@ -52,7 +48,7 @@ uint32\+\_\+t \mbox{\hyperlink{motor__controller_8c_a58a0faab11d05a311fdbd7770a3
 
 
 
-Definition at line 121 of file motor\+\_\+controller.\+c.
+Definition at line 122 of file motor\+\_\+controller.\+c.
 
 
 
@@ -70,7 +66,7 @@ Referenced by M\+C\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 255 of file motor\+\_\+controller.\+c.
+Definition at line 256 of file motor\+\_\+controller.\+c.
 
 \mbox{\Hypertarget{motor__controller_8c_af34e05da8add9233de12150656dad092}\label{motor__controller_8c_af34e05da8add9233de12150656dad092}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Check\_Serial\_Number@{MC\_Check\_Serial\_Number}}
@@ -80,7 +76,7 @@ Definition at line 255 of file motor\+\_\+controller.\+c.
 
 
 
-Definition at line 251 of file motor\+\_\+controller.\+c.
+Definition at line 252 of file motor\+\_\+controller.\+c.
 
 \mbox{\Hypertarget{motor__controller_8c_afa93c7b7fa3dc12bd6bf860c54c564ee}\label{motor__controller_8c_afa93c7b7fa3dc12bd6bf860c54c564ee}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Parse\_Message@{MC\_Parse\_Message}}
@@ -90,7 +86,7 @@ Definition at line 251 of file motor\+\_\+controller.\+c.
 
 
 
-Definition at line 28 of file motor\+\_\+controller.\+c.
+Definition at line 26 of file motor\+\_\+controller.\+c.
 
 
 
@@ -104,7 +100,7 @@ References Error\+\_\+\+Handler(), M\+C\+\_\+\+Check\+\_\+\+Error\+\_\+\+Warning
 
 
 
-Definition at line 49 of file motor\+\_\+controller.\+c.
+Definition at line 47 of file motor\+\_\+controller.\+c.
 
 
 
@@ -118,29 +114,11 @@ References Error\+\_\+\+Handler(), hcan2, M\+C\+\_\+\+C\+A\+N\+\_\+\+I\+D\+\_\+\
 
 
 
-Definition at line 71 of file motor\+\_\+controller.\+c.
+Definition at line 69 of file motor\+\_\+controller.\+c.
 
 
 
 References Error\+\_\+\+Handler(), hcan2, M\+C\+\_\+\+C\+A\+N\+\_\+\+I\+D\+\_\+\+Tx, Tx\+Data, Tx\+Header, and Tx\+Mailbox.
-
-
-
-Referenced by M\+C\+\_\+\+Speed\+\_\+\+Control().
-
-\mbox{\Hypertarget{motor__controller_8c_a3e61bae23f49ccade082cc420bf39876}\label{motor__controller_8c_a3e61bae23f49ccade082cc420bf39876}} 
-\index{motor\_controller.c@{motor\_controller.c}!MC\_Speed\_Control@{MC\_Speed\_Control}}
-\index{MC\_Speed\_Control@{MC\_Speed\_Control}!motor\_controller.c@{motor\_controller.c}}
-\doxysubsubsection{\texorpdfstring{MC\_Speed\_Control()}{MC\_Speed\_Control()}}
-{\footnotesize\ttfamily void M\+C\+\_\+\+Speed\+\_\+\+Control (\begin{DoxyParamCaption}\item[{int}]{A\+D\+C\+\_\+value }\end{DoxyParamCaption})}
-
-
-
-Definition at line 108 of file motor\+\_\+controller.\+c.
-
-
-
-References A\+D\+C\+\_\+percentage, desired\+\_\+motor\+\_\+speed, max\+\_\+motor\+\_\+speed, M\+C\+\_\+\+Send\+\_\+\+Data(), and N\+\_\+set.
 
 \mbox{\Hypertarget{motor__controller_8c_aed1407e1e0fd59dc7c5e5d6db671f0ab}\label{motor__controller_8c_aed1407e1e0fd59dc7c5e5d6db671f0ab}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Startup@{MC\_Startup}}
@@ -150,11 +128,11 @@ References A\+D\+C\+\_\+percentage, desired\+\_\+motor\+\_\+speed, max\+\_\+moto
 
 
 
-Definition at line 259 of file motor\+\_\+controller.\+c.
+Definition at line 260 of file motor\+\_\+controller.\+c.
 
 
 
-References I\+MD, uv\+\_\+init\+\_\+task\+\_\+args\+::init\+\_\+info\+\_\+queue, uv\+\_\+init\+\_\+task\+\_\+args\+::meta\+\_\+task\+\_\+handle, M\+O\+T\+O\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER, P\+DU, U\+V\+\_\+\+OK, and uv\+Panic().
+References uv\+\_\+init\+\_\+task\+\_\+args\+::init\+\_\+info\+\_\+queue, uv\+\_\+init\+\_\+task\+\_\+args\+::meta\+\_\+task\+\_\+handle, M\+O\+T\+O\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER, uv\+\_\+init\+\_\+task\+\_\+args\+::specific\+\_\+args, U\+V\+\_\+\+OK, and uv\+Panic().
 
 
 
@@ -168,7 +146,7 @@ Referenced by uv\+Init().
 
 
 
-Definition at line 104 of file motor\+\_\+controller.\+c.
+Definition at line 102 of file motor\+\_\+controller.\+c.
 
 \mbox{\Hypertarget{motor__controller_8c_ac592ffd65d2793aadca7ca158a3d2dbc}\label{motor__controller_8c_ac592ffd65d2793aadca7ca158a3d2dbc}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Validate@{MC\_Validate}}
@@ -178,25 +156,11 @@ Definition at line 104 of file motor\+\_\+controller.\+c.
 
 
 
-Definition at line 247 of file motor\+\_\+controller.\+c.
+Definition at line 248 of file motor\+\_\+controller.\+c.
 
 
 
 \doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{motor__controller_8c_a58a0faab11d05a311fdbd7770a3d845b}\label{motor__controller_8c_a58a0faab11d05a311fdbd7770a3d845b}} 
-\index{motor\_controller.c@{motor\_controller.c}!ADC\_percentage@{ADC\_percentage}}
-\index{ADC\_percentage@{ADC\_percentage}!motor\_controller.c@{motor\_controller.c}}
-\doxysubsubsection{\texorpdfstring{ADC\_percentage}{ADC\_percentage}}
-{\footnotesize\ttfamily uint32\+\_\+t A\+D\+C\+\_\+percentage}
-
-
-
-Definition at line 25 of file motor\+\_\+controller.\+c.
-
-
-
-Referenced by M\+C\+\_\+\+Speed\+\_\+\+Control().
-
 \mbox{\Hypertarget{motor__controller_8c_a4ace1e40a5ea83b51078f64f9c777e3f}\label{motor__controller_8c_a4ace1e40a5ea83b51078f64f9c777e3f}} 
 \index{motor\_controller.c@{motor\_controller.c}!desired\_motor\_speed@{desired\_motor\_speed}}
 \index{desired\_motor\_speed@{desired\_motor\_speed}!motor\_controller.c@{motor\_controller.c}}
@@ -207,10 +171,6 @@ Referenced by M\+C\+\_\+\+Speed\+\_\+\+Control().
 
 Definition at line 22 of file motor\+\_\+controller.\+c.
 
-
-
-Referenced by M\+C\+\_\+\+Speed\+\_\+\+Control().
-
 \mbox{\Hypertarget{motor__controller_8c_a347eaa173dae5d48ae87a4bc5532adfc}\label{motor__controller_8c_a347eaa173dae5d48ae87a4bc5532adfc}} 
 \index{motor\_controller.c@{motor\_controller.c}!max\_motor\_speed@{max\_motor\_speed}}
 \index{max\_motor\_speed@{max\_motor\_speed}!motor\_controller.c@{motor\_controller.c}}
@@ -220,10 +180,6 @@ Referenced by M\+C\+\_\+\+Speed\+\_\+\+Control().
 
 
 Definition at line 21 of file motor\+\_\+controller.\+c.
-
-
-
-Referenced by M\+C\+\_\+\+Speed\+\_\+\+Control().
 
 \mbox{\Hypertarget{motor__controller_8c_a8f25ebbc9bf59980fdc0458f271437ee}\label{motor__controller_8c_a8f25ebbc9bf59980fdc0458f271437ee}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Expected\_FW\_Version@{MC\_Expected\_FW\_Version}}

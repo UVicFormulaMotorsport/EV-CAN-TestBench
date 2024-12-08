@@ -50,6 +50,8 @@ void \mbox{\hyperlink{pdu_8h_a3c665494b7f9fb4e025ff31d24c97072}{P\+D\+U\+\_\+dis
 void \mbox{\hyperlink{pdu_8h_aef2fd854287906cac1734f08a6edcf2a}{P\+D\+U\+\_\+enable\+\_\+coolant\+\_\+pump}} ()
 \item 
 void \mbox{\hyperlink{pdu_8h_aebeb35957c80be85dc938efe72c8e825}{P\+D\+U\+\_\+disable\+\_\+coolant\+\_\+pump}} ()
+\item 
+void \mbox{\hyperlink{pdu_8h_afaa6671d51bcd0687c87ac635ff70d95}{init\+P\+DU}} (void $\ast$args)
 \end{DoxyCompactItemize}
 
 
@@ -137,6 +139,24 @@ Definition at line 13 of file pdu.\+h.
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{pdu_8h_afaa6671d51bcd0687c87ac635ff70d95}\label{pdu_8h_afaa6671d51bcd0687c87ac635ff70d95}} 
+\index{pdu.h@{pdu.h}!initPDU@{initPDU}}
+\index{initPDU@{initPDU}!pdu.h@{pdu.h}}
+\doxysubsubsection{\texorpdfstring{initPDU()}{initPDU()}}
+{\footnotesize\ttfamily void init\+P\+DU (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 183 of file pdu.\+c.
+
+
+
+References uv\+\_\+init\+\_\+task\+\_\+args\+::init\+\_\+info\+\_\+queue, uv\+\_\+init\+\_\+task\+\_\+args\+::meta\+\_\+task\+\_\+handle, P\+DU, U\+V\+\_\+\+OK, and uv\+Panic().
+
+
+
+Referenced by uv\+Init().
+
 \mbox{\Hypertarget{pdu_8h_ad7b67b3c1618a7c50a5d6d9f9e13a89f}\label{pdu_8h_ad7b67b3c1618a7c50a5d6d9f9e13a89f}} 
 \index{pdu.h@{pdu.h}!PDU\_disable\_brake\_light@{PDU\_disable\_brake\_light}}
 \index{PDU\_disable\_brake\_light@{PDU\_disable\_brake\_light}!pdu.h@{pdu.h}}

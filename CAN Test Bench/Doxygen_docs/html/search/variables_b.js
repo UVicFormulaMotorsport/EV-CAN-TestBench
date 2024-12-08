@@ -1,7 +1,21 @@
 var searchData=
 [
-  ['nchar_1113',['nchar',['../structuv__init__task__response.html#ab0bb4394cc62070f8d366ab3a55ff227',1,'uv_init_task_response']]],
-  ['next_1114',['next',['../structuv__task__info.html#aaf64a4af6aeefa2018168b194766784b',1,'uv_task_info']]],
-  ['num_5fdriving_5fmodes_1115',['num_driving_modes',['../structdriving__loop__args.html#af726a5bebacb81eb0c4aff8697007aba',1,'driving_loop_args']]],
-  ['num_5finstances_1116',['num_instances',['../structuv__task__info.html#af50dd07dbcae819e4d4ffc3f764794ad',1,'uv_task_info']]]
+  ['manager_1230',['manager',['../structuv__task__info.html#acad24b724d6926f916b9884716d569ce',1,'uv_task_info']]],
+  ['map_5ffn_5fparams_1231',['map_fn_params',['../structdriving_mode.html#aa92b2d82168eb0f8d41488014e895e04',1,'drivingMode']]],
+  ['max_5fapps_5foffset_1232',['max_apps_offset',['../structdriving__loop__args.html#a51c8b3e55f33482df7a938d0d3e7bbd9',1,'driving_loop_args']]],
+  ['max_5fapps_5fvalue_1233',['max_apps_value',['../structdriving__loop__args.html#a3972980cc1937753bc59dbc4978141b1',1,'driving_loop_args']]],
+  ['max_5fbps_5fvalue_1234',['max_BPS_value',['../structdriving__loop__args.html#ac91f79da4c6beb38683e87ab2e09b0a2',1,'driving_loop_args']]],
+  ['max_5finstances_1235',['max_instances',['../structuv__task__info.html#ae05a8285f7e66872f9c881acb659fa9d',1,'uv_task_info']]],
+  ['max_5fmotor_5fspeed_1236',['max_motor_speed',['../motor__controller_8c.html#a347eaa173dae5d48ae87a4bc5532adfc',1,'motor_controller.c']]],
+  ['mc_5fcan_5ftimeout_1237',['mc_CAN_timeout',['../structbms__settings__t.html#a2f45a266303385b292a81104e0134ac6',1,'bms_settings_t::mc_CAN_timeout()'],['../structmotor__controllor__settings.html#a16d6ebc9fb542b543c66bba5cb1572d7',1,'motor_controllor_settings::mc_CAN_timeout()']]],
+  ['mc_5fexpected_5ffw_5fversion_1238',['MC_Expected_FW_Version',['../motor__controller_8c.html#a8f25ebbc9bf59980fdc0458f271437ee',1,'motor_controller.c']]],
+  ['mc_5fexpected_5fserial_5fnumber_1239',['MC_Expected_Serial_Number',['../motor__controller_8c.html#a26195bc72f07eeb97338e761432e03d2',1,'motor_controller.c']]],
+  ['meta_5fid_1240',['meta_id',['../structuv__scd__response.html#a0812669214881a452cc54e8783a74c4f',1,'uv_scd_response']]],
+  ['meta_5ftask_5fhandle_1241',['meta_task_handle',['../structuv__init__task__args.html#a3b81430245e7f832dc1112e53b0ef7ad',1,'uv_init_task_args::meta_task_handle()'],['../structstate__change__daemon__args.html#aa19a15c725f1fdc8dcc05227584153bc',1,'state_change_daemon_args::meta_task_handle()']]],
+  ['min_5fapps_5foffset_1242',['min_apps_offset',['../structdriving__loop__args.html#a483c9a4d7fe91e4a57512d054b010a13',1,'driving_loop_args']]],
+  ['min_5fapps_5fvalue_1243',['min_apps_value',['../structdriving__loop__args.html#a93bcc08ec8e62f33cf11efde02d61178',1,'driving_loop_args']]],
+  ['min_5fbps_5fvalue_1244',['min_BPS_value',['../structdriving__loop__args.html#abdde53b1e1a9b649a8d780331362a966',1,'driving_loop_args']]],
+  ['motor_5fcontroller_5fsettings_1245',['motor_controller_settings',['../structuv__vehicle__settings.html#afe1add4c8e85f7fa1da768b50dee7b88',1,'uv_vehicle_settings']]],
+  ['msg_5fid_1246',['msg_id',['../structuv___c_a_n__msg.html#aae369fbabe3cc5b71a89bb641c24aace',1,'uv_CAN_msg']]],
+  ['mutex_1247',['mutex',['../unionaccess__control__info.html#af0d083b46d231baa8e040c8666cbbdb3',1,'access_control_info']]]
 ];

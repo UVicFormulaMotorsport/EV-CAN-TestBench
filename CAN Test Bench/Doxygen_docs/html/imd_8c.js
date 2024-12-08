@@ -18,6 +18,7 @@ var imd_8c =
     [ "IMD_Parse_Message", "imd_8c.html#a1f6181c5ab49d963007eb9a212672bbd", null ],
     [ "IMD_Request_Status", "imd_8c.html#aeb7c937639c5385f5d2b4e3a4e60250f", null ],
     [ "IMD_Startup", "imd_8c.html#a80b26177d8aa0c0e803fac210eb456ac", null ],
+    [ "initIMD", "imd_8c.html#a19b4fd879f065cfe6e1b7bb3400cd0c3", null ],
     [ "IMD_error_flags_requested", "imd_8c.html#a208e957d0a18b23cb59f4eedd1c855cc", null ],
     [ "IMD_Expected_Part_Name", "imd_8c.html#a4e45f48e8a434f56675ac3d5879de796", null ],
     [ "IMD_Expected_Serial_Number", "imd_8c.html#ae609b1c80bcf96677b5f57ef1c7b7497", null ],

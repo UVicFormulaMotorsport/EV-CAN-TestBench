@@ -123,8 +123,34 @@ Functions</h2></td></tr>
 <tr class="separator:aef2fd854287906cac1734f08a6edcf2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebeb35957c80be85dc938efe72c8e825"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdu_8c.html#aebeb35957c80be85dc938efe72c8e825">PDU_disable_coolant_pump</a> ()</td></tr>
 <tr class="separator:aebeb35957c80be85dc938efe72c8e825"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaa6671d51bcd0687c87ac635ff70d95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="pdu_8c.html#afaa6671d51bcd0687c87ac635ff70d95">initPDU</a> (void *args)</td></tr>
+<tr class="separator:afaa6671d51bcd0687c87ac635ff70d95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="afaa6671d51bcd0687c87ac635ff70d95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afaa6671d51bcd0687c87ac635ff70d95">&#9670;&nbsp;</a></span>initPDU()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void initPDU </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="pdu_8c_source.html#l00183">183</a> of file <a class="el" href="pdu_8c_source.html">pdu.c</a>.</p>
+
+<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00316">uv_init_task_args::init_info_queue</a>, <a class="el" href="uvfr__utils_8h_source.html#l00317">uv_init_task_args::meta_task_handle</a>, <a class="el" href="uvfr__utils_8h_source.html#l00170">PDU</a>, <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>, and <a class="el" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00037">uvInit()</a>.</p>
+
+</div>
+</div>
 <a id="ad7b67b3c1618a7c50a5d6d9f9e13a89f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad7b67b3c1618a7c50a5d6d9f9e13a89f">&#9670;&nbsp;</a></span>PDU_disable_brake_light()</h2>
 
@@ -142,7 +168,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="pdu_8c_source.html#l00048">48</a> of file <a class="el" href="pdu_8c_source.html">pdu.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pdu_8h_source.html#l00017">disable_brake_light_msg</a>, <a class="el" href="main_8c_source.html#l00343">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00034">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
+<p class="reference">References <a class="el" href="pdu_8h_source.html#l00017">disable_brake_light_msg</a>, <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
 
 </div>
 </div>
@@ -163,7 +189,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="pdu_8c_source.html#l00170">170</a> of file <a class="el" href="pdu_8c_source.html">pdu.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pdu_8h_source.html#l00030">disable_coolant_pump_msg</a>, <a class="el" href="main_8c_source.html#l00343">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00034">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
+<p class="reference">References <a class="el" href="pdu_8h_source.html#l00030">disable_coolant_pump_msg</a>, <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
 
 </div>
 </div>
@@ -184,7 +210,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="pdu_8c_source.html#l00136">136</a> of file <a class="el" href="pdu_8c_source.html">pdu.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pdu_8h_source.html#l00026">disable_left_cooling_fan_msg</a>, <a class="el" href="pdu_8h_source.html#l00028">disable_right_cooling_fan_msg</a>, <a class="el" href="main_8c_source.html#l00343">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00034">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
+<p class="reference">References <a class="el" href="pdu_8h_source.html#l00026">disable_left_cooling_fan_msg</a>, <a class="el" href="pdu_8h_source.html#l00028">disable_right_cooling_fan_msg</a>, <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
 
 </div>
 </div>
@@ -205,7 +231,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="pdu_8c_source.html#l00074">74</a> of file <a class="el" href="pdu_8c_source.html">pdu.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pdu_8h_source.html#l00019">disable_motor_controller_msg</a>, <a class="el" href="main_8c_source.html#l00343">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00034">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
+<p class="reference">References <a class="el" href="pdu_8h_source.html#l00019">disable_motor_controller_msg</a>, <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
 
 </div>
 </div>
@@ -226,7 +252,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="pdu_8c_source.html#l00100">100</a> of file <a class="el" href="pdu_8c_source.html">pdu.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pdu_8h_source.html#l00021">disable_shutdown_circuit_msg</a>, <a class="el" href="main_8c_source.html#l00343">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00034">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
+<p class="reference">References <a class="el" href="pdu_8h_source.html#l00021">disable_shutdown_circuit_msg</a>, <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
 
 </div>
 </div>
@@ -247,7 +273,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="pdu_8c_source.html#l00034">34</a> of file <a class="el" href="pdu_8c_source.html">pdu.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pdu_8h_source.html#l00016">enable_brake_light_msg</a>, <a class="el" href="main_8c_source.html#l00343">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00034">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
+<p class="reference">References <a class="el" href="pdu_8h_source.html#l00016">enable_brake_light_msg</a>, <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
 
 </div>
 </div>
@@ -268,7 +294,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="pdu_8c_source.html#l00158">158</a> of file <a class="el" href="pdu_8c_source.html">pdu.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pdu_8h_source.html#l00029">enable_coolant_pump_msg</a>, <a class="el" href="main_8c_source.html#l00343">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00034">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
+<p class="reference">References <a class="el" href="pdu_8h_source.html#l00029">enable_coolant_pump_msg</a>, <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
 
 </div>
 </div>
@@ -289,7 +315,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="pdu_8c_source.html#l00115">115</a> of file <a class="el" href="pdu_8c_source.html">pdu.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pdu_8h_source.html#l00025">enable_left_cooling_fan_msg</a>, <a class="el" href="pdu_8h_source.html#l00027">enable_right_cooling_fan_msg</a>, <a class="el" href="main_8c_source.html#l00343">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00034">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
+<p class="reference">References <a class="el" href="pdu_8h_source.html#l00025">enable_left_cooling_fan_msg</a>, <a class="el" href="pdu_8h_source.html#l00027">enable_right_cooling_fan_msg</a>, <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
 
 </div>
 </div>
@@ -310,7 +336,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="pdu_8c_source.html#l00062">62</a> of file <a class="el" href="pdu_8c_source.html">pdu.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pdu_8h_source.html#l00018">enable_motor_controller_msg</a>, <a class="el" href="main_8c_source.html#l00343">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00034">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
+<p class="reference">References <a class="el" href="pdu_8h_source.html#l00018">enable_motor_controller_msg</a>, <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
 
 </div>
 </div>
@@ -331,7 +357,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="pdu_8c_source.html#l00087">87</a> of file <a class="el" href="pdu_8c_source.html">pdu.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pdu_8h_source.html#l00020">enable_shutdown_circuit_msg</a>, <a class="el" href="main_8c_source.html#l00343">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00034">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
+<p class="reference">References <a class="el" href="pdu_8h_source.html#l00020">enable_shutdown_circuit_msg</a>, <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
 
 </div>
 </div>
@@ -352,7 +378,7 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="pdu_8c_source.html#l00011">11</a> of file <a class="el" href="pdu_8c_source.html">pdu.c</a>.</p>
 
-<p class="reference">References <a class="el" href="pdu_8h_source.html#l00015">disable_speaker_msg</a>, <a class="el" href="pdu_8h_source.html#l00014">enable_speaker_msg</a>, <a class="el" href="main_8c_source.html#l00343">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00034">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
+<p class="reference">References <a class="el" href="pdu_8h_source.html#l00015">disable_speaker_msg</a>, <a class="el" href="pdu_8h_source.html#l00014">enable_speaker_msg</a>, <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="constants_8h_source.html#l00018">PDU_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
 
 </div>
 </div>

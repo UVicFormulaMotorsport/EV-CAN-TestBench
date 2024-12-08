@@ -5,6 +5,8 @@
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structuv__scd__response}{uv\+\_\+scd\+\_\+response}}
+\item 
+struct \mbox{\hyperlink{structtask__management__info}{task\+\_\+management\+\_\+info}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
@@ -21,18 +23,20 @@ struct \mbox{\hyperlink{structuv__scd__response}{uv\+\_\+scd\+\_\+response}}
 \item 
 \#define \mbox{\hyperlink{uvfr__state__engine_8h_a092c530d4a0cd880a59598dc0fca95d4}{\+\_\+\+S\+C\+\_\+\+D\+A\+E\+M\+O\+N\+\_\+\+P\+E\+R\+I\+OD}}~10
 \item 
-\#define \mbox{\hyperlink{uvfr__state__engine_8h_a1c8372c34a1f81b8c691d19b290a79a4}{uv\+Panic}}(x,  y)~\mbox{\hyperlink{uvfr__state__engine_8c_ab2449f66698295ebfaff451c2f63607f}{\+\_\+\+\_\+uv\+Panic}}(x, y, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+)
+\#define \mbox{\hyperlink{uvfr__state__engine_8h_afa84e50f417bfe6026bd922b546e4daa}{S\+V\+C\+\_\+\+T\+A\+S\+K\+\_\+\+M\+A\+X\+\_\+\+C\+H\+E\+C\+K\+I\+N\+\_\+\+P\+E\+R\+I\+OD}}~500
 \end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef uint8\+\_\+t \mbox{\hyperlink{uvfr__state__engine_8h_a27e96c74597bf4e85f968da673622b31}{uv\+\_\+status}}
+typedef enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}}
 \item 
 typedef uint8\+\_\+t \mbox{\hyperlink{uvfr__state__engine_8h_aa6ffd72eb4909ddb38c37a1369e13f09}{uv\+\_\+task\+\_\+id}}
 \item 
-typedef uint8\+\_\+t \mbox{\hyperlink{uvfr__state__engine_8h_a81cd43c8eb07f488a7fbef0dc276e284}{uv\+\_\+task\+\_\+cmd}}
+typedef enum \mbox{\hyperlink{uvfr__state__engine_8h_af11e8677926913f2dd803fabbed3455c}{uv\+\_\+task\+\_\+cmd\+\_\+e}} \mbox{\hyperlink{uvfr__state__engine_8h_ae1b70a2c1baa7da5592e7324008636e4}{uv\+\_\+task\+\_\+cmd}}
 \item 
 typedef struct \mbox{\hyperlink{structuv__scd__response}{uv\+\_\+scd\+\_\+response}} \mbox{\hyperlink{uvfr__state__engine_8h_a856f7f6f3b6b92f655aafc552606ffea}{uv\+\_\+scd\+\_\+response}}
+\item 
+typedef struct \mbox{\hyperlink{structtask__management__info}{task\+\_\+management\+\_\+info}} \mbox{\hyperlink{uvfr__state__engine_8h_ae41267a13309a303a826aa55c4873a31}{task\+\_\+management\+\_\+info}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
@@ -59,27 +63,27 @@ struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$ \m
 \begin{DoxyCompactList}\small\item\em This function gets called when you want to create a task, and register it with the task register. Theres some gnarlyness here, but not unacceptable levels. Pray this thing doesn\textquotesingle{}t hang itself. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$ \mbox{\hyperlink{uvfr__state__engine_8h_ac77de2c18076b8e04742d2ca927dbd55}{uv\+Get\+Task\+By\+Id}} (uint8\+\_\+t id)
 \item 
-\mbox{\hyperlink{uvfr__state__engine_8h_a27e96c74597bf4e85f968da673622b31}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__state__engine_8h_aeb45f9e769808c80cf3a76d28ea7424b}{\+\_\+uv\+Validate\+Specific\+Task}} (uint8\+\_\+t id)
+\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__state__engine_8h_aeb45f9e769808c80cf3a76d28ea7424b}{\+\_\+uv\+Validate\+Specific\+Task}} (uint8\+\_\+t id)
 \item 
-\mbox{\hyperlink{uvfr__state__engine_8h_a27e96c74597bf4e85f968da673622b31}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__state__engine_8h_a8c1618caac0d7f29836107f1a44833e8}{uv\+Validate\+Managed\+Tasks}} ()
+\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__state__engine_8h_a8c1618caac0d7f29836107f1a44833e8}{uv\+Validate\+Managed\+Tasks}} ()
 \begin{DoxyCompactList}\small\item\em ensure that all the tasks people have created actually make sense, and are valid \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__state__engine_8h_a670c601b0f61040ae49ef375daf543a8}{uv\+Start\+Task}} (uint32\+\_\+t $\ast$tracker, struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
+\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__state__engine_8h_a94752124bb13b855d4bfb7744d58a986}{uv\+Start\+Task}} (uint32\+\_\+t $\ast$tracker, struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
 \begin{DoxyCompactList}\small\item\em \+: This is a function that starts tasks which are already registered in the system \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__state__engine_8h_a61e8135ace497b0e7e89b9515942d390}{uv\+Register\+Task}} ()
+\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__state__engine_8h_a0547a08e521248754efe91c5de5ec182}{uv\+Register\+Task}} ()
 \item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__state__engine_8h_ab907ac134ab31a8bcc534b1701304964}{uv\+Init\+State\+Engine}} ()
+\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__state__engine_8h_a5c608f3832c45eac6e2da198d4ef1ba0}{uv\+Init\+State\+Engine}} ()
 \begin{DoxyCompactList}\small\item\em Function that prepares the state engine to do its thing. \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__state__engine_8h_a415f401ea7985271f803f935d925be34}{uv\+Start\+State\+Machine}} ()
+\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__state__engine_8h_a2ad1d74b5783a51355c047be6642fab8}{uv\+Start\+State\+Machine}} ()
 \item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__state__engine_8h_a4c37d133e033a1de858150253a62a10d}{uv\+Delete\+Task}} (uint32\+\_\+t $\ast$tracker, struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
+\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__state__engine_8h_a12e643ea3c804695a0b38ba07f890d9f}{uv\+Delete\+Task}} (uint32\+\_\+t $\ast$tracker, struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
 \begin{DoxyCompactList}\small\item\em deletes a managed task via the system \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__state__engine_8h_ae553a8ada4f75a30c87b7e8e1d6b928e}{uv\+Suspend\+Task}} (uint32\+\_\+t $\ast$tracker, struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
+\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__state__engine_8h_a04e455e33d779d04a25a24f154079477}{uv\+Suspend\+Task}} (uint32\+\_\+t $\ast$tracker, struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
 \begin{DoxyCompactList}\small\item\em function to suspend one of the managed tasks \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__state__engine_8h_a96aa2907ccf1903b18613447c3e404a3}{uv\+De\+Init\+State\+Engine}} ()
+\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__state__engine_8h_a5cb739823b10b90a139315356aa6b22f}{uv\+De\+Init\+State\+Engine}} ()
 \begin{DoxyCompactList}\small\item\em Stops and frees all resources used by uvfr\+\_\+state\+\_\+engine. \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__state__engine_8h_accc8a3290b8d5e61a3cc03d93f6bc394}{update\+Running\+Tasks}} ()
+\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__state__engine_8h_a7493b2515639f60db83cd6ed77b50432}{update\+Running\+Tasks}} ()
 \item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__state__engine_8h_a34bee422adb65dbf5f923281cf899601}{change\+Vehicle\+State}} (uint16\+\_\+t state)
+\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__state__engine_8h_aa3ad3e8df75177c00265881c16563212}{change\+Vehicle\+State}} (uint16\+\_\+t state)
 \begin{DoxyCompactList}\small\item\em Function for changing the state of the vehicle, as well as the list of active + inactive tasks. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{uvfr__state__engine_8h_ab2449f66698295ebfaff451c2f63607f}{\+\_\+\+\_\+uv\+Panic}} (char $\ast$msg, uint8\+\_\+t msg\+\_\+len, const char $\ast$file, const int line, const char $\ast$func)
 \begin{DoxyCompactList}\small\item\em Something bad has occurred here now we in trouble. \end{DoxyCompactList}\item 
@@ -88,7 +92,11 @@ void \mbox{\hyperlink{uvfr__state__engine_8h_a40337f99ed3553119614d722da7e765d}{
 void \mbox{\hyperlink{uvfr__state__engine_8h_a1696080304a0a849ec9d4d92701f910f}{suspend\+Self}} (struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
 \begin{DoxyCompactList}\small\item\em Called by a task that needs to suspend itself, once the task has determined it is safe to do so. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{uvfr__state__engine_8h_a45e3dba55fdad745f7394feb3764cd0a}{\+\_\+state\+Change\+Daemon}} (void $\ast$args)
-\begin{DoxyCompactList}\small\item\em This collects all the data changing from different tasks, and makes sure that everything works properly. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em This collects all the data changing from different tasks, and makes sure that everything works properly. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{uvfr__state__engine_8h_aff684308203d45e9e16ad3d115c54279}{uv\+S\+V\+C\+Task\+Manager}} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em oversees all of the service tasks, and makes sure that theyre alright \end{DoxyCompactList}\item 
+\mbox{\hyperlink{uvfr__state__engine_8h_aa6ffd72eb4909ddb38c37a1369e13f09}{uv\+\_\+task\+\_\+id}} \mbox{\hyperlink{uvfr__state__engine_8h_a502ae7695a8539242b8b18c2eb61c1c7}{get\+S\+V\+C\+Task\+ID}} (char $\ast$tsk\+\_\+name)
+\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -157,44 +165,46 @@ Definition at line 21 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 Definition at line 24 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
-\mbox{\Hypertarget{uvfr__state__engine_8h_a1c8372c34a1f81b8c691d19b290a79a4}\label{uvfr__state__engine_8h_a1c8372c34a1f81b8c691d19b290a79a4}} 
-\index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uvPanic@{uvPanic}}
-\index{uvPanic@{uvPanic}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
-\doxysubsubsection{\texorpdfstring{uvPanic}{uvPanic}}
-{\footnotesize\ttfamily \#define uv\+Panic(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{y }\end{DoxyParamCaption})~\mbox{\hyperlink{uvfr__state__engine_8c_ab2449f66698295ebfaff451c2f63607f}{\+\_\+\+\_\+uv\+Panic}}(x, y, \+\_\+\+\_\+\+F\+I\+L\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+L\+I\+N\+E\+\_\+\+\_\+,\+\_\+\+\_\+\+F\+U\+N\+C\+T\+I\+O\+N\+\_\+\+\_\+)}
+\mbox{\Hypertarget{uvfr__state__engine_8h_afa84e50f417bfe6026bd922b546e4daa}\label{uvfr__state__engine_8h_afa84e50f417bfe6026bd922b546e4daa}} 
+\index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!SVC\_TASK\_MAX\_CHECKIN\_PERIOD@{SVC\_TASK\_MAX\_CHECKIN\_PERIOD}}
+\index{SVC\_TASK\_MAX\_CHECKIN\_PERIOD@{SVC\_TASK\_MAX\_CHECKIN\_PERIOD}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
+\doxysubsubsection{\texorpdfstring{SVC\_TASK\_MAX\_CHECKIN\_PERIOD}{SVC\_TASK\_MAX\_CHECKIN\_PERIOD}}
+{\footnotesize\ttfamily \#define S\+V\+C\+\_\+\+T\+A\+S\+K\+\_\+\+M\+A\+X\+\_\+\+C\+H\+E\+C\+K\+I\+N\+\_\+\+P\+E\+R\+I\+OD~500}
 
 
 
-Definition at line 82 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 29 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
 \doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{uvfr__state__engine_8h_ae41267a13309a303a826aa55c4873a31}\label{uvfr__state__engine_8h_ae41267a13309a303a826aa55c4873a31}} 
+\index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!task\_management\_info@{task\_management\_info}}
+\index{task\_management\_info@{task\_management\_info}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
+\doxysubsubsection{\texorpdfstring{task\_management\_info}{task\_management\_info}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtask__management__info}{task\+\_\+management\+\_\+info}} \mbox{\hyperlink{structtask__management__info}{task\+\_\+management\+\_\+info}}}
+
 \mbox{\Hypertarget{uvfr__state__engine_8h_a856f7f6f3b6b92f655aafc552606ffea}\label{uvfr__state__engine_8h_a856f7f6f3b6b92f655aafc552606ffea}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uv\_scd\_response@{uv\_scd\_response}}
 \index{uv\_scd\_response@{uv\_scd\_response}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{uv\_scd\_response}{uv\_scd\_response}}
 {\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuv__scd__response}{uv\+\_\+scd\+\_\+response}} \mbox{\hyperlink{structuv__scd__response}{uv\+\_\+scd\+\_\+response}}}
 
-\mbox{\Hypertarget{uvfr__state__engine_8h_a27e96c74597bf4e85f968da673622b31}\label{uvfr__state__engine_8h_a27e96c74597bf4e85f968da673622b31}} 
+\mbox{\Hypertarget{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}\label{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uv\_status@{uv\_status}}
 \index{uv\_status@{uv\_status}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{uv\_status}{uv\_status}}
-{\footnotesize\ttfamily typedef uint8\+\_\+t \mbox{\hyperlink{uvfr__state__engine_8h_a27e96c74597bf4e85f968da673622b31}{uv\+\_\+status}}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}}}
 
 
 
 Definition at line 16 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
-\mbox{\Hypertarget{uvfr__state__engine_8h_a81cd43c8eb07f488a7fbef0dc276e284}\label{uvfr__state__engine_8h_a81cd43c8eb07f488a7fbef0dc276e284}} 
+\mbox{\Hypertarget{uvfr__state__engine_8h_ae1b70a2c1baa7da5592e7324008636e4}\label{uvfr__state__engine_8h_ae1b70a2c1baa7da5592e7324008636e4}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uv\_task\_cmd@{uv\_task\_cmd}}
 \index{uv\_task\_cmd@{uv\_task\_cmd}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{uv\_task\_cmd}{uv\_task\_cmd}}
-{\footnotesize\ttfamily typedef uint8\+\_\+t \mbox{\hyperlink{uvfr__state__engine_8h_a81cd43c8eb07f488a7fbef0dc276e284}{uv\+\_\+task\+\_\+cmd}}}
-
-
-
-Definition at line 29 of file uvfr\+\_\+state\+\_\+engine.\+h.
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{uvfr__state__engine_8h_af11e8677926913f2dd803fabbed3455c}{uv\+\_\+task\+\_\+cmd\+\_\+e}} \mbox{\hyperlink{uvfr__state__engine_8h_ae1b70a2c1baa7da5592e7324008636e4}{uv\+\_\+task\+\_\+cmd}}}
 
 \mbox{\Hypertarget{uvfr__state__engine_8h_aa6ffd72eb4909ddb38c37a1369e13f09}\label{uvfr__state__engine_8h_aa6ffd72eb4909ddb38c37a1369e13f09}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uv\_task\_id@{uv\_task\_id}}
@@ -239,7 +249,7 @@ U\+V\+\_\+\+U\+N\+S\+A\+F\+E\+\_\+\+S\+T\+A\+TE&\\
 \end{DoxyEnumFields}
 
 
-Definition at line 38 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 40 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{uvfr__state__engine_8h_af11e8677926913f2dd803fabbed3455c}\label{uvfr__state__engine_8h_af11e8677926913f2dd803fabbed3455c}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uv\_task\_cmd\_e@{uv\_task\_cmd\_e}}
@@ -267,7 +277,7 @@ U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+R\+T\+\_\+\+C\+MD&\\
 \end{DoxyEnumFields}
 
 
-Definition at line 31 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 33 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
@@ -284,7 +294,7 @@ Something bad has occurred here now we in trouble.
 
 
 
-Definition at line 432 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 482 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 \mbox{\Hypertarget{uvfr__state__engine_8h_a45e3dba55fdad745f7394feb3764cd0a}\label{uvfr__state__engine_8h_a45e3dba55fdad745f7394feb3764cd0a}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!\_stateChangeDaemon@{\_stateChangeDaemon}}
@@ -314,11 +324,21 @@ Acquires pointer to task definition struct, then sets the queue in the struct to
 \item bring the task state into the correct state 
 \begin{DoxyCode}{0}
 \DoxyCodeLine{ */}
-\DoxyCodeLine{tmp\_task = \&(\mbox{\hyperlink{uvfr__state__engine_8c_a6b49ab568bed9d9189782eebb90545b5}{\_task\_register}}[i]);}
-\DoxyCodeLine{\textcolor{comment}{//tmp\_task-\/>manager = incoming\_scd\_msg; //No longer using this var, instead using the state\_change\_queue static global var}}
-\DoxyCodeLine{task\_tracker |= 0x01<<i;}
-\DoxyCodeLine{\textcolor{comment}{//redundant\_tracker |= 0x01<<i;}}
-\DoxyCodeLine{\textcolor{comment}{/**}}
+\DoxyCodeLine{        tmp\_task = \&(\mbox{\hyperlink{uvfr__state__engine_8c_a6b49ab568bed9d9189782eebb90545b5}{\_task\_register}}[i]);}
+\DoxyCodeLine{}
+\DoxyCodeLine{        task\_tracker |= 0x01<<i;}
+\DoxyCodeLine{}
+\DoxyCodeLine{        \textcolor{comment}{//tmp\_task-\/>manager = incoming\_scd\_msg; //No longer using this var, instead using the state\_change\_queue static global var}}
+\DoxyCodeLine{\textcolor{comment}{//      if(((tmp\_task-\/>task\_flags)\&(UV\_TASK\_MANAGER\_MASK | UV\_TASK\_SCD\_IGNORE)) == UV\_TASK\_VEHICLE\_APPLICATION)\{}}
+\DoxyCodeLine{\textcolor{comment}{//          task\_tracker |= 0x01<<i;}}
+\DoxyCodeLine{\textcolor{comment}{//      \}else\{}}
+\DoxyCodeLine{\textcolor{comment}{//          //If we get here that means that either:}}
+\DoxyCodeLine{\textcolor{comment}{//          //This task has the SCD ignore flag active}}
+\DoxyCodeLine{\textcolor{comment}{//          //This is a SVC task}}
+\DoxyCodeLine{\textcolor{comment}{//          continue; //This is not the task you want}}
+\DoxyCodeLine{\textcolor{comment}{//      \}}}
+\DoxyCodeLine{        \textcolor{comment}{//redundant\_tracker |= 0x01<<i;}}
+\DoxyCodeLine{        \textcolor{comment}{/**}}
 \end{DoxyCode}
 
 \end{DoxyItemize}
@@ -348,7 +368,7 @@ Wait for all the tasks that had changes made to respond.
 \DoxyCodeLine{\textcolor{comment}{//                  \}}}
 \DoxyCodeLine{                    \textcolor{comment}{//has\_task\_succeeded |= (0x01<<response-\/>meta\_id);}}
 \DoxyCodeLine{                    task\_tracker \&= ~(0x01<<response-\/>\mbox{\hyperlink{structuv__scd__response_a0812669214881a452cc54e8783a74c4f}{meta\_id}});}
-\DoxyCodeLine{                    \textcolor{keywordflow}{if} (\mbox{\hyperlink{uvfr__state__engine_8c_a6b49ab568bed9d9189782eebb90545b5}{\_task\_register}}[response-\/>\mbox{\hyperlink{structuv__scd__response_a0812669214881a452cc54e8783a74c4f}{meta\_id}}].\mbox{\hyperlink{structuv__task__info_adb9ce4d06840a0757591b426fc791db7}{task\_state}} == \mbox{\hyperlink{uvfr__utils_8h_ab9f26b43fdf8b666d2bf4fa7c154efcaaf6465f57e0b6515721c5cbebd769e691}{UV\_TASK\_DELETED}})\{}
+\DoxyCodeLine{                    \textcolor{keywordflow}{if} (\mbox{\hyperlink{uvfr__state__engine_8c_a6b49ab568bed9d9189782eebb90545b5}{\_task\_register}}[response-\/>\mbox{\hyperlink{structuv__scd__response_a0812669214881a452cc54e8783a74c4f}{meta\_id}}].\mbox{\hyperlink{structuv__task__info_a43e5b3136b38dde4272aa510c5349ba3}{task\_state}} == \mbox{\hyperlink{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88af6465f57e0b6515721c5cbebd769e691}{UV\_TASK\_DELETED}})\{}
 \DoxyCodeLine{                        \mbox{\hyperlink{uvfr__state__engine_8c_a6b49ab568bed9d9189782eebb90545b5}{\_task\_register}}[response-\/>\mbox{\hyperlink{structuv__scd__response_a0812669214881a452cc54e8783a74c4f}{meta\_id}}].\mbox{\hyperlink{structuv__task__info_a5347f41c4b15b2d6b039c339613fde43}{task\_handle}} = NULL;}
 \DoxyCodeLine{                    \}}
 \DoxyCodeLine{}
@@ -376,11 +396,11 @@ If this is 0, then that means that all the tasks have successfully had their sta
 
 This means we can just exit and we\textquotesingle{}re chillin.
 
-Definition at line 607 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 657 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-References \+\_\+\+L\+O\+N\+G\+E\+S\+T\+\_\+\+S\+C\+\_\+\+T\+I\+ME, \+\_\+next\+\_\+task\+\_\+id, \+\_\+\+S\+C\+\_\+\+D\+A\+E\+M\+O\+N\+\_\+\+P\+E\+R\+I\+OD, \+\_\+task\+\_\+register, uv\+\_\+task\+\_\+info\+::active\+\_\+states, uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, uv\+\_\+scd\+\_\+response\+::meta\+\_\+id, proccess\+S\+C\+D\+Msg(), state\+\_\+change\+\_\+queue, uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+handle, uv\+\_\+task\+\_\+info\+::task\+\_\+state, U\+V\+\_\+\+OK, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+D\+E\+L\+E\+T\+ED, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+N\+O\+T\+\_\+\+S\+T\+A\+R\+T\+ED, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+R\+U\+N\+N\+I\+NG, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+U\+S\+P\+E\+N\+D\+ED, uv\+Delete\+Task(), uv\+Free(), uv\+Panic(), uv\+Start\+Task(), uv\+Suspend\+Task(), and vehicle\+\_\+state.
+References \+\_\+\+L\+O\+N\+G\+E\+S\+T\+\_\+\+S\+C\+\_\+\+T\+I\+ME, \+\_\+next\+\_\+task\+\_\+id, \+\_\+\+S\+C\+\_\+\+D\+A\+E\+M\+O\+N\+\_\+\+P\+E\+R\+I\+OD, \+\_\+task\+\_\+register, uv\+\_\+task\+\_\+info\+::active\+\_\+states, uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, uv\+\_\+scd\+\_\+response\+::meta\+\_\+id, proccess\+S\+C\+D\+Msg(), S\+C\+D\+\_\+active, state\+\_\+change\+\_\+queue, uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+handle, uv\+\_\+task\+\_\+info\+::task\+\_\+state, U\+V\+\_\+\+OK, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+D\+E\+L\+E\+T\+ED, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+N\+O\+T\+\_\+\+S\+T\+A\+R\+T\+ED, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+R\+U\+N\+N\+I\+NG, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+U\+S\+P\+E\+N\+D\+ED, uv\+Delete\+Task(), uv\+Free(), uv\+Panic(), uv\+Start\+Task(), uv\+Suspend\+Task(), and vehicle\+\_\+state.
 
 
 
@@ -390,11 +410,11 @@ Referenced by change\+Vehicle\+State().
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!\_uvValidateSpecificTask@{\_uvValidateSpecificTask}}
 \index{\_uvValidateSpecificTask@{\_uvValidateSpecificTask}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{\_uvValidateSpecificTask()}{\_uvValidateSpecificTask()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_a27e96c74597bf4e85f968da673622b31}{uv\+\_\+status}} \+\_\+uv\+Validate\+Specific\+Task (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \+\_\+uv\+Validate\+Specific\+Task (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})}
 
 
 
-Definition at line 77 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 83 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -404,11 +424,11 @@ References \+\_\+task\+\_\+register, uv\+\_\+task\+\_\+info\+::active\+\_\+state
 
 Referenced by uv\+Validate\+Managed\+Tasks().
 
-\mbox{\Hypertarget{uvfr__state__engine_8h_a34bee422adb65dbf5f923281cf899601}\label{uvfr__state__engine_8h_a34bee422adb65dbf5f923281cf899601}} 
+\mbox{\Hypertarget{uvfr__state__engine_8h_aa3ad3e8df75177c00265881c16563212}\label{uvfr__state__engine_8h_aa3ad3e8df75177c00265881c16563212}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!changeVehicleState@{changeVehicleState}}
 \index{changeVehicleState@{changeVehicleState}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{changeVehicleState()}{changeVehicleState()}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} change\+Vehicle\+State (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{state }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} change\+Vehicle\+State (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{state }\end{DoxyParamCaption})}
 
 
 
@@ -420,7 +440,7 @@ Transition from {\ttfamily U\+V\+\_\+\+I\+N\+IT} to {\ttfamily U\+V\+\_\+\+R\+E\
 
 Transition from {\ttfamily U\+V\+\_\+\+I\+N\+IT} to {\ttfamily U\+V\+\_\+\+E\+R\+R\+OR} states
 
-Definition at line 376 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 426 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -429,6 +449,16 @@ References \+\_\+state\+Change\+Daemon(), state\+\_\+change\+\_\+daemon\+\_\+arg
 
 
 Referenced by daq\+Master\+Task(), and uv\+Init().
+
+\mbox{\Hypertarget{uvfr__state__engine_8h_a502ae7695a8539242b8b18c2eb61c1c7}\label{uvfr__state__engine_8h_a502ae7695a8539242b8b18c2eb61c1c7}} 
+\index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!getSVCTaskID@{getSVCTaskID}}
+\index{getSVCTaskID@{getSVCTaskID}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
+\doxysubsubsection{\texorpdfstring{getSVCTaskID()}{getSVCTaskID()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aa6ffd72eb4909ddb38c37a1369e13f09}{uv\+\_\+task\+\_\+id}} get\+S\+V\+C\+Task\+ID (\begin{DoxyParamCaption}\item[{char $\ast$}]{tsk\+\_\+name }\end{DoxyParamCaption})}
+
+Sometimes you just gottta deal with it lol 
+
+Definition at line 985 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 \mbox{\Hypertarget{uvfr__state__engine_8h_a40337f99ed3553119614d722da7e765d}\label{uvfr__state__engine_8h_a40337f99ed3553119614d722da7e765d}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!killSelf@{killSelf}}
@@ -442,7 +472,7 @@ This function is called by a task to nuke itself. Is a wrapper function that is 
 
 First lets load up the queue and the values in it. These come from the task we are doing.
 
-Definition at line 446 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 496 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -464,7 +494,7 @@ Called by a task that needs to suspend itself, once the task has determined it i
 
 
 
-Definition at line 496 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 546 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -474,11 +504,11 @@ References uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, uv\+\_\+scd\+\_\+response\+:
 
 Referenced by daq\+Master\+Task(), odometer\+Task(), Start\+Driving\+Loop(), and temp\+Monitor\+Task().
 
-\mbox{\Hypertarget{uvfr__state__engine_8h_accc8a3290b8d5e61a3cc03d93f6bc394}\label{uvfr__state__engine_8h_accc8a3290b8d5e61a3cc03d93f6bc394}} 
+\mbox{\Hypertarget{uvfr__state__engine_8h_a7493b2515639f60db83cd6ed77b50432}\label{uvfr__state__engine_8h_a7493b2515639f60db83cd6ed77b50432}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!updateRunningTasks@{updateRunningTasks}}
 \index{updateRunningTasks@{updateRunningTasks}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{updateRunningTasks()}{updateRunningTasks()}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} update\+Running\+Tasks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} update\+Running\+Tasks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{uvfr__state__engine_8h_a5fb34d3f66377a9939da1a3a345bb48c}\label{uvfr__state__engine_8h_a5fb34d3f66377a9939da1a3a345bb48c}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uvCreateTask@{uvCreateTask}}
@@ -492,9 +522,9 @@ This function gets called when you want to create a task, and register it with t
 
 Do not exceed the number of tasks available
 
-Acquire the pointer to the spot in the array, we are doing this since we need to return the pointer anyways
+Acquire the pointer to the spot in the array, we are doing this since we need to return the pointer anyways, and it cleans up the syntax a little.
 
-Definition at line 34 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 40 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -504,11 +534,11 @@ References \+\_\+next\+\_\+task\+\_\+id, \+\_\+task\+\_\+register, \+\_\+\+U\+V\
 
 Referenced by init\+Daq\+Task(), init\+Driving\+Loop(), init\+Odometer(), and init\+Temp\+Monitor().
 
-\mbox{\Hypertarget{uvfr__state__engine_8h_a96aa2907ccf1903b18613447c3e404a3}\label{uvfr__state__engine_8h_a96aa2907ccf1903b18613447c3e404a3}} 
+\mbox{\Hypertarget{uvfr__state__engine_8h_a5cb739823b10b90a139315356aa6b22f}\label{uvfr__state__engine_8h_a5cb739823b10b90a139315356aa6b22f}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uvDeInitStateEngine@{uvDeInitStateEngine}}
 \index{uvDeInitStateEngine@{uvDeInitStateEngine}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{uvDeInitStateEngine()}{uvDeInitStateEngine()}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} uv\+De\+Init\+State\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+De\+Init\+State\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -516,25 +546,27 @@ Stops and frees all resources used by uvfr\+\_\+state\+\_\+engine.
 
 If we need to initialize the state engine, gotta de-\/initialize as well 
 
-Definition at line 217 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 223 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
 References kill\+Em\+All().
 
-\mbox{\Hypertarget{uvfr__state__engine_8h_a4c37d133e033a1de858150253a62a10d}\label{uvfr__state__engine_8h_a4c37d133e033a1de858150253a62a10d}} 
+\mbox{\Hypertarget{uvfr__state__engine_8h_a12e643ea3c804695a0b38ba07f890d9f}\label{uvfr__state__engine_8h_a12e643ea3c804695a0b38ba07f890d9f}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uvDeleteTask@{uvDeleteTask}}
 \index{uvDeleteTask@{uvDeleteTask}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{uvDeleteTask()}{uvDeleteTask()}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} uv\+Delete\+Task (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{tracker,  }\item[{\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$}]{t }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+Delete\+Task (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{tracker,  }\item[{\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$}]{t }\end{DoxyParamCaption})}
 
 
 
 deletes a managed task via the system 
 
-This function is the lowtier god of the program. It pulls up and is like \char`\"{}\+Y\+O\+U S\+H\+O\+U\+L\+D K\+I\+L\+L Y\+O\+U\+R\+S\+E\+L\+F, N\+O\+W!!\char`\"{} It sends a message to the task which tells it to kill itself. if we have reached this point in the function, then the task is active and ready to get nuked
+This function is the lowtier god of the program. It pulls up and is like \char`\"{}\+Y\+O\+U S\+H\+O\+U\+L\+D K\+I\+L\+L Y\+O\+U\+R\+S\+E\+L\+F, N\+O\+W!!\char`\"{} It sends a message to the task which tells it to kill itself. This checks with the R\+T\+OS kernel to see that the task as stated by the scheduler matches the state known by uvfr\+\_\+utils
 
-Definition at line 262 of file uvfr\+\_\+state\+\_\+engine.\+c.
+if we have reached this point in the function, then the task is active and ready to get nuked
+
+Definition at line 309 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -550,11 +582,11 @@ Referenced by \+\_\+state\+Change\+Daemon(), and kill\+Em\+All().
 \doxysubsubsection{\texorpdfstring{uvGetTaskById()}{uvGetTaskById()}}
 {\footnotesize\ttfamily struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}}$\ast$ uv\+Get\+Task\+By\+Id (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{uvfr__state__engine_8h_ab907ac134ab31a8bcc534b1701304964}\label{uvfr__state__engine_8h_ab907ac134ab31a8bcc534b1701304964}} 
+\mbox{\Hypertarget{uvfr__state__engine_8h_a5c608f3832c45eac6e2da198d4ef1ba0}\label{uvfr__state__engine_8h_a5c608f3832c45eac6e2da198d4ef1ba0}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uvInitStateEngine@{uvInitStateEngine}}
 \index{uvInitStateEngine@{uvInitStateEngine}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{uvInitStateEngine()}{uvInitStateEngine()}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} uv\+Init\+State\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+Init\+State\+Engine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -562,7 +594,7 @@ Function that prepares the state engine to do its thing.
 
 Who even fucking knows at this point 
 
-Definition at line 196 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 202 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -572,21 +604,21 @@ References \+\_\+\+\_\+uv\+Init\+Panic(), \+\_\+task\+\_\+register, init\+Daq\+T
 
 Referenced by uv\+Init().
 
-\mbox{\Hypertarget{uvfr__state__engine_8h_a61e8135ace497b0e7e89b9515942d390}\label{uvfr__state__engine_8h_a61e8135ace497b0e7e89b9515942d390}} 
+\mbox{\Hypertarget{uvfr__state__engine_8h_a0547a08e521248754efe91c5de5ec182}\label{uvfr__state__engine_8h_a0547a08e521248754efe91c5de5ec182}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uvRegisterTask@{uvRegisterTask}}
 \index{uvRegisterTask@{uvRegisterTask}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{uvRegisterTask()}{uvRegisterTask()}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} uv\+Register\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+Register\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{uvfr__state__engine_8h_a415f401ea7985271f803f935d925be34}\label{uvfr__state__engine_8h_a415f401ea7985271f803f935d925be34}} 
+\mbox{\Hypertarget{uvfr__state__engine_8h_a2ad1d74b5783a51355c047be6642fab8}\label{uvfr__state__engine_8h_a2ad1d74b5783a51355c047be6642fab8}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uvStartStateMachine@{uvStartStateMachine}}
 \index{uvStartStateMachine@{uvStartStateMachine}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{uvStartStateMachine()}{uvStartStateMachine()}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} uv\+Start\+State\+Machine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+Start\+State\+Machine (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 Actually starts up the state engine to do state engine things 
 
-Definition at line 227 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 233 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -596,11 +628,11 @@ References previous\+\_\+state, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+I\+N\+IT, U
 
 Referenced by uv\+Init().
 
-\mbox{\Hypertarget{uvfr__state__engine_8h_a670c601b0f61040ae49ef375daf543a8}\label{uvfr__state__engine_8h_a670c601b0f61040ae49ef375daf543a8}} 
+\mbox{\Hypertarget{uvfr__state__engine_8h_a94752124bb13b855d4bfb7744d58a986}\label{uvfr__state__engine_8h_a94752124bb13b855d4bfb7744d58a986}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uvStartTask@{uvStartTask}}
 \index{uvStartTask@{uvStartTask}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{uvStartTask()}{uvStartTask()}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} uv\+Start\+Task (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{tracker,  }\item[{\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$}]{t }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+Start\+Task (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{tracker,  }\item[{\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$}]{t }\end{DoxyParamCaption})}
 
 
 
@@ -616,7 +648,7 @@ If none of the previous if statements caught the task handle, then that means th
 
 The function {\ttfamily os\+Thread\+Create} returns null if it fails to create a thread. If that happens, we really do have a problem, so we will be returning an error value
 
-Definition at line 127 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 133 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -624,13 +656,13 @@ References \+\_\+\+B\+V\+\_\+32, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, uv\+
 
 
 
-Referenced by \+\_\+state\+Change\+Daemon().
+Referenced by \+\_\+state\+Change\+Daemon(), and uv\+S\+V\+C\+Task\+Manager().
 
-\mbox{\Hypertarget{uvfr__state__engine_8h_ae553a8ada4f75a30c87b7e8e1d6b928e}\label{uvfr__state__engine_8h_ae553a8ada4f75a30c87b7e8e1d6b928e}} 
+\mbox{\Hypertarget{uvfr__state__engine_8h_a04e455e33d779d04a25a24f154079477}\label{uvfr__state__engine_8h_a04e455e33d779d04a25a24f154079477}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uvSuspendTask@{uvSuspendTask}}
 \index{uvSuspendTask@{uvSuspendTask}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{uvSuspendTask()}{uvSuspendTask()}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} uv\+Suspend\+Task (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{tracker,  }\item[{\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$}]{t }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+Suspend\+Task (\begin{DoxyParamCaption}\item[{uint32\+\_\+t $\ast$}]{tracker,  }\item[{\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$}]{t }\end{DoxyParamCaption})}
 
 
 
@@ -638,7 +670,7 @@ function to suspend one of the managed tasks
 
 
 
-Definition at line 318 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 368 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -648,11 +680,39 @@ References uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, uv\+\_\+task\+\_\+info\+::ta
 
 Referenced by \+\_\+state\+Change\+Daemon().
 
+\mbox{\Hypertarget{uvfr__state__engine_8h_aff684308203d45e9e16ad3d115c54279}\label{uvfr__state__engine_8h_aff684308203d45e9e16ad3d115c54279}} 
+\index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uvSVCTaskManager@{uvSVCTaskManager}}
+\index{uvSVCTaskManager@{uvSVCTaskManager}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
+\doxysubsubsection{\texorpdfstring{uvSVCTaskManager()}{uvSVCTaskManager()}}
+{\footnotesize\ttfamily void uv\+S\+V\+C\+Task\+Manager (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+oversees all of the service tasks, and makes sure that theyre alright 
+
+Start all of the service tasks. This involves allocating neccessary memory, setting the appropriate task parameters, and saying \char`\"{}fuck it we ball\char`\"{} and adding the tasks to the central task tracking data structure.
+
+Now we deinitialize the svc\+Task\+Manager. This is done by doing the following\+:
+\begin{DoxyItemize}
+\item actually shut down the svc tasks
+\item double check that the tasks have acually shut down
+\item if any svc tasks are resisting nature\textquotesingle{}s call, they will be shut down forcibly
+\item deallocate data structures specific to {\ttfamily uv\+S\+V\+C\+Task\+Manager} 
+\end{DoxyItemize}
+
+Lovely times for all
+
+Definition at line 929 of file uvfr\+\_\+state\+\_\+engine.\+c.
+
+
+
+References \+\_\+\+\_\+uv\+Init\+Panic(), \+\_\+svc\+\_\+task\+\_\+register, uv\+\_\+task\+\_\+info\+::active\+\_\+states, C\+A\+N\+\_\+\+T\+X\+\_\+\+D\+A\+E\+M\+O\+N\+\_\+\+N\+A\+ME, C\+A\+Nbus\+Tx\+Svc\+Daemon(), M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+S\+V\+C\+\_\+\+T\+A\+S\+KS, uv\+\_\+task\+\_\+info\+::task\+\_\+function, task\+\_\+management\+\_\+info\+::task\+\_\+handle, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+Create\+Service\+Task(), uv\+Free(), and uv\+Start\+Task().
+
 \mbox{\Hypertarget{uvfr__state__engine_8h_a8c1618caac0d7f29836107f1a44833e8}\label{uvfr__state__engine_8h_a8c1618caac0d7f29836107f1a44833e8}} 
 \index{uvfr\_state\_engine.h@{uvfr\_state\_engine.h}!uvValidateManagedTasks@{uvValidateManagedTasks}}
 \index{uvValidateManagedTasks@{uvValidateManagedTasks}!uvfr\_state\_engine.h@{uvfr\_state\_engine.h}}
 \doxysubsubsection{\texorpdfstring{uvValidateManagedTasks()}{uvValidateManagedTasks()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_a27e96c74597bf4e85f968da673622b31}{uv\+\_\+status}} uv\+Validate\+Managed\+Tasks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+Validate\+Managed\+Tasks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -660,7 +720,7 @@ ensure that all the tasks people have created actually make sense, and are valid
 
 
 
-Definition at line 105 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 111 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -681,7 +741,7 @@ Referenced by uv\+Start\+State\+Machine().
 
 
 
-Definition at line 22 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 28 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 

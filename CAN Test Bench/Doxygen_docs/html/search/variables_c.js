@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['param_1117',['param',['../structmotor__controller__settings__t.html#a1c53ca1814f3e1e066be5e851f3a3a10',1,'motor_controller_settings_t']]],
-  ['params_1118',['params',['../structdriving_mode_params.html#a8bc3ea07efa4e063a0b03965b0f4a1b0',1,'drivingModeParams']]],
-  ['period_1119',['period',['../structdaq__datapoint.html#a8f1ff0b0cde6cc45079cd85c764b2ebe',1,'daq_datapoint::period()'],['../structdriving__loop__args.html#af3aed836070373949c93b77ca01eea24',1,'driving_loop_args::period()']]],
-  ['previous_5fstate_1120',['previous_state',['../uvfr__state__engine_8c.html#a2ce6eef16a78c095592954d2fe68af2e',1,'uvfr_state_engine.c']]]
+  ['nchar_1248',['nchar',['../structuv__init__task__response.html#ab0bb4394cc62070f8d366ab3a55ff227',1,'uv_init_task_response']]],
+  ['next_1249',['next',['../structuv__task__info.html#aaf64a4af6aeefa2018168b194766784b',1,'uv_task_info']]],
+  ['num_5fdriving_5fmodes_1250',['num_driving_modes',['../structdriving__loop__args.html#af726a5bebacb81eb0c4aff8697007aba',1,'driving_loop_args']]],
+  ['num_5finstances_1251',['num_instances',['../structuv__task__info.html#af50dd07dbcae819e4d4ffc3f764794ad',1,'uv_task_info']]]
 ];

@@ -10,7 +10,10 @@
 #include "uvfr_utils.h"
 
 extern TaskHandle_t init_task_handle;
+extern uint8_t               TxData[8];
 
+
+//#define CAN_TRANSMIT_TEST_IN_INIT
 
 
 
@@ -24,7 +27,7 @@ extern TaskHandle_t init_task_handle;
  * It executes the following functions, in order:
  * - Load Vehicle Settings
  * - Initialize and Start State Machine
- * - Start Service Tasks
+ * - Start Service Tasks, such as CAN, ADC, etc...
  * - Initialize External Devices such as BMS, IMD, Motor Controller
  * - Validate that these devices have actually booted up
  * - Set vehicle state to @c UV_READY
@@ -33,6 +36,43 @@ extern TaskHandle_t init_task_handle;
  */
 void uvInit(void * arguments){
 	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15); //For debugging purposes, I wanna see if we actually end up here at some point
+
+
+#ifdef CAN_TRANSMIT_TEST_IN_INIT
+	TxData[0] = 0b10101010;
+	TxData[1] = 0b10101010;
+	TxData[2] = 0b10101010;
+	TxData[3] = 1;
+	TxData[4] = 2;
+	TxData[5] = 3;
+	TxData[6] = 0b10101010;
+	TxData[7] = 0b10101010;
+
+
+	HAL_StatusTypeDef can_send_status;
+		for(;;){
+			vTaskDelay(400);
+
+
+
+			TxHeader.IDE = CAN_ID_EXT;
+			TxHeader.ExtId = 0x1234;
+
+
+			TxHeader.DLC = 8;
+
+
+			//taskENTER_CRITICAL();
+			can_send_status = HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox);
+			//taskEXIT_CRITICAL();
+
+			if (can_send_status != HAL_OK){
+											/* Transmission request Error */
+				//uvPanic("Unable to Transmit CAN msg",can_send_status);
+				handleCANbusError(&hcan2, 0);
+			}
+		}
+#endif //CAN Tx testing
 
 
 	char* error_msg = NULL;
@@ -80,7 +120,7 @@ void uvInit(void * arguments){
 	 */
 	QueueHandle_t init_validation_queue = xQueueCreate(8,sizeof(uv_init_task_response));
 	if(init_validation_queue == NULL){
-
+		__uvInitPanic();
 	}
 
 	/** @endcode
@@ -132,7 +172,7 @@ void uvInit(void * arguments){
 	uv_init_task_args* PDU_init_args = uvMalloc(sizeof(uv_init_task_args));
 	PDU_init_args->init_info_queue = init_validation_queue;
 	PDU_init_args->specific_args = &(current_vehicle_settings->imd_settings);
-	retval = xTaskCreate(initPDU,"PDU_init",128,IMD_init_args,osPriorityAboveNormal,&(PDU_init_args->meta_task_handle));
+	retval = xTaskCreate(initPDU,"PDU_init",128,PDU_init_args,osPriorityAboveNormal,&(PDU_init_args->meta_task_handle)); //pass in the right settings, dumdum
 	if(retval != pdPASS){
 			//FUCK
 		error_msg = "bruh";
@@ -140,6 +180,8 @@ void uvInit(void * arguments){
 
 
 	uint16_t ext_devices_status = 0x000F; //Tracks which devices are currently setup
+
+
 
 
 	/** @endcode
@@ -220,7 +262,7 @@ void uvInit(void * arguments){
 	//vQueueDelete(init_validation_queue);
 	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15);
 	vTaskDelete(init_task_handle);
-	return;
+	//return;
 
 }
 
@@ -343,6 +385,9 @@ void* __uvMallocOS(size_t memrequest){
 	}else if(memrequest > UV_MALLOC_LIMIT){
 		return NULL;
 	}
+
+	//Does the scheduler actually need to be running for this?
+	//Should maybe double check
 
 	void* retval = NULL;
 

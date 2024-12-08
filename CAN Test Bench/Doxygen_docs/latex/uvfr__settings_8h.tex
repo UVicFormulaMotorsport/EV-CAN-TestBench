@@ -28,6 +28,8 @@ typedef struct \mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{uvfr__settings_8h_a4648237563030182a8309d8c75e12205}{nuke\+Settings}} (\mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}} $\ast$$\ast$settings\+\_\+to\+\_\+delete)
+\item 
 enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__settings_8h_a80856a38d7040ca10b8106ff0fa4acf4}{uv\+Settings\+Init}} ()
 \begin{DoxyCompactList}\small\item\em this function does one thing, and one thing only, it checks if we have custom settings, then it attempts to get them. If it fails, then we revert to factory defaults. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
@@ -66,6 +68,20 @@ Definition at line 21 of file uvfr\+\_\+settings.\+h.
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uvfr__settings_8h_a4648237563030182a8309d8c75e12205}\label{uvfr__settings_8h_a4648237563030182a8309d8c75e12205}} 
+\index{uvfr\_settings.h@{uvfr\_settings.h}!nukeSettings@{nukeSettings}}
+\index{nukeSettings@{nukeSettings}!uvfr\_settings.h@{uvfr\_settings.h}}
+\doxysubsubsection{\texorpdfstring{nukeSettings()}{nukeSettings()}}
+{\footnotesize\ttfamily void nuke\+Settings (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}} $\ast$$\ast$}]{settings\+\_\+to\+\_\+delete }\end{DoxyParamCaption})}
+
+
+
+Definition at line 45 of file uvfr\+\_\+settings.\+c.
+
+
+
+References uv\+Free().
+
 \mbox{\Hypertarget{uvfr__settings_8h_a80856a38d7040ca10b8106ff0fa4acf4}\label{uvfr__settings_8h_a80856a38d7040ca10b8106ff0fa4acf4}} 
 \index{uvfr\_settings.h@{uvfr\_settings.h}!uvSettingsInit@{uvSettingsInit}}
 \index{uvSettingsInit@{uvSettingsInit}!uvfr\_settings.h@{uvfr\_settings.h}}
@@ -78,11 +94,11 @@ this function does one thing, and one thing only, it checks if we have custom se
 
 
 
-Definition at line 38 of file uvfr\+\_\+settings.\+c.
+Definition at line 58 of file uvfr\+\_\+settings.\+c.
 
 
 
-References setup\+Default\+Settings(), and U\+V\+\_\+\+OK.
+References setup\+Default\+Settings(), U\+V\+\_\+\+A\+B\+O\+R\+T\+ED, U\+V\+\_\+\+E\+R\+R\+OR, and U\+V\+\_\+\+OK.
 
 
 

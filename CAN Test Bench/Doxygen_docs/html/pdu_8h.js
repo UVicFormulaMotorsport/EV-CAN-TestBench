@@ -18,6 +18,7 @@ var pdu_8h =
       [ "enable_shutdown_circuit_msg", "pdu_8h.html#a572d423626195b99cf1a26b4b8eb7e48af94075d96d491d676ff5188dac627820", null ],
       [ "disable_shutdown_circuit_msg", "pdu_8h.html#a572d423626195b99cf1a26b4b8eb7e48ac2ef53cf9e41b5b6a0c0eb4d6d981900", null ]
     ] ],
+    [ "initPDU", "pdu_8h.html#afaa6671d51bcd0687c87ac635ff70d95", null ],
     [ "PDU_disable_brake_light", "pdu_8h.html#ad7b67b3c1618a7c50a5d6d9f9e13a89f", null ],
     [ "PDU_disable_coolant_pump", "pdu_8h.html#aebeb35957c80be85dc938efe72c8e825", null ],
     [ "PDU_disable_cooling_fans", "pdu_8h.html#a3c665494b7f9fb4e025ff31d24c97072", null ],

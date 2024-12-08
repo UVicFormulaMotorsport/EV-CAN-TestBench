@@ -71,5 +71,6 @@ var imd_8h =
     [ "IMD_Check_Voltages_Vp_and_Vn", "imd_8h.html#a0fc857559d80dd701aec763dd6911383", null ],
     [ "IMD_Parse_Message", "imd_8h.html#a1f6181c5ab49d963007eb9a212672bbd", null ],
     [ "IMD_Request_Status", "imd_8h.html#aeb7c937639c5385f5d2b4e3a4e60250f", null ],
-    [ "IMD_Startup", "imd_8h.html#a80b26177d8aa0c0e803fac210eb456ac", null ]
+    [ "IMD_Startup", "imd_8h.html#a80b26177d8aa0c0e803fac210eb456ac", null ],
+    [ "initIMD", "imd_8h.html#a19b4fd879f065cfe6e1b7bb3400cd0c3", null ]
 ];
