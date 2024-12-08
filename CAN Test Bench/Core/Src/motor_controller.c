@@ -23,7 +23,7 @@ const uint32_t max_motor_speed = 3277;                 // Max RPM for speed cont
 //uint32_t TxMailbox; //Ensure TxMailbox is defined as a uint32_t variable in your motor_controller.c file or globally in can.c if used across multiple files:
 
 // Motor controller settings with default values
-motor_controller_settings mc_settings = {
+motor_controller_settings mc_default_settings = {
     .can_id_tx = 0x200,              // CAN transmit ID
     .can_id_rx = 0x201,              // CAN receive ID
     .mc_CAN_timeout = 2,             // CAN timeout in seconds
@@ -41,62 +41,14 @@ static uint16_t MotorControllerSpinTest(void);
 static bool WaitFor_CAN_Response(void);
 void MC_Request_Data(uint8_t RegID);
 //void MotorController_Init(void);
-void MC_Startup(void);
+//void MC_Startup(void);
 
 
 // --------------------------------------------
 // Function Definitions
 // --------------------------------------------
 
-// Motor Controller Initialization
-/**
- * Initializes the motor controller by performing the following steps:
- * 1. Verifies the serial number from the motor controller.
- * 2. Checks the firmware version to ensure compatibility.
- * 3. Executes a motor spin test at low RPM to validate functionality.
- * 4. Checks for errors and warnings from the motor controller.
- * 5. Logs successful initialization if all checks pass.
- */
-//void MotorController_Init(void) {
-void MC_Startup(void){
-    // Step 1: Check Serial Number
-    MC_Request_Data(SERIAL_NUMBER_REGISTER);
-    if (!WaitFor_CAN_Response()) {
-        uvPanic("Serial Number Request Timeout", 0); // No response received
-    } else {
-        uint32_t serial_number = Parse_Bamocar_Response(RxData, 8); // Parse response
-        if (serial_number != MC_Expected_Serial_Number) {
-            uvPanic("Serial Number Mismatch", serial_number); // Serial number mismatch
-        }
-    }
 
-    // Step 2: Check Firmware Version
-    MC_Request_Data(FIRMWARE_VERSION_REGISTER);
-    if (!WaitFor_CAN_Response()) {
-        uvPanic("Firmware Version Request Timeout", 0); // No response received
-    } else {
-        uint16_t firmware_version = (RxData[0] << 8) | RxData[1]; // Parse firmware version
-        if (firmware_version != MC_Expected_FW_Version) {
-            uvPanic("Firmware Version Mismatch", firmware_version); // Firmware mismatch
-        }
-    }
-
-    // Step 3: Spin Motor Test
-    if (MotorControllerSpinTest() != 0) {
-        uvPanic("Motor Spin Test Failed", 0); // Spin test failed
-    }
-
-    // Step 4: Check for Errors and Warnings
-    MC_Request_Data(motor_controller_errors_warnings);
-    if (!WaitFor_CAN_Response()) {
-        uvPanic("Error/Warning Request Timeout", 0); // No response received
-    } else {
-        MotorControllerErrorHandler(RxData, 8); // Process errors and warnings
-    }
-
-    // Step 5: Confirm Initialization
-    //uvLog("Motor Controller Initialized Successfully"); // Initialization complete
-}
 
 // Spin Motor Test
 /**
@@ -112,7 +64,7 @@ static uint16_t MotorControllerSpinTest(void) {
 
     // Use CAN_TxHeaderTypeDef for message header
     CAN_TxHeaderTypeDef txHeader;
-    txHeader.StdId = mc_settings.can_id_tx;    // Set CAN ID
+    txHeader.StdId = mc_default_settings.can_id_tx;    // Set CAN ID
     txHeader.IDE = CAN_ID_STD;                // Use standard ID
     txHeader.RTR = CAN_RTR_DATA;              // Data frame
     txHeader.DLC = 3;                         // Data length code
@@ -281,7 +233,7 @@ void MC_Request_Data(uint8_t RegID) {
     uint32_t TxMailbox;
 
     // Set up the CAN message header
-    txHeader.StdId = mc_settings.can_id_tx; // Set the standard CAN ID from settings
+    txHeader.StdId = mc_default_settings.can_id_tx; // Set the standard CAN ID from settings
     txHeader.IDE = CAN_ID_STD;             // Use standard ID
     txHeader.RTR = CAN_RTR_DATA;           // Data frame
     txHeader.DLC = 3;                      // Data length code
@@ -303,7 +255,7 @@ void MC_Request_Data(uint8_t RegID) {
  * @return True if a response is received, otherwise false.
  */
 static bool WaitFor_CAN_Response(void) {
-   // return xSemaphoreTake(canResponseSemaphore, pdMS_TO_TICKS(mc_settings.mc_CAN_timeout)) == pdTRUE;
+   // return xSemaphoreTake(canResponseSemaphore, pdMS_TO_TICKS(mc_default_settings.mc_CAN_timeout)) == pdTRUE;
 }
 //-------------------------------------------------------------------------------------------------------------
 
@@ -774,6 +726,16 @@ void MC_Check_Firmware(uint8_t Data[]){
 	// TODO
 }
 
+
+// Motor Controller Initialization
+/**
+ * Initializes the motor controller by performing the following steps:
+ * 1. Verifies the serial number from the motor controller.
+ * 2. Checks the firmware version to ensure compatibility.
+ * 3. Executes a motor spin test at low RPM to validate functionality.
+ * 4. Checks for errors and warnings from the motor controller.
+ * 5. Logs successful initialization if all checks pass.
+ */
 void MC_Startup(void* args){
 	// MC_Send_Data(...)
 	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14);
@@ -786,7 +748,39 @@ void MC_Startup(void* args){
 
 
 
+	MC_Request_Data(SERIAL_NUMBER_REGISTER);
+	    if (!WaitFor_CAN_Response()) {
+	        uvPanic("Serial Number Request Timeout", 0); // No response received
+	    } else {
+	        uint32_t serial_number = Parse_Bamocar_Response(RxData, 8); // Parse response
+	        if (serial_number != MC_Expected_Serial_Number) {
+	            uvPanic("Serial Number Mismatch", serial_number); // Serial number mismatch
+	        }
+	    }
 
+	    // Step 2: Check Firmware Version
+	    MC_Request_Data(FIRMWARE_VERSION_REGISTER);
+	    if (!WaitFor_CAN_Response()) {
+	        uvPanic("Firmware Version Request Timeout", 0); // No response received
+	    } else {
+	        uint16_t firmware_version = (RxData[0] << 8) | RxData[1]; // Parse firmware version
+	        if (firmware_version != MC_Expected_FW_Version) {
+	            uvPanic("Firmware Version Mismatch", firmware_version); // Firmware mismatch
+	        }
+	    }
+
+	    // Step 3: Spin Motor Test
+	    if (MotorControllerSpinTest() != 0) {
+	        uvPanic("Motor Spin Test Failed", 0); // Spin test failed
+	    }
+
+	    // Step 4: Check for Errors and Warnings
+	    MC_Request_Data(motor_controller_errors_warnings);
+	    if (!WaitFor_CAN_Response()) {
+	        uvPanic("Error/Warning Request Timeout", 0); // No response received
+	    } else {
+	        MotorControllerErrorHandler(RxData, 8); // Process errors and warnings
+	    }
 
 
 

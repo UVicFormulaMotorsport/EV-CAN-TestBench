@@ -55,6 +55,10 @@ void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2);
 uv_status uvSendCanMSG(uv_CAN_msg * msg);
 
 void CANbusTxSvcDaemon(void* args);
+
+int call_function_from_CAN_id(uint32_t CAN_id, uint8_t* data, uint8_t length);
+void insert_CAN_message(CAN_Message message);
+void nuke_hash_table();
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
@@ -62,23 +66,8 @@ void CANbusTxSvcDaemon(void* args);
 #endif
 
 #endif /* __CAN_H__ */
-/* USER CODE BEGIN Header */
-/**
-  ******************************************************************************
-  * @file    can.h
-  * @brief   This file contains all the function prototypes for
-  *          the can.c file
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
-/* USER CODE END Header */
+
+
+
+
 

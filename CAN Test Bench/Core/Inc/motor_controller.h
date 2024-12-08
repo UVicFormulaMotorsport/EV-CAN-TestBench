@@ -173,8 +173,8 @@ typedef struct motor_controllor_settings{
 //void MC_Check_Error_Warning(uint8_t Data[]);
 //void MC_Check_Serial_Number(uint8_t Data[]);
 //void MC_Check_Firmware(uint8_t Data[]);
-//void MC_Startup(void* args);
-void MC_Startup(void);
+void MC_Startup(void* args);
+
 
 
 
