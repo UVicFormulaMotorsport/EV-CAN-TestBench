@@ -55,6 +55,7 @@ uint8_t IMD_Serial_Number_Set = 0;
 
 
 int32_t IMD_Temperature;
+uint32_t IMD_Uptime;
 
 
 // If there is a hardware error, that one bit will be a 1 in the status bits -> read error flags
@@ -162,6 +163,7 @@ void IMD_Parse_Message(int DLC, uint8_t Data[]){
 
 		case Uptime_counter:
 			// call check uptime counter
+			IMD_Check_Uptime(Data);
 		break;
 
 
@@ -523,6 +525,7 @@ void IMD_Check_Serial_Number(uint8_t Data[]){
 
 void IMD_Check_Uptime(uint8_t Data[]){
 	// TODO
+	IMD_Uptime = (Data[4] << 24) | (Data[3] << 16) | (Data[2] << 8) | Data[1];
 }
 
 void IMD_Startup(){
