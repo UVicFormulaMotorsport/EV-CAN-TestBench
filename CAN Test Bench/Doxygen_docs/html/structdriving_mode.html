@@ -93,7 +93,7 @@ $(document).ready(function(){initNavTree('structdriving_mode.html','');});
 </div><!--header-->
 <div class="contents">
 
-<p>This is where the driving mode and the deivingModeParams are at.  
+<p>This is where the driving mode and the <a class="el" href="uniondriving_mode_params.html" title="this struct is designed to hold information about each drivingmode&#39;s map params">drivingModeParams</a> are at.  
  <a href="structdriving_mode.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>&gt;</code></p>
@@ -102,17 +102,23 @@ $(document).ready(function(){initNavTree('structdriving_mode.html','');});
 Data Fields</h2></td></tr>
 <tr class="memitem:afe09b8e23f97ae6d60c225a7ac8a7d9a"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving_mode.html#afe09b8e23f97ae6d60c225a7ac8a7d9a">dm_name</a> [16]</td></tr>
 <tr class="separator:afe09b8e23f97ae6d60c225a7ac8a7d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acacd0ff6e8afe1bdc2ab7f7a4127782a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving_mode.html#acacd0ff6e8afe1bdc2ab7f7a4127782a">is_speed_control</a></td></tr>
-<tr class="separator:acacd0ff6e8afe1bdc2ab7f7a4127782a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ef9f1d0875e8b329738830343254708"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving_mode.html#a6ef9f1d0875e8b329738830343254708">max_acc_pwr</a></td></tr>
+<tr class="separator:a6ef9f1d0875e8b329738830343254708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4523c0c6d5187fcd80cda47913d541c1"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving_mode.html#a4523c0c6d5187fcd80cda47913d541c1">max_motor_torque</a></td></tr>
+<tr class="separator:a4523c0c6d5187fcd80cda47913d541c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45d9f3871594d9504c5a2fe61a001c17"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving_mode.html#a45d9f3871594d9504c5a2fe61a001c17">max_current</a></td></tr>
+<tr class="separator:a45d9f3871594d9504c5a2fe61a001c17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1bd42a95b3d00fc3ace7c78df51d2ef"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving_mode.html#aa1bd42a95b3d00fc3ace7c78df51d2ef">flags</a></td></tr>
+<tr class="separator:aa1bd42a95b3d00fc3ace7c78df51d2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6beb6da5ca338294c86b89f1b6fa4d1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uniondriving_mode_params.html">drivingModeParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving_mode.html#af6beb6da5ca338294c86b89f1b6fa4d1">map_fn_params</a></td></tr>
+<tr class="separator:af6beb6da5ca338294c86b89f1b6fa4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4201b3227dd0ff7239f8c6060d30ed8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving_mode.html#ab4201b3227dd0ff7239f8c6060d30ed8">control_map_fn</a></td></tr>
 <tr class="separator:ab4201b3227dd0ff7239f8c6060d30ed8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa92b2d82168eb0f8d41488014e895e04"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdriving_mode_params.html">drivingModeParams</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving_mode.html#aa92b2d82168eb0f8d41488014e895e04">map_fn_params</a></td></tr>
-<tr class="separator:aa92b2d82168eb0f8d41488014e895e04"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This is where the driving mode and the deivingModeParams are at. </p>
+<div class="textblock"><p>This is where the driving mode and the <a class="el" href="uniondriving_mode_params.html" title="this struct is designed to hold information about each drivingmode&#39;s map params">drivingModeParams</a> are at. </p>
 
-<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00060">60</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00085">85</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ab4201b3227dd0ff7239f8c6060d30ed8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab4201b3227dd0ff7239f8c6060d30ed8">&#9670;&nbsp;</a></span>control_map_fn</h2>
@@ -126,7 +132,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00063">63</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00095">95</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
 
 </div>
 </div>
@@ -141,40 +147,89 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Name of mode, 15 chars + /0 </p>
 
-<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00061">61</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00086">86</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
 
 </div>
 </div>
-<a id="acacd0ff6e8afe1bdc2ab7f7a4127782a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acacd0ff6e8afe1bdc2ab7f7a4127782a">&#9670;&nbsp;</a></span>is_speed_control</h2>
+<a id="aa1bd42a95b3d00fc3ace7c78df51d2ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1bd42a95b3d00fc3ace7c78df51d2ef">&#9670;&nbsp;</a></span>flags</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t drivingMode::is_speed_control</td>
+          <td class="memname">uint16_t drivingMode::flags</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00062">62</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00092">92</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
 
 </div>
 </div>
-<a id="aa92b2d82168eb0f8d41488014e895e04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa92b2d82168eb0f8d41488014e895e04">&#9670;&nbsp;</a></span>map_fn_params</h2>
+<a id="af6beb6da5ca338294c86b89f1b6fa4d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6beb6da5ca338294c86b89f1b6fa4d1">&#9670;&nbsp;</a></span>map_fn_params</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structdriving_mode_params.html">drivingModeParams</a>* drivingMode::map_fn_params</td>
+          <td class="memname"><a class="el" href="uniondriving_mode_params.html">drivingModeParams</a> drivingMode::map_fn_params</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00064">64</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00094">94</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
+
+</div>
+</div>
+<a id="a6ef9f1d0875e8b329738830343254708"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6ef9f1d0875e8b329738830343254708">&#9670;&nbsp;</a></span>max_acc_pwr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t drivingMode::max_acc_pwr</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00087">87</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
+
+</div>
+</div>
+<a id="a45d9f3871594d9504c5a2fe61a001c17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45d9f3871594d9504c5a2fe61a001c17">&#9670;&nbsp;</a></span>max_current</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t drivingMode::max_current</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00089">89</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
+
+</div>
+</div>
+<a id="a4523c0c6d5187fcd80cda47913d541c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4523c0c6d5187fcd80cda47913d541c1">&#9670;&nbsp;</a></span>max_motor_torque</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t drivingMode::max_motor_torque</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00088">88</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
 
 </div>
 </div>

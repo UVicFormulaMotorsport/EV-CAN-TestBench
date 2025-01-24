@@ -45,23 +45,54 @@ enum DL_internal_state{
 	Erroneous = 0x04
 };
 
+typedef struct linear_torque_map_args{ //y = mx + b bitch
+	int32_t offset; /**< */
+	float slope; /**< */
+}linear_torque_map_args;
+
+/** @brief struct to hold parameters used in an exponential torque map
+ *
+ */
+typedef struct exp_torque_map_args{
+	int32_t offset;
+	float gamma;
+
+
+}exp_torque_map_args;
+
+/** @brief struct for s-curve parameters for torque
+ *
+ */
+typedef struct s_curve_torque_map_args{
+	int32_t a;
+	int32_t b;
+	int32_t c[16];
+}s_curve_torque_map_args;
+
 /** @brief this struct is designed to hold information about each drivingmode's map params
  *
  */
-typedef struct drivingModeParams{
-	uint8_t control_map_fn;//function used to do the mapping. this must match the function of the one on the
-	uint8_t params[48];
+typedef union drivingModeParams{
+	struct linear_torque_map_args; /**< */
+	struct exp_torque_map_args; /**< */
+	struct s_curve_torque_map_args; /**< */
 }drivingModeParams;
 
 
-/** @brief This is where the driving mode and the deivingModeParams are at
+/** @brief This is where the driving mode and the drivingModeParams are at
  *
  */
 typedef struct drivingMode{
-	char dm_name[16];
-	uint8_t is_speed_control;
-	uint8_t control_map_fn; //is a map_mode
-	drivingModeParams* map_fn_params;
+	char dm_name[16]; /**< Name of mode, 15 chars + /0*/
+	uint32_t max_acc_pwr;
+	uint32_t max_motor_torque;
+	uint32_t max_current;
+
+
+	uint16_t flags;
+
+	drivingModeParams map_fn_params; /**< */
+	uint8_t control_map_fn; /**< */
 }drivingMode;
 
 
@@ -75,26 +106,39 @@ typedef struct drivingMode{
  *
  */
 typedef struct driving_loop_args{
-	uint8_t period; // how often does the driving loop execute
-	uint8_t current_driving_mode; //what is the driving mode?
-	uint16_t min_apps_offset; //minimum APPS offset
-	uint16_t max_apps_offset; // maximum APPS offset, between this and the minimum offset we get a range of permissible values
-	uint16_t min_apps_value; //for detecting disconnects and short circuits
-	uint16_t max_apps_value; //for detecting disconnects and short circuits
-	uint16_t min_BPS_value; //are the brakes valid?
-	uint16_t max_BPS_value; //are the brakes valid?
+	uint32_t absolute_max_acc_pwr; /**< Maximum possible accum power*/
+	uint32_t absolute_max_motor_torque; /**< Max power output*/
+	uint32_t absolute_max_accum_current;/**< Max current (ADC reading)*/
+	uint32_t max_accum_current_5s; /**< Current maximum for 10s */
 
-	uint16_t apps_top;
-	uint16_t apps_bottom;
 
-	uint16_t apps_plausibility_check_threshold;
-	uint16_t bps_plausibility_check_threshold;
+	uint16_t absolute_max_motor_rpm;    /**< Max limit of RPM*/
+	uint16_t regen_rpm_cutoff;			/**< No regen below this rpm */
 
-	uint16_t bps_implausibility_recovery_threshold;
-	uint16_t apps_implausibility_recovery_threshold;
 
-	uint8_t num_driving_modes;
-	drivingMode dmodes[8]; //This has the different driving modes. We have up to 8.
+	//uint8_t current_driving_mode; //what is the driving mode?
+	uint16_t min_apps_offset; /**<minimum APPS offset */
+	uint16_t max_apps_offset; /**< maximum APPS offset */
+	uint16_t min_apps_value; /**< for detecting disconnects and short circuits*/
+	uint16_t max_apps_value; /**< for detecting disconnects and short circuits*/
+	uint16_t min_BPS_value; /**< are the brakes valid?*/
+	uint16_t max_BPS_value; /**< are the brakes valid?*/
+
+	uint16_t apps_top; /**< Max APPS input value, representing 100% throttle*/
+	uint16_t apps_bottom; /**< Min APPS input value, representing 0% throttle*/
+
+	uint16_t apps_plausibility_check_threshold; /**< Threshold for accelerator position with  */
+	uint16_t bps_plausibility_check_threshold; /**< Brake pressure threshold for APPS */
+
+	uint16_t bps_implausibility_recovery_threshold; /**< Threshold for accellerator pedal position to recover fron APPS check*/
+	uint16_t apps_implausibility_recovery_threshold; /**< Threshold for brake position */
+
+	uint8_t num_driving_modes;/**< How many modes are actually populated */
+	uint8_t period; /**< how often does the driving loop execute */
+	uint8_t accum_regen_soc_threshold; /**< Vehicle will not regen if above this SOC*/
+
+
+	drivingMode dmodes[8]; /**< These are various driving modes */
 
 }driving_loop_args;
 

@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structx_l_i_s_t___i_t_e_m" kind="struct" language="C++" prot="public">
+    <compoundname>xLIST_ITEM</compoundname>
+    <includes refid="list_8h" local="no">list.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structx_l_i_s_t___i_t_e_m_1a9b1f26de79f9da1403ca3ebc7a2e653a" prot="public" static="no" mutable="no">
+        <type><ref refid="list_8h_1a3611bd5d5d87cb26ac1dc7a4852b94a0" kindref="member">listFIRST_LIST_ITEM_INTEGRITY_CHECK_VALUE</ref> <ref refid="list_8h_1a2d5de557c5561c8980d1bf51d87d8cba" kindref="member">configLIST_VOLATILE</ref> TickType_t</type>
+        <definition>listFIRST_LIST_ITEM_INTEGRITY_CHECK_VALUE configLIST_VOLATILE TickType_t xLIST_ITEM::xItemValue</definition>
+        <argsstring></argsstring>
+        <name>xItemValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" line="143" column="32" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" bodystart="143" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structx_l_i_s_t___i_t_e_m_1a03713c4ee953ef5ca6adbec883720c60" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structx_l_i_s_t___i_t_e_m" kindref="compound">xLIST_ITEM</ref> *<ref refid="list_8h_1a2d5de557c5561c8980d1bf51d87d8cba" kindref="member">configLIST_VOLATILE</ref></type>
+        <definition>struct xLIST_ITEM* configLIST_VOLATILE xLIST_ITEM::pxNext</definition>
+        <argsstring></argsstring>
+        <name>pxNext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" line="144" column="38" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structx_l_i_s_t___i_t_e_m_1ae8e553eae41010a8e41c66d76c94110b" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structx_l_i_s_t___i_t_e_m" kindref="compound">xLIST_ITEM</ref> *<ref refid="list_8h_1a2d5de557c5561c8980d1bf51d87d8cba" kindref="member">configLIST_VOLATILE</ref></type>
+        <definition>struct xLIST_ITEM* configLIST_VOLATILE xLIST_ITEM::pxPrevious</definition>
+        <argsstring></argsstring>
+        <name>pxPrevious</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" line="145" column="38" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structx_l_i_s_t___i_t_e_m_1aeb3110b50fe0dbce826d929b27b5ddb1" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* xLIST_ITEM::pvOwner</definition>
+        <argsstring></argsstring>
+        <name>pvOwner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" line="146" column="7" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structx_l_i_s_t___i_t_e_m_1afb1e27a88f6b064cd0216de08009844a" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structx_l_i_s_t" kindref="compound">xLIST</ref> *<ref refid="list_8h_1a2d5de557c5561c8980d1bf51d87d8cba" kindref="member">configLIST_VOLATILE</ref></type>
+        <definition>struct xLIST* configLIST_VOLATILE xLIST_ITEM::pxContainer</definition>
+        <argsstring></argsstring>
+        <name>pxContainer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" line="147" column="33" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>xMINI_LIST_ITEM</label>
+        <link refid="structx_m_i_n_i___l_i_s_t___i_t_e_m"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>pxPrevious</edgelabel>
+          <edgelabel>pxNext</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>xLIST</label>
+        <link refid="structx_l_i_s_t"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>xListEnd</edgelabel>
+        </childnode>
+        <childnode refid="1" relation="usage">
+          <edgelabel>pxIndex</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>xLIST_ITEM</label>
+        <link refid="structx_l_i_s_t___i_t_e_m"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>pxPrevious</edgelabel>
+          <edgelabel>pxNext</edgelabel>
+        </childnode>
+        <childnode refid="2" relation="usage">
+          <edgelabel>pxContainer</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" line="141" column="1" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/list.h" bodystart="140" bodyend="149"/>
+    <listofallmembers>
+      <member refid="structx_l_i_s_t___i_t_e_m_1aeb3110b50fe0dbce826d929b27b5ddb1" prot="public" virt="non-virtual"><scope>xLIST_ITEM</scope><name>pvOwner</name></member>
+      <member refid="structx_l_i_s_t___i_t_e_m_1afb1e27a88f6b064cd0216de08009844a" prot="public" virt="non-virtual"><scope>xLIST_ITEM</scope><name>pxContainer</name></member>
+      <member refid="structx_l_i_s_t___i_t_e_m_1a03713c4ee953ef5ca6adbec883720c60" prot="public" virt="non-virtual"><scope>xLIST_ITEM</scope><name>pxNext</name></member>
+      <member refid="structx_l_i_s_t___i_t_e_m_1ae8e553eae41010a8e41c66d76c94110b" prot="public" virt="non-virtual"><scope>xLIST_ITEM</scope><name>pxPrevious</name></member>
+      <member refid="structx_l_i_s_t___i_t_e_m_1a9b1f26de79f9da1403ca3ebc7a2e653a" prot="public" virt="non-virtual"><scope>xLIST_ITEM</scope><name>xItemValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,330 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="group__utility__macros" kind="group">
+    <compoundname>utility_macros</compoundname>
+    <title>Utility Macros</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__utility__macros_1ga483c9de27db573099572f5485ef841c9" prot="public" static="no">
+        <name>_BV</name>
+        <param><defname>x</defname></param>
+        <initializer><ref refid="group__utility__macros_1gaa17e4b09cf528c30099398ddedc48955" kindref="member">_BV_16</ref>(x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="69" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gadb4693d786f01e486ce4191758995c8f" prot="public" static="no">
+        <name>_BV_8</name>
+        <param><defname>x</defname></param>
+        <initializer>((uint8_t)(0x01U &gt;&gt; x))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="70" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gaa17e4b09cf528c30099398ddedc48955" prot="public" static="no">
+        <name>_BV_16</name>
+        <param><defname>x</defname></param>
+        <initializer>((uint16_t)(0x01U &gt;&gt; x))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="71" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga581e5838a8a85f12137dd310b210024d" prot="public" static="no">
+        <name>_BV_32</name>
+        <param><defname>x</defname></param>
+        <initializer>((uint32_t)(0x01U &gt;&gt; x))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="72" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gac590e01547ebac3946ea03be39e9a891" prot="public" static="no">
+        <name>endianSwap</name>
+        <param><defname>x</defname></param>
+        <initializer><ref refid="group__utility__macros_1gaaffae84b1475df9ae84949feb94f556b" kindref="member">endianSwap16</ref>(x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="74" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga250d3a099625ba439eb4ba4304d5faae" prot="public" static="no">
+        <name>endianSwap8</name>
+        <param><defname>x</defname></param>
+        <initializer>x</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="75" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gaaffae84b1475df9ae84949feb94f556b" prot="public" static="no">
+        <name>endianSwap16</name>
+        <param><defname>x</defname></param>
+        <initializer>(((x &amp; 0x00FF)&lt;&lt;8) | ((x &amp; 0xFF00)&gt;&gt;8))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="76" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gacb855e60a6051d73730aa95259a085af" prot="public" static="no">
+        <name>endianSwap32</name>
+        <param><defname>x</defname></param>
+        <initializer>(((x &amp; 0x000000FF)&lt;&lt;16)|((x &amp; 0x0000FF00)&lt;&lt;8)|((x &amp; 0x00FF0000)&gt;&gt;8)|((x &amp; 0xFF000000)&gt;&gt;16))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="77" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga829f8b8ab166c6d07df7023ee0b68300" prot="public" static="no">
+        <name>deserializeSmallE16</name>
+        <param><defname>x</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>((x[i])|(x[i+1]&lt;&lt;8))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="79" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga6c69adff0f827031b2ec0a2220aa1fc8" prot="public" static="no">
+        <name>deserializeSmallE32</name>
+        <param><defname>x</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>((x[i])|(x[i+1]&lt;&lt;8)|(x[i+2]&lt;&lt;16)|(x[i+3]&lt;&lt;24))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="80" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gadeeabe9f9f082a786e959610607229ae" prot="public" static="no">
+        <name>deserializeBigE16</name>
+        <param><defname>x</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>((x[i]&lt;&lt;8)|(x[i+1]))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="81" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga3c5631fa43a00757c6dd44f55650b051" prot="public" static="no">
+        <name>deserializeBigE32</name>
+        <param><defname>x</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>((x[i]&lt;&lt;24)|(x[i+1]&lt;&lt;16)|(x[i+2]&lt;&lt;8)|(x[i+3]))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="82" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga5c017766f44df98dde492a5e406e221c" prot="public" static="no">
+        <name>serializeSmallE16</name>
+        <param><defname>x</defname></param>
+        <param><defname>d</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>x[i]=d&amp;0x00FF; x[i+1]=(d&amp;0xFF00)&gt;&gt;8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="84" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga0fa9d4460bcee65d79e048b43dc879fd" prot="public" static="no">
+        <name>serializeSmallE32</name>
+        <param><defname>x</defname></param>
+        <param><defname>d</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>x[i]=d&amp;0x000000FF; x[i+1]=(d&amp;0x0000FF00)&gt;&gt;8; x[i+2]=(d&amp;0x00FF0000)&gt;&gt;16; x[i+3]=(d&amp;0xFF000000)&gt;&gt;24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="85" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga505ca43923e2bb2162e218c3b8484357" prot="public" static="no">
+        <name>serializeBigE16</name>
+        <param><defname>x</defname></param>
+        <param><defname>d</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>x[i+1]=d&amp;0x00FF; x[i]=(d&amp;0xFF00)&gt;&gt;8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="86" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga053aa19e84e50fd8c74f8d4bb0d7820f" prot="public" static="no">
+        <name>serializeBigE32</name>
+        <param><defname>x</defname></param>
+        <param><defname>d</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>x[i+3]=d&amp;0x000000FF; x[i+2]=(d&amp;0x0000FF00)&gt;&gt;8; x[i+1]=(d&amp;0x00FF0000)&gt;&gt;16; x[i]=(d&amp;0xFF000000)&gt;&gt;24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="87" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga50e87beac8a57dd01bdaed51450269e3" prot="public" static="no">
+        <name>setBits</name>
+        <param><defname>x</defname></param>
+        <param><defname>msk</defname></param>
+        <param><defname>data</defname></param>
+        <initializer>x=(x&amp;(~msk)|data)</initializer>
+        <briefdescription>
+<para>macro to set bits of an int without touching the ones we dont want to edit </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Usage: Will set the values of certain bits of an int. This depends on the following however: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>represents the value you want to edit. Can be any signed or unsigned integer type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bits of X will only be altered if the matching bit of msk is a 1 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bits of data will map to bits of x, provided that the corresponding bit of msk is a one</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+In practice this looks like the following: <programlisting><codeline><highlight class="normal">uint8_t<sp/>num<sp/>=<sp/>0xF0;<sp/><sp/>//<sp/>int<sp/>is<sp/>0b11110000</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>mask<sp/>=<sp/>0x22;<sp/>//<sp/>msk<sp/>is<sp/>0b00100010</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>data<sp/>=<sp/>0x0F;<sp/>//<sp/>val<sp/>is<sp/>0b00001111</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//now<sp/>we<sp/>deploy<sp/>the<sp/>macro</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">setBits(num,mask,data);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//now,<sp/>num<sp/>=<sp/>0b11010010</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="112" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gade3043fb92536f8e1a616ba8aaef4ab9" prot="public" static="no">
+        <name>isPowerOfTwo</name>
+        <param><defname>x</defname></param>
+        <initializer>(x&amp;&amp;(!(x&amp;(x-1))))</initializer>
+        <briefdescription>
+<para>Returns a truthy value if &quot;x&quot; is a power of two. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="117" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gaac2f65c6267d74d5d5136f82bf217efa" prot="public" static="no">
+        <name>safePtrRead</name>
+        <param><defname>x</defname></param>
+        <initializer>(*((x)?x:uvPanic(&quot;nullptr_deref&quot;,0)))</initializer>
+        <briefdescription>
+<para>lil treat to help us avoid the dreaded null pointer dereference </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="122" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gaf506fac19ab4ad3f5b7ddd00643e0b46" prot="public" static="no">
+        <name>safePtrWrite</name>
+        <param><defname>p</defname></param>
+        <param><defname>x</defname></param>
+        <initializer>(*((p)?p:&amp;x))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="123" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga65e9886d74aaee76545e83dd09011727" prot="public" static="no">
+        <name>false</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wish.com Boolean </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="127" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga41f9c5fb8b08eb5dc3edce4dcb37fee7" prot="public" static="no">
+        <name>true</name>
+        <initializer>!<ref refid="group__utility__macros_1ga65e9886d74aaee76545e83dd09011727" kindref="member">false</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="128" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>handy macros that perform very common functionality </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

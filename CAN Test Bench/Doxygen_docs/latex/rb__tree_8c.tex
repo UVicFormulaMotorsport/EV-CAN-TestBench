@@ -1,0 +1,352 @@
+\hypertarget{rb__tree_8c}{}\doxysection{Core/\+Src/rb\+\_\+tree.c File Reference}
+\label{rb__tree_8c}\index{Core/Src/rb\_tree.c@{Core/Src/rb\_tree.c}}
+{\ttfamily \#include \char`\"{}rb\+\_\+tree.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{rb__tree_8c_ab13cb365d1f3498f2061dbc67b0b64f3}{insert\+Repair}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$current)
+\item 
+static void \mbox{\hyperlink{rb__tree_8c_a04068304a12638e388a3c80475230dcd}{delete\+Repair}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$current)
+\item 
+static void \mbox{\hyperlink{rb__tree_8c_ac759dc1b9dd51f2cf78c9122dcc5acae}{rotate\+Left}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$, \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$)
+\item 
+static void \mbox{\hyperlink{rb__tree_8c_a415b3985875cc2a5f17ff3f87d8d7895}{rotate\+Right}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$, \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$)
+\item 
+static int \mbox{\hyperlink{rb__tree_8c_abce051a2c66739dc7d5cd3f8bd81868a}{check\+Order}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$n, void $\ast$min, void $\ast$max)
+\item 
+static int \mbox{\hyperlink{rb__tree_8c_a81ab202c619b8ca1ec96a15a81cb21ef}{check\+Black\+Height}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$node)
+\item 
+static void \mbox{\hyperlink{rb__tree_8c_a99da652ba3b85adc7824b99a076187b6}{print}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$node, void($\ast$print\+\_\+func)(void $\ast$), int depth, char $\ast$label)
+\item 
+static void \mbox{\hyperlink{rb__tree_8c_a0c6878a92eb6e665e3bc9849053e1d5a}{destroy\+All\+Nodes}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$node)
+\item 
+\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$ \mbox{\hyperlink{rb__tree_8c_ae0e30dc26796a50c51186dc2279a3c4b}{rb\+Create}} (int($\ast$compare)(const void $\ast$, const void $\ast$), void($\ast$destroy)(void $\ast$))
+\begin{DoxyCompactList}\small\item\em Create and initialize a binary search tree. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{rb__tree_8c_a9a58d42acc5dd251bf885a0f58c6abfb}{rb\+Destroy}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt)
+\begin{DoxyCompactList}\small\item\em Destroy the tree, and de-\/allocate it\textquotesingle{}s elements. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$ \mbox{\hyperlink{rb__tree_8c_ad7470a946dc18fdea53de8efa48ba4eb}{rb\+Find}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, void $\ast$data)
+\begin{DoxyCompactList}\small\item\em Find a node of the tree based off the data you provide the tree. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$ \mbox{\hyperlink{rb__tree_8c_a70293914fa5f96508b9b502d7f3bb5dc}{rb\+Successor}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$node)
+\item 
+int \mbox{\hyperlink{rb__tree_8c_a8f5e3435c81ea99e99f6ebaf786f03c1}{rb\+\_\+apply}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$node, int($\ast$func)(void $\ast$, void $\ast$), void $\ast$cookie, enum \mbox{\hyperlink{rb__tree_8h_ae7a3c3e2ca387d6507c8c8e61e3f87b5}{rbtraversal}} order)
+\item 
+\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$ \mbox{\hyperlink{rb__tree_8c_aeb5491e8c286b8dbc868df0c31dba799}{rb\+Insert}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, void $\ast$data)
+\item 
+void $\ast$ \mbox{\hyperlink{rb__tree_8c_a8b7898139f560f35aa433a637c2a5381}{rb\+Delete}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$node, int keep)
+\item 
+int \mbox{\hyperlink{rb__tree_8c_a0eb9842e366817eb18eac0e319fb04db}{rb\+Check\+Order}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, void $\ast$min, void $\ast$max)
+\item 
+int \mbox{\hyperlink{rb__tree_8c_aa02803c2713094e61fa50807fa7a5116}{rb\+Check\+Black\+Height}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt)
+\item 
+void \mbox{\hyperlink{rb__tree_8c_a447d21f412285d3455356d2975a6ced3}{rb\+Print}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, void($\ast$print\+\_\+func)(void $\ast$))
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rb__tree_8c_a81ab202c619b8ca1ec96a15a81cb21ef}\label{rb__tree_8c_a81ab202c619b8ca1ec96a15a81cb21ef}} 
+\index{rb\_tree.c@{rb\_tree.c}!checkBlackHeight@{checkBlackHeight}}
+\index{checkBlackHeight@{checkBlackHeight}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{checkBlackHeight()}{checkBlackHeight()}}
+{\footnotesize\ttfamily int check\+Black\+Height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 562 of file rb\+\_\+tree.\+c.
+
+
+
+References B\+L\+A\+CK, rbnode\+::color, rbnode\+::left, rbnode\+::parent, R\+B\+\_\+\+N\+IL, R\+ED, and rbnode\+::right.
+
+
+
+Referenced by rb\+Check\+Black\+Height().
+
+\mbox{\Hypertarget{rb__tree_8c_abce051a2c66739dc7d5cd3f8bd81868a}\label{rb__tree_8c_abce051a2c66739dc7d5cd3f8bd81868a}} 
+\index{rb\_tree.c@{rb\_tree.c}!checkOrder@{checkOrder}}
+\index{checkOrder@{checkOrder}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{checkOrder()}{checkOrder()}}
+{\footnotesize\ttfamily int check\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$}]{n,  }\item[{void $\ast$}]{min,  }\item[{void $\ast$}]{max }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 533 of file rb\+\_\+tree.\+c.
+
+
+
+References rbtree\+::compare, rbnode\+::data, rbnode\+::left, R\+B\+\_\+\+N\+IL, and rbnode\+::right.
+
+
+
+Referenced by rb\+Check\+Order().
+
+\mbox{\Hypertarget{rb__tree_8c_a04068304a12638e388a3c80475230dcd}\label{rb__tree_8c_a04068304a12638e388a3c80475230dcd}} 
+\index{rb\_tree.c@{rb\_tree.c}!deleteRepair@{deleteRepair}}
+\index{deleteRepair@{deleteRepair}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{deleteRepair()}{deleteRepair()}}
+{\footnotesize\ttfamily void delete\+Repair (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$}]{current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 434 of file rb\+\_\+tree.\+c.
+
+
+
+References B\+L\+A\+CK, rbnode\+::color, rbnode\+::left, rbnode\+::parent, R\+B\+\_\+\+F\+I\+R\+ST, R\+ED, rbnode\+::right, rotate\+Left(), and rotate\+Right().
+
+
+
+Referenced by rb\+Delete().
+
+\mbox{\Hypertarget{rb__tree_8c_a0c6878a92eb6e665e3bc9849053e1d5a}\label{rb__tree_8c_a0c6878a92eb6e665e3bc9849053e1d5a}} 
+\index{rb\_tree.c@{rb\_tree.c}!destroyAllNodes@{destroyAllNodes}}
+\index{destroyAllNodes@{destroyAllNodes}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{destroyAllNodes()}{destroyAllNodes()}}
+{\footnotesize\ttfamily void destroy\+All\+Nodes (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 629 of file rb\+\_\+tree.\+c.
+
+
+
+References rbtree\+::count, rbnode\+::data, rbtree\+::destroy, rbnode\+::left, rbnode\+::parent, R\+B\+\_\+\+N\+IL, and rbnode\+::right.
+
+
+
+Referenced by rb\+Destroy().
+
+\mbox{\Hypertarget{rb__tree_8c_ab13cb365d1f3498f2061dbc67b0b64f3}\label{rb__tree_8c_ab13cb365d1f3498f2061dbc67b0b64f3}} 
+\index{rb\_tree.c@{rb\_tree.c}!insertRepair@{insertRepair}}
+\index{insertRepair@{insertRepair}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{insertRepair()}{insertRepair()}}
+{\footnotesize\ttfamily void insert\+Repair (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$}]{current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 277 of file rb\+\_\+tree.\+c.
+
+
+
+References B\+L\+A\+CK, rbnode\+::color, rbnode\+::left, rbnode\+::parent, R\+ED, rbnode\+::right, rotate\+Left(), and rotate\+Right().
+
+
+
+Referenced by rb\+Insert().
+
+\mbox{\Hypertarget{rb__tree_8c_a99da652ba3b85adc7824b99a076187b6}\label{rb__tree_8c_a99da652ba3b85adc7824b99a076187b6}} 
+\index{rb\_tree.c@{rb\_tree.c}!print@{print}}
+\index{print@{print}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$}]{node,  }\item[{void($\ast$)(void $\ast$)}]{print\+\_\+func,  }\item[{int}]{depth,  }\item[{char $\ast$}]{label }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 597 of file rb\+\_\+tree.\+c.
+
+
+
+References rbnode\+::color, rbnode\+::data, rbnode\+::left, R\+B\+\_\+\+N\+IL, R\+ED, and rbnode\+::right.
+
+
+
+Referenced by rb\+Print().
+
+\mbox{\Hypertarget{rb__tree_8c_a8f5e3435c81ea99e99f6ebaf786f03c1}\label{rb__tree_8c_a8f5e3435c81ea99e99f6ebaf786f03c1}} 
+\index{rb\_tree.c@{rb\_tree.c}!rb\_apply@{rb\_apply}}
+\index{rb\_apply@{rb\_apply}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{rb\_apply()}{rb\_apply()}}
+{\footnotesize\ttfamily int rb\+\_\+apply (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$}]{node,  }\item[{int($\ast$)(void $\ast$, void $\ast$)}]{func,  }\item[{void $\ast$}]{cookie,  }\item[{enum \mbox{\hyperlink{rb__tree_8h_ae7a3c3e2ca387d6507c8c8e61e3f87b5}{rbtraversal}}}]{order }\end{DoxyParamCaption})}
+
+
+
+Definition at line 114 of file rb\+\_\+tree.\+c.
+
+
+
+References rbnode\+::data, I\+N\+O\+R\+D\+ER, rbnode\+::left, P\+O\+S\+T\+O\+R\+D\+ER, P\+R\+E\+O\+R\+D\+ER, R\+B\+\_\+\+N\+IL, and rbnode\+::right.
+
+\mbox{\Hypertarget{rb__tree_8c_aa02803c2713094e61fa50807fa7a5116}\label{rb__tree_8c_aa02803c2713094e61fa50807fa7a5116}} 
+\index{rb\_tree.c@{rb\_tree.c}!rbCheckBlackHeight@{rbCheckBlackHeight}}
+\index{rbCheckBlackHeight@{rbCheckBlackHeight}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{rbCheckBlackHeight()}{rbCheckBlackHeight()}}
+{\footnotesize\ttfamily int rb\+Check\+Black\+Height (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt }\end{DoxyParamCaption})}
+
+
+
+Definition at line 551 of file rb\+\_\+tree.\+c.
+
+
+
+References check\+Black\+Height(), R\+B\+\_\+\+F\+I\+R\+ST, R\+B\+\_\+\+N\+IL, R\+B\+\_\+\+R\+O\+OT, and R\+ED.
+
+
+
+Referenced by rb\+Print().
+
+\mbox{\Hypertarget{rb__tree_8c_a0eb9842e366817eb18eac0e319fb04db}\label{rb__tree_8c_a0eb9842e366817eb18eac0e319fb04db}} 
+\index{rb\_tree.c@{rb\_tree.c}!rbCheckOrder@{rbCheckOrder}}
+\index{rbCheckOrder@{rbCheckOrder}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{rbCheckOrder()}{rbCheckOrder()}}
+{\footnotesize\ttfamily int rb\+Check\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{void $\ast$}]{min,  }\item[{void $\ast$}]{max }\end{DoxyParamCaption})}
+
+
+
+Definition at line 525 of file rb\+\_\+tree.\+c.
+
+
+
+References check\+Order(), and R\+B\+\_\+\+F\+I\+R\+ST.
+
+\mbox{\Hypertarget{rb__tree_8c_ae0e30dc26796a50c51186dc2279a3c4b}\label{rb__tree_8c_ae0e30dc26796a50c51186dc2279a3c4b}} 
+\index{rb\_tree.c@{rb\_tree.c}!rbCreate@{rbCreate}}
+\index{rbCreate@{rbCreate}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{rbCreate()}{rbCreate()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrbtree}{rbtree}}$\ast$ rb\+Create (\begin{DoxyParamCaption}\item[{int($\ast$)(const void $\ast$, const void $\ast$)}]{compare\+\_\+func,  }\item[{void($\ast$)(void $\ast$)}]{destroy\+\_\+func }\end{DoxyParamCaption})}
+
+
+
+Create and initialize a binary search tree. 
+
+
+
+Definition at line 26 of file rb\+\_\+tree.\+c.
+
+
+
+References B\+L\+A\+CK, rbnode\+::color, rbtree\+::compare, rbtree\+::count, rbnode\+::data, rbtree\+::destroy, rbnode\+::left, rbtree\+::min, rbtree\+::nil, rbnode\+::parent, R\+B\+\_\+\+N\+IL, rbnode\+::right, and rbtree\+::root.
+
+\mbox{\Hypertarget{rb__tree_8c_a8b7898139f560f35aa433a637c2a5381}\label{rb__tree_8c_a8b7898139f560f35aa433a637c2a5381}} 
+\index{rb\_tree.c@{rb\_tree.c}!rbDelete@{rbDelete}}
+\index{rbDelete@{rbDelete}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{rbDelete()}{rbDelete()}}
+{\footnotesize\ttfamily void$\ast$ rb\+Delete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$}]{node,  }\item[{int}]{keep }\end{DoxyParamCaption})}
+
+
+
+Definition at line 344 of file rb\+\_\+tree.\+c.
+
+
+
+References B\+L\+A\+CK, rbnode\+::color, rbtree\+::count, rbnode\+::data, delete\+Repair(), rbtree\+::destroy, rbnode\+::left, rbtree\+::min, rbnode\+::parent, R\+B\+\_\+\+F\+I\+R\+ST, R\+B\+\_\+\+N\+IL, rb\+Successor(), R\+ED, and rbnode\+::right.
+
+\mbox{\Hypertarget{rb__tree_8c_a9a58d42acc5dd251bf885a0f58c6abfb}\label{rb__tree_8c_a9a58d42acc5dd251bf885a0f58c6abfb}} 
+\index{rb\_tree.c@{rb\_tree.c}!rbDestroy@{rbDestroy}}
+\index{rbDestroy@{rbDestroy}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{rbDestroy()}{rbDestroy()}}
+{\footnotesize\ttfamily void rb\+Destroy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt }\end{DoxyParamCaption})}
+
+
+
+Destroy the tree, and de-\/allocate it\textquotesingle{}s elements. 
+
+
+
+Definition at line 59 of file rb\+\_\+tree.\+c.
+
+
+
+References destroy\+All\+Nodes(), and R\+B\+\_\+\+F\+I\+R\+ST.
+
+\mbox{\Hypertarget{rb__tree_8c_ad7470a946dc18fdea53de8efa48ba4eb}\label{rb__tree_8c_ad7470a946dc18fdea53de8efa48ba4eb}} 
+\index{rb\_tree.c@{rb\_tree.c}!rbFind@{rbFind}}
+\index{rbFind@{rbFind}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{rbFind()}{rbFind()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrbnode}{rbnode}}$\ast$ rb\+Find (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Find a node of the tree based off the data you provide the tree. 
+
+
+
+Definition at line 69 of file rb\+\_\+tree.\+c.
+
+
+
+References rbtree\+::compare, rbnode\+::data, rbnode\+::left, R\+B\+\_\+\+F\+I\+R\+ST, R\+B\+\_\+\+N\+IL, and rbnode\+::right.
+
+\mbox{\Hypertarget{rb__tree_8c_aeb5491e8c286b8dbc868df0c31dba799}\label{rb__tree_8c_aeb5491e8c286b8dbc868df0c31dba799}} 
+\index{rb\_tree.c@{rb\_tree.c}!rbInsert@{rbInsert}}
+\index{rbInsert@{rbInsert}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{rbInsert()}{rbInsert()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrbnode}{rbnode}}$\ast$ rb\+Insert (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{void $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Definition at line 191 of file rb\+\_\+tree.\+c.
+
+
+
+References B\+L\+A\+CK, rbnode\+::color, rbtree\+::compare, rbtree\+::count, rbnode\+::data, rbtree\+::destroy, insert\+Repair(), rbnode\+::left, rbtree\+::min, rbnode\+::parent, R\+B\+\_\+\+F\+I\+R\+ST, R\+B\+\_\+\+M\+IN, R\+B\+\_\+\+N\+IL, R\+B\+\_\+\+R\+O\+OT, R\+ED, and rbnode\+::right.
+
+\mbox{\Hypertarget{rb__tree_8c_a447d21f412285d3455356d2975a6ced3}\label{rb__tree_8c_a447d21f412285d3455356d2975a6ced3}} 
+\index{rb\_tree.c@{rb\_tree.c}!rbPrint@{rbPrint}}
+\index{rbPrint@{rbPrint}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{rbPrint()}{rbPrint()}}
+{\footnotesize\ttfamily void rb\+Print (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{void($\ast$)(void $\ast$)}]{print\+\_\+func }\end{DoxyParamCaption})}
+
+
+
+Definition at line 587 of file rb\+\_\+tree.\+c.
+
+
+
+References print(), R\+B\+\_\+\+F\+I\+R\+ST, and rb\+Check\+Black\+Height().
+
+\mbox{\Hypertarget{rb__tree_8c_a70293914fa5f96508b9b502d7f3bb5dc}\label{rb__tree_8c_a70293914fa5f96508b9b502d7f3bb5dc}} 
+\index{rb\_tree.c@{rb\_tree.c}!rbSuccessor@{rbSuccessor}}
+\index{rbSuccessor@{rbSuccessor}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{rbSuccessor()}{rbSuccessor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrbnode}{rbnode}}$\ast$ rb\+Successor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Definition at line 90 of file rb\+\_\+tree.\+c.
+
+
+
+References rbnode\+::left, rbnode\+::parent, R\+B\+\_\+\+N\+IL, R\+B\+\_\+\+R\+O\+OT, and rbnode\+::right.
+
+
+
+Referenced by rb\+Delete().
+
+\mbox{\Hypertarget{rb__tree_8c_ac759dc1b9dd51f2cf78c9122dcc5acae}\label{rb__tree_8c_ac759dc1b9dd51f2cf78c9122dcc5acae}} 
+\index{rb\_tree.c@{rb\_tree.c}!rotateLeft@{rotateLeft}}
+\index{rotateLeft@{rotateLeft}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{rotateLeft()}{rotateLeft()}}
+{\footnotesize\ttfamily void rotate\+Left (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 137 of file rb\+\_\+tree.\+c.
+
+
+
+References rbnode\+::left, rbnode\+::parent, R\+B\+\_\+\+N\+IL, and rbnode\+::right.
+
+
+
+Referenced by delete\+Repair(), and insert\+Repair().
+
+\mbox{\Hypertarget{rb__tree_8c_a415b3985875cc2a5f17ff3f87d8d7895}\label{rb__tree_8c_a415b3985875cc2a5f17ff3f87d8d7895}} 
+\index{rb\_tree.c@{rb\_tree.c}!rotateRight@{rotateRight}}
+\index{rotateRight@{rotateRight}!rb\_tree.c@{rb\_tree.c}}
+\doxysubsubsection{\texorpdfstring{rotateRight()}{rotateRight()}}
+{\footnotesize\ttfamily void rotate\+Right (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 163 of file rb\+\_\+tree.\+c.
+
+
+
+References rbnode\+::left, rbnode\+::parent, R\+B\+\_\+\+N\+IL, and rbnode\+::right.
+
+
+
+Referenced by delete\+Repair(), and insert\+Repair().
+

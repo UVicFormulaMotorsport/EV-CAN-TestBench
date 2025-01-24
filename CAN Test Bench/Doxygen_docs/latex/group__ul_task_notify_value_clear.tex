@@ -1,0 +1,13 @@
+\hypertarget{group__ul_task_notify_value_clear}{}\doxysection{ul\+Task\+Notify\+Value\+Clear}
+\label{group__ul_task_notify_value_clear}\index{ulTaskNotifyValueClear@{ulTaskNotifyValueClear}}
+task. h 
+\begin{DoxyPre}uint32\_t \mbox{\hyperlink{task_8h_ae9254491975ce0adbbc879d56dd1b222}{ulTaskNotifyValueClear( TaskHandle\_t xTask, uint32\_t ulBitsToClear )}};\end{DoxyPre}
+
+
+Clears the bits specified by the ul\+Bits\+To\+Clear bit mask in the notification value of the task referenced by x\+Task.
+
+Set ul\+Bits\+To\+Clear to 0xffffffff (U\+I\+N\+T\+\_\+\+M\+AX on 32-\/bit architectures) to clear the notification value to 0. Set ul\+Bits\+To\+Clear to 0 to query the task\textquotesingle{}s notification value without clearing any bits.
+
+\begin{DoxyReturn}{Returns}
+The value of the target task\textquotesingle{}s notification value before the bits specified by ul\+Bits\+To\+Clear were cleared. 
+\end{DoxyReturn}

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['motor_5fcontroller_5fsettings_5ft_896',['motor_controller_settings_t',['../structmotor__controller__settings__t.html',1,'']]],
-  ['motor_5fcontrollor_5fsettings_897',['motor_controllor_settings',['../structmotor__controllor__settings.html',1,'']]]
+  ['exp_5ftorque_5fmap_5fargs_1100',['exp_torque_map_args',['../structexp__torque__map__args.html',1,'']]]
 ];

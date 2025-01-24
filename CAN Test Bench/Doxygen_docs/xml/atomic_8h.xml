@@ -1,0 +1,866 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="atomic_8h" kind="file" language="C++">
+    <compoundname>atomic.h</compoundname>
+    <includes local="no">stdint.h</includes>
+    <incdepgraph>
+      <node id="2">
+        <label>stdint.h</label>
+      </node>
+      <node id="1">
+        <label>Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h</label>
+        <link refid="atomic_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" prot="public" static="no">
+        <name>ATOMIC_ENTER_CRITICAL</name>
+        <param></param>
+        <initializer>portENTER_CRITICAL()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="71" column="10" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" prot="public" static="no">
+        <name>ATOMIC_EXIT_CRITICAL</name>
+        <param></param>
+        <initializer>portEXIT_CRITICAL()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="72" column="10" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="atomic_8h_1aaa356ca7932487d20a42d6839842d308" prot="public" static="no">
+        <name>portFORCE_INLINE</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="84" column="10" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="atomic_8h_1a2d30f083e50b866caf8822ec31a75969" prot="public" static="no">
+        <name>ATOMIC_COMPARE_AND_SWAP_SUCCESS</name>
+        <initializer>0x1U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compare and swap succeeded, swapped. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="87" column="9" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="atomic_8h_1ab374919fbdbc585c3436a94f5bad31b6" prot="public" static="no">
+        <name>ATOMIC_COMPARE_AND_SWAP_FAILURE</name>
+        <initializer>0x0U</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Compare and swap failed, did not swap. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="88" column="9" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="atomic_8h_1ad0c956772f1d09cea1120c0ed6c4a0df" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref> uint32_t</type>
+        <definition>static portFORCE_INLINE uint32_t Atomic_CompareAndSwap_u32</definition>
+        <argsstring>(uint32_t volatile *pulDestination, uint32_t ulExchange, uint32_t ulComparand)</argsstring>
+        <name>Atomic_CompareAndSwap_u32</name>
+        <param>
+          <type>uint32_t volatile *</type>
+          <declname>pulDestination</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>ulExchange</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>ulComparand</declname>
+        </param>
+        <briefdescription>
+<para>Performs an atomic compare-and-swap operation on the specified values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomic compare-and-swap</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pulDestination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to memory location from where value is to be loaded and checked. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ulExchange</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If condition meets, write this value to memory. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ulComparand</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Swap condition.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Unsigned integer of value 1 or 0. 1 for swapped, 0 for not swapped.</para>
+</simplesect>
+<simplesect kind="note"><para>This function only swaps *pulDestination with ulExchange, if previous *pulDestination value equals ulComparand. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="107" column="34" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="107" bodyend="128"/>
+        <references refid="atomic_8h_1ab374919fbdbc585c3436a94f5bad31b6" compoundref="atomic_8h" startline="88">ATOMIC_COMPARE_AND_SWAP_FAILURE</references>
+        <references refid="atomic_8h_1a2d30f083e50b866caf8822ec31a75969" compoundref="atomic_8h" startline="87">ATOMIC_COMPARE_AND_SWAP_SUCCESS</references>
+        <references refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" compoundref="atomic_8h" startline="71">ATOMIC_ENTER_CRITICAL</references>
+        <references refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" compoundref="atomic_8h" startline="72">ATOMIC_EXIT_CRITICAL</references>
+      </memberdef>
+      <memberdef kind="function" id="atomic_8h_1a64d255792849f5443c4209d746eb60c3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref> void *</type>
+        <definition>static portFORCE_INLINE void* Atomic_SwapPointers_p32</definition>
+        <argsstring>(void *volatile *ppvDestination, void *pvExchange)</argsstring>
+        <name>Atomic_SwapPointers_p32</name>
+        <param>
+          <type>void *volatile *</type>
+          <declname>ppvDestination</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pvExchange</declname>
+        </param>
+        <briefdescription>
+<para>Atomically sets the address pointed to by *ppvDestination to the value of *pvExchange. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomic swap (pointers)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">ppvDestination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to memory location from where a pointer value is to be loaded and written back to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pvExchange</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer value to be written to *ppvDestination.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The initial value of *ppvDestination. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="143" column="31" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="143" bodyend="156"/>
+        <references refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" compoundref="atomic_8h" startline="71">ATOMIC_ENTER_CRITICAL</references>
+        <references refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" compoundref="atomic_8h" startline="72">ATOMIC_EXIT_CRITICAL</references>
+      </memberdef>
+      <memberdef kind="function" id="atomic_8h_1a0dfb0b26706475d490792af561a143d5" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref> uint32_t</type>
+        <definition>static portFORCE_INLINE uint32_t Atomic_CompareAndSwapPointers_p32</definition>
+        <argsstring>(void *volatile *ppvDestination, void *pvExchange, void *pvComparand)</argsstring>
+        <name>Atomic_CompareAndSwapPointers_p32</name>
+        <param>
+          <type>void *volatile *</type>
+          <declname>ppvDestination</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pvExchange</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>pvComparand</declname>
+        </param>
+        <briefdescription>
+<para>Performs an atomic compare-and-swap operation on the specified pointer values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomic compare-and-swap (pointers)</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">ppvDestination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to memory location from where a pointer value is to be loaded and checked. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pvExchange</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If condition meets, write this value to memory. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">pvComparand</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Swap condition.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Unsigned integer of value 1 or 0. 1 for swapped, 0 for not swapped.</para>
+</simplesect>
+<simplesect kind="note"><para>This function only swaps *ppvDestination with pvExchange, if previous *ppvDestination value equals pvComparand. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="175" column="34" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="175" bodyend="192"/>
+        <references refid="atomic_8h_1ab374919fbdbc585c3436a94f5bad31b6" compoundref="atomic_8h" startline="88">ATOMIC_COMPARE_AND_SWAP_FAILURE</references>
+        <references refid="atomic_8h_1a2d30f083e50b866caf8822ec31a75969" compoundref="atomic_8h" startline="87">ATOMIC_COMPARE_AND_SWAP_SUCCESS</references>
+        <references refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" compoundref="atomic_8h" startline="71">ATOMIC_ENTER_CRITICAL</references>
+        <references refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" compoundref="atomic_8h" startline="72">ATOMIC_EXIT_CRITICAL</references>
+      </memberdef>
+      <memberdef kind="function" id="atomic_8h_1a14d4af36077403e01685fae0cc93ed3d" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref> uint32_t</type>
+        <definition>static portFORCE_INLINE uint32_t Atomic_Add_u32</definition>
+        <argsstring>(uint32_t volatile *pulAddend, uint32_t ulCount)</argsstring>
+        <name>Atomic_Add_u32</name>
+        <param>
+          <type>uint32_t volatile *</type>
+          <declname>pulAddend</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>ulCount</declname>
+        </param>
+        <briefdescription>
+<para>Atomically adds count to the value of the specified pointer points to. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomic add</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pulAddend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to memory location from where value is to be loaded and written back to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ulCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be added to *pulAddend.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>previous *pulAddend value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="208" column="34" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="208" bodyend="221"/>
+        <references refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" compoundref="atomic_8h" startline="71">ATOMIC_ENTER_CRITICAL</references>
+        <references refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" compoundref="atomic_8h" startline="72">ATOMIC_EXIT_CRITICAL</references>
+      </memberdef>
+      <memberdef kind="function" id="atomic_8h_1ac5d1592ac108f14a62aa88be210a205e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref> uint32_t</type>
+        <definition>static portFORCE_INLINE uint32_t Atomic_Subtract_u32</definition>
+        <argsstring>(uint32_t volatile *pulAddend, uint32_t ulCount)</argsstring>
+        <name>Atomic_Subtract_u32</name>
+        <param>
+          <type>uint32_t volatile *</type>
+          <declname>pulAddend</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>ulCount</declname>
+        </param>
+        <briefdescription>
+<para>Atomically subtracts count from the value of the specified pointer pointers to. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomic subtract</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pulAddend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to memory location from where value is to be loaded and written back to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ulCount</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be subtract from *pulAddend.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>previous *pulAddend value. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="236" column="34" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="236" bodyend="249"/>
+        <references refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" compoundref="atomic_8h" startline="71">ATOMIC_ENTER_CRITICAL</references>
+        <references refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" compoundref="atomic_8h" startline="72">ATOMIC_EXIT_CRITICAL</references>
+      </memberdef>
+      <memberdef kind="function" id="atomic_8h_1a7ce395cb8553d0fb973f1db2dbac294f" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref> uint32_t</type>
+        <definition>static portFORCE_INLINE uint32_t Atomic_Increment_u32</definition>
+        <argsstring>(uint32_t volatile *pulAddend)</argsstring>
+        <name>Atomic_Increment_u32</name>
+        <param>
+          <type>uint32_t volatile *</type>
+          <declname>pulAddend</declname>
+        </param>
+        <briefdescription>
+<para>Atomically increments the value of the specified pointer points to. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomic increment</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pulAddend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to memory location from where value is to be loaded and written back to.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>*pulAddend value before increment. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="262" column="34" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="262" bodyend="274"/>
+        <references refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" compoundref="atomic_8h" startline="71">ATOMIC_ENTER_CRITICAL</references>
+        <references refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" compoundref="atomic_8h" startline="72">ATOMIC_EXIT_CRITICAL</references>
+      </memberdef>
+      <memberdef kind="function" id="atomic_8h_1a6bb0ca2c06e0627945b1351ba36d55a7" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref> uint32_t</type>
+        <definition>static portFORCE_INLINE uint32_t Atomic_Decrement_u32</definition>
+        <argsstring>(uint32_t volatile *pulAddend)</argsstring>
+        <name>Atomic_Decrement_u32</name>
+        <param>
+          <type>uint32_t volatile *</type>
+          <declname>pulAddend</declname>
+        </param>
+        <briefdescription>
+<para>Atomically decrements the value of the specified pointer points to. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomic decrement</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pulAddend</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to memory location from where value is to be loaded and written back to.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>*pulAddend value before decrement. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="287" column="34" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="287" bodyend="299"/>
+        <references refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" compoundref="atomic_8h" startline="71">ATOMIC_ENTER_CRITICAL</references>
+        <references refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" compoundref="atomic_8h" startline="72">ATOMIC_EXIT_CRITICAL</references>
+      </memberdef>
+      <memberdef kind="function" id="atomic_8h_1af1dcc9bcd06047887bc57acb2133b622" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref> uint32_t</type>
+        <definition>static portFORCE_INLINE uint32_t Atomic_OR_u32</definition>
+        <argsstring>(uint32_t volatile *pulDestination, uint32_t ulValue)</argsstring>
+        <name>Atomic_OR_u32</name>
+        <param>
+          <type>uint32_t volatile *</type>
+          <declname>pulDestination</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>ulValue</declname>
+        </param>
+        <briefdescription>
+<para>Performs an atomic OR operation on the specified values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomic OR</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pulDestination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to memory location from where value is to be loaded and written back to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ulValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be ORed with *pulDestination.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The original value of *pulDestination. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="314" column="34" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="314" bodyend="327"/>
+        <references refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" compoundref="atomic_8h" startline="71">ATOMIC_ENTER_CRITICAL</references>
+        <references refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" compoundref="atomic_8h" startline="72">ATOMIC_EXIT_CRITICAL</references>
+      </memberdef>
+      <memberdef kind="function" id="atomic_8h_1a9eeea6a0a5bec7c5ad9d3f073d396338" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref> uint32_t</type>
+        <definition>static portFORCE_INLINE uint32_t Atomic_AND_u32</definition>
+        <argsstring>(uint32_t volatile *pulDestination, uint32_t ulValue)</argsstring>
+        <name>Atomic_AND_u32</name>
+        <param>
+          <type>uint32_t volatile *</type>
+          <declname>pulDestination</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>ulValue</declname>
+        </param>
+        <briefdescription>
+<para>Performs an atomic AND operation on the specified values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomic AND</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pulDestination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to memory location from where value is to be loaded and written back to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ulValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be ANDed with *pulDestination.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The original value of *pulDestination. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="341" column="34" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="341" bodyend="354"/>
+        <references refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" compoundref="atomic_8h" startline="71">ATOMIC_ENTER_CRITICAL</references>
+        <references refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" compoundref="atomic_8h" startline="72">ATOMIC_EXIT_CRITICAL</references>
+      </memberdef>
+      <memberdef kind="function" id="atomic_8h_1a9c13a49fba8a8f1eeca954d6b9dbfac4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref> uint32_t</type>
+        <definition>static portFORCE_INLINE uint32_t Atomic_NAND_u32</definition>
+        <argsstring>(uint32_t volatile *pulDestination, uint32_t ulValue)</argsstring>
+        <name>Atomic_NAND_u32</name>
+        <param>
+          <type>uint32_t volatile *</type>
+          <declname>pulDestination</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>ulValue</declname>
+        </param>
+        <briefdescription>
+<para>Performs an atomic NAND operation on the specified values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomic NAND</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pulDestination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to memory location from where value is to be loaded and written back to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ulValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be NANDed with *pulDestination.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The original value of *pulDestination. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="368" column="34" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="368" bodyend="381"/>
+        <references refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" compoundref="atomic_8h" startline="71">ATOMIC_ENTER_CRITICAL</references>
+        <references refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" compoundref="atomic_8h" startline="72">ATOMIC_EXIT_CRITICAL</references>
+      </memberdef>
+      <memberdef kind="function" id="atomic_8h_1a070776e59f4253dda4ec58b5e2710e81" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref> uint32_t</type>
+        <definition>static portFORCE_INLINE uint32_t Atomic_XOR_u32</definition>
+        <argsstring>(uint32_t volatile *pulDestination, uint32_t ulValue)</argsstring>
+        <name>Atomic_XOR_u32</name>
+        <param>
+          <type>uint32_t volatile *</type>
+          <declname>pulDestination</declname>
+        </param>
+        <param>
+          <type>uint32_t</type>
+          <declname>ulValue</declname>
+        </param>
+        <briefdescription>
+<para>Performs an atomic XOR operation on the specified values. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomic XOR</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="inout">pulDestination</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to memory location from where value is to be loaded and written back to. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="in">ulValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Value to be XORed with *pulDestination.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The original value of *pulDestination. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" line="395" column="34" bodyfile="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h" bodystart="395" bodyend="408"/>
+        <references refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" compoundref="atomic_8h" startline="71">ATOMIC_ENTER_CRITICAL</references>
+        <references refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" compoundref="atomic_8h" startline="72">ATOMIC_EXIT_CRITICAL</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>FreeRTOS atomic operation support. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file implements atomic functions by disabling interrupts globally. Implementations with architecture specific atomic instructions can be provided under each compiler directory. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>FreeRTOS<sp/>Kernel<sp/>V10.3.1</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(C)<sp/>2020<sp/>Amazon.com,<sp/>Inc.<sp/>or<sp/>its<sp/>affiliates.<sp/><sp/>All<sp/>Rights<sp/>Reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy<sp/>of</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to<sp/>deal<sp/>in</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the<sp/>rights<sp/>to</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or<sp/>sell<sp/>copies<sp/>of</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to<sp/>do<sp/>so,</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in<sp/>all</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,<sp/>FITNESS</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>AUTHORS<sp/>OR</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>http://www.FreeRTOS.org</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/>http://aws.amazon.com/freertos</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>1<sp/>tab<sp/>==<sp/>4<sp/>spaces!</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="preprocessor">#ifndef<sp/>ATOMIC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ATOMIC_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>INC_FREERTOS_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#error<sp/>&quot;include<sp/>FreeRTOS.h<sp/>must<sp/>appear<sp/>in<sp/>source<sp/>files<sp/>before<sp/>include<sp/>atomic.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Standard<sp/>includes.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="52"><highlight class="comment"><sp/>*<sp/>Port<sp/>specific<sp/>definitions<sp/>--<sp/>entering/exiting<sp/>critical<sp/>section.</highlight></codeline>
+<codeline lineno="53"><highlight class="comment"><sp/>*<sp/>Refer<sp/>template<sp/>--<sp/>./lib/FreeRTOS/portable/Compiler/Arch/portmacro.h</highlight></codeline>
+<codeline lineno="54"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="55"><highlight class="comment"><sp/>*<sp/>Every<sp/>call<sp/>to<sp/>ATOMIC_EXIT_CRITICAL()<sp/>must<sp/>be<sp/>closely<sp/>paired<sp/>with</highlight></codeline>
+<codeline lineno="56"><highlight class="comment"><sp/>*<sp/>ATOMIC_ENTER_CRITICAL().</highlight></codeline>
+<codeline lineno="57"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="58"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(<sp/>portSET_INTERRUPT_MASK_FROM_ISR<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Nested<sp/>interrupt<sp/>scheme<sp/>is<sp/>supported<sp/>in<sp/>this<sp/>port.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>ATOMIC_ENTER_CRITICAL()<sp/><sp/>\</highlight></codeline>
+<codeline lineno="63"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>UBaseType_t<sp/>uxCriticalSectionType<sp/>=<sp/>portSET_INTERRUPT_MASK_FROM_ISR()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>ATOMIC_EXIT_CRITICAL()<sp/><sp/><sp/><sp/>\</highlight></codeline>
+<codeline lineno="66"><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>portCLEAR_INTERRUPT_MASK_FROM_ISR(<sp/>uxCriticalSectionType<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Nested<sp/>interrupt<sp/>scheme<sp/>is<sp/>NOT<sp/>supported<sp/>in<sp/>this<sp/>port.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>ATOMIC_ENTER_CRITICAL()<sp/><sp/>portENTER_CRITICAL()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>ATOMIC_EXIT_CRITICAL()<sp/><sp/><sp/><sp/>portEXIT_CRITICAL()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>portSET_INTERRUPT_MASK_FROM_ISR()<sp/>*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="77"><highlight class="comment"><sp/>*<sp/>Port<sp/>specific<sp/>definition<sp/>--<sp/>&quot;always<sp/>inline&quot;.</highlight></codeline>
+<codeline lineno="78"><highlight class="comment"><sp/>*<sp/>Inline<sp/>is<sp/>compiler<sp/>specific,<sp/>and<sp/>may<sp/>not<sp/>always<sp/>get<sp/>inlined<sp/>depending<sp/>on<sp/>your</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/>*<sp/>optimization<sp/>level.<sp/><sp/>Also,<sp/>inline<sp/>is<sp/>considered<sp/>as<sp/>performance<sp/>optimization</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/>*<sp/>for<sp/>atomic.<sp/><sp/>Thus,<sp/>if<sp/>portFORCE_INLINE<sp/>is<sp/>not<sp/>provided<sp/>by<sp/>portmacro.h,</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/>*<sp/>instead<sp/>of<sp/>resulting<sp/>error,<sp/>simply<sp/>define<sp/>it<sp/>away.</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>portFORCE_INLINE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>portFORCE_INLINE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="atomic_8h_1a2d30f083e50b866caf8822ec31a75969" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ATOMIC_COMPARE_AND_SWAP_SUCCESS<sp/><sp/>0x1U<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88" refid="atomic_8h_1ab374919fbdbc585c3436a94f5bad31b6" refkind="member"><highlight class="preprocessor">#define<sp/>ATOMIC_COMPARE_AND_SWAP_FAILURE<sp/><sp/>0x0U<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="preprocessor"></highlight><highlight class="comment">/*-----------------------------<sp/>Swap<sp/>&amp;&amp;<sp/>CAS<sp/>------------------------------*/</highlight><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="atomic_8h_1ad0c956772f1d09cea1120c0ed6c4a0df" refkind="member"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref><sp/>uint32_t<sp/><ref refid="atomic_8h_1ad0c956772f1d09cea1120c0ed6c4a0df" kindref="member">Atomic_CompareAndSwap_u32</ref>(<sp/>uint32_t<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>*<sp/>pulDestination,</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>ulExchange,</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>ulComparand<sp/>)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">uint32_t<sp/>ulReturnValue;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" kindref="member">ATOMIC_ENTER_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>*pulDestination<sp/>==<sp/>ulComparand<sp/>)</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pulDestination<sp/>=<sp/>ulExchange;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulReturnValue<sp/>=<sp/><ref refid="atomic_8h_1a2d30f083e50b866caf8822ec31a75969" kindref="member">ATOMIC_COMPARE_AND_SWAP_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulReturnValue<sp/>=<sp/><ref refid="atomic_8h_1ab374919fbdbc585c3436a94f5bad31b6" kindref="member">ATOMIC_COMPARE_AND_SWAP_FAILURE</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" kindref="member">ATOMIC_EXIT_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ulReturnValue;</highlight></codeline>
+<codeline lineno="128"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">/*-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="atomic_8h_1a64d255792849f5443c4209d746eb60c3" refkind="member"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="atomic_8h_1a64d255792849f5443c4209d746eb60c3" kindref="member">Atomic_SwapPointers_p32</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>*<sp/>ppvDestination,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>pvExchange<sp/>)</highlight></codeline>
+<codeline lineno="145"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>pReturnValue;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" kindref="member">ATOMIC_ENTER_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>pReturnValue<sp/>=<sp/>*ppvDestination;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*ppvDestination<sp/>=<sp/>pvExchange;</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" kindref="member">ATOMIC_EXIT_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>pReturnValue;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="comment">/*-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175" refid="atomic_8h_1a0dfb0b26706475d490792af561a143d5" refkind="member"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref><sp/>uint32_t<sp/><ref refid="atomic_8h_1a0dfb0b26706475d490792af561a143d5" kindref="member">Atomic_CompareAndSwapPointers_p32</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>*<sp/>ppvDestination,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>pvExchange,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>pvComparand<sp/>)</highlight></codeline>
+<codeline lineno="178"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">uint32_t<sp/>ulReturnValue<sp/>=<sp/><ref refid="atomic_8h_1ab374919fbdbc585c3436a94f5bad31b6" kindref="member">ATOMIC_COMPARE_AND_SWAP_FAILURE</ref>;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" kindref="member">ATOMIC_ENTER_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>*ppvDestination<sp/>==<sp/>pvComparand<sp/>)</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*ppvDestination<sp/>=<sp/>pvExchange;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulReturnValue<sp/>=<sp/><ref refid="atomic_8h_1a2d30f083e50b866caf8822ec31a75969" kindref="member">ATOMIC_COMPARE_AND_SWAP_SUCCESS</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" kindref="member">ATOMIC_EXIT_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ulReturnValue;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight><highlight class="comment">/*-----------------------------<sp/>Arithmetic<sp/>------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208" refid="atomic_8h_1a14d4af36077403e01685fae0cc93ed3d" refkind="member"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref><sp/>uint32_t<sp/><ref refid="atomic_8h_1a14d4af36077403e01685fae0cc93ed3d" kindref="member">Atomic_Add_u32</ref>(<sp/>uint32_t<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>*<sp/>pulAddend,</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>ulCount<sp/>)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" kindref="member">ATOMIC_ENTER_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulCurrent<sp/>=<sp/>*pulAddend;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pulAddend<sp/>+=<sp/>ulCount;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" kindref="member">ATOMIC_EXIT_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="221"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight><highlight class="comment">/*-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236" refid="atomic_8h_1ac5d1592ac108f14a62aa88be210a205e" refkind="member"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref><sp/>uint32_t<sp/><ref refid="atomic_8h_1ac5d1592ac108f14a62aa88be210a205e" kindref="member">Atomic_Subtract_u32</ref>(<sp/>uint32_t<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>*<sp/>pulAddend,</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>ulCount<sp/>)</highlight></codeline>
+<codeline lineno="238"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" kindref="member">ATOMIC_ENTER_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulCurrent<sp/>=<sp/>*pulAddend;</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pulAddend<sp/>-=<sp/>ulCount;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" kindref="member">ATOMIC_EXIT_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight><highlight class="comment">/*-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262" refid="atomic_8h_1a7ce395cb8553d0fb973f1db2dbac294f" refkind="member"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref><sp/>uint32_t<sp/><ref refid="atomic_8h_1a7ce395cb8553d0fb973f1db2dbac294f" kindref="member">Atomic_Increment_u32</ref>(<sp/>uint32_t<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>*<sp/>pulAddend<sp/>)</highlight></codeline>
+<codeline lineno="263"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="264"><highlight class="normal">uint32_t<sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" kindref="member">ATOMIC_ENTER_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulCurrent<sp/>=<sp/>*pulAddend;</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pulAddend<sp/>+=<sp/>1;</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" kindref="member">ATOMIC_EXIT_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="274"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"></highlight><highlight class="comment">/*-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287" refid="atomic_8h_1a6bb0ca2c06e0627945b1351ba36d55a7" refkind="member"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref><sp/>uint32_t<sp/><ref refid="atomic_8h_1a6bb0ca2c06e0627945b1351ba36d55a7" kindref="member">Atomic_Decrement_u32</ref>(<sp/>uint32_t<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>*<sp/>pulAddend<sp/>)</highlight></codeline>
+<codeline lineno="288"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="289"><highlight class="normal">uint32_t<sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" kindref="member">ATOMIC_ENTER_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulCurrent<sp/>=<sp/>*pulAddend;</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pulAddend<sp/>-=<sp/>1;</highlight></codeline>
+<codeline lineno="295"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" kindref="member">ATOMIC_EXIT_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight><highlight class="comment">/*-----------------------------<sp/>Bitwise<sp/>Logical<sp/>------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314" refid="atomic_8h_1af1dcc9bcd06047887bc57acb2133b622" refkind="member"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref><sp/>uint32_t<sp/><ref refid="atomic_8h_1af1dcc9bcd06047887bc57acb2133b622" kindref="member">Atomic_OR_u32</ref>(<sp/>uint32_t<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>*<sp/>pulDestination,</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>ulValue<sp/>)</highlight></codeline>
+<codeline lineno="316"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="317"><highlight class="normal">uint32_t<sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" kindref="member">ATOMIC_ENTER_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulCurrent<sp/>=<sp/>*pulDestination;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pulDestination<sp/>|=<sp/>ulValue;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" kindref="member">ATOMIC_EXIT_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="327"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight><highlight class="comment">/*-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341" refid="atomic_8h_1a9eeea6a0a5bec7c5ad9d3f073d396338" refkind="member"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref><sp/>uint32_t<sp/><ref refid="atomic_8h_1a9eeea6a0a5bec7c5ad9d3f073d396338" kindref="member">Atomic_AND_u32</ref>(<sp/>uint32_t<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>*<sp/>pulDestination,</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>ulValue<sp/>)</highlight></codeline>
+<codeline lineno="343"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="344"><highlight class="normal">uint32_t<sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" kindref="member">ATOMIC_ENTER_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulCurrent<sp/>=<sp/>*pulDestination;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pulDestination<sp/>&amp;=<sp/>ulValue;</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" kindref="member">ATOMIC_EXIT_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="354"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"></highlight><highlight class="comment">/*-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368" refid="atomic_8h_1a9c13a49fba8a8f1eeca954d6b9dbfac4" refkind="member"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref><sp/>uint32_t<sp/><ref refid="atomic_8h_1a9c13a49fba8a8f1eeca954d6b9dbfac4" kindref="member">Atomic_NAND_u32</ref>(<sp/>uint32_t<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>*<sp/>pulDestination,</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>ulValue<sp/>)</highlight></codeline>
+<codeline lineno="370"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="371"><highlight class="normal">uint32_t<sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" kindref="member">ATOMIC_ENTER_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulCurrent<sp/>=<sp/>*pulDestination;</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pulDestination<sp/>=<sp/>~(<sp/>ulCurrent<sp/>&amp;<sp/>ulValue<sp/>);</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" kindref="member">ATOMIC_EXIT_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="381"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight><highlight class="comment">/*-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395" refid="atomic_8h_1a070776e59f4253dda4ec58b5e2710e81" refkind="member"><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="atomic_8h_1aaa356ca7932487d20a42d6839842d308" kindref="member">portFORCE_INLINE</ref><sp/>uint32_t<sp/><ref refid="atomic_8h_1a070776e59f4253dda4ec58b5e2710e81" kindref="member">Atomic_XOR_u32</ref>(<sp/>uint32_t<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>*<sp/>pulDestination,</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t<sp/>ulValue<sp/>)</highlight></codeline>
+<codeline lineno="397"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="398"><highlight class="normal">uint32_t<sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a155d89b2444fe81cbc8d051f0fd849c9" kindref="member">ATOMIC_ENTER_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ulCurrent<sp/>=<sp/>*pulDestination;</highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*pulDestination<sp/>^=<sp/>ulValue;</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="atomic_8h_1a1aab48db50f9e59e44032386aa3eb5b8" kindref="member">ATOMIC_EXIT_CRITICAL</ref>();</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight></codeline>
+<codeline lineno="407"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>ulCurrent;</highlight></codeline>
+<codeline lineno="408"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="409"><highlight class="normal"></highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ATOMIC_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="Middlewares/Third_Party/FreeRTOS/Source/include/atomic.h"/>
+  </compounddef>
+</doxygen>

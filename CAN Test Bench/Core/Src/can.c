@@ -326,6 +326,7 @@ uv_status uvSendCanMSG(uv_CAN_msg* msg){
 		can_tx_daemon_handle = xTaskGetHandle(CAN_TX_DAEMON_NAME);
 		if(can_tx_daemon_handle == NULL){
 			//This means that the can_tx_daemon is probably not running
+			uvPanic("CANbusTxHandler not running",0);
 			return UV_ERROR;
 		}
 	}

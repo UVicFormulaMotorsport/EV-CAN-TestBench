@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="group___s_t_m32_f4xx___system___private___variables" kind="group">
+    <compoundname>STM32F4xx_System_Private_Variables</compoundname>
+    <title>STM32F4xx_System_Private_Variables</title>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="group___s_t_m32_f4xx___system___private___variables_1gaa3cd3e43291e81e795d642b79b6088e6" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t SystemCoreClock</definition>
+        <argsstring></argsstring>
+        <name>SystemCoreClock</name>
+        <initializer>= 16000000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/system_stm32f4xx.c" line="137" column="10" bodyfile="Core/Src/system_stm32f4xx.c" bodystart="137" bodyend="-1"/>
+        <referencedby refid="group___s_t_m32_f4xx___system___private___functions_1gae0c36a9591fe6e9c45ecb21a794f0f0f" compoundref="system__stm32f4xx_8c" startline="216" endline="262">SystemCoreClockUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="group___s_t_m32_f4xx___system___private___variables_1ga6e1d9cd666f0eacbfde31e9932a93466" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t AHBPrescTable[16]</definition>
+        <argsstring>[16]</argsstring>
+        <name>AHBPrescTable</name>
+        <initializer>= {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/system_stm32f4xx.c" line="138" column="15" bodyfile="Core/Src/system_stm32f4xx.c" bodystart="138" bodyend="-1"/>
+        <referencedby refid="group___s_t_m32_f4xx___system___private___functions_1gae0c36a9591fe6e9c45ecb21a794f0f0f" compoundref="system__stm32f4xx_8c" startline="216" endline="262">SystemCoreClockUpdate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="group___s_t_m32_f4xx___system___private___variables_1ga5b4f8b768465842cf854a8f993b375e9" prot="public" static="no" mutable="no">
+        <type>const uint8_t</type>
+        <definition>const uint8_t APBPrescTable[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>APBPrescTable</name>
+        <initializer>= {0, 0, 0, 0, 1, 2, 3, 4}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/system_stm32f4xx.c" line="139" column="15" bodyfile="Core/Src/system_stm32f4xx.c" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

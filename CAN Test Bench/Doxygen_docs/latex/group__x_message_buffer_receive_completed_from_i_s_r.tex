@@ -1,0 +1,26 @@
+\hypertarget{group__x_message_buffer_receive_completed_from_i_s_r}{}\doxysection{x\+Message\+Buffer\+Receive\+Completed\+From\+I\+SR}
+\label{group__x_message_buffer_receive_completed_from_i_s_r}\index{xMessageBufferReceiveCompletedFromISR@{xMessageBufferReceiveCompletedFromISR}}
+\mbox{\hyperlink{message__buffer_8h}{message\+\_\+buffer.\+h}}
+
+
+\begin{DoxyPre}
+BaseType\_t \mbox{\hyperlink{message__buffer_8h_a22b1a37d0d4f39acd87250f73d9aab0c}{xMessageBufferReceiveCompletedFromISR( MessageBufferHandle\_t xStreamBuffer, BaseType\_t *pxHigherPriorityTaskWoken )}};
+\end{DoxyPre}
+
+
+For advanced users only.
+
+The sb\+R\+E\+C\+E\+I\+V\+E\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D() macro is called from within the Free\+R\+T\+OS A\+P\+Is when data is read out of a message buffer or stream buffer. If there was a task that was blocked on the message or stream buffer waiting for data to arrive then the sb\+R\+E\+C\+E\+I\+V\+E\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D() macro sends a notification to the task to remove it from the Blocked state. \mbox{\hyperlink{message__buffer_8h_a22b1a37d0d4f39acd87250f73d9aab0c}{x\+Message\+Buffer\+Receive\+Completed\+From\+I\+S\+R()}} does the same thing. It is provided to enable application writers to implement their own version of sb\+R\+E\+C\+E\+I\+V\+E\+\_\+\+C\+O\+M\+P\+L\+E\+T\+E\+D(), and M\+U\+ST N\+OT BE U\+S\+ED AT A\+NY O\+T\+H\+ER T\+I\+ME.
+
+See the example implemented in Free\+R\+T\+O\+S/\+Demo/\+Minimal/\+Message\+Buffer\+A\+M\+P.\+c for additional information.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Stream\+Buffer} & The handle of the stream buffer from which data was read.\\
+\hline
+{\em px\+Higher\+Priority\+Task\+Woken} & $\ast$px\+Higher\+Priority\+Task\+Woken should be initialised to pd\+F\+A\+L\+SE before it is passed into \mbox{\hyperlink{message__buffer_8h_a22b1a37d0d4f39acd87250f73d9aab0c}{x\+Message\+Buffer\+Receive\+Completed\+From\+I\+S\+R()}}. If calling \mbox{\hyperlink{message__buffer_8h_a22b1a37d0d4f39acd87250f73d9aab0c}{x\+Message\+Buffer\+Receive\+Completed\+From\+I\+S\+R()}} removes a task from the Blocked state, and the task has a priority above the priority of the currently running task, then $\ast$px\+Higher\+Priority\+Task\+Woken will get set to pd\+T\+R\+UE indicating that a context switch should be performed before exiting the I\+SR.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If a task was removed from the Blocked state then pd\+T\+R\+UE is returned. Otherwise pd\+F\+A\+L\+SE is returned. 
+\end{DoxyReturn}

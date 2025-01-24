@@ -1,6 +1,26 @@
+#define _SRC_UVFR_DAQ
+
 #include "uvfr_utils.h"
 #include "daq.h"
 
+
+void* param_LUT[126]; //horrible and evil. Absolutely abysmal.
+
+void deleteParamList(){
+
+}
+
+void deleteDaqSubTask(){
+
+}
+
+uv_status startDaqSubTasks(){
+
+}
+
+uv_status stopDaqSubTasks(){
+
+}
 
 /** @brief initializes the master DAQ task, all that fun stuff. This task probably manages a while plethora of smaller tasks
  *
@@ -19,11 +39,9 @@ uv_status initDaqTask(void * args){
 				//DO NOT TOUCH ANY OF THE FIELDS WE HAVENT ALREADY MENTIONED HERE. FOR THE LOVE OF GOD.
 	daq_task->task_name = "daq";
 
-
 	daq_task->task_function = daqMasterTask;
 	daq_task->task_priority = osPriorityNormal;
 
-	daq_task->max_instances = 1;
 	daq_task->stack_size = _UV_DEFAULT_TASK_STACK_SIZE;
 
 	daq_task->active_states = UV_READY | UV_DRIVING | UV_ERROR_STATE;
@@ -78,6 +96,13 @@ void daqMasterTask(void* args){
 
 
 		}
+
+	}
+}
+
+void daqSubTask(void* args){
+
+	for(;;){
 
 	}
 }

@@ -103,8 +103,6 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
 /**
   * @brief  Suspend Tick increment.
   * @note   Disable the tick increment by disabling TIM1 update interrupt.
-  * @param  None
-  * @retval None
   */
 void HAL_SuspendTick(void)
 {
@@ -115,8 +113,6 @@ void HAL_SuspendTick(void)
 /**
   * @brief  Resume Tick increment.
   * @note   Enable the tick increment by Enabling TIM1 update interrupt.
-  * @param  None
-  * @retval None
   */
 void HAL_ResumeTick(void)
 {

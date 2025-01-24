@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structdriving_mode" kind="struct" language="C++" prot="public">
+    <compoundname>drivingMode</compoundname>
+    <includes refid="driving__loop_8h" local="no">driving_loop.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structdriving_mode_1afe09b8e23f97ae6d60c225a7ac8a7d9a" prot="public" static="no" mutable="no">
+        <type>char</type>
+        <definition>char drivingMode::dm_name[16]</definition>
+        <argsstring>[16]</argsstring>
+        <name>dm_name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Name of mode, 15 chars + /0 </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="86" column="6" bodyfile="Core/Inc/driving_loop.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving_mode_1a6ef9f1d0875e8b329738830343254708" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t drivingMode::max_acc_pwr</definition>
+        <argsstring></argsstring>
+        <name>max_acc_pwr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="87" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving_mode_1a4523c0c6d5187fcd80cda47913d541c1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t drivingMode::max_motor_torque</definition>
+        <argsstring></argsstring>
+        <name>max_motor_torque</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="88" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving_mode_1a45d9f3871594d9504c5a2fe61a001c17" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t drivingMode::max_current</definition>
+        <argsstring></argsstring>
+        <name>max_current</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="89" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving_mode_1aa1bd42a95b3d00fc3ace7c78df51d2ef" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t drivingMode::flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="92" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="92" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving_mode_1af6beb6da5ca338294c86b89f1b6fa4d1" prot="public" static="no" mutable="no">
+        <type><ref refid="uniondriving_mode_params" kindref="compound">drivingModeParams</ref></type>
+        <definition>drivingModeParams drivingMode::map_fn_params</definition>
+        <argsstring></argsstring>
+        <name>map_fn_params</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="94" column="19" bodyfile="Core/Inc/driving_loop.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving_mode_1ab4201b3227dd0ff7239f8c6060d30ed8" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t drivingMode::control_map_fn</definition>
+        <argsstring></argsstring>
+        <name>control_map_fn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="95" column="9" bodyfile="Core/Inc/driving_loop.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is where the driving mode and the <ref refid="uniondriving_mode_params" kindref="compound">drivingModeParams</ref> are at. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>drivingModeParams</label>
+        <link refid="uniondriving_mode_params"/>
+      </node>
+      <node id="1">
+        <label>drivingMode</label>
+        <link refid="structdriving_mode"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>map_fn_params</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Core/Inc/driving_loop.h" line="85" column="26" bodyfile="Core/Inc/driving_loop.h" bodystart="85" bodyend="96"/>
+    <listofallmembers>
+      <member refid="structdriving_mode_1ab4201b3227dd0ff7239f8c6060d30ed8" prot="public" virt="non-virtual"><scope>drivingMode</scope><name>control_map_fn</name></member>
+      <member refid="structdriving_mode_1afe09b8e23f97ae6d60c225a7ac8a7d9a" prot="public" virt="non-virtual"><scope>drivingMode</scope><name>dm_name</name></member>
+      <member refid="structdriving_mode_1aa1bd42a95b3d00fc3ace7c78df51d2ef" prot="public" virt="non-virtual"><scope>drivingMode</scope><name>flags</name></member>
+      <member refid="structdriving_mode_1af6beb6da5ca338294c86b89f1b6fa4d1" prot="public" virt="non-virtual"><scope>drivingMode</scope><name>map_fn_params</name></member>
+      <member refid="structdriving_mode_1a6ef9f1d0875e8b329738830343254708" prot="public" virt="non-virtual"><scope>drivingMode</scope><name>max_acc_pwr</name></member>
+      <member refid="structdriving_mode_1a45d9f3871594d9504c5a2fe61a001c17" prot="public" virt="non-virtual"><scope>drivingMode</scope><name>max_current</name></member>
+      <member refid="structdriving_mode_1a4523c0c6d5187fcd80cda47913d541c1" prot="public" virt="non-virtual"><scope>drivingMode</scope><name>max_motor_torque</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

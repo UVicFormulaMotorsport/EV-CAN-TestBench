@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="group__x_task_check_for_time_out" kind="group">
+    <compoundname>xTaskCheckForTimeOut</compoundname>
+    <title>xTaskCheckForTimeOut</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="task_8h" kindref="compound">task.h</ref> <preformatted>BaseType_t <ref refid="task_8h_1a3b018a85d339e536a6c05748dd666a3a" kindref="member">xTaskCheckForTimeOut( TimeOut_t * const pxTimeOut, TickType_t * const pxTicksToWait )</ref>;</preformatted></para>
+<para>Determines if pxTicksToWait ticks has passed since a time was captured using a call to <ref refid="task_8h_1a67155ad4ea2482b5f4597a69f2152be0" kindref="member">vTaskSetTimeOutState()</ref>. The captured time includes the tick count and the number of times the tick count has overflowed.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pxTimeOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The time status as captured previously using vTaskSetTimeOutState. If the timeout has not yet occurred, it is updated to reflect the current time status. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pxTicksToWait</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of ticks to check for timeout i.e. if pxTicksToWait ticks have passed since pxTimeOut was last updated (either by <ref refid="task_8h_1a67155ad4ea2482b5f4597a69f2152be0" kindref="member">vTaskSetTimeOutState()</ref> or <ref refid="task_8h_1a3b018a85d339e536a6c05748dd666a3a" kindref="member">xTaskCheckForTimeOut()</ref>), the timeout has occurred. If the timeout has not occurred, pxTIcksToWait is updated to reflect the number of remaining ticks.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>If timeout has occurred, pdTRUE is returned. Otherwise pdFALSE is returned and pxTicksToWait is updated to reflect the number of remaining ticks.</para>
+</simplesect>
+<simplesect kind="see"><para><ulink url="https://www.freertos.org/xTaskCheckForTimeOut.html">https://www.freertos.org/xTaskCheckForTimeOut.html</ulink></para>
+</simplesect>
+Example Usage: <preformatted>
+   // Driver library function used to receive uxWantedBytes from an Rx buffer
+   // that is filled by a UART interrupt. If there are not enough bytes in the
+   // Rx buffer then the task enters the Blocked state until it is notified that
+   // more data has been placed into the buffer. If there is still not enough
+   // data then the task re-enters the Blocked state, and <ref refid="task_8h_1a3b018a85d339e536a6c05748dd666a3a" kindref="member">xTaskCheckForTimeOut()</ref>
+   // is used to re-calculate the Block time to ensure the total amount of time
+   // spent in the Blocked state does not exceed MAX_TIME_TO_WAIT. This
+   // continues until either the buffer contains at least uxWantedBytes bytes,
+   // or the total amount of time spent in the Blocked state reaches
+   // MAX_TIME_TO_WAIT – at which point the task reads however many bytes are
+   // available up to a maximum of uxWantedBytes.</preformatted></para>
+<para><preformatted>   size_t xUART_Receive( uint8_t *pucBuffer, size_t uxWantedBytes )
+   {
+   size_t uxReceived = 0;
+   TickType_t xTicksToWait = MAX_TIME_TO_WAIT;
+   TimeOut_t xTimeOut;</preformatted></para>
+<para><preformatted>    // Initialize xTimeOut.  This records the time at which this function
+    // was entered.
+    vTaskSetTimeOutState( &amp;xTimeOut );</preformatted></para>
+<para><preformatted>    // Loop until the buffer contains the wanted number of bytes, or a
+    // timeout occurs.
+    while( UART_bytes_in_rx_buffer( pxUARTInstance ) &lt; uxWantedBytes )
+    {
+        // The buffer didn&apos;t contain enough data so this task is going to
+        // enter the Blocked state. Adjusting xTicksToWait to account for
+        // any time that has been spent in the Blocked state within this
+        // function so far to ensure the total amount of time spent in the
+        // Blocked state does not exceed MAX_TIME_TO_WAIT.
+        if( xTaskCheckForTimeOut( &amp;xTimeOut, &amp;xTicksToWait ) != pdFALSE )
+        {
+            //Timed out before the wanted number of bytes were available,
+            // exit the loop.
+            break;
+        }</preformatted></para>
+<para><preformatted>        // Wait for a maximum of xTicksToWait ticks to be notified that the
+        // receive interrupt has placed more data into the buffer.
+        ulTaskNotifyTake( pdTRUE, xTicksToWait );
+    }</preformatted></para>
+<para><preformatted>    // Attempt to read uxWantedBytes from the receive buffer into pucBuffer.
+    // The actual number of bytes read (which might be less than
+    // uxWantedBytes) is returned.
+    uxReceived = UART_read_from_receive_buffer( pxUARTInstance,
+                                                pucBuffer,
+                                                uxWantedBytes );</preformatted></para>
+<para><preformatted>    return uxReceived;
+   }
+</preformatted> </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
