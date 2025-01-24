@@ -23,7 +23,7 @@ typedef uint16_t MC_POWER;
  *
  * Just replace the number with the name of the variable, and you're all set.
  */
-#define DEFAULT_PERIOD 50
+//#define DEFAULT_PERIOD 50
 
 /**@brief enum meant to represent the different types of pedal map
  *
