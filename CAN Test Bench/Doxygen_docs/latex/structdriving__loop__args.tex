@@ -7,9 +7,17 @@
 \doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{structdriving__loop__args_af3aed836070373949c93b77ca01eea24}{period}}
+uint32\+\_\+t \mbox{\hyperlink{structdriving__loop__args_a752f04c3eb17d10e5cf742631bbb0010}{absolute\+\_\+max\+\_\+acc\+\_\+pwr}}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{structdriving__loop__args_a2f066670292816159e5c296f69a0feff}{current\+\_\+driving\+\_\+mode}}
+uint32\+\_\+t \mbox{\hyperlink{structdriving__loop__args_aa02edefb5d12e375c67b0dede9f3d980}{absolute\+\_\+max\+\_\+motor\+\_\+torque}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structdriving__loop__args_a4a3475004f3c81d79ff330bed11bb9e4}{absolute\+\_\+max\+\_\+accum\+\_\+current}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structdriving__loop__args_a8e4b68476ab4d6af8283768b33d9614f}{max\+\_\+accum\+\_\+current\+\_\+5s}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structdriving__loop__args_aa4d4e7eda2e88ea5d3d8a9f5fe6babcb}{absolute\+\_\+max\+\_\+motor\+\_\+rpm}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structdriving__loop__args_a32bfaf9f08eb7be125e58d1048186556}{regen\+\_\+rpm\+\_\+cutoff}}
 \item 
 uint16\+\_\+t \mbox{\hyperlink{structdriving__loop__args_a483c9a4d7fe91e4a57512d054b010a13}{min\+\_\+apps\+\_\+offset}}
 \item 
@@ -37,6 +45,10 @@ uint16\+\_\+t \mbox{\hyperlink{structdriving__loop__args_a1ff455145095acdd450a9c
 \item 
 uint8\+\_\+t \mbox{\hyperlink{structdriving__loop__args_af726a5bebacb81eb0c4aff8697007aba}{num\+\_\+driving\+\_\+modes}}
 \item 
+uint8\+\_\+t \mbox{\hyperlink{structdriving__loop__args_af3aed836070373949c93b77ca01eea24}{period}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structdriving__loop__args_a22916cc0996f907807373d06e96602e9}{accum\+\_\+regen\+\_\+soc\+\_\+threshold}}
+\item 
 \mbox{\hyperlink{structdriving_mode}{driving\+Mode}} \mbox{\hyperlink{structdriving__loop__args_a5f2e74a032f39217dd49b9d6b10921ce}{dmodes}} \mbox{[}8\mbox{]}
 \end{DoxyCompactItemize}
 
@@ -44,20 +56,70 @@ uint8\+\_\+t \mbox{\hyperlink{structdriving__loop__args_af726a5bebacb81eb0c4aff8
 \doxysubsection{Detailed Description}
 
 
-Definition at line 77 of file driving\+\_\+loop.\+h.
+Definition at line 108 of file driving\+\_\+loop.\+h.
 
 
 
 \doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structdriving__loop__args_a752f04c3eb17d10e5cf742631bbb0010}\label{structdriving__loop__args_a752f04c3eb17d10e5cf742631bbb0010}} 
+\index{driving\_loop\_args@{driving\_loop\_args}!absolute\_max\_acc\_pwr@{absolute\_max\_acc\_pwr}}
+\index{absolute\_max\_acc\_pwr@{absolute\_max\_acc\_pwr}!driving\_loop\_args@{driving\_loop\_args}}
+\doxysubsubsection{\texorpdfstring{absolute\_max\_acc\_pwr}{absolute\_max\_acc\_pwr}}
+{\footnotesize\ttfamily uint32\+\_\+t driving\+\_\+loop\+\_\+args\+::absolute\+\_\+max\+\_\+acc\+\_\+pwr}
+
+Maximum possible accum power 
+
+Definition at line 109 of file driving\+\_\+loop.\+h.
+
+\mbox{\Hypertarget{structdriving__loop__args_a4a3475004f3c81d79ff330bed11bb9e4}\label{structdriving__loop__args_a4a3475004f3c81d79ff330bed11bb9e4}} 
+\index{driving\_loop\_args@{driving\_loop\_args}!absolute\_max\_accum\_current@{absolute\_max\_accum\_current}}
+\index{absolute\_max\_accum\_current@{absolute\_max\_accum\_current}!driving\_loop\_args@{driving\_loop\_args}}
+\doxysubsubsection{\texorpdfstring{absolute\_max\_accum\_current}{absolute\_max\_accum\_current}}
+{\footnotesize\ttfamily uint32\+\_\+t driving\+\_\+loop\+\_\+args\+::absolute\+\_\+max\+\_\+accum\+\_\+current}
+
+Max current (A\+DC reading) 
+
+Definition at line 111 of file driving\+\_\+loop.\+h.
+
+\mbox{\Hypertarget{structdriving__loop__args_aa4d4e7eda2e88ea5d3d8a9f5fe6babcb}\label{structdriving__loop__args_aa4d4e7eda2e88ea5d3d8a9f5fe6babcb}} 
+\index{driving\_loop\_args@{driving\_loop\_args}!absolute\_max\_motor\_rpm@{absolute\_max\_motor\_rpm}}
+\index{absolute\_max\_motor\_rpm@{absolute\_max\_motor\_rpm}!driving\_loop\_args@{driving\_loop\_args}}
+\doxysubsubsection{\texorpdfstring{absolute\_max\_motor\_rpm}{absolute\_max\_motor\_rpm}}
+{\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::absolute\+\_\+max\+\_\+motor\+\_\+rpm}
+
+Max limit of R\+PM 
+
+Definition at line 115 of file driving\+\_\+loop.\+h.
+
+\mbox{\Hypertarget{structdriving__loop__args_aa02edefb5d12e375c67b0dede9f3d980}\label{structdriving__loop__args_aa02edefb5d12e375c67b0dede9f3d980}} 
+\index{driving\_loop\_args@{driving\_loop\_args}!absolute\_max\_motor\_torque@{absolute\_max\_motor\_torque}}
+\index{absolute\_max\_motor\_torque@{absolute\_max\_motor\_torque}!driving\_loop\_args@{driving\_loop\_args}}
+\doxysubsubsection{\texorpdfstring{absolute\_max\_motor\_torque}{absolute\_max\_motor\_torque}}
+{\footnotesize\ttfamily uint32\+\_\+t driving\+\_\+loop\+\_\+args\+::absolute\+\_\+max\+\_\+motor\+\_\+torque}
+
+Max power output 
+
+Definition at line 110 of file driving\+\_\+loop.\+h.
+
+\mbox{\Hypertarget{structdriving__loop__args_a22916cc0996f907807373d06e96602e9}\label{structdriving__loop__args_a22916cc0996f907807373d06e96602e9}} 
+\index{driving\_loop\_args@{driving\_loop\_args}!accum\_regen\_soc\_threshold@{accum\_regen\_soc\_threshold}}
+\index{accum\_regen\_soc\_threshold@{accum\_regen\_soc\_threshold}!driving\_loop\_args@{driving\_loop\_args}}
+\doxysubsubsection{\texorpdfstring{accum\_regen\_soc\_threshold}{accum\_regen\_soc\_threshold}}
+{\footnotesize\ttfamily uint8\+\_\+t driving\+\_\+loop\+\_\+args\+::accum\+\_\+regen\+\_\+soc\+\_\+threshold}
+
+Vehicle will not regen if above this S\+OC 
+
+Definition at line 138 of file driving\+\_\+loop.\+h.
+
 \mbox{\Hypertarget{structdriving__loop__args_ac4005057319506c3c26ec2ff1235d6fe}\label{structdriving__loop__args_ac4005057319506c3c26ec2ff1235d6fe}} 
 \index{driving\_loop\_args@{driving\_loop\_args}!apps\_bottom@{apps\_bottom}}
 \index{apps\_bottom@{apps\_bottom}!driving\_loop\_args@{driving\_loop\_args}}
 \doxysubsubsection{\texorpdfstring{apps\_bottom}{apps\_bottom}}
 {\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::apps\+\_\+bottom}
 
+Min A\+P\+PS input value, representing 0\% throttle 
 
-
-Definition at line 88 of file driving\+\_\+loop.\+h.
+Definition at line 128 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{structdriving__loop__args_a1ff455145095acdd450a9c207ad682d5}\label{structdriving__loop__args_a1ff455145095acdd450a9c207ad682d5}} 
 \index{driving\_loop\_args@{driving\_loop\_args}!apps\_implausibility\_recovery\_threshold@{apps\_implausibility\_recovery\_threshold}}
@@ -65,9 +127,9 @@ Definition at line 88 of file driving\+\_\+loop.\+h.
 \doxysubsubsection{\texorpdfstring{apps\_implausibility\_recovery\_threshold}{apps\_implausibility\_recovery\_threshold}}
 {\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::apps\+\_\+implausibility\+\_\+recovery\+\_\+threshold}
 
+Threshold for brake position 
 
-
-Definition at line 94 of file driving\+\_\+loop.\+h.
+Definition at line 134 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{structdriving__loop__args_a8f28e6a24ae53940bab83117ae86d0c6}\label{structdriving__loop__args_a8f28e6a24ae53940bab83117ae86d0c6}} 
 \index{driving\_loop\_args@{driving\_loop\_args}!apps\_plausibility\_check\_threshold@{apps\_plausibility\_check\_threshold}}
@@ -75,9 +137,10 @@ Definition at line 94 of file driving\+\_\+loop.\+h.
 \doxysubsubsection{\texorpdfstring{apps\_plausibility\_check\_threshold}{apps\_plausibility\_check\_threshold}}
 {\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::apps\+\_\+plausibility\+\_\+check\+\_\+threshold}
 
+Threshold for accelerator position with ~\newline
+ 
 
-
-Definition at line 90 of file driving\+\_\+loop.\+h.
+Definition at line 130 of file driving\+\_\+loop.\+h.
 
 
 
@@ -89,9 +152,9 @@ Referenced by Start\+Driving\+Loop().
 \doxysubsubsection{\texorpdfstring{apps\_top}{apps\_top}}
 {\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::apps\+\_\+top}
 
+Max A\+P\+PS input value, representing 100\% throttle 
 
-
-Definition at line 87 of file driving\+\_\+loop.\+h.
+Definition at line 127 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{structdriving__loop__args_a931bede548cff8c75ce2a6b564a65dba}\label{structdriving__loop__args_a931bede548cff8c75ce2a6b564a65dba}} 
 \index{driving\_loop\_args@{driving\_loop\_args}!bps\_implausibility\_recovery\_threshold@{bps\_implausibility\_recovery\_threshold}}
@@ -99,9 +162,9 @@ Definition at line 87 of file driving\+\_\+loop.\+h.
 \doxysubsubsection{\texorpdfstring{bps\_implausibility\_recovery\_threshold}{bps\_implausibility\_recovery\_threshold}}
 {\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::bps\+\_\+implausibility\+\_\+recovery\+\_\+threshold}
 
+Threshold for accellerator pedal position to recover fron A\+P\+PS check 
 
-
-Definition at line 93 of file driving\+\_\+loop.\+h.
+Definition at line 133 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{structdriving__loop__args_aecaae9549609b56d961d739f91e73f92}\label{structdriving__loop__args_aecaae9549609b56d961d739f91e73f92}} 
 \index{driving\_loop\_args@{driving\_loop\_args}!bps\_plausibility\_check\_threshold@{bps\_plausibility\_check\_threshold}}
@@ -109,23 +172,13 @@ Definition at line 93 of file driving\+\_\+loop.\+h.
 \doxysubsubsection{\texorpdfstring{bps\_plausibility\_check\_threshold}{bps\_plausibility\_check\_threshold}}
 {\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::bps\+\_\+plausibility\+\_\+check\+\_\+threshold}
 
+Brake pressure threshold for A\+P\+PS 
 
-
-Definition at line 91 of file driving\+\_\+loop.\+h.
+Definition at line 131 of file driving\+\_\+loop.\+h.
 
 
 
 Referenced by Start\+Driving\+Loop().
-
-\mbox{\Hypertarget{structdriving__loop__args_a2f066670292816159e5c296f69a0feff}\label{structdriving__loop__args_a2f066670292816159e5c296f69a0feff}} 
-\index{driving\_loop\_args@{driving\_loop\_args}!current\_driving\_mode@{current\_driving\_mode}}
-\index{current\_driving\_mode@{current\_driving\_mode}!driving\_loop\_args@{driving\_loop\_args}}
-\doxysubsubsection{\texorpdfstring{current\_driving\_mode}{current\_driving\_mode}}
-{\footnotesize\ttfamily uint8\+\_\+t driving\+\_\+loop\+\_\+args\+::current\+\_\+driving\+\_\+mode}
-
-
-
-Definition at line 79 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{structdriving__loop__args_a5f2e74a032f39217dd49b9d6b10921ce}\label{structdriving__loop__args_a5f2e74a032f39217dd49b9d6b10921ce}} 
 \index{driving\_loop\_args@{driving\_loop\_args}!dmodes@{dmodes}}
@@ -133,9 +186,19 @@ Definition at line 79 of file driving\+\_\+loop.\+h.
 \doxysubsubsection{\texorpdfstring{dmodes}{dmodes}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structdriving_mode}{driving\+Mode}} driving\+\_\+loop\+\_\+args\+::dmodes\mbox{[}8\mbox{]}}
 
+These are various driving modes 
 
+Definition at line 141 of file driving\+\_\+loop.\+h.
 
-Definition at line 97 of file driving\+\_\+loop.\+h.
+\mbox{\Hypertarget{structdriving__loop__args_a8e4b68476ab4d6af8283768b33d9614f}\label{structdriving__loop__args_a8e4b68476ab4d6af8283768b33d9614f}} 
+\index{driving\_loop\_args@{driving\_loop\_args}!max\_accum\_current\_5s@{max\_accum\_current\_5s}}
+\index{max\_accum\_current\_5s@{max\_accum\_current\_5s}!driving\_loop\_args@{driving\_loop\_args}}
+\doxysubsubsection{\texorpdfstring{max\_accum\_current\_5s}{max\_accum\_current\_5s}}
+{\footnotesize\ttfamily uint32\+\_\+t driving\+\_\+loop\+\_\+args\+::max\+\_\+accum\+\_\+current\+\_\+5s}
+
+Current maximum for 10s 
+
+Definition at line 112 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{structdriving__loop__args_a51c8b3e55f33482df7a938d0d3e7bbd9}\label{structdriving__loop__args_a51c8b3e55f33482df7a938d0d3e7bbd9}} 
 \index{driving\_loop\_args@{driving\_loop\_args}!max\_apps\_offset@{max\_apps\_offset}}
@@ -143,9 +206,9 @@ Definition at line 97 of file driving\+\_\+loop.\+h.
 \doxysubsubsection{\texorpdfstring{max\_apps\_offset}{max\_apps\_offset}}
 {\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::max\+\_\+apps\+\_\+offset}
 
+maximum A\+P\+PS offset 
 
-
-Definition at line 81 of file driving\+\_\+loop.\+h.
+Definition at line 121 of file driving\+\_\+loop.\+h.
 
 
 
@@ -157,9 +220,9 @@ Referenced by Start\+Driving\+Loop().
 \doxysubsubsection{\texorpdfstring{max\_apps\_value}{max\_apps\_value}}
 {\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::max\+\_\+apps\+\_\+value}
 
+for detecting disconnects and short circuits 
 
-
-Definition at line 83 of file driving\+\_\+loop.\+h.
+Definition at line 123 of file driving\+\_\+loop.\+h.
 
 
 
@@ -171,9 +234,9 @@ Referenced by Start\+Driving\+Loop().
 \doxysubsubsection{\texorpdfstring{max\_BPS\_value}{max\_BPS\_value}}
 {\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::max\+\_\+\+B\+P\+S\+\_\+value}
 
+are the brakes valid? 
 
-
-Definition at line 85 of file driving\+\_\+loop.\+h.
+Definition at line 125 of file driving\+\_\+loop.\+h.
 
 
 
@@ -185,13 +248,9 @@ Referenced by Start\+Driving\+Loop().
 \doxysubsubsection{\texorpdfstring{min\_apps\_offset}{min\_apps\_offset}}
 {\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::min\+\_\+apps\+\_\+offset}
 
+minimum A\+P\+PS offset 
 
-
-Definition at line 80 of file driving\+\_\+loop.\+h.
-
-
-
-Referenced by Start\+Driving\+Loop().
+Definition at line 120 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{structdriving__loop__args_a93bcc08ec8e62f33cf11efde02d61178}\label{structdriving__loop__args_a93bcc08ec8e62f33cf11efde02d61178}} 
 \index{driving\_loop\_args@{driving\_loop\_args}!min\_apps\_value@{min\_apps\_value}}
@@ -199,13 +258,9 @@ Referenced by Start\+Driving\+Loop().
 \doxysubsubsection{\texorpdfstring{min\_apps\_value}{min\_apps\_value}}
 {\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::min\+\_\+apps\+\_\+value}
 
+for detecting disconnects and short circuits 
 
-
-Definition at line 82 of file driving\+\_\+loop.\+h.
-
-
-
-Referenced by Start\+Driving\+Loop().
+Definition at line 122 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{structdriving__loop__args_abdde53b1e1a9b649a8d780331362a966}\label{structdriving__loop__args_abdde53b1e1a9b649a8d780331362a966}} 
 \index{driving\_loop\_args@{driving\_loop\_args}!min\_BPS\_value@{min\_BPS\_value}}
@@ -213,9 +268,9 @@ Referenced by Start\+Driving\+Loop().
 \doxysubsubsection{\texorpdfstring{min\_BPS\_value}{min\_BPS\_value}}
 {\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::min\+\_\+\+B\+P\+S\+\_\+value}
 
+are the brakes valid? 
 
-
-Definition at line 84 of file driving\+\_\+loop.\+h.
+Definition at line 124 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{structdriving__loop__args_af726a5bebacb81eb0c4aff8697007aba}\label{structdriving__loop__args_af726a5bebacb81eb0c4aff8697007aba}} 
 \index{driving\_loop\_args@{driving\_loop\_args}!num\_driving\_modes@{num\_driving\_modes}}
@@ -223,9 +278,9 @@ Definition at line 84 of file driving\+\_\+loop.\+h.
 \doxysubsubsection{\texorpdfstring{num\_driving\_modes}{num\_driving\_modes}}
 {\footnotesize\ttfamily uint8\+\_\+t driving\+\_\+loop\+\_\+args\+::num\+\_\+driving\+\_\+modes}
 
+How many modes are actually populated 
 
-
-Definition at line 96 of file driving\+\_\+loop.\+h.
+Definition at line 136 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{structdriving__loop__args_af3aed836070373949c93b77ca01eea24}\label{structdriving__loop__args_af3aed836070373949c93b77ca01eea24}} 
 \index{driving\_loop\_args@{driving\_loop\_args}!period@{period}}
@@ -233,9 +288,19 @@ Definition at line 96 of file driving\+\_\+loop.\+h.
 \doxysubsubsection{\texorpdfstring{period}{period}}
 {\footnotesize\ttfamily uint8\+\_\+t driving\+\_\+loop\+\_\+args\+::period}
 
+how often does the driving loop execute 
 
+Definition at line 137 of file driving\+\_\+loop.\+h.
 
-Definition at line 78 of file driving\+\_\+loop.\+h.
+\mbox{\Hypertarget{structdriving__loop__args_a32bfaf9f08eb7be125e58d1048186556}\label{structdriving__loop__args_a32bfaf9f08eb7be125e58d1048186556}} 
+\index{driving\_loop\_args@{driving\_loop\_args}!regen\_rpm\_cutoff@{regen\_rpm\_cutoff}}
+\index{regen\_rpm\_cutoff@{regen\_rpm\_cutoff}!driving\_loop\_args@{driving\_loop\_args}}
+\doxysubsubsection{\texorpdfstring{regen\_rpm\_cutoff}{regen\_rpm\_cutoff}}
+{\footnotesize\ttfamily uint16\+\_\+t driving\+\_\+loop\+\_\+args\+::regen\+\_\+rpm\+\_\+cutoff}
+
+No regen below this rpm 
+
+Definition at line 116 of file driving\+\_\+loop.\+h.
 
 
 

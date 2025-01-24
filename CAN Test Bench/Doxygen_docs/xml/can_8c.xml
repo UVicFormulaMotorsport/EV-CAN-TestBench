@@ -1,0 +1,919 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="can_8c" kind="file" language="C++">
+    <compoundname>can.c</compoundname>
+    <includes refid="can_8h" local="yes">can.h</includes>
+    <includes refid="constants_8h" local="yes">constants.h</includes>
+    <includes refid="imd_8h" local="yes">imd.h</includes>
+    <includes refid="motor__controller_8h" local="yes">motor_controller.h</includes>
+    <includes refid="dash_8h" local="yes">dash.h</includes>
+    <includes refid="bms_8h" local="yes">bms.h</includes>
+    <includes refid="pdu_8h" local="yes">pdu.h</includes>
+    <includes refid="uvfr__utils_8h" local="yes">uvfr_utils.h</includes>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>stdarg.h</label>
+      </node>
+      <node id="11">
+        <label>tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>stdint.h</label>
+      </node>
+      <node id="32">
+        <label>stdlib.h</label>
+      </node>
+      <node id="27">
+        <label>oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>cmsis_os.h</label>
+      </node>
+      <node id="6">
+        <label>uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>message_buffer.h</label>
+      </node>
+      <node id="21">
+        <label>bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>rb_tree.h</label>
+        <link refid="rb__tree_8h"/>
+      </node>
+      <node id="33">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="2">
+        <label>can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>uvfr_global_config.h</label>
+        <link refid="uvfr__global__config_8h"/>
+      </node>
+      <node id="30">
+        <label>FreeRTOSConfig.h</label>
+        <link refid="_free_r_t_o_s_config_8h"/>
+      </node>
+      <node id="22">
+        <label>uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Core/Src/can.c</label>
+        <link refid="can_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>odometer.h</label>
+        <link refid="odometer_8h"/>
+      </node>
+      <node id="4">
+        <label>stm32f4xx_hal.h</label>
+      </node>
+      <node id="14">
+        <label>FreeRTOS.h</label>
+      </node>
+      <node id="10">
+        <label>dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>task.h</label>
+      </node>
+      <node id="3">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="can_8c_1a81ca550f56875553f534a4d72adff10d" prot="public" static="no">
+        <name>HAL_CAN_ERROR_INVALID_CALLBACK</name>
+        <initializer>(0x00400000U)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="35" column="9" bodyfile="Core/Src/can.c" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="can_8c_1a39f60bf61979059355fc4916aa3500db" prot="public" static="yes" mutable="no">
+        <type>QueueHandle_t</type>
+        <definition>QueueHandle_t Tx_msg_queue</definition>
+        <argsstring></argsstring>
+        <name>Tx_msg_queue</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="38" column="22" bodyfile="Core/Src/can.c" bodystart="38" bodyend="-1"/>
+        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="358" endline="405">CANbusTxSvcDaemon</referencedby>
+        <referencedby refid="can_8c_1acc24d5acdcc2015b59e63769a397353b" compoundref="can_8c" startline="320" endline="349">uvSendCanMSG</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="can_8c_1ab77168d14df04ccca5d48612ee21ced8" prot="public" static="no" mutable="no">
+        <type>CAN_HandleTypeDef</type>
+        <definition>CAN_HandleTypeDef hcan2</definition>
+        <argsstring></argsstring>
+        <name>hcan2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="116" column="19" bodyfile="Core/Src/can.c" bodystart="116" bodyend="-1"/>
+        <referencedby refid="stm32f4xx__it_8c_1abf0ada95bd65ea0a24a25606a59a319d" compoundref="stm32f4xx__it_8c" startline="223" endline="232">CAN2_RX0_IRQHandler</referencedby>
+        <referencedby refid="stm32f4xx__it_8c_1ac67a8abbbb2e08b8c48726f65716295f" compoundref="stm32f4xx__it_8c" startline="237" endline="246">CAN2_RX1_IRQHandler</referencedby>
+        <referencedby refid="stm32f4xx__it_8c_1abc8a61d83a243d1d571a628a10f55733" compoundref="stm32f4xx__it_8c" startline="209" endline="218">CAN2_TX_IRQHandler</referencedby>
+        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="358" endline="405">CANbusTxSvcDaemon</referencedby>
+        <referencedby refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" compoundref="can_8c" startline="267" endline="300">HAL_CAN_RxFifo0MsgPendingCallback</referencedby>
+        <referencedby refid="imd_8c_1aeb7c937639c5385f5d2b4e3a4e60250f" compoundref="imd_8c" startline="180" endline="191">IMD_Request_Status</referencedby>
+        <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
+        <referencedby refid="motor__controller_8c_1af6b3a4911f1bdac54d84b4dcc7b7ec4a" compoundref="motor__controller_8c" startline="47" endline="60">MC_Request_Data</referencedby>
+        <referencedby refid="motor__controller_8c_1af2e573366a03a695a8ba760440848206" compoundref="motor__controller_8c" startline="69" endline="98">MC_Send_Data</referencedby>
+        <referencedby refid="can_8c_1a1ee5cd592134235b6c07f676784d47c3" compoundref="can_8c" startline="119" endline="195">MX_CAN2_Init</referencedby>
+        <referencedby refid="pdu_8c_1ad7b67b3c1618a7c50a5d6d9f9e13a89f" compoundref="pdu_8c" startline="48" endline="60">PDU_disable_brake_light</referencedby>
+        <referencedby refid="pdu_8c_1aebeb35957c80be85dc938efe72c8e825" compoundref="pdu_8c" startline="170" endline="181">PDU_disable_coolant_pump</referencedby>
+        <referencedby refid="pdu_8c_1a3c665494b7f9fb4e025ff31d24c97072" compoundref="pdu_8c" startline="136" endline="155">PDU_disable_cooling_fans</referencedby>
+        <referencedby refid="pdu_8c_1a6b189c4013c1cb97ff696a9bc05def5e" compoundref="pdu_8c" startline="74" endline="85">PDU_disable_motor_controller</referencedby>
+        <referencedby refid="pdu_8c_1a67ed21c50014c891cc0031655a30aef9" compoundref="pdu_8c" startline="100" endline="111">PDU_disable_shutdown_circuit</referencedby>
+        <referencedby refid="pdu_8c_1aa5479c0d6ab8d58683e99bf102d60db8" compoundref="pdu_8c" startline="34" endline="46">PDU_enable_brake_light</referencedby>
+        <referencedby refid="pdu_8c_1aef2fd854287906cac1734f08a6edcf2a" compoundref="pdu_8c" startline="158" endline="169">PDU_enable_coolant_pump</referencedby>
+        <referencedby refid="pdu_8c_1a9d736981007eb7fc9691275dc7b6c05c" compoundref="pdu_8c" startline="115" endline="134">PDU_enable_cooling_fans</referencedby>
+        <referencedby refid="pdu_8c_1ae3eaaae4438e04d63fe04cc23a201810" compoundref="pdu_8c" startline="62" endline="73">PDU_enable_motor_controller</referencedby>
+        <referencedby refid="pdu_8c_1a0f2b86f2db7ee86b014ccc246c8b674d" compoundref="pdu_8c" startline="87" endline="98">PDU_enable_shutdown_circuit</referencedby>
+        <referencedby refid="pdu_8c_1a42e33c33fc1dea26555ff7b20984b186" compoundref="pdu_8c" startline="11" endline="31">PDU_speaker_chirp</referencedby>
+        <referencedby refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="48" endline="122">tempMonitorTask</referencedby>
+        <referencedby refid="dash_8c_1a66f84461e5c75202d12edfd8ea7c7f62" compoundref="dash_8c" startline="29" endline="45">Update_Batt_Temp</referencedby>
+        <referencedby refid="dash_8c_1ab26e477047a5166efc8f2b34dbd38872" compoundref="dash_8c" startline="9" endline="26">Update_RPM</referencedby>
+        <referencedby refid="dash_8c_1a30155b58ef3801f5693e953d4139d55f" compoundref="dash_8c" startline="48" endline="64">Update_State_Of_Charge</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="can_8c_1aff5c4caa2b4968b309deaffdc58f1e92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void handleCANbusError</definition>
+        <argsstring>(const CAN_HandleTypeDef *hcan, const uint32_t err_to_ignore)</argsstring>
+        <name>handleCANbusError</name>
+        <param>
+          <type>const CAN_HandleTypeDef *</type>
+          <declname>hcan</declname>
+        </param>
+        <param>
+          <type>const uint32_t</type>
+          <declname>err_to_ignore</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="40" column="6" bodyfile="Core/Src/can.c" bodystart="40" bodyend="111"/>
+        <references refid="can_8c_1a81ca550f56875553f534a4d72adff10d" compoundref="can_8c" startline="35">HAL_CAN_ERROR_INVALID_CALLBACK</references>
+        <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
+        <referencedby refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="48" endline="122">tempMonitorTask</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="can_8c_1a1ee5cd592134235b6c07f676784d47c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MX_CAN2_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>MX_CAN2_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="119" column="6" bodyfile="Core/Src/can.c" bodystart="119" bodyend="195"/>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="116">hcan2</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="can_8c_1a2778ce7f3a2de42769b6de9fec4cedb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_CAN_MspInit</definition>
+        <argsstring>(CAN_HandleTypeDef *canHandle)</argsstring>
+        <name>HAL_CAN_MspInit</name>
+        <param>
+          <type>CAN_HandleTypeDef *</type>
+          <declname>canHandle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>CAN2 GPIO Configuration PB5 ---<mdash/>&gt; CAN2_RX PB6 ---<mdash/>&gt; CAN2_TX</para>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="197" column="6" bodyfile="Core/Src/can.c" bodystart="197" bodyend="233"/>
+      </memberdef>
+      <memberdef kind="function" id="can_8c_1a4b39e42353b2781bc75d83c018640b67" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_CAN_MspDeInit</definition>
+        <argsstring>(CAN_HandleTypeDef *canHandle)</argsstring>
+        <name>HAL_CAN_MspDeInit</name>
+        <param>
+          <type>CAN_HandleTypeDef *</type>
+          <declname>canHandle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>CAN2 GPIO Configuration PB5 ---<mdash/>&gt; CAN2_RX PB6 ---<mdash/>&gt; CAN2_TX</para>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="235" column="6" bodyfile="Core/Src/can.c" bodystart="235" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="can_8c_1a4e0742fef0f265347a75b7fa12012229" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_CAN_RxFifo0MsgPendingCallback</definition>
+        <argsstring>(CAN_HandleTypeDef *hcan2)</argsstring>
+        <name>HAL_CAN_RxFifo0MsgPendingCallback</name>
+        <param>
+          <type>CAN_HandleTypeDef *</type>
+          <declname>hcan2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="267" column="6" bodyfile="Core/Src/can.c" bodystart="267" bodyend="300"/>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="116">hcan2</references>
+        <references refid="constants_8h_1a14629afcc7f0b2d62c2b617b07d98184" compoundref="constants_8c" startline="9">RxData</references>
+        <references refid="constants_8h_1a6ee6e13063b860648180eea65852cc71" compoundref="constants_8c" startline="5">RxHeader</references>
+      </memberdef>
+      <memberdef kind="function" id="can_8c_1a4c51ef84434a42d4c5f9524d361c0703" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_CAN_RxFifo1MsgPendingCallback</definition>
+        <argsstring>(CAN_HandleTypeDef *hcan2)</argsstring>
+        <name>HAL_CAN_RxFifo1MsgPendingCallback</name>
+        <param>
+          <type>CAN_HandleTypeDef *</type>
+          <declname>hcan2</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="303" column="6" bodyfile="Core/Src/can.c" bodystart="303" bodyend="305"/>
+      </memberdef>
+      <memberdef kind="function" id="can_8c_1acc24d5acdcc2015b59e63769a397353b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="can_8h_1aef3770e45bbacbf527fd93dd80eea9b9" kindref="member">uv_status</ref></type>
+        <definition>uv_status uvSendCanMSG</definition>
+        <argsstring>(uv_CAN_msg *msg)</argsstring>
+        <name>uvSendCanMSG</name>
+        <param>
+          <type><ref refid="structuv___c_a_n__msg" kindref="compound">uv_CAN_msg</ref> *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+<para>Function to send can message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is the canonical team method of sending a CAN message. It invokes the canTxDaemon, to avoid any conflicts due to a context switch mid transmission Is it a little bit convoluted? Yes. Is that worth it? Still yes. </para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Check that the CAN Tx daemon is actually active</para>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="320" column="11" bodyfile="Core/Src/can.c" bodystart="320" bodyend="349"/>
+        <references refid="can_8h_1a8258cafd2b5e0bfb1e4228e7a45750bf" compoundref="can_8h" startline="40">CAN_TX_DAEMON_NAME</references>
+        <references refid="can_8c_1a39f60bf61979059355fc4916aa3500db" compoundref="can_8c" startline="38">Tx_msg_queue</references>
+        <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" compoundref="uvfr__utils_8h" startline="169">UV_ERROR</references>
+        <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
+      </memberdef>
+      <memberdef kind="function" id="can_8c_1a2357e197a9ac26277eec808769fe409f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CANbusTxSvcDaemon</definition>
+        <argsstring>(void *args)</argsstring>
+        <name>CANbusTxSvcDaemon</name>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Background task that handles any CAN messages that are being sent. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This task sits idle, until the time is right (it receives a notification from the uvSendCanMSG function) Once this condition has been met, it will actually call the <computeroutput>HAL_CAN_AddTxMessage</computeroutput> function. This is a very high priority task, meaning that it will pause whatever other code is going in order to run </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="358" column="6" bodyfile="Core/Src/can.c" bodystart="358" bodyend="405"/>
+        <references refid="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" compoundref="uvfr__utils_8h" startline="262">uv_CAN_msg::data</references>
+        <references refid="structuv___c_a_n__msg_1aa74af3745c8b56910d7c309245541d37" compoundref="uvfr__utils_8h" startline="260">uv_CAN_msg::dlc</references>
+        <references refid="structuv___c_a_n__msg_1a3a3fdc7fed06a631fefa58ea44052d8d" compoundref="uvfr__utils_8h" startline="256">uv_CAN_msg::flags</references>
+        <references refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="116">hcan2</references>
+        <references refid="structuv___c_a_n__msg_1aae369fbabe3cc5b71a89bb641c24aace" compoundref="uvfr__utils_8h" startline="261">uv_CAN_msg::msg_id</references>
+        <references refid="can_8c_1a39f60bf61979059355fc4916aa3500db" compoundref="can_8c" startline="38">Tx_msg_queue</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+        <references refid="uvfr__utils_8h_1aa55012016c572366a0747ff7298c7fec" compoundref="uvfr__utils_8h" startline="247">UV_CAN_EXTENDED_ID</references>
+        <referencedby refid="group__state__engine_1gaff684308203d45e9e16ad3d115c54279" compoundref="uvfr__state__engine_8c" startline="1284" endline="1335">uvSVCTaskManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="can_8c_1ae81ac633e5983dde276f930615a1e03a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CANbusRxSVCDaemon</definition>
+        <argsstring>(void *args)</argsstring>
+        <name>CANbusRxSVCDaemon</name>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="407" column="6" bodyfile="Core/Src/can.c" bodystart="407" bodyend="412"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file provides code for the configuration of the CAN instances. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="attention"><para></para>
+</simplesect>
+Copyright (c) 2023 STMicroelectronics. All rights reserved.</para>
+<para>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Header<sp/>*/</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="can_8h" kindref="compound">can.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="imd_8h" kindref="compound">imd.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="motor__controller_8h" kindref="compound">motor_controller.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dash_8h" kindref="compound">dash.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bms_8h" kindref="compound">bms.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pdu_8h" kindref="compound">pdu.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="uvfr__utils_8h" kindref="compound">uvfr_utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>HAL_CAN_ERROR_INVALID_CALLBACK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35" refid="can_8c_1a81ca550f56875553f534a4d72adff10d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>HAL_CAN_ERROR_INVALID_CALLBACK<sp/>(0x00400000U)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="can_8c_1a39f60bf61979059355fc4916aa3500db" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>QueueHandle_t<sp/><ref refid="can_8c_1a39f60bf61979059355fc4916aa3500db" kindref="member">Tx_msg_queue</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40" refid="can_8c_1aff5c4caa2b4968b309deaffdc58f1e92" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="can_8c_1aff5c4caa2b4968b309deaffdc58f1e92" kindref="member">handleCANbusError</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>CAN_HandleTypeDef*<sp/>hcan,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>uint32_t<sp/>err_to_ignore){</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(hcan<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;null<sp/>can<sp/>handle&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/>errcode<sp/>=<sp/>HAL_CAN_GetError(hcan);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>err_to_ignore){</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>==<sp/>HAL_CAN_ERROR_NONE){</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_EWG){<sp/></highlight><highlight class="comment">//protocol<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>protocol<sp/>error&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_EPV){<sp/></highlight><highlight class="comment">//passive</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>passive<sp/>error&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_BOF){<sp/></highlight><highlight class="comment">//Bus-off<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>Bus<sp/>off<sp/>error&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_STF){<sp/></highlight><highlight class="comment">//Stuff<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>Stuff<sp/>error&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_FOR){<sp/></highlight><highlight class="comment">//Form<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>Form<sp/>error&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_ACK){<sp/></highlight><highlight class="comment">//Acknowledgement<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>Ack<sp/>error&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_BR){<sp/></highlight><highlight class="comment">//bit<sp/>recessive</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>Recessive<sp/>Bit<sp/>error&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_BD){<sp/></highlight><highlight class="comment">//bit<sp/>dominant</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>Dominant<sp/>Bit<sp/>error&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_CRC){</highlight><highlight class="comment">//cyclic<sp/>redundancy<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>CRC<sp/>Failed&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_RX_FOV0){</highlight><highlight class="comment">//overrun<sp/>rx<sp/>fifo0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>RX<sp/>FIFO0&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_RX_FOV1){</highlight><highlight class="comment">//overrun<sp/>rx<sp/>fifo1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>RX<sp/>FIFO1&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_TX_ALST0){</highlight><highlight class="comment">//tx<sp/>mailbox<sp/>0<sp/>arbitration<sp/>lost</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN0<sp/>arbitration&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_TX_TERR0){</highlight><highlight class="comment">//tx<sp/>mailbox<sp/>0<sp/>transmit<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN0<sp/>transmit<sp/>err&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_TX_ALST1){</highlight><highlight class="comment">//tx<sp/>mailbox<sp/>1<sp/>arbitration<sp/>lost<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN1<sp/>arbitration&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_TX_TERR1){</highlight><highlight class="comment">//tx<sp/>mailbox<sp/>1<sp/>transmit<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN1<sp/>transmit<sp/>err&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_TX_ALST2){</highlight><highlight class="comment">//tx<sp/>mailbox<sp/>2<sp/>arbitration<sp/>lost<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN2<sp/>arbitration&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_TX_TERR2){</highlight><highlight class="comment">//tx<sp/>mailbox<sp/>2<sp/>transmit<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN2<sp/>transmit<sp/>err&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_TIMEOUT){</highlight><highlight class="comment">//timeout</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>timeout&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_NOT_INITIALIZED){</highlight><highlight class="comment">//is<sp/>not<sp/>initialized</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>not<sp/>init&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_NOT_READY){</highlight><highlight class="comment">//Not<sp/>ready</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN_not_ready&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_NOT_STARTED){</highlight><highlight class="comment">//not<sp/>started</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;HAL_CAN_NOT_STARTED&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_PARAM){</highlight><highlight class="comment">//Param</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;CAN<sp/>Param&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/><ref refid="can_8c_1a81ca550f56875553f534a4d72adff10d" kindref="member">HAL_CAN_ERROR_INVALID_CALLBACK</ref>){</highlight><highlight class="comment">//invalid<sp/>callback</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;Invalid_callback&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(errcode<sp/>&amp;<sp/>HAL_CAN_ERROR_INTERNAL){</highlight><highlight class="comment">//internal<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;HAL_internal&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//no<sp/>clue<sp/>how<sp/>we<sp/>got<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" refkind="member"><highlight class="normal">CAN_HandleTypeDef<sp/><ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>CAN2<sp/>init<sp/>function<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="can_8c_1a1ee5cd592134235b6c07f676784d47c3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="can_8c_1a1ee5cd592134235b6c07f676784d47c3" kindref="member">MX_CAN2_Init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="120"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>CAN2_Init<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>CAN2_Init<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>CAN2_Init<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>CAN2_Init<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>.Instance<sp/>=<sp/>CAN2;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>.Init.Prescaler<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>.Init.Mode<sp/>=<sp/>CAN_MODE_NORMAL;</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>.Init.SyncJumpWidth<sp/>=<sp/>CAN_SJW_1TQ;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>.Init.TimeSeg1<sp/>=<sp/>CAN_BS1_12TQ;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>.Init.TimeSeg2<sp/>=<sp/>CAN_BS2_8TQ;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>.Init.TimeTriggeredMode<sp/>=<sp/>DISABLE;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>.Init.AutoBusOff<sp/>=<sp/>DISABLE;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>.Init.AutoWakeUp<sp/>=<sp/>DISABLE;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>.Init.AutoRetransmission<sp/>=<sp/>DISABLE;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>.Init.ReceiveFifoLocked<sp/>=<sp/>DISABLE;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>.Init.TransmitFifoPriority<sp/>=<sp/>ENABLE;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_CAN_Init(&amp;<ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>CAN2_Init<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Define<sp/>the<sp/>CAN<sp/>Filter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>CAN_FilterTypeDef<sp/>FilterConfig;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Set<sp/>the<sp/>data<sp/>length<sp/>and<sp/>ID<sp/>to<sp/>a<sp/>temporary<sp/>value</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.DLC=<sp/>1;<sp/></highlight><highlight class="comment">//<sp/>Data<sp/>Length<sp/>Code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.StdId=<sp/>0x244;<sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>the<sp/>CAN<sp/>ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.IDE=CAN_ID_STD;<sp/></highlight><highlight class="comment">//set<sp/>identifier<sp/>to<sp/>standard</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.RTR=CAN_RTR_DATA;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.ExtId<sp/>=<sp/>0x01;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.TransmitGlobalTime<sp/>=<sp/>DISABLE;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//filter<sp/>one<sp/>(stack<sp/>light<sp/>blink)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>FilterConfig.FilterFIFOAssignment=CAN_RX_FIFO0;<sp/></highlight><highlight class="comment">//set<sp/>fifo<sp/>assignment</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>FilterConfig.FilterIdHigh<sp/>=<sp/>0x0000;<sp/></highlight><highlight class="comment">//<sp/>filter<sp/>of<sp/>zero<sp/>allows<sp/>all<sp/>messages</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>FilterConfig.FilterIdLow<sp/>=<sp/>0x0000;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>FilterConfig.FilterMaskIdHigh<sp/>=<sp/>0x0000;</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>FilterConfig.FilterMaskIdLow<sp/>=<sp/>0x0000;</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>FilterConfig.FilterScale=CAN_FILTERSCALE_32BIT;<sp/></highlight><highlight class="comment">//set<sp/>filter<sp/>scale</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>FilterConfig.FilterActivation=ENABLE;</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>FilterConfig.FilterBank<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>FilterConfig.FilterMode<sp/>=<sp/>CAN_FILTERMODE_IDMASK;</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>FilterConfig.SlaveStartFilterBank<sp/>=<sp/>14;</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/>FilterConfig.FilterBank<sp/>=<sp/>14;</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>try<sp/>to<sp/>configure<sp/>the<sp/>filter</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_CAN_ConfigFilter(&amp;<ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>,<sp/>&amp;FilterConfig)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Filter<sp/>configuration<sp/>Error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Try<sp/>to<sp/>set<sp/>up<sp/>interrupts<sp/>for<sp/>receiving<sp/>mailbox</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_CAN_ActivateNotification(&amp;<ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>,<sp/>CAN_IT_RX_FIFO0_MSG_PENDING)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Try<sp/>to<sp/>start<sp/>CAN<sp/>communication<sp/>-<sp/>this<sp/>is<sp/>not<sp/>sending<sp/>a<sp/>message,<sp/>this<sp/>just<sp/>initializes<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>If<sp/>HAL_CAN_Start<sp/>returns<sp/>an<sp/>error,<sp/>then<sp/>we<sp/>want<sp/>to<sp/>go<sp/>into<sp/>the<sp/>error<sp/>handler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_CAN_Start(&amp;<ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Start<sp/>Error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>CAN2_Init<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197" refid="can_8c_1a2778ce7f3a2de42769b6de9fec4cedb9" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="can_8c_1a2778ce7f3a2de42769b6de9fec4cedb9" kindref="member">HAL_CAN_MspInit</ref>(CAN_HandleTypeDef*<sp/>canHandle)</highlight></codeline>
+<codeline lineno="198"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/>GPIO_InitTypeDef<sp/>GPIO_InitStruct<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(canHandle-&gt;Instance==CAN2)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>CAN2_MspInit<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>CAN2_MspInit<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>CAN2<sp/>clock<sp/>enable<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/>__HAL_RCC_CAN2_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>__HAL_RCC_CAN1_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/>__HAL_RCC_GPIOB_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIO_InitStruct.Pin<sp/>=<sp/>GPIO_PIN_5|GPIO_PIN_6;</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIO_InitStruct.Mode<sp/>=<sp/>GPIO_MODE_AF_PP;</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIO_InitStruct.Pull<sp/>=<sp/>GPIO_NOPULL;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIO_InitStruct.Speed<sp/>=<sp/>GPIO_SPEED_FREQ_VERY_HIGH;</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIO_InitStruct.Alternate<sp/>=<sp/>GPIO_AF9_CAN2;</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_GPIO_Init(GPIOB,<sp/>&amp;GPIO_InitStruct);</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>CAN2<sp/>interrupt<sp/>Init<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_NVIC_SetPriority(CAN2_TX_IRQn,<sp/>5,<sp/>0);</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_NVIC_EnableIRQ(CAN2_TX_IRQn);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_NVIC_SetPriority(CAN2_RX0_IRQn,<sp/>5,<sp/>0);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_NVIC_EnableIRQ(CAN2_RX0_IRQn);</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_NVIC_SetPriority(CAN2_RX1_IRQn,<sp/>5,<sp/>0);</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_NVIC_EnableIRQ(CAN2_RX1_IRQn);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>CAN2_MspInit<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>CAN2_MspInit<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight></codeline>
+<codeline lineno="235" refid="can_8c_1a4b39e42353b2781bc75d83c018640b67" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="can_8c_1a4b39e42353b2781bc75d83c018640b67" kindref="member">HAL_CAN_MspDeInit</ref>(CAN_HandleTypeDef*<sp/>canHandle)</highlight></codeline>
+<codeline lineno="236"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(canHandle-&gt;Instance==CAN2)</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>CAN2_MspDeInit<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>CAN2_MspDeInit<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Peripheral<sp/>clock<sp/>disable<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/>__HAL_RCC_CAN2_CLK_DISABLE();</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>__HAL_RCC_CAN1_CLK_DISABLE();</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_GPIO_DeInit(GPIOB,<sp/>GPIO_PIN_5|GPIO_PIN_6);</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>CAN2<sp/>interrupt<sp/>Deinit<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_NVIC_DisableIRQ(CAN2_TX_IRQn);</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_NVIC_DisableIRQ(CAN2_RX0_IRQn);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_NVIC_DisableIRQ(CAN2_RX1_IRQn);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>CAN2_MspDeInit<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>CAN2_MspDeInit<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="comment">//<sp/>When<sp/>a<sp/>CAN<sp/>message<sp/>comes,<sp/>the<sp/>interrupt<sp/>will<sp/>call<sp/>this<sp/>function</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="comment">//<sp/>We<sp/>need<sp/>to<sp/>figure<sp/>out<sp/>what<sp/>device<sp/>sent<sp/>it,<sp/>what<sp/>the<sp/>data<sp/>is,<sp/>and<sp/>handle<sp/>it<sp/>appropriately</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267" refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" kindref="member">HAL_CAN_RxFifo0MsgPendingCallback</ref>(CAN_HandleTypeDef<sp/>*<ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>){</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_CAN_GetRxMessage(<ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>,<sp/>CAN_RX_FIFO0,<sp/>&amp;<ref refid="constants_8h_1a6ee6e13063b860648180eea65852cc71" kindref="member">RxHeader</ref>,<sp/><ref refid="constants_8h_1a14629afcc7f0b2d62c2b617b07d98184" kindref="member">RxData</ref>)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//uint8_t<sp/>Data[8]<sp/>=<sp/>{0};</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//int<sp/>CAN_ID<sp/>=<sp/>0;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//int<sp/>DLC<sp/>=<sp/>0;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Extract<sp/>the<sp/>ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>if<sp/>(RxHeader.IDE<sp/>==<sp/>CAN_ID_STD){</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>CAN_ID<sp/>=<sp/>RxHeader.StdId;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>if<sp/>(RxHeader.IDE<sp/>==<sp/>CAN_ID_EXT){</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>CAN_ID<sp/>=<sp/>RxHeader.ExtId;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>//<sp/>Extract<sp/>the<sp/>data<sp/>length</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>DLC<sp/>=<sp/>RxHeader.DLC;<sp/>//<sp/>Data<sp/>Length<sp/>Code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>data<sp/>length<sp/>will<sp/>be<sp/>different<sp/>for<sp/>each<sp/>message,<sp/>so<sp/>we<sp/>need<sp/>to<sp/>handle<sp/>the<sp/>possibilities</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>for<sp/>(int<sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>RxHeader.DLC;<sp/>++i){</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>Data[i]<sp/>=<sp/>RxData[i];</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//TANNER<sp/>AND<sp/>FLO<sp/>CALL<sp/>YOUR<sp/>FUNCTION<sp/>HERE<sp/>TO<sp/>DO<sp/>STUFF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Here<sp/>is<sp/>where<sp/>the<sp/>second<sp/>mailbox<sp/>ISR<sp/>would<sp/>live</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303" refid="can_8c_1a4c51ef84434a42d4c5f9524d361c0703" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="can_8c_1a4c51ef84434a42d4c5f9524d361c0703" kindref="member">HAL_CAN_RxFifo1MsgPendingCallback</ref>(CAN_HandleTypeDef<sp/>*<ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>){</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>do<sp/>something</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>BRUH</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><ref refid="can_8h_1aef3770e45bbacbf527fd93dd80eea9b9" kindref="member">uv_status</ref><sp/>__uvCANtxCritSection(){</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" kindref="member">UV_OK</ref>;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320" refid="can_8c_1acc24d5acdcc2015b59e63769a397353b" refkind="member"><highlight class="normal"><ref refid="can_8h_1aef3770e45bbacbf527fd93dd80eea9b9" kindref="member">uv_status</ref><sp/><ref refid="can_8c_1acc24d5acdcc2015b59e63769a397353b" kindref="member">uvSendCanMSG</ref>(<ref refid="structuv___c_a_n__msg" kindref="compound">uv_CAN_msg</ref>*<sp/>msg){</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>TaskHandle_t<sp/>can_tx_daemon_handle<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="uvfr__state__engine_8h_1aa6ffd72eb4909ddb38c37a1369e13f09" kindref="member">uv_task_id</ref><sp/>can_tx_daemon_task_id;</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(can_tx_daemon_handle<sp/>==<sp/>NULL<sp/>){</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>can_tx_daemon_handle<sp/>=<sp/>xTaskGetHandle(<ref refid="can_8h_1a8258cafd2b5e0bfb1e4228e7a45750bf" kindref="member">CAN_TX_DAEMON_NAME</ref>);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(can_tx_daemon_handle<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//This<sp/>means<sp/>that<sp/>the<sp/>can_tx_daemon<sp/>is<sp/>probably<sp/>not<sp/>running</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" kindref="member">UV_ERROR</ref>;</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(msg<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" kindref="member">UV_ERROR</ref>;</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//BaseType_t<sp/>higher_priority_task_woken<sp/>=<sp/>pdFALSE;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(xQueueSendToBack(<ref refid="can_8c_1a39f60bf61979059355fc4916aa3500db" kindref="member">Tx_msg_queue</ref>,&amp;msg,0)<sp/>!=<sp/>pdPASS){</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;couldnt<sp/>enqueue<sp/>CAN<sp/>message&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" kindref="member">UV_OK</ref>;</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="348"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" kindref="member">UV_ERROR</ref>;</highlight></codeline>
+<codeline lineno="349"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="350"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358" refid="can_8c_1a2357e197a9ac26277eec808769fe409f" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="can_8c_1a2357e197a9ac26277eec808769fe409f" kindref="member">CANbusTxSvcDaemon</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args){</highlight></codeline>
+<codeline lineno="359"><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//CAN_TxHeaderTypeDef<sp/>tx_header;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="can_8c_1a39f60bf61979059355fc4916aa3500db" kindref="member">Tx_msg_queue</ref><sp/>=<sp/>xQueueCreate(8,</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structuv___c_a_n__msg" kindref="compound">uv_CAN_msg</ref>*));</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//BaseType_t<sp/>retval;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structuv___c_a_n__msg" kindref="compound">uv_CAN_msg</ref>*<sp/>tx_msg<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//tx_header.TransmitGlobalTime<sp/>=<sp/>DISABLE;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/><sp/><sp/>BaseType_t<sp/>result;</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//uint32_t<sp/>notif_val<sp/>=<sp/>0;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;;){</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>result<sp/>=<sp/>xQueueReceive(<ref refid="can_8c_1a39f60bf61979059355fc4916aa3500db" kindref="member">Tx_msg_queue</ref>,&amp;tx_msg,portMAX_DELAY);</highlight></codeline>
+<codeline lineno="377"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(result<sp/>==<sp/>pdTRUE){</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(tx_msg<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;cannot<sp/>send<sp/>null<sp/>CAN<sp/>msg&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((tx_msg-&gt;<ref refid="structuv___c_a_n__msg_1a3a3fdc7fed06a631fefa58ea44052d8d" kindref="member">flags</ref>)&amp;<sp/><ref refid="uvfr__utils_8h_1aa55012016c572366a0747ff7298c7fec" kindref="member">UV_CAN_EXTENDED_ID</ref>){</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.IDE<sp/>=<sp/>CAN_ID_EXT;</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.ExtId<sp/>=<sp/>tx_msg-&gt;<ref refid="structuv___c_a_n__msg_1aae369fbabe3cc5b71a89bb641c24aace" kindref="member">msg_id</ref>;</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.IDE<sp/>=<sp/>CAN_ID_STD;</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.StdId<sp/>=<sp/>tx_msg-&gt;<ref refid="structuv___c_a_n__msg_1aae369fbabe3cc5b71a89bb641c24aace" kindref="member">msg_id</ref>;</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.DLC<sp/>=<sp/>tx_msg-&gt;<ref refid="structuv___c_a_n__msg_1aa74af3745c8b56910d7c309245541d37" kindref="member">dlc</ref>;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"></highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_CAN_AddTxMessage(&amp;<ref refid="can_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>,<sp/>&amp;<ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>,<sp/>tx_msg-&gt;<ref refid="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" kindref="member">data</ref>,<sp/>&amp;<ref refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" kindref="member">TxMailbox</ref>)<sp/>!=<sp/>HAL_OK){</highlight></codeline>
+<codeline lineno="398"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Transmission<sp/>request<sp/>Error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvPanic(</highlight><highlight class="stringliteral">&quot;Unable<sp/>to<sp/>Transmit<sp/>CAN<sp/>msg&quot;</highlight><highlight class="normal">,0);</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="comment">//main<sp/>for<sp/>loop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight></codeline>
+<codeline lineno="405"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="406"><highlight class="normal"></highlight></codeline>
+<codeline lineno="407" refid="can_8c_1ae81ac633e5983dde276f930615a1e03a" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="can_8c_1ae81ac633e5983dde276f930615a1e03a" kindref="member">CANbusRxSVCDaemon</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args){</highlight></codeline>
+<codeline lineno="408"><highlight class="normal"></highlight></codeline>
+<codeline lineno="409"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;;){</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"></highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="412"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"></highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Core/Src/can.c"/>
+  </compounddef>
+</doxygen>

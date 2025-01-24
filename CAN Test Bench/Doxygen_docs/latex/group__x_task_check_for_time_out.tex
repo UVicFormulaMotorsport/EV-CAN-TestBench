@@ -1,0 +1,89 @@
+\hypertarget{group__x_task_check_for_time_out}{}\doxysection{x\+Task\+Check\+For\+Time\+Out}
+\label{group__x_task_check_for_time_out}\index{xTaskCheckForTimeOut@{xTaskCheckForTimeOut}}
+\mbox{\hyperlink{task_8h}{task.\+h}} 
+\begin{DoxyPre}BaseType\_t \mbox{\hyperlink{task_8h_a3b018a85d339e536a6c05748dd666a3a}{xTaskCheckForTimeOut( TimeOut\_t * const pxTimeOut, TickType\_t * const pxTicksToWait )}};\end{DoxyPre}
+
+
+Determines if px\+Ticks\+To\+Wait ticks has passed since a time was captured using a call to \mbox{\hyperlink{task_8h_a67155ad4ea2482b5f4597a69f2152be0}{v\+Task\+Set\+Time\+Out\+State()}}. The captured time includes the tick count and the number of times the tick count has overflowed.
+
+
+\begin{DoxyParams}{Parameters}
+{\em px\+Time\+Out} & The time status as captured previously using v\+Task\+Set\+Time\+Out\+State. If the timeout has not yet occurred, it is updated to reflect the current time status. \\
+\hline
+{\em px\+Ticks\+To\+Wait} & The number of ticks to check for timeout i.\+e. if px\+Ticks\+To\+Wait ticks have passed since px\+Time\+Out was last updated (either by \mbox{\hyperlink{task_8h_a67155ad4ea2482b5f4597a69f2152be0}{v\+Task\+Set\+Time\+Out\+State()}} or \mbox{\hyperlink{task_8h_a3b018a85d339e536a6c05748dd666a3a}{x\+Task\+Check\+For\+Time\+Out()}}), the timeout has occurred. If the timeout has not occurred, px\+T\+Icks\+To\+Wait is updated to reflect the number of remaining ticks.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+If timeout has occurred, pd\+T\+R\+UE is returned. Otherwise pd\+F\+A\+L\+SE is returned and px\+Ticks\+To\+Wait is updated to reflect the number of remaining ticks.
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\href{https://www.freertos.org/xTaskCheckForTimeOut.html}{\texttt{ https\+://www.\+freertos.\+org/x\+Task\+Check\+For\+Time\+Out.\+html}}
+\end{DoxySeeAlso}
+Example Usage\+: 
+\begin{DoxyPre}
+   // Driver library function used to receive uxWantedBytes from an Rx buffer
+   // that is filled by a UART interrupt. If there are not enough bytes in the
+   // Rx buffer then the task enters the Blocked state until it is notified that
+   // more data has been placed into the buffer. If there is still not enough
+   // data then the task re-\/enters the Blocked state, and \mbox{\hyperlink{task_8h_a3b018a85d339e536a6c05748dd666a3a}{xTaskCheckForTimeOut()}}
+   // is used to re-\/calculate the Block time to ensure the total amount of time
+   // spent in the Blocked state does not exceed MAX\_TIME\_TO\_WAIT. This
+   // continues until either the buffer contains at least uxWantedBytes bytes,
+   // or the total amount of time spent in the Blocked state reaches
+   // MAX\_TIME\_TO\_WAIT – at which point the task reads however many bytes are
+   // available up to a maximum of uxWantedBytes.\end{DoxyPre}
+
+
+
+\begin{DoxyPre}   size\_t xUART\_Receive( uint8\_t *pucBuffer, size\_t uxWantedBytes )
+   \{
+   size\_t uxReceived = 0;
+   TickType\_t xTicksToWait = MAX\_TIME\_TO\_WAIT;
+   TimeOut\_t xTimeOut;\end{DoxyPre}
+
+
+
+\begin{DoxyPre}    // Initialize xTimeOut.  This records the time at which this function
+    // was entered.
+    vTaskSetTimeOutState( \&xTimeOut );\end{DoxyPre}
+
+
+
+\begin{DoxyPre}    // Loop until the buffer contains the wanted number of bytes, or a
+    // timeout occurs.
+    while( UART\_bytes\_in\_rx\_buffer( pxUARTInstance ) < uxWantedBytes )
+    \{
+        // The buffer didn't contain enough data so this task is going to
+        // enter the Blocked state. Adjusting xTicksToWait to account for
+        // any time that has been spent in the Blocked state within this
+        // function so far to ensure the total amount of time spent in the
+        // Blocked state does not exceed MAX\_TIME\_TO\_WAIT.
+        if( xTaskCheckForTimeOut( \&xTimeOut, \&xTicksToWait ) != pdFALSE )
+        \{
+            //Timed out before the wanted number of bytes were available,
+            // exit the loop.
+            break;
+        \}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}        // Wait for a maximum of xTicksToWait ticks to be notified that the
+        // receive interrupt has placed more data into the buffer.
+        ulTaskNotifyTake( pdTRUE, xTicksToWait );
+    \}\end{DoxyPre}
+
+
+
+\begin{DoxyPre}    // Attempt to read uxWantedBytes from the receive buffer into pucBuffer.
+    // The actual number of bytes read (which might be less than
+    // uxWantedBytes) is returned.
+    uxReceived = UART\_read\_from\_receive\_buffer( pxUARTInstance,
+                                                pucBuffer,
+                                                uxWantedBytes );\end{DoxyPre}
+
+
+
+\begin{DoxyPre}    return uxReceived;
+   \}
+\end{DoxyPre}
+ 

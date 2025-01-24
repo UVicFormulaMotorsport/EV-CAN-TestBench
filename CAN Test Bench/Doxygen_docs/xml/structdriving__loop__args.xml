@@ -1,0 +1,372 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structdriving__loop__args" kind="struct" language="C++" prot="public">
+    <compoundname>driving_loop_args</compoundname>
+    <includes refid="driving__loop_8h" local="no">driving_loop.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structdriving__loop__args_1a752f04c3eb17d10e5cf742631bbb0010" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t driving_loop_args::absolute_max_acc_pwr</definition>
+        <argsstring></argsstring>
+        <name>absolute_max_acc_pwr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Maximum possible accum power </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="109" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1aa02edefb5d12e375c67b0dede9f3d980" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t driving_loop_args::absolute_max_motor_torque</definition>
+        <argsstring></argsstring>
+        <name>absolute_max_motor_torque</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Max power output </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="110" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1a4a3475004f3c81d79ff330bed11bb9e4" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t driving_loop_args::absolute_max_accum_current</definition>
+        <argsstring></argsstring>
+        <name>absolute_max_accum_current</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Max current (ADC reading) </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="111" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1a8e4b68476ab4d6af8283768b33d9614f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t driving_loop_args::max_accum_current_5s</definition>
+        <argsstring></argsstring>
+        <name>max_accum_current_5s</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Current maximum for 10s </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="112" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1aa4d4e7eda2e88ea5d3d8a9f5fe6babcb" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::absolute_max_motor_rpm</definition>
+        <argsstring></argsstring>
+        <name>absolute_max_motor_rpm</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Max limit of RPM </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="115" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1a32bfaf9f08eb7be125e58d1048186556" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::regen_rpm_cutoff</definition>
+        <argsstring></argsstring>
+        <name>regen_rpm_cutoff</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>No regen below this rpm </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="116" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1a483c9a4d7fe91e4a57512d054b010a13" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::min_apps_offset</definition>
+        <argsstring></argsstring>
+        <name>min_apps_offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>minimum APPS offset </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="120" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1a51c8b3e55f33482df7a938d0d3e7bbd9" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::max_apps_offset</definition>
+        <argsstring></argsstring>
+        <name>max_apps_offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>maximum APPS offset </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="121" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="121" bodyend="-1"/>
+        <referencedby refid="driving__loop_8c_1a80cc48f06202edc29bcad26a956bcc98" compoundref="driving__loop_8c" startline="68" endline="207">StartDrivingLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1a93bcc08ec8e62f33cf11efde02d61178" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::min_apps_value</definition>
+        <argsstring></argsstring>
+        <name>min_apps_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>for detecting disconnects and short circuits </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="122" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1a3972980cc1937753bc59dbc4978141b1" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::max_apps_value</definition>
+        <argsstring></argsstring>
+        <name>max_apps_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>for detecting disconnects and short circuits </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="123" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="123" bodyend="-1"/>
+        <referencedby refid="driving__loop_8c_1a80cc48f06202edc29bcad26a956bcc98" compoundref="driving__loop_8c" startline="68" endline="207">StartDrivingLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1abdde53b1e1a9b649a8d780331362a966" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::min_BPS_value</definition>
+        <argsstring></argsstring>
+        <name>min_BPS_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>are the brakes valid? </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="124" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="124" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1ac91f79da4c6beb38683e87ab2e09b0a2" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::max_BPS_value</definition>
+        <argsstring></argsstring>
+        <name>max_BPS_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>are the brakes valid? </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="125" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="125" bodyend="-1"/>
+        <referencedby refid="driving__loop_8c_1a80cc48f06202edc29bcad26a956bcc98" compoundref="driving__loop_8c" startline="68" endline="207">StartDrivingLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1acfb537478247c21344473ce9fa0b2844" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::apps_top</definition>
+        <argsstring></argsstring>
+        <name>apps_top</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Max APPS input value, representing 100% throttle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="127" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1ac4005057319506c3c26ec2ff1235d6fe" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::apps_bottom</definition>
+        <argsstring></argsstring>
+        <name>apps_bottom</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Min APPS input value, representing 0% throttle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="128" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1a8f28e6a24ae53940bab83117ae86d0c6" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::apps_plausibility_check_threshold</definition>
+        <argsstring></argsstring>
+        <name>apps_plausibility_check_threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Threshold for accelerator position with <linebreak/>
+ </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="130" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="130" bodyend="-1"/>
+        <referencedby refid="driving__loop_8c_1a80cc48f06202edc29bcad26a956bcc98" compoundref="driving__loop_8c" startline="68" endline="207">StartDrivingLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1aecaae9549609b56d961d739f91e73f92" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::bps_plausibility_check_threshold</definition>
+        <argsstring></argsstring>
+        <name>bps_plausibility_check_threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Brake pressure threshold for APPS </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="131" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="131" bodyend="-1"/>
+        <referencedby refid="driving__loop_8c_1a80cc48f06202edc29bcad26a956bcc98" compoundref="driving__loop_8c" startline="68" endline="207">StartDrivingLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1a931bede548cff8c75ce2a6b564a65dba" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::bps_implausibility_recovery_threshold</definition>
+        <argsstring></argsstring>
+        <name>bps_implausibility_recovery_threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Threshold for accellerator pedal position to recover fron APPS check </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="133" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1a1ff455145095acdd450a9c207ad682d5" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t driving_loop_args::apps_implausibility_recovery_threshold</definition>
+        <argsstring></argsstring>
+        <name>apps_implausibility_recovery_threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Threshold for brake position </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="134" column="10" bodyfile="Core/Inc/driving_loop.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1af726a5bebacb81eb0c4aff8697007aba" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t driving_loop_args::num_driving_modes</definition>
+        <argsstring></argsstring>
+        <name>num_driving_modes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>How many modes are actually populated </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="136" column="9" bodyfile="Core/Inc/driving_loop.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1af3aed836070373949c93b77ca01eea24" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t driving_loop_args::period</definition>
+        <argsstring></argsstring>
+        <name>period</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>how often does the driving loop execute </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="137" column="9" bodyfile="Core/Inc/driving_loop.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1a22916cc0996f907807373d06e96602e9" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t driving_loop_args::accum_regen_soc_threshold</definition>
+        <argsstring></argsstring>
+        <name>accum_regen_soc_threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Vehicle will not regen if above this SOC </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="138" column="9" bodyfile="Core/Inc/driving_loop.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdriving__loop__args_1a5f2e74a032f39217dd49b9d6b10921ce" prot="public" static="no" mutable="no">
+        <type><ref refid="structdriving_mode" kindref="compound">drivingMode</ref></type>
+        <definition>drivingMode driving_loop_args::dmodes[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>dmodes</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>These are various driving modes </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/driving_loop.h" line="141" column="13" bodyfile="Core/Inc/driving_loop.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>drivingModeParams</label>
+        <link refid="uniondriving_mode_params"/>
+      </node>
+      <node id="2">
+        <label>drivingMode</label>
+        <link refid="structdriving_mode"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>map_fn_params</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>driving_loop_args</label>
+        <link refid="structdriving__loop__args"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>dmodes</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Core/Inc/driving_loop.h" line="108" column="32" bodyfile="Core/Inc/driving_loop.h" bodystart="108" bodyend="143"/>
+    <listofallmembers>
+      <member refid="structdriving__loop__args_1a752f04c3eb17d10e5cf742631bbb0010" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>absolute_max_acc_pwr</name></member>
+      <member refid="structdriving__loop__args_1a4a3475004f3c81d79ff330bed11bb9e4" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>absolute_max_accum_current</name></member>
+      <member refid="structdriving__loop__args_1aa4d4e7eda2e88ea5d3d8a9f5fe6babcb" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>absolute_max_motor_rpm</name></member>
+      <member refid="structdriving__loop__args_1aa02edefb5d12e375c67b0dede9f3d980" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>absolute_max_motor_torque</name></member>
+      <member refid="structdriving__loop__args_1a22916cc0996f907807373d06e96602e9" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>accum_regen_soc_threshold</name></member>
+      <member refid="structdriving__loop__args_1ac4005057319506c3c26ec2ff1235d6fe" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>apps_bottom</name></member>
+      <member refid="structdriving__loop__args_1a1ff455145095acdd450a9c207ad682d5" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>apps_implausibility_recovery_threshold</name></member>
+      <member refid="structdriving__loop__args_1a8f28e6a24ae53940bab83117ae86d0c6" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>apps_plausibility_check_threshold</name></member>
+      <member refid="structdriving__loop__args_1acfb537478247c21344473ce9fa0b2844" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>apps_top</name></member>
+      <member refid="structdriving__loop__args_1a931bede548cff8c75ce2a6b564a65dba" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>bps_implausibility_recovery_threshold</name></member>
+      <member refid="structdriving__loop__args_1aecaae9549609b56d961d739f91e73f92" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>bps_plausibility_check_threshold</name></member>
+      <member refid="structdriving__loop__args_1a5f2e74a032f39217dd49b9d6b10921ce" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>dmodes</name></member>
+      <member refid="structdriving__loop__args_1a8e4b68476ab4d6af8283768b33d9614f" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>max_accum_current_5s</name></member>
+      <member refid="structdriving__loop__args_1a51c8b3e55f33482df7a938d0d3e7bbd9" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>max_apps_offset</name></member>
+      <member refid="structdriving__loop__args_1a3972980cc1937753bc59dbc4978141b1" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>max_apps_value</name></member>
+      <member refid="structdriving__loop__args_1ac91f79da4c6beb38683e87ab2e09b0a2" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>max_BPS_value</name></member>
+      <member refid="structdriving__loop__args_1a483c9a4d7fe91e4a57512d054b010a13" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>min_apps_offset</name></member>
+      <member refid="structdriving__loop__args_1a93bcc08ec8e62f33cf11efde02d61178" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>min_apps_value</name></member>
+      <member refid="structdriving__loop__args_1abdde53b1e1a9b649a8d780331362a966" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>min_BPS_value</name></member>
+      <member refid="structdriving__loop__args_1af726a5bebacb81eb0c4aff8697007aba" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>num_driving_modes</name></member>
+      <member refid="structdriving__loop__args_1af3aed836070373949c93b77ca01eea24" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>period</name></member>
+      <member refid="structdriving__loop__args_1a32bfaf9f08eb7be125e58d1048186556" prot="public" virt="non-virtual"><scope>driving_loop_args</scope><name>regen_rpm_cutoff</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="group__ul_task_notify_value_clear" kind="group">
+    <compoundname>ulTaskNotifyValueClear</compoundname>
+    <title>ulTaskNotifyValueClear</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>task. h <preformatted>uint32_t <ref refid="task_8h_1ae9254491975ce0adbbc879d56dd1b222" kindref="member">ulTaskNotifyValueClear( TaskHandle_t xTask, uint32_t ulBitsToClear )</ref>;</preformatted></para>
+<para>Clears the bits specified by the ulBitsToClear bit mask in the notification value of the task referenced by xTask.</para>
+<para>Set ulBitsToClear to 0xffffffff (UINT_MAX on 32-bit architectures) to clear the notification value to 0. Set ulBitsToClear to 0 to query the task&apos;s notification value without clearing any bits.</para>
+<para><simplesect kind="return"><para>The value of the target task&apos;s notification value before the bits specified by ulBitsToClear were cleared. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

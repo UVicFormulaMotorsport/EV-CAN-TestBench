@@ -24,20 +24,27 @@
 #define SIZEOF_SETTINGS_BLOCK sizeof(uv_vehicle_settings);
 #endif
 
-typedef struct motor_controller_settings_t{
-	int param;
-}motor_controller_settings_t;
+//AAA
+typedef struct veh_gen_info{
 
+}veh_gen_info;
 
 typedef struct uv_vehicle_settings{
-	SemaphoreHandle_t settings_mutex;
-	//struct motor_controller_settings mc_settings;
-	bms_settings_t bms_settings;
-	driving_loop_args driving_loop_settings;
-	daq_loop_args daq_settings;
+
+	struct uv_os_settings* os_settings;
+	struct motor_controller_settings* mc_settings;
+
+	driving_loop_args* driving_loop_settings;
+
 	void* imd_settings;
+	bms_settings_t* bms_settings;
+
+	daq_loop_args* daq_settings;
+
 	void* pdu_settings;
-	struct motor_controller_settings_t motor_controller_settings;
+	//struct motor_controller_settings motor_controller_settings;
+
+	uint16_t is_default; /**< Bitfield containing info on whether each settings instance is factory default. 0 default, 1 altered*/
 
 
 }uv_vehicle_settings;

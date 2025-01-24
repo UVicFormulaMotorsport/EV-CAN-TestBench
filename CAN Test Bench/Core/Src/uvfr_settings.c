@@ -14,6 +14,8 @@
 //global variables for all to enjoy
 uv_vehicle_settings* current_vehicle_settings = NULL;
 
+extern struct uv_os_settings default_os_settings;
+
 #if ENABLE_FLASH_SETTINGS
 enum uv_status_t getSettingsFromFlash(){
 	//if there exists settings in flash somewhere, then get them. Otherwise we use the defaults
@@ -38,8 +40,12 @@ uv_status saveSettings(){
  *
  */
 void setupDefaultSettings(){
+	if(current_vehicle_settings != NULL){
+		uvFree(current_vehicle_settings);
+	}
 	//real trap shit
 	current_vehicle_settings = uvMalloc(sizeof(uv_vehicle_settings));
+	current_vehicle_settings->os_settings = &default_os_settings;
 }
 
 void nukeSettings(uv_vehicle_settings** settings_to_delete){
@@ -77,6 +83,14 @@ enum uv_status_t uvSettingsInit(){
 
 	return UV_OK;
 
+}
+
+void uvSettingsProgrammerTask(void* args){
+	uv_task_info* params = (uv_task_info*) args;
+	void* new_tmp_settings = NULL;
+	for(;;){
+
+	}
 }
 
 

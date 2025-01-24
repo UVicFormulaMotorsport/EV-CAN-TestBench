@@ -25,7 +25,7 @@ uv_status initTempMonitor(void * arguments){
 	tm_task->task_function = tempMonitorTask;
 	tm_task->task_priority = osPriorityNormal;
 
-	tm_task->max_instances = 1;
+
 	tm_task->stack_size = _UV_DEFAULT_TASK_STACK_SIZE;
 
 	tm_task->active_states = UV_READY | UV_DRIVING | UV_ERROR_STATE;
@@ -53,19 +53,28 @@ void tempMonitorTask(void* args){
 	 *
 	 @code*/
 	TickType_t tick_period = pdMS_TO_TICKS(params->task_period); //Convert ms of period to the RTOS ticks
-	TickType_t last_time = xTaskGetTickCount();
+	TickType_t last_time = 0;
 	/**@endcode */
 	for(;;){
 		/** This is an example of a task control point, which is the spot in the task where the task
 		 * decides what needs to be done, based on the commands it has received from the task manager and the SCD
 		 *
 		 */
+
+		//vTaskDelayUntil( &last_time, tick_period);
 		if(params->cmd_data == UV_KILL_CMD){
+
+			//TASK DESTRUCTOR: CLEAN UP ANY RESOURCES USED BY THE TASK HERE
+
 			killSelf(params);
 		}else if(params->cmd_data == UV_SUSPEND_CMD){
+
+			//TASK SUSPENSION DESTRUCTOR: RELEASE THINGS LIKE MUTICES OR SEMAPHORES, BUT NO NEED TO DEALLOCATE ANY MEMORY
+
 			suspendSelf(params);
 		}
-		vTaskDelayUntil( &last_time, tick_period);
+
+		last_time = xTaskGetTickCount();
 
 		//Mohak code here
 		TxData[0] = 0b10101010;
@@ -104,5 +113,10 @@ void tempMonitorTask(void* args){
 
 		HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15); //BLUE
 
+		if(params->cmd_data == UV_KILL_CMD || params->cmd_data == UV_SUSPEND_CMD){
+			continue; // The idea here is to skip the delay
+		}
+
+		uvTaskDelayUntil(params, last_time, tick_period); //The delay that keeps task on period theoretically
 	}
 }

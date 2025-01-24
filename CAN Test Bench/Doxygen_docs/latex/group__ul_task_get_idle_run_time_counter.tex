@@ -1,0 +1,13 @@
+\hypertarget{group__ul_task_get_idle_run_time_counter}{}\doxysection{ul\+Task\+Get\+Idle\+Run\+Time\+Counter}
+\label{group__ul_task_get_idle_run_time_counter}\index{ulTaskGetIdleRunTimeCounter@{ulTaskGetIdleRunTimeCounter}}
+task. h 
+\begin{DoxyPre}uint32\_t \mbox{\hyperlink{task_8h_aa3d1466d43c0263448661e91681e4a9a}{ulTaskGetIdleRunTimeCounter( void )}};\end{DoxyPre}
+
+
+config\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+R\+U\+N\+\_\+\+T\+I\+M\+E\+\_\+\+S\+T\+A\+TS and config\+U\+S\+E\+\_\+\+S\+T\+A\+T\+S\+\_\+\+F\+O\+R\+M\+A\+T\+T\+I\+N\+G\+\_\+\+F\+U\+N\+C\+T\+I\+O\+NS must both be defined as 1 for this function to be available. The application must also then provide definitions for \mbox{\hyperlink{_free_r_t_o_s_8h_a727939bcdb98501e0eba0ec8a1841e1b}{port\+C\+O\+N\+F\+I\+G\+U\+R\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+F\+O\+R\+\_\+\+R\+U\+N\+\_\+\+T\+I\+M\+E\+\_\+\+S\+T\+A\+T\+S()}} and port\+G\+E\+T\+\_\+\+R\+U\+N\+\_\+\+T\+I\+M\+E\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+V\+A\+L\+U\+E() to configure a peripheral timer/counter and return the timers current count value respectively. The counter should be at least 10 times the frequency of the tick count.
+
+Setting config\+G\+E\+N\+E\+R\+A\+T\+E\+\_\+\+R\+U\+N\+\_\+\+T\+I\+M\+E\+\_\+\+S\+T\+A\+TS to 1 will result in a total accumulated execution time being stored for each task. The resolution of the accumulated time value depends on the frequency of the timer configured by the \mbox{\hyperlink{_free_r_t_o_s_8h_a727939bcdb98501e0eba0ec8a1841e1b}{port\+C\+O\+N\+F\+I\+G\+U\+R\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+F\+O\+R\+\_\+\+R\+U\+N\+\_\+\+T\+I\+M\+E\+\_\+\+S\+T\+A\+T\+S()}} macro. While \mbox{\hyperlink{task_8h_aa4603f3de3d809e9beb18d10fbac005d}{ux\+Task\+Get\+System\+State()}} and \mbox{\hyperlink{task_8h_a52da9b427041a48dc9f6802e10f151d4}{v\+Task\+Get\+Run\+Time\+Stats()}} writes the total execution time of each task into a buffer, \mbox{\hyperlink{task_8h_aa3d1466d43c0263448661e91681e4a9a}{ul\+Task\+Get\+Idle\+Run\+Time\+Counter()}} returns the total execution time of just the idle task.
+
+\begin{DoxyReturn}{Returns}
+The total run time of the idle task. This is the amount of time the idle task has actually been executing. The unit of time is dependent on the frequency configured using the \mbox{\hyperlink{_free_r_t_o_s_8h_a727939bcdb98501e0eba0ec8a1841e1b}{port\+C\+O\+N\+F\+I\+G\+U\+R\+E\+\_\+\+T\+I\+M\+E\+R\+\_\+\+F\+O\+R\+\_\+\+R\+U\+N\+\_\+\+T\+I\+M\+E\+\_\+\+S\+T\+A\+T\+S()}} and port\+G\+E\+T\+\_\+\+R\+U\+N\+\_\+\+T\+I\+M\+E\+\_\+\+C\+O\+U\+N\+T\+E\+R\+\_\+\+V\+A\+L\+U\+E() macros. 
+\end{DoxyReturn}

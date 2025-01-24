@@ -10,5 +10,6 @@ var can_8c =
     [ "handleCANbusError", "can_8c.html#aff5c4caa2b4968b309deaffdc58f1e92", null ],
     [ "MX_CAN2_Init", "can_8c.html#a1ee5cd592134235b6c07f676784d47c3", null ],
     [ "uvSendCanMSG", "can_8c.html#acc24d5acdcc2015b59e63769a397353b", null ],
-    [ "hcan2", "can_8c.html#ab77168d14df04ccca5d48612ee21ced8", null ]
+    [ "hcan2", "can_8c.html#ab77168d14df04ccca5d48612ee21ced8", null ],
+    [ "Tx_msg_queue", "can_8c.html#a39f60bf61979059355fc4916aa3500db", null ]
 ];

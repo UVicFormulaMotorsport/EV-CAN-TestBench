@@ -2,7 +2,7 @@
 \label{structdriving_mode}\index{drivingMode@{drivingMode}}
 
 
-This is where the driving mode and the deiving\+Mode\+Params are at.  
+This is where the driving mode and the \mbox{\hyperlink{uniondriving_mode_params}{driving\+Mode\+Params}} are at.  
 
 
 
@@ -14,20 +14,26 @@ This is where the driving mode and the deiving\+Mode\+Params are at.
 \item 
 char \mbox{\hyperlink{structdriving_mode_afe09b8e23f97ae6d60c225a7ac8a7d9a}{dm\+\_\+name}} \mbox{[}16\mbox{]}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{structdriving_mode_acacd0ff6e8afe1bdc2ab7f7a4127782a}{is\+\_\+speed\+\_\+control}}
+uint32\+\_\+t \mbox{\hyperlink{structdriving_mode_a6ef9f1d0875e8b329738830343254708}{max\+\_\+acc\+\_\+pwr}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structdriving_mode_a4523c0c6d5187fcd80cda47913d541c1}{max\+\_\+motor\+\_\+torque}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structdriving_mode_a45d9f3871594d9504c5a2fe61a001c17}{max\+\_\+current}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structdriving_mode_aa1bd42a95b3d00fc3ace7c78df51d2ef}{flags}}
+\item 
+\mbox{\hyperlink{uniondriving_mode_params}{driving\+Mode\+Params}} \mbox{\hyperlink{structdriving_mode_af6beb6da5ca338294c86b89f1b6fa4d1}{map\+\_\+fn\+\_\+params}}
 \item 
 uint8\+\_\+t \mbox{\hyperlink{structdriving_mode_ab4201b3227dd0ff7239f8c6060d30ed8}{control\+\_\+map\+\_\+fn}}
-\item 
-\mbox{\hyperlink{structdriving_mode_params}{driving\+Mode\+Params}} $\ast$ \mbox{\hyperlink{structdriving_mode_aa92b2d82168eb0f8d41488014e895e04}{map\+\_\+fn\+\_\+params}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-This is where the driving mode and the deiving\+Mode\+Params are at. 
+This is where the driving mode and the \mbox{\hyperlink{uniondriving_mode_params}{driving\+Mode\+Params}} are at. 
 
 
 
-Definition at line 60 of file driving\+\_\+loop.\+h.
+Definition at line 85 of file driving\+\_\+loop.\+h.
 
 
 
@@ -40,7 +46,7 @@ Definition at line 60 of file driving\+\_\+loop.\+h.
 
 
 
-Definition at line 63 of file driving\+\_\+loop.\+h.
+Definition at line 95 of file driving\+\_\+loop.\+h.
 
 \mbox{\Hypertarget{structdriving_mode_afe09b8e23f97ae6d60c225a7ac8a7d9a}\label{structdriving_mode_afe09b8e23f97ae6d60c225a7ac8a7d9a}} 
 \index{drivingMode@{drivingMode}!dm\_name@{dm\_name}}
@@ -48,29 +54,59 @@ Definition at line 63 of file driving\+\_\+loop.\+h.
 \doxysubsubsection{\texorpdfstring{dm\_name}{dm\_name}}
 {\footnotesize\ttfamily char driving\+Mode\+::dm\+\_\+name\mbox{[}16\mbox{]}}
 
+Name of mode, 15 chars + /0 
+
+Definition at line 86 of file driving\+\_\+loop.\+h.
+
+\mbox{\Hypertarget{structdriving_mode_aa1bd42a95b3d00fc3ace7c78df51d2ef}\label{structdriving_mode_aa1bd42a95b3d00fc3ace7c78df51d2ef}} 
+\index{drivingMode@{drivingMode}!flags@{flags}}
+\index{flags@{flags}!drivingMode@{drivingMode}}
+\doxysubsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily uint16\+\_\+t driving\+Mode\+::flags}
 
 
-Definition at line 61 of file driving\+\_\+loop.\+h.
 
-\mbox{\Hypertarget{structdriving_mode_acacd0ff6e8afe1bdc2ab7f7a4127782a}\label{structdriving_mode_acacd0ff6e8afe1bdc2ab7f7a4127782a}} 
-\index{drivingMode@{drivingMode}!is\_speed\_control@{is\_speed\_control}}
-\index{is\_speed\_control@{is\_speed\_control}!drivingMode@{drivingMode}}
-\doxysubsubsection{\texorpdfstring{is\_speed\_control}{is\_speed\_control}}
-{\footnotesize\ttfamily uint8\+\_\+t driving\+Mode\+::is\+\_\+speed\+\_\+control}
+Definition at line 92 of file driving\+\_\+loop.\+h.
 
-
-
-Definition at line 62 of file driving\+\_\+loop.\+h.
-
-\mbox{\Hypertarget{structdriving_mode_aa92b2d82168eb0f8d41488014e895e04}\label{structdriving_mode_aa92b2d82168eb0f8d41488014e895e04}} 
+\mbox{\Hypertarget{structdriving_mode_af6beb6da5ca338294c86b89f1b6fa4d1}\label{structdriving_mode_af6beb6da5ca338294c86b89f1b6fa4d1}} 
 \index{drivingMode@{drivingMode}!map\_fn\_params@{map\_fn\_params}}
 \index{map\_fn\_params@{map\_fn\_params}!drivingMode@{drivingMode}}
 \doxysubsubsection{\texorpdfstring{map\_fn\_params}{map\_fn\_params}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structdriving_mode_params}{driving\+Mode\+Params}}$\ast$ driving\+Mode\+::map\+\_\+fn\+\_\+params}
+{\footnotesize\ttfamily \mbox{\hyperlink{uniondriving_mode_params}{driving\+Mode\+Params}} driving\+Mode\+::map\+\_\+fn\+\_\+params}
 
 
 
-Definition at line 64 of file driving\+\_\+loop.\+h.
+Definition at line 94 of file driving\+\_\+loop.\+h.
+
+\mbox{\Hypertarget{structdriving_mode_a6ef9f1d0875e8b329738830343254708}\label{structdriving_mode_a6ef9f1d0875e8b329738830343254708}} 
+\index{drivingMode@{drivingMode}!max\_acc\_pwr@{max\_acc\_pwr}}
+\index{max\_acc\_pwr@{max\_acc\_pwr}!drivingMode@{drivingMode}}
+\doxysubsubsection{\texorpdfstring{max\_acc\_pwr}{max\_acc\_pwr}}
+{\footnotesize\ttfamily uint32\+\_\+t driving\+Mode\+::max\+\_\+acc\+\_\+pwr}
+
+
+
+Definition at line 87 of file driving\+\_\+loop.\+h.
+
+\mbox{\Hypertarget{structdriving_mode_a45d9f3871594d9504c5a2fe61a001c17}\label{structdriving_mode_a45d9f3871594d9504c5a2fe61a001c17}} 
+\index{drivingMode@{drivingMode}!max\_current@{max\_current}}
+\index{max\_current@{max\_current}!drivingMode@{drivingMode}}
+\doxysubsubsection{\texorpdfstring{max\_current}{max\_current}}
+{\footnotesize\ttfamily uint32\+\_\+t driving\+Mode\+::max\+\_\+current}
+
+
+
+Definition at line 89 of file driving\+\_\+loop.\+h.
+
+\mbox{\Hypertarget{structdriving_mode_a4523c0c6d5187fcd80cda47913d541c1}\label{structdriving_mode_a4523c0c6d5187fcd80cda47913d541c1}} 
+\index{drivingMode@{drivingMode}!max\_motor\_torque@{max\_motor\_torque}}
+\index{max\_motor\_torque@{max\_motor\_torque}!drivingMode@{drivingMode}}
+\doxysubsubsection{\texorpdfstring{max\_motor\_torque}{max\_motor\_torque}}
+{\footnotesize\ttfamily uint32\+\_\+t driving\+Mode\+::max\+\_\+motor\+\_\+torque}
+
+
+
+Definition at line 88 of file driving\+\_\+loop.\+h.
 
 
 
