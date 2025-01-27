@@ -47,7 +47,7 @@ enum uv_status_t initDrivingLoop(void *argument){
 
 	dl_task->active_states = UV_DRIVING;
 	dl_task->suspension_states = 0x00;
-	dl_task->deletion_states = UV_READY | PROGRAMMING | UV_LAUNCH_CONTROL | UV_ERROR_STATE;
+	dl_task->deletion_states = UV_INIT|UV_READY | PROGRAMMING | UV_SUSPENDED | UV_LAUNCH_CONTROL | UV_ERROR_STATE;
 
 	dl_task->task_period = 100;//0.1 seconds
 

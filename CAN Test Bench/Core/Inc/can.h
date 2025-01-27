@@ -1,4 +1,4 @@
-///* USER CODE BEGIN Header */
+/* USER CODE BEGIN Header */
 ///**
 //  ******************************************************************************
 //  * @file    can.h
@@ -55,9 +55,10 @@ void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2);
 uv_status uvSendCanMSG(uv_CAN_msg * msg);
 
 void CANbusTxSvcDaemon(void* args);
+void CANbusRxSvcDaemon(void* args);
 
-int call_function_from_CAN_id(uint32_t CAN_id, uint8_t* data, uint8_t length);
-void insert_CAN_message(CAN_Message message);
+//int callFunctionFromCANid(uint32_t CAN_id, uint8_t* data, uint8_t length);
+void insertCANMessageHandler(uint32_t id, void* handlerfunc);
 void nuke_hash_table();
 /* USER CODE END Prototypes */
 
@@ -66,8 +67,4 @@ void nuke_hash_table();
 #endif
 
 #endif /* __CAN_H__ */
-
-
-
-
 

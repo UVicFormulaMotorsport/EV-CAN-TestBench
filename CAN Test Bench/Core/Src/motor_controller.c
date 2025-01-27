@@ -746,7 +746,7 @@ void MC_Startup(void* args){
 
 	motor_controller_settings* settings = (motor_controller_settings*) params->specific_args;
 
-
+	goto end_mc_init;
 
 	MC_Request_Data(SERIAL_NUMBER_REGISTER);
 	    if (!WaitFor_CAN_Response()) {
@@ -787,7 +787,7 @@ void MC_Startup(void* args){
 
 
 
-
+	    end_mc_init:
 
 	if(xQueueSendToBack(params->init_info_queue,&response,100) != pdPASS){
 		//OOPS

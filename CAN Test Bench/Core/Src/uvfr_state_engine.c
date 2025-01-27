@@ -26,7 +26,7 @@ static uv_task_id _next_task_id = 0;
 static uv_task_info* _task_register = NULL;
 
 static uv_task_id _next_svc_task_id = 0;
-static uv_task_info* _svc_task_register = NULL;
+//static uv_task_info* _svc_task_register = NULL;
 
 TaskHandle_t* scd_handle_ptr;
 
@@ -116,7 +116,7 @@ uv_status changeVehicleState(uint16_t state){
 
 		default:
 			//invalid transitions that should not exist
-			uvPanic("Invalid State Transition",0);
+			//uvPanic("Invalid State Transition",0);
 			break;
 	}
 
@@ -314,10 +314,10 @@ uv_status _uvValidateSpecificTask(uv_task_id id){
 		return UV_ERROR;
 	}
 
-	if((current_task->active_states | current_task->deletion_states | current_task->suspension_states) != 0x01FF){
-		if((current_task->task_flags & UV_TASK_MANAGER_MASK) == UV_TASK_VEHICLE_APPLICATION)
-		return UV_ERROR; //This avoids undefined states where the task state is not specified for a given vehicle state
-	}
+//	if((current_task->active_states | current_task->deletion_states | current_task->suspension_states) != 0x01FF){
+//		if((current_task->task_flags & UV_TASK_MANAGER_MASK) == UV_TASK_VEHICLE_APPLICATION)
+//		return UV_ERROR; //This avoids undefined states where the task state is not specified for a given vehicle state
+//	}
 
 	if(current_task->task_function == NULL){
 				//Invalid, since no task assigned
@@ -855,6 +855,10 @@ static uv_status proccessSCDMsg(uv_scd_response* msg){
 	return UV_OK;
 }
 
+void uvSendTaskStatusReport(uv_task_info* t){
+
+}
+
 //TODO Give SCD Object permanence, make a function that is called by the task manager. Allocation of SCD resources costs valuable time in the event of a fault
 
 /** @brief This collects all the data changing from different tasks, and makes sure that everything works properly
@@ -1065,8 +1069,8 @@ inline uv_status uvInvokeSCD(void* scd_params){
  *
  */
 void uvTaskManager(void* args) PRIVILEGED_FUNCTION{
-	uv_task_info* params = (uv_task_info*) args;
-	task_management_info* tmi = params->tmi; //Task Manager interface;
+//	uv_task_info* params = (uv_task_info*) args;
+//	task_management_info* tmi = params->tmi; //Task Manager interface;
 //	tmi->task_handle = params->task_handle;
 //	tmi->parent_msg_queue = xQueueCreate(8,sizeof(uv_task_msg));//our good ol friend the message queue
 //	//Init the variables we need
@@ -1169,7 +1173,7 @@ uv_task_info* uvCreateServiceTask(){
 
 	_newtask->task_handle = NULL;
 
-	_newtask->task_flags = UV_TASK_GENERIC_SVC;
+	_newtask->task_flags = UV_TASK_GENERIC_SVC | UV_TASK_SCD_IGNORE;
 
 	return _newtask;
 }
@@ -1306,9 +1310,15 @@ void uvSVCTaskManager(void* args){
 	canTxtask->task_function = CANbusTxSvcDaemon;
 	canTxtask->active_states = 0xFFFF;
 	canTxtask->task_name = CAN_TX_DAEMON_NAME;
+
+	uv_task_info* canRxtask = uvCreateServiceTask();
+	canRxtask->task_function = CANbusRxSvcDaemon;
+	canRxtask->active_states = 0xFFFF;
+	canRxtask->task_name = CAN_RX_DAEMON_NAME;
 	//super basic for now, just need something working
 	uint32_t var = 0; //retarded dummy var
 	uvStartTask(&var,canTxtask);
+	uvStartTask(&var,canRxtask);
 
 	//vTaskSuspend(params->task_handle);
 	//iterate through the list
