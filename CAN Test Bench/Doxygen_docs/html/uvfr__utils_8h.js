@@ -64,6 +64,19 @@ var uvfr__utils_8h =
       [ "UV_BINARY_SEMAPHORE", "uvfr__utils_8h.html#ac4bac060238ca2be3b3b3ca25c77cc8cafd11e147a45f39dc7384973d2d413cb8", null ],
       [ "UV_SEMAPHORE", "uvfr__utils_8h.html#ac4bac060238ca2be3b3b3ca25c77cc8ca3f79dc438166cce27d710db648212f3f", null ]
     ] ],
+    [ "data_type", "uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14", [
+      [ "UV_UINT8", "uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d", null ],
+      [ "UV_INT8", "uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318", null ],
+      [ "UV_UINT16", "uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0", null ],
+      [ "UV_INT16", "uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787", null ],
+      [ "UV_UINT32", "uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0", null ],
+      [ "UV_INT32", "uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc", null ],
+      [ "UV_FLOAT", "uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9", null ],
+      [ "UV_DOUBLE", "uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038", null ],
+      [ "UV_INT64", "uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a4e148426880e8cf1e81ceea15ddf2d7a", null ],
+      [ "UV_UINT64", "uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a04c45245ce9c00f905a60cc34cca2de6", null ],
+      [ "UV_STRING", "uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de", null ]
+    ] ],
     [ "uv_driving_mode_t", "uvfr__utils_8h.html#acd907d24ac9b557d684429bb0cd1ddb1", [
       [ "normal", "uvfr__utils_8h.html#acd907d24ac9b557d684429bb0cd1ddb1aebc81705969b8c5ae986b0b2ec08d1d5", null ],
       [ "accel", "uvfr__utils_8h.html#acd907d24ac9b557d684429bb0cd1ddb1ac67554de85b7a3c2ac961da6faf22e1e", null ],

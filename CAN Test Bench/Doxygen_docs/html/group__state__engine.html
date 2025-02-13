@@ -129,6 +129,11 @@ Functions</h2></td></tr>
 <tr class="memitem:gaff684308203d45e9e16ad3d115c54279"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#gaff684308203d45e9e16ad3d115c54279">uvSVCTaskManager</a> (void *args)</td></tr>
 <tr class="memdesc:gaff684308203d45e9e16ad3d115c54279"><td class="mdescLeft">&#160;</td><td class="mdescRight">oversees all of the service tasks, and makes sure that theyre alright  <a href="group__state__engine.html#gaff684308203d45e9e16ad3d115c54279">More...</a><br /></td></tr>
 <tr class="separator:gaff684308203d45e9e16ad3d115c54279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9f31832194c2c9dddce43bf53eb86d5b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#ga9f31832194c2c9dddce43bf53eb86d5b">compareTaskByName</a> (<a class="el" href="structuv__task__info.html">uv_task_info</a> *t1, <a class="el" href="structuv__task__info.html">uv_task_info</a> *t2)</td></tr>
+<tr class="separator:ga9f31832194c2c9dddce43bf53eb86d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e6167ef18c2ec8b65fbe070d0ffb6c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#ga0e6167ef18c2ec8b65fbe070d0ffb6c9">uvTaskPeriodEnd</a> (<a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
+<tr class="memdesc:ga0e6167ef18c2ec8b65fbe070d0ffb6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function called at the end of the task period.  <a href="group__state__engine.html#ga0e6167ef18c2ec8b65fbe070d0ffb6c9">More...</a><br /></td></tr>
+<tr class="separator:ga0e6167ef18c2ec8b65fbe070d0ffb6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -136,14 +141,22 @@ Variables</h2></td></tr>
 <tr class="separator:gaf070a24ce066297b4a8276ddcb884b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6b49ab568bed9d9189782eebb90545b5"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#ga6b49ab568bed9d9189782eebb90545b5">_task_register</a> = NULL</td></tr>
 <tr class="separator:ga6b49ab568bed9d9189782eebb90545b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5868023f8ec284bd14c50db7a815e78"><td class="memItemLeft" align="right" valign="top">static TickType_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#gac5868023f8ec284bd14c50db7a815e78">last_task_start_times</a> = NULL</td></tr>
+<tr class="separator:gac5868023f8ec284bd14c50db7a815e78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ae08e3e5e1cb6e0228da97c7e4326e0"><td class="memItemLeft" align="right" valign="top">static TickType_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#ga0ae08e3e5e1cb6e0228da97c7e4326e0">last_task_end_times</a> = NULL</td></tr>
+<tr class="separator:ga0ae08e3e5e1cb6e0228da97c7e4326e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf622d52254e824f6da1204abc93b18db"><td class="memItemLeft" align="right" valign="top">uint8_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#gaf622d52254e824f6da1204abc93b18db">task_tardiness</a></td></tr>
+<tr class="separator:gaf622d52254e824f6da1204abc93b18db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae48b13e362d2b9d10ec61f516ea5c09f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="uvfr__state__engine_8h.html#aa6ffd72eb4909ddb38c37a1369e13f09">uv_task_id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#gae48b13e362d2b9d10ec61f516ea5c09f">_next_svc_task_id</a> = 0</td></tr>
 <tr class="separator:gae48b13e362d2b9d10ec61f516ea5c09f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga031bbb86895e7346f4c7c168b36ffbd4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#ga031bbb86895e7346f4c7c168b36ffbd4">_svc_task_register</a> = NULL</td></tr>
-<tr class="separator:ga031bbb86895e7346f4c7c168b36ffbd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac204f3b14ce9bf370b2e5477dc87afea"><td class="memItemLeft" align="right" valign="top">TaskHandle_t *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#gac204f3b14ce9bf370b2e5477dc87afea">scd_handle_ptr</a></td></tr>
 <tr class="separator:gac204f3b14ce9bf370b2e5477dc87afea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa11ee7595fe2da14c5949195824179af"><td class="memItemLeft" align="right" valign="top">static volatile <a class="el" href="uvfr__utils_8h.html#a0ecf26b576b9a54eca656b9be7ba6a06">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#gaa11ee7595fe2da14c5949195824179af">SCD_active</a> = <a class="el" href="group__utility__macros.html#ga65e9886d74aaee76545e83dd09011727">false</a></td></tr>
 <tr class="separator:gaa11ee7595fe2da14c5949195824179af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga23b0c19ff219812065d876d2daaa26fd"><td class="memItemLeft" align="right" valign="top">static volatile <a class="el" href="uvfr__utils_8h.html#a0ecf26b576b9a54eca656b9be7ba6a06">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#ga23b0c19ff219812065d876d2daaa26fd">throttle_daq</a> = <a class="el" href="group__utility__macros.html#ga65e9886d74aaee76545e83dd09011727">false</a></td></tr>
+<tr class="separator:ga23b0c19ff219812065d876d2daaa26fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6f4abbac22d8261c588c551b1d153ef6"><td class="memItemLeft" align="right" valign="top">static volatile <a class="el" href="uvfr__utils_8h.html#a0ecf26b576b9a54eca656b9be7ba6a06">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#ga6f4abbac22d8261c588c551b1d153ef6">nc_throttling</a> = 1</td></tr>
+<tr class="separator:ga6f4abbac22d8261c588c551b1d153ef6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6837d935e61f84062544da8971a18560"><td class="memItemLeft" align="right" valign="top">static QueueHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#ga6837d935e61f84062544da8971a18560">state_change_queue</a> = NULL</td></tr>
 <tr class="separator:ga6837d935e61f84062544da8971a18560"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga168524a5d658247db44217e643b6396f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrbtree.html">rbtree</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#ga168524a5d658247db44217e643b6396f">task_name_lut</a> = NULL</td></tr>
@@ -156,6 +169,10 @@ Variables</h2></td></tr>
 <tr class="separator:ga3de41676729241e58688c61c450e4a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga42329069c59ef55a97a6b0bca0cafd32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#ga42329069c59ef55a97a6b0bca0cafd32">svc_task_manager</a> = NULL</td></tr>
 <tr class="separator:ga42329069c59ef55a97a6b0bca0cafd32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaed35d33599a21d98d0500c5f0a1385a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structrbtree.html">rbtree</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#gaaed35d33599a21d98d0500c5f0a1385a">task_name_tree</a></td></tr>
+<tr class="separator:gaaed35d33599a21d98d0500c5f0a1385a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga026f8ea8b80f88c90cb35e3ec3588237"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structuv__os__settings.html">uv_os_settings</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#ga026f8ea8b80f88c90cb35e3ec3588237">os_settings</a> = NULL</td></tr>
+<tr class="separator:ga026f8ea8b80f88c90cb35e3ec3588237"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad9e02be6d2d0bc1ab5cd9fd8cae34230"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structuv__os__settings.html">uv_os_settings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#gad9e02be6d2d0bc1ab5cd9fd8cae34230">default_os_settings</a></td></tr>
 <tr class="separator:gad9e02be6d2d0bc1ab5cd9fd8cae34230"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -199,6 +216,38 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ga9f31832194c2c9dddce43bf53eb86d5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9f31832194c2c9dddce43bf53eb86d5b">&#9670;&nbsp;</a></span>compareTaskByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compareTaskByName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td>
+          <td class="paramname"><em>t1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td>
+          <td class="paramname"><em>t2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l01400">1400</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+
+<p class="reference">References <a class="el" href="uvfr__state__engine_8h_source.html#l00222">uv_task_info::task_name</a>.</p>
+
+</div>
+</div>
 <a id="gaff684308203d45e9e16ad3d115c54279"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaff684308203d45e9e16ad3d115c54279">&#9670;&nbsp;</a></span>uvSVCTaskManager()</h2>
 
@@ -225,11 +274,38 @@ Variables</h2></td></tr>
 </ul>
 <p>Lovely times for all</p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l01284">1284</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l01341">1341</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__utils_8c_source.html#l00263">__uvInitPanic()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00026">_task_register</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00239">uv_task_info::active_states</a>, <a class="el" href="can_8h_source.html#l00040">CAN_TX_DAEMON_NAME</a>, <a class="el" href="can_8c_source.html#l00358">CANbusTxSvcDaemon()</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00216">uv_task_info::task_function</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00155">task_management_info::task_handle</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00211">uv_task_info::task_name</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l01138">uvCreateServiceTask()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00365">uvStartTask()</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__utils_8c_source.html#l00271">__uvInitPanic()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00026">_task_register</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00251">uv_task_info::active_states</a>, <a class="el" href="can_8h_source.html#l00041">CAN_RX_DAEMON_NAME</a>, <a class="el" href="can_8h_source.html#l00040">CAN_TX_DAEMON_NAME</a>, <a class="el" href="can_8c_source.html#l00618">CANbusRxSvcDaemon()</a>, <a class="el" href="can_8c_source.html#l00551">CANbusTxSvcDaemon()</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00227">uv_task_info::task_function</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00155">task_management_info::task_handle</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00222">uv_task_info::task_name</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l01195">uvCreateServiceTask()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00380">uvStartTask()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00179">uvStartStateMachine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00192">uvStartStateMachine()</a>.</p>
+
+</div>
+</div>
+<a id="ga0e6167ef18c2ec8b65fbe070d0ffb6c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e6167ef18c2ec8b65fbe070d0ffb6c9">&#9670;&nbsp;</a></span>uvTaskPeriodEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void uvTaskPeriodEnd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function called at the end of the task period. </p>
+<p>@ </p>
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l01457">1457</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+
+<p class="reference">References <a class="el" href="uvfr__state__engine_8h_source.html#l00249">uv_task_info::last_execution_time</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00040">nc_throttling</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00221">uv_task_info::task_id</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00224">uv_task_info::task_period</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00030">task_tardiness</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00279">uvTaskResetDelayBit</a>, and <a class="el" href="uvfr__state__engine_8h_source.html#l00277">uvTaskSetDelayBit</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l01080">uvTaskManager()</a>.</p>
 
 </div>
 </div>
@@ -254,9 +330,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00028">28</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00032">32</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l01138">uvCreateServiceTask()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l01195">uvCreateServiceTask()</a>.</p>
 
 </div>
 </div>
@@ -282,31 +358,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00025">25</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00868">_stateChangeDaemon()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00446">killEmAll()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l01138">uvCreateServiceTask()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00249">uvCreateTask()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00343">uvValidateManagedTasks()</a>.</p>
-
-</div>
-</div>
-<a id="ga031bbb86895e7346f4c7c168b36ffbd4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga031bbb86895e7346f4c7c168b36ffbd4">&#9670;&nbsp;</a></span>_svc_task_register</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structuv__task__info.html">uv_task_info</a>* _svc_task_register = NULL</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00029">29</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00865">_stateChangeDaemon()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00452">killEmAll()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l01195">uvCreateServiceTask()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00264">uvCreateTask()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l01080">uvTaskManager()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00358">uvValidateManagedTasks()</a>.</p>
 
 </div>
 </div>
@@ -332,7 +384,7 @@ Variables</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00026">26</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00868">_stateChangeDaemon()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00308">_uvValidateSpecificTask()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00446">killEmAll()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00799">proccessSCDMsg()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l01138">uvCreateServiceTask()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00249">uvCreateTask()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00151">uvInitStateEngine()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l01284">uvSVCTaskManager()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00865">_stateChangeDaemon()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00323">_uvValidateSpecificTask()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00452">killEmAll()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00792">proccessSCDMsg()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l01195">uvCreateServiceTask()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00264">uvCreateTask()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00164">uvInitStateEngine()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l01341">uvSVCTaskManager()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l01080">uvTaskManager()</a>.</p>
 
 </div>
 </div>
@@ -352,12 +404,110 @@ Variables</h2></td></tr>
 <div class="line">        .task_manager_period = 50,</div>
 <div class="line">        .max_svc_task_period = 250,</div>
 <div class="line">        .max_task_period = 500,</div>
-<div class="line"> </div>
+<div class="line">        .min_task_period = 3,</div>
+<div class="line">        .task_overshoot_margin_noncrit = 1.5F,</div>
+<div class="line">        .task_overshoot_margin_crit = 1.1F</div>
 <div class="line">}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00045">45</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00055">55</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="uvfr__settings_8c_source.html#l00042">setupDefaultSettings()</a>.</p>
+
+</div>
+</div>
+<a id="ga0ae08e3e5e1cb6e0228da97c7e4326e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0ae08e3e5e1cb6e0228da97c7e4326e0">&#9670;&nbsp;</a></span>last_task_end_times</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TickType_t* last_task_end_times = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00029">29</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l01080">uvTaskManager()</a>.</p>
+
+</div>
+</div>
+<a id="gac5868023f8ec284bd14c50db7a815e78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac5868023f8ec284bd14c50db7a815e78">&#9670;&nbsp;</a></span>last_task_start_times</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TickType_t* last_task_start_times = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00028">28</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l01080">uvTaskManager()</a>.</p>
+
+</div>
+</div>
+<a id="ga6f4abbac22d8261c588c551b1d153ef6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6f4abbac22d8261c588c551b1d153ef6">&#9670;&nbsp;</a></span>nc_throttling</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="uvfr__utils_8h.html#a0ecf26b576b9a54eca656b9be7ba6a06">bool</a> nc_throttling = 1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00040">40</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l01080">uvTaskManager()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l01457">uvTaskPeriodEnd()</a>.</p>
+
+</div>
+</div>
+<a id="ga026f8ea8b80f88c90cb35e3ec3588237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga026f8ea8b80f88c90cb35e3ec3588237">&#9670;&nbsp;</a></span>os_settings</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structuv__os__settings.html">uv_os_settings</a>* os_settings = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00053">53</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00192">uvStartStateMachine()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l01080">uvTaskManager()</a>.</p>
 
 </div>
 </div>
@@ -373,9 +523,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00040">40</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00046">46</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00086">changeVehicleState()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00179">uvStartStateMachine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00099">changeVehicleState()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00192">uvStartStateMachine()</a>.</p>
 
 </div>
 </div>
@@ -399,9 +549,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00034">34</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00038">38</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00868">_stateChangeDaemon()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00865">_stateChangeDaemon()</a>.</p>
 
 </div>
 </div>
@@ -417,7 +567,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00031">31</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00035">35</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
 </div>
 </div>
@@ -441,9 +591,9 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00035">35</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00041">41</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00868">_stateChangeDaemon()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00715">killSelf()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00756">suspendSelf()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00865">_stateChangeDaemon()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00708">killSelf()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00749">suspendSelf()</a>.</p>
 
 </div>
 </div>
@@ -459,9 +609,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00043">43</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00049">49</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00151">uvInitStateEngine()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00179">uvStartStateMachine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00164">uvInitStateEngine()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00192">uvStartStateMachine()</a>.</p>
 
 </div>
 </div>
@@ -477,9 +627,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00042">42</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00048">48</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00151">uvInitStateEngine()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00179">uvStartStateMachine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00164">uvInitStateEngine()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00192">uvStartStateMachine()</a>.</p>
 
 </div>
 </div>
@@ -495,7 +645,65 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00037">37</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00043">43</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+
+</div>
+</div>
+<a id="gaaed35d33599a21d98d0500c5f0a1385a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaed35d33599a21d98d0500c5f0a1385a">&#9670;&nbsp;</a></span>task_name_tree</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrbtree.html">rbtree</a>* task_name_tree</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00051">51</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+
+</div>
+</div>
+<a id="gaf622d52254e824f6da1204abc93b18db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf622d52254e824f6da1204abc93b18db">&#9670;&nbsp;</a></span>task_tardiness</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t* task_tardiness</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00030">30</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l01046">uvLateTaskHandler()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l01080">uvTaskManager()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l01457">uvTaskPeriodEnd()</a>.</p>
+
+</div>
+</div>
+<a id="ga23b0c19ff219812065d876d2daaa26fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga23b0c19ff219812065d876d2daaa26fd">&#9670;&nbsp;</a></span>throttle_daq</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="uvfr__utils_8h.html#a0ecf26b576b9a54eca656b9be7ba6a06">bool</a> throttle_daq = <a class="el" href="group__utility__macros.html#ga65e9886d74aaee76545e83dd09011727">false</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00039">39</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
 </div>
 </div>
@@ -511,9 +719,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00039">39</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00045">45</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00868">_stateChangeDaemon()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00086">changeVehicleState()</a>, <a class="el" href="daq_8c_source.html#l00062">daqMasterTask()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00179">uvStartStateMachine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00865">_stateChangeDaemon()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00099">changeVehicleState()</a>, <a class="el" href="daq_8c_source.html#l00062">daqMasterTask()</a>, <a class="el" href="temp__monitoring_8c_source.html#l00042">testfunc()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00192">uvStartStateMachine()</a>.</p>
 
 </div>
 </div>

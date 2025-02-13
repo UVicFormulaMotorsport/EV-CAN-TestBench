@@ -98,11 +98,11 @@
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
         <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="1" relation="include">
         </childnode>
@@ -132,7 +132,7 @@
       <node id="17">
         <label>message_buffer.h</label>
       </node>
-      <node id="21">
+      <node id="22">
         <label>bms.h</label>
         <link refid="bms_8h"/>
         <childnode refid="2" relation="include">
@@ -175,13 +175,15 @@
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
       </node>
       <node id="20">
         <label>daq.h</label>
         <link refid="daq_8h"/>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="13">
@@ -190,7 +192,7 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="21">
         <label>rb_tree.h</label>
         <link refid="rb__tree_8h"/>
       </node>
@@ -216,7 +218,7 @@
         <label>FreeRTOSConfig.h</label>
         <link refid="_free_r_t_o_s_config_8h"/>
       </node>
-      <node id="22">
+      <node id="23">
         <label>uvfr_state_engine.h</label>
         <link refid="uvfr__state__engine_8h"/>
         <childnode refid="5" relation="include">
@@ -398,6 +400,8 @@
         </childnode>
         <childnode refid="45" relation="include">
         </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
       </node>
       <node id="42">
         <label>Core/Src/odometer.c</label>
@@ -506,6 +510,10 @@
       <node id="22">
         <label>Core/Src/temp_monitoring.c</label>
         <link refid="temp__monitoring_8c"/>
+      </node>
+      <node id="46">
+        <label>Core/Src/uvfr_vehicle_commands.c</label>
+        <link refid="uvfr__vehicle__commands_8c"/>
       </node>
       <node id="36">
         <label>Core/Inc/daq.h</label>
@@ -679,6 +687,28 @@
         </inbodydescription>
         <location file="Core/Inc/motor_controller.h" line="15" column="9" bodyfile="Core/Inc/motor_controller.h" bodystart="15" bodyend="-1"/>
       </memberdef>
+      <memberdef kind="define" id="motor__controller_8h_1aab8c03dc3480e25a7a75b60edbf51cb3" prot="public" static="no">
+        <name>SERIAL_NUMBER_REGISTER</name>
+        <initializer>0x1A</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/motor_controller.h" line="19" column="9" bodyfile="Core/Inc/motor_controller.h" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="motor__controller_8h_1a829d1af845327949015b4e83bb6fc43d" prot="public" static="no">
+        <name>FIRMWARE_VERSION_REGISTER</name>
+        <initializer>0x1B</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/motor_controller.h" line="20" column="9" bodyfile="Core/Inc/motor_controller.h" bodystart="20" bodyend="-1"/>
+      </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268" prot="public" static="no" strong="no">
@@ -722,7 +752,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="20" column="39" bodyfile="Core/Inc/motor_controller.h" bodystart="20" bodyend="25"/>
+        <location file="Core/Inc/motor_controller.h" line="23" column="39" bodyfile="Core/Inc/motor_controller.h" bodystart="23" bodyend="28"/>
       </memberdef>
       <memberdef kind="enum" id="motor__controller_8h_1aefe525453e2d5fb5ff19de9f98247c7c" prot="public" static="no" strong="no">
         <type></type>
@@ -741,7 +771,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="27" column="41" bodyfile="Core/Inc/motor_controller.h" bodystart="27" bodyend="29"/>
+        <location file="Core/Inc/motor_controller.h" line="30" column="41" bodyfile="Core/Inc/motor_controller.h" bodystart="30" bodyend="32"/>
       </memberdef>
       <memberdef kind="enum" id="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741" prot="public" static="no" strong="no">
         <type></type>
@@ -904,7 +934,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="31" column="38" bodyfile="Core/Inc/motor_controller.h" bodystart="31" bodyend="52"/>
+        <location file="Core/Inc/motor_controller.h" line="34" column="38" bodyfile="Core/Inc/motor_controller.h" bodystart="34" bodyend="55"/>
       </memberdef>
       <memberdef kind="enum" id="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645" prot="public" static="no" strong="no">
         <type></type>
@@ -979,7 +1009,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="54" column="35" bodyfile="Core/Inc/motor_controller.h" bodystart="54" bodyend="63"/>
+        <location file="Core/Inc/motor_controller.h" line="57" column="35" bodyfile="Core/Inc/motor_controller.h" bodystart="57" bodyend="66"/>
       </memberdef>
       <memberdef kind="enum" id="motor__controller_8h_1a2e6d114c8834f029dc4c48acf7ddf56f" prot="public" static="no" strong="no">
         <type></type>
@@ -998,7 +1028,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="65" column="35" bodyfile="Core/Inc/motor_controller.h" bodystart="65" bodyend="67"/>
+        <location file="Core/Inc/motor_controller.h" line="68" column="35" bodyfile="Core/Inc/motor_controller.h" bodystart="68" bodyend="70"/>
       </memberdef>
       <memberdef kind="enum" id="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dff" prot="public" static="no" strong="no">
         <type></type>
@@ -1273,7 +1303,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="70" column="57" bodyfile="Core/Inc/motor_controller.h" bodystart="70" bodyend="107"/>
+        <location file="Core/Inc/motor_controller.h" line="73" column="57" bodyfile="Core/Inc/motor_controller.h" bodystart="73" bodyend="110"/>
       </memberdef>
       <memberdef kind="enum" id="motor__controller_8h_1a1592f0c8dbd9d1c5d8304671b518a863" prot="public" static="no" strong="no">
         <type></type>
@@ -1292,7 +1322,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="110" column="25" bodyfile="Core/Inc/motor_controller.h" bodystart="110" bodyend="112"/>
+        <location file="Core/Inc/motor_controller.h" line="113" column="25" bodyfile="Core/Inc/motor_controller.h" bodystart="113" bodyend="115"/>
       </memberdef>
       <memberdef kind="enum" id="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521" prot="public" static="no" strong="no">
         <type></type>
@@ -1375,7 +1405,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="114" column="32" bodyfile="Core/Inc/motor_controller.h" bodystart="114" bodyend="127"/>
+        <location file="Core/Inc/motor_controller.h" line="117" column="32" bodyfile="Core/Inc/motor_controller.h" bodystart="117" bodyend="130"/>
       </memberdef>
       <memberdef kind="enum" id="motor__controller_8h_1aa7c35d6b7a8102a9104bd52eb92f9520" prot="public" static="no" strong="no">
         <type></type>
@@ -1402,7 +1432,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="130" column="37" bodyfile="Core/Inc/motor_controller.h" bodystart="130" bodyend="133"/>
+        <location file="Core/Inc/motor_controller.h" line="133" column="37" bodyfile="Core/Inc/motor_controller.h" bodystart="133" bodyend="136"/>
       </memberdef>
       <memberdef kind="enum" id="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554" prot="public" static="no" strong="no">
         <type></type>
@@ -1437,7 +1467,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="135" column="32" bodyfile="Core/Inc/motor_controller.h" bodystart="135" bodyend="139"/>
+        <location file="Core/Inc/motor_controller.h" line="138" column="32" bodyfile="Core/Inc/motor_controller.h" bodystart="138" bodyend="142"/>
       </memberdef>
       <memberdef kind="enum" id="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242" prot="public" static="no" strong="no">
         <type></type>
@@ -1464,7 +1494,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="141" column="30" bodyfile="Core/Inc/motor_controller.h" bodystart="141" bodyend="144"/>
+        <location file="Core/Inc/motor_controller.h" line="144" column="30" bodyfile="Core/Inc/motor_controller.h" bodystart="144" bodyend="147"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -1479,211 +1509,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="148" column="26"/>
+        <location file="Core/Inc/motor_controller.h" line="165" column="26"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="motor__controller_8h_1afa93c7b7fa3dc12bd6bf860c54c564ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MC_Parse_Message</definition>
-        <argsstring>(int DLC, uint8_t Data[])</argsstring>
-        <name>MC_Parse_Message</name>
-        <param>
-          <type>int</type>
-          <declname>DLC</declname>
-        </param>
-        <param>
-          <type>uint8_t</type>
-          <declname>Data</declname>
-          <array>[]</array>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="151" column="6" bodyfile="Core/Src/motor_controller.c" bodystart="26" bodyend="44" declfile="Core/Inc/motor_controller.h" declline="151" declcolumn="6"/>
-        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
-        <references refid="motor__controller_8c_1a40bf1b849ad7443bbe8af342006bb3cd" compoundref="motor__controller_8c" startline="122" endline="246">MC_Check_Error_Warning</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa595211bb6640ca05c1c3344b47e2890f" compoundref="motor__controller_8h" startline="71">motor_controller_errors_warnings</references>
-      </memberdef>
-      <memberdef kind="function" id="motor__controller_8h_1af6b3a4911f1bdac54d84b4dcc7b7ec4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MC_Request_Data</definition>
-        <argsstring>(uint8_t RegID)</argsstring>
-        <name>MC_Request_Data</name>
-        <param>
-          <type>uint8_t</type>
-          <declname>RegID</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="152" column="6" bodyfile="Core/Src/motor_controller.c" bodystart="47" bodyend="60" declfile="Core/Inc/motor_controller.h" declline="152" declcolumn="6"/>
-        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
-        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="116">hcan2</references>
-        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272ada3b10f39c76a2dc2b19e9f5b02952a5" compoundref="constants_8h" startline="19">MC_CAN_ID_Tx</references>
-        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
-        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
-        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
-      </memberdef>
-      <memberdef kind="function" id="motor__controller_8h_1af2e573366a03a695a8ba760440848206" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MC_Send_Data</definition>
-        <argsstring>(uint8_t RegID, uint8_t data_to_send[], uint8_t size)</argsstring>
-        <name>MC_Send_Data</name>
-        <param>
-          <type>uint8_t</type>
-          <declname>RegID</declname>
-        </param>
-        <param>
-          <type>uint8_t</type>
-          <declname>data_to_send</declname>
-          <array>[]</array>
-        </param>
-        <param>
-          <type>uint8_t</type>
-          <declname>size</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="153" column="6" bodyfile="Core/Src/motor_controller.c" bodystart="69" bodyend="98" declfile="Core/Inc/motor_controller.h" declline="153" declcolumn="6"/>
-        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
-        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="116">hcan2</references>
-        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272ada3b10f39c76a2dc2b19e9f5b02952a5" compoundref="constants_8h" startline="19">MC_CAN_ID_Tx</references>
-        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
-        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
-        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
-      </memberdef>
-      <memberdef kind="function" id="motor__controller_8h_1aa7294768824898480b6bcf6e98daa926" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MC_Torque_Control</definition>
-        <argsstring>(int todo)</argsstring>
-        <name>MC_Torque_Control</name>
-        <param>
-          <type>int</type>
-          <declname>todo</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="154" column="6" bodyfile="Core/Src/motor_controller.c" bodystart="102" bodyend="104" declfile="Core/Inc/motor_controller.h" declline="154" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="motor__controller_8h_1a2e1d07308c1e5e2ed72857a078b73cdf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MC_Speed_Control</definition>
-        <argsstring>(int todo)</argsstring>
-        <name>MC_Speed_Control</name>
-        <param>
-          <type>int</type>
-          <declname>todo</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="155" column="6" declfile="Core/Inc/motor_controller.h" declline="155" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="motor__controller_8h_1a40bf1b849ad7443bbe8af342006bb3cd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MC_Check_Error_Warning</definition>
-        <argsstring>(uint8_t Data[])</argsstring>
-        <name>MC_Check_Error_Warning</name>
-        <param>
-          <type>uint8_t</type>
-          <declname>Data</declname>
-          <array>[]</array>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="156" column="6" bodyfile="Core/Src/motor_controller.c" bodystart="122" bodyend="246" declfile="Core/Inc/motor_controller.h" declline="156" declcolumn="6"/>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa0dbc9540bf7a4c67b6a2810985bfb55d" compoundref="motor__controller_8h" startline="86">AC_current_offset_fault</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffac02a9e080dc6bde671fa915b7e254c67" compoundref="motor__controller_8h" startline="105">ADC_measurement_problem</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa9c77d3a416d8465efe129cf8ad401cfe" compoundref="motor__controller_8h" startline="104">ADC_sequencer_problem</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa03e3fe1a981eecdeb19cd0589bdcc6f8" compoundref="motor__controller_8h" startline="94">auxiliary_voltage_min_limit</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa150953c78b7fcc8ae97a50a5b5765264" compoundref="motor__controller_8h" startline="88">bleed_resistor_overload</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffae0c6a82b11d3fb69b758c350960f5a2a" compoundref="motor__controller_8h" startline="106">bleeder_resistor_warning</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa425430d2585733363b6043ed70ebd7ab" compoundref="motor__controller_8h" startline="76">CAN_timeout_error</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3d2e8b6cb27af4a0a1121c419594bbfa" compoundref="motor__controller_8h" startline="102">check_ecode_ID</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa29aa452fe3c693b96c17c09849ee1633" compoundref="motor__controller_8h" startline="82">critical_AC_current</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa0dd2c6834f96df064d7b152074a9f81f" compoundref="motor__controller_8h" startline="84">ecode_timeout_error</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa87ada8cd125ba521b447d565c12bb30e" compoundref="motor__controller_8h" startline="73">eprom_read_error</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2a16f371b0570edeeb17214a398e4bfc" compoundref="motor__controller_8h" startline="77">feedback_signal_error</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffab6733322e6c8c5197b108e853a58ad13" compoundref="motor__controller_8h" startline="95">feedback_signal_problem</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffae9da794167969482cb67bfad83a04d71" compoundref="motor__controller_8h" startline="74">hardware_fault</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa54a5ca5981535fd231b00a1040622950" compoundref="motor__controller_8h" startline="80">IGBT_temp_max_limit</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa298d28f3aa38960b5d1349a04cbbca95" compoundref="motor__controller_8h" startline="98">IGBT_temperature_warning</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa18df3363e2a0048a813dcef5a41785ce" compoundref="motor__controller_8h" startline="87">internal_hardware_voltage_problem</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa229533ef674ddd4475b22e47eb506b49" compoundref="motor__controller_8h" startline="81">mains_voltage_max_limit</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa13726d0d6fc8dd12135f4ea92d1dcc92" compoundref="motor__controller_8h" startline="78">mains_voltage_min_limit</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2267f6ae60d8b9024ba418dd1f6d4b15" compoundref="motor__controller_8h" startline="79">motor_temp_max_limit</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa4e9b2370bf4b4680b4c2471d2f7d312e" compoundref="motor__controller_8h" startline="97">motor_temperature_warning</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2fbc7fdf1ab20514fac8d6418291a114" compoundref="motor__controller_8h" startline="91">parameter_conflict_detected</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa696b36face7279e19e2905b0fa9ecb68" compoundref="motor__controller_8h" startline="83">race_away_detected</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3689755161fb5aa5fae86b270bfbf5fc" compoundref="motor__controller_8h" startline="93">rotate_field_enable_not_present_norun</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffadae8b5f4fb6cd6712202d055529499ef" compoundref="motor__controller_8h" startline="75">rotate_field_enable_not_present_run</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa7483be8346bb7b2fdfb418383961fba7" compoundref="motor__controller_8h" startline="92">special_CPU_fault</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2c5d3b1ee0135916f17e89f331429ed5" compoundref="motor__controller_8h" startline="101">speed_actual_resolution_limit</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa618e6f62f2e284a9fec848782c9473c7" compoundref="motor__controller_8h" startline="103">tripzone_glitch_detected</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffaf06c0a389c1c73850def361e9bd7ffdc" compoundref="motor__controller_8h" startline="99">Vout_saturation_max_limit</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3050ef440e4e82f9fb3973e1fb9faea7" compoundref="motor__controller_8h" startline="96">warning_5</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffad53242de6aeaa134a78749bc60fec984" compoundref="motor__controller_8h" startline="100">warning_9</references>
-        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa357611869a1ec791b38a36ec2dfe09b9" compoundref="motor__controller_8h" startline="85">watchdog_reset</references>
-        <referencedby refid="motor__controller_8c_1afa93c7b7fa3dc12bd6bf860c54c564ee" compoundref="motor__controller_8c" startline="26" endline="44">MC_Parse_Message</referencedby>
-      </memberdef>
-      <memberdef kind="function" id="motor__controller_8h_1af34e05da8add9233de12150656dad092" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MC_Check_Serial_Number</definition>
-        <argsstring>(uint8_t Data[])</argsstring>
-        <name>MC_Check_Serial_Number</name>
-        <param>
-          <type>uint8_t</type>
-          <declname>Data</declname>
-          <array>[]</array>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="157" column="6" bodyfile="Core/Src/motor_controller.c" bodystart="252" bodyend="254" declfile="Core/Inc/motor_controller.h" declline="157" declcolumn="6"/>
-      </memberdef>
-      <memberdef kind="function" id="motor__controller_8h_1a877a1b68c89c7eeecc3ed294e5dc8a73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void MC_Check_Firmware</definition>
-        <argsstring>(uint8_t Data[])</argsstring>
-        <name>MC_Check_Firmware</name>
-        <param>
-          <type>uint8_t</type>
-          <declname>Data</declname>
-          <array>[]</array>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="158" column="6" bodyfile="Core/Src/motor_controller.c" bodystart="256" bodyend="258" declfile="Core/Inc/motor_controller.h" declline="158" declcolumn="6"/>
-      </memberdef>
       <memberdef kind="function" id="motor__controller_8h_1aed1407e1e0fd59dc7c5e5d6db671f0ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
         <definition>void MC_Startup</definition>
@@ -1696,16 +1525,36 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Initializes the motor controller by performing the following steps:<orderedlist>
+<listitem><para>Verifies the serial number from the motor controller.</para>
+</listitem><listitem><para>Checks the firmware version to ensure compatibility.</para>
+</listitem><listitem><para>Executes a motor spin test at low RPM to validate functionality.</para>
+</listitem><listitem><para>Checks for errors and warnings from the motor controller.</para>
+</listitem><listitem><para>Logs successful initialization if all checks pass. </para>
+</listitem></orderedlist>
+</para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/motor_controller.h" line="160" column="6" bodyfile="Core/Src/motor_controller.c" bodystart="260" bodyend="292" declfile="Core/Inc/motor_controller.h" declline="160" declcolumn="6"/>
-        <references refid="structuv__init__task__args_1adec47e7a54822cacfb8fcfc35a22157f" compoundref="uvfr__utils_8h" startline="316">uv_init_task_args::init_info_queue</references>
-        <references refid="structuv__init__task__args_1a3b81430245e7f832dc1112e53b0ef7ad" compoundref="uvfr__utils_8h" startline="317">uv_init_task_args::meta_task_handle</references>
-        <references refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a9c632ecb370b78547a390d1b5cf59671" compoundref="uvfr__utils_8h" startline="190">MOTOR_CONTROLLER</references>
-        <references refid="structuv__init__task__args_1a61a9b579a1e65a3875a4edf3201a39f3" compoundref="uvfr__utils_8h" startline="315">uv_init_task_args::specific_args</references>
+        <location file="Core/Inc/motor_controller.h" line="176" column="6" bodyfile="Core/Src/motor_controller.c" bodystart="739" bodyend="803" declfile="Core/Inc/motor_controller.h" declline="176" declcolumn="6"/>
+        <references refid="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242aed26e85027514bcd1ca8c3c17c03bef2" compoundref="motor__controller_8h" startline="146">firmware_version</references>
+        <references refid="motor__controller_8h_1a829d1af845327949015b4e83bb6fc43d" compoundref="motor__controller_8h" startline="20">FIRMWARE_VERSION_REGISTER</references>
+        <references refid="structuv__init__task__args_1adec47e7a54822cacfb8fcfc35a22157f" compoundref="uvfr__utils_8h" startline="331">uv_init_task_args::init_info_queue</references>
+        <references refid="motor__controller_8c_1a8f25ebbc9bf59980fdc0458f271437ee" compoundref="motor__controller_8c" startline="20">MC_Expected_FW_Version</references>
+        <references refid="motor__controller_8c_1a26195bc72f07eeb97338e761432e03d2" compoundref="motor__controller_8c" startline="19">MC_Expected_Serial_Number</references>
+        <references refid="motor__controller_8c_1af6b3a4911f1bdac54d84b4dcc7b7ec4a" compoundref="motor__controller_8c" startline="230" endline="249">MC_Request_Data</references>
+        <references refid="structuv__init__task__args_1a3b81430245e7f832dc1112e53b0ef7ad" compoundref="uvfr__utils_8h" startline="332">uv_init_task_args::meta_task_handle</references>
+        <references refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a9c632ecb370b78547a390d1b5cf59671" compoundref="uvfr__utils_8h" startline="205">MOTOR_CONTROLLER</references>
+        <references refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa595211bb6640ca05c1c3344b47e2890f" compoundref="motor__controller_8h" startline="74">motor_controller_errors_warnings</references>
+        <references refid="motor__controller_8c_1ae459dcb08bdf9b88ccc2de10bee4c409" compoundref="motor__controller_8c" startline="119" endline="222">MotorControllerErrorHandler</references>
+        <references refid="motor__controller_8c_1a71371a5194c9b5c725abec77feffbc38" compoundref="motor__controller_8c" startline="62" endline="97">MotorControllerSpinTest</references>
+        <references refid="motor__controller_8c_1a6e0eaf3bbf353c1b2b7b4ae59e928722" compoundref="motor__controller_8c" startline="107" endline="109">Parse_Bamocar_Response</references>
+        <references refid="constants_8h_1a14629afcc7f0b2d62c2b617b07d98184" compoundref="constants_8c" startline="9">RxData</references>
+        <references refid="motor__controller_8h_1aab8c03dc3480e25a7a75b60edbf51cb3" compoundref="motor__controller_8h" startline="19">SERIAL_NUMBER_REGISTER</references>
+        <references refid="structuv__init__task__args_1a61a9b579a1e65a3875a4edf3201a39f3" compoundref="uvfr__utils_8h" startline="330">uv_init_task_args::specific_args</references>
         <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
-        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="37" endline="229">uvInit</referencedby>
+        <references refid="motor__controller_8c_1a560fd64fa21f9583f346b08cd371afa4" compoundref="motor__controller_8c" startline="257" endline="259">WaitFor_CAN_Response</references>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1730,155 +1579,172 @@
 <codeline lineno="15" refid="motor__controller_8h_1acc0df233686dd4cf6256fcab0473860e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEFAULT_MOTOR_CONTROLLER_CAN_TIMEOUT<sp/>((uv_timespan_ms)200)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="16"><highlight class="normal"></highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Need<sp/>to<sp/>add<sp/>enums<sp/>for<sp/>human<sp/>readable<sp/>register<sp/>addresses<sp/>and<sp/>such</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="18"><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"></highlight></codeline>
-<codeline lineno="20" refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268" kindref="member">motor_controller_speed_parameters</ref>{</highlight></codeline>
-<codeline lineno="21" refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268a74ac68aa19b65409fa9b18b8f2be3bf4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268a74ac68aa19b65409fa9b18b8f2be3bf4" kindref="member">N_actual</ref><sp/>=<sp/>0x30,<sp/></highlight><highlight class="comment">//<sp/>actual<sp/>motor<sp/>speed<sp/>rpm</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="22" refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268aa53daf1b53f678af8159cba9238c5e6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268aa53daf1b53f678af8159cba9238c5e6f" kindref="member">N_set</ref><sp/>=<sp/>0x31,<sp/></highlight><highlight class="comment">//<sp/>digital<sp/>speed<sp/>setpoint</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="23" refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268ac5a4f68a0000a0d2d5004ba1d2e4c27f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268ac5a4f68a0000a0d2d5004ba1d2e4c27f" kindref="member">N_cmd</ref><sp/>=<sp/>0x32,<sp/></highlight><highlight class="comment">//<sp/>command<sp/>speed<sp/>after<sp/>ramp</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="24" refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268acc27e0901b9bd112a36ccf7e9620b09a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268acc27e0901b9bd112a36ccf7e9620b09a" kindref="member">N_error</ref><sp/>=<sp/>0x33,<sp/></highlight><highlight class="comment">//<sp/>speed<sp/>error</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="25"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="26"><highlight class="normal"></highlight></codeline>
-<codeline lineno="27" refid="motor__controller_8h_1aefe525453e2d5fb5ff19de9f98247c7c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1aefe525453e2d5fb5ff19de9f98247c7c" kindref="member">motor_controller_current_parameters</ref>{</highlight></codeline>
-<codeline lineno="28" refid="motor__controller_8h_1aefe525453e2d5fb5ff19de9f98247c7cafa32268e686878b8024c674367c01767" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1aefe525453e2d5fb5ff19de9f98247c7cafa32268e686878b8024c674367c01767" kindref="member">todo1</ref><sp/>=<sp/>0x69,</highlight></codeline>
-<codeline lineno="29"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741" kindref="member">motor_controller_motor_constants</ref>{</highlight></codeline>
-<codeline lineno="32" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a64170ba683e522d8933cc80a5cf28ecb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a64170ba683e522d8933cc80a5cf28ecb" kindref="member">nominal_motor_frequency</ref><sp/>=<sp/>0x05,</highlight></codeline>
-<codeline lineno="33" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a2d43068942abe44d33fd0f89f4b8cbb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a2d43068942abe44d33fd0f89f4b8cbb9" kindref="member">nominal_motor_voltage</ref><sp/>=<sp/>0x06,</highlight></codeline>
-<codeline lineno="34" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741ad24139707ecedd81a10a96dea882f0a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741ad24139707ecedd81a10a96dea882f0a0" kindref="member">power_factor</ref><sp/>=<sp/>0x0e,</highlight></codeline>
-<codeline lineno="35" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a0a0dac29c811eaa0c4bbe6ce120f2fad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a0a0dac29c811eaa0c4bbe6ce120f2fad" kindref="member">motor_max_current</ref><sp/>=<sp/>0x4D,</highlight></codeline>
-<codeline lineno="36" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a3d1c48ec7fd442d23cce8a69daedc1a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a3d1c48ec7fd442d23cce8a69daedc1a4" kindref="member">motor_continuous_current</ref><sp/>=<sp/>0x4E,</highlight></codeline>
-<codeline lineno="37" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a8f4b84ce5d69fac9a335424e0b9116af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a8f4b84ce5d69fac9a335424e0b9116af" kindref="member">motor_pole_number</ref><sp/>=<sp/>0x4F,</highlight></codeline>
-<codeline lineno="38" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a17387ca75642e4c739d600801685ba79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a17387ca75642e4c739d600801685ba79" kindref="member">motor_kt_constant</ref><sp/>=<sp/>0x87,<sp/></highlight><highlight class="comment">//low,</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a7c57b72fe710e2325933ce1f6517dc80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a7c57b72fe710e2325933ce1f6517dc80" kindref="member">motor_ke_constant</ref><sp/>=<sp/>0x87,<sp/></highlight><highlight class="comment">//high,<sp/>back<sp/>emf</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a6c9ec3f524698f618635129709fd5ea2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a6c9ec3f524698f618635129709fd5ea2" kindref="member">rated_motor_speed</ref><sp/>=<sp/>0x59,</highlight></codeline>
-<codeline lineno="41" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a23fb6a0eae33554ae8bcec9a22c2e1ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a23fb6a0eae33554ae8bcec9a22c2e1ef" kindref="member">motor_temperature_switch_off_point</ref><sp/>=<sp/>0xA3,<sp/></highlight><highlight class="comment">//<sp/>not<sp/>sure<sp/>if<sp/>this<sp/>is<sp/>best<sp/>in<sp/>temp<sp/>or<sp/>not</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741af2bcc9a2d80a2655bf9adc22f9e6c062" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741af2bcc9a2d80a2655bf9adc22f9e6c062" kindref="member">stator_leakage_inductance</ref><sp/>=<sp/>0xB1,</highlight></codeline>
-<codeline lineno="43" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741aafacbc470ec36fccfec752fcf06ee691" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741aafacbc470ec36fccfec752fcf06ee691" kindref="member">nominal_magnitizing_current</ref><sp/>=<sp/>0xB2,</highlight></codeline>
-<codeline lineno="44" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a82f17224dfd9e9e77c740957f3ff4389" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a82f17224dfd9e9e77c740957f3ff4389" kindref="member">motor_magnetising_inductance</ref><sp/>=<sp/>0xB3,</highlight></codeline>
-<codeline lineno="45" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741ac3c230853d874dbfd67c8eb9217562c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741ac3c230853d874dbfd67c8eb9217562c0" kindref="member">rotor_resistance</ref><sp/>=<sp/>0xB4,</highlight></codeline>
-<codeline lineno="46" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a74c67f3ef363ff68efec4306188a40bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a74c67f3ef363ff68efec4306188a40bf" kindref="member">minimum_magnetising_current</ref><sp/>=<sp/>0xB5,</highlight></codeline>
-<codeline lineno="47" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a66c32bb02597306fda2add0a5219ea7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a66c32bb02597306fda2add0a5219ea7f" kindref="member">time_constant_rotor</ref><sp/>=<sp/>0xB6,</highlight></codeline>
-<codeline lineno="48" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a3ec5a6a666356eb8bb08c36f0066f1f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a3ec5a6a666356eb8bb08c36f0066f1f1" kindref="member">leakage_inductance_ph_ph</ref><sp/>=<sp/>0xBB,</highlight></codeline>
-<codeline lineno="49" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a0505769d343c974ce9b0ea5f645c4869" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a0505769d343c974ce9b0ea5f645c4869" kindref="member">stator_resistance_ph_ph</ref><sp/>=<sp/>0xBC,</highlight></codeline>
-<codeline lineno="50" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741ae7211fe3a1246ef8f9c5881d3ecb8f0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741ae7211fe3a1246ef8f9c5881d3ecb8f0d" kindref="member">time_constant_stator</ref><sp/>=<sp/>0xBD,</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645" kindref="member">motor_controller_temperatures</ref>{</highlight></codeline>
-<codeline lineno="55" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a349799caa493b390c9527db251fd128c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a349799caa493b390c9527db251fd128c" kindref="member">igbt_temperature</ref><sp/>=<sp/>0x4A,</highlight></codeline>
-<codeline lineno="56" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645aeff9dce22875056570afa6b71fd23842" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645aeff9dce22875056570afa6b71fd23842" kindref="member">motor_temperature</ref><sp/>=<sp/>0x49,</highlight></codeline>
-<codeline lineno="57" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a5f67975cf91f5959212f095df271d9e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a5f67975cf91f5959212f095df271d9e5" kindref="member">air_temperature</ref><sp/>=<sp/>0x4B,</highlight></codeline>
-<codeline lineno="58" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645ac6969717754fedde42de1813b1ecddd0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645ac6969717754fedde42de1813b1ecddd0" kindref="member">current_derate_temperature</ref><sp/>=<sp/>0x4C,</highlight></codeline>
-<codeline lineno="59" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a2b29b0a0b81efd7300f900f65ef28071" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a2b29b0a0b81efd7300f900f65ef28071" kindref="member">temp_sensor_pt1</ref><sp/>=<sp/>0x9C,</highlight></codeline>
-<codeline lineno="60" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645ad4a8ea69fc94ed6fb6fe1310a477805d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645ad4a8ea69fc94ed6fb6fe1310a477805d" kindref="member">temp_sensor_pt2</ref><sp/>=<sp/>0x9D,</highlight></codeline>
-<codeline lineno="61" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a4518ebfdfdcbae7be91b9b41b99ad2a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a4518ebfdfdcbae7be91b9b41b99ad2a4" kindref="member">temp_sensor_pt3</ref><sp/>=<sp/>0x9E,</highlight></codeline>
-<codeline lineno="62" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a19e537ab9271f8ef8d455f7b3dd85a94" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a19e537ab9271f8ef8d455f7b3dd85a94" kindref="member">temp_sensor_pt4</ref><sp/>=<sp/>0x9F,</highlight></codeline>
-<codeline lineno="63"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65" refid="motor__controller_8h_1a2e6d114c8834f029dc4c48acf7ddf56f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a2e6d114c8834f029dc4c48acf7ddf56f" kindref="member">motor_controller_measurements</ref>{</highlight></codeline>
-<codeline lineno="66" refid="motor__controller_8h_1a2e6d114c8834f029dc4c48acf7ddf56faf4addfc300b555b608c7501027073b64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a2e6d114c8834f029dc4c48acf7ddf56faf4addfc300b555b608c7501027073b64" kindref="member">DC_bus_voltage</ref><sp/>=<sp/>0xEB,</highlight></codeline>
-<codeline lineno="67"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="70" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dff" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dff" kindref="member">motor_controller_status_information_errors_warnings</ref>{</highlight></codeline>
-<codeline lineno="71" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa595211bb6640ca05c1c3344b47e2890f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa595211bb6640ca05c1c3344b47e2890f" kindref="member">motor_controller_errors_warnings</ref><sp/>=<sp/>0x8F,<sp/></highlight><highlight class="comment">//<sp/>low<sp/>bytes,<sp/>warnings<sp/>are<sp/>high<sp/>bytes</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>errors<sp/>-<sp/>the<sp/>bit<sp/>stuff<sp/>is<sp/>quite<sp/>annoying.<sp/>Look<sp/>at<sp/>can<sp/>message<sp/>excel<sp/>sheet</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="73" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa87ada8cd125ba521b447d565c12bb30e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa87ada8cd125ba521b447d565c12bb30e" kindref="member">eprom_read_error</ref><sp/>=<sp/>1&lt;&lt;8,<sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>bit<sp/>0</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="74" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffae9da794167969482cb67bfad83a04d71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffae9da794167969482cb67bfad83a04d71" kindref="member">hardware_fault</ref><sp/>=<sp/>1&lt;&lt;9,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>1</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="75" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffadae8b5f4fb6cd6712202d055529499ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffadae8b5f4fb6cd6712202d055529499ef" kindref="member">rotate_field_enable_not_present_run</ref><sp/>=<sp/>1&lt;&lt;10,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>2<sp/>//<sp/>with<sp/>run<sp/>active</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="76" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa425430d2585733363b6043ed70ebd7ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa425430d2585733363b6043ed70ebd7ab" kindref="member">CAN_timeout_error</ref><sp/>=<sp/>1&lt;&lt;11,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>3</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="77" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2a16f371b0570edeeb17214a398e4bfc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2a16f371b0570edeeb17214a398e4bfc" kindref="member">feedback_signal_error</ref><sp/>=<sp/>1&lt;&lt;12,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>4</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="78" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa13726d0d6fc8dd12135f4ea92d1dcc92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa13726d0d6fc8dd12135f4ea92d1dcc92" kindref="member">mains_voltage_min_limit</ref><sp/>=<sp/>1&lt;&lt;13,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>5</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="79" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2267f6ae60d8b9024ba418dd1f6d4b15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2267f6ae60d8b9024ba418dd1f6d4b15" kindref="member">motor_temp_max_limit</ref><sp/>=<sp/>1&lt;&lt;14,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>6</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="80" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa54a5ca5981535fd231b00a1040622950" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa54a5ca5981535fd231b00a1040622950" kindref="member">IGBT_temp_max_limit</ref><sp/>=<sp/>1&lt;&lt;15,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>7</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="81" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa229533ef674ddd4475b22e47eb506b49" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa229533ef674ddd4475b22e47eb506b49" kindref="member">mains_voltage_max_limit</ref><sp/>=<sp/>1,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>8</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa29aa452fe3c693b96c17c09849ee1633" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa29aa452fe3c693b96c17c09849ee1633" kindref="member">critical_AC_current</ref><sp/>=<sp/>1&lt;&lt;1,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>9</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="83" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa696b36face7279e19e2905b0fa9ecb68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa696b36face7279e19e2905b0fa9ecb68" kindref="member">race_away_detected</ref><sp/>=<sp/>1&lt;&lt;2,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>10</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="84" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa0dd2c6834f96df064d7b152074a9f81f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa0dd2c6834f96df064d7b152074a9f81f" kindref="member">ecode_timeout_error</ref><sp/>=<sp/>1&lt;&lt;3,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>11</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="85" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa357611869a1ec791b38a36ec2dfe09b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa357611869a1ec791b38a36ec2dfe09b9" kindref="member">watchdog_reset</ref><sp/>=<sp/>1&lt;&lt;4,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>12</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa0dbc9540bf7a4c67b6a2810985bfb55d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa0dbc9540bf7a4c67b6a2810985bfb55d" kindref="member">AC_current_offset_fault</ref><sp/>=<sp/>1&lt;&lt;5,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>13</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa18df3363e2a0048a813dcef5a41785ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa18df3363e2a0048a813dcef5a41785ce" kindref="member">internal_hardware_voltage_problem</ref><sp/>=<sp/>1&lt;&lt;6,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>14</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="88" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa150953c78b7fcc8ae97a50a5b5765264" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa150953c78b7fcc8ae97a50a5b5765264" kindref="member">bleed_resistor_overload</ref><sp/>=<sp/>1&lt;&lt;7,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>15</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>high<sp/>and<sp/>low<sp/>bytes<sp/>will<sp/>be<sp/>split<sp/>up<sp/>and<sp/>we&apos;ll<sp/>check<sp/>errors<sp/>and<sp/>warnings<sp/>separately</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>warnins<sp/>-<sp/>again,<sp/>see<sp/>can<sp/>messages<sp/>excel<sp/>sheet<sp/>/<sp/>manuals</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2fbc7fdf1ab20514fac8d6418291a114" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2fbc7fdf1ab20514fac8d6418291a114" kindref="member">parameter_conflict_detected</ref><sp/>=<sp/>1&lt;&lt;8,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>16</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa7483be8346bb7b2fdfb418383961fba7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa7483be8346bb7b2fdfb418383961fba7" kindref="member">special_CPU_fault</ref><sp/>=<sp/>1&lt;&lt;9,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>17</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3689755161fb5aa5fae86b270bfbf5fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3689755161fb5aa5fae86b270bfbf5fc" kindref="member">rotate_field_enable_not_present_norun</ref><sp/>=<sp/>1&lt;&lt;10,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>18<sp/>//<sp/>without<sp/>run<sp/>active</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="94" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa03e3fe1a981eecdeb19cd0589bdcc6f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa03e3fe1a981eecdeb19cd0589bdcc6f8" kindref="member">auxiliary_voltage_min_limit</ref><sp/>=<sp/>1&lt;&lt;11,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>19</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="95" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffab6733322e6c8c5197b108e853a58ad13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffab6733322e6c8c5197b108e853a58ad13" kindref="member">feedback_signal_problem</ref><sp/>=<sp/>1&lt;&lt;12,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>20</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="96" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3050ef440e4e82f9fb3973e1fb9faea7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3050ef440e4e82f9fb3973e1fb9faea7" kindref="member">warning_5</ref><sp/>=<sp/>1&lt;&lt;13,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>21<sp/>no<sp/>idea<sp/>what<sp/>this<sp/>warning<sp/>is</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="97" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa4e9b2370bf4b4680b4c2471d2f7d312e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa4e9b2370bf4b4680b4c2471d2f7d312e" kindref="member">motor_temperature_warning</ref><sp/>=<sp/>1&lt;&lt;14,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>22,<sp/>&gt;87%</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="98" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa298d28f3aa38960b5d1349a04cbbca95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa298d28f3aa38960b5d1349a04cbbca95" kindref="member">IGBT_temperature_warning</ref><sp/>=<sp/>1&lt;&lt;15,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>23,<sp/>&gt;87%</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="99" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffaf06c0a389c1c73850def361e9bd7ffdc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffaf06c0a389c1c73850def361e9bd7ffdc" kindref="member">Vout_saturation_max_limit</ref><sp/>=<sp/>1,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>24</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="100" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffad53242de6aeaa134a78749bc60fec984" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffad53242de6aeaa134a78749bc60fec984" kindref="member">warning_9</ref><sp/>=<sp/>1&lt;&lt;1,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>25,<sp/>no<sp/>idea<sp/>what<sp/>this<sp/>warning<sp/>is<sp/>either</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="101" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2c5d3b1ee0135916f17e89f331429ed5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2c5d3b1ee0135916f17e89f331429ed5" kindref="member">speed_actual_resolution_limit</ref><sp/>=<sp/>1&lt;&lt;2,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>26</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="102" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3d2e8b6cb27af4a0a1121c419594bbfa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3d2e8b6cb27af4a0a1121c419594bbfa" kindref="member">check_ecode_ID</ref><sp/>=<sp/>1&lt;&lt;3,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>27</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="103" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa618e6f62f2e284a9fec848782c9473c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa618e6f62f2e284a9fec848782c9473c7" kindref="member">tripzone_glitch_detected</ref><sp/>=<sp/>1&lt;&lt;4,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>28</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="104" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa9c77d3a416d8465efe129cf8ad401cfe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa9c77d3a416d8465efe129cf8ad401cfe" kindref="member">ADC_sequencer_problem</ref><sp/>=<sp/>1&lt;&lt;5,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>29</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="105" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffac02a9e080dc6bde671fa915b7e254c67" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffac02a9e080dc6bde671fa915b7e254c67" kindref="member">ADC_measurement_problem</ref><sp/>=<sp/>1&lt;&lt;6,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>30</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="106" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffae0c6a82b11d3fb69b758c350960f5a2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffae0c6a82b11d3fb69b758c350960f5a2a" kindref="member">bleeder_resistor_warning</ref><sp/>=<sp/>1&lt;&lt;7,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>31</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"></highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110" refid="motor__controller_8h_1a1592f0c8dbd9d1c5d8304671b518a863" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a1592f0c8dbd9d1c5d8304671b518a863" kindref="member">motor_controller_io</ref>{</highlight></codeline>
-<codeline lineno="111" refid="motor__controller_8h_1a1592f0c8dbd9d1c5d8304671b518a863a3a545dba8b1debc96a10c15f0e3bddf3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a1592f0c8dbd9d1c5d8304671b518a863a3a545dba8b1debc96a10c15f0e3bddf3" kindref="member">todo6969</ref><sp/>=<sp/>6969,</highlight></codeline>
-<codeline lineno="112"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521" kindref="member">motor_controller_PI_values</ref>{</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>There<sp/>are<sp/>two<sp/>different<sp/>ramps,<sp/>one<sp/>for<sp/>speed<sp/>and<sp/>moment,</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Each<sp/>one<sp/>corresponds<sp/>to<sp/>a<sp/>high<sp/>or<sp/>low<sp/>byte</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="117" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a13f8ebd34ab57556217fbd235329a9e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a13f8ebd34ab57556217fbd235329a9e8" kindref="member">accelerate_ramp</ref><sp/>=<sp/>0x35,</highlight></codeline>
-<codeline lineno="118" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a3c22e464cac79207d52cf4ff8d64d430" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a3c22e464cac79207d52cf4ff8d64d430" kindref="member">dismantling_ramp</ref><sp/>=<sp/>0xED,</highlight></codeline>
-<codeline lineno="119" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a013c38322d35d441c21920fc665d197a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a013c38322d35d441c21920fc665d197a" kindref="member">recuperation_ramp</ref><sp/>=<sp/>0xC7,</highlight></codeline>
-<codeline lineno="120" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a2b83ac91fbacf438199c4515ae3dcb88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a2b83ac91fbacf438199c4515ae3dcb88" kindref="member">proportional_gain</ref><sp/>=<sp/>0x1C,</highlight></codeline>
-<codeline lineno="121" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a39318ae4bc4582c26c32b7748f64c8d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a39318ae4bc4582c26c32b7748f64c8d4" kindref="member">integral_time_constant</ref><sp/>=<sp/>0x1D,</highlight></codeline>
-<codeline lineno="122" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521aa1022b52e56d3a918c7a62177a88bb9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521aa1022b52e56d3a918c7a62177a88bb9e" kindref="member">integral_memory_max</ref><sp/>=<sp/>0x2B,</highlight></codeline>
-<codeline lineno="123" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521ac622cb0442074999655f1021ae456ef7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521ac622cb0442074999655f1021ae456ef7" kindref="member">proportional_gain_2</ref><sp/>=<sp/>0xC9,<sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>for<sp/>when<sp/>the<sp/>current<sp/>is<sp/>more<sp/>than<sp/>max<sp/>setpoint</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="124" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a4e45c20669f9d0f09fce08e26865cfa2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a4e45c20669f9d0f09fce08e26865cfa2" kindref="member">current_feed_forward</ref><sp/>=<sp/>0xCB,</highlight></codeline>
-<codeline lineno="125" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a5cde7e1c696e5ca92501b3e470b9ad88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a5cde7e1c696e5ca92501b3e470b9ad88" kindref="member">ramp_set_current</ref><sp/>=<sp/>0x25,</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"></highlight></codeline>
-<codeline lineno="127"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>motor<sp/>controller<sp/>can<sp/>send<sp/>data<sp/>repeatedly<sp/>if<sp/>so<sp/>desired</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="130" refid="motor__controller_8h_1aa7c35d6b7a8102a9104bd52eb92f9520" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1aa7c35d6b7a8102a9104bd52eb92f9520" kindref="member">motor_controller_repeating_time</ref>{</highlight></codeline>
-<codeline lineno="131" refid="motor__controller_8h_1aa7c35d6b7a8102a9104bd52eb92f9520ab7e4e0120a041dbe6528b050c04269e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1aa7c35d6b7a8102a9104bd52eb92f9520ab7e4e0120a041dbe6528b050c04269e0" kindref="member">none</ref><sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="132" refid="motor__controller_8h_1aa7c35d6b7a8102a9104bd52eb92f9520a1ccfd6fbab04e1f36f650d9a3350d799" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1aa7c35d6b7a8102a9104bd52eb92f9520a1ccfd6fbab04e1f36f650d9a3350d799" kindref="member">one_hundred_ms</ref><sp/>=<sp/>0x64,</highlight></codeline>
-<codeline lineno="133"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"></highlight></codeline>
-<codeline lineno="135" refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554" kindref="member">motor_controller_limp_mode</ref>{</highlight></codeline>
-<codeline lineno="136" refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554a284cfe285101d83f2add9282dc4a00ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554a284cfe285101d83f2add9282dc4a00ca" kindref="member">N_lim</ref><sp/>=<sp/>0x34,</highlight></codeline>
-<codeline lineno="137" refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554a94404cce2e711f57d193195c55b59d36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554a94404cce2e711f57d193195c55b59d36" kindref="member">N_lim_plus</ref><sp/>=<sp/>0x3F,</highlight></codeline>
-<codeline lineno="138" refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554a56b40f55bf4dd4257a674b58b3e75d11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554a56b40f55bf4dd4257a674b58b3e75d11" kindref="member">N_lim_minus</ref><sp/>=<sp/>0x3E,</highlight></codeline>
-<codeline lineno="139"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"></highlight></codeline>
-<codeline lineno="141" refid="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242" kindref="member">motor_controller_startup</ref>{</highlight></codeline>
-<codeline lineno="142" refid="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242ae138a3e61cb9bb9076598775b7810347" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242ae138a3e61cb9bb9076598775b7810347" kindref="member">clear_errors</ref><sp/>=<sp/>0x8E,</highlight></codeline>
-<codeline lineno="143" refid="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242aed26e85027514bcd1ca8c3c17c03bef2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242aed26e85027514bcd1ca8c3c17c03bef2" kindref="member">firmware_version</ref><sp/>=<sp/>0x1B,</highlight></codeline>
-<codeline lineno="144"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"></highlight></codeline>
-<codeline lineno="146" refid="structmotor__controllor__settings" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structmotor__controllor__settings" kindref="compound">motor_controllor_settings</ref>{</highlight></codeline>
-<codeline lineno="147" refid="structmotor__controllor__settings_1a16d6ebc9fb542b543c66bba5cb1572d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structmotor__controllor__settings_1a16d6ebc9fb542b543c66bba5cb1572d7" kindref="member">mc_CAN_timeout</ref>;</highlight></codeline>
-<codeline lineno="148"><highlight class="normal">}<ref refid="motor__controller_8h_1ac9389d71d481a5381fe1d1e23b1e4ecc" kindref="member">motor_controller_settings</ref>;</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"></highlight></codeline>
-<codeline lineno="150"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Function<sp/>Declarations</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="151"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1afa93c7b7fa3dc12bd6bf860c54c564ee" kindref="member">MC_Parse_Message</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DLC,<sp/>uint8_t<sp/>Data[]);</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1af6b3a4911f1bdac54d84b4dcc7b7ec4a" kindref="member">MC_Request_Data</ref>(uint8_t<sp/>RegID);</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1af2e573366a03a695a8ba760440848206" kindref="member">MC_Send_Data</ref>(uint8_t<sp/>RegID,<sp/>uint8_t<sp/>data_to_send[],<sp/>uint8_t<sp/>size);</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1aa7294768824898480b6bcf6e98daa926" kindref="member">MC_Torque_Control</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>todo);</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a2e1d07308c1e5e2ed72857a078b73cdf" kindref="member">MC_Speed_Control</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>todo);</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a40bf1b849ad7443bbe8af342006bb3cd" kindref="member">MC_Check_Error_Warning</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1af34e05da8add9233de12150656dad092" kindref="member">MC_Check_Serial_Number</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a877a1b68c89c7eeecc3ed294e5dc8a73" kindref="member">MC_Check_Firmware</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"></highlight></codeline>
-<codeline lineno="160"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1aed1407e1e0fd59dc7c5e5d6db671f0ab" kindref="member">MC_Startup</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args);</highlight></codeline>
-<codeline lineno="161"><highlight class="normal"></highlight></codeline>
-<codeline lineno="162"><highlight class="normal"></highlight></codeline>
-<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Add<sp/>these<sp/>to<sp/>motor_controller.h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="motor__controller_8h_1aab8c03dc3480e25a7a75b60edbf51cb3" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SERIAL_NUMBER_REGISTER<sp/>0x1A<sp/><sp/>//<sp/>Replace<sp/>0x1A<sp/>with<sp/>the<sp/>actual<sp/>register<sp/>address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="motor__controller_8h_1a829d1af845327949015b4e83bb6fc43d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FIRMWARE_VERSION_REGISTER<sp/>0x1B<sp/><sp/>//<sp/>Replace<sp/>0x1B<sp/>with<sp/>the<sp/>actual<sp/>register<sp/>address</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268" kindref="member">motor_controller_speed_parameters</ref>{</highlight></codeline>
+<codeline lineno="24" refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268a74ac68aa19b65409fa9b18b8f2be3bf4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268a74ac68aa19b65409fa9b18b8f2be3bf4" kindref="member">N_actual</ref><sp/>=<sp/>0x30,<sp/></highlight><highlight class="comment">//<sp/>actual<sp/>motor<sp/>speed<sp/>rpm</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268aa53daf1b53f678af8159cba9238c5e6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268aa53daf1b53f678af8159cba9238c5e6f" kindref="member">N_set</ref><sp/>=<sp/>0x31,<sp/></highlight><highlight class="comment">//<sp/>digital<sp/>speed<sp/>setpoint</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268ac5a4f68a0000a0d2d5004ba1d2e4c27f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268ac5a4f68a0000a0d2d5004ba1d2e4c27f" kindref="member">N_cmd</ref><sp/>=<sp/>0x32,<sp/></highlight><highlight class="comment">//<sp/>command<sp/>speed<sp/>after<sp/>ramp</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268acc27e0901b9bd112a36ccf7e9620b09a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a8cab19f0549eb777404ec1c7a3b56268acc27e0901b9bd112a36ccf7e9620b09a" kindref="member">N_error</ref><sp/>=<sp/>0x33,<sp/></highlight><highlight class="comment">//<sp/>speed<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30" refid="motor__controller_8h_1aefe525453e2d5fb5ff19de9f98247c7c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1aefe525453e2d5fb5ff19de9f98247c7c" kindref="member">motor_controller_current_parameters</ref>{</highlight></codeline>
+<codeline lineno="31" refid="motor__controller_8h_1aefe525453e2d5fb5ff19de9f98247c7cafa32268e686878b8024c674367c01767" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1aefe525453e2d5fb5ff19de9f98247c7cafa32268e686878b8024c674367c01767" kindref="member">todo1</ref><sp/>=<sp/>0x69,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741" kindref="member">motor_controller_motor_constants</ref>{</highlight></codeline>
+<codeline lineno="35" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a64170ba683e522d8933cc80a5cf28ecb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a64170ba683e522d8933cc80a5cf28ecb" kindref="member">nominal_motor_frequency</ref><sp/>=<sp/>0x05,</highlight></codeline>
+<codeline lineno="36" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a2d43068942abe44d33fd0f89f4b8cbb9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a2d43068942abe44d33fd0f89f4b8cbb9" kindref="member">nominal_motor_voltage</ref><sp/>=<sp/>0x06,</highlight></codeline>
+<codeline lineno="37" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741ad24139707ecedd81a10a96dea882f0a0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741ad24139707ecedd81a10a96dea882f0a0" kindref="member">power_factor</ref><sp/>=<sp/>0x0e,</highlight></codeline>
+<codeline lineno="38" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a0a0dac29c811eaa0c4bbe6ce120f2fad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a0a0dac29c811eaa0c4bbe6ce120f2fad" kindref="member">motor_max_current</ref><sp/>=<sp/>0x4D,</highlight></codeline>
+<codeline lineno="39" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a3d1c48ec7fd442d23cce8a69daedc1a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a3d1c48ec7fd442d23cce8a69daedc1a4" kindref="member">motor_continuous_current</ref><sp/>=<sp/>0x4E,</highlight></codeline>
+<codeline lineno="40" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a8f4b84ce5d69fac9a335424e0b9116af" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a8f4b84ce5d69fac9a335424e0b9116af" kindref="member">motor_pole_number</ref><sp/>=<sp/>0x4F,</highlight></codeline>
+<codeline lineno="41" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a17387ca75642e4c739d600801685ba79" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a17387ca75642e4c739d600801685ba79" kindref="member">motor_kt_constant</ref><sp/>=<sp/>0x87,<sp/></highlight><highlight class="comment">//low,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a7c57b72fe710e2325933ce1f6517dc80" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a7c57b72fe710e2325933ce1f6517dc80" kindref="member">motor_ke_constant</ref><sp/>=<sp/>0x87,<sp/></highlight><highlight class="comment">//high,<sp/>back<sp/>emf</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a6c9ec3f524698f618635129709fd5ea2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a6c9ec3f524698f618635129709fd5ea2" kindref="member">rated_motor_speed</ref><sp/>=<sp/>0x59,</highlight></codeline>
+<codeline lineno="44" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a23fb6a0eae33554ae8bcec9a22c2e1ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a23fb6a0eae33554ae8bcec9a22c2e1ef" kindref="member">motor_temperature_switch_off_point</ref><sp/>=<sp/>0xA3,<sp/></highlight><highlight class="comment">//<sp/>not<sp/>sure<sp/>if<sp/>this<sp/>is<sp/>best<sp/>in<sp/>temp<sp/>or<sp/>not</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741af2bcc9a2d80a2655bf9adc22f9e6c062" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741af2bcc9a2d80a2655bf9adc22f9e6c062" kindref="member">stator_leakage_inductance</ref><sp/>=<sp/>0xB1,</highlight></codeline>
+<codeline lineno="46" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741aafacbc470ec36fccfec752fcf06ee691" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741aafacbc470ec36fccfec752fcf06ee691" kindref="member">nominal_magnitizing_current</ref><sp/>=<sp/>0xB2,</highlight></codeline>
+<codeline lineno="47" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a82f17224dfd9e9e77c740957f3ff4389" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a82f17224dfd9e9e77c740957f3ff4389" kindref="member">motor_magnetising_inductance</ref><sp/>=<sp/>0xB3,</highlight></codeline>
+<codeline lineno="48" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741ac3c230853d874dbfd67c8eb9217562c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741ac3c230853d874dbfd67c8eb9217562c0" kindref="member">rotor_resistance</ref><sp/>=<sp/>0xB4,</highlight></codeline>
+<codeline lineno="49" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a74c67f3ef363ff68efec4306188a40bf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a74c67f3ef363ff68efec4306188a40bf" kindref="member">minimum_magnetising_current</ref><sp/>=<sp/>0xB5,</highlight></codeline>
+<codeline lineno="50" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a66c32bb02597306fda2add0a5219ea7f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a66c32bb02597306fda2add0a5219ea7f" kindref="member">time_constant_rotor</ref><sp/>=<sp/>0xB6,</highlight></codeline>
+<codeline lineno="51" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a3ec5a6a666356eb8bb08c36f0066f1f1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a3ec5a6a666356eb8bb08c36f0066f1f1" kindref="member">leakage_inductance_ph_ph</ref><sp/>=<sp/>0xBB,</highlight></codeline>
+<codeline lineno="52" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a0505769d343c974ce9b0ea5f645c4869" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741a0505769d343c974ce9b0ea5f645c4869" kindref="member">stator_resistance_ph_ph</ref><sp/>=<sp/>0xBC,</highlight></codeline>
+<codeline lineno="53" refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741ae7211fe3a1246ef8f9c5881d3ecb8f0d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1ae5ebd6cc9310757a5488b935d21bc741ae7211fe3a1246ef8f9c5881d3ecb8f0d" kindref="member">time_constant_stator</ref><sp/>=<sp/>0xBD,</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645" kindref="member">motor_controller_temperatures</ref>{</highlight></codeline>
+<codeline lineno="58" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a349799caa493b390c9527db251fd128c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a349799caa493b390c9527db251fd128c" kindref="member">igbt_temperature</ref><sp/>=<sp/>0x4A,</highlight></codeline>
+<codeline lineno="59" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645aeff9dce22875056570afa6b71fd23842" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645aeff9dce22875056570afa6b71fd23842" kindref="member">motor_temperature</ref><sp/>=<sp/>0x49,</highlight></codeline>
+<codeline lineno="60" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a5f67975cf91f5959212f095df271d9e5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a5f67975cf91f5959212f095df271d9e5" kindref="member">air_temperature</ref><sp/>=<sp/>0x4B,</highlight></codeline>
+<codeline lineno="61" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645ac6969717754fedde42de1813b1ecddd0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645ac6969717754fedde42de1813b1ecddd0" kindref="member">current_derate_temperature</ref><sp/>=<sp/>0x4C,</highlight></codeline>
+<codeline lineno="62" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a2b29b0a0b81efd7300f900f65ef28071" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a2b29b0a0b81efd7300f900f65ef28071" kindref="member">temp_sensor_pt1</ref><sp/>=<sp/>0x9C,</highlight></codeline>
+<codeline lineno="63" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645ad4a8ea69fc94ed6fb6fe1310a477805d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645ad4a8ea69fc94ed6fb6fe1310a477805d" kindref="member">temp_sensor_pt2</ref><sp/>=<sp/>0x9D,</highlight></codeline>
+<codeline lineno="64" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a4518ebfdfdcbae7be91b9b41b99ad2a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a4518ebfdfdcbae7be91b9b41b99ad2a4" kindref="member">temp_sensor_pt3</ref><sp/>=<sp/>0x9E,</highlight></codeline>
+<codeline lineno="65" refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a19e537ab9271f8ef8d455f7b3dd85a94" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1af56dfdd222f09bea78ac88fdf4ecf645a19e537ab9271f8ef8d455f7b3dd85a94" kindref="member">temp_sensor_pt4</ref><sp/>=<sp/>0x9F,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="motor__controller_8h_1a2e6d114c8834f029dc4c48acf7ddf56f" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a2e6d114c8834f029dc4c48acf7ddf56f" kindref="member">motor_controller_measurements</ref>{</highlight></codeline>
+<codeline lineno="69" refid="motor__controller_8h_1a2e6d114c8834f029dc4c48acf7ddf56faf4addfc300b555b608c7501027073b64" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a2e6d114c8834f029dc4c48acf7ddf56faf4addfc300b555b608c7501027073b64" kindref="member">DC_bus_voltage</ref><sp/>=<sp/>0xEB,</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dff" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dff" kindref="member">motor_controller_status_information_errors_warnings</ref>{</highlight></codeline>
+<codeline lineno="74" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa595211bb6640ca05c1c3344b47e2890f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa595211bb6640ca05c1c3344b47e2890f" kindref="member">motor_controller_errors_warnings</ref><sp/>=<sp/>0x8F,<sp/></highlight><highlight class="comment">//<sp/>low<sp/>bytes,<sp/>warnings<sp/>are<sp/>high<sp/>bytes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>errors<sp/>-<sp/>the<sp/>bit<sp/>stuff<sp/>is<sp/>quite<sp/>annoying.<sp/>Look<sp/>at<sp/>can<sp/>message<sp/>excel<sp/>sheet</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa87ada8cd125ba521b447d565c12bb30e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa87ada8cd125ba521b447d565c12bb30e" kindref="member">eprom_read_error</ref><sp/>=<sp/>1&lt;&lt;8,<sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>bit<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffae9da794167969482cb67bfad83a04d71" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffae9da794167969482cb67bfad83a04d71" kindref="member">hardware_fault</ref><sp/>=<sp/>1&lt;&lt;9,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffadae8b5f4fb6cd6712202d055529499ef" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffadae8b5f4fb6cd6712202d055529499ef" kindref="member">rotate_field_enable_not_present_run</ref><sp/>=<sp/>1&lt;&lt;10,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>2<sp/>//<sp/>with<sp/>run<sp/>active</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa425430d2585733363b6043ed70ebd7ab" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa425430d2585733363b6043ed70ebd7ab" kindref="member">CAN_timeout_error</ref><sp/>=<sp/>1&lt;&lt;11,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2a16f371b0570edeeb17214a398e4bfc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2a16f371b0570edeeb17214a398e4bfc" kindref="member">feedback_signal_error</ref><sp/>=<sp/>1&lt;&lt;12,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa13726d0d6fc8dd12135f4ea92d1dcc92" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa13726d0d6fc8dd12135f4ea92d1dcc92" kindref="member">mains_voltage_min_limit</ref><sp/>=<sp/>1&lt;&lt;13,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2267f6ae60d8b9024ba418dd1f6d4b15" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2267f6ae60d8b9024ba418dd1f6d4b15" kindref="member">motor_temp_max_limit</ref><sp/>=<sp/>1&lt;&lt;14,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa54a5ca5981535fd231b00a1040622950" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa54a5ca5981535fd231b00a1040622950" kindref="member">IGBT_temp_max_limit</ref><sp/>=<sp/>1&lt;&lt;15,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa229533ef674ddd4475b22e47eb506b49" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa229533ef674ddd4475b22e47eb506b49" kindref="member">mains_voltage_max_limit</ref><sp/>=<sp/>1,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa29aa452fe3c693b96c17c09849ee1633" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa29aa452fe3c693b96c17c09849ee1633" kindref="member">critical_AC_current</ref><sp/>=<sp/>1&lt;&lt;1,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa696b36face7279e19e2905b0fa9ecb68" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa696b36face7279e19e2905b0fa9ecb68" kindref="member">race_away_detected</ref><sp/>=<sp/>1&lt;&lt;2,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa0dd2c6834f96df064d7b152074a9f81f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa0dd2c6834f96df064d7b152074a9f81f" kindref="member">ecode_timeout_error</ref><sp/>=<sp/>1&lt;&lt;3,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>11</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa357611869a1ec791b38a36ec2dfe09b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa357611869a1ec791b38a36ec2dfe09b9" kindref="member">watchdog_reset</ref><sp/>=<sp/>1&lt;&lt;4,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>12</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa0dbc9540bf7a4c67b6a2810985bfb55d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa0dbc9540bf7a4c67b6a2810985bfb55d" kindref="member">AC_current_offset_fault</ref><sp/>=<sp/>1&lt;&lt;5,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>13</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa18df3363e2a0048a813dcef5a41785ce" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa18df3363e2a0048a813dcef5a41785ce" kindref="member">internal_hardware_voltage_problem</ref><sp/>=<sp/>1&lt;&lt;6,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>14</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa150953c78b7fcc8ae97a50a5b5765264" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa150953c78b7fcc8ae97a50a5b5765264" kindref="member">bleed_resistor_overload</ref><sp/>=<sp/>1&lt;&lt;7,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>high<sp/>and<sp/>low<sp/>bytes<sp/>will<sp/>be<sp/>split<sp/>up<sp/>and<sp/>we&apos;ll<sp/>check<sp/>errors<sp/>and<sp/>warnings<sp/>separately</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>warnings<sp/>-<sp/>again,<sp/>see<sp/>can<sp/>messages<sp/>excel<sp/>sheet<sp/>/<sp/>manuals</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2fbc7fdf1ab20514fac8d6418291a114" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2fbc7fdf1ab20514fac8d6418291a114" kindref="member">parameter_conflict_detected</ref><sp/>=<sp/>1&lt;&lt;8,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>16</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa7483be8346bb7b2fdfb418383961fba7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa7483be8346bb7b2fdfb418383961fba7" kindref="member">special_CPU_fault</ref><sp/>=<sp/>1&lt;&lt;9,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>17</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3689755161fb5aa5fae86b270bfbf5fc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3689755161fb5aa5fae86b270bfbf5fc" kindref="member">rotate_field_enable_not_present_norun</ref><sp/>=<sp/>1&lt;&lt;10,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>18<sp/>//<sp/>without<sp/>run<sp/>active</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa03e3fe1a981eecdeb19cd0589bdcc6f8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa03e3fe1a981eecdeb19cd0589bdcc6f8" kindref="member">auxiliary_voltage_min_limit</ref><sp/>=<sp/>1&lt;&lt;11,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>19</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffab6733322e6c8c5197b108e853a58ad13" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffab6733322e6c8c5197b108e853a58ad13" kindref="member">feedback_signal_problem</ref><sp/>=<sp/>1&lt;&lt;12,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>20</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3050ef440e4e82f9fb3973e1fb9faea7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3050ef440e4e82f9fb3973e1fb9faea7" kindref="member">warning_5</ref><sp/>=<sp/>1&lt;&lt;13,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>21<sp/>no<sp/>idea<sp/>what<sp/>this<sp/>warning<sp/>is</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa4e9b2370bf4b4680b4c2471d2f7d312e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa4e9b2370bf4b4680b4c2471d2f7d312e" kindref="member">motor_temperature_warning</ref><sp/>=<sp/>1&lt;&lt;14,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>22,<sp/>&gt;87%</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa298d28f3aa38960b5d1349a04cbbca95" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa298d28f3aa38960b5d1349a04cbbca95" kindref="member">IGBT_temperature_warning</ref><sp/>=<sp/>1&lt;&lt;15,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>23,<sp/>&gt;87%</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffaf06c0a389c1c73850def361e9bd7ffdc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffaf06c0a389c1c73850def361e9bd7ffdc" kindref="member">Vout_saturation_max_limit</ref><sp/>=<sp/>1,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>24</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffad53242de6aeaa134a78749bc60fec984" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffad53242de6aeaa134a78749bc60fec984" kindref="member">warning_9</ref><sp/>=<sp/>1&lt;&lt;1,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>25,<sp/>no<sp/>idea<sp/>what<sp/>this<sp/>warning<sp/>is<sp/>either</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2c5d3b1ee0135916f17e89f331429ed5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa2c5d3b1ee0135916f17e89f331429ed5" kindref="member">speed_actual_resolution_limit</ref><sp/>=<sp/>1&lt;&lt;2,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>26</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3d2e8b6cb27af4a0a1121c419594bbfa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa3d2e8b6cb27af4a0a1121c419594bbfa" kindref="member">check_ecode_ID</ref><sp/>=<sp/>1&lt;&lt;3,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>27</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa618e6f62f2e284a9fec848782c9473c7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa618e6f62f2e284a9fec848782c9473c7" kindref="member">tripzone_glitch_detected</ref><sp/>=<sp/>1&lt;&lt;4,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>28</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa9c77d3a416d8465efe129cf8ad401cfe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffa9c77d3a416d8465efe129cf8ad401cfe" kindref="member">ADC_sequencer_problem</ref><sp/>=<sp/>1&lt;&lt;5,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>29</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffac02a9e080dc6bde671fa915b7e254c67" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffac02a9e080dc6bde671fa915b7e254c67" kindref="member">ADC_measurement_problem</ref><sp/>=<sp/>1&lt;&lt;6,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>30</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffae0c6a82b11d3fb69b758c350960f5a2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a5e2fbf1b4105e76b330bcb6547533dffae0c6a82b11d3fb69b758c350960f5a2a" kindref="member">bleeder_resistor_warning</ref><sp/>=<sp/>1&lt;&lt;7,<sp/></highlight><highlight class="comment">//<sp/>bit<sp/>31</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="motor__controller_8h_1a1592f0c8dbd9d1c5d8304671b518a863" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a1592f0c8dbd9d1c5d8304671b518a863" kindref="member">motor_controller_io</ref>{</highlight></codeline>
+<codeline lineno="114" refid="motor__controller_8h_1a1592f0c8dbd9d1c5d8304671b518a863a3a545dba8b1debc96a10c15f0e3bddf3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a1592f0c8dbd9d1c5d8304671b518a863a3a545dba8b1debc96a10c15f0e3bddf3" kindref="member">todo6969</ref><sp/>=<sp/>6969,</highlight></codeline>
+<codeline lineno="115"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521" kindref="member">motor_controller_PI_values</ref>{</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>There<sp/>are<sp/>two<sp/>different<sp/>ramps,<sp/>one<sp/>for<sp/>speed<sp/>and<sp/>moment,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Each<sp/>one<sp/>corresponds<sp/>to<sp/>a<sp/>high<sp/>or<sp/>low<sp/>byte</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a13f8ebd34ab57556217fbd235329a9e8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a13f8ebd34ab57556217fbd235329a9e8" kindref="member">accelerate_ramp</ref><sp/>=<sp/>0x35,</highlight></codeline>
+<codeline lineno="121" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a3c22e464cac79207d52cf4ff8d64d430" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a3c22e464cac79207d52cf4ff8d64d430" kindref="member">dismantling_ramp</ref><sp/>=<sp/>0xED,</highlight></codeline>
+<codeline lineno="122" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a013c38322d35d441c21920fc665d197a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a013c38322d35d441c21920fc665d197a" kindref="member">recuperation_ramp</ref><sp/>=<sp/>0xC7,</highlight></codeline>
+<codeline lineno="123" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a2b83ac91fbacf438199c4515ae3dcb88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a2b83ac91fbacf438199c4515ae3dcb88" kindref="member">proportional_gain</ref><sp/>=<sp/>0x1C,</highlight><highlight class="comment">//register<sp/>id<sp/>changes<sp/>depending<sp/>on<sp/>speed<sp/>and<sp/>current<sp/>controller<sp/>0x2c</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a39318ae4bc4582c26c32b7748f64c8d4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a39318ae4bc4582c26c32b7748f64c8d4" kindref="member">integral_time_constant</ref><sp/>=<sp/>0x1D,<sp/></highlight><highlight class="comment">//0x2d</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521aa1022b52e56d3a918c7a62177a88bb9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521aa1022b52e56d3a918c7a62177a88bb9e" kindref="member">integral_memory_max</ref><sp/>=<sp/>0x2B,<sp/></highlight><highlight class="comment">//0x3b</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521ac622cb0442074999655f1021ae456ef7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521ac622cb0442074999655f1021ae456ef7" kindref="member">proportional_gain_2</ref><sp/>=<sp/>0xC9,<sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>for<sp/>when<sp/>the<sp/>current<sp/>is<sp/>more<sp/>than<sp/>max<sp/>set<sp/>point</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a4e45c20669f9d0f09fce08e26865cfa2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a4e45c20669f9d0f09fce08e26865cfa2" kindref="member">current_feed_forward</ref><sp/>=<sp/>0xCB,</highlight></codeline>
+<codeline lineno="128" refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a5cde7e1c696e5ca92501b3e470b9ad88" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a3f03fa29b56b9f1f2cf0a36f989f9521a5cde7e1c696e5ca92501b3e470b9ad88" kindref="member">ramp_set_current</ref><sp/>=<sp/>0x25,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>motor<sp/>controller<sp/>can<sp/>send<sp/>data<sp/>repeatedly<sp/>if<sp/>so<sp/>desired</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133" refid="motor__controller_8h_1aa7c35d6b7a8102a9104bd52eb92f9520" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1aa7c35d6b7a8102a9104bd52eb92f9520" kindref="member">motor_controller_repeating_time</ref>{</highlight></codeline>
+<codeline lineno="134" refid="motor__controller_8h_1aa7c35d6b7a8102a9104bd52eb92f9520ab7e4e0120a041dbe6528b050c04269e0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1aa7c35d6b7a8102a9104bd52eb92f9520ab7e4e0120a041dbe6528b050c04269e0" kindref="member">none</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="135" refid="motor__controller_8h_1aa7c35d6b7a8102a9104bd52eb92f9520a1ccfd6fbab04e1f36f650d9a3350d799" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1aa7c35d6b7a8102a9104bd52eb92f9520a1ccfd6fbab04e1f36f650d9a3350d799" kindref="member">one_hundred_ms</ref><sp/>=<sp/>0x64,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554" kindref="member">motor_controller_limp_mode</ref>{</highlight></codeline>
+<codeline lineno="139" refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554a284cfe285101d83f2add9282dc4a00ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554a284cfe285101d83f2add9282dc4a00ca" kindref="member">N_lim</ref><sp/>=<sp/>0x34,</highlight></codeline>
+<codeline lineno="140" refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554a94404cce2e711f57d193195c55b59d36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554a94404cce2e711f57d193195c55b59d36" kindref="member">N_lim_plus</ref><sp/>=<sp/>0x3F,</highlight></codeline>
+<codeline lineno="141" refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554a56b40f55bf4dd4257a674b58b3e75d11" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a0d9dfc4722aad3781f3bfda8afb41554a56b40f55bf4dd4257a674b58b3e75d11" kindref="member">N_lim_minus</ref><sp/>=<sp/>0x3E,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242" kindref="member">motor_controller_startup</ref>{</highlight></codeline>
+<codeline lineno="145" refid="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242ae138a3e61cb9bb9076598775b7810347" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242ae138a3e61cb9bb9076598775b7810347" kindref="member">clear_errors</ref><sp/>=<sp/>0x8E,</highlight></codeline>
+<codeline lineno="146" refid="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242aed26e85027514bcd1ca8c3c17c03bef2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="motor__controller_8h_1a0376dfd1eed1d027d96561fd24e48242aed26e85027514bcd1ca8c3c17c03bef2" kindref="member">firmware_version</ref><sp/>=<sp/>0x1B,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight><highlight class="comment">//settings<sp/>for<sp/>motor<sp/>controller</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150" refid="structmotor__controllor__settings" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structmotor__controllor__settings" kindref="compound">motor_controllor_settings</ref>{</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//can<sp/>transmit<sp/>0x200</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152" refid="structmotor__controllor__settings_1a1229e590ebbf0159f0c829d5f8807294" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structmotor__controllor__settings_1a1229e590ebbf0159f0c829d5f8807294" kindref="member">can_id_tx</ref>;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//can<sp/>receive<sp/>0x201</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="structmotor__controllor__settings_1a0fafb17c00ec872a98dac74ca271b4cd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structmotor__controllor__settings_1a0fafb17c00ec872a98dac74ca271b4cd" kindref="member">can_id_rx</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//can<sp/>timeout<sp/>2s?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156" refid="structmotor__controllor__settings_1a16d6ebc9fb542b543c66bba5cb1572d7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structmotor__controllor__settings_1a16d6ebc9fb542b543c66bba5cb1572d7" kindref="member">mc_CAN_timeout</ref>;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//double<sp/>check<sp/>length</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//kp<sp/>-<sp/>gain<sp/>0x2c<sp/>-<sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159" refid="structmotor__controllor__settings_1ae2ba82196be75a510aad215ab0cc26de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structmotor__controllor__settings_1ae2ba82196be75a510aad215ab0cc26de" kindref="member">proportional_gain</ref>;</highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//ti<sp/>-<sp/>reset<sp/>time<sp/>0x2d<sp/>-<sp/>400</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161" refid="structmotor__controllor__settings_1a72937e13b105d1c12492b89218cb41c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structmotor__controllor__settings_1a72937e13b105d1c12492b89218cb41c0" kindref="member">integral_time_constant</ref>;</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Tim<sp/>-<sp/>max<sp/>value<sp/>integral<sp/>0x3b<sp/>-<sp/>60%</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163" refid="structmotor__controllor__settings_1a0d62a6e1afcb149473fd37d53c2058a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structmotor__controllor__settings_1a0d62a6e1afcb149473fd37d53c2058a5" kindref="member">integral_memory_max</ref>;</highlight></codeline>
 <codeline lineno="164"><highlight class="normal"></highlight></codeline>
-<codeline lineno="165"><highlight class="normal"></highlight></codeline>
-<codeline lineno="166"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="165"><highlight class="normal">}<ref refid="motor__controller_8h_1ac9389d71d481a5381fe1d1e23b1e4ecc" kindref="member">motor_controller_settings</ref>;</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Function<sp/>Declarations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="comment">//void<sp/>MC_Parse_Message(int<sp/>DLC,<sp/>uint8_t<sp/>Data[]);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight><highlight class="comment">//void<sp/>MC_Request_Data(uint8_t<sp/>RegID);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="comment">//void<sp/>MC_Send_Data(uint8_t<sp/>RegID,<sp/>uint8_t<sp/>data_to_send[],<sp/>uint8_t<sp/>size);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight><highlight class="comment">//void<sp/>MC_Torque_Control(int<sp/>todo);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="comment">//void<sp/>MC_Speed_Control(int<sp/>todo);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight><highlight class="comment">//void<sp/>MC_Check_Error_Warning(uint8_t<sp/>Data[]);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="comment">//void<sp/>MC_Check_Serial_Number(uint8_t<sp/>Data[]);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"></highlight><highlight class="comment">//void<sp/>MC_Check_Firmware(uint8_t<sp/>Data[]);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="motor__controller_8h_1aed1407e1e0fd59dc7c5e5d6db671f0ab" kindref="member">MC_Startup</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args);</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
     <location file="Core/Inc/motor_controller.h"/>
   </compounddef>

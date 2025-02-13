@@ -21,6 +21,14 @@ Tick\+Type\+\_\+t \mbox{\hyperlink{structuv__os__settings_aa3243a98dc9bbf056730f
 Tick\+Type\+\_\+t \mbox{\hyperlink{structuv__os__settings_a5e08f89b0999d4dedf5807a883ba4967}{max\+\_\+task\+\_\+period}}
 \item 
 Tick\+Type\+\_\+t \mbox{\hyperlink{structuv__os__settings_a8b497ca2b38e124db326cf634a87c4b1}{min\+\_\+task\+\_\+period}}
+\item 
+float \mbox{\hyperlink{structuv__os__settings_abf5ff4b1c146e13bb9c39f95d3e59ce3}{task\+\_\+overshoot\+\_\+margin\+\_\+noncrit}}
+\item 
+float \mbox{\hyperlink{structuv__os__settings_a49ce23050cb8eb64a0ad2c8eb59b9285}{task\+\_\+overshoot\+\_\+margin\+\_\+crit}}
+\item 
+float \mbox{\hyperlink{structuv__os__settings_a3eff117bf9dada61242e5778d1be6299}{task\+\_\+throttle\+\_\+increment}}
+\item 
+uint16\+\_\+t \mbox{\hyperlink{structuv__os__settings_a76c6055b26d876a01f6baac6d766e6ae}{os\+\_\+flags}}
 \end{DoxyCompactItemize}
 
 
@@ -29,7 +37,7 @@ Settings that dictate state engine behavior.
 
 
 
-Definition at line 171 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 177 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
@@ -42,7 +50,7 @@ Definition at line 171 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 174 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 180 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{structuv__os__settings_a5e08f89b0999d4dedf5807a883ba4967}\label{structuv__os__settings_a5e08f89b0999d4dedf5807a883ba4967}} 
 \index{uv\_os\_settings@{uv\_os\_settings}!max\_task\_period@{max\_task\_period}}
@@ -52,7 +60,7 @@ Definition at line 174 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 175 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 181 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{structuv__os__settings_a8b497ca2b38e124db326cf634a87c4b1}\label{structuv__os__settings_a8b497ca2b38e124db326cf634a87c4b1}} 
 \index{uv\_os\_settings@{uv\_os\_settings}!min\_task\_period@{min\_task\_period}}
@@ -62,7 +70,17 @@ Definition at line 175 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 176 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 182 of file uvfr\+\_\+state\+\_\+engine.\+h.
+
+\mbox{\Hypertarget{structuv__os__settings_a76c6055b26d876a01f6baac6d766e6ae}\label{structuv__os__settings_a76c6055b26d876a01f6baac6d766e6ae}} 
+\index{uv\_os\_settings@{uv\_os\_settings}!os\_flags@{os\_flags}}
+\index{os\_flags@{os\_flags}!uv\_os\_settings@{uv\_os\_settings}}
+\doxysubsubsection{\texorpdfstring{os\_flags}{os\_flags}}
+{\footnotesize\ttfamily uint16\+\_\+t uv\+\_\+os\+\_\+settings\+::os\+\_\+flags}
+
+
+
+Definition at line 187 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{structuv__os__settings_a82068c14ee06131f3184d99fd2c1fae0}\label{structuv__os__settings_a82068c14ee06131f3184d99fd2c1fae0}} 
 \index{uv\_os\_settings@{uv\_os\_settings}!svc\_task\_manager\_period@{svc\_task\_manager\_period}}
@@ -72,7 +90,11 @@ Definition at line 176 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 172 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 178 of file uvfr\+\_\+state\+\_\+engine.\+h.
+
+
+
+Referenced by uv\+Start\+State\+Machine().
 
 \mbox{\Hypertarget{structuv__os__settings_aa5163b7118ccafabb452052d2b8e7c5a}\label{structuv__os__settings_aa5163b7118ccafabb452052d2b8e7c5a}} 
 \index{uv\_os\_settings@{uv\_os\_settings}!task\_manager\_period@{task\_manager\_period}}
@@ -82,7 +104,45 @@ Definition at line 172 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 173 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 179 of file uvfr\+\_\+state\+\_\+engine.\+h.
+
+\mbox{\Hypertarget{structuv__os__settings_a49ce23050cb8eb64a0ad2c8eb59b9285}\label{structuv__os__settings_a49ce23050cb8eb64a0ad2c8eb59b9285}} 
+\index{uv\_os\_settings@{uv\_os\_settings}!task\_overshoot\_margin\_crit@{task\_overshoot\_margin\_crit}}
+\index{task\_overshoot\_margin\_crit@{task\_overshoot\_margin\_crit}!uv\_os\_settings@{uv\_os\_settings}}
+\doxysubsubsection{\texorpdfstring{task\_overshoot\_margin\_crit}{task\_overshoot\_margin\_crit}}
+{\footnotesize\ttfamily float uv\+\_\+os\+\_\+settings\+::task\+\_\+overshoot\+\_\+margin\+\_\+crit}
+
+
+
+Definition at line 184 of file uvfr\+\_\+state\+\_\+engine.\+h.
+
+
+
+Referenced by uv\+Task\+Manager().
+
+\mbox{\Hypertarget{structuv__os__settings_abf5ff4b1c146e13bb9c39f95d3e59ce3}\label{structuv__os__settings_abf5ff4b1c146e13bb9c39f95d3e59ce3}} 
+\index{uv\_os\_settings@{uv\_os\_settings}!task\_overshoot\_margin\_noncrit@{task\_overshoot\_margin\_noncrit}}
+\index{task\_overshoot\_margin\_noncrit@{task\_overshoot\_margin\_noncrit}!uv\_os\_settings@{uv\_os\_settings}}
+\doxysubsubsection{\texorpdfstring{task\_overshoot\_margin\_noncrit}{task\_overshoot\_margin\_noncrit}}
+{\footnotesize\ttfamily float uv\+\_\+os\+\_\+settings\+::task\+\_\+overshoot\+\_\+margin\+\_\+noncrit}
+
+
+
+Definition at line 183 of file uvfr\+\_\+state\+\_\+engine.\+h.
+
+
+
+Referenced by uv\+Task\+Manager().
+
+\mbox{\Hypertarget{structuv__os__settings_a3eff117bf9dada61242e5778d1be6299}\label{structuv__os__settings_a3eff117bf9dada61242e5778d1be6299}} 
+\index{uv\_os\_settings@{uv\_os\_settings}!task\_throttle\_increment@{task\_throttle\_increment}}
+\index{task\_throttle\_increment@{task\_throttle\_increment}!uv\_os\_settings@{uv\_os\_settings}}
+\doxysubsubsection{\texorpdfstring{task\_throttle\_increment}{task\_throttle\_increment}}
+{\footnotesize\ttfamily float uv\+\_\+os\+\_\+settings\+::task\+\_\+throttle\+\_\+increment}
+
+
+
+Definition at line 185 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 

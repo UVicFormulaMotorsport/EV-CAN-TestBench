@@ -110,11 +110,19 @@ Data Fields</h2></td></tr>
 <tr class="separator:a5e08f89b0999d4dedf5807a883ba4967"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b497ca2b38e124db326cf634a87c4b1"><td class="memItemLeft" align="right" valign="top">TickType_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuv__os__settings.html#a8b497ca2b38e124db326cf634a87c4b1">min_task_period</a></td></tr>
 <tr class="separator:a8b497ca2b38e124db326cf634a87c4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf5ff4b1c146e13bb9c39f95d3e59ce3"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuv__os__settings.html#abf5ff4b1c146e13bb9c39f95d3e59ce3">task_overshoot_margin_noncrit</a></td></tr>
+<tr class="separator:abf5ff4b1c146e13bb9c39f95d3e59ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49ce23050cb8eb64a0ad2c8eb59b9285"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuv__os__settings.html#a49ce23050cb8eb64a0ad2c8eb59b9285">task_overshoot_margin_crit</a></td></tr>
+<tr class="separator:a49ce23050cb8eb64a0ad2c8eb59b9285"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3eff117bf9dada61242e5778d1be6299"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuv__os__settings.html#a3eff117bf9dada61242e5778d1be6299">task_throttle_increment</a></td></tr>
+<tr class="separator:a3eff117bf9dada61242e5778d1be6299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76c6055b26d876a01f6baac6d766e6ae"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuv__os__settings.html#a76c6055b26d876a01f6baac6d766e6ae">os_flags</a></td></tr>
+<tr class="separator:a76c6055b26d876a01f6baac6d766e6ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Settings that dictate state engine behavior. </p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00171">171</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00177">177</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="aa3243a98dc9bbf056730f2d11d400b33"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa3243a98dc9bbf056730f2d11d400b33">&#9670;&nbsp;</a></span>max_svc_task_period</h2>
@@ -128,7 +136,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00174">174</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00180">180</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -144,7 +152,7 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00175">175</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00181">181</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -160,7 +168,23 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00176">176</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00182">182</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+
+</div>
+</div>
+<a id="a76c6055b26d876a01f6baac6d766e6ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76c6055b26d876a01f6baac6d766e6ae">&#9670;&nbsp;</a></span>os_flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t uv_os_settings::os_flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00187">187</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -176,7 +200,9 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00172">172</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00178">178</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00192">uvStartStateMachine()</a>.</p>
 
 </div>
 </div>
@@ -192,7 +218,59 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00173">173</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00179">179</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+
+</div>
+</div>
+<a id="a49ce23050cb8eb64a0ad2c8eb59b9285"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49ce23050cb8eb64a0ad2c8eb59b9285">&#9670;&nbsp;</a></span>task_overshoot_margin_crit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float uv_os_settings::task_overshoot_margin_crit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00184">184</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l01080">uvTaskManager()</a>.</p>
+
+</div>
+</div>
+<a id="abf5ff4b1c146e13bb9c39f95d3e59ce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf5ff4b1c146e13bb9c39f95d3e59ce3">&#9670;&nbsp;</a></span>task_overshoot_margin_noncrit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float uv_os_settings::task_overshoot_margin_noncrit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00183">183</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l01080">uvTaskManager()</a>.</p>
+
+</div>
+</div>
+<a id="a3eff117bf9dada61242e5778d1be6299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eff117bf9dada61242e5778d1be6299">&#9670;&nbsp;</a></span>task_throttle_increment</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float uv_os_settings::task_throttle_increment</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00185">185</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>

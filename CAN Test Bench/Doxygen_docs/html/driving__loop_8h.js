@@ -6,7 +6,6 @@ var driving__loop_8h =
     [ "drivingModeParams", "uniondriving_mode_params.html", null ],
     [ "drivingMode", "structdriving_mode.html", "structdriving_mode" ],
     [ "driving_loop_args", "structdriving__loop__args.html", "structdriving__loop__args" ],
-    [ "DEFAULT_PERIOD", "driving__loop_8h.html#a19ae3417888a615aca7350e9e1ba0204", null ],
     [ "driving_loop_args", "driving__loop_8h.html#aa421e50f529a1770ef0b2a00a44a0601", null ],
     [ "drivingMode", "driving__loop_8h.html#a29e04283e579e9092d205b1937c785c6", null ],
     [ "drivingModeParams", "driving__loop_8h.html#af90b0e528bd940abca8f5e2cf4bce18c", null ],

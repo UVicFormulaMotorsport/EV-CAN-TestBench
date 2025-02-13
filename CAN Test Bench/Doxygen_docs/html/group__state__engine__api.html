@@ -263,9 +263,18 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga6166ed80f8e3bd62f1e7e6122c8817f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Priority of a managed task. Maps directly to OS priority.  <a href="group__state__engine__api.html#ga6166ed80f8e3bd62f1e7e6122c8817f6">More...</a><br /></td></tr>
 <tr class="separator:ga6166ed80f8e3bd62f1e7e6122c8817f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae85df48ed635b45630243b13b6e7d890"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gae85df48ed635b45630243b13b6e7d890">os_flag</a> { <a class="el" href="group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890a01fe6bc8a712283339b685288b720cca">UV_OS_LOG_MEM</a> = 0x01, 
+<a class="el" href="group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890a06369476715fdc7bedeec037bf3256cf">UV_OS_LOG_TASK_END_TIME</a> = 0x02, 
+<a class="el" href="group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890aad5d44cbab735a2f51cb37bfb71b8bb3">UV_OS_ATTEMPT_RESTART_NC_TASK</a> = 0x04, 
+<a class="el" href="group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890ab40c36b801f8a9439ca8255b6f740882">UV_OS_ENABLE_NONCRIT_TASK_THROTTLE</a> = 0x08
+ }</td></tr>
+<tr class="separator:gae85df48ed635b45630243b13b6e7d890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga0e6167ef18c2ec8b65fbe070d0ffb6c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga0e6167ef18c2ec8b65fbe070d0ffb6c9">uvTaskPeriodEnd</a> (<a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
+<tr class="memdesc:ga0e6167ef18c2ec8b65fbe070d0ffb6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function called at the end of the task period.  <a href="group__state__engine__api.html#ga0e6167ef18c2ec8b65fbe070d0ffb6c9">More...</a><br /></td></tr>
+<tr class="separator:ga0e6167ef18c2ec8b65fbe070d0ffb6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa3ad3e8df75177c00265881c16563212"><td class="memItemLeft" align="right" valign="top"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gaa3ad3e8df75177c00265881c16563212">changeVehicleState</a> (uint16_t state)</td></tr>
 <tr class="memdesc:gaa3ad3e8df75177c00265881c16563212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for changing the state of the vehicle, as well as the list of active + inactive tasks.  <a href="group__state__engine__api.html#gaa3ad3e8df75177c00265881c16563212">More...</a><br /></td></tr>
 <tr class="separator:gaa3ad3e8df75177c00265881c16563212"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -298,7 +307,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00193">193</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00204">204</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -314,7 +323,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00197">197</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00208">208</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -330,7 +339,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00198">198</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00209">209</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -346,7 +355,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00199">199</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00210">210</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -362,7 +371,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00195">195</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00206">206</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -378,7 +387,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00194">194</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00205">205</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -394,7 +403,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00201">201</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00212">212</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -410,7 +419,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00183">183</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00194">194</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -426,7 +435,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00192">192</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00203">203</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -442,7 +451,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00184">184</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00195">195</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -458,7 +467,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00190">190</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00201">201</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -474,7 +483,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00191">191</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00202">202</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -490,7 +499,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00189">189</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00200">200</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -506,7 +515,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00187">187</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00198">198</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -522,7 +531,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00186">186</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00197">197</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -538,7 +547,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00185">185</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00196">196</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -554,7 +563,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00200">200</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00211">211</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -570,7 +579,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00182">182</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00193">193</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -586,7 +595,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00196">196</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00207">207</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -602,7 +611,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00188">188</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00199">199</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -618,7 +627,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00181">181</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00192">192</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -660,7 +669,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00274">274</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00288">288</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -710,7 +719,7 @@ Functions</h2></td></tr>
 </dl>
 <p>This will cause the task to wait until the last time + the period. </p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00286">286</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00309">309</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -730,7 +739,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00267">267</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00281">281</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -750,7 +759,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00265">265</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00279">279</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -770,7 +779,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00261">261</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00275">275</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -790,7 +799,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00263">263</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00277">277</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -810,7 +819,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00260">260</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00274">274</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -963,6 +972,28 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="gae85df48ed635b45630243b13b6e7d890"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae85df48ed635b45630243b13b6e7d890">&#9670;&nbsp;</a></span>os_flag</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="group__state__engine__api.html#gae85df48ed635b45630243b13b6e7d890">os_flag</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ggae85df48ed635b45630243b13b6e7d890a01fe6bc8a712283339b685288b720cca"></a>UV_OS_LOG_MEM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggae85df48ed635b45630243b13b6e7d890a06369476715fdc7bedeec037bf3256cf"></a>UV_OS_LOG_TASK_END_TIME&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggae85df48ed635b45630243b13b6e7d890aad5d44cbab735a2f51cb37bfb71b8bb3"></a>UV_OS_ATTEMPT_RESTART_NC_TASK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ggae85df48ed635b45630243b13b6e7d890ab40c36b801f8a9439ca8255b6f740882"></a>UV_OS_ENABLE_NONCRIT_TASK_THROTTLE&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00167">167</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+
+</div>
+</div>
 <a id="ga6166ed80f8e3bd62f1e7e6122c8817f6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga6166ed80f8e3bd62f1e7e6122c8817f6">&#9670;&nbsp;</a></span>task_priority</h2>
 
@@ -1152,11 +1183,11 @@ Functions</h2></td></tr>
 <p>Transition from <code>UV_INIT</code> to <code>UV_READY</code> states</p>
 <p>Transition from <code>UV_INIT</code> to <code>UV_ERROR</code> states</p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00086">86</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00099">99</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00868">_stateChangeDaemon()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00117">isPowerOfTwo</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00059">state_change_daemon_args::meta_task_handle</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00040">previous_state</a>, <a class="el" href="uvfr__utils_8h_source.html#l00170">UV_ABORTED</a>, <a class="el" href="uvfr__utils_8h_source.html#l00169">UV_ERROR</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00088">UV_ERROR_STATE</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00082">UV_INIT</a>, <a class="el" href="uvfr__utils_8h_source.html#l00167">UV_OK</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00083">UV_READY</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00039">vehicle_state</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00865">_stateChangeDaemon()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00117">isPowerOfTwo</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00072">state_change_daemon_args::meta_task_handle</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00046">previous_state</a>, <a class="el" href="uvfr__utils_8h_source.html#l00170">UV_ABORTED</a>, <a class="el" href="uvfr__utils_8h_source.html#l00169">UV_ERROR</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00088">UV_ERROR_STATE</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00082">UV_INIT</a>, <a class="el" href="uvfr__utils_8h_source.html#l00167">UV_OK</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00083">UV_READY</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00045">vehicle_state</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="daq_8c_source.html#l00062">daqMasterTask()</a>, and <a class="el" href="uvfr__utils_8c_source.html#l00037">uvInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00686">__uvPanic()</a>, <a class="el" href="daq_8c_source.html#l00062">daqMasterTask()</a>, <a class="el" href="temp__monitoring_8c_source.html#l00042">testfunc()</a>, and <a class="el" href="uvfr__utils_8c_source.html#l00039">uvInit()</a>.</p>
 
 </div>
 </div>
@@ -1179,9 +1210,9 @@ Functions</h2></td></tr>
 <p>Do not exceed the number of tasks available</p>
 <p>Acquire the pointer to the spot in the array, we are doing this since we need to return the pointer anyways, and it cleans up the syntax a little.</p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00249">249</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00264">264</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00025">_next_task_id</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00026">_task_register</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00058">_UV_DEFAULT_TASK_STACK_SIZE</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00239">uv_task_info::active_states</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00240">uv_task_info::deletion_states</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00020">MAX_NUM_MANAGED_TASKS</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00234">uv_task_info::parent</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00220">uv_task_info::stack_size</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00241">uv_task_info::suspension_states</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00243">uv_task_info::task_flags</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00216">uv_task_info::task_function</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00228">uv_task_info::task_handle</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00210">uv_task_info::task_id</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00211">uv_task_info::task_name</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00217">uv_task_info::task_priority</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00225">uv_task_info::task_state</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00125">UV_TASK_NOT_STARTED</a>, and <a class="el" href="uvfr__state__engine_8h_source.html#l00181">UV_TASK_VEHICLE_APPLICATION</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00025">_next_task_id</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00026">_task_register</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00058">_UV_DEFAULT_TASK_STACK_SIZE</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00251">uv_task_info::active_states</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00252">uv_task_info::deletion_states</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00020">MAX_NUM_MANAGED_TASKS</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00245">uv_task_info::parent</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00231">uv_task_info::stack_size</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00253">uv_task_info::suspension_states</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00255">uv_task_info::task_flags</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00227">uv_task_info::task_function</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00239">uv_task_info::task_handle</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00221">uv_task_info::task_id</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00222">uv_task_info::task_name</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00228">uv_task_info::task_priority</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00236">uv_task_info::task_state</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00125">UV_TASK_NOT_STARTED</a>, and <a class="el" href="uvfr__state__engine_8h_source.html#l00192">UV_TASK_VEHICLE_APPLICATION</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="daq_8c_source.html#l00030">initDaqTask()</a>, <a class="el" href="driving__loop_8c_source.html#l00025">initDrivingLoop()</a>, <a class="el" href="odometer_8c_source.html#l00011">initOdometer()</a>, and <a class="el" href="temp__monitoring_8c_source.html#l00012">initTempMonitor()</a>.</p>
 
@@ -1205,9 +1236,9 @@ Functions</h2></td></tr>
 <p>Stops and frees all resources used by uvfr_state_engine. </p>
 <p>If we need to initialize the state engine, gotta de-initialize as well. This is the opposite of <a class="el" href="group__state__engine__api.html#ga5c608f3832c45eac6e2da198d4ef1ba0">uvInitStateEngine</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00239">239</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00254">254</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00446">killEmAll()</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00452">killEmAll()</a>.</p>
 
 </div>
 </div>
@@ -1229,11 +1260,11 @@ Functions</h2></td></tr>
 <p>Function that prepares the state engine to do its thing. </p>
 <p>This is called when the system is first starting up. </p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00151">151</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00164">164</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__utils_8c_source.html#l00263">__uvInitPanic()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00026">_task_register</a>, <a class="el" href="daq_8c_source.html#l00030">initDaqTask()</a>, <a class="el" href="driving__loop_8c_source.html#l00025">initDrivingLoop()</a>, <a class="el" href="odometer_8c_source.html#l00011">initOdometer()</a>, <a class="el" href="temp__monitoring_8c_source.html#l00012">initTempMonitor()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00020">MAX_NUM_MANAGED_TASKS</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00043">svc_task_manager</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00042">task_manager</a>, <a class="el" href="uvfr__utils_8h_source.html#l00167">UV_OK</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l01138">uvCreateServiceTask()</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__utils_8c_source.html#l00271">__uvInitPanic()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00026">_task_register</a>, <a class="el" href="daq_8c_source.html#l00030">initDaqTask()</a>, <a class="el" href="driving__loop_8c_source.html#l00025">initDrivingLoop()</a>, <a class="el" href="odometer_8c_source.html#l00011">initOdometer()</a>, <a class="el" href="temp__monitoring_8c_source.html#l00012">initTempMonitor()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00020">MAX_NUM_MANAGED_TASKS</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00049">svc_task_manager</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00048">task_manager</a>, <a class="el" href="uvfr__utils_8h_source.html#l00167">UV_OK</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l01195">uvCreateServiceTask()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00037">uvInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00039">uvInit()</a>.</p>
 
 </div>
 </div>
@@ -1255,18 +1286,45 @@ Functions</h2></td></tr>
 <p>Actually starts up the state engine to do state engine things. </p>
 <p>This function ensures that all of the managed tasks are setup in a legal way, and then it allocates resources for, and starts the state engine and the background tasks. This unlocks the ability for the vehicle to do basically anything. </p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00179">179</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00192">192</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00040">previous_state</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00220">uv_task_info::stack_size</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00043">svc_task_manager</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00243">uv_task_info::task_flags</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00216">uv_task_info::task_function</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00228">uv_task_info::task_handle</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00042">task_manager</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00211">uv_task_info::task_name</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00213">uv_task_info::task_period</a>, <a class="el" href="uvfr__utils_8h_source.html#l00169">UV_ERROR</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00082">UV_INIT</a>, <a class="el" href="uvfr__utils_8h_source.html#l00167">UV_OK</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00200">UV_TASK_MISSION_CRITICAL</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00188">UV_TASK_SCD_IGNORE</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l01284">uvSVCTaskManager()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l01065">uvTaskManager()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00343">uvValidateManagedTasks()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00039">vehicle_state</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__settings_8c_source.html#l00015">current_vehicle_settings</a>, <a class="el" href="uvfr__settings_8h_source.html#l00034">uv_vehicle_settings::os_settings</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00053">os_settings</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00046">previous_state</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00231">uv_task_info::stack_size</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00049">svc_task_manager</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00178">uv_os_settings::svc_task_manager_period</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00255">uv_task_info::task_flags</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00227">uv_task_info::task_function</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00239">uv_task_info::task_handle</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00048">task_manager</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00222">uv_task_info::task_name</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00224">uv_task_info::task_period</a>, <a class="el" href="uvfr__utils_8h_source.html#l00169">UV_ERROR</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00082">UV_INIT</a>, <a class="el" href="uvfr__utils_8h_source.html#l00167">UV_OK</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00211">UV_TASK_MISSION_CRITICAL</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00199">UV_TASK_SCD_IGNORE</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l01341">uvSVCTaskManager()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l01080">uvTaskManager()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00358">uvValidateManagedTasks()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00045">vehicle_state</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00037">uvInit()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00039">uvInit()</a>.</p>
+
+</div>
+</div>
+<a id="ga0e6167ef18c2ec8b65fbe070d0ffb6c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0e6167ef18c2ec8b65fbe070d0ffb6c9">&#9670;&nbsp;</a></span>uvTaskPeriodEnd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void uvTaskPeriodEnd </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td>
+          <td class="paramname"><em>t</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function called at the end of the task period. </p>
+<p>@ </p>
+
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l01457">1457</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
+
+<p class="reference">References <a class="el" href="uvfr__state__engine_8h_source.html#l00249">uv_task_info::last_execution_time</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00040">nc_throttling</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00221">uv_task_info::task_id</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00224">uv_task_info::task_period</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00030">task_tardiness</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00279">uvTaskResetDelayBit</a>, and <a class="el" href="uvfr__state__engine_8h_source.html#l00277">uvTaskSetDelayBit</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l01080">uvTaskManager()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="agroup__state__engine__api_html_gaa3ad3e8df75177c00265881c16563212"><div class="ttname"><a href="group__state__engine__api.html#gaa3ad3e8df75177c00265881c16563212">changeVehicleState</a></div><div class="ttdeci">uv_status changeVehicleState(uint16_t state)</div><div class="ttdoc">Function for changing the state of the vehicle, as well as the list of active + inactive tasks.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8c_source.html#l00086">uvfr_state_engine.c:86</a></div></div>
-<div class="ttc" id="agroup__state__engine__api_html_ga3cab3b3fd6589348dceaf91b14e2a6ef"><div class="ttname"><a href="group__state__engine__api.html#ga3cab3b3fd6589348dceaf91b14e2a6ef">uvTaskSetDelayBit</a></div><div class="ttdeci">#define uvTaskSetDelayBit(t)</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00263">uvfr_state_engine.h:263</a></div></div>
+<div class="ttc" id="agroup__state__engine__api_html_gaa3ad3e8df75177c00265881c16563212"><div class="ttname"><a href="group__state__engine__api.html#gaa3ad3e8df75177c00265881c16563212">changeVehicleState</a></div><div class="ttdeci">uv_status changeVehicleState(uint16_t state)</div><div class="ttdoc">Function for changing the state of the vehicle, as well as the list of active + inactive tasks.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8c_source.html#l00099">uvfr_state_engine.c:99</a></div></div>
+<div class="ttc" id="agroup__state__engine__api_html_ga3cab3b3fd6589348dceaf91b14e2a6ef"><div class="ttname"><a href="group__state__engine__api.html#ga3cab3b3fd6589348dceaf91b14e2a6ef">uvTaskSetDelayBit</a></div><div class="ttdeci">#define uvTaskSetDelayBit(t)</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00277">uvfr_state_engine.h:277</a></div></div>
 <div class="ttc" id="agroup__state__engine__api_html_gga259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969"><div class="ttname"><a href="group__state__engine__api.html#gga259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969">UV_DRIVING</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00085">uvfr_state_engine.h:85</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

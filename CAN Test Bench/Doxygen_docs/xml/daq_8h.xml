@@ -3,6 +3,7 @@
   <compounddef id="daq_8h" kind="file" language="C++">
     <compoundname>daq.h</compoundname>
     <includes refid="uvfr__utils_8h" local="yes">uvfr_utils.h</includes>
+    <includes refid="rb__tree_8h" local="yes">rb_tree.h</includes>
     <includedby refid="uvfr__settings_8h" local="yes">Core/Inc/uvfr_settings.h</includedby>
     <includedby refid="uvfr__utils_8h" local="yes">Core/Inc/uvfr_utils.h</includedby>
     <includedby refid="daq_8c" local="yes">Core/Src/daq.c</includedby>
@@ -176,6 +177,8 @@
         <label>Core/Inc/daq.h</label>
         <link refid="daq_8h"/>
         <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="13">
@@ -392,6 +395,8 @@
         </childnode>
         <childnode refid="45" relation="include">
         </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
       </node>
       <node id="42">
         <label>Core/Src/odometer.c</label>
@@ -500,6 +505,10 @@
       <node id="22">
         <label>Core/Src/temp_monitoring.c</label>
         <link refid="temp__monitoring_8c"/>
+      </node>
+      <node id="46">
+        <label>Core/Src/uvfr_vehicle_commands.c</label>
+        <link refid="uvfr__vehicle__commands_8c"/>
       </node>
       <node id="1">
         <label>Core/Inc/daq.h</label>
@@ -673,84 +682,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/daq.h" line="13" column="9" bodyfile="Core/Inc/daq.h" bodystart="13" bodyend="-1"/>
+        <location file="Core/Inc/daq.h" line="14" column="9" bodyfile="Core/Inc/daq.h" bodystart="14" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
-      <memberdef kind="enum" id="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14" prot="public" static="no" strong="no">
-        <type></type>
-        <name>data_type</name>
-        <enumvalue id="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d" prot="public">
-          <name>UV_UINT8</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318" prot="public">
-          <name>UV_INT8</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0" prot="public">
-          <name>UV_UINT16</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787" prot="public">
-          <name>UV_INT16</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0" prot="public">
-          <name>UV_UINT32</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc" prot="public">
-          <name>UV_INT32</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9" prot="public">
-          <name>UV_FLOAT</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038" prot="public">
-          <name>UV_DOUBLE</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de" prot="public">
-          <name>UV_STRING</name>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Core/Inc/daq.h" line="15" column="15" bodyfile="Core/Inc/daq.h" bodystart="15" bodyend="26"/>
-      </memberdef>
       <memberdef kind="enum" id="daq_8h_1a5249d5d3ad44df9d4479b814028469a9" prot="public" static="no" strong="no">
         <type></type>
         <name>loggable_params</name>
@@ -928,7 +863,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/daq.h" line="28" column="14" bodyfile="Core/Inc/daq.h" bodystart="28" bodyend="53"/>
+        <location file="Core/Inc/daq.h" line="18" column="14" bodyfile="Core/Inc/daq.h" bodystart="18" bodyend="43"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -943,7 +878,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/daq.h" line="61" column="20"/>
+        <location file="Core/Inc/daq.h" line="51" column="20"/>
       </memberdef>
       <memberdef kind="typedef" id="daq_8h_1ad3bc3bc1c9ab04b22cc999a6f7c82c40" prot="public" static="no">
         <type>struct <ref refid="structdaq__datapoint" kindref="compound">daq_datapoint</ref></type>
@@ -957,7 +892,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/daq.h" line="70" column="20"/>
+        <location file="Core/Inc/daq.h" line="60" column="20"/>
       </memberdef>
       <memberdef kind="typedef" id="daq_8h_1a8895dc742d7ce8449057f317e7f9c81b" prot="public" static="no">
         <type>struct <ref refid="structdaq__loop__args" kindref="compound">daq_loop_args</ref></type>
@@ -970,7 +905,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/daq.h" line="78" column="14"/>
+        <location file="Core/Inc/daq.h" line="68" column="14"/>
       </memberdef>
       <memberdef kind="typedef" id="daq_8h_1a2104fed000d8cb392baf5d14e06193c1" prot="public" static="no">
         <type>struct <ref refid="structdaq__child__task" kindref="compound">daq_child_task</ref></type>
@@ -983,7 +918,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/daq.h" line="86" column="15"/>
+        <location file="Core/Inc/daq.h" line="76" column="15"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="var">
@@ -998,7 +933,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/daq.h" line="89" column="13" bodyfile="Core/Src/daq.c" bodystart="7" bodyend="-1" declfile="Core/Inc/daq.h" declline="89" declcolumn="13"/>
+        <location file="Core/Inc/daq.h" line="79" column="13" bodyfile="Core/Src/daq.c" bodystart="7" bodyend="-1" declfile="Core/Inc/daq.h" declline="79" declcolumn="13"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -1019,27 +954,27 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/daq.h" line="89" column="13" bodyfile="Core/Src/daq.c" bodystart="30" bodyend="57" declfile="Core/Inc/daq.h" declline="89" declcolumn="13"/>
+        <location file="Core/Inc/daq.h" line="79" column="13" bodyfile="Core/Src/daq.c" bodystart="30" bodyend="57" declfile="Core/Inc/daq.h" declline="79" declcolumn="13"/>
         <references refid="uvfr__state__engine_8h_1a32571accb85a2d8f479c6066d7a46238" compoundref="uvfr__state__engine_8h" startline="58">_UV_DEFAULT_TASK_STACK_SIZE</references>
-        <references refid="structuv__task__info_1ab24dea3bde4de2d839bf15e65c2df0d6" compoundref="uvfr__state__engine_8h" startline="239">uv_task_info::active_states</references>
+        <references refid="structuv__task__info_1ab24dea3bde4de2d839bf15e65c2df0d6" compoundref="uvfr__state__engine_8h" startline="251">uv_task_info::active_states</references>
         <references refid="daq_8c_1a433bb586ceab47aed8d633fa2ff8ce56" compoundref="daq_8c" startline="62" endline="101">daqMasterTask</references>
-        <references refid="structuv__task__info_1a6986d7216c7f889164931b37ab752c29" compoundref="uvfr__state__engine_8h" startline="240">uv_task_info::deletion_states</references>
+        <references refid="structuv__task__info_1a6986d7216c7f889164931b37ab752c29" compoundref="uvfr__state__engine_8h" startline="252">uv_task_info::deletion_states</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4abed5371c079ef927fb67d8bb8e8aa286" compoundref="uvfr__state__engine_8h" startline="84">PROGRAMMING</references>
-        <references refid="structuv__task__info_1a353ec6bf2c42ab0920f3d1e671e568a3" compoundref="uvfr__state__engine_8h" startline="220">uv_task_info::stack_size</references>
-        <references refid="structuv__task__info_1aafd4e2d916f50b54b99fd02d63831e43" compoundref="uvfr__state__engine_8h" startline="241">uv_task_info::suspension_states</references>
-        <references refid="structuv__task__info_1ae255dff9b38fc8c0754085060e8ae699" compoundref="uvfr__state__engine_8h" startline="232">uv_task_info::task_args</references>
-        <references refid="structuv__task__info_1afcd240d2b6b01b4acea600ef4dfe8fbc" compoundref="uvfr__state__engine_8h" startline="216">uv_task_info::task_function</references>
-        <references refid="structuv__task__info_1ad24b438130bb3098ee5e855222dff21d" compoundref="uvfr__state__engine_8h" startline="211">uv_task_info::task_name</references>
-        <references refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" compoundref="uvfr__state__engine_8h" startline="213">uv_task_info::task_period</references>
-        <references refid="structuv__task__info_1aff45751f7189980589d55379d1d5a355" compoundref="uvfr__state__engine_8h" startline="217">uv_task_info::task_priority</references>
+        <references refid="structuv__task__info_1a353ec6bf2c42ab0920f3d1e671e568a3" compoundref="uvfr__state__engine_8h" startline="231">uv_task_info::stack_size</references>
+        <references refid="structuv__task__info_1aafd4e2d916f50b54b99fd02d63831e43" compoundref="uvfr__state__engine_8h" startline="253">uv_task_info::suspension_states</references>
+        <references refid="structuv__task__info_1ae255dff9b38fc8c0754085060e8ae699" compoundref="uvfr__state__engine_8h" startline="243">uv_task_info::task_args</references>
+        <references refid="structuv__task__info_1afcd240d2b6b01b4acea600ef4dfe8fbc" compoundref="uvfr__state__engine_8h" startline="227">uv_task_info::task_function</references>
+        <references refid="structuv__task__info_1ad24b438130bb3098ee5e855222dff21d" compoundref="uvfr__state__engine_8h" startline="222">uv_task_info::task_name</references>
+        <references refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" compoundref="uvfr__state__engine_8h" startline="224">uv_task_info::task_period</references>
+        <references refid="structuv__task__info_1aff45751f7189980589d55379d1d5a355" compoundref="uvfr__state__engine_8h" startline="228">uv_task_info::task_priority</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969" compoundref="uvfr__state__engine_8h" startline="85">UV_DRIVING</references>
         <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" compoundref="uvfr__utils_8h" startline="169">UV_ERROR</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4ac1fcacc095b8c0f1c9f452d51815bcb5" compoundref="uvfr__state__engine_8h" startline="88">UV_ERROR_STATE</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4a7ff39f8abdc9adbfd693e412e4aaeb6e" compoundref="uvfr__state__engine_8h" startline="87">UV_LAUNCH_CONTROL</references>
         <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8" compoundref="uvfr__state__engine_8h" startline="83">UV_READY</references>
-        <references refid="group__state__engine__api_1ga99bfc92472cdc99e9005e9d3c792909a" compoundref="uvfr__state__engine_8c" startline="249" endline="287">uvCreateTask</references>
-        <referencedby refid="group__state__engine__api_1ga5c608f3832c45eac6e2da198d4ef1ba0" compoundref="uvfr__state__engine_8c" startline="151" endline="172">uvInitStateEngine</referencedby>
+        <references refid="group__state__engine__api_1ga99bfc92472cdc99e9005e9d3c792909a" compoundref="uvfr__state__engine_8c" startline="264" endline="302">uvCreateTask</references>
+        <referencedby refid="group__state__engine__api_1ga5c608f3832c45eac6e2da198d4ef1ba0" compoundref="uvfr__state__engine_8c" startline="164" endline="185">uvInitStateEngine</referencedby>
       </memberdef>
       <memberdef kind="function" id="daq_8h_1a433bb586ceab47aed8d633fa2ff8ce56" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -1061,18 +996,18 @@
 <codeline><highlight class="normal">//TickType_t<sp/>last_time<sp/>=<sp/>xTaskGetTickCount();<sp/><sp/><sp/><sp/><sp/><sp/><sp/>/**</highlight></codeline>
 </programlisting></para>
         </inbodydescription>
-        <location file="Core/Inc/daq.h" line="93" column="6" bodyfile="Core/Src/daq.c" bodystart="62" bodyend="101" declfile="Core/Inc/daq.h" declline="93" declcolumn="6"/>
-        <references refid="group__state__engine__api_1gaa3ad3e8df75177c00265881c16563212" compoundref="uvfr__state__engine_8c" startline="86" endline="143">changeVehicleState</references>
-        <references refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" compoundref="uvfr__state__engine_8h" startline="230">uv_task_info::cmd_data</references>
-        <references refid="group__state__engine__backend_1ga5f35b34432afed7f18f91fb8607f096f" compoundref="uvfr__state__engine_8c" startline="715" endline="748">killSelf</references>
-        <references refid="group__state__engine__backend_1gad6117850b55ad52be51d93915bcc313c" compoundref="uvfr__state__engine_8c" startline="756" endline="787">suspendSelf</references>
-        <references refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" compoundref="uvfr__state__engine_8h" startline="213">uv_task_info::task_period</references>
+        <location file="Core/Inc/daq.h" line="83" column="6" bodyfile="Core/Src/daq.c" bodystart="62" bodyend="101" declfile="Core/Inc/daq.h" declline="83" declcolumn="6"/>
+        <references refid="group__state__engine__api_1gaa3ad3e8df75177c00265881c16563212" compoundref="uvfr__state__engine_8c" startline="99" endline="156">changeVehicleState</references>
+        <references refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" compoundref="uvfr__state__engine_8h" startline="241">uv_task_info::cmd_data</references>
+        <references refid="group__state__engine__backend_1ga5f35b34432afed7f18f91fb8607f096f" compoundref="uvfr__state__engine_8c" startline="708" endline="741">killSelf</references>
+        <references refid="group__state__engine__backend_1gad6117850b55ad52be51d93915bcc313c" compoundref="uvfr__state__engine_8c" startline="749" endline="780">suspendSelf</references>
+        <references refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" compoundref="uvfr__state__engine_8h" startline="224">uv_task_info::task_period</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969" compoundref="uvfr__state__engine_8h" startline="85">UV_DRIVING</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4ac1fcacc095b8c0f1c9f452d51815bcb5" compoundref="uvfr__state__engine_8h" startline="88">UV_ERROR_STATE</references>
         <references refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6" compoundref="uvfr__state__engine_8h" startline="98">UV_KILL_CMD</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8" compoundref="uvfr__state__engine_8h" startline="83">UV_READY</references>
         <references refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077" compoundref="uvfr__state__engine_8h" startline="99">UV_SUSPEND_CMD</references>
-        <references refid="group__state__engine_1ga2f58cf65b3566bc390600f877f8bed35" compoundref="uvfr__state__engine_8c" startline="39">vehicle_state</references>
+        <references refid="group__state__engine_1ga2f58cf65b3566bc390600f877f8bed35" compoundref="uvfr__state__engine_8c" startline="45">vehicle_state</references>
         <referencedby refid="daq_8c_1af2c619df9f3d115dcbc511b0bb738e87" compoundref="daq_8c" startline="30" endline="57">initDaqTask</referencedby>
       </memberdef>
       </sectiondef>
@@ -1092,89 +1027,79 @@
 <codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INC_DAQ_H_</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="10"><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="uvfr__utils_8h" kindref="compound">uvfr_utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="12"><highlight class="normal"></highlight></codeline>
-<codeline lineno="13" refid="daq_8h_1a81ace76d60c42037a62eaeb1687a96ce" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_NUM_LOGGABLE_PARAMS</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight></codeline>
-<codeline lineno="15" refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="16" refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d" kindref="member">UV_UINT8</ref>,</highlight></codeline>
-<codeline lineno="17" refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318" kindref="member">UV_INT8</ref>,</highlight></codeline>
-<codeline lineno="18" refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0" kindref="member">UV_UINT16</ref>,</highlight></codeline>
-<codeline lineno="19" refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787" kindref="member">UV_INT16</ref>,</highlight></codeline>
-<codeline lineno="20" refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0" kindref="member">UV_UINT32</ref>,</highlight></codeline>
-<codeline lineno="21" refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc" kindref="member">UV_INT32</ref>,</highlight></codeline>
-<codeline lineno="22" refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9" kindref="member">UV_FLOAT</ref>,</highlight></codeline>
-<codeline lineno="23" refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038" kindref="member">UV_DOUBLE</ref>,</highlight></codeline>
-<codeline lineno="24" refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de" kindref="member">UV_STRING</ref></highlight></codeline>
-<codeline lineno="25"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26"><highlight class="normal">}<ref refid="daq_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14" kindref="member">data_type</ref>;</highlight></codeline>
-<codeline lineno="27"><highlight class="normal"></highlight></codeline>
-<codeline lineno="28" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="29" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a2237bba50d7e27353f72b7d26837fee4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a2237bba50d7e27353f72b7d26837fee4" kindref="member">MOTOR_RPM</ref>,</highlight></codeline>
-<codeline lineno="30" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a1b5652598a4eb9009556ed9d79bc3481" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a1b5652598a4eb9009556ed9d79bc3481" kindref="member">MOTOR_TEMP</ref>,</highlight></codeline>
-<codeline lineno="31" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9af753a5d3c1a828a48de12e24724ca9fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9af753a5d3c1a828a48de12e24724ca9fa" kindref="member">MOTOR_CURRENT</ref>,</highlight></codeline>
-<codeline lineno="32" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9aa74badbb2f7ca3577612ade967c76aa0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9aa74badbb2f7ca3577612ade967c76aa0" kindref="member">MC_VOLTAGE</ref>,</highlight></codeline>
-<codeline lineno="33" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ab63fa780a7f16ee35fe9ef429cca5642" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ab63fa780a7f16ee35fe9ef429cca5642" kindref="member">MC_CURRENT</ref>,</highlight></codeline>
-<codeline lineno="34" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9af299eda494c1accd4296669bfce3c874" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9af299eda494c1accd4296669bfce3c874" kindref="member">MC_TEMP</ref>,</highlight></codeline>
-<codeline lineno="35" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a3c3a6d5acba65131b33bf8ee304a535b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a3c3a6d5acba65131b33bf8ee304a535b" kindref="member">MC_ERRORS</ref>,</highlight></codeline>
-<codeline lineno="36" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a0f5f85010ae23f1b49eae8057df620ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a0f5f85010ae23f1b49eae8057df620ff" kindref="member">BMS_CURRENT</ref>,</highlight></codeline>
-<codeline lineno="37" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a6bdcb863dc969154ade799d6a547510d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a6bdcb863dc969154ade799d6a547510d" kindref="member">BMS_VOLTAGE</ref>,</highlight></codeline>
-<codeline lineno="38" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a7d1c4ad6640f0879f3d74f49fe3d5663" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a7d1c4ad6640f0879f3d74f49fe3d5663" kindref="member">BMS_ERRORS</ref>,</highlight></codeline>
-<codeline lineno="39" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9afe28f8aaa8c772e8fc42b5f47d2898ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9afe28f8aaa8c772e8fc42b5f47d2898ed" kindref="member">MAX_CELL_TEMP</ref>,</highlight></codeline>
-<codeline lineno="40" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a2834d7adb4c1ad0ac9300d6085d52d3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a2834d7adb4c1ad0ac9300d6085d52d3a" kindref="member">MIN_CELL_TEMP</ref>,</highlight></codeline>
-<codeline lineno="41" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ae7f3b5d1940d153a2bd99515a410059d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ae7f3b5d1940d153a2bd99515a410059d" kindref="member">AVG_CELL_TEMP</ref>,</highlight></codeline>
-<codeline lineno="42" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a4ef281749693cf7082dc226a1ab26974" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a4ef281749693cf7082dc226a1ab26974" kindref="member">ACC_POWER</ref>,</highlight></codeline>
-<codeline lineno="43" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9aef39c43ab7f393dc2bf798232d6af580" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9aef39c43ab7f393dc2bf798232d6af580" kindref="member">ACC_POWER_LIMIT</ref>,</highlight></codeline>
-<codeline lineno="44" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a4aa469f8ff609f64a67cb8f94bbae331" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a4aa469f8ff609f64a67cb8f94bbae331" kindref="member">APPS1_ADC_VAL</ref>,</highlight></codeline>
-<codeline lineno="45" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a649cfa800751dbfadfee50fbb49f8a0c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a649cfa800751dbfadfee50fbb49f8a0c" kindref="member">APPS2_ADC_VAL</ref>,</highlight></codeline>
-<codeline lineno="46" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a217d6550cdad0d3eaff0189d269d8929" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a217d6550cdad0d3eaff0189d269d8929" kindref="member">BPS1_ADC_VAL</ref>,</highlight></codeline>
-<codeline lineno="47" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a75e438f4c4f3e2113352eb85475f8fa7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a75e438f4c4f3e2113352eb85475f8fa7" kindref="member">BPS2_ADC_VAL</ref>,</highlight></codeline>
-<codeline lineno="48" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9addc059db90f422ed0d251cd94a2022cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9addc059db90f422ed0d251cd94a2022cf" kindref="member">ACCELERATOR_PEDAL_RATIO</ref>,</highlight></codeline>
-<codeline lineno="49" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a032b8af77af595ca0945a474d4c10101" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a032b8af77af595ca0945a474d4c10101" kindref="member">BRAKE_PRESSURE_PA</ref>,</highlight></codeline>
-<codeline lineno="50" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a9dd0829e0b91b1c3c07d12aa6dd7effb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a9dd0829e0b91b1c3c07d12aa6dd7effb" kindref="member">POWER_DERATE_FACTOR</ref>,</highlight></codeline>
-<codeline lineno="51" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ad3d7141ef864656b0311087f12528a00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ad3d7141ef864656b0311087f12528a00" kindref="member">CURRENT_DRIVING_MODE</ref>,</highlight></codeline>
-<codeline lineno="52" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ab17c72af1b52d361cceed996a9cbc502" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ab17c72af1b52d361cceed996a9cbc502" kindref="member">MAX_LOGGABLE_PARAMS</ref></highlight></codeline>
-<codeline lineno="53"><highlight class="normal">}<ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9" kindref="member">loggable_params</ref>;</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58" refid="structdaq__param__list__node" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdaq__param__list__node" kindref="compound">daq_param_list_node</ref>{</highlight></codeline>
-<codeline lineno="59" refid="structdaq__param__list__node_1a1213d4ad19f282a2e313f6ffe96584ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structdaq__param__list__node_1a1213d4ad19f282a2e313f6ffe96584ac" kindref="member">param_idx</ref>;</highlight></codeline>
-<codeline lineno="60" refid="structdaq__param__list__node_1aa70718d4adff315eb53a8c00e4b1021a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdaq__param__list__node" kindref="compound">daq_param_list_node</ref>*<sp/><ref refid="structdaq__param__list__node_1aa70718d4adff315eb53a8c00e4b1021a" kindref="member">next</ref>;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal">}<ref refid="daq_8h_1a4a7e5c4a5e65c315010bab902f2268a6" kindref="member">daq_param_list_node</ref>;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66" refid="structdaq__datapoint" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdaq__datapoint" kindref="compound">daq_datapoint</ref>{<sp/></highlight><highlight class="comment">//4<sp/>bytes,<sp/>convenient,<sp/>no?</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67" refid="structdaq__datapoint_1a4980fdb5f68a228a79a55dccc9eb4ea9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structdaq__datapoint_1a4980fdb5f68a228a79a55dccc9eb4ea9" kindref="member">can_id</ref>;<sp/></highlight></codeline>
-<codeline lineno="68" refid="structdaq__datapoint_1a8f1ff0b0cde6cc45079cd85c764b2ebe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structdaq__datapoint_1a8f1ff0b0cde6cc45079cd85c764b2ebe" kindref="member">period</ref>;<sp/></highlight></codeline>
-<codeline lineno="69" refid="structdaq__datapoint_1a44606584203d50acb9b885e45068846b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structdaq__datapoint_1a44606584203d50acb9b885e45068846b" kindref="member">type</ref>;<sp/></highlight></codeline>
-<codeline lineno="70"><highlight class="normal">}<ref refid="daq_8h_1ad3bc3bc1c9ab04b22cc999a6f7c82c40" kindref="member">daq_datapoint</ref>;<sp/></highlight></codeline>
-<codeline lineno="72" refid="structdaq__loop__args" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdaq__loop__args" kindref="compound">daq_loop_args</ref>{</highlight></codeline>
-<codeline lineno="73" refid="structdaq__loop__args_1a8bb73e70ee9f47ffa9916c6067ff3eb5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structdaq__loop__args_1a8bb73e70ee9f47ffa9916c6067ff3eb5" kindref="member">throttle_daq_to_preserve_performance</ref>;<sp/></highlight></codeline>
-<codeline lineno="74" refid="structdaq__loop__args_1a4411f711c3bba9466f3f90c125bc6614" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structdaq__loop__args_1a4411f711c3bba9466f3f90c125bc6614" kindref="member">minimum_daq_period</ref>;<sp/></highlight></codeline>
-<codeline lineno="75" refid="structdaq__loop__args_1a653d8fd8f6c526c6680f2406767bb7ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structdaq__loop__args_1a653d8fd8f6c526c6680f2406767bb7ca" kindref="member">padding</ref>;<sp/></highlight></codeline>
-<codeline lineno="76" refid="structdaq__loop__args_1ad0f351d376aef4c061a6f122a8a46aff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structdaq__loop__args_1ad0f351d376aef4c061a6f122a8a46aff" kindref="member">padding2</ref>;<sp/></highlight></codeline>
-<codeline lineno="77" refid="structdaq__loop__args_1ab4d8dba247b8b415c2a49356ac8a8dbc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structdaq__datapoint" kindref="compound">daq_datapoint</ref><sp/><ref refid="structdaq__loop__args_1ab4d8dba247b8b415c2a49356ac8a8dbc" kindref="member">datapoints</ref>[<ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ab17c72af1b52d361cceed996a9cbc502" kindref="member">MAX_LOGGABLE_PARAMS</ref>];<sp/></highlight></codeline>
-<codeline lineno="78"><highlight class="normal">}<ref refid="daq_8h_1a8895dc742d7ce8449057f317e7f9c81b" kindref="member">daq_loop_args</ref>;</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"></highlight></codeline>
-<codeline lineno="80" refid="structdaq__child__task" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdaq__child__task" kindref="compound">daq_child_task</ref>{</highlight></codeline>
-<codeline lineno="81" refid="structdaq__child__task_1a7d93321aa1c596378aa2d1bad1a2c4dd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structrbnode" kindref="compound">rbnode</ref><sp/><ref refid="structdaq__child__task_1a7d93321aa1c596378aa2d1bad1a2c4dd" kindref="member">treenode</ref>;<sp/></highlight><highlight class="comment">//So<sp/>this<sp/>can<sp/>just<sp/>exist<sp/>in<sp/>a<sp/>tree<sp/>lol</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="82" refid="structdaq__child__task_1aeb649c4b5047ed12107eea04fb68042e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TaskHandle_t<sp/><ref refid="structdaq__child__task_1aeb649c4b5047ed12107eea04fb68042e" kindref="member">meta_task_handle</ref>;</highlight></codeline>
-<codeline lineno="83" refid="structdaq__child__task_1a214b6be30716c32c3ae1856d9f92685c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structdaq__param__list__node" kindref="compound">daq_param_list_node</ref>**<sp/><ref refid="structdaq__child__task_1a214b6be30716c32c3ae1856d9f92685c" kindref="member">param_list</ref>;</highlight></codeline>
-<codeline lineno="84" refid="structdaq__child__task_1ada97dc181bb6a3919f978fb17431d336" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structdaq__child__task_1ada97dc181bb6a3919f978fb17431d336" kindref="member">period</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rb__tree_8h" kindref="compound">rb_tree.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="daq_8h_1a81ace76d60c42037a62eaeb1687a96ce" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_NUM_LOGGABLE_PARAMS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="19" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a2237bba50d7e27353f72b7d26837fee4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a2237bba50d7e27353f72b7d26837fee4" kindref="member">MOTOR_RPM</ref>,</highlight></codeline>
+<codeline lineno="20" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a1b5652598a4eb9009556ed9d79bc3481" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a1b5652598a4eb9009556ed9d79bc3481" kindref="member">MOTOR_TEMP</ref>,</highlight></codeline>
+<codeline lineno="21" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9af753a5d3c1a828a48de12e24724ca9fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9af753a5d3c1a828a48de12e24724ca9fa" kindref="member">MOTOR_CURRENT</ref>,</highlight></codeline>
+<codeline lineno="22" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9aa74badbb2f7ca3577612ade967c76aa0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9aa74badbb2f7ca3577612ade967c76aa0" kindref="member">MC_VOLTAGE</ref>,</highlight></codeline>
+<codeline lineno="23" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ab63fa780a7f16ee35fe9ef429cca5642" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ab63fa780a7f16ee35fe9ef429cca5642" kindref="member">MC_CURRENT</ref>,</highlight></codeline>
+<codeline lineno="24" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9af299eda494c1accd4296669bfce3c874" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9af299eda494c1accd4296669bfce3c874" kindref="member">MC_TEMP</ref>,</highlight></codeline>
+<codeline lineno="25" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a3c3a6d5acba65131b33bf8ee304a535b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a3c3a6d5acba65131b33bf8ee304a535b" kindref="member">MC_ERRORS</ref>,</highlight></codeline>
+<codeline lineno="26" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a0f5f85010ae23f1b49eae8057df620ff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a0f5f85010ae23f1b49eae8057df620ff" kindref="member">BMS_CURRENT</ref>,</highlight></codeline>
+<codeline lineno="27" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a6bdcb863dc969154ade799d6a547510d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a6bdcb863dc969154ade799d6a547510d" kindref="member">BMS_VOLTAGE</ref>,</highlight></codeline>
+<codeline lineno="28" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a7d1c4ad6640f0879f3d74f49fe3d5663" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a7d1c4ad6640f0879f3d74f49fe3d5663" kindref="member">BMS_ERRORS</ref>,</highlight></codeline>
+<codeline lineno="29" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9afe28f8aaa8c772e8fc42b5f47d2898ed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9afe28f8aaa8c772e8fc42b5f47d2898ed" kindref="member">MAX_CELL_TEMP</ref>,</highlight></codeline>
+<codeline lineno="30" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a2834d7adb4c1ad0ac9300d6085d52d3a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a2834d7adb4c1ad0ac9300d6085d52d3a" kindref="member">MIN_CELL_TEMP</ref>,</highlight></codeline>
+<codeline lineno="31" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ae7f3b5d1940d153a2bd99515a410059d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ae7f3b5d1940d153a2bd99515a410059d" kindref="member">AVG_CELL_TEMP</ref>,</highlight></codeline>
+<codeline lineno="32" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a4ef281749693cf7082dc226a1ab26974" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a4ef281749693cf7082dc226a1ab26974" kindref="member">ACC_POWER</ref>,</highlight></codeline>
+<codeline lineno="33" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9aef39c43ab7f393dc2bf798232d6af580" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9aef39c43ab7f393dc2bf798232d6af580" kindref="member">ACC_POWER_LIMIT</ref>,</highlight></codeline>
+<codeline lineno="34" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a4aa469f8ff609f64a67cb8f94bbae331" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a4aa469f8ff609f64a67cb8f94bbae331" kindref="member">APPS1_ADC_VAL</ref>,</highlight></codeline>
+<codeline lineno="35" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a649cfa800751dbfadfee50fbb49f8a0c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a649cfa800751dbfadfee50fbb49f8a0c" kindref="member">APPS2_ADC_VAL</ref>,</highlight></codeline>
+<codeline lineno="36" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a217d6550cdad0d3eaff0189d269d8929" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a217d6550cdad0d3eaff0189d269d8929" kindref="member">BPS1_ADC_VAL</ref>,</highlight></codeline>
+<codeline lineno="37" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a75e438f4c4f3e2113352eb85475f8fa7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a75e438f4c4f3e2113352eb85475f8fa7" kindref="member">BPS2_ADC_VAL</ref>,</highlight></codeline>
+<codeline lineno="38" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9addc059db90f422ed0d251cd94a2022cf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9addc059db90f422ed0d251cd94a2022cf" kindref="member">ACCELERATOR_PEDAL_RATIO</ref>,</highlight></codeline>
+<codeline lineno="39" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a032b8af77af595ca0945a474d4c10101" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a032b8af77af595ca0945a474d4c10101" kindref="member">BRAKE_PRESSURE_PA</ref>,</highlight></codeline>
+<codeline lineno="40" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a9dd0829e0b91b1c3c07d12aa6dd7effb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9a9dd0829e0b91b1c3c07d12aa6dd7effb" kindref="member">POWER_DERATE_FACTOR</ref>,</highlight></codeline>
+<codeline lineno="41" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ad3d7141ef864656b0311087f12528a00" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ad3d7141ef864656b0311087f12528a00" kindref="member">CURRENT_DRIVING_MODE</ref>,</highlight></codeline>
+<codeline lineno="42" refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ab17c72af1b52d361cceed996a9cbc502" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ab17c72af1b52d361cceed996a9cbc502" kindref="member">MAX_LOGGABLE_PARAMS</ref></highlight></codeline>
+<codeline lineno="43"><highlight class="normal">}<ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9" kindref="member">loggable_params</ref>;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="structdaq__param__list__node" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdaq__param__list__node" kindref="compound">daq_param_list_node</ref>{</highlight></codeline>
+<codeline lineno="49" refid="structdaq__param__list__node_1a1213d4ad19f282a2e313f6ffe96584ac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structdaq__param__list__node_1a1213d4ad19f282a2e313f6ffe96584ac" kindref="member">param_idx</ref>;</highlight></codeline>
+<codeline lineno="50" refid="structdaq__param__list__node_1aa70718d4adff315eb53a8c00e4b1021a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdaq__param__list__node" kindref="compound">daq_param_list_node</ref>*<sp/><ref refid="structdaq__param__list__node_1aa70718d4adff315eb53a8c00e4b1021a" kindref="member">next</ref>;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal">}<ref refid="daq_8h_1a4a7e5c4a5e65c315010bab902f2268a6" kindref="member">daq_param_list_node</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="structdaq__datapoint" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdaq__datapoint" kindref="compound">daq_datapoint</ref>{<sp/></highlight><highlight class="comment">//4<sp/>bytes,<sp/>convenient,<sp/>no?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57" refid="structdaq__datapoint_1a4980fdb5f68a228a79a55dccc9eb4ea9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structdaq__datapoint_1a4980fdb5f68a228a79a55dccc9eb4ea9" kindref="member">can_id</ref>;<sp/></highlight></codeline>
+<codeline lineno="58" refid="structdaq__datapoint_1a8f1ff0b0cde6cc45079cd85c764b2ebe" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structdaq__datapoint_1a8f1ff0b0cde6cc45079cd85c764b2ebe" kindref="member">period</ref>;<sp/></highlight></codeline>
+<codeline lineno="59" refid="structdaq__datapoint_1a44606584203d50acb9b885e45068846b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structdaq__datapoint_1a44606584203d50acb9b885e45068846b" kindref="member">type</ref>;<sp/></highlight></codeline>
+<codeline lineno="60"><highlight class="normal">}<ref refid="daq_8h_1ad3bc3bc1c9ab04b22cc999a6f7c82c40" kindref="member">daq_datapoint</ref>;<sp/></highlight></codeline>
+<codeline lineno="62" refid="structdaq__loop__args" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdaq__loop__args" kindref="compound">daq_loop_args</ref>{</highlight></codeline>
+<codeline lineno="63" refid="structdaq__loop__args_1a8bb73e70ee9f47ffa9916c6067ff3eb5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structdaq__loop__args_1a8bb73e70ee9f47ffa9916c6067ff3eb5" kindref="member">throttle_daq_to_preserve_performance</ref>;<sp/></highlight></codeline>
+<codeline lineno="64" refid="structdaq__loop__args_1a4411f711c3bba9466f3f90c125bc6614" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structdaq__loop__args_1a4411f711c3bba9466f3f90c125bc6614" kindref="member">minimum_daq_period</ref>;<sp/></highlight></codeline>
+<codeline lineno="65" refid="structdaq__loop__args_1a653d8fd8f6c526c6680f2406767bb7ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structdaq__loop__args_1a653d8fd8f6c526c6680f2406767bb7ca" kindref="member">padding</ref>;<sp/></highlight></codeline>
+<codeline lineno="66" refid="structdaq__loop__args_1ad0f351d376aef4c061a6f122a8a46aff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structdaq__loop__args_1ad0f351d376aef4c061a6f122a8a46aff" kindref="member">padding2</ref>;<sp/></highlight></codeline>
+<codeline lineno="67" refid="structdaq__loop__args_1ab4d8dba247b8b415c2a49356ac8a8dbc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structdaq__datapoint" kindref="compound">daq_datapoint</ref><sp/><ref refid="structdaq__loop__args_1ab4d8dba247b8b415c2a49356ac8a8dbc" kindref="member">datapoints</ref>[<ref refid="daq_8h_1a5249d5d3ad44df9d4479b814028469a9ab17c72af1b52d361cceed996a9cbc502" kindref="member">MAX_LOGGABLE_PARAMS</ref>];<sp/></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">}<ref refid="daq_8h_1a8895dc742d7ce8449057f317e7f9c81b" kindref="member">daq_loop_args</ref>;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="structdaq__child__task" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structdaq__child__task" kindref="compound">daq_child_task</ref>{</highlight></codeline>
+<codeline lineno="71" refid="structdaq__child__task_1a34966ce1e2f0fbe666f256d98a4378e7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structrbnode" kindref="compound">rbnode</ref><sp/><ref refid="structdaq__child__task_1a34966ce1e2f0fbe666f256d98a4378e7" kindref="member">treenode</ref>;<sp/></highlight><highlight class="comment">//So<sp/>this<sp/>can<sp/>just<sp/>exist<sp/>in<sp/>a<sp/>tree<sp/>lol</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="structdaq__child__task_1aeb649c4b5047ed12107eea04fb68042e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TaskHandle_t<sp/><ref refid="structdaq__child__task_1aeb649c4b5047ed12107eea04fb68042e" kindref="member">meta_task_handle</ref>;</highlight></codeline>
+<codeline lineno="73" refid="structdaq__child__task_1a214b6be30716c32c3ae1856d9f92685c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structdaq__param__list__node" kindref="compound">daq_param_list_node</ref>**<sp/><ref refid="structdaq__child__task_1a214b6be30716c32c3ae1856d9f92685c" kindref="member">param_list</ref>;</highlight></codeline>
+<codeline lineno="74" refid="structdaq__child__task_1ada97dc181bb6a3919f978fb17431d336" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structdaq__child__task_1ada97dc181bb6a3919f978fb17431d336" kindref="member">period</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal">}<ref refid="daq_8h_1a2104fed000d8cb392baf5d14e06193c1" kindref="member">daq_child_task</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_SRC_UVFR_DAQ</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="daq_8h_1a07e7f750fa90de582a1e994dcf9b57d0" kindref="member">param_LUT</ref>[126];</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9e" kindref="member">uv_status_t</ref><sp/><ref refid="daq_8h_1adecae26482eb2c3289131a2a486ac8b3" kindref="member">initDaqTask</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>args);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="daq_8h_1a433bb586ceab47aed8d633fa2ff8ce56" kindref="member">daqMasterTask</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal">}<ref refid="daq_8h_1a2104fed000d8cb392baf5d14e06193c1" kindref="member">daq_child_task</ref>;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight></codeline>
 <codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>_SRC_UVFR_DAQ</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="daq_8h_1a07e7f750fa90de582a1e994dcf9b57d0" kindref="member">param_LUT</ref>[126];</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9e" kindref="member">uv_status_t</ref><sp/><ref refid="daq_8h_1adecae26482eb2c3289131a2a486ac8b3" kindref="member">initDaqTask</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>args);</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="daq_8h_1a433bb586ceab47aed8d633fa2ff8ce56" kindref="member">daqMasterTask</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args);</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INC_DAQ_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INC_DAQ_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="Core/Inc/daq.h"/>
   </compounddef>

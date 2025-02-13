@@ -47,6 +47,12 @@ var uvfr__state__engine_8h =
     [ "uv_task_status", "group__state__engine__api.html#ga82006c09ffd194e360785bb51a39ec3f", null ],
     [ "uv_timespan_ms", "uvfr__state__engine_8h.html#af1ca0b89ee88cdf48a7640d6ec793350", null ],
     [ "uv_vehicle_state", "group__state__engine__api.html#ga140983d0a0ccbfd2d5f2c93183cbe797", null ],
+    [ "os_flag", "group__state__engine__api.html#gae85df48ed635b45630243b13b6e7d890", [
+      [ "UV_OS_LOG_MEM", "group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890a01fe6bc8a712283339b685288b720cca", null ],
+      [ "UV_OS_LOG_TASK_END_TIME", "group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890a06369476715fdc7bedeec037bf3256cf", null ],
+      [ "UV_OS_ATTEMPT_RESTART_NC_TASK", "group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890aad5d44cbab735a2f51cb37bfb71b8bb3", null ],
+      [ "UV_OS_ENABLE_NONCRIT_TASK_THROTTLE", "group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890ab40c36b801f8a9439ca8255b6f740882", null ]
+    ] ],
     [ "task_priority", "group__state__engine__api.html#ga6166ed80f8e3bd62f1e7e6122c8817f6", [
       [ "IDLE_TASK_PRIORITY", "group__state__engine__api.html#gga6166ed80f8e3bd62f1e7e6122c8817f6ae1e0864e3b20ced26bebc93aa0766aec", null ],
       [ "LOW_PRIORITY", "group__state__engine__api.html#gga6166ed80f8e3bd62f1e7e6122c8817f6adb8ee22a232a2787f32ba28da55c43c1", null ],
@@ -103,6 +109,7 @@ var uvfr__state__engine_8h =
     [ "uvStartStateMachine", "group__state__engine__api.html#ga2ad1d74b5783a51355c047be6642fab8", null ],
     [ "uvStartTask", "group__state__engine__backend.html#ga15cdf09b5625c2ba29a6c6d5c96214dc", null ],
     [ "uvSuspendTask", "group__state__engine__backend.html#gafd67eecbab2e6e6915bc6bc71806b715", null ],
+    [ "uvTaskPeriodEnd", "group__state__engine__api.html#ga0e6167ef18c2ec8b65fbe070d0ffb6c9", null ],
     [ "uvValidateManagedTasks", "group__state__engine__backend.html#ga8c1618caac0d7f29836107f1a44833e8", null ],
     [ "vehicle_state", "group__state__engine.html#ga2f58cf65b3566bc390600f877f8bed35", null ]
 ];

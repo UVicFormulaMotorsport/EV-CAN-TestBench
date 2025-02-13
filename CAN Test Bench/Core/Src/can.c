@@ -21,6 +21,14 @@
 #include "can.h"
 
 /* USER CODE BEGIN 0 */
+
+/** @defgroup uvfr_can_api UVFR CANbus API
+ *
+ * @brief This is an api that simplifies usage of CANbus transmitting and receiving.
+
+ */
+
+
 #include "constants.h"
 #include "imd.h"
 #include "motor_controller.h"
@@ -30,6 +38,8 @@
 #include "uvfr_utils.h"
 #include "main.h"
 #include "task.h"
+#include "stdlib.h"
+#include "string.h"
 
 
 #ifndef HAL_CAN_ERROR_INVALID_CALLBACK
@@ -374,11 +384,13 @@ static inline uv_status callFunctionFromCANid(uv_CAN_msg* msg) {
     return UV_WARNING;
 }
 
-/** @brief Function to insert an id and function into the lookup table of callback functions
+/**@ingroup uvfr_can_api
+ * @brief Function to insert an id and function into the lookup table of callback functions
  *
  *  Checks if specific hash id already exists in the hash table
  *  If not, insert the message
- *  If it already exists, malloc a new message and insert it
+ *  If it already exists, check to see if the actual CAN id matches. If yes, then previous entries are overwritten
+ *  If it does not exist, then each node in the hash table functions as it's own linked list
 */
 void insertCANMessageHandler(uint32_t id, void* handlerfunc) {
     unsigned int index = generateHash(id);
@@ -454,10 +466,11 @@ void nuke_hash_table() {
         }
     }
 
-    memset(CAN_callback_table,0,table_size*sizeof(CAN_Callback)); //set the table to all 0s
+    (void)memset(CAN_callback_table,0,table_size*sizeof(CAN_Callback)); //set the table to all 0s
 
 
 }
+
   
 
 uv_status __uvCANtxCritSection(uv_CAN_msg* tx_msg){
@@ -482,13 +495,15 @@ uv_status __uvCANtxCritSection(uv_CAN_msg* tx_msg){
 		/* Transmission request Error */
 		taskEXIT_CRITICAL();
 		uvPanic("Unable to Transmit CAN msg",0);
+		return UV_ERROR;
 	}else{
 		taskEXIT_CRITICAL();
 	}
-
+	return UV_OK;
 }
 
-/** @brief Function to send CAN message.
+/** @ingroup uvfr_can_api
+ * @brief Function to send CAN message.
  *
  * This function is the canonical team method of sending a CAN message.
  * It invokes the canTxDaemon, to avoid any conflicts due to a context switch mid transmission
@@ -497,8 +512,8 @@ uv_status __uvCANtxCritSection(uv_CAN_msg* tx_msg){
  */
 uv_status uvSendCanMSG(uv_CAN_msg* tx_msg){
 
-	static TaskHandle_t can_tx_daemon_handle = NULL;
-	static uv_task_id can_tx_daemon_task_id;
+	//static TaskHandle_t can_tx_daemon_handle = NULL;
+	//static uv_task_id can_tx_daemon_task_id;
 
 
 
@@ -519,8 +534,11 @@ uv_status uvSendCanMSG(uv_CAN_msg* tx_msg){
 		}
 		return UV_ERROR;
 	}else{
-		__uvCANtxCritSection(tx_msg);
+		if(__uvCANtxCritSection(tx_msg)!=UV_OK){
+			return UV_ERROR;
+		}
 	}
+	return UV_OK;
 }
 
 /** @brief Background task that handles any CAN messages that are being sent
@@ -591,6 +609,12 @@ void CANbusTxSvcDaemon(void* args){
 
 }
 
+
+/** @brief Background task that executes the CAN message callback functions
+ *
+ * Basically just snoops through the hash table
+ *
+ */
 void CANbusRxSvcDaemon(void* args){
 	uv_task_info* params = (uv_task_info*) args;
 

@@ -16,14 +16,19 @@ var group__state__engine__api =
       [ "max_svc_task_period", "structuv__os__settings.html#aa3243a98dc9bbf056730f2d11d400b33", null ],
       [ "max_task_period", "structuv__os__settings.html#a5e08f89b0999d4dedf5807a883ba4967", null ],
       [ "min_task_period", "structuv__os__settings.html#a8b497ca2b38e124db326cf634a87c4b1", null ],
+      [ "os_flags", "structuv__os__settings.html#a76c6055b26d876a01f6baac6d766e6ae", null ],
       [ "svc_task_manager_period", "structuv__os__settings.html#a82068c14ee06131f3184d99fd2c1fae0", null ],
-      [ "task_manager_period", "structuv__os__settings.html#aa5163b7118ccafabb452052d2b8e7c5a", null ]
+      [ "task_manager_period", "structuv__os__settings.html#aa5163b7118ccafabb452052d2b8e7c5a", null ],
+      [ "task_overshoot_margin_crit", "structuv__os__settings.html#a49ce23050cb8eb64a0ad2c8eb59b9285", null ],
+      [ "task_overshoot_margin_noncrit", "structuv__os__settings.html#abf5ff4b1c146e13bb9c39f95d3e59ce3", null ],
+      [ "task_throttle_increment", "structuv__os__settings.html#a3eff117bf9dada61242e5778d1be6299", null ]
     ] ],
     [ "uv_task_info", "structuv__task__info.html", [
       [ "active_states", "structuv__task__info.html#ab24dea3bde4de2d839bf15e65c2df0d6", null ],
       [ "cmd_data", "structuv__task__info.html#af532b5031cd6a168a3ec45ab9ead4f23", null ],
       [ "deletion_delay", "structuv__task__info.html#afcb925c40c57baa41710b162982263a7", null ],
       [ "deletion_states", "structuv__task__info.html#a6986d7216c7f889164931b37ab752c29", null ],
+      [ "last_execution_time", "structuv__task__info.html#a569da5121095d94816ad0985a5d9ddf0", null ],
       [ "parent", "structuv__task__info.html#a5d32fc8f47b905499257336c561d189b", null ],
       [ "stack_size", "structuv__task__info.html#a353ec6bf2c42ab0920f3d1e671e568a3", null ],
       [ "suspension_states", "structuv__task__info.html#aafd4e2d916f50b54b99fd02d63831e43", null ],
@@ -37,6 +42,7 @@ var group__state__engine__api =
       [ "task_priority", "structuv__task__info.html#aff45751f7189980589d55379d1d5a355", null ],
       [ "task_rx_mailbox", "structuv__task__info.html#a659db1ee8d4c40a902a6f159725a3211", null ],
       [ "task_state", "structuv__task__info.html#a43e5b3136b38dde4272aa510c5349ba3", null ],
+      [ "throttle_factor", "structuv__task__info.html#a9f578e50e9676b8a2817c705db1b12ca", null ],
       [ "tmi", "structuv__task__info.html#ab0a6666d8589de0cbc508cc8b12c0945", null ]
     ] ],
     [ "UV_TASK_AWAITING_DELETION", "group__state__engine__api.html#ga0ce66ea8b0c49749cc05a3ba06b2df75", null ],
@@ -76,6 +82,12 @@ var group__state__engine__api =
     [ "uv_task_info", "group__state__engine__api.html#gaebe69bead1b7c3a1371ffe610708e0ef", null ],
     [ "uv_task_status", "group__state__engine__api.html#ga82006c09ffd194e360785bb51a39ec3f", null ],
     [ "uv_vehicle_state", "group__state__engine__api.html#ga140983d0a0ccbfd2d5f2c93183cbe797", null ],
+    [ "os_flag", "group__state__engine__api.html#gae85df48ed635b45630243b13b6e7d890", [
+      [ "UV_OS_LOG_MEM", "group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890a01fe6bc8a712283339b685288b720cca", null ],
+      [ "UV_OS_LOG_TASK_END_TIME", "group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890a06369476715fdc7bedeec037bf3256cf", null ],
+      [ "UV_OS_ATTEMPT_RESTART_NC_TASK", "group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890aad5d44cbab735a2f51cb37bfb71b8bb3", null ],
+      [ "UV_OS_ENABLE_NONCRIT_TASK_THROTTLE", "group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890ab40c36b801f8a9439ca8255b6f740882", null ]
+    ] ],
     [ "task_priority", "group__state__engine__api.html#ga6166ed80f8e3bd62f1e7e6122c8817f6", [
       [ "IDLE_TASK_PRIORITY", "group__state__engine__api.html#gga6166ed80f8e3bd62f1e7e6122c8817f6ae1e0864e3b20ced26bebc93aa0766aec", null ],
       [ "LOW_PRIORITY", "group__state__engine__api.html#gga6166ed80f8e3bd62f1e7e6122c8817f6adb8ee22a232a2787f32ba28da55c43c1", null ],
@@ -119,5 +131,6 @@ var group__state__engine__api =
     [ "uvCreateTask", "group__state__engine__api.html#ga99bfc92472cdc99e9005e9d3c792909a", null ],
     [ "uvDeInitStateEngine", "group__state__engine__api.html#ga5cb739823b10b90a139315356aa6b22f", null ],
     [ "uvInitStateEngine", "group__state__engine__api.html#ga5c608f3832c45eac6e2da198d4ef1ba0", null ],
-    [ "uvStartStateMachine", "group__state__engine__api.html#ga2ad1d74b5783a51355c047be6642fab8", null ]
+    [ "uvStartStateMachine", "group__state__engine__api.html#ga2ad1d74b5783a51355c047be6642fab8", null ],
+    [ "uvTaskPeriodEnd", "group__state__engine__api.html#ga0e6167ef18c2ec8b65fbe070d0ffb6c9", null ]
 ];

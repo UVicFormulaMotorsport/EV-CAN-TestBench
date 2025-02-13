@@ -162,10 +162,18 @@ enum \mbox{\hyperlink{group__state__engine__api_ga6166ed80f8e3bd62f1e7e6122c8817
 \mbox{\hyperlink{group__state__engine__api_gga6166ed80f8e3bd62f1e7e6122c8817f6acb1785f11dd02aa7f5d164fb314c594e}{H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}, 
 \mbox{\hyperlink{group__state__engine__api_gga6166ed80f8e3bd62f1e7e6122c8817f6aa20ceda9447596a05151a4a66db46a92}{R\+E\+A\+L\+T\+I\+M\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
  \}
-\begin{DoxyCompactList}\small\item\em Priority of a managed task. Maps directly to OS priority. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Priority of a managed task. Maps directly to OS priority. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__state__engine__api_gae85df48ed635b45630243b13b6e7d890}{os\+\_\+flag}} \{ \mbox{\hyperlink{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890a01fe6bc8a712283339b685288b720cca}{U\+V\+\_\+\+O\+S\+\_\+\+L\+O\+G\+\_\+\+M\+EM}} = 0x01, 
+\mbox{\hyperlink{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890a06369476715fdc7bedeec037bf3256cf}{U\+V\+\_\+\+O\+S\+\_\+\+L\+O\+G\+\_\+\+T\+A\+S\+K\+\_\+\+E\+N\+D\+\_\+\+T\+I\+ME}} = 0x02, 
+\mbox{\hyperlink{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890aad5d44cbab735a2f51cb37bfb71b8bb3}{U\+V\+\_\+\+O\+S\+\_\+\+A\+T\+T\+E\+M\+P\+T\+\_\+\+R\+E\+S\+T\+A\+R\+T\+\_\+\+N\+C\+\_\+\+T\+A\+SK}} = 0x04, 
+\mbox{\hyperlink{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890ab40c36b801f8a9439ca8255b6f740882}{U\+V\+\_\+\+O\+S\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+N\+C\+R\+I\+T\+\_\+\+T\+A\+S\+K\+\_\+\+T\+H\+R\+O\+T\+T\+LE}} = 0x08
+ \}
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{group__state__engine__api_ga0e6167ef18c2ec8b65fbe070d0ffb6c9}{uv\+Task\+Period\+End}} (\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em Function called at the end of the task period. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$ \mbox{\hyperlink{group__state__engine__api_ga99bfc92472cdc99e9005e9d3c792909a}{uv\+Create\+Task}} ()
 \begin{DoxyCompactList}\small\item\em This function gets called when you want to create a task, and register it with the task register. Theres some gnarlyness here, but not unacceptable levels. Pray this thing doesn\textquotesingle{}t hang itself. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$ \mbox{\hyperlink{group__state__engine__backend_ga20334b4aff0cfdab7be1d2864089c5ce}{uv\+Create\+Service\+Task}} ()

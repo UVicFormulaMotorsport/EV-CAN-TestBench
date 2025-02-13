@@ -2,6 +2,8 @@ var motor__controller_8h =
 [
     [ "motor_controllor_settings", "structmotor__controllor__settings.html", "structmotor__controllor__settings" ],
     [ "DEFAULT_MOTOR_CONTROLLER_CAN_TIMEOUT", "motor__controller_8h.html#acc0df233686dd4cf6256fcab0473860e", null ],
+    [ "FIRMWARE_VERSION_REGISTER", "motor__controller_8h.html#a829d1af845327949015b4e83bb6fc43d", null ],
+    [ "SERIAL_NUMBER_REGISTER", "motor__controller_8h.html#aab8c03dc3480e25a7a75b60edbf51cb3", null ],
     [ "motor_controller_settings", "motor__controller_8h.html#ac9389d71d481a5381fe1d1e23b1e4ecc", null ],
     [ "motor_controller_current_parameters", "motor__controller_8h.html#aefe525453e2d5fb5ff19de9f98247c7c", [
       [ "todo1", "motor__controller_8h.html#aefe525453e2d5fb5ff19de9f98247c7cafa32268e686878b8024c674367c01767", null ]
@@ -108,13 +110,5 @@ var motor__controller_8h =
       [ "temp_sensor_pt3", "motor__controller_8h.html#af56dfdd222f09bea78ac88fdf4ecf645a4518ebfdfdcbae7be91b9b41b99ad2a4", null ],
       [ "temp_sensor_pt4", "motor__controller_8h.html#af56dfdd222f09bea78ac88fdf4ecf645a19e537ab9271f8ef8d455f7b3dd85a94", null ]
     ] ],
-    [ "MC_Check_Error_Warning", "motor__controller_8h.html#a40bf1b849ad7443bbe8af342006bb3cd", null ],
-    [ "MC_Check_Firmware", "motor__controller_8h.html#a877a1b68c89c7eeecc3ed294e5dc8a73", null ],
-    [ "MC_Check_Serial_Number", "motor__controller_8h.html#af34e05da8add9233de12150656dad092", null ],
-    [ "MC_Parse_Message", "motor__controller_8h.html#afa93c7b7fa3dc12bd6bf860c54c564ee", null ],
-    [ "MC_Request_Data", "motor__controller_8h.html#af6b3a4911f1bdac54d84b4dcc7b7ec4a", null ],
-    [ "MC_Send_Data", "motor__controller_8h.html#af2e573366a03a695a8ba760440848206", null ],
-    [ "MC_Speed_Control", "motor__controller_8h.html#a2e1d07308c1e5e2ed72857a078b73cdf", null ],
-    [ "MC_Startup", "motor__controller_8h.html#aed1407e1e0fd59dc7c5e5d6db671f0ab", null ],
-    [ "MC_Torque_Control", "motor__controller_8h.html#aa7294768824898480b6bcf6e98daa926", null ]
+    [ "MC_Startup", "motor__controller_8h.html#aed1407e1e0fd59dc7c5e5d6db671f0ab", null ]
 ];

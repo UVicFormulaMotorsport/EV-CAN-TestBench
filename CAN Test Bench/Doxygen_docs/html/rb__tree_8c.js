@@ -6,7 +6,7 @@ var rb__tree_8c =
     [ "destroyAllNodes", "rb__tree_8c.html#a0c6878a92eb6e665e3bc9849053e1d5a", null ],
     [ "insertRepair", "rb__tree_8c.html#ab13cb365d1f3498f2061dbc67b0b64f3", null ],
     [ "print", "rb__tree_8c.html#a99da652ba3b85adc7824b99a076187b6", null ],
-    [ "rb_apply", "rb__tree_8c.html#a8f5e3435c81ea99e99f6ebaf786f03c1", null ],
+    [ "rbApplyNode", "rb__tree_8c.html#a659f2a6354fea183df8cfbfba2801484", null ],
     [ "rbCheckBlackHeight", "rb__tree_8c.html#aa02803c2713094e61fa50807fa7a5116", null ],
     [ "rbCheckOrder", "rb__tree_8c.html#a0eb9842e366817eb18eac0e319fb04db", null ],
     [ "rbCreate", "rb__tree_8c.html#ae0e30dc26796a50c51186dc2279a3c4b", null ],

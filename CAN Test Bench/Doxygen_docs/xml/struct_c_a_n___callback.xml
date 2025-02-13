@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="struct_c_a_n___callback" kind="struct" language="C++" prot="public">
+    <compoundname>CAN_Callback</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="struct_c_a_n___callback_1a2dbb9c56fe79ad5ce0165d7300b62ff5" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t CAN_Callback::CAN_id</definition>
+        <argsstring></argsstring>
+        <name>CAN_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="57" column="14" bodyfile="Core/Src/can.c" bodystart="57" bodyend="-1"/>
+        <referencedby refid="can_8c_1aa5d470f815f2c11378233e0f3ca9ed8b" compoundref="can_8c" startline="368" endline="385">callFunctionFromCANid</referencedby>
+        <referencedby refid="group__uvfr__can__api_1ga81adc4a577110ce8fe1158b0dc302cc2" compoundref="can_8c" startline="395" endline="447">insertCANMessageHandler</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_a_n___callback_1aaf6c1d8dd4ecbcac59008b8b5c7cbbaa" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* CAN_Callback::function</definition>
+        <argsstring></argsstring>
+        <name>function</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="58" column="10" bodyfile="Core/Src/can.c" bodystart="58" bodyend="-1"/>
+        <referencedby refid="can_8c_1aa5d470f815f2c11378233e0f3ca9ed8b" compoundref="can_8c" startline="368" endline="385">callFunctionFromCANid</referencedby>
+        <referencedby refid="group__uvfr__can__api_1ga81adc4a577110ce8fe1158b0dc302cc2" compoundref="can_8c" startline="395" endline="447">insertCANMessageHandler</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="struct_c_a_n___callback_1ace8db41695ac99095f81f37c97056076" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="struct_c_a_n___callback" kindref="compound">CAN_Callback</ref> *</type>
+        <definition>struct CAN_Callback* CAN_Callback::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="59" column="24" bodyfile="Core/Src/can.c" bodystart="59" bodyend="-1"/>
+        <referencedby refid="can_8c_1aa5d470f815f2c11378233e0f3ca9ed8b" compoundref="can_8c" startline="368" endline="385">callFunctionFromCANid</referencedby>
+        <referencedby refid="group__uvfr__can__api_1ga81adc4a577110ce8fe1158b0dc302cc2" compoundref="can_8c" startline="395" endline="447">insertCANMessageHandler</referencedby>
+        <referencedby refid="can_8c_1acadda9ab3aa926b92a84e3f192c66547" compoundref="can_8c" startline="453" endline="472">nuke_hash_table</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>CAN_Callback</label>
+        <link refid="struct_c_a_n___callback"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Core/Src/can.c" line="56" column="27" bodyfile="Core/Src/can.c" bodystart="56" bodyend="60"/>
+    <listofallmembers>
+      <member refid="struct_c_a_n___callback_1a2dbb9c56fe79ad5ce0165d7300b62ff5" prot="public" virt="non-virtual"><scope>CAN_Callback</scope><name>CAN_id</name></member>
+      <member refid="struct_c_a_n___callback_1aaf6c1d8dd4ecbcac59008b8b5c7cbbaa" prot="public" virt="non-virtual"><scope>CAN_Callback</scope><name>function</name></member>
+      <member refid="struct_c_a_n___callback_1ace8db41695ac99095f81f37c97056076" prot="public" virt="non-virtual"><scope>CAN_Callback</scope><name>next</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

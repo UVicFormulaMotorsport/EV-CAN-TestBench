@@ -107,6 +107,9 @@ void StartDrivingLoop(void * argument){
 
 
 		if(params->cmd_data == UV_KILL_CMD){
+
+
+
 			killSelf(params);
 		}else if(params->cmd_data == UV_SUSPEND_CMD){
 			suspendSelf(params);
