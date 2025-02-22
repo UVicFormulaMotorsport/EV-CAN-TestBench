@@ -22,6 +22,27 @@ extern uint16_t adc1_APPS2;
 extern uint16_t adc1_BPS1;
 extern uint16_t adc1_BPS2;
 
+
+
+ // RACHAN
+
+// Constants
+// #define RPM_MIN # // set appropriate min RPM
+// #define RPM_MAX # // set appropriate max RPM
+// #define T_MAX 200      // Maximum Torque (Example Value) (Nm)
+// #define FILTER_K 0.1   // Filtering factor (Adjust based on response needs)
+
+
+// FUNCTION PROTOTYPES
+//static float volt_to_percent(float voltage);
+//static float calcualteThrottlePercentage(uint16_t apps1, unit16_t app2);
+//static float mapThrottleToTorque(float throttle_percent);
+//static float applyTorqueFilter(float T_req, float T_prev);
+//static void sendTorqueToMotorController(float T_filtered);
+
+
+
+
 enum uv_status_t initDrivingLoop(void *argument){
 	uv_task_info* dl_task = uvCreateTask(); // allocate memory for the task
 
@@ -56,7 +77,9 @@ enum uv_status_t initDrivingLoop(void *argument){
 	dl_task->task_args = NULL; //TODO: Add actual settings dipshit
 
 	return UV_OK; //
+
 }
+
 
 /**@brief  Function implementing the ledTask thread.
  * @param  argument: Not used for now. Will have configuration settings later.
@@ -106,7 +129,19 @@ void StartDrivingLoop(void * argument){
 	TickType_t tick_period = pdMS_TO_TICKS(params->task_period); //Convert ms of period to the RTOS ticks
 	TickType_t last_time = xTaskGetTickCount();
 	/**@endcode */
-	for(;;){ // enters infinite loop
+
+
+	// Rachan ATTEMPT:
+	// Local variables to store computed values
+	//float throttle_percent = 0.0f; // Throttle percentage
+	//float T_req = 0.0f; // requested torque
+	//float T_filtered = 0.0f; //Filtered Torque (smoothed output)
+
+	// Define task timing (executes every 100ms);
+	//TickType_t tick_period = pdMS_TO_TICKS(100);
+	//TickType_t last_time = xTaskGetTickCount();
+
+	for(;;){ // enters infinite loop for the driving loop task
 
 
 		if(params->cmd_data == UV_KILL_CMD){ // to perform task control (suspend/kill)
@@ -130,6 +165,13 @@ void StartDrivingLoop(void * argument){
 		// SAFETY CHECKS
 
 		// APPS1/APPS2 CHECK (Throttle Position Sensors)
+
+		// RACHAN SAFETY CHECK APPLICATION:
+		// if (adc1_APPS1 < RPM_MIN || adc1_APPS1 > RPM_MAX) continue;
+        // if (adc1_APPS2 < RPM_MIN || adc1_APPS2 > RPM_MAX) continue;
+
+		// i would put these into funciton calls : rachan
+
 
 		//Perform input validation and ensures values are within the expected range
 		if(apps1_value < dl_params->min_apps_value){
@@ -171,6 +213,8 @@ void StartDrivingLoop(void * argument){
 
 		}
 
+
+
 		//Brake Plausibility Check
 
 		/** Brake Plausibility Check
@@ -211,6 +255,26 @@ void StartDrivingLoop(void * argument){
 		//Set loose the ADC, and have it DMA the result into the variables
 
 
+		// Rachan:
+		// Step 1: Convert APPS sensor values to Throttle Percentage
+		// throttle_percent = calculateThrottlePercentage(adc1_APPS1, adc2_APPS2);
+
+
+		// Step 2: Convert Throttle % to Torque Request
+		// T_req = mapThrottleToTorque(throttle_percent);
+
+		// Step 3: Apply Filtering to Smooth Torque Output
+		// T_filtered = applyTorqueFilter(T_req, T_filtered);
+
+		// Step 4: Send Filtered Torque to Motor Controller
+		// sendTorqueToMotorController(T_filtered);
+
+		// Debugging: Print throttle and torque values (if needed)
+		// printf("Throttle: %.2f%%, Torque: %.2f Nm\n", throttle_percent, T_filtered);
+
+
+		// Wait for the next loop cycle (ensures a consistent 100ms execution interval)
+		//vTaskDelayUntil(&last_time, tick_period);
 
 
 		//Wait until next D.L. occurance
@@ -218,5 +282,87 @@ void StartDrivingLoop(void * argument){
 	}
 
 }
+
+
+
+
+/**
+ * @brief Converts APPS sensor readings into a throttle percentage
+ *
+ * @param apps1: Raw voltage value from APPS1 sensor
+ * @param apps2: Raw voltage value from APPS2 sensor
+ *
+ *
+ * @return Throttle percentage (0% to 100%).
+
+static float calculateThrottlePercentage(uint16_t apps1, uint16_t apps2) {
+    // Ensure both sensor values are within the valid range
+    if (apps1 < RPM_MIN || apps1 > RPM_MAX || apps2 < RPM_MIN || apps2 > RPM_MAX) return 0.0f;
+
+    // Compute throttle percentage using linear interpolation
+    float throttle_percent = ((float)(apps1 - RPM_MIN) / (RPM_MAX - RPM_MIN)) * 100.0f;
+
+    // SAFETY CHECK: Verify APPS1 and APPS2 values are within 10% of each other
+    float apps_diff = ((float)apps1 - (float)apps2) / (float)apps1;
+    if (apps_diff > 0.1f) {
+        // Sensors are out of sync, return 0% to prevent errors
+        return 0.0f;
+    }
+
+    return throttle_percent;
+}
+*/
+
+
+
+
+/**
+ * @brief  Maps Throttle Percentage to Torque Request.
+ *
+ * @param  throttle_percent: Throttle percentage (0% - 100%).
+ *
+ * @return Requested torque in Nm.
+
+static float mapThrottleToTorque(float throttle_percent) {
+    return (throttle_percent / 100.0f) * T_MAX;
+}
+*/
+
+
+
+
+
+/**
+ * @brief  Applies filtering to smooth torque transitions.
+ *
+ * @param  T_req: Requested torque before filtering.
+ * @param  T_prev: Previous filtered torque value.
+ *
+ * @return Smoothed torque value.
+
+static float applyTorqueFilter(float T_req, float T_prev) {
+    // Filtering formula: T_filtered = T_prev + (T_req - T_prev) * k
+    return T_prev + (T_req - T_prev) * FILTER_K;
+}
+*/
+
+
+
+
+
+
+/**
+ * @brief  Sends the filtered torque value to the motor controller.
+ *
+ * @param  T_filtered: Final torque value after filtering.
+
+static void sendTorqueToMotorController(float T_filtered) {
+    // Placeholder function to send torque command to motor controller
+    motor_controller_set_torque(T_filtered);
+}
+*/
+
+
+
 
 
