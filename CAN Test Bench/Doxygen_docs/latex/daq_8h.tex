@@ -1,6 +1,7 @@
 \hypertarget{daq_8h}{}\doxysection{Core/\+Inc/daq.h File Reference}
 \label{daq_8h}\index{Core/Inc/daq.h@{Core/Inc/daq.h}}
 {\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rb\+\_\+tree.\+h\char`\"{}}\newline
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,20 +31,6 @@ typedef struct \mbox{\hyperlink{structdaq__child__task}{daq\+\_\+child\+\_\+task
 \end{DoxyCompactItemize}
 \doxysubsection*{Enumerations}
 \begin{DoxyCompactItemize}
-\item 
-enum \mbox{\hyperlink{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14}{data\+\_\+type}} \{ \newline
-\mbox{\hyperlink{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d}{U\+V\+\_\+\+U\+I\+N\+T8}}, 
-\mbox{\hyperlink{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318}{U\+V\+\_\+\+I\+N\+T8}}, 
-\mbox{\hyperlink{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0}{U\+V\+\_\+\+U\+I\+N\+T16}}, 
-\mbox{\hyperlink{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787}{U\+V\+\_\+\+I\+N\+T16}}, 
-\newline
-\mbox{\hyperlink{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0}{U\+V\+\_\+\+U\+I\+N\+T32}}, 
-\mbox{\hyperlink{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc}{U\+V\+\_\+\+I\+N\+T32}}, 
-\mbox{\hyperlink{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9}{U\+V\+\_\+\+F\+L\+O\+AT}}, 
-\mbox{\hyperlink{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038}{U\+V\+\_\+\+D\+O\+U\+B\+LE}}, 
-\newline
-\mbox{\hyperlink{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de}{U\+V\+\_\+\+S\+T\+R\+I\+NG}}
- \}
 \item 
 enum \mbox{\hyperlink{daq_8h_a5249d5d3ad44df9d4479b814028469a9}{loggable\+\_\+params}} \{ \newline
 \mbox{\hyperlink{daq_8h_a5249d5d3ad44df9d4479b814028469a9a2237bba50d7e27353f72b7d26837fee4}{M\+O\+T\+O\+R\+\_\+\+R\+PM}}, 
@@ -100,7 +87,7 @@ void $\ast$ \mbox{\hyperlink{daq_8h_a07e7f750fa90de582a1e994dcf9b57d0}{param\+\_
 
 
 
-Definition at line 13 of file daq.\+h.
+Definition at line 14 of file daq.\+h.
 
 
 
@@ -136,54 +123,6 @@ This struct holds info of what needs to be logged.
 
 
 \doxysubsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14}\label{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14}} 
-\index{daq.h@{daq.h}!data\_type@{data\_type}}
-\index{data\_type@{data\_type}!daq.h@{daq.h}}
-\doxysubsubsection{\texorpdfstring{data\_type}{data\_type}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14}{data\+\_\+type}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_UINT8@{UV\_UINT8}!daq.h@{daq.h}}\index{daq.h@{daq.h}!UV\_UINT8@{UV\_UINT8}}}\mbox{\Hypertarget{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d}\label{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d}} 
-U\+V\+\_\+\+U\+I\+N\+T8&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_INT8@{UV\_INT8}!daq.h@{daq.h}}\index{daq.h@{daq.h}!UV\_INT8@{UV\_INT8}}}\mbox{\Hypertarget{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318}\label{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318}} 
-U\+V\+\_\+\+I\+N\+T8&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_UINT16@{UV\_UINT16}!daq.h@{daq.h}}\index{daq.h@{daq.h}!UV\_UINT16@{UV\_UINT16}}}\mbox{\Hypertarget{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0}\label{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0}} 
-U\+V\+\_\+\+U\+I\+N\+T16&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_INT16@{UV\_INT16}!daq.h@{daq.h}}\index{daq.h@{daq.h}!UV\_INT16@{UV\_INT16}}}\mbox{\Hypertarget{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787}\label{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787}} 
-U\+V\+\_\+\+I\+N\+T16&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_UINT32@{UV\_UINT32}!daq.h@{daq.h}}\index{daq.h@{daq.h}!UV\_UINT32@{UV\_UINT32}}}\mbox{\Hypertarget{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0}\label{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0}} 
-U\+V\+\_\+\+U\+I\+N\+T32&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_INT32@{UV\_INT32}!daq.h@{daq.h}}\index{daq.h@{daq.h}!UV\_INT32@{UV\_INT32}}}\mbox{\Hypertarget{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc}\label{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc}} 
-U\+V\+\_\+\+I\+N\+T32&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_FLOAT@{UV\_FLOAT}!daq.h@{daq.h}}\index{daq.h@{daq.h}!UV\_FLOAT@{UV\_FLOAT}}}\mbox{\Hypertarget{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9}\label{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9}} 
-U\+V\+\_\+\+F\+L\+O\+AT&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_DOUBLE@{UV\_DOUBLE}!daq.h@{daq.h}}\index{daq.h@{daq.h}!UV\_DOUBLE@{UV\_DOUBLE}}}\mbox{\Hypertarget{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038}\label{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038}} 
-U\+V\+\_\+\+D\+O\+U\+B\+LE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_STRING@{UV\_STRING}!daq.h@{daq.h}}\index{daq.h@{daq.h}!UV\_STRING@{UV\_STRING}}}\mbox{\Hypertarget{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de}\label{daq_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de}} 
-U\+V\+\_\+\+S\+T\+R\+I\+NG&\\
-\hline
-
-\end{DoxyEnumFields}
-
-
-Definition at line 15 of file daq.\+h.
-
 \mbox{\Hypertarget{daq_8h_a5249d5d3ad44df9d4479b814028469a9}\label{daq_8h_a5249d5d3ad44df9d4479b814028469a9}} 
 \index{daq.h@{daq.h}!loggable\_params@{loggable\_params}}
 \index{loggable\_params@{loggable\_params}!daq.h@{daq.h}}
@@ -290,7 +229,7 @@ M\+A\+X\+\_\+\+L\+O\+G\+G\+A\+B\+L\+E\+\_\+\+P\+A\+R\+A\+MS&\\
 \end{DoxyEnumFields}
 
 
-Definition at line 28 of file daq.\+h.
+Definition at line 18 of file daq.\+h.
 
 
 

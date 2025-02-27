@@ -118,11 +118,11 @@
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
         <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
@@ -152,7 +152,7 @@
       <node id="16">
         <label>message_buffer.h</label>
       </node>
-      <node id="21">
+      <node id="22">
         <label>bms.h</label>
         <link refid="bms_8h"/>
         <childnode refid="1" relation="include">
@@ -195,13 +195,15 @@
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
       </node>
       <node id="20">
         <label>daq.h</label>
         <link refid="daq_8h"/>
         <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="12">
@@ -210,7 +212,7 @@
         <childnode refid="1" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="21">
         <label>rb_tree.h</label>
         <link refid="rb__tree_8h"/>
       </node>
@@ -236,7 +238,7 @@
         <label>FreeRTOSConfig.h</label>
         <link refid="_free_r_t_o_s_config_8h"/>
       </node>
-      <node id="22">
+      <node id="23">
         <label>uvfr_state_engine.h</label>
         <link refid="uvfr__state__engine_8h"/>
         <childnode refid="4" relation="include">
@@ -273,7 +275,7 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="34">
+      <node id="35">
         <label>Core/Inc/tim.h</label>
         <link refid="tim_8h"/>
         <childnode refid="3" relation="include">
@@ -282,10 +284,10 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="35" relation="include">
+        <childnode refid="36" relation="include">
         </childnode>
       </node>
-      <node id="41">
+      <node id="42">
         <label>Core/Inc/imd.h</label>
         <link refid="imd_8h"/>
         <childnode refid="3" relation="include">
@@ -301,7 +303,7 @@
         <label>Core/Src/daq.c</label>
         <link refid="daq_8c"/>
       </node>
-      <node id="40">
+      <node id="41">
         <label>Core/Inc/dash.h</label>
         <link refid="dash_8h"/>
         <childnode refid="3" relation="include">
@@ -339,7 +341,7 @@
         <label>Core/Src/dash.c</label>
         <link refid="dash_8c"/>
       </node>
-      <node id="35">
+      <node id="36">
         <label>Core/Src/tim.c</label>
         <link refid="tim_8c"/>
       </node>
@@ -360,12 +362,12 @@
         <link refid="adc_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="31" relation="include">
+        <childnode refid="32" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
       </node>
-      <node id="44">
+      <node id="45">
         <label>Core/Src/stm32f4xx_hal_msp.c</label>
         <link refid="stm32f4xx__hal__msp_8c"/>
       </node>
@@ -418,6 +420,8 @@
         </childnode>
         <childnode refid="30" relation="include">
         </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
       </node>
       <node id="25">
         <label>Core/Src/odometer.c</label>
@@ -457,17 +461,17 @@
         <label>Core/Src/driving_loop.c</label>
         <link refid="driving__loop_8c"/>
       </node>
-      <node id="38">
+      <node id="39">
         <label>Core/Inc/spi.h</label>
         <link refid="spi_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="39" relation="include">
+        <childnode refid="40" relation="include">
         </childnode>
       </node>
-      <node id="42">
+      <node id="43">
         <label>Core/Inc/pdu.h</label>
         <link refid="pdu_8h"/>
         <childnode refid="3" relation="include">
@@ -485,7 +489,7 @@
         <childnode refid="12" relation="include">
         </childnode>
       </node>
-      <node id="37">
+      <node id="38">
         <label>Core/Src/gpio.c</label>
         <link refid="gpio_8c"/>
       </node>
@@ -519,13 +523,17 @@
         <label>Core/Src/rb_tree.c</label>
         <link refid="rb__tree_8c"/>
       </node>
-      <node id="33">
+      <node id="34">
         <label>Core/Src/dma.c</label>
         <link refid="dma_8c"/>
       </node>
       <node id="27">
         <label>Core/Src/temp_monitoring.c</label>
         <link refid="temp__monitoring_8c"/>
+      </node>
+      <node id="31">
+        <label>Core/Src/uvfr_vehicle_commands.c</label>
+        <link refid="uvfr__vehicle__commands_8c"/>
       </node>
       <node id="16">
         <label>Core/Inc/daq.h</label>
@@ -537,12 +545,12 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="36">
+      <node id="37">
         <label>Core/Inc/gpio.h</label>
         <link refid="gpio_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="37" relation="include">
+        <childnode refid="38" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
@@ -553,11 +561,11 @@
         <label>Core/Src/uvfr_utils.c</label>
         <link refid="uvfr__utils_8c"/>
       </node>
-      <node id="39">
+      <node id="40">
         <label>Core/Src/spi.c</label>
         <link refid="spi_8c"/>
       </node>
-      <node id="43">
+      <node id="44">
         <label>Core/Src/constants.c</label>
         <link refid="constants_8c"/>
       </node>
@@ -587,7 +595,7 @@
         <childnode refid="12" relation="include">
         </childnode>
       </node>
-      <node id="45">
+      <node id="46">
         <label>Core/Src/stm32f4xx_it.c</label>
         <link refid="stm32f4xx__it_8c"/>
       </node>
@@ -609,7 +617,7 @@
         <label>Core/Src/oled.c</label>
         <link refid="oled_8c"/>
       </node>
-      <node id="31">
+      <node id="32">
         <label>Core/Src/adc.c</label>
         <link refid="adc_8c"/>
       </node>
@@ -617,12 +625,12 @@
         <label>Core/Src/main.c</label>
         <link refid="main_8c"/>
       </node>
-      <node id="32">
+      <node id="33">
         <label>Core/Inc/dma.h</label>
         <link refid="dma_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="33" relation="include">
+        <childnode refid="34" relation="include">
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
@@ -636,13 +644,13 @@
         </childnode>
         <childnode refid="4" relation="include">
         </childnode>
-        <childnode refid="32" relation="include">
+        <childnode refid="33" relation="include">
         </childnode>
-        <childnode refid="34" relation="include">
+        <childnode refid="35" relation="include">
         </childnode>
-        <childnode refid="36" relation="include">
+        <childnode refid="37" relation="include">
         </childnode>
-        <childnode refid="38" relation="include">
+        <childnode refid="39" relation="include">
         </childnode>
         <childnode refid="13" relation="include">
         </childnode>
@@ -650,17 +658,17 @@
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="40" relation="include">
-        </childnode>
         <childnode refid="41" relation="include">
         </childnode>
         <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>
-        <childnode refid="43" relation="include">
+        <childnode refid="44" relation="include">
         </childnode>
         <childnode refid="7" relation="include">
         </childnode>
@@ -678,9 +686,9 @@
         </childnode>
         <childnode refid="12" relation="include">
         </childnode>
-        <childnode refid="44" relation="include">
-        </childnode>
         <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
         </childnode>
         <childnode refid="28" relation="include">
         </childnode>
@@ -815,15 +823,12 @@
         </inbodydescription>
         <location file="Core/Inc/main.h" line="57" column="6" bodyfile="Core/Src/main.c" bodystart="378" bodyend="388" declfile="Core/Inc/main.h" declline="57" declcolumn="6"/>
         <referencedby refid="adc_8c_1ac3139540667c403c5dfd37a99c610b1c" compoundref="adc_8c" startline="165" endline="234">HAL_ADC_MspInit</referencedby>
-        <referencedby refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" compoundref="can_8c" startline="267" endline="300">HAL_CAN_RxFifo0MsgPendingCallback</referencedby>
+        <referencedby refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" compoundref="can_8c" startline="298" endline="335">HAL_CAN_RxFifo0MsgPendingCallback</referencedby>
         <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
         <referencedby refid="imd_8c_1aeb7c937639c5385f5d2b4e3a4e60250f" compoundref="imd_8c" startline="180" endline="191">IMD_Request_Status</referencedby>
-        <referencedby refid="motor__controller_8c_1afa93c7b7fa3dc12bd6bf860c54c564ee" compoundref="motor__controller_8c" startline="26" endline="44">MC_Parse_Message</referencedby>
-        <referencedby refid="motor__controller_8c_1af6b3a4911f1bdac54d84b4dcc7b7ec4a" compoundref="motor__controller_8c" startline="47" endline="60">MC_Request_Data</referencedby>
-        <referencedby refid="motor__controller_8c_1af2e573366a03a695a8ba760440848206" compoundref="motor__controller_8c" startline="69" endline="98">MC_Send_Data</referencedby>
         <referencedby refid="adc_8c_1acccd58aa70215a6b184ad242312ffd0c" compoundref="adc_8c" startline="32" endline="116">MX_ADC1_Init</referencedby>
         <referencedby refid="adc_8c_1a101e2e3433dfe72bbbd0ae3a84489263" compoundref="adc_8c" startline="118" endline="163">MX_ADC2_Init</referencedby>
-        <referencedby refid="can_8c_1a1ee5cd592134235b6c07f676784d47c3" compoundref="can_8c" startline="119" endline="195">MX_CAN2_Init</referencedby>
+        <referencedby refid="can_8c_1a1ee5cd592134235b6c07f676784d47c3" compoundref="can_8c" startline="150" endline="226">MX_CAN2_Init</referencedby>
         <referencedby refid="spi_8c_1af81398f9775695df0b172367651ca3e6" compoundref="spi_8c" startline="30" endline="60">MX_SPI1_Init</referencedby>
         <referencedby refid="tim_8c_1a7912f2916786a2c33cb6fb8259ade58c" compoundref="tim_8c" startline="30" endline="68">MX_TIM3_Init</referencedby>
         <referencedby refid="pdu_8c_1ad7b67b3c1618a7c50a5d6d9f9e13a89f" compoundref="pdu_8c" startline="48" endline="60">PDU_disable_brake_light</referencedby>

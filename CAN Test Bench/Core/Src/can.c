@@ -21,6 +21,14 @@
 #include "can.h"
 
 /* USER CODE BEGIN 0 */
+
+/** @defgroup uvfr_can_api UVFR CANbus API
+ *
+ * @brief This is an api that simplifies usage of CANbus transmitting and receiving.
+
+ */
+
+
 #include "constants.h"
 #include "imd.h"
 #include "motor_controller.h"
@@ -29,6 +37,9 @@
 #include "pdu.h"
 #include "uvfr_utils.h"
 #include "main.h"
+#include "task.h"
+#include "stdlib.h"
+#include "string.h"
 
 
 #ifndef HAL_CAN_ERROR_INVALID_CALLBACK
@@ -36,6 +47,26 @@
 #endif
 
 static QueueHandle_t Tx_msg_queue = NULL;
+static QueueHandle_t Rx_msg_queue = NULL;
+
+#define table_size 128 //CHAANGE THIS TO HOW MANY CAN_MESSAGES YOU NEED TO HANDLE!!!!!!
+
+
+
+typedef struct CAN_Callback {
+    uint32_t CAN_id;
+    void* function;
+    struct CAN_Callback* next;
+}CAN_Callback;
+
+
+/** Hash Table To Store CAN Messages
+ *  Creates a hash table of size table_size and type CAN_Message
+ *  Initialize all CAN messages in the hash table
+*/
+CAN_Callback CAN_callback_table[table_size] = {0};
+
+SemaphoreHandle_t callback_table_mutex = NULL;
 
 void handleCANbusError(const CAN_HandleTypeDef* hcan, const uint32_t err_to_ignore){
 	if(hcan == NULL){
@@ -209,10 +240,10 @@ void HAL_CAN_MspInit(CAN_HandleTypeDef* canHandle)
 
     __HAL_RCC_GPIOB_CLK_ENABLE();
     /**CAN2 GPIO Configuration
-    PB5     ------> CAN2_RX
-    PB6     ------> CAN2_TX
+    PB12     ------> CAN2_RX
+    PB13     ------> CAN2_TX
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_5|GPIO_PIN_6;
+    GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;
@@ -245,10 +276,10 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
     __HAL_RCC_CAN1_CLK_DISABLE();
 
     /**CAN2 GPIO Configuration
-    PB5     ------> CAN2_RX
-    PB6     ------> CAN2_TX
+    PB12     ------> CAN2_RX
+    PB13     ------> CAN2_TX
     */
-    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_5|GPIO_PIN_6);
+    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_12|GPIO_PIN_13);
 
     /* CAN2 interrupt Deinit */
     HAL_NVIC_DisableIRQ(CAN2_TX_IRQn);
@@ -265,9 +296,15 @@ void HAL_CAN_MspDeInit(CAN_HandleTypeDef* canHandle)
 // When a CAN message comes, the interrupt will call this function
 // We need to figure out what device sent it, what the data is, and handle it appropriately
 void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
-  if (HAL_CAN_GetRxMessage(hcan2, CAN_RX_FIFO0, &RxHeader, RxData) != HAL_OK)
+	uv_CAN_msg tmp;
+	BaseType_t was_higher_priority_task_woken;
+  if (HAL_CAN_GetRxMessage(hcan2, CAN_RX_FIFO0, &RxHeader, tmp.data) != HAL_OK)
   {
     Error_Handler();
+  }
+
+  if(Rx_msg_queue == NULL){
+	  return; //RxDaemon not active yet
   }
 
   //uint8_t Data[8] = {0};
@@ -275,27 +312,25 @@ void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2){
   //int DLC = 0;
 
   // Extract the ID
-//  if (RxHeader.IDE == CAN_ID_STD){
-//	  CAN_ID = RxHeader.StdId;
-//  }
-//
-//  if (RxHeader.IDE == CAN_ID_EXT){
-//  	  CAN_ID = RxHeader.ExtId;
-//  }
+  if (RxHeader.IDE == CAN_ID_STD){
+	  tmp.msg_id = RxHeader.StdId;
+  }else if (RxHeader.IDE == CAN_ID_EXT){
+  	  tmp.msg_id = RxHeader.ExtId;
+  }else{
+	  //How did we get here?
+  }
 //
 //
 //  // Extract the data length
-//  DLC = RxHeader.DLC; // Data Length Code
-
-
-   // The data length will be different for each message, so we need to handle the possibilities
-//   for (int i = 0; i < RxHeader.DLC; ++i){
-//	   Data[i] = RxData[i];
-//   }
+  tmp.dlc = RxHeader.DLC; // Data Length Code
 
    //TANNER AND FLO CALL YOUR FUNCTION HERE TO DO STUFF
 
+  xQueueSendFromISR( Rx_msg_queue, &tmp, &was_higher_priority_task_woken );
 
+  if(was_higher_priority_task_woken == pdTRUE){
+	  taskYIELD();
+  }
 
 }
 
@@ -304,35 +339,16 @@ void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2){
 	// do something
 }
 // CAN_Messages_Tanner
-#define table_size 100 //CHAANGE THIS TO HOW MANY CAN_MESSAGES YOU NEED TO HANDLE!!!!!!
 
 
-#ifdef BRUH
-=======
-/** struct for CAN messages
- *  Contains a 32-bit CAN id
- *  Contains a funtion pointer that will point to whatever funciton the CAN id corresponds to
- *  Contains a pointer to next, which is a handle for two CAN id's having the hash index
- *  The next will be a pointer in the hash table at the hash index that is duplicate and will point to the CAN id of the thing with the same hash
-*/
-typedef struct CAN_Message {
-    uint32_t CAN_id;
-    void* function;
-    struct CAN_Message* next;
-}CAN_Message;
 
-/** Hash Table To Store CAN Messages
- *  Creates a hash table of size table_size and type CAN_Message
- *  Initialize all CAN messages in the hash table
-*/
-CAN_Message CAN_message_table[table_size] = {0};
 
 /** HASH FUNCTION
 *   Take a can id and return a "random" hash id
 *   The hash id is in range from 0 to table_size
 *   The hash id is similar to an array index in its implementation
 */
-unsigned int create_hash_id(uint32_t Incoming_CAN_id) {
+unsigned int generateHash(uint32_t Incoming_CAN_id) {
     unsigned int hash = 0;
     uint32_t id = Incoming_CAN_id;
 
@@ -349,44 +365,85 @@ unsigned int create_hash_id(uint32_t Incoming_CAN_id) {
 *   follow the next pointer until the right CAN id is found
 *   Then call the function
 */
-int call_function_from_CAN_id(uint32_t CAN_id, uint8_t* data, uint8_t length) {
-    unsigned int index = create_hash_id(CAN_id);
-    CAN_Message* current = &CAN_message_table[index];
+static inline uv_status callFunctionFromCANid(uv_CAN_msg* msg) {
+    unsigned int index = generateHash(msg->msg_id);
+    CAN_Callback* current = &CAN_callback_table[index]; //getting hash function and checking table entry
 
     while (current != NULL) {
-        if (current->CAN_id == CAN_id) {
-            void (*function_ptr)(uint8_t* data, uint8_t length) = (void (*)(uint8_t*, uint8_t))current->function;
+        if (current->CAN_id == msg->msg_id) {//if the ID matches, execute, else keep going
+            void (*function_ptr)(uv_CAN_msg* msg) = (void (*)(uv_CAN_msg*))current->function;
             if (function_ptr != NULL) {
-                function_ptr(data, length);
-                return 0;
+                function_ptr(msg);
+                return UV_OK;
             }else{
-                return 1;
+                return UV_ERROR;
             }
         }
         current = current->next;
     }
-    return 1;
+    return UV_WARNING;
 }
 
-/** Function to insert a message into the hash table
+/**@ingroup uvfr_can_api
+ * @brief Function to insert an id and function into the lookup table of callback functions
+ *
  *  Checks if specific hash id already exists in the hash table
  *  If not, insert the message
- *  If it already exists, malloc a new message and insert it
+ *  If it already exists, check to see if the actual CAN id matches. If yes, then previous entries are overwritten
+ *  If it does not exist, then each node in the hash table functions as it's own linked list
 */
-void insert_CAN_message(CAN_Message message) {
-    unsigned int index = create_hash_id(message.CAN_id);
+void insertCANMessageHandler(uint32_t id, void* handlerfunc) {
+    unsigned int index = generateHash(id);
 
-    if(CAN_message_table[index].CAN_id == message.CAN_id) {
-        CAN_Message* temp = malloc(sizeof(CAN_Message));
-        temp->CAN_id = message.CAN_id;
-        temp->function = message.function;
-        temp->next = CAN_message_table[index].next;
-        CAN_message_table[index].next = temp;
+    if(callback_table_mutex != NULL){
+    	if(xSemaphoreTake(callback_table_mutex,10) == pdTRUE){
 
-    }else{
-        CAN_message_table[index] = message;
-        CAN_message_table[index].next = NULL;
+    	}else{
+
+    	}
     }
+
+    if(CAN_callback_table[index].CAN_id == 0){ //This means the hash entry is empty and can now be used, since 0 is not a real CAN id
+    	CAN_callback_table[index].CAN_id = id;
+    	CAN_callback_table[index].function = handlerfunc;
+    	CAN_callback_table[index].next = NULL;
+    	if(callback_table_mutex != NULL){xSemaphoreGive(callback_table_mutex);}
+    	return;
+    }
+
+    if(CAN_callback_table[index].CAN_id == id){ //You are editing a duplicate, overwrite it
+    	CAN_callback_table[index].CAN_id = id;
+    	CAN_callback_table[index].function = handlerfunc;
+    	if(callback_table_mutex != NULL){xSemaphoreGive(callback_table_mutex);}
+    	return;
+    }
+
+    CAN_Callback* temp = &CAN_callback_table[index]; //if we are here: The table entry is not empty, but is not the id we are looking for
+    while(temp->next != NULL){
+    	temp = temp->next;
+    	if(temp->CAN_id == id){
+    		temp->CAN_id = id;
+    		temp->function = handlerfunc;
+    		if(callback_table_mutex != NULL){xSemaphoreGive(callback_table_mutex);}
+    		return;
+    	}
+    }
+
+    temp->next = uvMalloc(sizeof(CAN_Callback)); //reaching this point means temp->next == NULL
+    if(temp->next == NULL){
+    	if(callback_table_mutex != NULL){xSemaphoreGive(callback_table_mutex);}
+    	return;
+    }else{
+    	temp = temp->next;
+    	temp->next = NULL;
+    	temp->CAN_id = id;
+    	temp->function = handlerfunc;
+    }
+
+    if(callback_table_mutex != NULL){xSemaphoreGive(callback_table_mutex);}
+
+
+
 }
 
 
@@ -394,64 +451,94 @@ void insert_CAN_message(CAN_Message message) {
 *    Index through the hash table and free all the malloced memory at each index
 */
 void nuke_hash_table() {
-    CAN_Message* temp;
+    CAN_Callback* temp;
+
     for (int i = 0; i < table_size; i++) {
-        temp = CAN_message_table + i*sizeof(CAN_Message);
+        temp = CAN_callback_table + i*sizeof(CAN_Callback);
         if(temp->next != NULL){
             temp = temp->next;
-            CAN_Message* tmp2;
+            CAN_Callback* tmp2;
             while(temp != NULL){
                 tmp2 = temp->next;
-                free(temp);
+                uvFree(temp);
                 temp = tmp2;
             }
         }
     }
 
+    (void)memset(CAN_callback_table,0,table_size*sizeof(CAN_Callback)); //set the table to all 0s
+
+
+}
+
   
 
-uv_status __uvCANtxCritSection(){
+uv_status __uvCANtxCritSection(uv_CAN_msg* tx_msg){
+	if(tx_msg == NULL){
+		uvPanic("cannot send null CAN msg",0);
+	}
+
+	if((tx_msg->flags)& UV_CAN_EXTENDED_ID){
+		TxHeader.IDE = CAN_ID_EXT;
+		TxHeader.ExtId = tx_msg->msg_id;
+	}else{
+		TxHeader.IDE = CAN_ID_STD;
+		TxHeader.StdId = tx_msg->msg_id;
+	}
+
+	TxHeader.DLC = tx_msg->dlc;
+
+
+
+	taskENTER_CRITICAL();
+	if (HAL_CAN_AddTxMessage(&hcan2, &TxHeader, tx_msg->data, &TxMailbox) != HAL_OK){
+		/* Transmission request Error */
+		taskEXIT_CRITICAL();
+		uvPanic("Unable to Transmit CAN msg",0);
+		return UV_ERROR;
+	}else{
+		taskEXIT_CRITICAL();
+	}
 	return UV_OK;
 }
-#endif
 
-/** @brief Function to send can message.
+/** @ingroup uvfr_can_api
+ * @brief Function to send CAN message.
  *
  * This function is the canonical team method of sending a CAN message.
  * It invokes the canTxDaemon, to avoid any conflicts due to a context switch mid transmission
  * Is it a little bit convoluted? Yes.
  * Is that worth it? Still yes.
  */
-uv_status uvSendCanMSG(uv_CAN_msg* msg){
+uv_status uvSendCanMSG(uv_CAN_msg* tx_msg){
 
-	static TaskHandle_t can_tx_daemon_handle = NULL;
-	static uv_task_id can_tx_daemon_task_id;
+	//static TaskHandle_t can_tx_daemon_handle = NULL;
+	//static uv_task_id can_tx_daemon_task_id;
 
-	if(can_tx_daemon_handle == NULL ){
-		can_tx_daemon_handle = xTaskGetHandle(CAN_TX_DAEMON_NAME);
-		if(can_tx_daemon_handle == NULL){
-			//This means that the can_tx_daemon is probably not running
-			uvPanic("CANbusTxHandler not running",0);
-			return UV_ERROR;
-		}
-	}
 
-	/** Check that the CAN Tx daemon is actually active
-	 *
-	 */
 
-	if(msg == NULL){
+	//TODO: CanTxDaemon being inactive will brick this. FIX IT!!
+
+	if(tx_msg == NULL){
 		return UV_ERROR;
 	}
 
-	//BaseType_t higher_priority_task_woken = pdFALSE;
 
-	if(xQueueSendToBack(Tx_msg_queue,&msg,0) != pdPASS){
-		uvPanic("couldnt enqueue CAN message",0);
+
+	//BaseType_t higher_priority_task_woken = pdFALSE;
+	if(Tx_msg_queue != NULL){
+		if(xQueueSendToBack(Tx_msg_queue,&tx_msg,0) != pdPASS){
+			uvPanic("couldnt enqueue CAN message",0);
+		}else{
+			return UV_OK;
+		}
+		return UV_ERROR;
 	}else{
-		return UV_OK;
+		if(__uvCANtxCritSection(tx_msg)!=UV_OK){
+			return UV_ERROR;
+		}
 	}
-	return UV_ERROR;
+	return UV_OK;
 }
 
 /** @brief Background task that handles any CAN messages that are being sent
@@ -462,10 +549,12 @@ uv_status uvSendCanMSG(uv_CAN_msg* msg){
  *
  */
 void CANbusTxSvcDaemon(void* args){
-
+	uv_task_info* params = (uv_task_info*) args;
 	//CAN_TxHeaderTypeDef tx_header;
 
 	Tx_msg_queue = xQueueCreate(8,sizeof(uv_CAN_msg*));
+
+
 
 	//BaseType_t retval;
 
@@ -479,7 +568,7 @@ void CANbusTxSvcDaemon(void* args){
 	for(;;){
 
 
-		result = xQueueReceive(Tx_msg_queue,&tx_msg,portMAX_DELAY);
+		result = xQueueReceive(Tx_msg_queue,&tx_msg,20);
 
 		if(result == pdTRUE){
 
@@ -506,38 +595,64 @@ void CANbusTxSvcDaemon(void* args){
 			}
 		}
 
+		if(params->cmd_data == UV_KILL_CMD){
+			QueueHandle_t tmpqueue = Tx_msg_queue;
+			Tx_msg_queue = NULL;
+			vQueueDelete(tmpqueue);
+
+			killSelf(params);
+		} else if(params->cmd_data == UV_SUSPEND_CMD){
+			suspendSelf(params);
+		}
+
 	}//main for loop
 
 }
 
-void CANbusRxSVCDaemon(void* args){
+
+/** @brief Background task that executes the CAN message callback functions
+ *
+ * Basically just snoops through the hash table
+ *
+ */
+void CANbusRxSvcDaemon(void* args){
+	uv_task_info* params = (uv_task_info*) args;
+
+	uv_CAN_msg tmp;
+
+	BaseType_t retval;
+	uv_status func_status;
+
+	Rx_msg_queue = xQueueCreate(8,sizeof(uv_CAN_msg));
+
+	callback_table_mutex = xSemaphoreCreateMutex();
+
+
 
 	for(;;){
+		retval = xQueueReceive(Rx_msg_queue,&tmp,10);
+		if(retval == pdTRUE){
+			func_status = callFunctionFromCANid(&tmp);
+			if(func_status != UV_OK){
 
+			}
+		}
+
+		if(params->cmd_data == UV_KILL_CMD){
+			QueueHandle_t tmpqueue = Rx_msg_queue;
+			Rx_msg_queue = NULL;
+			vQueueDelete(tmpqueue);
+
+			killSelf(params);
+		} else if(params->cmd_data == UV_SUSPEND_CMD){
+			suspendSelf(params);
+		}
 	}
+
+	vQueueDelete(Rx_msg_queue);
+	Rx_msg_queue = NULL;
+	vTaskDelete(params->task_handle);
 
 }
 
 /* USER CODE END 1 */
-
-
-/* USER CODE BEGIN Header */
-/**
-  ******************************************************************************
-  * @file    can.c
-  * @brief   This file provides code for the configuration
-  *          of the CAN instances.
-  ******************************************************************************
-  * @attention
-  *
-  * Copyright (c) 2023 STMicroelectronics.
-  * All rights reserved.
-  *
-  * This software is licensed under terms that can be found in the LICENSE file
-  * in the root directory of this software component.
-  * If no LICENSE file comes with this software, it is provided AS-IS.
-  *
-  ******************************************************************************
-  */
-/* USER CODE END Header */
-

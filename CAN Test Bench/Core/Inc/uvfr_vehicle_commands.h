@@ -25,6 +25,7 @@
 
 #ifndef uvOpenSDC
 #if UV19_PDU
+	void _uvOpenSDC_canBased();
 	#define uvOpenSDC(x) _uvOpenSDC_canBased(x)
 #elif ECUMASTER_PMU
 	#define uvOpenSDC(x) _uvOpenSDC_canBased(x)
@@ -35,8 +36,10 @@
 
 #ifndef uvCloseSDC
 #if UV19_PDU
+	void _uvCloseSDC_canBased();
 	#define uvOpenSDC(x) _uvCloseSDC_canBased(x)
 #elif ECUMASTER_PMU
+	void _uvCloseSDC_canBased(x);
 	#define uvOpenSDC(x) _uvCloseSDC_canBased(x)
 #else
 	#define uvOpenSDC(x) _uvCloseSDC_internal(x)
@@ -65,31 +68,48 @@
 
 #ifndef uvStartCoolantPump
 #if UV19_PDU
-#define uvStartCoolantPump(x) _uvStartCoolantPump_canBased(x)
+	void _uvStartCoolantPump_canBased();
+#define uvStartCoolantPump() _uvStartCoolantPump_canBased()
 #elif ECUMASTER_PMU
-#define uvStartCoolantPump(x) _uvStartCoolantPump_canBased(x)
+#define uvStartCoolantPump() _uvStartCoolantPump_canBased()
 #else
-#define uvStartCoolantPump(x) _uvStartCoolantPump_internal(x)
+#define uvStartCoolantPump() _uvStartCoolantPump_internal()
 #endif
 #endif
 
 #ifndef uvStopCoolantPump
 #if UV19_PDU
-#define uvStopCoolantPump(x) _uvStopCoolantPump_canBased(x)
+	void _uvStopCoolantPump_canBased();
+	#define uvStopCoolantPump() _uvStopCoolantPump_canBased()
 #elif ECUMASTER_PMU
-#define uvStopCoolantPump(x) _uvStopCoolantPump_canBased(x)
+	void _uvStopCoolantPump_canBased();
+#define uvStopCoolantPump() _uvStopCoolantPump_canBased()
 #else
-#define uvStopCoolantPump(x) _uvStopCoolantPump_internal(x)
+#define uvStopCoolantPump() _uvStopCoolantPump_internal()
 #endif
 #endif
 
 #ifndef uvHonkHorn
 #if UV19_PDU
-#define uvHonkHorn(x) _uvHonkHorn_canBased(x)
+	void _uvHonkHorn_canBased();
+	#define uvHonkHorn() _uvHonkHorn_canBased()
 #elif ECUMASTER_PMU
-#define uvHonkHorn(x) _uvHonkHorn_canBased(x)
+	void _uvHonkHorn_CanBased();
+	#define uvHonkHorn() _uvHonkHorn_canBased()
 #else
-#define uvHonkHorn(x) _uvHonkHorn_internal(x)
+#define uvHonkHorn() _uvHonkHorn_internal()
+#endif
+#endif
+
+#ifndef uvSilenceHorn
+#if UV19_PDU
+	void _uvSilenceHorn_canBased();
+	#define uvSilenceHorn() _uvSilenceHorn_canBased()
+#elif
+	void _uvSilenceHorn_canBased();
+	#define uvSilenceHorn() _uvSilenceHorn_canBased()
+#else
+#define uvSilenceHorn _uvSilenceHorn_internal()
 #endif
 #endif
 

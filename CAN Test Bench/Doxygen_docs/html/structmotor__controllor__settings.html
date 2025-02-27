@@ -97,13 +97,89 @@ $(document).ready(function(){initNavTree('structmotor__controllor__settings.html
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
+<tr class="memitem:a1229e590ebbf0159f0c829d5f8807294"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmotor__controllor__settings.html#a1229e590ebbf0159f0c829d5f8807294">can_id_tx</a></td></tr>
+<tr class="separator:a1229e590ebbf0159f0c829d5f8807294"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fafb17c00ec872a98dac74ca271b4cd"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmotor__controllor__settings.html#a0fafb17c00ec872a98dac74ca271b4cd">can_id_rx</a></td></tr>
+<tr class="separator:a0fafb17c00ec872a98dac74ca271b4cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16d6ebc9fb542b543c66bba5cb1572d7"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmotor__controllor__settings.html#a16d6ebc9fb542b543c66bba5cb1572d7">mc_CAN_timeout</a></td></tr>
 <tr class="separator:a16d6ebc9fb542b543c66bba5cb1572d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2ba82196be75a510aad215ab0cc26de"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmotor__controllor__settings.html#ae2ba82196be75a510aad215ab0cc26de">proportional_gain</a></td></tr>
+<tr class="separator:ae2ba82196be75a510aad215ab0cc26de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72937e13b105d1c12492b89218cb41c0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmotor__controllor__settings.html#a72937e13b105d1c12492b89218cb41c0">integral_time_constant</a></td></tr>
+<tr class="separator:a72937e13b105d1c12492b89218cb41c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d62a6e1afcb149473fd37d53c2058a5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmotor__controllor__settings.html#a0d62a6e1afcb149473fd37d53c2058a5">integral_memory_max</a></td></tr>
+<tr class="separator:a0d62a6e1afcb149473fd37d53c2058a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="motor__controller_8h_source.html#l00146">146</a> of file <a class="el" href="motor__controller_8h_source.html">motor_controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__controller_8h_source.html#l00150">150</a> of file <a class="el" href="motor__controller_8h_source.html">motor_controller.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
+<a id="a0fafb17c00ec872a98dac74ca271b4cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fafb17c00ec872a98dac74ca271b4cd">&#9670;&nbsp;</a></span>can_id_rx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t motor_controllor_settings::can_id_rx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="motor__controller_8h_source.html#l00154">154</a> of file <a class="el" href="motor__controller_8h_source.html">motor_controller.h</a>.</p>
+
+</div>
+</div>
+<a id="a1229e590ebbf0159f0c829d5f8807294"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1229e590ebbf0159f0c829d5f8807294">&#9670;&nbsp;</a></span>can_id_tx</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t motor_controllor_settings::can_id_tx</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="motor__controller_8h_source.html#l00152">152</a> of file <a class="el" href="motor__controller_8h_source.html">motor_controller.h</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__controller_8c_source.html#l00230">MC_Request_Data()</a>, and <a class="el" href="motor__controller_8c_source.html#l00062">MotorControllerSpinTest()</a>.</p>
+
+</div>
+</div>
+<a id="a0d62a6e1afcb149473fd37d53c2058a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d62a6e1afcb149473fd37d53c2058a5">&#9670;&nbsp;</a></span>integral_memory_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t motor_controllor_settings::integral_memory_max</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="motor__controller_8h_source.html#l00163">163</a> of file <a class="el" href="motor__controller_8h_source.html">motor_controller.h</a>.</p>
+
+</div>
+</div>
+<a id="a72937e13b105d1c12492b89218cb41c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72937e13b105d1c12492b89218cb41c0">&#9670;&nbsp;</a></span>integral_time_constant</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t motor_controllor_settings::integral_time_constant</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="motor__controller_8h_source.html#l00161">161</a> of file <a class="el" href="motor__controller_8h_source.html">motor_controller.h</a>.</p>
+
+</div>
+</div>
 <a id="a16d6ebc9fb542b543c66bba5cb1572d7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16d6ebc9fb542b543c66bba5cb1572d7">&#9670;&nbsp;</a></span>mc_CAN_timeout</h2>
 
@@ -116,7 +192,23 @@ Data Fields</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motor__controller_8h_source.html#l00147">147</a> of file <a class="el" href="motor__controller_8h_source.html">motor_controller.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__controller_8h_source.html#l00156">156</a> of file <a class="el" href="motor__controller_8h_source.html">motor_controller.h</a>.</p>
+
+</div>
+</div>
+<a id="ae2ba82196be75a510aad215ab0cc26de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2ba82196be75a510aad215ab0cc26de">&#9670;&nbsp;</a></span>proportional_gain</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t motor_controllor_settings::proportional_gain</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="motor__controller_8h_source.html#l00159">159</a> of file <a class="el" href="motor__controller_8h_source.html">motor_controller.h</a>.</p>
 
 </div>
 </div>

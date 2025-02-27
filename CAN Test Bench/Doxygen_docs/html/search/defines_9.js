@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['mac_5faddr0_2032',['MAC_ADDR0',['../stm32f4xx__hal__conf_8h.html#ab84a2e15d360e2644ada09641513a941',1,'stm32f4xx_hal_conf.h']]],
-  ['mac_5faddr1_2033',['MAC_ADDR1',['../stm32f4xx__hal__conf_8h.html#a8d14266d76690c530bee01e7e5bb4099',1,'stm32f4xx_hal_conf.h']]],
-  ['mac_5faddr2_2034',['MAC_ADDR2',['../stm32f4xx__hal__conf_8h.html#a6c5df15bec1d305ed033ad9a85ec803d',1,'stm32f4xx_hal_conf.h']]],
-  ['mac_5faddr3_2035',['MAC_ADDR3',['../stm32f4xx__hal__conf_8h.html#a08a36ede83ae67498aecf54676be8fc8',1,'stm32f4xx_hal_conf.h']]],
-  ['mac_5faddr4_2036',['MAC_ADDR4',['../stm32f4xx__hal__conf_8h.html#a41e5cb0b39ad74f0aafb83dbcecf9006',1,'stm32f4xx_hal_conf.h']]],
-  ['mac_5faddr5_2037',['MAC_ADDR5',['../stm32f4xx__hal__conf_8h.html#a3bcc92663c42ec434f527847bbc4abc1',1,'stm32f4xx_hal_conf.h']]],
-  ['max_5finit_5ftime_2038',['MAX_INIT_TIME',['../uvfr__utils_8h.html#a40d625666ff5a3c5918ec7591f0628ed',1,'uvfr_utils.h']]]
+  ['lse_5fstartup_5ftimeout_2128',['LSE_STARTUP_TIMEOUT',['../stm32f4xx__hal__conf_8h.html#a85e6fc812dc26f7161a04be2568a5462',1,'stm32f4xx_hal_conf.h']]],
+  ['lse_5fvalue_2129',['LSE_VALUE',['../stm32f4xx__hal__conf_8h.html#a7bbb9d19e5189a6ccd0fb6fa6177d20d',1,'stm32f4xx_hal_conf.h']]],
+  ['lsi_5fvalue_2130',['LSI_VALUE',['../stm32f4xx__hal__conf_8h.html#a4872023e65449c0506aac3ea6bec99e9',1,'stm32f4xx_hal_conf.h']]]
 ];

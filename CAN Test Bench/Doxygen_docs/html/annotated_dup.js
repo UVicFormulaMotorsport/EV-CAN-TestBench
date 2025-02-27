@@ -2,6 +2,7 @@ var annotated_dup =
 [
     [ "access_control_info", "unionaccess__control__info.html", "unionaccess__control__info" ],
     [ "bms_settings_t", "structbms__settings__t.html", "structbms__settings__t" ],
+    [ "CAN_Callback", "struct_c_a_n___callback.html", "struct_c_a_n___callback" ],
     [ "daq_child_task", "structdaq__child__task.html", "structdaq__child__task" ],
     [ "daq_datapoint", "structdaq__datapoint.html", "structdaq__datapoint" ],
     [ "daq_loop_args", "structdaq__loop__args.html", "structdaq__loop__args" ],

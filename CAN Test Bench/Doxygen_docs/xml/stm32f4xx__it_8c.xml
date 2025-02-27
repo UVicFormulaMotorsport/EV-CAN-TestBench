@@ -94,11 +94,11 @@
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
         <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
@@ -128,7 +128,7 @@
       <node id="17">
         <label>message_buffer.h</label>
       </node>
-      <node id="22">
+      <node id="23">
         <label>bms.h</label>
         <link refid="bms_8h"/>
         <childnode refid="2" relation="include">
@@ -171,13 +171,15 @@
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="21">
         <label>daq.h</label>
         <link refid="daq_8h"/>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
       </node>
       <node id="13">
@@ -186,7 +188,7 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="24">
+      <node id="22">
         <label>rb_tree.h</label>
         <link refid="rb__tree_8h"/>
       </node>
@@ -220,7 +222,7 @@
         <label>FreeRTOSConfig.h</label>
         <link refid="_free_r_t_o_s_config_8h"/>
       </node>
-      <node id="23">
+      <node id="24">
         <label>uvfr_state_engine.h</label>
         <link refid="uvfr__state__engine_8h"/>
         <childnode refid="5" relation="include">
@@ -283,13 +285,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Src/stm32f4xx_it.c" line="59" column="26" bodyfile="Core/Src/can.c" bodystart="116" bodyend="-1" declfile="Core/Src/stm32f4xx_it.c" declline="59" declcolumn="26"/>
+        <location file="Core/Src/stm32f4xx_it.c" line="59" column="26" bodyfile="Core/Src/can.c" bodystart="147" bodyend="-1" declfile="Core/Src/stm32f4xx_it.c" declline="59" declcolumn="26"/>
+        <referencedby refid="can_8c_1ae025787f17f6312df1e71c731b2a0fe4" compoundref="can_8c" startline="476" endline="503">__uvCANtxCritSection</referencedby>
         <referencedby refid="stm32f4xx__it_8c_1abf0ada95bd65ea0a24a25606a59a319d" compoundref="stm32f4xx__it_8c" startline="223" endline="232">CAN2_RX0_IRQHandler</referencedby>
         <referencedby refid="stm32f4xx__it_8c_1ac67a8abbbb2e08b8c48726f65716295f" compoundref="stm32f4xx__it_8c" startline="237" endline="246">CAN2_RX1_IRQHandler</referencedby>
         <referencedby refid="stm32f4xx__it_8c_1abc8a61d83a243d1d571a628a10f55733" compoundref="stm32f4xx__it_8c" startline="209" endline="218">CAN2_TX_IRQHandler</referencedby>
-        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="358" endline="405">CANbusTxSvcDaemon</referencedby>
-        <referencedby refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" compoundref="can_8c" startline="267" endline="300">HAL_CAN_RxFifo0MsgPendingCallback</referencedby>
-        <referencedby refid="can_8c_1a1ee5cd592134235b6c07f676784d47c3" compoundref="can_8c" startline="119" endline="195">MX_CAN2_Init</referencedby>
+        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="551" endline="610">CANbusTxSvcDaemon</referencedby>
+        <referencedby refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" compoundref="can_8c" startline="298" endline="335">HAL_CAN_RxFifo0MsgPendingCallback</referencedby>
+        <referencedby refid="can_8c_1a1ee5cd592134235b6c07f676784d47c3" compoundref="can_8c" startline="150" endline="226">MX_CAN2_Init</referencedby>
       </memberdef>
       <memberdef kind="variable" id="stm32f4xx__it_8c_1a25fc663547539bc49fecc0011bd76ab5" prot="public" static="no" mutable="no">
         <type>TIM_HandleTypeDef</type>
@@ -304,8 +307,8 @@
         </inbodydescription>
         <location file="Core/Src/stm32f4xx_it.c" line="60" column="26" bodyfile="Core/Src/stm32f4xx_hal_timebase_tim.c" bodystart="28" bodyend="-1" declfile="Core/Src/stm32f4xx_it.c" declline="60" declcolumn="26"/>
         <referencedby refid="stm32f4xx__hal__timebase__tim_8c_1a879cdb21ef051eb81ec51c18147397d5" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="41" endline="101">HAL_InitTick</referencedby>
-        <referencedby refid="stm32f4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="117" endline="121">HAL_ResumeTick</referencedby>
-        <referencedby refid="stm32f4xx__hal__timebase__tim_8c_1aaf651af2afe688a991c657f64f8fa5f9" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="107" endline="111">HAL_SuspendTick</referencedby>
+        <referencedby refid="stm32f4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="121" endline="125">HAL_ResumeTick</referencedby>
+        <referencedby refid="stm32f4xx__hal__timebase__tim_8c_1aaf651af2afe688a991c657f64f8fa5f9" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="109" endline="113">HAL_SuspendTick</referencedby>
         <referencedby refid="stm32f4xx__it_8c_1ad1fd361bc5ad89facee67c76d1ff8dc0" compoundref="stm32f4xx__it_8c" startline="181" endline="190">TIM1_UP_TIM10_IRQHandler</referencedby>
       </memberdef>
       </sectiondef>
@@ -482,7 +485,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Core/Src/stm32f4xx_it.c" line="209" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="209" bodyend="218"/>
-        <references refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="116">hcan2</references>
+        <references refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
       </memberdef>
       <memberdef kind="function" id="stm32f4xx__it_8c_1abf0ada95bd65ea0a24a25606a59a319d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -500,7 +503,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Core/Src/stm32f4xx_it.c" line="223" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="223" bodyend="232"/>
-        <references refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="116">hcan2</references>
+        <references refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
       </memberdef>
       <memberdef kind="function" id="stm32f4xx__it_8c_1ac67a8abbbb2e08b8c48726f65716295f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -518,7 +521,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Core/Src/stm32f4xx_it.c" line="237" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="237" bodyend="246"/>
-        <references refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="116">hcan2</references>
+        <references refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
       </memberdef>
       </sectiondef>
     <briefdescription>

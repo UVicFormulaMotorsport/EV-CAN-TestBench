@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="group__uvfr__can__api" kind="group">
+    <compoundname>uvfr_can_api</compoundname>
+    <title>UVFR CANbus API</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__uvfr__can__api_1ga81adc4a577110ce8fe1158b0dc302cc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void insertCANMessageHandler</definition>
+        <argsstring>(uint32_t id, void *handlerfunc)</argsstring>
+        <name>insertCANMessageHandler</name>
+        <param>
+          <type>uint32_t</type>
+          <declname>id</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>handlerfunc</declname>
+        </param>
+        <briefdescription>
+<para>Function to insert an id and function into the lookup table of callback functions. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if specific hash id already exists in the hash table If not, insert the message If it already exists, check to see if the actual CAN id matches. If yes, then previous entries are overwritten If it does not exist, then each node in the hash table functions as it&apos;s own linked list </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="395" column="6" bodyfile="Core/Src/can.c" bodystart="395" bodyend="447"/>
+        <references refid="can_8c_1a2bd63a687f9513e4fcaf3c97d5821515" compoundref="can_8c" startline="69">callback_table_mutex</references>
+        <references refid="can_8c_1a323f3f73f5588982a51a55276dbc5738" compoundref="can_8c" startline="67">CAN_callback_table</references>
+        <references refid="struct_c_a_n___callback_1a2dbb9c56fe79ad5ce0165d7300b62ff5" compoundref="can_8c" startline="57">CAN_Callback::CAN_id</references>
+        <references refid="struct_c_a_n___callback_1aaf6c1d8dd4ecbcac59008b8b5c7cbbaa" compoundref="can_8c" startline="58">CAN_Callback::function</references>
+        <references refid="can_8c_1affa7bfe9532060be4358706525e4f36e" compoundref="can_8c" startline="351" endline="359">generateHash</references>
+        <references refid="struct_c_a_n___callback_1ace8db41695ac99095f81f37c97056076" compoundref="can_8c" startline="59">CAN_Callback::next</references>
+        <referencedby refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="70" endline="157">tempMonitorTask</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="group__uvfr__can__api_1ga62414944c3b631f57fdd08e467bcf5a4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="can_8h_1aef3770e45bbacbf527fd93dd80eea9b9" kindref="member">uv_status</ref></type>
+        <definition>uv_status uvSendCanMSG</definition>
+        <argsstring>(uv_CAN_msg *tx_msg)</argsstring>
+        <name>uvSendCanMSG</name>
+        <param>
+          <type><ref refid="structuv___c_a_n__msg" kindref="compound">uv_CAN_msg</ref> *</type>
+          <declname>tx_msg</declname>
+        </param>
+        <briefdescription>
+<para>Function to send CAN message. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This function is the canonical team method of sending a CAN message. It invokes the canTxDaemon, to avoid any conflicts due to a context switch mid transmission Is it a little bit convoluted? Yes. Is that worth it? Still yes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/can.c" line="513" column="11" bodyfile="Core/Src/can.c" bodystart="513" bodyend="542"/>
+        <references refid="can_8c_1ae025787f17f6312df1e71c731b2a0fe4" compoundref="can_8c" startline="476" endline="503">__uvCANtxCritSection</references>
+        <references refid="can_8c_1a39f60bf61979059355fc4916aa3500db" compoundref="can_8c" startline="49">Tx_msg_queue</references>
+        <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" compoundref="uvfr__utils_8h" startline="169">UV_ERROR</references>
+        <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
+        <referencedby refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="70" endline="157">tempMonitorTask</referencedby>
+        <referencedby refid="temp__monitoring_8c_1a42aed0ca516238bb78f401d645b7b930" compoundref="temp__monitoring_8c" startline="52" endline="63">testfunc2</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This is an api that simplifies usage of CANbus transmitting and receiving. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

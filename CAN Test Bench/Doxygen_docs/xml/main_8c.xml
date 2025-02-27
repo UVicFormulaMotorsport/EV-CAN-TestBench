@@ -102,11 +102,11 @@
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
         <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
@@ -136,7 +136,7 @@
       <node id="17">
         <label>message_buffer.h</label>
       </node>
-      <node id="22">
+      <node id="23">
         <label>bms.h</label>
         <link refid="bms_8h"/>
         <childnode refid="2" relation="include">
@@ -179,13 +179,15 @@
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="21">
         <label>daq.h</label>
         <link refid="daq_8h"/>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
       </node>
       <node id="13">
@@ -194,7 +196,7 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="24">
+      <node id="22">
         <label>rb_tree.h</label>
         <link refid="rb__tree_8h"/>
       </node>
@@ -220,7 +222,7 @@
         <label>FreeRTOSConfig.h</label>
         <link refid="_free_r_t_o_s_config_8h"/>
       </node>
-      <node id="23">
+      <node id="24">
         <label>uvfr_state_engine.h</label>
         <link refid="uvfr__state__engine_8h"/>
         <childnode refid="5" relation="include">
@@ -257,7 +259,7 @@
         </childnode>
         <childnode refid="10" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="25" relation="include">
         </childnode>
@@ -469,19 +471,38 @@
 <para>FreeRTOS initialization. </para>
         </briefdescription>
         <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
         </detaileddescription>
         <inbodydescription>
 <para><simplesect kind="attention"><para>DONT YOU FUCKING DARE DELETE THESE GOTO STATEMENTS, THEY ARE CRITICAL TO STOP THE OS FROM HANGING ITSELF</para>
 </simplesect>
 </para>
         </inbodydescription>
-        <location file="Core/Src/main.c" line="83" column="6" bodyfile="Core/Src/freertos.c" bodystart="159" bodyend="200" declfile="Core/Src/main.c" declline="83" declcolumn="6"/>
+        <location file="Core/Src/main.c" line="83" column="6" bodyfile="Core/Src/freertos.c" bodystart="160" bodyend="201" declfile="Core/Src/main.c" declline="83" declcolumn="6"/>
         <references refid="freertos_8c_1aa658fe134a5d1309d7a15c8116fa142c" compoundref="freertos_8c" startline="53">defaultTaskHandle</references>
         <references refid="freertos_8c_1a3afad2adffd2b662e26b56ede2b1ccc5" compoundref="freertos_8c" startline="48">init_settings</references>
         <references refid="freertos_8c_1a142da7a698285a444ffffb0d1d791023" compoundref="freertos_8c" startline="51">init_task_handle</references>
-        <references refid="freertos_8c_1a016544463b4842ced7191baf8f449cea" compoundref="freertos_8c" startline="208" endline="217">StartDefaultTask</references>
-        <references refid="structuv__init__struct_1a5275182451a7f4931006e5ff393f1cdb" compoundref="uvfr__utils_8h" startline="270">uv_init_struct::use_default_settings</references>
-        <references refid="uvfr__utils_8h_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="37" endline="229">uvInit</references>
+        <references refid="freertos_8c_1a016544463b4842ced7191baf8f449cea" compoundref="freertos_8c" startline="209" endline="218">StartDefaultTask</references>
+        <references refid="structuv__init__struct_1a5275182451a7f4931006e5ff393f1cdb" compoundref="uvfr__utils_8h" startline="285">uv_init_struct::use_default_settings</references>
+        <references refid="uvfr__utils_8h_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</references>
         <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
       </memberdef>
       <memberdef kind="function" id="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -512,13 +533,13 @@
         <location file="Core/Src/main.c" line="97" column="5" bodyfile="Core/Src/main.c" bodystart="97" bodyend="211"/>
         <references refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" compoundref="main_8c" startline="64">adc1_APPS1</references>
         <references refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" compoundref="main_8c" startline="65">adc1_APPS2</references>
-        <references refid="can_8c_1aff5c4caa2b4968b309deaffdc58f1e92" compoundref="can_8c" startline="40" endline="111">handleCANbusError</references>
-        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="116">hcan2</references>
+        <references refid="can_8c_1aff5c4caa2b4968b309deaffdc58f1e92" compoundref="can_8c" startline="71" endline="142">handleCANbusError</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
         <references refid="adc_8h_1acccd58aa70215a6b184ad242312ffd0c" compoundref="adc_8c" startline="32" endline="116">MX_ADC1_Init</references>
         <references refid="adc_8h_1a101e2e3433dfe72bbbd0ae3a84489263" compoundref="adc_8c" startline="118" endline="163">MX_ADC2_Init</references>
-        <references refid="can_8h_1a1ee5cd592134235b6c07f676784d47c3" compoundref="can_8c" startline="119" endline="195">MX_CAN2_Init</references>
+        <references refid="can_8h_1a1ee5cd592134235b6c07f676784d47c3" compoundref="can_8c" startline="150" endline="226">MX_CAN2_Init</references>
         <references refid="dma_8h_1a323249dac769f9855c10b4ec9446b707" compoundref="dma_8c" startline="39" endline="50">MX_DMA_Init</references>
-        <references refid="main_8c_1abade755e13d07c10889ae83143656158" compoundref="freertos_8c" startline="159" endline="200">MX_FREERTOS_Init</references>
+        <references refid="main_8c_1abade755e13d07c10889ae83143656158" compoundref="freertos_8c" startline="160" endline="201">MX_FREERTOS_Init</references>
         <references refid="gpio_8h_1ac724e431d2af879252de35615be2bdea" compoundref="gpio_8c" startline="42" endline="73">MX_GPIO_Init</references>
         <references refid="spi_8h_1af81398f9775695df0b172367651ca3e6" compoundref="spi_8c" startline="30" endline="60">MX_SPI1_Init</references>
         <references refid="tim_8h_1a7912f2916786a2c33cb6fb8259ade58c" compoundref="tim_8c" startline="30" endline="68">MX_TIM3_Init</references>
@@ -663,15 +684,12 @@
         </inbodydescription>
         <location file="Core/Src/main.c" line="378" column="6" bodyfile="Core/Src/main.c" bodystart="378" bodyend="388"/>
         <referencedby refid="adc_8c_1ac3139540667c403c5dfd37a99c610b1c" compoundref="adc_8c" startline="165" endline="234">HAL_ADC_MspInit</referencedby>
-        <referencedby refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" compoundref="can_8c" startline="267" endline="300">HAL_CAN_RxFifo0MsgPendingCallback</referencedby>
+        <referencedby refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" compoundref="can_8c" startline="298" endline="335">HAL_CAN_RxFifo0MsgPendingCallback</referencedby>
         <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
         <referencedby refid="imd_8c_1aeb7c937639c5385f5d2b4e3a4e60250f" compoundref="imd_8c" startline="180" endline="191">IMD_Request_Status</referencedby>
-        <referencedby refid="motor__controller_8c_1afa93c7b7fa3dc12bd6bf860c54c564ee" compoundref="motor__controller_8c" startline="26" endline="44">MC_Parse_Message</referencedby>
-        <referencedby refid="motor__controller_8c_1af6b3a4911f1bdac54d84b4dcc7b7ec4a" compoundref="motor__controller_8c" startline="47" endline="60">MC_Request_Data</referencedby>
-        <referencedby refid="motor__controller_8c_1af2e573366a03a695a8ba760440848206" compoundref="motor__controller_8c" startline="69" endline="98">MC_Send_Data</referencedby>
         <referencedby refid="adc_8c_1acccd58aa70215a6b184ad242312ffd0c" compoundref="adc_8c" startline="32" endline="116">MX_ADC1_Init</referencedby>
         <referencedby refid="adc_8c_1a101e2e3433dfe72bbbd0ae3a84489263" compoundref="adc_8c" startline="118" endline="163">MX_ADC2_Init</referencedby>
-        <referencedby refid="can_8c_1a1ee5cd592134235b6c07f676784d47c3" compoundref="can_8c" startline="119" endline="195">MX_CAN2_Init</referencedby>
+        <referencedby refid="can_8c_1a1ee5cd592134235b6c07f676784d47c3" compoundref="can_8c" startline="150" endline="226">MX_CAN2_Init</referencedby>
         <referencedby refid="spi_8c_1af81398f9775695df0b172367651ca3e6" compoundref="spi_8c" startline="30" endline="60">MX_SPI1_Init</referencedby>
         <referencedby refid="tim_8c_1a7912f2916786a2c33cb6fb8259ade58c" compoundref="tim_8c" startline="30" endline="68">MX_TIM3_Init</referencedby>
         <referencedby refid="pdu_8c_1ad7b67b3c1618a7c50a5d6d9f9e13a89f" compoundref="pdu_8c" startline="48" endline="60">PDU_disable_brake_light</referencedby>

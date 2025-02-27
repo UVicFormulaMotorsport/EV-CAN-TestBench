@@ -11,6 +11,8 @@
 \item 
 void \mbox{\hyperlink{uvfr__utils_8c_a6d40598f9d8daa89ca159a2e87f4fd01}{uv\+Init}} (void $\ast$arguments)
 \begin{DoxyCompactList}\small\item\em \+: Function that initializes all of the car\textquotesingle{}s stuff. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{uvfr__utils_8c_a11806db468fdae50664b98e619575425}{uv\+Sys\+Reset\+Daemon}} (void $\ast$args)
+\item 
 enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__utils_8c_a02781145b4802ebdc7001800bbe6d994}{uv\+Utils\+Reset}} ()
 \begin{DoxyCompactList}\small\item\em This function is a soft-\/reboot of the uv\+\_\+utils\+\_\+backend and OS abstraction. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{uvfr__utils_8c_ab80c00a024c34da7f7926212ce10ef01}{setup\+\_\+extern\+\_\+devices}} (void $\ast$argument)
@@ -33,6 +35,8 @@ void $\ast$ \mbox{\hyperlink{uvfr__utils_8c_a498966c0f95bfa592d26b625a93fa1a3}{\
 Task\+Handle\+\_\+t \mbox{\hyperlink{uvfr__utils_8c_a142da7a698285a444ffffb0d1d791023}{init\+\_\+task\+\_\+handle}}
 \item 
 uint8\+\_\+t \mbox{\hyperlink{uvfr__utils_8c_af553c31425b32bd9c020380c942ed3bd}{Tx\+Data}} \mbox{[}8\mbox{]}
+\item 
+Task\+Handle\+\_\+t \mbox{\hyperlink{uvfr__utils_8c_a4e2f70766df64229ab99dfe80c0c012a}{reset\+\_\+handle}} = N\+U\+LL
 \end{DoxyCompactItemize}
 
 
@@ -62,7 +66,7 @@ Thread-\/safe wrapper for {\ttfamily free}.
 
 This is typically called from the macro expansion of {\ttfamily uv\+Free(x)} 
 
-Definition at line 320 of file uvfr\+\_\+utils.\+c.
+Definition at line 328 of file uvfr\+\_\+utils.\+c.
 
 
 
@@ -80,7 +84,7 @@ O\+S-\/based free wrapper that calls pv\+Port\+Free.
 
 
 
-Definition at line 371 of file uvfr\+\_\+utils.\+c.
+Definition at line 379 of file uvfr\+\_\+utils.\+c.
 
 
 
@@ -101,7 +105,7 @@ Calling \+\_\+uv\+Init\+Panic() is irreversable and will cause the vehicle to ha
 \end{DoxyAttention}
 
 
-Definition at line 263 of file uvfr\+\_\+utils.\+c.
+Definition at line 271 of file uvfr\+\_\+utils.\+c.
 
 
 
@@ -119,7 +123,7 @@ Wrapper function for {\ttfamily malloc()} that makes it thread safe.
 
 This typically appears in a macro expansion from {\ttfamily uv\+Malloc(x)} 
 
-Definition at line 284 of file uvfr\+\_\+utils.\+c.
+Definition at line 292 of file uvfr\+\_\+utils.\+c.
 
 \mbox{\Hypertarget{uvfr__utils_8c_a498966c0f95bfa592d26b625a93fa1a3}\label{uvfr__utils_8c_a498966c0f95bfa592d26b625a93fa1a3}} 
 \index{uvfr\_utils.c@{uvfr\_utils.c}!\_\_uvMallocOS@{\_\_uvMallocOS}}
@@ -133,7 +137,7 @@ Definition at line 284 of file uvfr\+\_\+utils.\+c.
 
 The reason we might wanto to be using pv\+Port\+Malloc() rather than regular stdlib malloc() is to consolodate the heap between R\+T\+OS and non-\/\+R\+T\+OS functions. 
 
-Definition at line 345 of file uvfr\+\_\+utils.\+c.
+Definition at line 353 of file uvfr\+\_\+utils.\+c.
 
 
 
@@ -146,10 +150,10 @@ References U\+V\+\_\+\+M\+A\+L\+L\+O\+C\+\_\+\+L\+I\+M\+IT, U\+V\+\_\+\+OK, and 
 {\footnotesize\ttfamily void setup\+\_\+extern\+\_\+devices (\begin{DoxyParamCaption}\item[{void $\ast$}]{argument }\end{DoxyParamCaption})}
 
 \begin{DoxyRefDesc}{Deprecated}
-\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]I really dunno why this still exists, but this gets called somewhere so Im leaving it. I think we just pass it N\+U\+LL.\end{DoxyRefDesc}
+\item[\mbox{\hyperlink{deprecated__deprecated000004}{Deprecated}}]I really dunno why this still exists, but this gets called somewhere so Im leaving it. I think we just pass it N\+U\+LL.\end{DoxyRefDesc}
 
 
-Definition at line 251 of file uvfr\+\_\+utils.\+c.
+Definition at line 259 of file uvfr\+\_\+utils.\+c.
 
 \mbox{\Hypertarget{uvfr__utils_8c_a6d40598f9d8daa89ca159a2e87f4fd01}\label{uvfr__utils_8c_a6d40598f9d8daa89ca159a2e87f4fd01}} 
 \index{uvfr\_utils.c@{uvfr\_utils.c}!uvInit@{uvInit}}
@@ -262,7 +266,7 @@ We allocate space for a response from the initialization.
 
 Clean up, clean up, everybody clean up, clean up, clean up, everybody do your share! The following code cleans up all the threads that were running, and free up used memory
 
-Definition at line 37 of file uvfr\+\_\+utils.\+c.
+Definition at line 39 of file uvfr\+\_\+utils.\+c.
 
 
 
@@ -286,7 +290,7 @@ The primary motivation for this is to avoid trying to dereference a pointer that
 
 Exiting gracefully can be pretty neat sometimes. 
 
-Definition at line 393 of file uvfr\+\_\+utils.\+c.
+Definition at line 401 of file uvfr\+\_\+utils.\+c.
 
 
 
@@ -295,6 +299,20 @@ References U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+OK, and U\+V\+\_\+\+W\+A\+R\+N\+
 
 
 Referenced by \+\_\+\+\_\+uv\+Free\+Crit\+Section(), \+\_\+\+\_\+uv\+Free\+O\+S(), and \+\_\+\+\_\+uv\+Malloc\+O\+S().
+
+\mbox{\Hypertarget{uvfr__utils_8c_a11806db468fdae50664b98e619575425}\label{uvfr__utils_8c_a11806db468fdae50664b98e619575425}} 
+\index{uvfr\_utils.c@{uvfr\_utils.c}!uvSysResetDaemon@{uvSysResetDaemon}}
+\index{uvSysResetDaemon@{uvSysResetDaemon}!uvfr\_utils.c@{uvfr\_utils.c}}
+\doxysubsubsection{\texorpdfstring{uvSysResetDaemon()}{uvSysResetDaemon()}}
+{\footnotesize\ttfamily void uv\+Sys\+Reset\+Daemon (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 233 of file uvfr\+\_\+utils.\+c.
+
+
+
+Referenced by uv\+Utils\+Reset().
 
 \mbox{\Hypertarget{uvfr__utils_8c_a02781145b4802ebdc7001800bbe6d994}\label{uvfr__utils_8c_a02781145b4802ebdc7001800bbe6d994}} 
 \index{uvfr\_utils.c@{uvfr\_utils.c}!uvUtilsReset@{uvUtilsReset}}
@@ -316,11 +334,11 @@ The idea here is to basically start from a blank slate and boot up everything. S
 
 reinitialize uv\+\_\+utils 
 
-Definition at line 243 of file uvfr\+\_\+utils.\+c.
+Definition at line 250 of file uvfr\+\_\+utils.\+c.
 
 
 
-References U\+V\+\_\+\+OK.
+References reset\+\_\+handle, U\+V\+\_\+\+OK, and uv\+Sys\+Reset\+Daemon().
 
 
 
@@ -338,6 +356,20 @@ Definition at line 51 of file freertos.\+c.
 
 
 Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), and uv\+Init().
+
+\mbox{\Hypertarget{uvfr__utils_8c_a4e2f70766df64229ab99dfe80c0c012a}\label{uvfr__utils_8c_a4e2f70766df64229ab99dfe80c0c012a}} 
+\index{uvfr\_utils.c@{uvfr\_utils.c}!reset\_handle@{reset\_handle}}
+\index{reset\_handle@{reset\_handle}!uvfr\_utils.c@{uvfr\_utils.c}}
+\doxysubsubsection{\texorpdfstring{reset\_handle}{reset\_handle}}
+{\footnotesize\ttfamily Task\+Handle\+\_\+t reset\+\_\+handle = N\+U\+LL}
+
+
+
+Definition at line 15 of file uvfr\+\_\+utils.\+c.
+
+
+
+Referenced by uv\+Utils\+Reset().
 
 \mbox{\Hypertarget{uvfr__utils_8c_af553c31425b32bd9c020380c942ed3bd}\label{uvfr__utils_8c_af553c31425b32bd9c020380c942ed3bd}} 
 \index{uvfr\_utils.c@{uvfr\_utils.c}!TxData@{TxData}}

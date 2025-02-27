@@ -98,9 +98,6 @@ $(document).ready(function(){initNavTree('globals_vars.html','');});
 <li>_next_task_id
 : <a class="el" href="group__state__engine.html#gaf070a24ce066297b4a8276ddcb884b0c">uvfr_state_engine.c</a>
 </li>
-<li>_svc_task_register
-: <a class="el" href="group__state__engine.html#ga031bbb86895e7346f4c7c168b36ffbd4">uvfr_state_engine.c</a>
-</li>
 <li>_task_register
 : <a class="el" href="group__state__engine.html#ga6b49ab568bed9d9189782eebb90545b5">uvfr_state_engine.c</a>
 </li>
@@ -113,16 +110,16 @@ $(document).ready(function(){initNavTree('globals_vars.html','');});
 , <a class="el" href="main_8c.html#a549b3590f54dfc129d2eebf2604c16e8">main.c</a>
 </li>
 <li>adc1_APPS2
-: <a class="el" href="main_8c.html#a8567d6e2f5ad8bd53f71ecc2b2b0ae30">main.c</a>
-, <a class="el" href="driving__loop_8c.html#a8567d6e2f5ad8bd53f71ecc2b2b0ae30">driving_loop.c</a>
+: <a class="el" href="driving__loop_8c.html#a8567d6e2f5ad8bd53f71ecc2b2b0ae30">driving_loop.c</a>
+, <a class="el" href="main_8c.html#a8567d6e2f5ad8bd53f71ecc2b2b0ae30">main.c</a>
 </li>
 <li>adc1_BPS1
 : <a class="el" href="driving__loop_8c.html#ad36d3aa4037203058df6816d56f4c186">driving_loop.c</a>
 , <a class="el" href="main_8c.html#ad36d3aa4037203058df6816d56f4c186">main.c</a>
 </li>
 <li>adc1_BPS2
-: <a class="el" href="main_8c.html#a277f7921a7a1e0fb8a6f953943dc06dc">main.c</a>
-, <a class="el" href="driving__loop_8c.html#a277f7921a7a1e0fb8a6f953943dc06dc">driving_loop.c</a>
+: <a class="el" href="driving__loop_8c.html#a277f7921a7a1e0fb8a6f953943dc06dc">driving_loop.c</a>
+, <a class="el" href="main_8c.html#a277f7921a7a1e0fb8a6f953943dc06dc">main.c</a>
 </li>
 <li>adc2_CoolantFlow
 : <a class="el" href="main_8c.html#a9211365d419c877b3b4f8074ef19cb33">main.c</a>
@@ -146,6 +143,18 @@ $(document).ready(function(){initNavTree('globals_vars.html','');});
 
 
 <h3><a id="index_c"></a>- c -</h3><ul>
+<li>callback_table_mutex
+: <a class="el" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">can.c</a>
+</li>
+<li>CAN_callback_table
+: <a class="el" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">can.c</a>
+</li>
+<li>canRxQueue
+: <a class="el" href="motor__controller_8c.html#a31e56f574be52c9850bb3034ebd9e010">motor_controller.c</a>
+</li>
+<li>canTxQueue
+: <a class="el" href="motor__controller_8c.html#ad7e8e999e507ca3c4a6f1d4b5430cfff">motor_controller.c</a>
+</li>
 <li>current_vehicle_settings
 : <a class="el" href="uvfr__settings_8h.html#a03566822d1b8893362970a459bd67daf">uvfr_settings.h</a>
 , <a class="el" href="uvfr__settings_8c.html#a03566822d1b8893362970a459bd67daf">uvfr_settings.c</a>
@@ -160,9 +169,6 @@ $(document).ready(function(){initNavTree('globals_vars.html','');});
 </li>
 <li>defaultTaskHandle
 : <a class="el" href="freertos_8c.html#aa658fe134a5d1309d7a15c8116fa142c">freertos.c</a>
-</li>
-<li>desired_motor_speed
-: <a class="el" href="motor__controller_8c.html#a4ace1e40a5ea83b51078f64f9c777e3f">motor_controller.c</a>
 </li>
 </ul>
 
@@ -187,8 +193,8 @@ $(document).ready(function(){initNavTree('globals_vars.html','');});
 , <a class="el" href="adc_8c.html#a22b804736f5648d52f639b2647d4ed13">adc.c</a>
 </li>
 <li>hadc2
-: <a class="el" href="adc_8c.html#acd9221f1aa19aebfe0b744947f2daf49">adc.c</a>
-, <a class="el" href="adc_8h.html#acd9221f1aa19aebfe0b744947f2daf49">adc.h</a>
+: <a class="el" href="adc_8h.html#acd9221f1aa19aebfe0b744947f2daf49">adc.h</a>
+, <a class="el" href="adc_8c.html#acd9221f1aa19aebfe0b744947f2daf49">adc.c</a>
 </li>
 <li>hcan2
 : <a class="el" href="can_8h.html#ab77168d14df04ccca5d48612ee21ced8">can.h</a>
@@ -291,8 +297,18 @@ $(document).ready(function(){initNavTree('globals_vars.html','');});
 : <a class="el" href="freertos_8c.html#a3afad2adffd2b662e26b56ede2b1ccc5">freertos.c</a>
 </li>
 <li>init_task_handle
-: <a class="el" href="uvfr__utils_8c.html#a142da7a698285a444ffffb0d1d791023">uvfr_utils.c</a>
-, <a class="el" href="freertos_8c.html#a142da7a698285a444ffffb0d1d791023">freertos.c</a>
+: <a class="el" href="freertos_8c.html#a142da7a698285a444ffffb0d1d791023">freertos.c</a>
+, <a class="el" href="uvfr__utils_8c.html#a142da7a698285a444ffffb0d1d791023">uvfr_utils.c</a>
+</li>
+</ul>
+
+
+<h3><a id="index_l"></a>- l -</h3><ul>
+<li>last_task_end_times
+: <a class="el" href="group__state__engine.html#ga0ae08e3e5e1cb6e0228da97c7e4326e0">uvfr_state_engine.c</a>
+</li>
+<li>last_task_start_times
+: <a class="el" href="group__state__engine.html#gac5868023f8ec284bd14c50db7a815e78">uvfr_state_engine.c</a>
 </li>
 </ul>
 
@@ -301,11 +317,28 @@ $(document).ready(function(){initNavTree('globals_vars.html','');});
 <li>max_motor_speed
 : <a class="el" href="motor__controller_8c.html#a347eaa173dae5d48ae87a4bc5532adfc">motor_controller.c</a>
 </li>
+<li>mc_default_settings
+: <a class="el" href="motor__controller_8c.html#afb41a96439ba6d63dcc64f257c43a1d2">motor_controller.c</a>
+</li>
 <li>MC_Expected_FW_Version
 : <a class="el" href="motor__controller_8c.html#a8f25ebbc9bf59980fdc0458f271437ee">motor_controller.c</a>
 </li>
 <li>MC_Expected_Serial_Number
 : <a class="el" href="motor__controller_8c.html#a26195bc72f07eeb97338e761432e03d2">motor_controller.c</a>
+</li>
+</ul>
+
+
+<h3><a id="index_n"></a>- n -</h3><ul>
+<li>nc_throttling
+: <a class="el" href="group__state__engine.html#ga6f4abbac22d8261c588c551b1d153ef6">uvfr_state_engine.c</a>
+</li>
+</ul>
+
+
+<h3><a id="index_o"></a>- o -</h3><ul>
+<li>os_settings
+: <a class="el" href="group__state__engine.html#ga026f8ea8b80f88c90cb35e3ec3588237">uvfr_state_engine.c</a>
 </li>
 </ul>
 
@@ -322,6 +355,12 @@ $(document).ready(function(){initNavTree('globals_vars.html','');});
 
 
 <h3><a id="index_r"></a>- r -</h3><ul>
+<li>reset_handle
+: <a class="el" href="uvfr__utils_8c.html#a4e2f70766df64229ab99dfe80c0c012a">uvfr_utils.c</a>
+</li>
+<li>Rx_msg_queue
+: <a class="el" href="can_8c.html#ad0e232ce658c38916aee908ceae1db1e">can.c</a>
+</li>
 <li>RxData
 : <a class="el" href="constants_8h.html#a14629afcc7f0b2d62c2b617b07d98184">constants.h</a>
 , <a class="el" href="constants_8c.html#a14629afcc7f0b2d62c2b617b07d98184">constants.c</a>
@@ -358,6 +397,15 @@ $(document).ready(function(){initNavTree('globals_vars.html','');});
 </li>
 <li>task_name_lut
 : <a class="el" href="group__state__engine.html#ga168524a5d658247db44217e643b6396f">uvfr_state_engine.c</a>
+</li>
+<li>task_name_tree
+: <a class="el" href="group__state__engine.html#gaaed35d33599a21d98d0500c5f0a1385a">uvfr_state_engine.c</a>
+</li>
+<li>task_tardiness
+: <a class="el" href="group__state__engine.html#gaf622d52254e824f6da1204abc93b18db">uvfr_state_engine.c</a>
+</li>
+<li>throttle_daq
+: <a class="el" href="group__state__engine.html#ga23b0c19ff219812065d876d2daaa26fd">uvfr_state_engine.c</a>
 </li>
 <li>Tx_msg_queue
 : <a class="el" href="can_8c.html#a39f60bf61979059355fc4916aa3500db">can.c</a>

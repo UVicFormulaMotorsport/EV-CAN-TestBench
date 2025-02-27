@@ -15,11 +15,11 @@ void deleteDaqSubTask(){
 }
 
 uv_status startDaqSubTasks(){
-
+	return UV_ERROR;
 }
 
 uv_status stopDaqSubTasks(){
-
+	return UV_ERROR;
 }
 
 /** @brief initializes the master DAQ task, all that fun stuff. This task probably manages a while plethora of smaller tasks

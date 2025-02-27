@@ -164,6 +164,12 @@ typedef struct task_status_block{
 	TickType_t task_report_time; /**< */
 }task_status_block;
 
+enum os_flag{
+	UV_OS_LOG_MEM = 0x01,
+	UV_OS_LOG_TASK_END_TIME = 0x02,
+	UV_OS_ATTEMPT_RESTART_NC_TASK = 0x04,
+	UV_OS_ENABLE_NONCRIT_TASK_THROTTLE = 0x08
+};
 
 /** @brief Settings that dictate state engine behavior
  *
@@ -174,6 +180,11 @@ typedef struct uv_os_settings{
 	TickType_t max_svc_task_period;
 	TickType_t max_task_period;//fuckin lethal man
 	TickType_t min_task_period;
+	float task_overshoot_margin_noncrit;
+	float task_overshoot_margin_crit;
+	float task_throttle_increment;
+
+	uint16_t os_flags;
 
 }uv_os_settings;
 
@@ -235,6 +246,7 @@ typedef struct uv_task_info{
 
 	task_management_info* tmi; /**< how we will be communicating in the future */
 	MessageBufferHandle_t task_rx_mailbox; /**< Incoming messages for this task*/
+	TickType_t last_execution_time;
 
 	uint16_t active_states; //corresponds to the vehicle states where the task should be active
 	uint16_t deletion_states; //corresponds to the vehicle states where the task should be suspended
@@ -255,6 +267,8 @@ typedef struct uv_task_info{
 		- Bit 13 - mission critical, if this specific task crashes, the car will not continue to run
 		- Bit 14 - Task currently delaying, either by vTaskDelay or vTaskDelayUntil
 		 */
+
+	uint8_t throttle_factor; /**< How much to throttle the task */
 }uv_task_info;
 
 #define uvTaskSetDeletionBit(t) (t->task_flags|=UV_TASK_AWAITING_DELETION)
@@ -274,6 +288,15 @@ typedef struct uv_task_info{
 #define uvTaskDelay(x,t) uvTaskSetDelayBit(x);\
 	vTaskDelay(t);\
 	uvTaskResetDelayBit(x)
+
+/** @ingroup state_engine_api
+ * @brief Function called at the end of the task period.
+ *
+ * @
+ *
+ *
+ */
+void uvTaskPeriodEnd(uv_task_info* t);
 
 /** @brief State engine aware vTaskDelayUntil wrapper
  *
