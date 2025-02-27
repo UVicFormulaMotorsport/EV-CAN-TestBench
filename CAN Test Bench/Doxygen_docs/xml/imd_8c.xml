@@ -94,11 +94,11 @@
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="24" relation="include">
-        </childnode>
         <childnode refid="25" relation="include">
         </childnode>
         <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
@@ -128,7 +128,7 @@
       <node id="18">
         <label>message_buffer.h</label>
       </node>
-      <node id="23">
+      <node id="24">
         <label>bms.h</label>
         <link refid="bms_8h"/>
         <childnode refid="3" relation="include">
@@ -171,13 +171,15 @@
         </childnode>
         <childnode refid="22" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
+        <childnode refid="24" relation="include">
         </childnode>
       </node>
       <node id="22">
         <label>daq.h</label>
         <link refid="daq_8h"/>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="14">
@@ -186,7 +188,7 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="25">
+      <node id="23">
         <label>rb_tree.h</label>
         <link refid="rb__tree_8h"/>
       </node>
@@ -228,7 +230,7 @@
         <label>FreeRTOSConfig.h</label>
         <link refid="_free_r_t_o_s_config_8h"/>
       </node>
-      <node id="24">
+      <node id="25">
         <label>uvfr_state_engine.h</label>
         <link refid="uvfr__state__engine_8h"/>
         <childnode refid="6" relation="include">
@@ -706,7 +708,7 @@
         </inbodydescription>
         <location file="Core/Src/imd.c" line="180" column="6" bodyfile="Core/Src/imd.c" bodystart="180" bodyend="191"/>
         <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
-        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="116">hcan2</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
         <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a242c64f8aaa09a26d5f586483d692f83" compoundref="constants_8h" startline="16">IMD_CAN_ID_Tx</references>
         <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
         <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
@@ -1093,11 +1095,11 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Core/Src/imd.c" line="554" column="6" bodyfile="Core/Src/imd.c" bodystart="554" bodyend="566"/>
-        <references refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a8c41c05a63a15c5d188d02f6f4db4303" compoundref="uvfr__utils_8h" startline="192">IMD</references>
-        <references refid="structuv__init__task__args_1adec47e7a54822cacfb8fcfc35a22157f" compoundref="uvfr__utils_8h" startline="316">uv_init_task_args::init_info_queue</references>
-        <references refid="structuv__init__task__args_1a3b81430245e7f832dc1112e53b0ef7ad" compoundref="uvfr__utils_8h" startline="317">uv_init_task_args::meta_task_handle</references>
+        <references refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a8c41c05a63a15c5d188d02f6f4db4303" compoundref="uvfr__utils_8h" startline="207">IMD</references>
+        <references refid="structuv__init__task__args_1adec47e7a54822cacfb8fcfc35a22157f" compoundref="uvfr__utils_8h" startline="331">uv_init_task_args::init_info_queue</references>
+        <references refid="structuv__init__task__args_1a3b81430245e7f832dc1112e53b0ef7ad" compoundref="uvfr__utils_8h" startline="332">uv_init_task_args::meta_task_handle</references>
         <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
-        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="37" endline="229">uvInit</referencedby>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

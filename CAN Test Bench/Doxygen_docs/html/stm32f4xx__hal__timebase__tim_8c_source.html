@@ -167,23 +167,23 @@ $(document).ready(function(){initNavTree('stm32f4xx__hal__timebase__tim_8c_sourc
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <span class="keywordflow">return</span> status;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__timebase__tim_8c.html#aaf651af2afe688a991c657f64f8fa5f9">  107</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__timebase__tim_8c.html#aaf651af2afe688a991c657f64f8fa5f9">HAL_SuspendTick</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;{</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="comment">/* Disable TIM1 update Interrupt */</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  __HAL_TIM_DISABLE_IT(&amp;<a class="code" href="stm32f4xx__hal__timebase__tim_8c.html#a25fc663547539bc49fecc0011bd76ab5">htim1</a>, TIM_IT_UPDATE);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__timebase__tim_8c.html#a24e0ee9dae1ec0f9d19200f5575ff790">  117</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__timebase__tim_8c.html#a24e0ee9dae1ec0f9d19200f5575ff790">HAL_ResumeTick</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;  <span class="comment">/* Enable TIM1 Update interrupt */</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  __HAL_TIM_ENABLE_IT(&amp;<a class="code" href="stm32f4xx__hal__timebase__tim_8c.html#a25fc663547539bc49fecc0011bd76ab5">htim1</a>, TIM_IT_UPDATE);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;}</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__timebase__tim_8c.html#aaf651af2afe688a991c657f64f8fa5f9">  109</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__timebase__tim_8c.html#aaf651af2afe688a991c657f64f8fa5f9">HAL_SuspendTick</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="comment">/* Disable TIM1 update Interrupt */</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  __HAL_TIM_DISABLE_IT(&amp;<a class="code" href="stm32f4xx__hal__timebase__tim_8c.html#a25fc663547539bc49fecc0011bd76ab5">htim1</a>, TIM_IT_UPDATE);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;}</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="stm32f4xx__hal__timebase__tim_8c.html#a24e0ee9dae1ec0f9d19200f5575ff790">  121</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="stm32f4xx__hal__timebase__tim_8c.html#a24e0ee9dae1ec0f9d19200f5575ff790">HAL_ResumeTick</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;  <span class="comment">/* Enable TIM1 Update interrupt */</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  __HAL_TIM_ENABLE_IT(&amp;<a class="code" href="stm32f4xx__hal__timebase__tim_8c.html#a25fc663547539bc49fecc0011bd76ab5">htim1</a>, TIM_IT_UPDATE);</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astm32f4xx__hal__timebase__tim_8c_html_aaf651af2afe688a991c657f64f8fa5f9"><div class="ttname"><a href="stm32f4xx__hal__timebase__tim_8c.html#aaf651af2afe688a991c657f64f8fa5f9">HAL_SuspendTick</a></div><div class="ttdeci">void HAL_SuspendTick(void)</div><div class="ttdoc">Suspend Tick increment.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__timebase__tim_8c_source.html#l00107">stm32f4xx_hal_timebase_tim.c:107</a></div></div>
+<div class="ttc" id="astm32f4xx__hal__timebase__tim_8c_html_aaf651af2afe688a991c657f64f8fa5f9"><div class="ttname"><a href="stm32f4xx__hal__timebase__tim_8c.html#aaf651af2afe688a991c657f64f8fa5f9">HAL_SuspendTick</a></div><div class="ttdeci">void HAL_SuspendTick(void)</div><div class="ttdoc">Suspend Tick increment.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__timebase__tim_8c_source.html#l00109">stm32f4xx_hal_timebase_tim.c:109</a></div></div>
 <div class="ttc" id="astm32f4xx__hal__timebase__tim_8c_html_a25fc663547539bc49fecc0011bd76ab5"><div class="ttname"><a href="stm32f4xx__hal__timebase__tim_8c.html#a25fc663547539bc49fecc0011bd76ab5">htim1</a></div><div class="ttdeci">TIM_HandleTypeDef htim1</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__timebase__tim_8c_source.html#l00028">stm32f4xx_hal_timebase_tim.c:28</a></div></div>
-<div class="ttc" id="astm32f4xx__hal__timebase__tim_8c_html_a24e0ee9dae1ec0f9d19200f5575ff790"><div class="ttname"><a href="stm32f4xx__hal__timebase__tim_8c.html#a24e0ee9dae1ec0f9d19200f5575ff790">HAL_ResumeTick</a></div><div class="ttdeci">void HAL_ResumeTick(void)</div><div class="ttdoc">Resume Tick increment.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__timebase__tim_8c_source.html#l00117">stm32f4xx_hal_timebase_tim.c:117</a></div></div>
+<div class="ttc" id="astm32f4xx__hal__timebase__tim_8c_html_a24e0ee9dae1ec0f9d19200f5575ff790"><div class="ttname"><a href="stm32f4xx__hal__timebase__tim_8c.html#a24e0ee9dae1ec0f9d19200f5575ff790">HAL_ResumeTick</a></div><div class="ttdeci">void HAL_ResumeTick(void)</div><div class="ttdoc">Resume Tick increment.</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__timebase__tim_8c_source.html#l00121">stm32f4xx_hal_timebase_tim.c:121</a></div></div>
 <div class="ttc" id="astm32f4xx__hal__timebase__tim_8c_html_a879cdb21ef051eb81ec51c18147397d5"><div class="ttname"><a href="stm32f4xx__hal__timebase__tim_8c.html#a879cdb21ef051eb81ec51c18147397d5">HAL_InitTick</a></div><div class="ttdeci">HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)</div><div class="ttdoc">This function configures the TIM1 as a time base source. The time source is configured to have 1ms ti...</div><div class="ttdef"><b>Definition:</b> <a href="stm32f4xx__hal__timebase__tim_8c_source.html#l00041">stm32f4xx_hal_timebase_tim.c:41</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

@@ -40,6 +40,8 @@ struct uv\+\_\+task\+\_\+info\+\_\+t $\ast$ \mbox{\hyperlink{structuv__task__inf
 \item 
 Message\+Buffer\+Handle\+\_\+t \mbox{\hyperlink{structuv__task__info_a659db1ee8d4c40a902a6f159725a3211}{task\+\_\+rx\+\_\+mailbox}}
 \item 
+Tick\+Type\+\_\+t \mbox{\hyperlink{structuv__task__info_a569da5121095d94816ad0985a5d9ddf0}{last\+\_\+execution\+\_\+time}}
+\item 
 uint16\+\_\+t \mbox{\hyperlink{structuv__task__info_ab24dea3bde4de2d839bf15e65c2df0d6}{active\+\_\+states}}
 \item 
 uint16\+\_\+t \mbox{\hyperlink{structuv__task__info_a6986d7216c7f889164931b37ab752c29}{deletion\+\_\+states}}
@@ -47,6 +49,8 @@ uint16\+\_\+t \mbox{\hyperlink{structuv__task__info_a6986d7216c7f889164931b37ab7
 uint16\+\_\+t \mbox{\hyperlink{structuv__task__info_aafd4e2d916f50b54b99fd02d63831e43}{suspension\+\_\+states}}
 \item 
 uint16\+\_\+t \mbox{\hyperlink{structuv__task__info_a6567a294eec7b11ac0d4bc3b927ef9e9}{task\+\_\+flags}}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{structuv__task__info_a9f578e50e9676b8a2817c705db1b12ca}{throttle\+\_\+factor}}
 \end{DoxyCompactItemize}
 
 
@@ -55,7 +59,7 @@ This struct is designed to hold neccessary information about an R\+T\+OS task th
 
 Pay close attention, because this is one of the most cursed structs in the project, as well as one of the most important 
 
-Definition at line 209 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 220 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
@@ -68,7 +72,7 @@ Definition at line 209 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 239 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 251 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
@@ -82,11 +86,11 @@ Referenced by \+\_\+state\+Change\+Daemon(), \+\_\+uv\+Validate\+Specific\+Task(
 
 how we communicate with the task rn -\/ T\+H\+IS S\+U\+C\+KS SO B\+AD 
 
-Definition at line 230 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 241 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Referenced by daq\+Master\+Task(), kill\+Self(), odometer\+Task(), Start\+Driving\+Loop(), suspend\+Self(), temp\+Monitor\+Task(), uv\+Delete\+S\+V\+C\+Task(), uv\+Delete\+Task(), and uv\+Suspend\+Task().
+Referenced by C\+A\+Nbus\+Rx\+Svc\+Daemon(), C\+A\+Nbus\+Tx\+Svc\+Daemon(), daq\+Master\+Task(), kill\+Self(), odometer\+Task(), Start\+Driving\+Loop(), suspend\+Self(), temp\+Monitor\+Task(), uv\+Delete\+S\+V\+C\+Task(), uv\+Delete\+Task(), uv\+Suspend\+Task(), and uv\+Task\+Manager().
 
 \mbox{\Hypertarget{structuv__task__info_afcb925c40c57baa41710b162982263a7}\label{structuv__task__info_afcb925c40c57baa41710b162982263a7}} 
 \index{uv\_task\_info@{uv\_task\_info}!deletion\_delay@{deletion\_delay}}
@@ -96,7 +100,7 @@ Referenced by daq\+Master\+Task(), kill\+Self(), odometer\+Task(), Start\+Drivin
 
 If deferred deletion is enabled, how long to wait before we delete task? 
 
-Definition at line 214 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 225 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{structuv__task__info_a6986d7216c7f889164931b37ab752c29}\label{structuv__task__info_a6986d7216c7f889164931b37ab752c29}} 
 \index{uv\_task\_info@{uv\_task\_info}!deletion\_states@{deletion\_states}}
@@ -106,11 +110,25 @@ Definition at line 214 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 240 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 252 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
 Referenced by \+\_\+state\+Change\+Daemon(), \+\_\+uv\+Validate\+Specific\+Task(), init\+Daq\+Task(), init\+Driving\+Loop(), init\+Odometer(), init\+Temp\+Monitor(), uv\+Create\+Service\+Task(), and uv\+Create\+Task().
+
+\mbox{\Hypertarget{structuv__task__info_a569da5121095d94816ad0985a5d9ddf0}\label{structuv__task__info_a569da5121095d94816ad0985a5d9ddf0}} 
+\index{uv\_task\_info@{uv\_task\_info}!last\_execution\_time@{last\_execution\_time}}
+\index{last\_execution\_time@{last\_execution\_time}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{last\_execution\_time}{last\_execution\_time}}
+{\footnotesize\ttfamily Tick\+Type\+\_\+t uv\+\_\+task\+\_\+info\+::last\+\_\+execution\+\_\+time}
+
+
+
+Definition at line 249 of file uvfr\+\_\+state\+\_\+engine.\+h.
+
+
+
+Referenced by uv\+Start\+Task(), uv\+Task\+Manager(), and uv\+Task\+Period\+End().
 
 \mbox{\Hypertarget{structuv__task__info_a5d32fc8f47b905499257336c561d189b}\label{structuv__task__info_a5d32fc8f47b905499257336c561d189b}} 
 \index{uv\_task\_info@{uv\_task\_info}!parent@{parent}}
@@ -120,7 +138,7 @@ Referenced by \+\_\+state\+Change\+Daemon(), \+\_\+uv\+Validate\+Specific\+Task(
 
 info about the parent of the task 
 
-Definition at line 234 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 245 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
@@ -134,7 +152,7 @@ Referenced by uv\+Create\+Service\+Task(), and uv\+Create\+Task().
 
 Number of words allocated to the stack of the task 
 
-Definition at line 220 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 231 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
@@ -148,7 +166,7 @@ Referenced by init\+Daq\+Task(), init\+Driving\+Loop(), init\+Odometer(), init\+
 
 
 
-Definition at line 241 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 253 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
@@ -162,7 +180,7 @@ Referenced by \+\_\+state\+Change\+Daemon(), \+\_\+uv\+Validate\+Specific\+Task(
 
 arguments for the specific task, this is where we will likely pass in task settings 
 
-Definition at line 232 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 243 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
@@ -191,11 +209,11 @@ Referenced by init\+Daq\+Task(), init\+Driving\+Loop(), init\+Odometer(), init\+
 \item Bit 14 -\/ Task currently delaying, either by v\+Task\+Delay or v\+Task\+Delay\+Until 
 \end{DoxyItemize}
 
-Definition at line 243 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 255 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Referenced by \+\_\+state\+Change\+Daemon(), \+\_\+uv\+Validate\+Specific\+Task(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), uv\+Schedule\+Task\+Deletion(), uv\+Start\+State\+Machine(), uv\+Start\+S\+V\+C\+Task(), and uv\+Task\+Crash\+Handler().
+Referenced by \+\_\+state\+Change\+Daemon(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), uv\+Late\+Task\+Handler(), uv\+Schedule\+Task\+Deletion(), uv\+Start\+State\+Machine(), uv\+Start\+S\+V\+C\+Task(), uv\+Task\+Crash\+Handler(), and uv\+Task\+Manager().
 
 \mbox{\Hypertarget{structuv__task__info_afcd240d2b6b01b4acea600ef4dfe8fbc}\label{structuv__task__info_afcd240d2b6b01b4acea600ef4dfe8fbc}} 
 \index{uv\_task\_info@{uv\_task\_info}!task\_function@{task\_function}}
@@ -205,7 +223,7 @@ Referenced by \+\_\+state\+Change\+Daemon(), \+\_\+uv\+Validate\+Specific\+Task(
 
 Pointer to function that implements the task 
 
-Definition at line 216 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 227 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
@@ -219,11 +237,11 @@ Referenced by \+\_\+uv\+Validate\+Specific\+Task(), init\+Daq\+Task(), init\+Dri
 
 Handle of free\+R\+T\+OS task control block 
 
-Definition at line 228 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 239 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Referenced by \+\_\+state\+Change\+Daemon(), kill\+Self(), proccess\+S\+C\+D\+Msg(), suspend\+Self(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), uv\+Delete\+S\+V\+C\+Task(), uv\+Delete\+Task(), uv\+Start\+State\+Machine(), uv\+Start\+S\+V\+C\+Task(), uv\+Start\+Task(), and uv\+Suspend\+Task().
+Referenced by \+\_\+state\+Change\+Daemon(), C\+A\+Nbus\+Rx\+Svc\+Daemon(), kill\+Self(), proccess\+S\+C\+D\+Msg(), suspend\+Self(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), uv\+Delete\+S\+V\+C\+Task(), uv\+Delete\+Task(), uv\+Start\+State\+Machine(), uv\+Start\+S\+V\+C\+Task(), uv\+Start\+Task(), uv\+Suspend\+Task(), and uv\+Task\+Manager().
 
 \mbox{\Hypertarget{structuv__task__info_a8ed5c619d9eea62c2beb08fa2db6b092}\label{structuv__task__info_a8ed5c619d9eea62c2beb08fa2db6b092}} 
 \index{uv\_task\_info@{uv\_task\_info}!task\_id@{task\_id}}
@@ -233,11 +251,11 @@ Referenced by \+\_\+state\+Change\+Daemon(), kill\+Self(), proccess\+S\+C\+D\+Ms
 
 Detailed description after the member 
 
-Definition at line 210 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 221 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Referenced by kill\+Self(), suspend\+Self(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), uv\+Delete\+Task(), uv\+Schedule\+Task\+Deletion(), uv\+Start\+Task(), and uv\+Suspend\+Task().
+Referenced by kill\+Self(), suspend\+Self(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), uv\+Delete\+Task(), uv\+Schedule\+Task\+Deletion(), uv\+Start\+Task(), uv\+Suspend\+Task(), and uv\+Task\+Period\+End().
 
 \mbox{\Hypertarget{structuv__task__info_ad24b438130bb3098ee5e855222dff21d}\label{structuv__task__info_ad24b438130bb3098ee5e855222dff21d}} 
 \index{uv\_task\_info@{uv\_task\_info}!task\_name@{task\_name}}
@@ -247,11 +265,11 @@ Referenced by kill\+Self(), suspend\+Self(), uv\+Create\+Service\+Task(), uv\+Cr
 
 Detailed description after the member 
 
-Definition at line 211 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 222 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Referenced by \+\_\+uv\+Validate\+Specific\+Task(), init\+Daq\+Task(), init\+Driving\+Loop(), init\+Odometer(), init\+Temp\+Monitor(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), uv\+Start\+State\+Machine(), uv\+Start\+S\+V\+C\+Task(), uv\+Start\+Task(), and uv\+S\+V\+C\+Task\+Manager().
+Referenced by \+\_\+uv\+Validate\+Specific\+Task(), compare\+Task\+By\+Name(), init\+Daq\+Task(), init\+Driving\+Loop(), init\+Odometer(), init\+Temp\+Monitor(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), uv\+Start\+State\+Machine(), uv\+Start\+S\+V\+C\+Task(), uv\+Start\+Task(), and uv\+S\+V\+C\+Task\+Manager().
 
 \mbox{\Hypertarget{structuv__task__info_ad157811debce6672bb6d00da7e90b6ca}\label{structuv__task__info_ad157811debce6672bb6d00da7e90b6ca}} 
 \index{uv\_task\_info@{uv\_task\_info}!task\_period@{task\_period}}
@@ -261,11 +279,11 @@ Referenced by \+\_\+uv\+Validate\+Specific\+Task(), init\+Daq\+Task(), init\+Dri
 
 Maximum period between task execution 
 
-Definition at line 213 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 224 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Referenced by daq\+Master\+Task(), init\+Daq\+Task(), init\+Driving\+Loop(), init\+Odometer(), init\+Temp\+Monitor(), odometer\+Task(), Start\+Driving\+Loop(), temp\+Monitor\+Task(), and uv\+Start\+State\+Machine().
+Referenced by daq\+Master\+Task(), init\+Daq\+Task(), init\+Driving\+Loop(), init\+Odometer(), init\+Temp\+Monitor(), odometer\+Task(), Start\+Driving\+Loop(), temp\+Monitor\+Task(), uv\+Late\+Task\+Handler(), uv\+Start\+State\+Machine(), uv\+Task\+Manager(), and uv\+Task\+Period\+End().
 
 \mbox{\Hypertarget{structuv__task__info_aff45751f7189980589d55379d1d5a355}\label{structuv__task__info_aff45751f7189980589d55379d1d5a355}} 
 \index{uv\_task\_info@{uv\_task\_info}!task\_priority@{task\_priority}}
@@ -275,7 +293,7 @@ Referenced by daq\+Master\+Task(), init\+Daq\+Task(), init\+Driving\+Loop(), ini
 
 Priority of the task. Int between 0 and 7 
 
-Definition at line 217 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 228 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
@@ -289,7 +307,7 @@ Referenced by init\+Daq\+Task(), init\+Driving\+Loop(), init\+Odometer(), init\+
 
 Incoming messages for this task 
 
-Definition at line 237 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 248 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{structuv__task__info_a43e5b3136b38dde4272aa510c5349ba3}\label{structuv__task__info_a43e5b3136b38dde4272aa510c5349ba3}} 
 \index{uv\_task\_info@{uv\_task\_info}!task\_state@{task\_state}}
@@ -299,11 +317,21 @@ Definition at line 237 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 225 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 236 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Referenced by \+\_\+state\+Change\+Daemon(), kill\+Self(), proccess\+S\+C\+D\+Msg(), suspend\+Self(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), uv\+Delete\+S\+V\+C\+Task(), uv\+Delete\+Task(), uv\+Schedule\+Task\+Deletion(), uv\+Start\+S\+V\+C\+Task(), uv\+Start\+Task(), uv\+Suspend\+S\+V\+C\+Task(), and uv\+Suspend\+Task().
+Referenced by \+\_\+state\+Change\+Daemon(), kill\+Self(), proccess\+S\+C\+D\+Msg(), suspend\+Self(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), uv\+Delete\+S\+V\+C\+Task(), uv\+Delete\+Task(), uv\+Schedule\+Task\+Deletion(), uv\+Start\+S\+V\+C\+Task(), uv\+Start\+Task(), uv\+Suspend\+S\+V\+C\+Task(), uv\+Suspend\+Task(), and uv\+Task\+Manager().
+
+\mbox{\Hypertarget{structuv__task__info_a9f578e50e9676b8a2817c705db1b12ca}\label{structuv__task__info_a9f578e50e9676b8a2817c705db1b12ca}} 
+\index{uv\_task\_info@{uv\_task\_info}!throttle\_factor@{throttle\_factor}}
+\index{throttle\_factor@{throttle\_factor}!uv\_task\_info@{uv\_task\_info}}
+\doxysubsubsection{\texorpdfstring{throttle\_factor}{throttle\_factor}}
+{\footnotesize\ttfamily uint8\+\_\+t uv\+\_\+task\+\_\+info\+::throttle\+\_\+factor}
+
+How much to throttle the task 
+
+Definition at line 271 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{structuv__task__info_ab0a6666d8589de0cbc508cc8b12c0945}\label{structuv__task__info_ab0a6666d8589de0cbc508cc8b12c0945}} 
 \index{uv\_task\_info@{uv\_task\_info}!tmi@{tmi}}
@@ -313,7 +341,7 @@ Referenced by \+\_\+state\+Change\+Daemon(), kill\+Self(), proccess\+S\+C\+D\+Ms
 
 how we will be communicating in the future 
 
-Definition at line 236 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 247 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 

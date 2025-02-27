@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['p_5fstatus_1103',['p_status',['../structp__status.html',1,'']]]
+  ['motor_5fcontrollor_5fsettings_1153',['motor_controllor_settings',['../structmotor__controllor__settings.html',1,'']]]
 ];

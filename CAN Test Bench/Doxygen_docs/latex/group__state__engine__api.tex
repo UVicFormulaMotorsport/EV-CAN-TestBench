@@ -146,10 +146,18 @@ enum \mbox{\hyperlink{group__state__engine__api_ga6166ed80f8e3bd62f1e7e6122c8817
 \mbox{\hyperlink{group__state__engine__api_gga6166ed80f8e3bd62f1e7e6122c8817f6acb1785f11dd02aa7f5d164fb314c594e}{H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}, 
 \mbox{\hyperlink{group__state__engine__api_gga6166ed80f8e3bd62f1e7e6122c8817f6aa20ceda9447596a05151a4a66db46a92}{R\+E\+A\+L\+T\+I\+M\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
  \}
-\begin{DoxyCompactList}\small\item\em Priority of a managed task. Maps directly to OS priority. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Priority of a managed task. Maps directly to OS priority. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{group__state__engine__api_gae85df48ed635b45630243b13b6e7d890}{os\+\_\+flag}} \{ \mbox{\hyperlink{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890a01fe6bc8a712283339b685288b720cca}{U\+V\+\_\+\+O\+S\+\_\+\+L\+O\+G\+\_\+\+M\+EM}} = 0x01, 
+\mbox{\hyperlink{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890a06369476715fdc7bedeec037bf3256cf}{U\+V\+\_\+\+O\+S\+\_\+\+L\+O\+G\+\_\+\+T\+A\+S\+K\+\_\+\+E\+N\+D\+\_\+\+T\+I\+ME}} = 0x02, 
+\mbox{\hyperlink{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890aad5d44cbab735a2f51cb37bfb71b8bb3}{U\+V\+\_\+\+O\+S\+\_\+\+A\+T\+T\+E\+M\+P\+T\+\_\+\+R\+E\+S\+T\+A\+R\+T\+\_\+\+N\+C\+\_\+\+T\+A\+SK}} = 0x04, 
+\mbox{\hyperlink{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890ab40c36b801f8a9439ca8255b6f740882}{U\+V\+\_\+\+O\+S\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+N\+C\+R\+I\+T\+\_\+\+T\+A\+S\+K\+\_\+\+T\+H\+R\+O\+T\+T\+LE}} = 0x08
+ \}
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \mbox{\hyperlink{group__state__engine__api_ga0e6167ef18c2ec8b65fbe070d0ffb6c9}{uv\+Task\+Period\+End}} (\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em Function called at the end of the task period. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{group__state__engine__api_gaa3ad3e8df75177c00265881c16563212}{change\+Vehicle\+State}} (uint16\+\_\+t state)
 \begin{DoxyCompactList}\small\item\em Function for changing the state of the vehicle, as well as the list of active + inactive tasks. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{group__state__engine__api_ga5c608f3832c45eac6e2da198d4ef1ba0}{uv\+Init\+State\+Engine}} ()
@@ -176,7 +184,7 @@ The functions defined in this group are publicly accessible and can be called fr
 
 
 
-Definition at line 193 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 204 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_gaa3b4befdf874ecfeac5face2cf1ae1a5}\label{group__state__engine__api_gaa3b4befdf874ecfeac5face2cf1ae1a5}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_DEADLINE\_FIRM@{UV\_TASK\_DEADLINE\_FIRM}}
@@ -186,7 +194,7 @@ Definition at line 193 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 197 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 208 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga50fac7a227841deccc8b30cef230ba08}\label{group__state__engine__api_ga50fac7a227841deccc8b30cef230ba08}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_DEADLINE\_HARD@{UV\_TASK\_DEADLINE\_HARD}}
@@ -196,7 +204,7 @@ Definition at line 197 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 198 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 209 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga04e93f880387fe61195800f0dfaac0bd}\label{group__state__engine__api_ga04e93f880387fe61195800f0dfaac0bd}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_DEADLINE\_MASK@{UV\_TASK\_DEADLINE\_MASK}}
@@ -206,7 +214,7 @@ Definition at line 198 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 199 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 210 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga4d88012d785bba8a4aa943c23c4450a2}\label{group__state__engine__api_ga4d88012d785bba8a4aa943c23c4450a2}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_DEADLINE\_NOT\_ENFORCED@{UV\_TASK\_DEADLINE\_NOT\_ENFORCED}}
@@ -216,7 +224,7 @@ Definition at line 199 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 195 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 206 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_gaf1374f633bd37be99d7d58e33270ce8c}\label{group__state__engine__api_gaf1374f633bd37be99d7d58e33270ce8c}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_DEFER\_DELETION@{UV\_TASK\_DEFER\_DELETION}}
@@ -226,7 +234,7 @@ Definition at line 195 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 194 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 205 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga70b5081fb012f121afe19c5ad2da9622}\label{group__state__engine__api_ga70b5081fb012f121afe19c5ad2da9622}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_DELAYING@{UV\_TASK\_DELAYING}}
@@ -236,7 +244,7 @@ Definition at line 194 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 201 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 212 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_gaae81d88a64e53c686e8e0fd01bfe723d}\label{group__state__engine__api_gaae81d88a64e53c686e8e0fd01bfe723d}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_DORMANT\_SVC@{UV\_TASK\_DORMANT\_SVC}}
@@ -246,7 +254,7 @@ Definition at line 201 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 183 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 194 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga52394ced81b82c523082ed2c4bb9e2d7}\label{group__state__engine__api_ga52394ced81b82c523082ed2c4bb9e2d7}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_ERR\_IN\_CHILD@{UV\_TASK\_ERR\_IN\_CHILD}}
@@ -256,7 +264,7 @@ Definition at line 183 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 192 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 203 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga056a2272c9356c78597c5c82bc58db2f}\label{group__state__engine__api_ga056a2272c9356c78597c5c82bc58db2f}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_GENERIC\_SVC@{UV\_TASK\_GENERIC\_SVC}}
@@ -266,7 +274,7 @@ Definition at line 192 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 184 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 195 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga5030c3ffc04fb93607cf1d4880a66731}\label{group__state__engine__api_ga5030c3ffc04fb93607cf1d4880a66731}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_IS\_CHILD@{UV\_TASK\_IS\_CHILD}}
@@ -276,7 +284,7 @@ Definition at line 184 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 190 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 201 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_gab3967da84c26663341e0cb2ed5177c70}\label{group__state__engine__api_gab3967da84c26663341e0cb2ed5177c70}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_IS\_ORPHAN@{UV\_TASK\_IS\_ORPHAN}}
@@ -286,7 +294,7 @@ Definition at line 190 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 191 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 202 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga732a956baeb0b603c6c935f1bea13fab}\label{group__state__engine__api_ga732a956baeb0b603c6c935f1bea13fab}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_IS\_PARENT@{UV\_TASK\_IS\_PARENT}}
@@ -296,7 +304,7 @@ Definition at line 191 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 189 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 200 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga0c0d91f0feee4f7b0816b3c06b61b459}\label{group__state__engine__api_ga0c0d91f0feee4f7b0816b3c06b61b459}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_LOG\_MEM\_USAGE@{UV\_TASK\_LOG\_MEM\_USAGE}}
@@ -306,7 +314,7 @@ Definition at line 189 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 187 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 198 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_gafc49f7a5303ebabaa3fc0886d67f3e9a}\label{group__state__engine__api_gafc49f7a5303ebabaa3fc0886d67f3e9a}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_LOG\_START\_STOP\_TIME@{UV\_TASK\_LOG\_START\_STOP\_TIME}}
@@ -316,7 +324,7 @@ Definition at line 187 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 186 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 197 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga96c7c915194ecba48edd70def54a700b}\label{group__state__engine__api_ga96c7c915194ecba48edd70def54a700b}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_MANAGER\_MASK@{UV\_TASK\_MANAGER\_MASK}}
@@ -326,7 +334,7 @@ Definition at line 186 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 185 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 196 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_gab37af27fe89f1987ee38bdb0bc945c43}\label{group__state__engine__api_gab37af27fe89f1987ee38bdb0bc945c43}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_MISSION\_CRITICAL@{UV\_TASK\_MISSION\_CRITICAL}}
@@ -336,7 +344,7 @@ Definition at line 185 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 200 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 211 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga3142d67aec5c34719e90cf122948f1db}\label{group__state__engine__api_ga3142d67aec5c34719e90cf122948f1db}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_PERIODIC\_SVC@{UV\_TASK\_PERIODIC\_SVC}}
@@ -346,7 +354,7 @@ Definition at line 200 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 182 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 193 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga337aaae50133aedb5d733b6ede6fb10d}\label{group__state__engine__api_ga337aaae50133aedb5d733b6ede6fb10d}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_PRIO\_INCREMENTATION@{UV\_TASK\_PRIO\_INCREMENTATION}}
@@ -356,7 +364,7 @@ Definition at line 182 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 196 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 207 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga4d87bda0a72990876364bd8764777cb2}\label{group__state__engine__api_ga4d87bda0a72990876364bd8764777cb2}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_SCD\_IGNORE@{UV\_TASK\_SCD\_IGNORE}}
@@ -366,7 +374,7 @@ Definition at line 196 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 188 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 199 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga253c75b331d0976b9a414657cef780cd}\label{group__state__engine__api_ga253c75b331d0976b9a414657cef780cd}} 
 \index{State Engine API@{State Engine API}!UV\_TASK\_VEHICLE\_APPLICATION@{UV\_TASK\_VEHICLE\_APPLICATION}}
@@ -376,7 +384,7 @@ Definition at line 188 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 181 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 192 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga5073c1aa60fa9292bc88054a2184daee}\label{group__state__engine__api_ga5073c1aa60fa9292bc88054a2184daee}} 
 \index{State Engine API@{State Engine API}!uvTaskDelay@{uvTaskDelay}}
@@ -404,7 +412,7 @@ State engine aware v\+Task\+Delay wrapper.
 \end{DoxyParams}
 
 
-Definition at line 274 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 288 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga1fc770ae6f3a6643548e0fb00a732ae5}\label{group__state__engine__api_ga1fc770ae6f3a6643548e0fb00a732ae5}} 
 \index{State Engine API@{State Engine API}!uvTaskDelayUntil@{uvTaskDelayUntil}}
@@ -434,7 +442,7 @@ State engine aware v\+Task\+Delay\+Until wrapper.
 \end{DoxyParams}
 This will cause the task to wait until the last time + the period. 
 
-Definition at line 286 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 309 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga0e5d6feafad4764ab2ffd4604ab633b5}\label{group__state__engine__api_ga0e5d6feafad4764ab2ffd4604ab633b5}} 
 \index{State Engine API@{State Engine API}!uvTaskIsDelaying@{uvTaskIsDelaying}}
@@ -444,7 +452,7 @@ Definition at line 286 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 267 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 281 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga2d3d223399d12a0af224266487f35483}\label{group__state__engine__api_ga2d3d223399d12a0af224266487f35483}} 
 \index{State Engine API@{State Engine API}!uvTaskResetDelayBit@{uvTaskResetDelayBit}}
@@ -454,7 +462,7 @@ Definition at line 267 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 265 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 279 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_gabe734bf4eb30c1a532e083dc9bdf938c}\label{group__state__engine__api_gabe734bf4eb30c1a532e083dc9bdf938c}} 
 \index{State Engine API@{State Engine API}!uvTaskResetDeletionBit@{uvTaskResetDeletionBit}}
@@ -464,7 +472,7 @@ Definition at line 265 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 261 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 275 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga3cab3b3fd6589348dceaf91b14e2a6ef}\label{group__state__engine__api_ga3cab3b3fd6589348dceaf91b14e2a6ef}} 
 \index{State Engine API@{State Engine API}!uvTaskSetDelayBit@{uvTaskSetDelayBit}}
@@ -474,7 +482,7 @@ Definition at line 261 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 263 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 277 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 \mbox{\Hypertarget{group__state__engine__api_ga07dcd5b5c28f257e50e0d04f519b5e7a}\label{group__state__engine__api_ga07dcd5b5c28f257e50e0d04f519b5e7a}} 
 \index{State Engine API@{State Engine API}!uvTaskSetDeletionBit@{uvTaskSetDeletionBit}}
@@ -484,7 +492,7 @@ Definition at line 263 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 260 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Definition at line 274 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
@@ -580,6 +588,34 @@ Type representing the overall state and operating mode of the vehicle.
 Type made to represent the state of the vehicle, and the location in the state machine The states are powers of two to make it easier to discern tasks that need to happen in multiple states 
 
 \doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{group__state__engine__api_gae85df48ed635b45630243b13b6e7d890}\label{group__state__engine__api_gae85df48ed635b45630243b13b6e7d890}} 
+\index{State Engine API@{State Engine API}!os\_flag@{os\_flag}}
+\index{os\_flag@{os\_flag}!State Engine API@{State Engine API}}
+\doxysubsubsection{\texorpdfstring{os\_flag}{os\_flag}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{group__state__engine__api_gae85df48ed635b45630243b13b6e7d890}{os\+\_\+flag}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_OS\_LOG\_MEM@{UV\_OS\_LOG\_MEM}!State Engine API@{State Engine API}}\index{State Engine API@{State Engine API}!UV\_OS\_LOG\_MEM@{UV\_OS\_LOG\_MEM}}}\mbox{\Hypertarget{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890a01fe6bc8a712283339b685288b720cca}\label{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890a01fe6bc8a712283339b685288b720cca}} 
+U\+V\+\_\+\+O\+S\+\_\+\+L\+O\+G\+\_\+\+M\+EM&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_OS\_LOG\_TASK\_END\_TIME@{UV\_OS\_LOG\_TASK\_END\_TIME}!State Engine API@{State Engine API}}\index{State Engine API@{State Engine API}!UV\_OS\_LOG\_TASK\_END\_TIME@{UV\_OS\_LOG\_TASK\_END\_TIME}}}\mbox{\Hypertarget{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890a06369476715fdc7bedeec037bf3256cf}\label{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890a06369476715fdc7bedeec037bf3256cf}} 
+U\+V\+\_\+\+O\+S\+\_\+\+L\+O\+G\+\_\+\+T\+A\+S\+K\+\_\+\+E\+N\+D\+\_\+\+T\+I\+ME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_OS\_ATTEMPT\_RESTART\_NC\_TASK@{UV\_OS\_ATTEMPT\_RESTART\_NC\_TASK}!State Engine API@{State Engine API}}\index{State Engine API@{State Engine API}!UV\_OS\_ATTEMPT\_RESTART\_NC\_TASK@{UV\_OS\_ATTEMPT\_RESTART\_NC\_TASK}}}\mbox{\Hypertarget{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890aad5d44cbab735a2f51cb37bfb71b8bb3}\label{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890aad5d44cbab735a2f51cb37bfb71b8bb3}} 
+U\+V\+\_\+\+O\+S\+\_\+\+A\+T\+T\+E\+M\+P\+T\+\_\+\+R\+E\+S\+T\+A\+R\+T\+\_\+\+N\+C\+\_\+\+T\+A\+SK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_OS\_ENABLE\_NONCRIT\_TASK\_THROTTLE@{UV\_OS\_ENABLE\_NONCRIT\_TASK\_THROTTLE}!State Engine API@{State Engine API}}\index{State Engine API@{State Engine API}!UV\_OS\_ENABLE\_NONCRIT\_TASK\_THROTTLE@{UV\_OS\_ENABLE\_NONCRIT\_TASK\_THROTTLE}}}\mbox{\Hypertarget{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890ab40c36b801f8a9439ca8255b6f740882}\label{group__state__engine__api_ggae85df48ed635b45630243b13b6e7d890ab40c36b801f8a9439ca8255b6f740882}} 
+U\+V\+\_\+\+O\+S\+\_\+\+E\+N\+A\+B\+L\+E\+\_\+\+N\+O\+N\+C\+R\+I\+T\+\_\+\+T\+A\+S\+K\+\_\+\+T\+H\+R\+O\+T\+T\+LE&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 167 of file uvfr\+\_\+state\+\_\+engine.\+h.
+
 \mbox{\Hypertarget{group__state__engine__api_ga6166ed80f8e3bd62f1e7e6122c8817f6}\label{group__state__engine__api_ga6166ed80f8e3bd62f1e7e6122c8817f6}} 
 \index{State Engine API@{State Engine API}!task\_priority@{task\_priority}}
 \index{task\_priority@{task\_priority}!State Engine API@{State Engine API}}
@@ -817,7 +853,7 @@ Transition from {\ttfamily U\+V\+\_\+\+I\+N\+IT} to {\ttfamily U\+V\+\_\+\+R\+E\
 
 Transition from {\ttfamily U\+V\+\_\+\+I\+N\+IT} to {\ttfamily U\+V\+\_\+\+E\+R\+R\+OR} states
 
-Definition at line 86 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 99 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -825,7 +861,7 @@ References \+\_\+state\+Change\+Daemon(), is\+Power\+Of\+Two, state\+\_\+change\
 
 
 
-Referenced by daq\+Master\+Task(), and uv\+Init().
+Referenced by \+\_\+\+\_\+uv\+Panic(), daq\+Master\+Task(), testfunc(), and uv\+Init().
 
 \mbox{\Hypertarget{group__state__engine__api_ga99bfc92472cdc99e9005e9d3c792909a}\label{group__state__engine__api_ga99bfc92472cdc99e9005e9d3c792909a}} 
 \index{State Engine API@{State Engine API}!uvCreateTask@{uvCreateTask}}
@@ -841,7 +877,7 @@ Do not exceed the number of tasks available
 
 Acquire the pointer to the spot in the array, we are doing this since we need to return the pointer anyways, and it cleans up the syntax a little.
 
-Definition at line 249 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 264 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -863,7 +899,7 @@ Stops and frees all resources used by uvfr\+\_\+state\+\_\+engine.
 
 If we need to initialize the state engine, gotta de-\/initialize as well. This is the opposite of \mbox{\hyperlink{group__state__engine__api_ga5c608f3832c45eac6e2da198d4ef1ba0}{uv\+Init\+State\+Engine}} 
 
-Definition at line 239 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 254 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -881,7 +917,7 @@ Function that prepares the state engine to do its thing.
 
 This is called when the system is first starting up. 
 
-Definition at line 151 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 164 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -903,13 +939,35 @@ Actually starts up the state engine to do state engine things.
 
 This function ensures that all of the managed tasks are setup in a legal way, and then it allocates resources for, and starts the state engine and the background tasks. This unlocks the ability for the vehicle to do basically anything. 
 
-Definition at line 179 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 192 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-References previous\+\_\+state, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, svc\+\_\+task\+\_\+manager, uv\+\_\+task\+\_\+info\+::task\+\_\+flags, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+handle, task\+\_\+manager, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+period, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+I\+N\+IT, U\+V\+\_\+\+OK, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+M\+I\+S\+S\+I\+O\+N\+\_\+\+C\+R\+I\+T\+I\+C\+AL, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+C\+D\+\_\+\+I\+G\+N\+O\+RE, uv\+S\+V\+C\+Task\+Manager(), uv\+Task\+Manager(), uv\+Validate\+Managed\+Tasks(), and vehicle\+\_\+state.
+References current\+\_\+vehicle\+\_\+settings, uv\+\_\+vehicle\+\_\+settings\+::os\+\_\+settings, os\+\_\+settings, previous\+\_\+state, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, svc\+\_\+task\+\_\+manager, uv\+\_\+os\+\_\+settings\+::svc\+\_\+task\+\_\+manager\+\_\+period, uv\+\_\+task\+\_\+info\+::task\+\_\+flags, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+handle, task\+\_\+manager, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+period, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+I\+N\+IT, U\+V\+\_\+\+OK, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+M\+I\+S\+S\+I\+O\+N\+\_\+\+C\+R\+I\+T\+I\+C\+AL, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+C\+D\+\_\+\+I\+G\+N\+O\+RE, uv\+S\+V\+C\+Task\+Manager(), uv\+Task\+Manager(), uv\+Validate\+Managed\+Tasks(), and vehicle\+\_\+state.
 
 
 
 Referenced by uv\+Init().
+
+\mbox{\Hypertarget{group__state__engine__api_ga0e6167ef18c2ec8b65fbe070d0ffb6c9}\label{group__state__engine__api_ga0e6167ef18c2ec8b65fbe070d0ffb6c9}} 
+\index{State Engine API@{State Engine API}!uvTaskPeriodEnd@{uvTaskPeriodEnd}}
+\index{uvTaskPeriodEnd@{uvTaskPeriodEnd}!State Engine API@{State Engine API}}
+\doxysubsubsection{\texorpdfstring{uvTaskPeriodEnd()}{uvTaskPeriodEnd()}}
+{\footnotesize\ttfamily void uv\+Task\+Period\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$}]{t }\end{DoxyParamCaption})}
+
+
+
+Function called at the end of the task period. 
+
+@ 
+
+Definition at line 1457 of file uvfr\+\_\+state\+\_\+engine.\+c.
+
+
+
+References uv\+\_\+task\+\_\+info\+::last\+\_\+execution\+\_\+time, nc\+\_\+throttling, uv\+\_\+task\+\_\+info\+::task\+\_\+id, uv\+\_\+task\+\_\+info\+::task\+\_\+period, task\+\_\+tardiness, uv\+Task\+Reset\+Delay\+Bit, and uv\+Task\+Set\+Delay\+Bit.
+
+
+
+Referenced by uv\+Task\+Manager().
 

@@ -171,8 +171,23 @@ typedef enum uv_status_t{
 }uv_status;
 
 
+/** @brief Represents the data type of some variable
+ *
+ */
+typedef enum  {
+	UV_UINT8,
+	UV_INT8,
+	UV_UINT16,
+	UV_INT16,
+	UV_UINT32,
+	UV_INT32,
+	UV_FLOAT,
+	UV_DOUBLE,
+	UV_INT64,
+	UV_UINT64,
+	UV_STRING
 
-
+}data_type;
 
 
 //not really sure how I want this implemented yet. Variable number of driving modes?
@@ -253,13 +268,13 @@ typedef union access_control_info{
  *
  */
 typedef struct uv_CAN_msg{
-	uint8_t flags;
-	//Bit 0: extended id?
-	//Bit [1:2]: which actual CANbus do I use?
-	//Bit 3: dynamically allocated
-	uint8_t dlc;
-	uint32_t msg_id;
-	uint8_t data[8];
+	uint8_t flags; /**< Bitfield that contains some basic information about the message:
+	-Bit 0: Is the message an extended ID message, or a standard ID message? 1 For extended.
+	-Bits 1:2 Which CANbus is being used to send the message? 01 -> CAN1 10 -> CAN2 11-> CAN3 (doesnt exist yet). Will default to CAN1 if all zeros*/
+
+	uint8_t dlc; /**<Data Length Code, representing how many bytes of data are present*/
+	uint32_t msg_id; /**<The ID of a message*/
+	uint8_t data[8]; /**<The actual data packet contained within the CAN message */
 }uv_CAN_msg;
 
 

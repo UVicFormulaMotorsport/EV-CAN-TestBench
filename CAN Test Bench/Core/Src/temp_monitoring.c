@@ -39,6 +39,28 @@ uv_status initTempMonitor(void * arguments){
 	return UV_OK;
 }
 
+void testfunc(uv_CAN_msg* msg){
+	if(vehicle_state == UV_READY){
+		changeVehicleState(UV_DRIVING);
+	}else if(vehicle_state == UV_DRIVING){
+		changeVehicleState(UV_ERROR_STATE);
+	}else if(vehicle_state == UV_ERROR_STATE){
+		changeVehicleState(UV_READY);
+	}
+}
+
+void testfunc2(uv_CAN_msg* msg){
+	static uv_CAN_msg response = {
+		.msg_id = 0x65,
+		.dlc = 1
+
+
+	};
+
+	response.data[0] = msg->data[0] + msg->data[1];
+	response.flags = 0;
+	uvSendCanMSG(&response);
+}
 
 /** @brief Monitors the temperatures of various points in the tractive system, and activates various cooling systems and such accordingly
  *
@@ -47,6 +69,17 @@ uv_status initTempMonitor(void * arguments){
  */
 void tempMonitorTask(void* args){
 	uv_task_info* params = (uv_task_info*) args; //Evil pointer typecast
+
+	uv_CAN_msg test_msg;
+	test_msg.data[0] = 1;
+	test_msg.data[1] = 2;
+	test_msg.data[2] = 3;
+	test_msg.dlc = 3;
+	test_msg.msg_id = 0x85;
+	test_msg.flags = 0x00;
+
+	insertCANMessageHandler(0x86, testfunc);
+	insertCANMessageHandler(0x64, testfunc2);
 
 	/**These here lines set the delay. This task executes exactly at the period specified, regardless of how long the task
 	 * execution actually takes
@@ -101,14 +134,16 @@ void tempMonitorTask(void* args){
 
 
 		//taskENTER_CRITICAL();
-		can_send_status = HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox);
+		//can_send_status = HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox);
 		//taskEXIT_CRITICAL();
 
-		if (can_send_status != HAL_OK){
+		//if (can_send_status != HAL_OK){
 			/* Transmission request Error */
 			//uvPanic("Unable to Transmit CAN msg",can_send_status);
-			handleCANbusError(&hcan2, 0);
-		}
+			//handleCANbusError(&hcan2, 0);
+		//}
+
+		uvSendCanMSG(&test_msg);
 
 
 		HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15); //BLUE

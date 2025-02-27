@@ -92,11 +92,11 @@
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
         <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
@@ -126,7 +126,7 @@
       <node id="16">
         <label>message_buffer.h</label>
       </node>
-      <node id="21">
+      <node id="22">
         <label>bms.h</label>
         <link refid="bms_8h"/>
         <childnode refid="2" relation="include">
@@ -169,13 +169,15 @@
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
       </node>
       <node id="20">
         <label>daq.h</label>
         <link refid="daq_8h"/>
         <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="12">
@@ -184,7 +186,7 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="21">
         <label>rb_tree.h</label>
         <link refid="rb__tree_8h"/>
       </node>
@@ -210,7 +212,7 @@
         <label>FreeRTOSConfig.h</label>
         <link refid="_free_r_t_o_s_config_8h"/>
       </node>
-      <node id="22">
+      <node id="23">
         <label>uvfr_state_engine.h</label>
         <link refid="uvfr__state__engine_8h"/>
         <childnode refid="5" relation="include">
@@ -392,6 +394,8 @@
         </childnode>
         <childnode refid="44" relation="include">
         </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
       </node>
       <node id="41">
         <label>Core/Src/odometer.c</label>
@@ -493,13 +497,17 @@
         <label>Core/Src/rb_tree.c</label>
         <link refid="rb__tree_8c"/>
       </node>
-      <node id="45">
+      <node id="46">
         <label>Core/Src/dma.c</label>
         <link refid="dma_8c"/>
       </node>
       <node id="19">
         <label>Core/Src/temp_monitoring.c</label>
         <link refid="temp__monitoring_8c"/>
+      </node>
+      <node id="45">
+        <label>Core/Src/uvfr_vehicle_commands.c</label>
+        <link refid="uvfr__vehicle__commands_8c"/>
       </node>
       <node id="35">
         <label>Core/Inc/daq.h</label>
@@ -596,7 +604,7 @@
         <link refid="dma_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="45" relation="include">
+        <childnode refid="46" relation="include">
         </childnode>
         <childnode refid="6" relation="include">
         </childnode>

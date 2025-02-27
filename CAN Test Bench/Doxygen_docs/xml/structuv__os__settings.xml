@@ -15,7 +15,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/uvfr_state_engine.h" line="172" column="12" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="172" bodyend="-1"/>
+        <location file="Core/Inc/uvfr_state_engine.h" line="178" column="12" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="178" bodyend="-1"/>
+        <referencedby refid="group__state__engine__api_1ga2ad1d74b5783a51355c047be6642fab8" compoundref="uvfr__state__engine_8c" startline="192" endline="246">uvStartStateMachine</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structuv__os__settings_1aa5163b7118ccafabb452052d2b8e7c5a" prot="public" static="no" mutable="no">
         <type>TickType_t</type>
@@ -28,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/uvfr_state_engine.h" line="173" column="12" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="173" bodyend="-1"/>
+        <location file="Core/Inc/uvfr_state_engine.h" line="179" column="12" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="179" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structuv__os__settings_1aa3243a98dc9bbf056730f2d11d400b33" prot="public" static="no" mutable="no">
         <type>TickType_t</type>
@@ -41,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/uvfr_state_engine.h" line="174" column="12" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="174" bodyend="-1"/>
+        <location file="Core/Inc/uvfr_state_engine.h" line="180" column="12" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="180" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structuv__os__settings_1a5e08f89b0999d4dedf5807a883ba4967" prot="public" static="no" mutable="no">
         <type>TickType_t</type>
@@ -54,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/uvfr_state_engine.h" line="175" column="12" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="175" bodyend="-1"/>
+        <location file="Core/Inc/uvfr_state_engine.h" line="181" column="12" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="181" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structuv__os__settings_1a8b497ca2b38e124db326cf634a87c4b1" prot="public" static="no" mutable="no">
         <type>TickType_t</type>
@@ -67,7 +68,61 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/uvfr_state_engine.h" line="176" column="12" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="176" bodyend="-1"/>
+        <location file="Core/Inc/uvfr_state_engine.h" line="182" column="12" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="182" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__os__settings_1abf5ff4b1c146e13bb9c39f95d3e59ce3" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float uv_os_settings::task_overshoot_margin_noncrit</definition>
+        <argsstring></argsstring>
+        <name>task_overshoot_margin_noncrit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_state_engine.h" line="183" column="7" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="183" bodyend="-1"/>
+        <referencedby refid="group__state__engine__backend_1gaf2dbdd0d9d9aa8bcbef120661117fc5e" compoundref="uvfr__state__engine_8c" startline="1080" endline="1189">uvTaskManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__os__settings_1a49ce23050cb8eb64a0ad2c8eb59b9285" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float uv_os_settings::task_overshoot_margin_crit</definition>
+        <argsstring></argsstring>
+        <name>task_overshoot_margin_crit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_state_engine.h" line="184" column="7" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="184" bodyend="-1"/>
+        <referencedby refid="group__state__engine__backend_1gaf2dbdd0d9d9aa8bcbef120661117fc5e" compoundref="uvfr__state__engine_8c" startline="1080" endline="1189">uvTaskManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__os__settings_1a3eff117bf9dada61242e5778d1be6299" prot="public" static="no" mutable="no">
+        <type>float</type>
+        <definition>float uv_os_settings::task_throttle_increment</definition>
+        <argsstring></argsstring>
+        <name>task_throttle_increment</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_state_engine.h" line="185" column="7" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="185" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__os__settings_1a76c6055b26d876a01f6baac6d766e6ae" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t uv_os_settings::os_flags</definition>
+        <argsstring></argsstring>
+        <name>os_flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_state_engine.h" line="187" column="10" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="187" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -75,13 +130,17 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="Core/Inc/uvfr_state_engine.h" line="171" column="29" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="171" bodyend="178"/>
+    <location file="Core/Inc/uvfr_state_engine.h" line="177" column="29" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="177" bodyend="189"/>
     <listofallmembers>
       <member refid="structuv__os__settings_1aa3243a98dc9bbf056730f2d11d400b33" prot="public" virt="non-virtual"><scope>uv_os_settings</scope><name>max_svc_task_period</name></member>
       <member refid="structuv__os__settings_1a5e08f89b0999d4dedf5807a883ba4967" prot="public" virt="non-virtual"><scope>uv_os_settings</scope><name>max_task_period</name></member>
       <member refid="structuv__os__settings_1a8b497ca2b38e124db326cf634a87c4b1" prot="public" virt="non-virtual"><scope>uv_os_settings</scope><name>min_task_period</name></member>
+      <member refid="structuv__os__settings_1a76c6055b26d876a01f6baac6d766e6ae" prot="public" virt="non-virtual"><scope>uv_os_settings</scope><name>os_flags</name></member>
       <member refid="structuv__os__settings_1a82068c14ee06131f3184d99fd2c1fae0" prot="public" virt="non-virtual"><scope>uv_os_settings</scope><name>svc_task_manager_period</name></member>
       <member refid="structuv__os__settings_1aa5163b7118ccafabb452052d2b8e7c5a" prot="public" virt="non-virtual"><scope>uv_os_settings</scope><name>task_manager_period</name></member>
+      <member refid="structuv__os__settings_1a49ce23050cb8eb64a0ad2c8eb59b9285" prot="public" virt="non-virtual"><scope>uv_os_settings</scope><name>task_overshoot_margin_crit</name></member>
+      <member refid="structuv__os__settings_1abf5ff4b1c146e13bb9c39f95d3e59ce3" prot="public" virt="non-virtual"><scope>uv_os_settings</scope><name>task_overshoot_margin_noncrit</name></member>
+      <member refid="structuv__os__settings_1a3eff117bf9dada61242e5778d1be6299" prot="public" virt="non-virtual"><scope>uv_os_settings</scope><name>task_throttle_increment</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

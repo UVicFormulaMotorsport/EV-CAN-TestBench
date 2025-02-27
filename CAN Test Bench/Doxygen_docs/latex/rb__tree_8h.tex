@@ -57,15 +57,15 @@ void \mbox{\hyperlink{rb__tree_8h_a9a58d42acc5dd251bf885a0f58c6abfb}{rb\+Destroy
 int \mbox{\hyperlink{rb__tree_8h_a659f2a6354fea183df8cfbfba2801484}{rb\+Apply\+Node}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$node, int($\ast$func)(void $\ast$, void $\ast$), void $\ast$cookie, enum \mbox{\hyperlink{rb__tree_8h_ae7a3c3e2ca387d6507c8c8e61e3f87b5}{rbtraversal}} order)
 \item 
 void \mbox{\hyperlink{rb__tree_8h_a447d21f412285d3455356d2975a6ced3}{rb\+Print}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, void($\ast$print\+\_\+func)(void $\ast$))
-\item 
+\begin{DoxyCompactList}\small\item\em Function used to print the contents of the tree. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$ \mbox{\hyperlink{rb__tree_8h_aeb5491e8c286b8dbc868df0c31dba799}{rb\+Insert}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, void $\ast$data)
-\item 
+\begin{DoxyCompactList}\small\item\em Function that inserts data into the tree, and creates a new node. \end{DoxyCompactList}\item 
 void $\ast$ \mbox{\hyperlink{rb__tree_8h_a8b7898139f560f35aa433a637c2a5381}{rb\+Delete}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$node, int keep)
-\item 
+\begin{DoxyCompactList}\small\item\em Deletes a node from the tree. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{rb__tree_8h_a0eb9842e366817eb18eac0e319fb04db}{rb\+Check\+Order}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt, void $\ast$min, void $\ast$max)
-\item 
+\begin{DoxyCompactList}\small\item\em Function that validates that the order of the nodes in the tree is correct. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{rb__tree_8h_aa02803c2713094e61fa50807fa7a5116}{rb\+Check\+Black\+Height}} (\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$rbt)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Function that Checks the height of black nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Macro Definition Documentation}
@@ -195,6 +195,24 @@ Node of a Red-\/\+Black binary search tree.
 
 Evil traversal method specifier for traversing the tree. 
 
+Function that applies some function to a subtree.
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbt} & Pointer to an the {\ttfamily rbtree} you wish to apply the functions to\\
+\hline
+{\em node} & Pointer to the node that is the root of the tree you wish to apply functions to. This can be a subtree of another tree if needed\\
+\hline
+{\em func} & The function you would like to apply to the nodes. This takes in two parameters. The first is a pointer to the data of the node. The second parameter is a pointer to the shared cookie, which allows information to be preserved between different calls to {\ttfamily func}. This function returns an integer value, with 0 being ok, and the others being various error states.\\
+\hline
+{\em cookie} & This is a pointer to some space in memory that all of the calls to @func share, to preserve information.\\
+\hline
+{\em order} & This is a member of that specifies the order in which the tree will be traversed.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+D\+A\+N\+G\+E\+R!! R\+E\+C\+U\+R\+S\+I\+O\+N!! Beware of stack memory usage, since most tasks are memory limited. 
+\end{DoxyAttention}
 \begin{DoxyEnumFields}{Enumerator}
 \raisebox{\heightof{T}}[0pt][0pt]{\index{PREORDER@{PREORDER}!rb\_tree.h@{rb\_tree.h}}\index{rb\_tree.h@{rb\_tree.h}!PREORDER@{PREORDER}}}\mbox{\Hypertarget{rb__tree_8h_ae7a3c3e2ca387d6507c8c8e61e3f87b5acd9d91cf59c093fdfa2b1736a26125ce}\label{rb__tree_8h_ae7a3c3e2ca387d6507c8c8e61e3f87b5acd9d91cf59c093fdfa2b1736a26125ce}} 
 P\+R\+E\+O\+R\+D\+ER&\\
@@ -222,6 +240,14 @@ Definition at line 18 of file rb\+\_\+tree.\+h.
 \doxysubsubsection{\texorpdfstring{rbApplyNode()}{rbApplyNode()}}
 {\footnotesize\ttfamily int rb\+Apply\+Node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$}]{rbt,  }\item[{\mbox{\hyperlink{structrbnode}{rbnode}} $\ast$}]{node,  }\item[{int($\ast$)(void $\ast$, void $\ast$)}]{func,  }\item[{void $\ast$}]{cookie,  }\item[{enum \mbox{\hyperlink{rb__tree_8h_ae7a3c3e2ca387d6507c8c8e61e3f87b5}{rbtraversal}}}]{order }\end{DoxyParamCaption})}
 
+
+
+Definition at line 116 of file rb\+\_\+tree.\+c.
+
+
+
+References rbnode\+::data, I\+N\+O\+R\+D\+ER, rbnode\+::left, P\+O\+S\+T\+O\+R\+D\+ER, P\+R\+E\+O\+R\+D\+ER, R\+B\+\_\+\+N\+IL, and rbnode\+::right.
+
 \mbox{\Hypertarget{rb__tree_8h_aa02803c2713094e61fa50807fa7a5116}\label{rb__tree_8h_aa02803c2713094e61fa50807fa7a5116}} 
 \index{rb\_tree.h@{rb\_tree.h}!rbCheckBlackHeight@{rbCheckBlackHeight}}
 \index{rbCheckBlackHeight@{rbCheckBlackHeight}!rb\_tree.h@{rb\_tree.h}}
@@ -230,7 +256,16 @@ Definition at line 18 of file rb\+\_\+tree.\+h.
 
 
 
-Definition at line 551 of file rb\+\_\+tree.\+c.
+Function that Checks the height of black nodes. 
+
+\begin{DoxyAttention}{Attention}
+D\+A\+N\+G\+E\+R!! T\+H\+IS F\+U\+N\+C\+T\+I\+ON IS R\+E\+C\+U\+R\+S\+I\+VE. This is intended to be used in a laptop debugging context. The V\+CU simply does not have enough memory to deal with recursion of this manner.
+\end{DoxyAttention}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000003}{Deprecated}}]Leftovers from laptop unit tests.\end{DoxyRefDesc}
+
+
+Definition at line 571 of file rb\+\_\+tree.\+c.
 
 
 
@@ -248,7 +283,16 @@ Referenced by rb\+Print().
 
 
 
-Definition at line 525 of file rb\+\_\+tree.\+c.
+Function that validates that the order of the nodes in the tree is correct. 
+
+\begin{DoxyAttention}{Attention}
+D\+A\+N\+G\+E\+R!! T\+H\+IS F\+U\+N\+C\+T\+I\+ON IS R\+E\+C\+U\+R\+S\+I\+VE. This is intended to be used in a laptop debugging context. The V\+CU simply does not have enough memory to deal with recursion of this manner.
+\end{DoxyAttention}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000002}{Deprecated}}]Leftovers from laptop unit tests.\end{DoxyRefDesc}
+
+
+Definition at line 545 of file rb\+\_\+tree.\+c.
 
 
 
@@ -265,8 +309,15 @@ References check\+Order(), and R\+B\+\_\+\+F\+I\+R\+ST.
 Create and initialize a binary search tree. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em compare\+\_\+func} & A function that compares the data of two nodes. Accepts pointers to the data as parameters\\
+\hline
+{\em destroy\+\_\+func} & The destructor function for the data, for safe disposal of dynamically allocated data \\
+\hline
+\end{DoxyParams}
 
-Definition at line 26 of file rb\+\_\+tree.\+c.
+
+Definition at line 28 of file rb\+\_\+tree.\+c.
 
 
 
@@ -280,7 +331,25 @@ References B\+L\+A\+CK, rbnode\+::color, rbtree\+::compare, rbtree\+::count, rbn
 
 
 
-Definition at line 344 of file rb\+\_\+tree.\+c.
+Deletes a node from the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbt} & Instance of a {\ttfamily rbtree} that we are removing the node from.\\
+\hline
+{\em node} & Pointer to the node that we would like to remove\\
+\hline
+{\em keep} & If {\ttfamily keep} is a truthy value, a pointer to the data of the node will be returned. Otherwise, the node and it\textquotesingle{}s data will be destroyed.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em If} & {\ttfamily keep} is \char`\"{}true\char`\"{}, this will return a pointer to the data held by the deleted node. Otherwise it will return N\+U\+LL. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 360 of file rb\+\_\+tree.\+c.
 
 
 
@@ -298,7 +367,7 @@ Destroy the tree, and de-\/allocate it\textquotesingle{}s elements.
 
 
 
-Definition at line 59 of file rb\+\_\+tree.\+c.
+Definition at line 61 of file rb\+\_\+tree.\+c.
 
 
 
@@ -315,8 +384,18 @@ References destroy\+All\+Nodes(), and R\+B\+\_\+\+F\+I\+R\+ST.
 Find a node of the tree based off the data you provide the tree. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em rbt} & Pointer to the tree in which we would like to find the node.\\
+\hline
+\end{DoxyParams}
 
-Definition at line 69 of file rb\+\_\+tree.\+c.
+\begin{DoxyRetVals}{Return values}
+{\em Returns} & a pointer to the node if the node is present in the tree. Otherwise, it will return N\+U\+LL to indicate the node could not be found. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 71 of file rb\+\_\+tree.\+c.
 
 
 
@@ -330,7 +409,23 @@ References rbtree\+::compare, rbnode\+::data, rbnode\+::left, R\+B\+\_\+\+F\+I\+
 
 
 
-Definition at line 191 of file rb\+\_\+tree.\+c.
+Function that inserts data into the tree, and creates a new node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbt} & Instance of a {\ttfamily rbtree} that we would like to insert data into\\
+\hline
+{\em data} & Pointer to the data we wish to insert\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em This} & function returns a pointer to the {\ttfamily rbnode} that was added. The function will return N\+U\+LL if the system is out of memory, or is otherwise unable to insert the node. \\
+\hline
+\end{DoxyRetVals}
+
+
+Definition at line 207 of file rb\+\_\+tree.\+c.
 
 
 
@@ -344,7 +439,23 @@ References B\+L\+A\+CK, rbnode\+::color, rbtree\+::compare, rbtree\+::count, rbn
 
 
 
-Definition at line 587 of file rb\+\_\+tree.\+c.
+Function used to print the contents of the tree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rbt} & a pointer to the {\ttfamily rbtree} you wish to print.\\
+\hline
+{\em print\+\_\+func} & A pointer to a print function specific to the data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAttention}{Attention}
+D\+A\+N\+G\+E\+R!! R\+E\+C\+U\+R\+S\+I\+O\+N!!
+\end{DoxyAttention}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\mbox{\hyperlink{deprecated__deprecated000001}{Deprecated}}]Leftovers from laptop unit tests. Sorta useless, cause like what are we gonna print to? \end{DoxyRefDesc}
+
+
+Definition at line 607 of file rb\+\_\+tree.\+c.
 
 
 
@@ -358,7 +469,7 @@ References print(), R\+B\+\_\+\+F\+I\+R\+ST, and rb\+Check\+Black\+Height().
 
 
 
-Definition at line 90 of file rb\+\_\+tree.\+c.
+Definition at line 92 of file rb\+\_\+tree.\+c.
 
 
 

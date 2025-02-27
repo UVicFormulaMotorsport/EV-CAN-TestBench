@@ -90,11 +90,11 @@
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
         <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
@@ -124,7 +124,7 @@
       <node id="17">
         <label>message_buffer.h</label>
       </node>
-      <node id="22">
+      <node id="23">
         <label>bms.h</label>
         <link refid="bms_8h"/>
         <childnode refid="4" relation="include">
@@ -167,7 +167,7 @@
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="1">
@@ -183,6 +183,8 @@
         <link refid="daq_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
       </node>
       <node id="13">
         <label>gpio.h</label>
@@ -190,7 +192,7 @@
         <childnode refid="4" relation="include">
         </childnode>
       </node>
-      <node id="24">
+      <node id="22">
         <label>rb_tree.h</label>
         <link refid="rb__tree_8h"/>
       </node>
@@ -216,7 +218,7 @@
         <label>FreeRTOSConfig.h</label>
         <link refid="_free_r_t_o_s_config_8h"/>
       </node>
-      <node id="23">
+      <node id="24">
         <label>uvfr_state_engine.h</label>
         <link refid="uvfr__state__engine_8h"/>
         <childnode refid="2" relation="include">
@@ -270,25 +272,70 @@
         </inbodydescription>
         <location file="Core/Src/temp_monitoring.c" line="12" column="11" bodyfile="Core/Src/temp_monitoring.c" bodystart="12" bodyend="40"/>
         <references refid="uvfr__state__engine_8h_1a32571accb85a2d8f479c6066d7a46238" compoundref="uvfr__state__engine_8h" startline="58">_UV_DEFAULT_TASK_STACK_SIZE</references>
-        <references refid="structuv__task__info_1ab24dea3bde4de2d839bf15e65c2df0d6" compoundref="uvfr__state__engine_8h" startline="239">uv_task_info::active_states</references>
-        <references refid="structuv__task__info_1a6986d7216c7f889164931b37ab752c29" compoundref="uvfr__state__engine_8h" startline="240">uv_task_info::deletion_states</references>
+        <references refid="structuv__task__info_1ab24dea3bde4de2d839bf15e65c2df0d6" compoundref="uvfr__state__engine_8h" startline="251">uv_task_info::active_states</references>
+        <references refid="structuv__task__info_1a6986d7216c7f889164931b37ab752c29" compoundref="uvfr__state__engine_8h" startline="252">uv_task_info::deletion_states</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4abed5371c079ef927fb67d8bb8e8aa286" compoundref="uvfr__state__engine_8h" startline="84">PROGRAMMING</references>
-        <references refid="structuv__task__info_1a353ec6bf2c42ab0920f3d1e671e568a3" compoundref="uvfr__state__engine_8h" startline="220">uv_task_info::stack_size</references>
-        <references refid="structuv__task__info_1aafd4e2d916f50b54b99fd02d63831e43" compoundref="uvfr__state__engine_8h" startline="241">uv_task_info::suspension_states</references>
-        <references refid="structuv__task__info_1ae255dff9b38fc8c0754085060e8ae699" compoundref="uvfr__state__engine_8h" startline="232">uv_task_info::task_args</references>
-        <references refid="structuv__task__info_1afcd240d2b6b01b4acea600ef4dfe8fbc" compoundref="uvfr__state__engine_8h" startline="216">uv_task_info::task_function</references>
-        <references refid="structuv__task__info_1ad24b438130bb3098ee5e855222dff21d" compoundref="uvfr__state__engine_8h" startline="211">uv_task_info::task_name</references>
-        <references refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" compoundref="uvfr__state__engine_8h" startline="213">uv_task_info::task_period</references>
-        <references refid="structuv__task__info_1aff45751f7189980589d55379d1d5a355" compoundref="uvfr__state__engine_8h" startline="217">uv_task_info::task_priority</references>
-        <references refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="48" endline="122">tempMonitorTask</references>
+        <references refid="structuv__task__info_1a353ec6bf2c42ab0920f3d1e671e568a3" compoundref="uvfr__state__engine_8h" startline="231">uv_task_info::stack_size</references>
+        <references refid="structuv__task__info_1aafd4e2d916f50b54b99fd02d63831e43" compoundref="uvfr__state__engine_8h" startline="253">uv_task_info::suspension_states</references>
+        <references refid="structuv__task__info_1ae255dff9b38fc8c0754085060e8ae699" compoundref="uvfr__state__engine_8h" startline="243">uv_task_info::task_args</references>
+        <references refid="structuv__task__info_1afcd240d2b6b01b4acea600ef4dfe8fbc" compoundref="uvfr__state__engine_8h" startline="227">uv_task_info::task_function</references>
+        <references refid="structuv__task__info_1ad24b438130bb3098ee5e855222dff21d" compoundref="uvfr__state__engine_8h" startline="222">uv_task_info::task_name</references>
+        <references refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" compoundref="uvfr__state__engine_8h" startline="224">uv_task_info::task_period</references>
+        <references refid="structuv__task__info_1aff45751f7189980589d55379d1d5a355" compoundref="uvfr__state__engine_8h" startline="228">uv_task_info::task_priority</references>
+        <references refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="70" endline="157">tempMonitorTask</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969" compoundref="uvfr__state__engine_8h" startline="85">UV_DRIVING</references>
         <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" compoundref="uvfr__utils_8h" startline="169">UV_ERROR</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4ac1fcacc095b8c0f1c9f452d51815bcb5" compoundref="uvfr__state__engine_8h" startline="88">UV_ERROR_STATE</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4a7ff39f8abdc9adbfd693e412e4aaeb6e" compoundref="uvfr__state__engine_8h" startline="87">UV_LAUNCH_CONTROL</references>
         <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8" compoundref="uvfr__state__engine_8h" startline="83">UV_READY</references>
-        <references refid="group__state__engine__api_1ga99bfc92472cdc99e9005e9d3c792909a" compoundref="uvfr__state__engine_8c" startline="249" endline="287">uvCreateTask</references>
-        <referencedby refid="group__state__engine__api_1ga5c608f3832c45eac6e2da198d4ef1ba0" compoundref="uvfr__state__engine_8c" startline="151" endline="172">uvInitStateEngine</referencedby>
+        <references refid="group__state__engine__api_1ga99bfc92472cdc99e9005e9d3c792909a" compoundref="uvfr__state__engine_8c" startline="264" endline="302">uvCreateTask</references>
+        <referencedby refid="group__state__engine__api_1ga5c608f3832c45eac6e2da198d4ef1ba0" compoundref="uvfr__state__engine_8c" startline="164" endline="185">uvInitStateEngine</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="temp__monitoring_8c_1a6ebc9edd0095edf64a08a3c2f9ed2efe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void testfunc</definition>
+        <argsstring>(uv_CAN_msg *msg)</argsstring>
+        <name>testfunc</name>
+        <param>
+          <type><ref refid="structuv___c_a_n__msg" kindref="compound">uv_CAN_msg</ref> *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/temp_monitoring.c" line="42" column="6" bodyfile="Core/Src/temp_monitoring.c" bodystart="42" bodyend="50"/>
+        <references refid="group__state__engine__api_1gaa3ad3e8df75177c00265881c16563212" compoundref="uvfr__state__engine_8c" startline="99" endline="156">changeVehicleState</references>
+        <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969" compoundref="uvfr__state__engine_8h" startline="85">UV_DRIVING</references>
+        <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4ac1fcacc095b8c0f1c9f452d51815bcb5" compoundref="uvfr__state__engine_8h" startline="88">UV_ERROR_STATE</references>
+        <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8" compoundref="uvfr__state__engine_8h" startline="83">UV_READY</references>
+        <references refid="group__state__engine_1ga2f58cf65b3566bc390600f877f8bed35" compoundref="uvfr__state__engine_8c" startline="45">vehicle_state</references>
+        <referencedby refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="70" endline="157">tempMonitorTask</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="temp__monitoring_8c_1a42aed0ca516238bb78f401d645b7b930" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void testfunc2</definition>
+        <argsstring>(uv_CAN_msg *msg)</argsstring>
+        <name>testfunc2</name>
+        <param>
+          <type><ref refid="structuv___c_a_n__msg" kindref="compound">uv_CAN_msg</ref> *</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/temp_monitoring.c" line="52" column="6" bodyfile="Core/Src/temp_monitoring.c" bodystart="52" bodyend="63"/>
+        <references refid="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" compoundref="uvfr__utils_8h" startline="277">uv_CAN_msg::data</references>
+        <references refid="structuv___c_a_n__msg_1a3a3fdc7fed06a631fefa58ea44052d8d" compoundref="uvfr__utils_8h" startline="271">uv_CAN_msg::flags</references>
+        <references refid="structuv___c_a_n__msg_1aae369fbabe3cc5b71a89bb641c24aace" compoundref="uvfr__utils_8h" startline="276">uv_CAN_msg::msg_id</references>
+        <references refid="group__uvfr__can__api_1ga62414944c3b631f57fdd08e467bcf5a4" compoundref="can_8c" startline="513" endline="542">uvSendCanMSG</references>
+        <referencedby refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="70" endline="157">tempMonitorTask</referencedby>
       </memberdef>
       <memberdef kind="function" id="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -314,19 +361,24 @@
 </programlisting></para>
 <para>This is an example of a task control point, which is the spot in the task where the task decides what needs to be done, based on the commands it has received from the task manager and the SCD</para>
         </inbodydescription>
-        <location file="Core/Src/temp_monitoring.c" line="48" column="6" bodyfile="Core/Src/temp_monitoring.c" bodystart="48" bodyend="122"/>
-        <references refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" compoundref="uvfr__state__engine_8h" startline="230">uv_task_info::cmd_data</references>
-        <references refid="can_8c_1aff5c4caa2b4968b309deaffdc58f1e92" compoundref="can_8c" startline="40" endline="111">handleCANbusError</references>
-        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="116">hcan2</references>
-        <references refid="group__state__engine__backend_1ga5f35b34432afed7f18f91fb8607f096f" compoundref="uvfr__state__engine_8c" startline="715" endline="748">killSelf</references>
-        <references refid="group__state__engine__backend_1gad6117850b55ad52be51d93915bcc313c" compoundref="uvfr__state__engine_8c" startline="756" endline="787">suspendSelf</references>
-        <references refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" compoundref="uvfr__state__engine_8h" startline="213">uv_task_info::task_period</references>
+        <location file="Core/Src/temp_monitoring.c" line="70" column="6" bodyfile="Core/Src/temp_monitoring.c" bodystart="70" bodyend="157"/>
+        <references refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" compoundref="uvfr__state__engine_8h" startline="241">uv_task_info::cmd_data</references>
+        <references refid="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" compoundref="uvfr__utils_8h" startline="277">uv_CAN_msg::data</references>
+        <references refid="structuv___c_a_n__msg_1aa74af3745c8b56910d7c309245541d37" compoundref="uvfr__utils_8h" startline="275">uv_CAN_msg::dlc</references>
+        <references refid="structuv___c_a_n__msg_1a3a3fdc7fed06a631fefa58ea44052d8d" compoundref="uvfr__utils_8h" startline="271">uv_CAN_msg::flags</references>
+        <references refid="group__uvfr__can__api_1ga81adc4a577110ce8fe1158b0dc302cc2" compoundref="can_8c" startline="395" endline="447">insertCANMessageHandler</references>
+        <references refid="group__state__engine__backend_1ga5f35b34432afed7f18f91fb8607f096f" compoundref="uvfr__state__engine_8c" startline="708" endline="741">killSelf</references>
+        <references refid="structuv___c_a_n__msg_1aae369fbabe3cc5b71a89bb641c24aace" compoundref="uvfr__utils_8h" startline="276">uv_CAN_msg::msg_id</references>
+        <references refid="group__state__engine__backend_1gad6117850b55ad52be51d93915bcc313c" compoundref="uvfr__state__engine_8c" startline="749" endline="780">suspendSelf</references>
+        <references refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" compoundref="uvfr__state__engine_8h" startline="224">uv_task_info::task_period</references>
+        <references refid="temp__monitoring_8c_1a6ebc9edd0095edf64a08a3c2f9ed2efe" compoundref="temp__monitoring_8c" startline="42" endline="50">testfunc</references>
+        <references refid="temp__monitoring_8c_1a42aed0ca516238bb78f401d645b7b930" compoundref="temp__monitoring_8c" startline="52" endline="63">testfunc2</references>
         <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
         <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
-        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
         <references refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6" compoundref="uvfr__state__engine_8h" startline="98">UV_KILL_CMD</references>
         <references refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077" compoundref="uvfr__state__engine_8h" startline="99">UV_SUSPEND_CMD</references>
-        <references refid="group__state__engine__api_1ga1fc770ae6f3a6643548e0fb00a732ae5" compoundref="uvfr__state__engine_8h" startline="286">uvTaskDelayUntil</references>
+        <references refid="group__uvfr__can__api_1ga62414944c3b631f57fdd08e467bcf5a4" compoundref="can_8c" startline="513" endline="542">uvSendCanMSG</references>
+        <references refid="group__state__engine__api_1ga1fc770ae6f3a6643548e0fb00a732ae5" compoundref="uvfr__state__engine_8h" startline="309">uvTaskDelayUntil</references>
         <referencedby refid="temp__monitoring_8c_1a979dc6ff14a3ef1f72e3cbea884871b0" compoundref="temp__monitoring_8c" startline="12" endline="40">initTempMonitor</referencedby>
       </memberdef>
       </sectiondef>
@@ -376,72 +428,107 @@
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" kindref="member">UV_OK</ref>;</highlight></codeline>
 <codeline lineno="40"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="48" refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" kindref="member">tempMonitorTask</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args){</highlight></codeline>
-<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structuv__task__info" kindref="compound">uv_task_info</ref>*<sp/>params<sp/>=<sp/>(<ref refid="structuv__task__info" kindref="compound">uv_task_info</ref>*)<sp/>args;<sp/></highlight><highlight class="comment">//Evil<sp/>pointer<sp/>typecast</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>TickType_t<sp/>tick_period<sp/>=<sp/>pdMS_TO_TICKS(params-&gt;<ref refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" kindref="member">task_period</ref>);<sp/></highlight><highlight class="comment">//Convert<sp/>ms<sp/>of<sp/>period<sp/>to<sp/>the<sp/>RTOS<sp/>ticks</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>TickType_t<sp/>last_time<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;;){</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//vTaskDelayUntil(<sp/>&amp;last_time,<sp/>tick_period);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(params-&gt;<ref refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" kindref="member">cmd_data</ref><sp/>==<sp/><ref refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6" kindref="member">UV_KILL_CMD</ref>){</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TASK<sp/>DESTRUCTOR:<sp/>CLEAN<sp/>UP<sp/>ANY<sp/>RESOURCES<sp/>USED<sp/>BY<sp/>THE<sp/>TASK<sp/>HERE</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__state__engine__backend_1ga5f35b34432afed7f18f91fb8607f096f" kindref="member">killSelf</ref>(params);</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(params-&gt;<ref refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" kindref="member">cmd_data</ref><sp/>==<sp/><ref refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077" kindref="member">UV_SUSPEND_CMD</ref>){</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TASK<sp/>SUSPENSION<sp/>DESTRUCTOR:<sp/>RELEASE<sp/>THINGS<sp/>LIKE<sp/>MUTICES<sp/>OR<sp/>SEMAPHORES,<sp/>BUT<sp/>NO<sp/>NEED<sp/>TO<sp/>DEALLOCATE<sp/>ANY<sp/>MEMORY</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="73"><highlight class="normal"></highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__state__engine__backend_1gad6117850b55ad52be51d93915bcc313c" kindref="member">suspendSelf</ref>(params);</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>last_time<sp/>=<sp/>xTaskGetTickCount();</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"></highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Mohak<sp/>code<sp/>here</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[0]<sp/>=<sp/>0b10101010;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[1]<sp/>=<sp/>0b10101010;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[2]<sp/>=<sp/>0b10101010;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[3]<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[4]<sp/>=<sp/>2;</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[5]<sp/>=<sp/>3;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[6]<sp/>=<sp/>0b10101010;</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[7]<sp/>=<sp/>0b10101010;</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HAL_StatusTypeDef<sp/>can_send_status;</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//vTaskDelay(400);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.IDE<sp/>=<sp/>CAN_ID_EXT;</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.ExtId<sp/>=<sp/>0x1234;</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="temp__monitoring_8c_1a6ebc9edd0095edf64a08a3c2f9ed2efe" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="temp__monitoring_8c_1a6ebc9edd0095edf64a08a3c2f9ed2efe" kindref="member">testfunc</ref>(<ref refid="structuv___c_a_n__msg" kindref="compound">uv_CAN_msg</ref>*<sp/>msg){</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="group__state__engine_1ga2f58cf65b3566bc390600f877f8bed35" kindref="member">vehicle_state</ref><sp/>==<sp/><ref refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8" kindref="member">UV_READY</ref>){</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__state__engine__api_1gaa3ad3e8df75177c00265881c16563212" kindref="member">changeVehicleState</ref>(<ref refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969" kindref="member">UV_DRIVING</ref>);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="group__state__engine_1ga2f58cf65b3566bc390600f877f8bed35" kindref="member">vehicle_state</ref><sp/>==<sp/><ref refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969" kindref="member">UV_DRIVING</ref>){</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__state__engine__api_1gaa3ad3e8df75177c00265881c16563212" kindref="member">changeVehicleState</ref>(<ref refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4ac1fcacc095b8c0f1c9f452d51815bcb5" kindref="member">UV_ERROR_STATE</ref>);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="group__state__engine_1ga2f58cf65b3566bc390600f877f8bed35" kindref="member">vehicle_state</ref><sp/>==<sp/><ref refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4ac1fcacc095b8c0f1c9f452d51815bcb5" kindref="member">UV_ERROR_STATE</ref>){</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__state__engine__api_1gaa3ad3e8df75177c00265881c16563212" kindref="member">changeVehicleState</ref>(<ref refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8" kindref="member">UV_READY</ref>);</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="temp__monitoring_8c_1a42aed0ca516238bb78f401d645b7b930" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="temp__monitoring_8c_1a42aed0ca516238bb78f401d645b7b930" kindref="member">testfunc2</ref>(<ref refid="structuv___c_a_n__msg" kindref="compound">uv_CAN_msg</ref>*<sp/>msg){</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/><ref refid="structuv___c_a_n__msg" kindref="compound">uv_CAN_msg</ref><sp/>response<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.<ref refid="structuv___c_a_n__msg_1aae369fbabe3cc5b71a89bb641c24aace" kindref="member">msg_id</ref><sp/>=<sp/>0x65,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>.dlc<sp/>=<sp/>1</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>response.<ref refid="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" kindref="member">data</ref>[0]<sp/>=<sp/>msg-&gt;<ref refid="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" kindref="member">data</ref>[0]<sp/>+<sp/>msg-&gt;<ref refid="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" kindref="member">data</ref>[1];</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>response.<ref refid="structuv___c_a_n__msg_1a3a3fdc7fed06a631fefa58ea44052d8d" kindref="member">flags</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__uvfr__can__api_1ga62414944c3b631f57fdd08e467bcf5a4" kindref="member">uvSendCanMSG</ref>(&amp;response);</highlight></codeline>
+<codeline lineno="63"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" kindref="member">tempMonitorTask</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args){</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structuv__task__info" kindref="compound">uv_task_info</ref>*<sp/>params<sp/>=<sp/>(<ref refid="structuv__task__info" kindref="compound">uv_task_info</ref>*)<sp/>args;<sp/></highlight><highlight class="comment">//Evil<sp/>pointer<sp/>typecast</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structuv___c_a_n__msg" kindref="compound">uv_CAN_msg</ref><sp/>test_msg;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>test_msg.<ref refid="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" kindref="member">data</ref>[0]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>test_msg.<ref refid="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" kindref="member">data</ref>[1]<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>test_msg.<ref refid="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" kindref="member">data</ref>[2]<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>test_msg.<ref refid="structuv___c_a_n__msg_1aa74af3745c8b56910d7c309245541d37" kindref="member">dlc</ref><sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>test_msg.<ref refid="structuv___c_a_n__msg_1aae369fbabe3cc5b71a89bb641c24aace" kindref="member">msg_id</ref><sp/>=<sp/>0x85;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>test_msg.<ref refid="structuv___c_a_n__msg_1a3a3fdc7fed06a631fefa58ea44052d8d" kindref="member">flags</ref><sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__uvfr__can__api_1ga81adc4a577110ce8fe1158b0dc302cc2" kindref="member">insertCANMessageHandler</ref>(0x86,<sp/><ref refid="temp__monitoring_8c_1a6ebc9edd0095edf64a08a3c2f9ed2efe" kindref="member">testfunc</ref>);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__uvfr__can__api_1ga81adc4a577110ce8fe1158b0dc302cc2" kindref="member">insertCANMessageHandler</ref>(0x64,<sp/><ref refid="temp__monitoring_8c_1a42aed0ca516238bb78f401d645b7b930" kindref="member">testfunc2</ref>);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>TickType_t<sp/>tick_period<sp/>=<sp/>pdMS_TO_TICKS(params-&gt;<ref refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" kindref="member">task_period</ref>);<sp/></highlight><highlight class="comment">//Convert<sp/>ms<sp/>of<sp/>period<sp/>to<sp/>the<sp/>RTOS<sp/>ticks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>TickType_t<sp/>last_time<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;;){</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//vTaskDelayUntil(<sp/>&amp;last_time,<sp/>tick_period);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(params-&gt;<ref refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" kindref="member">cmd_data</ref><sp/>==<sp/><ref refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6" kindref="member">UV_KILL_CMD</ref>){</highlight></codeline>
 <codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.DLC<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TASK<sp/>DESTRUCTOR:<sp/>CLEAN<sp/>UP<sp/>ANY<sp/>RESOURCES<sp/>USED<sp/>BY<sp/>THE<sp/>TASK<sp/>HERE</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="101"><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//taskENTER_CRITICAL();</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>can_send_status<sp/>=<sp/>HAL_CAN_AddTxMessage(&amp;<ref refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>,<sp/>&amp;<ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>,<sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>,<sp/>&amp;<ref refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" kindref="member">TxMailbox</ref>);</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//taskEXIT_CRITICAL();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__state__engine__backend_1ga5f35b34432afed7f18f91fb8607f096f" kindref="member">killSelf</ref>(params);</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(params-&gt;<ref refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" kindref="member">cmd_data</ref><sp/>==<sp/><ref refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077" kindref="member">UV_SUSPEND_CMD</ref>){</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//TASK<sp/>SUSPENSION<sp/>DESTRUCTOR:<sp/>RELEASE<sp/>THINGS<sp/>LIKE<sp/>MUTICES<sp/>OR<sp/>SEMAPHORES,<sp/>BUT<sp/>NO<sp/>NEED<sp/>TO<sp/>DEALLOCATE<sp/>ANY<sp/>MEMORY</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="106"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(can_send_status<sp/>!=<sp/>HAL_OK){</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Transmission<sp/>request<sp/>Error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//uvPanic(&quot;Unable<sp/>to<sp/>Transmit<sp/>CAN<sp/>msg&quot;,can_send_status);</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="can_8c_1aff5c4caa2b4968b309deaffdc58f1e92" kindref="member">handleCANbusError</ref>(&amp;<ref refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>,<sp/>0);</highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15);<sp/></highlight><highlight class="comment">//BLUE</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(params-&gt;<ref refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" kindref="member">cmd_data</ref><sp/>==<sp/><ref refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6" kindref="member">UV_KILL_CMD</ref><sp/>||<sp/>params-&gt;<ref refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" kindref="member">cmd_data</ref><sp/>==<sp/><ref refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077" kindref="member">UV_SUSPEND_CMD</ref>){</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>The<sp/>idea<sp/>here<sp/>is<sp/>to<sp/>skip<sp/>the<sp/>delay</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__state__engine__api_1ga1fc770ae6f3a6643548e0fb00a732ae5" kindref="member">uvTaskDelayUntil</ref>(params,<sp/>last_time,<sp/>tick_period);<sp/></highlight><highlight class="comment">//The<sp/>delay<sp/>that<sp/>keeps<sp/>task<sp/>on<sp/>period<sp/>theoretically</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="122"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__state__engine__backend_1gad6117850b55ad52be51d93915bcc313c" kindref="member">suspendSelf</ref>(params);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>last_time<sp/>=<sp/>xTaskGetTickCount();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Mohak<sp/>code<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[0]<sp/>=<sp/>0b10101010;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[1]<sp/>=<sp/>0b10101010;</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[2]<sp/>=<sp/>0b10101010;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[3]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[4]<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[5]<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[6]<sp/>=<sp/>0b10101010;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[7]<sp/>=<sp/>0b10101010;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HAL_StatusTypeDef<sp/>can_send_status;</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//vTaskDelay(400);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.IDE<sp/>=<sp/>CAN_ID_EXT;</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.ExtId<sp/>=<sp/>0x1234;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.DLC<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//taskENTER_CRITICAL();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//can_send_status<sp/>=<sp/>HAL_CAN_AddTxMessage(&amp;hcan2,<sp/>&amp;TxHeader,<sp/>TxData,<sp/>&amp;TxMailbox);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//taskEXIT_CRITICAL();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>(can_send_status<sp/>!=<sp/>HAL_OK){</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Transmission<sp/>request<sp/>Error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//uvPanic(&quot;Unable<sp/>to<sp/>Transmit<sp/>CAN<sp/>msg&quot;,can_send_status);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//handleCANbusError(&amp;hcan2,<sp/>0);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__uvfr__can__api_1ga62414944c3b631f57fdd08e467bcf5a4" kindref="member">uvSendCanMSG</ref>(&amp;test_msg);</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15);<sp/></highlight><highlight class="comment">//BLUE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(params-&gt;<ref refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" kindref="member">cmd_data</ref><sp/>==<sp/><ref refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6" kindref="member">UV_KILL_CMD</ref><sp/>||<sp/>params-&gt;<ref refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" kindref="member">cmd_data</ref><sp/>==<sp/><ref refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077" kindref="member">UV_SUSPEND_CMD</ref>){</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">continue</highlight><highlight class="normal">;<sp/></highlight><highlight class="comment">//<sp/>The<sp/>idea<sp/>here<sp/>is<sp/>to<sp/>skip<sp/>the<sp/>delay</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__state__engine__api_1ga1fc770ae6f3a6643548e0fb00a732ae5" kindref="member">uvTaskDelayUntil</ref>(params,<sp/>last_time,<sp/>tick_period);<sp/></highlight><highlight class="comment">//The<sp/>delay<sp/>that<sp/>keeps<sp/>task<sp/>on<sp/>period<sp/>theoretically</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="157"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="Core/Src/temp_monitoring.c"/>
   </compounddef>

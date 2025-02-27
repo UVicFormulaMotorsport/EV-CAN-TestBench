@@ -12,11 +12,15 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Bitfield that contains some basic information about the message: -Bit 0: Is the message an extended ID message, or a standard ID message? 1 For extended. -Bits 1:2 Which CANbus is being used to send the message? 01 -&gt; CAN1 10 -&gt; CAN2 11-&gt; CAN3 (doesnt exist yet). Will default to CAN1 if all zeros </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/uvfr_utils.h" line="256" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="256" bodyend="-1"/>
-        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="358" endline="405">CANbusTxSvcDaemon</referencedby>
+        <location file="Core/Inc/uvfr_utils.h" line="271" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="271" bodyend="-1"/>
+        <referencedby refid="can_8c_1ae025787f17f6312df1e71c731b2a0fe4" compoundref="can_8c" startline="476" endline="503">__uvCANtxCritSection</referencedby>
+        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="551" endline="610">CANbusTxSvcDaemon</referencedby>
+        <referencedby refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="70" endline="157">tempMonitorTask</referencedby>
+        <referencedby refid="temp__monitoring_8c_1a42aed0ca516238bb78f401d645b7b930" compoundref="temp__monitoring_8c" startline="52" endline="63">testfunc2</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structuv___c_a_n__msg_1aa74af3745c8b56910d7c309245541d37" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -26,11 +30,15 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>Data Length Code, representing how many bytes of data are present </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/uvfr_utils.h" line="260" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="260" bodyend="-1"/>
-        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="358" endline="405">CANbusTxSvcDaemon</referencedby>
+        <location file="Core/Inc/uvfr_utils.h" line="275" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="275" bodyend="-1"/>
+        <referencedby refid="can_8c_1ae025787f17f6312df1e71c731b2a0fe4" compoundref="can_8c" startline="476" endline="503">__uvCANtxCritSection</referencedby>
+        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="551" endline="610">CANbusTxSvcDaemon</referencedby>
+        <referencedby refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" compoundref="can_8c" startline="298" endline="335">HAL_CAN_RxFifo0MsgPendingCallback</referencedby>
+        <referencedby refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="70" endline="157">tempMonitorTask</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structuv___c_a_n__msg_1aae369fbabe3cc5b71a89bb641c24aace" prot="public" static="no" mutable="no">
         <type>uint32_t</type>
@@ -40,11 +48,17 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>The ID of a message </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/uvfr_utils.h" line="261" column="10" bodyfile="Core/Inc/uvfr_utils.h" bodystart="261" bodyend="-1"/>
-        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="358" endline="405">CANbusTxSvcDaemon</referencedby>
+        <location file="Core/Inc/uvfr_utils.h" line="276" column="10" bodyfile="Core/Inc/uvfr_utils.h" bodystart="276" bodyend="-1"/>
+        <referencedby refid="can_8c_1ae025787f17f6312df1e71c731b2a0fe4" compoundref="can_8c" startline="476" endline="503">__uvCANtxCritSection</referencedby>
+        <referencedby refid="can_8c_1aa5d470f815f2c11378233e0f3ca9ed8b" compoundref="can_8c" startline="368" endline="385">callFunctionFromCANid</referencedby>
+        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="551" endline="610">CANbusTxSvcDaemon</referencedby>
+        <referencedby refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" compoundref="can_8c" startline="298" endline="335">HAL_CAN_RxFifo0MsgPendingCallback</referencedby>
+        <referencedby refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="70" endline="157">tempMonitorTask</referencedby>
+        <referencedby refid="temp__monitoring_8c_1a42aed0ca516238bb78f401d645b7b930" compoundref="temp__monitoring_8c" startline="52" endline="63">testfunc2</referencedby>
       </memberdef>
       <memberdef kind="variable" id="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" prot="public" static="no" mutable="no">
         <type>uint8_t</type>
@@ -54,11 +68,16 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
+<para>The actual data packet contained within the CAN message </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Inc/uvfr_utils.h" line="262" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="262" bodyend="-1"/>
-        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="358" endline="405">CANbusTxSvcDaemon</referencedby>
+        <location file="Core/Inc/uvfr_utils.h" line="277" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="277" bodyend="-1"/>
+        <referencedby refid="can_8c_1ae025787f17f6312df1e71c731b2a0fe4" compoundref="can_8c" startline="476" endline="503">__uvCANtxCritSection</referencedby>
+        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="551" endline="610">CANbusTxSvcDaemon</referencedby>
+        <referencedby refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" compoundref="can_8c" startline="298" endline="335">HAL_CAN_RxFifo0MsgPendingCallback</referencedby>
+        <referencedby refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="70" endline="157">tempMonitorTask</referencedby>
+        <referencedby refid="temp__monitoring_8c_1a42aed0ca516238bb78f401d645b7b930" compoundref="temp__monitoring_8c" startline="52" endline="63">testfunc2</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -66,7 +85,7 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="Core/Inc/uvfr_utils.h" line="255" column="25" bodyfile="Core/Inc/uvfr_utils.h" bodystart="255" bodyend="263"/>
+    <location file="Core/Inc/uvfr_utils.h" line="270" column="25" bodyfile="Core/Inc/uvfr_utils.h" bodystart="270" bodyend="278"/>
     <listofallmembers>
       <member refid="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" prot="public" virt="non-virtual"><scope>uv_CAN_msg</scope><name>data</name></member>
       <member refid="structuv___c_a_n__msg_1aa74af3745c8b56910d7c309245541d37" prot="public" virt="non-virtual"><scope>uv_CAN_msg</scope><name>dlc</name></member>

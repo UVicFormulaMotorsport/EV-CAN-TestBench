@@ -181,6 +181,8 @@
         <link refid="daq_8h"/>
         <childnode refid="6" relation="include">
         </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
       </node>
       <node id="14">
         <label>gpio.h</label>
@@ -396,6 +398,8 @@
         </childnode>
         <childnode refid="45" relation="include">
         </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
       </node>
       <node id="42">
         <label>Core/Src/odometer.c</label>
@@ -504,6 +508,10 @@
       <node id="21">
         <label>Core/Src/temp_monitoring.c</label>
         <link refid="temp__monitoring_8c"/>
+      </node>
+      <node id="46">
+        <label>Core/Src/uvfr_vehicle_commands.c</label>
+        <link refid="uvfr__vehicle__commands_8c"/>
       </node>
       <node id="36">
         <label>Core/Inc/daq.h</label>
@@ -721,7 +729,8 @@
         </inbodydescription>
         <location file="Core/Inc/uvfr_settings.h" line="60" column="28" bodyfile="Core/Src/uvfr_settings.c" bodystart="15" bodyend="-1" declfile="Core/Inc/uvfr_settings.h" declline="60" declcolumn="28"/>
         <referencedby refid="uvfr__settings_8c_1a42f7a1907bfe84d7b0f9fb4e2260018b" compoundref="uvfr__settings_8c" startline="42" endline="49">setupDefaultSettings</referencedby>
-        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="37" endline="229">uvInit</referencedby>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
+        <referencedby refid="group__state__engine__api_1ga2ad1d74b5783a51355c047be6642fab8" compoundref="uvfr__state__engine_8c" startline="192" endline="246">uvStartStateMachine</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -759,7 +768,7 @@
         <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a" compoundref="uvfr__utils_8h" startline="170">UV_ABORTED</references>
         <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" compoundref="uvfr__utils_8h" startline="169">UV_ERROR</references>
         <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
-        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="37" endline="229">uvInit</referencedby>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>

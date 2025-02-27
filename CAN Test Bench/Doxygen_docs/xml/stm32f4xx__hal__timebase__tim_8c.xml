@@ -34,8 +34,8 @@
         </inbodydescription>
         <location file="Core/Src/stm32f4xx_hal_timebase_tim.c" line="28" column="26" bodyfile="Core/Src/stm32f4xx_hal_timebase_tim.c" bodystart="28" bodyend="-1"/>
         <referencedby refid="stm32f4xx__hal__timebase__tim_8c_1a879cdb21ef051eb81ec51c18147397d5" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="41" endline="101">HAL_InitTick</referencedby>
-        <referencedby refid="stm32f4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="117" endline="121">HAL_ResumeTick</referencedby>
-        <referencedby refid="stm32f4xx__hal__timebase__tim_8c_1aaf651af2afe688a991c657f64f8fa5f9" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="107" endline="111">HAL_SuspendTick</referencedby>
+        <referencedby refid="stm32f4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="121" endline="125">HAL_ResumeTick</referencedby>
+        <referencedby refid="stm32f4xx__hal__timebase__tim_8c_1aaf651af2afe688a991c657f64f8fa5f9" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="109" endline="113">HAL_SuspendTick</referencedby>
         <referencedby refid="stm32f4xx__it_8c_1ad1fd361bc5ad89facee67c76d1ff8dc0" compoundref="stm32f4xx__it_8c" startline="181" endline="190">TIM1_UP_TIM10_IRQHandler</referencedby>
       </memberdef>
       </sectiondef>
@@ -94,11 +94,29 @@
         <detaileddescription>
 <para><simplesect kind="note"><para>Disable the tick increment by disabling TIM1 update interrupt. </para>
 </simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Src/stm32f4xx_hal_timebase_tim.c" line="107" column="6" bodyfile="Core/Src/stm32f4xx_hal_timebase_tim.c" bodystart="107" bodyend="111"/>
+        <location file="Core/Src/stm32f4xx_hal_timebase_tim.c" line="109" column="6" bodyfile="Core/Src/stm32f4xx_hal_timebase_tim.c" bodystart="109" bodyend="113"/>
         <references refid="stm32f4xx__hal__timebase__tim_8c_1a25fc663547539bc49fecc0011bd76ab5" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="28">htim1</references>
       </memberdef>
       <memberdef kind="function" id="stm32f4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -115,11 +133,29 @@
         <detaileddescription>
 <para><simplesect kind="note"><para>Enable the tick increment by Enabling TIM1 update interrupt. </para>
 </simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
 </para>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="Core/Src/stm32f4xx_hal_timebase_tim.c" line="117" column="6" bodyfile="Core/Src/stm32f4xx_hal_timebase_tim.c" bodystart="117" bodyend="121"/>
+        <location file="Core/Src/stm32f4xx_hal_timebase_tim.c" line="121" column="6" bodyfile="Core/Src/stm32f4xx_hal_timebase_tim.c" bodystart="121" bodyend="125"/>
         <references refid="stm32f4xx__hal__timebase__tim_8c_1a25fc663547539bc49fecc0011bd76ab5" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="28">htim1</references>
       </memberdef>
       </sectiondef>
@@ -210,18 +246,18 @@ Copyright (c) 2024 STMicroelectronics. All rights reserved.</para>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status;</highlight></codeline>
 <codeline lineno="101"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="107" refid="stm32f4xx__hal__timebase__tim_8c_1aaf651af2afe688a991c657f64f8fa5f9" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__hal__timebase__tim_8c_1aaf651af2afe688a991c657f64f8fa5f9" kindref="member">HAL_SuspendTick</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="108"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Disable<sp/>TIM1<sp/>update<sp/>Interrupt<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"><sp/><sp/>__HAL_TIM_DISABLE_IT(&amp;<ref refid="stm32f4xx__hal__timebase__tim_8c_1a25fc663547539bc49fecc0011bd76ab5" kindref="member">htim1</ref>,<sp/>TIM_IT_UPDATE);</highlight></codeline>
-<codeline lineno="111"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117" refid="stm32f4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" kindref="member">HAL_ResumeTick</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Enable<sp/>TIM1<sp/>Update<sp/>interrupt<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/>__HAL_TIM_ENABLE_IT(&amp;<ref refid="stm32f4xx__hal__timebase__tim_8c_1a25fc663547539bc49fecc0011bd76ab5" kindref="member">htim1</ref>,<sp/>TIM_IT_UPDATE);</highlight></codeline>
-<codeline lineno="121"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="stm32f4xx__hal__timebase__tim_8c_1aaf651af2afe688a991c657f64f8fa5f9" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__hal__timebase__tim_8c_1aaf651af2afe688a991c657f64f8fa5f9" kindref="member">HAL_SuspendTick</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Disable<sp/>TIM1<sp/>update<sp/>Interrupt<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/>__HAL_TIM_DISABLE_IT(&amp;<ref refid="stm32f4xx__hal__timebase__tim_8c_1a25fc663547539bc49fecc0011bd76ab5" kindref="member">htim1</ref>,<sp/>TIM_IT_UPDATE);</highlight></codeline>
+<codeline lineno="113"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121" refid="stm32f4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" kindref="member">HAL_ResumeTick</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Enable<sp/>TIM1<sp/>Update<sp/>interrupt<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/>__HAL_TIM_ENABLE_IT(&amp;<ref refid="stm32f4xx__hal__timebase__tim_8c_1a25fc663547539bc49fecc0011bd76ab5" kindref="member">htim1</ref>,<sp/>TIM_IT_UPDATE);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="Core/Src/stm32f4xx_hal_timebase_tim.c"/>
   </compounddef>

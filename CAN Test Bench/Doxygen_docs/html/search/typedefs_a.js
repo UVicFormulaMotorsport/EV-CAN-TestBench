@@ -1,21 +1,6 @@
 var searchData=
 [
-  ['uv_5fcan_5fmsg_1609',['uv_CAN_msg',['../can_8h.html#ad857192b5d0529e73642f1293d6bed75',1,'uv_CAN_msg():&#160;can.h'],['../uvfr__utils_8h.html#ad857192b5d0529e73642f1293d6bed75',1,'uv_CAN_msg():&#160;uvfr_utils.h']]],
-  ['uv_5fext_5fdevice_5fid_1610',['uv_ext_device_id',['../uvfr__utils_8h.html#a96651e94773864de5bcf9028ab64ad19',1,'uvfr_utils.h']]],
-  ['uv_5finit_5fstruct_1611',['uv_init_struct',['../uvfr__utils_8h.html#a43d8765a7826292bdbd7d5d9f6b865fd',1,'uvfr_utils.h']]],
-  ['uv_5finit_5ftask_5fargs_1612',['uv_init_task_args',['../uvfr__utils_8h.html#a22371cac9dbfb95de19acc59e359d3df',1,'uvfr_utils.h']]],
-  ['uv_5finit_5ftask_5fresponse_1613',['uv_init_task_response',['../uvfr__utils_8h.html#a8e8a2c49abd23762e28f61fe5c9cb882',1,'uvfr_utils.h']]],
-  ['uv_5finternal_5fparams_1614',['uv_internal_params',['../uvfr__utils_8h.html#ab92fc0d70c77e3d9bf8b15b5f9cb91a8',1,'uvfr_utils.h']]],
-  ['uv_5fmsg_5ftype_1615',['uv_msg_type',['../uvfr__utils_8h.html#ae0e8ee9ac0315ecdd228d9358e395c3d',1,'uvfr_utils.h']]],
-  ['uv_5fos_5fsettings_1616',['uv_os_settings',['../group__state__engine__api.html#ga4622e8f893111a8641c8e5a44df3d3dd',1,'uvfr_state_engine.h']]],
-  ['uv_5fscd_5fresponse_1617',['uv_scd_response',['../group__state__engine__api.html#ga856f7f6f3b6b92f655aafc552606ffea',1,'uvfr_state_engine.h']]],
-  ['uv_5fstatus_1618',['uv_status',['../can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9',1,'uv_status():&#160;can.h'],['../uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9',1,'uv_status():&#160;uvfr_state_engine.h'],['../uvfr__utils_8h.html#aef3770e45bbacbf527fd93dd80eea9b9',1,'uv_status():&#160;uvfr_utils.h']]],
-  ['uv_5ftask_5fcmd_1619',['uv_task_cmd',['../group__state__engine__api.html#gae1b70a2c1baa7da5592e7324008636e4',1,'uv_task_cmd():&#160;uvfr_state_engine.h'],['../uvfr__utils_8h.html#ae1b70a2c1baa7da5592e7324008636e4',1,'uv_task_cmd():&#160;uvfr_utils.h']]],
-  ['uv_5ftask_5fid_1620',['uv_task_id',['../uvfr__state__engine_8h.html#aa6ffd72eb4909ddb38c37a1369e13f09',1,'uv_task_id():&#160;uvfr_state_engine.h'],['../uvfr__utils_8h.html#aa6ffd72eb4909ddb38c37a1369e13f09',1,'uv_task_id():&#160;uvfr_utils.h']]],
-  ['uv_5ftask_5finfo_1621',['uv_task_info',['../group__state__engine__api.html#gaebe69bead1b7c3a1371ffe610708e0ef',1,'uvfr_state_engine.h']]],
-  ['uv_5ftask_5fmsg_1622',['uv_task_msg',['../uvfr__utils_8h.html#af54e76be0a4de86596cdf342473361e3',1,'uvfr_utils.h']]],
-  ['uv_5ftask_5fstatus_1623',['uv_task_status',['../group__state__engine__api.html#ga82006c09ffd194e360785bb51a39ec3f',1,'uvfr_state_engine.h']]],
-  ['uv_5ftimespan_5fms_1624',['uv_timespan_ms',['../uvfr__state__engine_8h.html#af1ca0b89ee88cdf48a7640d6ec793350',1,'uv_timespan_ms():&#160;uvfr_state_engine.h'],['../uvfr__utils_8h.html#af1ca0b89ee88cdf48a7640d6ec793350',1,'uv_timespan_ms():&#160;uvfr_utils.h']]],
-  ['uv_5fvehicle_5fsettings_1625',['uv_vehicle_settings',['../uvfr__settings_8h.html#a1c41697a3618ce0a5236b7ccb250d967',1,'uvfr_settings.h']]],
-  ['uv_5fvehicle_5fstate_1626',['uv_vehicle_state',['../group__state__engine__api.html#ga140983d0a0ccbfd2d5f2c93183cbe797',1,'uvfr_state_engine.h']]]
+  ['task_5fmanagement_5finfo_1698',['task_management_info',['../group__state__engine__api.html#gae41267a13309a303a826aa55c4873a31',1,'uvfr_state_engine.h']]],
+  ['task_5fpriority_1699',['task_priority',['../group__state__engine__api.html#ga0faa8cc05082e150c515bbddea144d90',1,'uvfr_state_engine.h']]],
+  ['task_5fstatus_5fblock_1700',['task_status_block',['../group__state__engine__api.html#ga0d368f40115996d74f2e3833ff1a5396',1,'uvfr_state_engine.h']]]
 ];

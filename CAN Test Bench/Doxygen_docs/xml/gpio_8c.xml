@@ -89,11 +89,11 @@
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="23" relation="include">
-        </childnode>
         <childnode refid="24" relation="include">
         </childnode>
         <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
@@ -123,7 +123,7 @@
       <node id="17">
         <label>message_buffer.h</label>
       </node>
-      <node id="22">
+      <node id="23">
         <label>bms.h</label>
         <link refid="bms_8h"/>
         <childnode refid="3" relation="include">
@@ -172,13 +172,15 @@
         </childnode>
         <childnode refid="21" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
+        <childnode refid="23" relation="include">
         </childnode>
       </node>
       <node id="21">
         <label>daq.h</label>
         <link refid="daq_8h"/>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
       </node>
       <node id="2">
@@ -187,7 +189,7 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="24">
+      <node id="22">
         <label>rb_tree.h</label>
         <link refid="rb__tree_8h"/>
       </node>
@@ -213,7 +215,7 @@
         <label>FreeRTOSConfig.h</label>
         <link refid="_free_r_t_o_s_config_8h"/>
       </node>
-      <node id="23">
+      <node id="24">
         <label>uvfr_state_engine.h</label>
         <link refid="uvfr__state__engine_8h"/>
         <childnode refid="6" relation="include">
@@ -309,8 +311,8 @@ Copyright (c) 2023 STMicroelectronics. All rights reserved.</para>
 <codeline lineno="47"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>GPIO<sp/>Ports<sp/>Clock<sp/>Enable<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/>__HAL_RCC_GPIOH_CLK_ENABLE();</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/>__HAL_RCC_GPIOA_CLK_ENABLE();</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"><sp/><sp/>__HAL_RCC_GPIOD_CLK_ENABLE();</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/>__HAL_RCC_GPIOB_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/>__HAL_RCC_GPIOB_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/>__HAL_RCC_GPIOD_CLK_ENABLE();</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"></highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*Configure<sp/>GPIO<sp/>pin<sp/>Output<sp/>Level<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="54"><highlight class="normal"><sp/><sp/>HAL_GPIO_WritePin(GPIOD,<sp/><ref refid="main_8h_1ae6115e0ae91cb1fff8a53e311fadd487" kindref="member">Orange_LED_Pin</ref>|<ref refid="main_8h_1a74d7905a14b6db421bd1d521d86789eb" kindref="member">Red_LED_Pin</ref>|<ref refid="main_8h_1aa68d57d5ea20622d006ba7c4cb20145f" kindref="member">Blue_LED_Pin</ref>,<sp/>GPIO_PIN_RESET);</highlight></codeline>

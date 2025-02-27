@@ -154,7 +154,8 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer, Stack
 
 /**
   * @brief  FreeRTOS initialization
-  *
+  * @param  None
+  * @retval None
   */
 void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN Init */

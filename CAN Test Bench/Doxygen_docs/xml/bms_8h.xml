@@ -95,9 +95,9 @@
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
         <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="1" relation="include">
         </childnode>
@@ -180,6 +180,8 @@
         <link refid="daq_8h"/>
         <childnode refid="5" relation="include">
         </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
       </node>
       <node id="13">
         <label>gpio.h</label>
@@ -187,7 +189,7 @@
         <childnode refid="2" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="22">
         <label>rb_tree.h</label>
         <link refid="rb__tree_8h"/>
       </node>
@@ -213,7 +215,7 @@
         <label>FreeRTOSConfig.h</label>
         <link refid="_free_r_t_o_s_config_8h"/>
       </node>
-      <node id="22">
+      <node id="23">
         <label>uvfr_state_engine.h</label>
         <link refid="uvfr__state__engine_8h"/>
         <childnode refid="5" relation="include">
@@ -395,6 +397,8 @@
         </childnode>
         <childnode refid="45" relation="include">
         </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
       </node>
       <node id="42">
         <label>Core/Src/odometer.c</label>
@@ -503,6 +507,10 @@
       <node id="22">
         <label>Core/Src/temp_monitoring.c</label>
         <link refid="temp__monitoring_8c"/>
+      </node>
+      <node id="46">
+        <label>Core/Src/uvfr_vehicle_commands.c</label>
+        <link refid="uvfr__vehicle__commands_8c"/>
       </node>
       <node id="36">
         <label>Core/Inc/daq.h</label>
@@ -709,11 +717,11 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Core/Inc/bms.h" line="17" column="6" bodyfile="Core/Src/bms.c" bodystart="11" bodyend="27" declfile="Core/Inc/bms.h" declline="17" declcolumn="6"/>
-        <references refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0aca1b897aad8f93e76df69c23bc732f2e" compoundref="uvfr__utils_8h" startline="191">BMS</references>
-        <references refid="structuv__init__task__args_1adec47e7a54822cacfb8fcfc35a22157f" compoundref="uvfr__utils_8h" startline="316">uv_init_task_args::init_info_queue</references>
-        <references refid="structuv__init__task__args_1a3b81430245e7f832dc1112e53b0ef7ad" compoundref="uvfr__utils_8h" startline="317">uv_init_task_args::meta_task_handle</references>
+        <references refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0aca1b897aad8f93e76df69c23bc732f2e" compoundref="uvfr__utils_8h" startline="206">BMS</references>
+        <references refid="structuv__init__task__args_1adec47e7a54822cacfb8fcfc35a22157f" compoundref="uvfr__utils_8h" startline="331">uv_init_task_args::init_info_queue</references>
+        <references refid="structuv__init__task__args_1a3b81430245e7f832dc1112e53b0ef7ad" compoundref="uvfr__utils_8h" startline="332">uv_init_task_args::meta_task_handle</references>
         <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
-        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="37" endline="229">uvInit</referencedby>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
       </memberdef>
       </sectiondef>
     <briefdescription>
