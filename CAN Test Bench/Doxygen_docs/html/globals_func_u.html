@@ -147,15 +147,15 @@ $(document).ready(function(){initNavTree('globals_func_u.html','');});
 : <a class="el" href="group__state__engine__api.html#ga5c608f3832c45eac6e2da198d4ef1ba0">uvfr_state_engine.h</a>
 , <a class="el" href="group__state__engine__api.html#ga5c608f3832c45eac6e2da198d4ef1ba0">uvfr_state_engine.c</a>
 </li>
-<li>uvInvokeSCD()
-: <a class="el" href="group__state__engine__backend.html#ga07f1b117d38d4723eb85c17913b06713">uvfr_state_engine.c</a>
-</li>
 <li>uvIsPTRValid()
 : <a class="el" href="uvfr__utils_8h.html#a0186c036688c7852cf0ceaee96b343a3">uvfr_utils.h</a>
 , <a class="el" href="uvfr__utils_8c.html#a0186c036688c7852cf0ceaee96b343a3">uvfr_utils.c</a>
 </li>
 <li>uvKillTaskViolently()
 : <a class="el" href="group__state__engine__backend.html#gae0caac28206291f3dc5c416f11892edd">uvfr_state_engine.c</a>
+</li>
+<li>uvLateTaskHandler()
+: <a class="el" href="group__state__engine__backend.html#ga7dff9a1c0653941c1559398025cdec4c">uvfr_state_engine.c</a>
 </li>
 <li>uvRegisterTask()
 : <a class="el" href="uvfr__state__engine_8h.html#a0547a08e521248754efe91c5de5ec182">uvfr_state_engine.h</a>
@@ -167,12 +167,15 @@ $(document).ready(function(){initNavTree('globals_func_u.html','');});
 : <a class="el" href="group__state__engine__backend.html#ga3ef71d11e9525846568eadac11c7e8e4">uvfr_state_engine.c</a>
 </li>
 <li>uvSecureVehicle()
-: <a class="el" href="group__state__engine__backend.html#ga8073be27b31b156bee66e3b3038144c9">uvfr_vehicle_commands.h</a>
-, <a class="el" href="group__state__engine__backend.html#ga8073be27b31b156bee66e3b3038144c9">uvfr_state_engine.c</a>
+: <a class="el" href="uvfr__vehicle__commands_8h.html#a8073be27b31b156bee66e3b3038144c9">uvfr_vehicle_commands.h</a>
+, <a class="el" href="uvfr__vehicle__commands_8c.html#a8073be27b31b156bee66e3b3038144c9">uvfr_vehicle_commands.c</a>
 </li>
 <li>uvSendCanMSG()
-: <a class="el" href="can_8h.html#acc24d5acdcc2015b59e63769a397353b">can.h</a>
-, <a class="el" href="can_8c.html#acc24d5acdcc2015b59e63769a397353b">can.c</a>
+: <a class="el" href="group__uvfr__can__api.html#ga62414944c3b631f57fdd08e467bcf5a4">can.h</a>
+, <a class="el" href="group__uvfr__can__api.html#ga62414944c3b631f57fdd08e467bcf5a4">can.c</a>
+</li>
+<li>uvSendTaskStatusReport()
+: <a class="el" href="group__state__engine__backend.html#ga2c151c9ece181329cf95d74d80c53411">uvfr_state_engine.c</a>
 </li>
 <li>uvSettingsInit()
 : <a class="el" href="uvfr__settings_8h.html#a80856a38d7040ca10b8106ff0fa4acf4">uvfr_settings.h</a>
@@ -182,8 +185,8 @@ $(document).ready(function(){initNavTree('globals_func_u.html','');});
 : <a class="el" href="uvfr__settings_8c.html#aa4405e1cc3fcec217efd4de0ea6b55ee">uvfr_settings.c</a>
 </li>
 <li>uvStartStateMachine()
-: <a class="el" href="group__state__engine__api.html#ga2ad1d74b5783a51355c047be6642fab8">uvfr_state_engine.h</a>
-, <a class="el" href="group__state__engine__api.html#ga2ad1d74b5783a51355c047be6642fab8">uvfr_state_engine.c</a>
+: <a class="el" href="group__state__engine__api.html#ga2ad1d74b5783a51355c047be6642fab8">uvfr_state_engine.c</a>
+, <a class="el" href="group__state__engine__api.html#ga2ad1d74b5783a51355c047be6642fab8">uvfr_state_engine.h</a>
 </li>
 <li>uvStartSVCTask()
 : <a class="el" href="group__state__engine__backend.html#ga91b9f84bc63d5808a3f70623ed8a0700">uvfr_state_engine.c</a>
@@ -202,11 +205,21 @@ $(document).ready(function(){initNavTree('globals_func_u.html','');});
 <li>uvSVCTaskManager()
 : <a class="el" href="group__state__engine.html#gaff684308203d45e9e16ad3d115c54279">uvfr_state_engine.c</a>
 </li>
+<li>uvSysResetDaemon()
+: <a class="el" href="uvfr__utils_8c.html#a11806db468fdae50664b98e619575425">uvfr_utils.c</a>
+</li>
 <li>uvTaskCrashHandler()
 : <a class="el" href="group__state__engine__backend.html#gac1a1157d12026b20c6bbb5542c9f7efb">uvfr_state_engine.c</a>
 </li>
 <li>uvTaskManager()
 : <a class="el" href="group__state__engine__backend.html#gaf2dbdd0d9d9aa8bcbef120661117fc5e">uvfr_state_engine.c</a>
+</li>
+<li>uvTaskPeriodEnd()
+: <a class="el" href="group__state__engine.html#ga0e6167ef18c2ec8b65fbe070d0ffb6c9">uvfr_state_engine.c</a>
+, <a class="el" href="group__state__engine__api.html#ga0e6167ef18c2ec8b65fbe070d0ffb6c9">uvfr_state_engine.h</a>
+</li>
+<li>uvThrottleNonCritTasks()
+: <a class="el" href="group__state__engine__backend.html#gace2b4c6c8f012fb6650049e5272b88e4">uvfr_state_engine.c</a>
 </li>
 <li>uvUtilsReset()
 : <a class="el" href="uvfr__utils_8c.html#a02781145b4802ebdc7001800bbe6d994">uvfr_utils.c</a>

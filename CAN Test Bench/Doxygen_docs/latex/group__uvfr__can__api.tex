@@ -1,0 +1,66 @@
+\hypertarget{group__uvfr__can__api}{}\doxysection{U\+V\+FR C\+A\+Nbus A\+PI}
+\label{group__uvfr__can__api}\index{UVFR CANbus API@{UVFR CANbus API}}
+
+
+This is an api that simplifies usage of C\+A\+Nbus transmitting and receiving.  
+
+
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{group__uvfr__can__api_ga81adc4a577110ce8fe1158b0dc302cc2}{insert\+C\+A\+N\+Message\+Handler}} (uint32\+\_\+t id, void $\ast$handlerfunc)
+\begin{DoxyCompactList}\small\item\em Function to insert an id and function into the lookup table of callback functions. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{group__uvfr__can__api_ga62414944c3b631f57fdd08e467bcf5a4}{uv\+Send\+Can\+M\+SG}} (\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$tx\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Function to send C\+AN message. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is an api that simplifies usage of C\+A\+Nbus transmitting and receiving. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__uvfr__can__api_ga81adc4a577110ce8fe1158b0dc302cc2}\label{group__uvfr__can__api_ga81adc4a577110ce8fe1158b0dc302cc2}} 
+\index{UVFR CANbus API@{UVFR CANbus API}!insertCANMessageHandler@{insertCANMessageHandler}}
+\index{insertCANMessageHandler@{insertCANMessageHandler}!UVFR CANbus API@{UVFR CANbus API}}
+\doxysubsubsection{\texorpdfstring{insertCANMessageHandler()}{insertCANMessageHandler()}}
+{\footnotesize\ttfamily void insert\+C\+A\+N\+Message\+Handler (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{id,  }\item[{void $\ast$}]{handlerfunc }\end{DoxyParamCaption})}
+
+
+
+Function to insert an id and function into the lookup table of callback functions. 
+
+Checks if specific hash id already exists in the hash table If not, insert the message If it already exists, check to see if the actual C\+AN id matches. If yes, then previous entries are overwritten If it does not exist, then each node in the hash table functions as it\textquotesingle{}s own linked list 
+
+Definition at line 395 of file can.\+c.
+
+
+
+References callback\+\_\+table\+\_\+mutex, C\+A\+N\+\_\+callback\+\_\+table, C\+A\+N\+\_\+\+Callback\+::\+C\+A\+N\+\_\+id, C\+A\+N\+\_\+\+Callback\+::function, generate\+Hash(), and C\+A\+N\+\_\+\+Callback\+::next.
+
+
+
+Referenced by temp\+Monitor\+Task().
+
+\mbox{\Hypertarget{group__uvfr__can__api_ga62414944c3b631f57fdd08e467bcf5a4}\label{group__uvfr__can__api_ga62414944c3b631f57fdd08e467bcf5a4}} 
+\index{UVFR CANbus API@{UVFR CANbus API}!uvSendCanMSG@{uvSendCanMSG}}
+\index{uvSendCanMSG@{uvSendCanMSG}!UVFR CANbus API@{UVFR CANbus API}}
+\doxysubsubsection{\texorpdfstring{uvSendCanMSG()}{uvSendCanMSG()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+Send\+Can\+M\+SG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$}]{tx\+\_\+msg }\end{DoxyParamCaption})}
+
+
+
+Function to send C\+AN message. 
+
+This function is the canonical team method of sending a C\+AN message. It invokes the can\+Tx\+Daemon, to avoid any conflicts due to a context switch mid transmission Is it a little bit convoluted? Yes. Is that worth it? Still yes. 
+
+Definition at line 513 of file can.\+c.
+
+
+
+References \+\_\+\+\_\+uv\+C\+A\+Ntx\+Crit\+Section(), Tx\+\_\+msg\+\_\+queue, U\+V\+\_\+\+E\+R\+R\+OR, and U\+V\+\_\+\+OK.
+
+
+
+Referenced by temp\+Monitor\+Task(), and testfunc2().
+

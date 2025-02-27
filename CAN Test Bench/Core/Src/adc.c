@@ -33,7 +33,7 @@ void MX_ADC1_Init(void)
 {
 
   /* USER CODE BEGIN ADC1_Init 0 */
-
+	//code most be here or it will be deleted
   /* USER CODE END ADC1_Init 0 */
 
   ADC_AnalogWDGConfTypeDef AnalogWDGConfig = {0};

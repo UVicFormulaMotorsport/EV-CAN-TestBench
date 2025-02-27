@@ -23,8 +23,6 @@ static \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status
 \begin{DoxyCompactList}\small\item\em function to suspend one of the managed tasks. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{group__state__engine__backend_gac1a1157d12026b20c6bbb5542c9f7efb}{uv\+Task\+Crash\+Handler}} (\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
 \begin{DoxyCompactList}\small\item\em Called when a task has crashed and we need to figure out what to do with it. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{group__state__engine__backend_ga8073be27b31b156bee66e3b3038144c9}{uv\+Secure\+Vehicle}} ()
-\begin{DoxyCompactList}\small\item\em Function to put vehicle into safe state. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__state__engine__backend_gab2449f66698295ebfaff451c2f63607f}{\+\_\+\+\_\+uv\+Panic}} (char $\ast$msg, uint8\+\_\+t msg\+\_\+len, const char $\ast$file, const int line, const char $\ast$func)
 \begin{DoxyCompactList}\small\item\em Something bad has occurred here now we in trouble. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{group__state__engine__backend_ga5f35b34432afed7f18f91fb8607f096f}{kill\+Self}} (\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
@@ -33,10 +31,14 @@ void \mbox{\hyperlink{group__state__engine__backend_gad6117850b55ad52be51d93915b
 \begin{DoxyCompactList}\small\item\em Called by a task that needs to suspend itself, once the task has determined it is safe to do so. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{group__state__engine__backend_ga2e8a31626909ac17be499f2941d359d0}{proccess\+S\+C\+D\+Msg}} (\mbox{\hyperlink{structuv__scd__response}{uv\+\_\+scd\+\_\+response}} $\ast$msg)
 \begin{DoxyCompactList}\small\item\em Helper function for the S\+CD, that proccesses a message, and double checks to make sure the task that sent the message isn\textquotesingle{}t straight up lying to us. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__state__engine__backend_ga2c151c9ece181329cf95d74d80c53411}{uv\+Send\+Task\+Status\+Report}} (\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
+\item 
 void \mbox{\hyperlink{group__state__engine__backend_ga8519c96858b096f2fccb96d3334df93a}{\+\_\+state\+Change\+Daemon}} (void $\ast$args) P\+R\+I\+V\+I\+L\+E\+G\+E\+D\+\_\+\+F\+U\+N\+C\+T\+I\+ON
 \begin{DoxyCompactList}\small\item\em This collects all the data changing from different tasks, and makes sure that everything works properly. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{group__state__engine__backend_ga07f1b117d38d4723eb85c17913b06713}{uv\+Invoke\+S\+CD}} (void $\ast$scd\+\_\+params)
-\begin{DoxyCompactList}\small\item\em used to wake up the S\+CD \end{DoxyCompactList}\item 
+\mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{group__state__engine__backend_gace2b4c6c8f012fb6650049e5272b88e4}{uv\+Throttle\+Non\+Crit\+Tasks}} ()
+\item 
+void \mbox{\hyperlink{group__state__engine__backend_ga7dff9a1c0653941c1559398025cdec4c}{uv\+Late\+Task\+Handler}} (\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t, Tick\+Type\+\_\+t tdiff, uint8\+\_\+t \mbox{\hyperlink{group__state__engine_gaf622d52254e824f6da1204abc93b18db}{task\+\_\+tardiness}})
+\item 
 \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$ \mbox{\hyperlink{group__state__engine__backend_ga20334b4aff0cfdab7be1d2864089c5ce}{uv\+Create\+Service\+Task}} ()
 \begin{DoxyCompactList}\small\item\em Create a new service task, because fuck you, thats why. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{group__state__engine__backend_ga91b9f84bc63d5808a3f70623ed8a0700}{uv\+Start\+S\+V\+C\+Task}} (\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
@@ -87,11 +89,11 @@ The following should happen, in order\+:
 
 Should change vehicle state itself be the source of the error, we just need the software to completely fucking hang itself. If things are so fucked that we genuinely cannot even transition to the error state, then get that shit the fuck outta here, we shuttin down fr fr. 
 
-Definition at line 697 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 686 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-References uv\+Secure\+Vehicle().
+References change\+Vehicle\+State(), U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE, and uv\+Secure\+Vehicle().
 
 \mbox{\Hypertarget{group__state__engine__backend_ga8519c96858b096f2fccb96d3334df93a}\label{group__state__engine__backend_ga8519c96858b096f2fccb96d3334df93a}} 
 \index{State Engine Internals@{State Engine Internals}!\_stateChangeDaemon@{\_stateChangeDaemon}}
@@ -191,7 +193,7 @@ The final act of the S\+CD, is to delete itself
 \end{DoxyCode}
 
 
-Definition at line 868 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 865 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -213,11 +215,11 @@ make sure the parameters of a task\+\_\+info struct is valid
 
 
 
-Definition at line 308 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 323 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-References \+\_\+task\+\_\+register, uv\+\_\+task\+\_\+info\+::active\+\_\+states, uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+flags, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+name, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+OK, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+M\+A\+SK, and U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+V\+E\+H\+I\+C\+L\+E\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON.
+References \+\_\+task\+\_\+register, uv\+\_\+task\+\_\+info\+::active\+\_\+states, uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+name, U\+V\+\_\+\+E\+R\+R\+OR, and U\+V\+\_\+\+OK.
 
 
 
@@ -231,7 +233,7 @@ Referenced by add\+Task\+To\+Task\+Register(), and uv\+Validate\+Managed\+Tasks(
 
 
 
-Definition at line 295 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 310 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -249,7 +251,7 @@ The name should be pretty self explanatory.
 
 
 
-Definition at line 446 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 452 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -271,7 +273,7 @@ This function is called by a task to nuke itself. Is a wrapper function that is 
 
 First lets load up the queue and the values in it. These come from the task we are doing.
 
-Definition at line 715 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 708 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -279,7 +281,7 @@ References uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, uv\+\_\+scd\+\_\+response\+:
 
 
 
-Referenced by daq\+Master\+Task(), odometer\+Task(), Start\+Driving\+Loop(), and temp\+Monitor\+Task().
+Referenced by C\+A\+Nbus\+Rx\+Svc\+Daemon(), C\+A\+Nbus\+Tx\+Svc\+Daemon(), daq\+Master\+Task(), odometer\+Task(), Start\+Driving\+Loop(), temp\+Monitor\+Task(), and uv\+Task\+Manager().
 
 \mbox{\Hypertarget{group__state__engine__backend_ga2e8a31626909ac17be499f2941d359d0}\label{group__state__engine__backend_ga2e8a31626909ac17be499f2941d359d0}} 
 \index{State Engine Internals@{State Engine Internals}!proccessSCDMsg@{proccessSCDMsg}}
@@ -297,7 +299,7 @@ This function is responsible for the following functionality\+:
 \item If a task claims that it is deleted, or suspended, then we must verify that this is the case 
 \end{DoxyItemize}Get the id of the message, then use that to index the \+\_\+task\+\_\+register Mission critical stuff that stops ev from driving into a wall
 
-Definition at line 799 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 792 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -319,7 +321,7 @@ Called by a task that needs to suspend itself, once the task has determined it i
 
 
 
-Definition at line 756 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 749 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -327,7 +329,7 @@ References uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, uv\+\_\+scd\+\_\+response\+:
 
 
 
-Referenced by daq\+Master\+Task(), odometer\+Task(), Start\+Driving\+Loop(), and temp\+Monitor\+Task().
+Referenced by C\+A\+Nbus\+Rx\+Svc\+Daemon(), C\+A\+Nbus\+Tx\+Svc\+Daemon(), daq\+Master\+Task(), odometer\+Task(), Start\+Driving\+Loop(), temp\+Monitor\+Task(), and uv\+Task\+Manager().
 
 \mbox{\Hypertarget{group__state__engine__backend_ga40d4bc9be9f3b81c51aef7ed7c37172f}\label{group__state__engine__backend_ga40d4bc9be9f3b81c51aef7ed7c37172f}} 
 \index{State Engine Internals@{State Engine Internals}!uvAbortTaskDeletion@{uvAbortTaskDeletion}}
@@ -341,7 +343,7 @@ If a task is scheduled for deletion, we want to be able to resurrect it.
 
 Calling this will find the task deletion timer, and remove the task from the grave. 
 
-Definition at line 551 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 557 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -359,11 +361,11 @@ Create a new service task, because fuck you, thats why.
 
 Acquire the pointer to the spot in the array, we are doing this since we need to return the pointer anyways, and it cleans up the syntax a little.
 
-Definition at line 1138 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 1195 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-References \+\_\+next\+\_\+svc\+\_\+task\+\_\+id, \+\_\+next\+\_\+task\+\_\+id, \+\_\+task\+\_\+register, \+\_\+\+U\+V\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, uv\+\_\+task\+\_\+info\+::active\+\_\+states, uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+M\+A\+N\+A\+G\+E\+D\+\_\+\+T\+A\+S\+KS, uv\+\_\+task\+\_\+info\+::parent, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+flags, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+handle, uv\+\_\+task\+\_\+info\+::task\+\_\+id, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+priority, uv\+\_\+task\+\_\+info\+::task\+\_\+state, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+S\+VC, and U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+N\+O\+T\+\_\+\+S\+T\+A\+R\+T\+ED.
+References \+\_\+next\+\_\+svc\+\_\+task\+\_\+id, \+\_\+next\+\_\+task\+\_\+id, \+\_\+task\+\_\+register, \+\_\+\+U\+V\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, uv\+\_\+task\+\_\+info\+::active\+\_\+states, uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+M\+A\+N\+A\+G\+E\+D\+\_\+\+T\+A\+S\+KS, uv\+\_\+task\+\_\+info\+::parent, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+flags, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+handle, uv\+\_\+task\+\_\+info\+::task\+\_\+id, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+priority, uv\+\_\+task\+\_\+info\+::task\+\_\+state, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+G\+E\+N\+E\+R\+I\+C\+\_\+\+S\+VC, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+N\+O\+T\+\_\+\+S\+T\+A\+R\+T\+ED, and U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+C\+D\+\_\+\+I\+G\+N\+O\+RE.
 
 
 
@@ -381,7 +383,7 @@ For when you need to delete a service task... for some reason...
 
 
 
-Definition at line 1232 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 1289 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -405,7 +407,7 @@ This function is the lowtier god of the program. It pulls up and is like \char`\
 
 The task complies. It does not have a choice. This checks with the R\+T\+OS kernel to see that the task as stated by the scheduler matches the state known by uvfr\+\_\+utils
 
-Definition at line 491 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 497 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -423,7 +425,7 @@ Referenced by \+\_\+state\+Change\+Daemon(), and kill\+Em\+All().
 
 Sometimes you just gottta deal with it lol 
 
-Definition at line 1340 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 1436 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 \mbox{\Hypertarget{group__state__engine__backend_gab212c58efa87a2bc8ab5d256733a0b0a}\label{group__state__engine__backend_gab212c58efa87a2bc8ab5d256733a0b0a}} 
 \index{State Engine Internals@{State Engine Internals}!uvGetTaskFromRTOSHandle@{uvGetTaskFromRTOSHandle}}
@@ -447,21 +449,7 @@ Returns the pointer to the task info structure.
 \end{DoxyRetVals}
 
 
-Definition at line 1352 of file uvfr\+\_\+state\+\_\+engine.\+c.
-
-\mbox{\Hypertarget{group__state__engine__backend_ga07f1b117d38d4723eb85c17913b06713}\label{group__state__engine__backend_ga07f1b117d38d4723eb85c17913b06713}} 
-\index{State Engine Internals@{State Engine Internals}!uvInvokeSCD@{uvInvokeSCD}}
-\index{uvInvokeSCD@{uvInvokeSCD}!State Engine Internals@{State Engine Internals}}
-\doxysubsubsection{\texorpdfstring{uvInvokeSCD()}{uvInvokeSCD()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+Invoke\+S\+CD (\begin{DoxyParamCaption}\item[{void $\ast$}]{scd\+\_\+params }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
-
-
-
-used to wake up the S\+CD 
-
-This is only called from uv\+Task\+Manager to wake up the S\+CD 
-
-Definition at line 1049 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 1448 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 \mbox{\Hypertarget{group__state__engine__backend_gae0caac28206291f3dc5c416f11892edd}\label{group__state__engine__backend_gae0caac28206291f3dc5c416f11892edd}} 
 \index{State Engine Internals@{State Engine Internals}!uvKillTaskViolently@{uvKillTaskViolently}}
@@ -475,7 +463,7 @@ if a task refuses to comply with the S\+CD, then it has no choice but to be dele
 
 You will not win against the operating system. The first thing that needs to happen, is we will tell the kernel to release any resources owned by the task.
 
-Definition at line 467 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 473 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -484,6 +472,24 @@ References U\+V\+\_\+\+OK.
 
 
 Referenced by uv\+Restart\+S\+V\+C\+Task().
+
+\mbox{\Hypertarget{group__state__engine__backend_ga7dff9a1c0653941c1559398025cdec4c}\label{group__state__engine__backend_ga7dff9a1c0653941c1559398025cdec4c}} 
+\index{State Engine Internals@{State Engine Internals}!uvLateTaskHandler@{uvLateTaskHandler}}
+\index{uvLateTaskHandler@{uvLateTaskHandler}!State Engine Internals@{State Engine Internals}}
+\doxysubsubsection{\texorpdfstring{uvLateTaskHandler()}{uvLateTaskHandler()}}
+{\footnotesize\ttfamily void uv\+Late\+Task\+Handler (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$}]{t,  }\item[{Tick\+Type\+\_\+t}]{tdiff,  }\item[{uint8\+\_\+t}]{task\+\_\+tardiness }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1046 of file uvfr\+\_\+state\+\_\+engine.\+c.
+
+
+
+References uv\+\_\+task\+\_\+info\+::task\+\_\+flags, uv\+\_\+task\+\_\+info\+::task\+\_\+period, task\+\_\+tardiness, and U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+M\+I\+S\+S\+I\+O\+N\+\_\+\+C\+R\+I\+T\+I\+C\+AL.
+
+
+
+Referenced by uv\+Task\+Manager().
 
 \mbox{\Hypertarget{group__state__engine__backend_gad930776c44487128dbb60294a66a68e3}\label{group__state__engine__backend_gad930776c44487128dbb60294a66a68e3}} 
 \index{State Engine Internals@{State Engine Internals}!uvRestartSVCTask@{uvRestartSVCTask}}
@@ -497,7 +503,7 @@ Function that takes a service part that may be messed up and tries to reboot it 
 
 This may be neccessary if a S\+VC task is not responding. Be careful though, since this has the potential to delay more important tasks \+:o Therefore, this technique should be used sparingly, and each task gets a limited number of attempts within a certain time period. 
 
-Definition at line 1260 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 1317 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -515,7 +521,7 @@ Schedule a task to be deleted in the future double plus ungood imho.
 
 
 
-Definition at line 563 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 569 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -525,27 +531,15 @@ References uv\+\_\+task\+\_\+info\+::task\+\_\+flags, uv\+\_\+task\+\_\+info\+::
 
 Referenced by \+\_\+state\+Change\+Daemon().
 
-\mbox{\Hypertarget{group__state__engine__backend_ga8073be27b31b156bee66e3b3038144c9}\label{group__state__engine__backend_ga8073be27b31b156bee66e3b3038144c9}} 
-\index{State Engine Internals@{State Engine Internals}!uvSecureVehicle@{uvSecureVehicle}}
-\index{uvSecureVehicle@{uvSecureVehicle}!State Engine Internals@{State Engine Internals}}
-\doxysubsubsection{\texorpdfstring{uvSecureVehicle()}{uvSecureVehicle()}}
-{\footnotesize\ttfamily void uv\+Secure\+Vehicle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{group__state__engine__backend_ga2c151c9ece181329cf95d74d80c53411}\label{group__state__engine__backend_ga2c151c9ece181329cf95d74d80c53411}} 
+\index{State Engine Internals@{State Engine Internals}!uvSendTaskStatusReport@{uvSendTaskStatusReport}}
+\index{uvSendTaskStatusReport@{uvSendTaskStatusReport}!State Engine Internals@{State Engine Internals}}
+\doxysubsubsection{\texorpdfstring{uvSendTaskStatusReport()}{uvSendTaskStatusReport()}}
+{\footnotesize\ttfamily void uv\+Send\+Task\+Status\+Report (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$}]{t }\end{DoxyParamCaption})}
 
 
 
-Function to put vehicle into safe state. 
-
-Should perform the following functions in order\+:
-\begin{DoxyItemize}
-\item Prevent new MC torque or speed requests
-\item Open shutdown cct 
-\end{DoxyItemize}
-
-Definition at line 669 of file uvfr\+\_\+state\+\_\+engine.\+c.
-
-
-
-Referenced by \+\_\+\+\_\+uv\+Panic().
+Definition at line 849 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 \mbox{\Hypertarget{group__state__engine__backend_ga91b9f84bc63d5808a3f70623ed8a0700}\label{group__state__engine__backend_ga91b9f84bc63d5808a3f70623ed8a0700}} 
 \index{State Engine Internals@{State Engine Internals}!uvStartSVCTask@{uvStartSVCTask}}
@@ -559,7 +553,7 @@ Function to start a service task specifically.
 
 
 
-Definition at line 1178 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 1235 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -587,13 +581,11 @@ If a task has been suspended, we do not want to create a new instance of the tas
 
 If none of the previous if statements caught the task handle, then that means that either this is our first time attempting to activate this task, or the task has been deleted at some point prior to this one
 
-The function {\ttfamily os\+Thread\+Create} returns null if it fails to create a thread. If that happens, we really do have a problem, so we will be returning an error value
-
-Definition at line 365 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 380 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-References \+\_\+\+B\+V\+\_\+32, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+handle, uv\+\_\+task\+\_\+info\+::task\+\_\+id, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+priority, uv\+\_\+task\+\_\+info\+::task\+\_\+state, U\+V\+\_\+\+A\+B\+O\+R\+T\+ED, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+OK, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+R\+U\+N\+N\+I\+NG, and U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+U\+S\+P\+E\+N\+D\+ED.
+References \+\_\+\+B\+V\+\_\+32, uv\+\_\+task\+\_\+info\+::last\+\_\+execution\+\_\+time, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+handle, uv\+\_\+task\+\_\+info\+::task\+\_\+id, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+priority, uv\+\_\+task\+\_\+info\+::task\+\_\+state, U\+V\+\_\+\+A\+B\+O\+R\+T\+ED, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+OK, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+R\+U\+N\+N\+I\+NG, and U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+U\+S\+P\+E\+N\+D\+ED.
 
 
 
@@ -611,7 +603,7 @@ Function that suspends a service task.
 
 
 
-Definition at line 1217 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 1274 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -636,7 +628,7 @@ function to suspend one of the managed tasks.
 \end{DoxyParams}
 
 
-Definition at line 590 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 596 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -660,11 +652,11 @@ Effectively, there are a couple variables we care about here\+: 1) Can the vehic
 
 If the task is critical, then this needs to 100\% result in a panic. If it isn\textquotesingle{}t then we can try to restart the task, noting that this may result in strange undefined behavior down the line. Thankfully if a task is not safety critical, we don\textquotesingle{}t really care whether it misbehaves. Appropriate countermeasures are in place to prevent one task from overflowing into another task, as well as to mitigate against possible memory leaks. 
 
-Definition at line 647 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 653 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-References uv\+\_\+task\+\_\+info\+::task\+\_\+flags, and U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+M\+I\+S\+S\+I\+O\+N\+\_\+\+C\+R\+I\+T\+I\+C\+AL.
+References uv\+\_\+task\+\_\+info\+::task\+\_\+flags, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+OK, and U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+M\+I\+S\+S\+I\+O\+N\+\_\+\+C\+R\+I\+T\+I\+C\+AL.
 
 \mbox{\Hypertarget{group__state__engine__backend_gaf2dbdd0d9d9aa8bcbef120661117fc5e}\label{group__state__engine__backend_gaf2dbdd0d9d9aa8bcbef120661117fc5e}} 
 \index{State Engine Internals@{State Engine Internals}!uvTaskManager@{uvTaskManager}}
@@ -679,22 +671,32 @@ The big papa task that deals with handling all of the others.
 The responsibilities of this task are as follows\+:
 \begin{DoxyItemize}
 \item Monitor tasks to ensure they are on schedule
-\item Setup inter-\/task communication channels
+\item Setup inter-\/task communication channels?
 \item Invoke S\+CD if necessary
 \item Track mem usage if needed
 \end{DoxyItemize}
 
-This task is one of the most important ones in the system. Lovely times for all. Therefore it us of utmost importance that this one D\+O\+ES N\+OT C\+R\+A\+SH. E\+V\+ER. Wait for incoming instructions from tasks
+This task is one of the most important ones in the system. Lovely times for all. Therefore it us of utmost importance that this one D\+O\+ES N\+OT C\+R\+A\+SH. E\+V\+ER. 
 
-Definition at line 1065 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 1080 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-References uv\+\_\+task\+\_\+info\+::tmi.
+References \+\_\+next\+\_\+task\+\_\+id, \+\_\+task\+\_\+register, uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, kill\+Self(), uv\+\_\+task\+\_\+info\+::last\+\_\+execution\+\_\+time, last\+\_\+task\+\_\+end\+\_\+times, last\+\_\+task\+\_\+start\+\_\+times, M\+A\+X\+\_\+\+N\+U\+M\+\_\+\+M\+A\+N\+A\+G\+E\+D\+\_\+\+T\+A\+S\+KS, nc\+\_\+throttling, os\+\_\+settings, task\+\_\+management\+\_\+info\+::parent\+\_\+msg\+\_\+queue, suspend\+Self(), uv\+\_\+task\+\_\+info\+::task\+\_\+flags, task\+\_\+management\+\_\+info\+::task\+\_\+handle, uv\+\_\+task\+\_\+info\+::task\+\_\+handle, uv\+\_\+os\+\_\+settings\+::task\+\_\+overshoot\+\_\+margin\+\_\+crit, uv\+\_\+os\+\_\+settings\+::task\+\_\+overshoot\+\_\+margin\+\_\+noncrit, uv\+\_\+task\+\_\+info\+::task\+\_\+period, uv\+\_\+task\+\_\+info\+::task\+\_\+state, task\+\_\+tardiness, uv\+\_\+task\+\_\+info\+::tmi, U\+V\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+SG, U\+V\+\_\+\+K\+I\+L\+L\+\_\+\+C\+MD, U\+V\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+MD, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+M\+A\+SK, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+M\+I\+S\+S\+I\+O\+N\+\_\+\+C\+R\+I\+T\+I\+C\+AL, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+R\+U\+N\+N\+I\+NG, U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+V\+E\+H\+I\+C\+L\+E\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON, uv\+Late\+Task\+Handler(), and uv\+Task\+Period\+End().
 
 
 
 Referenced by uv\+Start\+State\+Machine().
+
+\mbox{\Hypertarget{group__state__engine__backend_gace2b4c6c8f012fb6650049e5272b88e4}\label{group__state__engine__backend_gace2b4c6c8f012fb6650049e5272b88e4}} 
+\index{State Engine Internals@{State Engine Internals}!uvThrottleNonCritTasks@{uvThrottleNonCritTasks}}
+\index{uvThrottleNonCritTasks@{uvThrottleNonCritTasks}!State Engine Internals@{State Engine Internals}}
+\doxysubsubsection{\texorpdfstring{uvThrottleNonCritTasks()}{uvThrottleNonCritTasks()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+Throttle\+Non\+Crit\+Tasks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1041 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 \mbox{\Hypertarget{group__state__engine__backend_ga8c1618caac0d7f29836107f1a44833e8}\label{group__state__engine__backend_ga8c1618caac0d7f29836107f1a44833e8}} 
 \index{State Engine Internals@{State Engine Internals}!uvValidateManagedTasks@{uvValidateManagedTasks}}
@@ -708,7 +710,7 @@ ensure that all the tasks people have created actually make sense, and are valid
 
 
 
-Definition at line 343 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 358 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 

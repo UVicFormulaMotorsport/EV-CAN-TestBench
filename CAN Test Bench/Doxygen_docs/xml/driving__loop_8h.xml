@@ -93,11 +93,11 @@
         </childnode>
         <childnode refid="19" relation="include">
         </childnode>
-        <childnode refid="22" relation="include">
-        </childnode>
         <childnode refid="23" relation="include">
         </childnode>
         <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
         </childnode>
         <childnode refid="2" relation="include">
         </childnode>
@@ -127,7 +127,7 @@
       <node id="18">
         <label>message_buffer.h</label>
       </node>
-      <node id="21">
+      <node id="22">
         <label>bms.h</label>
         <link refid="bms_8h"/>
         <childnode refid="3" relation="include">
@@ -170,13 +170,15 @@
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
-        <childnode refid="21" relation="include">
+        <childnode refid="22" relation="include">
         </childnode>
       </node>
       <node id="20">
         <label>daq.h</label>
         <link refid="daq_8h"/>
         <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
         </childnode>
       </node>
       <node id="14">
@@ -185,7 +187,7 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="23">
+      <node id="21">
         <label>rb_tree.h</label>
         <link refid="rb__tree_8h"/>
       </node>
@@ -211,7 +213,7 @@
         <label>FreeRTOSConfig.h</label>
         <link refid="_free_r_t_o_s_config_8h"/>
       </node>
-      <node id="22">
+      <node id="23">
         <label>uvfr_state_engine.h</label>
         <link refid="uvfr__state__engine_8h"/>
         <childnode refid="6" relation="include">
@@ -393,6 +395,8 @@
         </childnode>
         <childnode refid="45" relation="include">
         </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
       </node>
       <node id="42">
         <label>Core/Src/odometer.c</label>
@@ -501,6 +505,10 @@
       <node id="22">
         <label>Core/Src/temp_monitoring.c</label>
         <link refid="temp__monitoring_8c"/>
+      </node>
+      <node id="46">
+        <label>Core/Src/uvfr_vehicle_commands.c</label>
+        <link refid="uvfr__vehicle__commands_8c"/>
       </node>
       <node id="36">
         <label>Core/Inc/daq.h</label>
@@ -667,22 +675,6 @@
     <innerclass refid="uniondriving_mode_params" prot="public">drivingModeParams</innerclass>
     <innerclass refid="structdriving_mode" prot="public">drivingMode</innerclass>
     <innerclass refid="structdriving__loop__args" prot="public">driving_loop_args</innerclass>
-      <sectiondef kind="define">
-      <memberdef kind="define" id="driving__loop_8h_1a19ae3417888a615aca7350e9e1ba0204" prot="public" static="no">
-        <name>DEFAULT_PERIOD</name>
-        <initializer>50</initializer>
-        <briefdescription>
-<para>DL_PERIOD is meant to represent how often the driving loop executes, in ms. </para>
-        </briefdescription>
-        <detaileddescription>
-<para>This is a define since I would eventually like this to be configurable via a global variable, or possible be dynamic in the future.</para>
-<para>Just replace the number with the name of the variable, and you&apos;re all set. </para>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="Core/Inc/driving_loop.h" line="26" column="9" bodyfile="Core/Inc/driving_loop.h" bodystart="26" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="driving__loop_8h_1a9d8fd287924cbb6baa4afd1c585da800" prot="public" static="no" strong="no">
         <type></type>
@@ -730,9 +722,12 @@
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-<para>enum meant to represent the different types of pedal map </para>
+<para>DL_PERIOD is meant to represent how often the driving loop executes, in ms. </para>
         </briefdescription>
         <detaileddescription>
+<para>This is a define since I would eventually like this to be configurable via a global variable, or possible be dynamic in the future.</para>
+<para>Just replace the number with the name of the variable, and you&apos;re all set.</para>
+<para>enum meant to represent the different types of pedal map</para>
 <para>This enum is meant to represent different functions that map the torque to speed. </para>
         </detaileddescription>
         <inbodydescription>
@@ -915,25 +910,27 @@
         <inbodydescription>
         </inbodydescription>
         <location file="Core/Inc/driving_loop.h" line="16" column="18" bodyfile="Core/Src/driving_loop.c" bodystart="25" bodyend="59" declfile="Core/Inc/driving_loop.h" declline="16" declcolumn="18"/>
-        <references refid="structuv__task__info_1ab24dea3bde4de2d839bf15e65c2df0d6" compoundref="uvfr__state__engine_8h" startline="239">uv_task_info::active_states</references>
-        <references refid="structuv__task__info_1a6986d7216c7f889164931b37ab752c29" compoundref="uvfr__state__engine_8h" startline="240">uv_task_info::deletion_states</references>
+        <references refid="structuv__task__info_1ab24dea3bde4de2d839bf15e65c2df0d6" compoundref="uvfr__state__engine_8h" startline="251">uv_task_info::active_states</references>
+        <references refid="structuv__task__info_1a6986d7216c7f889164931b37ab752c29" compoundref="uvfr__state__engine_8h" startline="252">uv_task_info::deletion_states</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4abed5371c079ef927fb67d8bb8e8aa286" compoundref="uvfr__state__engine_8h" startline="84">PROGRAMMING</references>
-        <references refid="structuv__task__info_1a353ec6bf2c42ab0920f3d1e671e568a3" compoundref="uvfr__state__engine_8h" startline="220">uv_task_info::stack_size</references>
+        <references refid="structuv__task__info_1a353ec6bf2c42ab0920f3d1e671e568a3" compoundref="uvfr__state__engine_8h" startline="231">uv_task_info::stack_size</references>
         <references refid="driving__loop_8c_1a80cc48f06202edc29bcad26a956bcc98" compoundref="driving__loop_8c" startline="68" endline="207">StartDrivingLoop</references>
-        <references refid="structuv__task__info_1aafd4e2d916f50b54b99fd02d63831e43" compoundref="uvfr__state__engine_8h" startline="241">uv_task_info::suspension_states</references>
-        <references refid="structuv__task__info_1ae255dff9b38fc8c0754085060e8ae699" compoundref="uvfr__state__engine_8h" startline="232">uv_task_info::task_args</references>
-        <references refid="structuv__task__info_1afcd240d2b6b01b4acea600ef4dfe8fbc" compoundref="uvfr__state__engine_8h" startline="216">uv_task_info::task_function</references>
-        <references refid="structuv__task__info_1ad24b438130bb3098ee5e855222dff21d" compoundref="uvfr__state__engine_8h" startline="211">uv_task_info::task_name</references>
-        <references refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" compoundref="uvfr__state__engine_8h" startline="213">uv_task_info::task_period</references>
-        <references refid="structuv__task__info_1aff45751f7189980589d55379d1d5a355" compoundref="uvfr__state__engine_8h" startline="217">uv_task_info::task_priority</references>
+        <references refid="structuv__task__info_1aafd4e2d916f50b54b99fd02d63831e43" compoundref="uvfr__state__engine_8h" startline="253">uv_task_info::suspension_states</references>
+        <references refid="structuv__task__info_1ae255dff9b38fc8c0754085060e8ae699" compoundref="uvfr__state__engine_8h" startline="243">uv_task_info::task_args</references>
+        <references refid="structuv__task__info_1afcd240d2b6b01b4acea600ef4dfe8fbc" compoundref="uvfr__state__engine_8h" startline="227">uv_task_info::task_function</references>
+        <references refid="structuv__task__info_1ad24b438130bb3098ee5e855222dff21d" compoundref="uvfr__state__engine_8h" startline="222">uv_task_info::task_name</references>
+        <references refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" compoundref="uvfr__state__engine_8h" startline="224">uv_task_info::task_period</references>
+        <references refid="structuv__task__info_1aff45751f7189980589d55379d1d5a355" compoundref="uvfr__state__engine_8h" startline="228">uv_task_info::task_priority</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969" compoundref="uvfr__state__engine_8h" startline="85">UV_DRIVING</references>
         <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" compoundref="uvfr__utils_8h" startline="169">UV_ERROR</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4ac1fcacc095b8c0f1c9f452d51815bcb5" compoundref="uvfr__state__engine_8h" startline="88">UV_ERROR_STATE</references>
+        <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4a5e3e7ecab0a58b320912cb4129641579" compoundref="uvfr__state__engine_8h" startline="82">UV_INIT</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4a7ff39f8abdc9adbfd693e412e4aaeb6e" compoundref="uvfr__state__engine_8h" startline="87">UV_LAUNCH_CONTROL</references>
         <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
         <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8" compoundref="uvfr__state__engine_8h" startline="83">UV_READY</references>
-        <references refid="group__state__engine__api_1ga99bfc92472cdc99e9005e9d3c792909a" compoundref="uvfr__state__engine_8c" startline="249" endline="287">uvCreateTask</references>
-        <referencedby refid="group__state__engine__api_1ga5c608f3832c45eac6e2da198d4ef1ba0" compoundref="uvfr__state__engine_8c" startline="151" endline="172">uvInitStateEngine</referencedby>
+        <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4abfddf18c580c465bb3c27b522aa4e4a9" compoundref="uvfr__state__engine_8h" startline="86">UV_SUSPENDED</references>
+        <references refid="group__state__engine__api_1ga99bfc92472cdc99e9005e9d3c792909a" compoundref="uvfr__state__engine_8c" startline="264" endline="302">uvCreateTask</references>
+        <referencedby refid="group__state__engine__api_1ga5c608f3832c45eac6e2da198d4ef1ba0" compoundref="uvfr__state__engine_8c" startline="164" endline="185">uvInitStateEngine</referencedby>
       </memberdef>
       <memberdef kind="function" id="driving__loop_8h_1a80cc48f06202edc29bcad26a956bcc98" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -991,16 +988,16 @@
         <references refid="driving__loop_8c_1a277f7921a7a1e0fb8a6f953943dc06dc" compoundref="main_8c" startline="67">adc1_BPS2</references>
         <references refid="structdriving__loop__args_1a8f28e6a24ae53940bab83117ae86d0c6" compoundref="driving__loop_8h" startline="130">driving_loop_args::apps_plausibility_check_threshold</references>
         <references refid="structdriving__loop__args_1aecaae9549609b56d961d739f91e73f92" compoundref="driving__loop_8h" startline="131">driving_loop_args::bps_plausibility_check_threshold</references>
-        <references refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" compoundref="uvfr__state__engine_8h" startline="230">uv_task_info::cmd_data</references>
+        <references refid="structuv__task__info_1af532b5031cd6a168a3ec45ab9ead4f23" compoundref="uvfr__state__engine_8h" startline="241">uv_task_info::cmd_data</references>
         <references refid="driving__loop_8h_1adef4571b048b5b1f2b712713741296c7a6425b90f597e6400cfb9422ec518334f" compoundref="driving__loop_8h" startline="44">Implausible</references>
-        <references refid="group__state__engine__backend_1ga5f35b34432afed7f18f91fb8607f096f" compoundref="uvfr__state__engine_8c" startline="715" endline="748">killSelf</references>
+        <references refid="group__state__engine__backend_1ga5f35b34432afed7f18f91fb8607f096f" compoundref="uvfr__state__engine_8c" startline="708" endline="741">killSelf</references>
         <references refid="structdriving__loop__args_1a51c8b3e55f33482df7a938d0d3e7bbd9" compoundref="driving__loop_8h" startline="121">driving_loop_args::max_apps_offset</references>
         <references refid="structdriving__loop__args_1a3972980cc1937753bc59dbc4978141b1" compoundref="driving__loop_8h" startline="123">driving_loop_args::max_apps_value</references>
         <references refid="structdriving__loop__args_1ac91f79da4c6beb38683e87ab2e09b0a2" compoundref="driving__loop_8h" startline="125">driving_loop_args::max_BPS_value</references>
         <references refid="driving__loop_8h_1adef4571b048b5b1f2b712713741296c7a51000915ad3f7b4a5874322723d879ca" compoundref="driving__loop_8h" startline="43">Plausible</references>
-        <references refid="group__state__engine__backend_1gad6117850b55ad52be51d93915bcc313c" compoundref="uvfr__state__engine_8c" startline="756" endline="787">suspendSelf</references>
-        <references refid="structuv__task__info_1ae255dff9b38fc8c0754085060e8ae699" compoundref="uvfr__state__engine_8h" startline="232">uv_task_info::task_args</references>
-        <references refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" compoundref="uvfr__state__engine_8h" startline="213">uv_task_info::task_period</references>
+        <references refid="group__state__engine__backend_1gad6117850b55ad52be51d93915bcc313c" compoundref="uvfr__state__engine_8c" startline="749" endline="780">suspendSelf</references>
+        <references refid="structuv__task__info_1ae255dff9b38fc8c0754085060e8ae699" compoundref="uvfr__state__engine_8h" startline="243">uv_task_info::task_args</references>
+        <references refid="structuv__task__info_1ad157811debce6672bb6d00da7e90b6ca" compoundref="uvfr__state__engine_8h" startline="224">uv_task_info::task_period</references>
         <references refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6" compoundref="uvfr__state__engine_8h" startline="98">UV_KILL_CMD</references>
         <references refid="group__state__engine__api_1ggaf11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077" compoundref="uvfr__state__engine_8h" startline="99">UV_SUSPEND_CMD</references>
         <referencedby refid="driving__loop_8c_1af580185fb5bb1cfba30ee1709d90628c" compoundref="driving__loop_8c" startline="25" endline="59">initDrivingLoop</referencedby>
@@ -1028,7 +1025,7 @@
 <codeline lineno="15" refid="driving__loop_8h_1abd1701d9bbc137696fe99b6df6eb7d3e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="driving__loop_8h_1abd1701d9bbc137696fe99b6df6eb7d3e" kindref="member">MC_RPM</ref>;</highlight></codeline>
 <codeline lineno="16" refid="driving__loop_8h_1a93f3b2b453b1ad01d8555f12e529dfed" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint16_t<sp/><ref refid="driving__loop_8h_1a93f3b2b453b1ad01d8555f12e529dfed" kindref="member">MC_POWER</ref>;</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
-<codeline lineno="26" refid="driving__loop_8h_1a19ae3417888a615aca7350e9e1ba0204" refkind="member"><highlight class="preprocessor">#define<sp/>DEFAULT_PERIOD<sp/>50</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="comment">//#define<sp/>DEFAULT_PERIOD<sp/>50</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal"></highlight></codeline>
 <codeline lineno="33" refid="driving__loop_8h_1a9d8fd287924cbb6baa4afd1c585da800" refkind="member"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="driving__loop_8h_1a9d8fd287924cbb6baa4afd1c585da800" kindref="member">map_mode</ref>{</highlight></codeline>
 <codeline lineno="34" refid="driving__loop_8h_1a9d8fd287924cbb6baa4afd1c585da800a24491cb716ed427ea52ef6cdbf415b52" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="driving__loop_8h_1a9d8fd287924cbb6baa4afd1c585da800a24491cb716ed427ea52ef6cdbf415b52" kindref="member">linear_speed_map</ref>,</highlight></codeline>

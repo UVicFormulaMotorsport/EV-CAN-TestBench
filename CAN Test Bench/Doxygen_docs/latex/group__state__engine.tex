@@ -31,7 +31,11 @@ typedef struct \mbox{\hyperlink{structstate__change__daemon__args}{state\+\_\+ch
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{group__state__engine_gaff684308203d45e9e16ad3d115c54279}{uv\+S\+V\+C\+Task\+Manager}} (void $\ast$args)
-\begin{DoxyCompactList}\small\item\em oversees all of the service tasks, and makes sure that theyre alright \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em oversees all of the service tasks, and makes sure that theyre alright \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{group__state__engine_ga9f31832194c2c9dddce43bf53eb86d5b}{compare\+Task\+By\+Name}} (\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t1, \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t2)
+\item 
+void \mbox{\hyperlink{group__state__engine_ga0e6167ef18c2ec8b65fbe070d0ffb6c9}{uv\+Task\+Period\+End}} (\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$t)
+\begin{DoxyCompactList}\small\item\em Function called at the end of the task period. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -39,13 +43,21 @@ static \mbox{\hyperlink{uvfr__state__engine_8h_aa6ffd72eb4909ddb38c37a1369e13f09
 \item 
 static \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$ \mbox{\hyperlink{group__state__engine_ga6b49ab568bed9d9189782eebb90545b5}{\+\_\+task\+\_\+register}} = N\+U\+LL
 \item 
-static \mbox{\hyperlink{uvfr__state__engine_8h_aa6ffd72eb4909ddb38c37a1369e13f09}{uv\+\_\+task\+\_\+id}} \mbox{\hyperlink{group__state__engine_gae48b13e362d2b9d10ec61f516ea5c09f}{\+\_\+next\+\_\+svc\+\_\+task\+\_\+id}} = 0
+static Tick\+Type\+\_\+t $\ast$ \mbox{\hyperlink{group__state__engine_gac5868023f8ec284bd14c50db7a815e78}{last\+\_\+task\+\_\+start\+\_\+times}} = N\+U\+LL
 \item 
-static \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$ \mbox{\hyperlink{group__state__engine_ga031bbb86895e7346f4c7c168b36ffbd4}{\+\_\+svc\+\_\+task\+\_\+register}} = N\+U\+LL
+static Tick\+Type\+\_\+t $\ast$ \mbox{\hyperlink{group__state__engine_ga0ae08e3e5e1cb6e0228da97c7e4326e0}{last\+\_\+task\+\_\+end\+\_\+times}} = N\+U\+LL
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{group__state__engine_gaf622d52254e824f6da1204abc93b18db}{task\+\_\+tardiness}}
+\item 
+static \mbox{\hyperlink{uvfr__state__engine_8h_aa6ffd72eb4909ddb38c37a1369e13f09}{uv\+\_\+task\+\_\+id}} \mbox{\hyperlink{group__state__engine_gae48b13e362d2b9d10ec61f516ea5c09f}{\+\_\+next\+\_\+svc\+\_\+task\+\_\+id}} = 0
 \item 
 Task\+Handle\+\_\+t $\ast$ \mbox{\hyperlink{group__state__engine_gac204f3b14ce9bf370b2e5477dc87afea}{scd\+\_\+handle\+\_\+ptr}}
 \item 
 static volatile \mbox{\hyperlink{uvfr__utils_8h_a0ecf26b576b9a54eca656b9be7ba6a06}{bool}} \mbox{\hyperlink{group__state__engine_gaa11ee7595fe2da14c5949195824179af}{S\+C\+D\+\_\+active}} = \mbox{\hyperlink{group__utility__macros_ga65e9886d74aaee76545e83dd09011727}{false}}
+\item 
+static volatile \mbox{\hyperlink{uvfr__utils_8h_a0ecf26b576b9a54eca656b9be7ba6a06}{bool}} \mbox{\hyperlink{group__state__engine_ga23b0c19ff219812065d876d2daaa26fd}{throttle\+\_\+daq}} = \mbox{\hyperlink{group__utility__macros_ga65e9886d74aaee76545e83dd09011727}{false}}
+\item 
+static volatile \mbox{\hyperlink{uvfr__utils_8h_a0ecf26b576b9a54eca656b9be7ba6a06}{bool}} \mbox{\hyperlink{group__state__engine_ga6f4abbac22d8261c588c551b1d153ef6}{nc\+\_\+throttling}} = 1
 \item 
 static Queue\+Handle\+\_\+t \mbox{\hyperlink{group__state__engine_ga6837d935e61f84062544da8971a18560}{state\+\_\+change\+\_\+queue}} = N\+U\+LL
 \item 
@@ -58,6 +70,10 @@ enum \mbox{\hyperlink{group__state__engine__api_ga259abff5a03eaf908dc8f03d99f478
 \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$ \mbox{\hyperlink{group__state__engine_ga3de41676729241e58688c61c450e4a1e}{task\+\_\+manager}} = N\+U\+LL
 \item 
 \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$ \mbox{\hyperlink{group__state__engine_ga42329069c59ef55a97a6b0bca0cafd32}{svc\+\_\+task\+\_\+manager}} = N\+U\+LL
+\item 
+\mbox{\hyperlink{structrbtree}{rbtree}} $\ast$ \mbox{\hyperlink{group__state__engine_gaaed35d33599a21d98d0500c5f0a1385a}{task\+\_\+name\+\_\+tree}}
+\item 
+\mbox{\hyperlink{structuv__os__settings}{uv\+\_\+os\+\_\+settings}} $\ast$ \mbox{\hyperlink{group__state__engine_ga026f8ea8b80f88c90cb35e3ec3588237}{os\+\_\+settings}} = N\+U\+LL
 \item 
 \mbox{\hyperlink{structuv__os__settings}{uv\+\_\+os\+\_\+settings}} \mbox{\hyperlink{group__state__engine_gad9e02be6d2d0bc1ab5cd9fd8cae34230}{default\+\_\+os\+\_\+settings}}
 \end{DoxyCompactItemize}
@@ -96,6 +112,20 @@ Definition at line 20 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__state__engine_ga9f31832194c2c9dddce43bf53eb86d5b}\label{group__state__engine_ga9f31832194c2c9dddce43bf53eb86d5b}} 
+\index{State Engine@{State Engine}!compareTaskByName@{compareTaskByName}}
+\index{compareTaskByName@{compareTaskByName}!State Engine@{State Engine}}
+\doxysubsubsection{\texorpdfstring{compareTaskByName()}{compareTaskByName()}}
+{\footnotesize\ttfamily int compare\+Task\+By\+Name (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$}]{t1,  }\item[{\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$}]{t2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1400 of file uvfr\+\_\+state\+\_\+engine.\+c.
+
+
+
+References uv\+\_\+task\+\_\+info\+::task\+\_\+name.
+
 \mbox{\Hypertarget{group__state__engine_gaff684308203d45e9e16ad3d115c54279}\label{group__state__engine_gaff684308203d45e9e16ad3d115c54279}} 
 \index{State Engine@{State Engine}!uvSVCTaskManager@{uvSVCTaskManager}}
 \index{uvSVCTaskManager@{uvSVCTaskManager}!State Engine@{State Engine}}
@@ -118,15 +148,37 @@ Now we deinitialize the svc\+Task\+Manager. This is done by doing the following\
 
 Lovely times for all
 
-Definition at line 1284 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 1341 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-References \+\_\+\+\_\+uv\+Init\+Panic(), \+\_\+task\+\_\+register, uv\+\_\+task\+\_\+info\+::active\+\_\+states, C\+A\+N\+\_\+\+T\+X\+\_\+\+D\+A\+E\+M\+O\+N\+\_\+\+N\+A\+ME, C\+A\+Nbus\+Tx\+Svc\+Daemon(), uv\+\_\+task\+\_\+info\+::task\+\_\+function, task\+\_\+management\+\_\+info\+::task\+\_\+handle, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+Create\+Service\+Task(), and uv\+Start\+Task().
+References \+\_\+\+\_\+uv\+Init\+Panic(), \+\_\+task\+\_\+register, uv\+\_\+task\+\_\+info\+::active\+\_\+states, C\+A\+N\+\_\+\+R\+X\+\_\+\+D\+A\+E\+M\+O\+N\+\_\+\+N\+A\+ME, C\+A\+N\+\_\+\+T\+X\+\_\+\+D\+A\+E\+M\+O\+N\+\_\+\+N\+A\+ME, C\+A\+Nbus\+Rx\+Svc\+Daemon(), C\+A\+Nbus\+Tx\+Svc\+Daemon(), uv\+\_\+task\+\_\+info\+::task\+\_\+function, task\+\_\+management\+\_\+info\+::task\+\_\+handle, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+Create\+Service\+Task(), and uv\+Start\+Task().
 
 
 
 Referenced by uv\+Start\+State\+Machine().
+
+\mbox{\Hypertarget{group__state__engine_ga0e6167ef18c2ec8b65fbe070d0ffb6c9}\label{group__state__engine_ga0e6167ef18c2ec8b65fbe070d0ffb6c9}} 
+\index{State Engine@{State Engine}!uvTaskPeriodEnd@{uvTaskPeriodEnd}}
+\index{uvTaskPeriodEnd@{uvTaskPeriodEnd}!State Engine@{State Engine}}
+\doxysubsubsection{\texorpdfstring{uvTaskPeriodEnd()}{uvTaskPeriodEnd()}}
+{\footnotesize\ttfamily void uv\+Task\+Period\+End (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$}]{t }\end{DoxyParamCaption})}
+
+
+
+Function called at the end of the task period. 
+
+@ 
+
+Definition at line 1457 of file uvfr\+\_\+state\+\_\+engine.\+c.
+
+
+
+References uv\+\_\+task\+\_\+info\+::last\+\_\+execution\+\_\+time, nc\+\_\+throttling, uv\+\_\+task\+\_\+info\+::task\+\_\+id, uv\+\_\+task\+\_\+info\+::task\+\_\+period, task\+\_\+tardiness, uv\+Task\+Reset\+Delay\+Bit, and uv\+Task\+Set\+Delay\+Bit.
+
+
+
+Referenced by uv\+Task\+Manager().
 
 
 
@@ -139,7 +191,7 @@ Referenced by uv\+Start\+State\+Machine().
 
 
 
-Definition at line 28 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 32 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -157,17 +209,7 @@ Definition at line 25 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-Referenced by \+\_\+state\+Change\+Daemon(), kill\+Em\+All(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), and uv\+Validate\+Managed\+Tasks().
-
-\mbox{\Hypertarget{group__state__engine_ga031bbb86895e7346f4c7c168b36ffbd4}\label{group__state__engine_ga031bbb86895e7346f4c7c168b36ffbd4}} 
-\index{State Engine@{State Engine}!\_svc\_task\_register@{\_svc\_task\_register}}
-\index{\_svc\_task\_register@{\_svc\_task\_register}!State Engine@{State Engine}}
-\doxysubsubsection{\texorpdfstring{\_svc\_task\_register}{\_svc\_task\_register}}
-{\footnotesize\ttfamily \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}}$\ast$ \+\_\+svc\+\_\+task\+\_\+register = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Definition at line 29 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Referenced by \+\_\+state\+Change\+Daemon(), kill\+Em\+All(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), uv\+Task\+Manager(), and uv\+Validate\+Managed\+Tasks().
 
 \mbox{\Hypertarget{group__state__engine_ga6b49ab568bed9d9189782eebb90545b5}\label{group__state__engine_ga6b49ab568bed9d9189782eebb90545b5}} 
 \index{State Engine@{State Engine}!\_task\_register@{\_task\_register}}
@@ -181,7 +223,7 @@ Definition at line 26 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-Referenced by \+\_\+state\+Change\+Daemon(), \+\_\+uv\+Validate\+Specific\+Task(), kill\+Em\+All(), proccess\+S\+C\+D\+Msg(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), uv\+Init\+State\+Engine(), and uv\+S\+V\+C\+Task\+Manager().
+Referenced by \+\_\+state\+Change\+Daemon(), \+\_\+uv\+Validate\+Specific\+Task(), kill\+Em\+All(), proccess\+S\+C\+D\+Msg(), uv\+Create\+Service\+Task(), uv\+Create\+Task(), uv\+Init\+State\+Engine(), uv\+S\+V\+C\+Task\+Manager(), and uv\+Task\+Manager().
 
 \mbox{\Hypertarget{group__state__engine_gad9e02be6d2d0bc1ab5cd9fd8cae34230}\label{group__state__engine_gad9e02be6d2d0bc1ab5cd9fd8cae34230}} 
 \index{State Engine@{State Engine}!default\_os\_settings@{default\_os\_settings}}
@@ -196,17 +238,75 @@ Referenced by \+\_\+state\+Change\+Daemon(), \+\_\+uv\+Validate\+Specific\+Task(
 \DoxyCodeLine{        .task\_manager\_period = 50,}
 \DoxyCodeLine{        .max\_svc\_task\_period = 250,}
 \DoxyCodeLine{        .max\_task\_period = 500,}
-\DoxyCodeLine{}
+\DoxyCodeLine{        .min\_task\_period = 3,}
+\DoxyCodeLine{        .task\_overshoot\_margin\_noncrit = 1.5F,}
+\DoxyCodeLine{        .task\_overshoot\_margin\_crit = 1.1F}
 \DoxyCodeLine{\}}
 
 \end{DoxyCode}
 
 
-Definition at line 45 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 55 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
 Referenced by setup\+Default\+Settings().
+
+\mbox{\Hypertarget{group__state__engine_ga0ae08e3e5e1cb6e0228da97c7e4326e0}\label{group__state__engine_ga0ae08e3e5e1cb6e0228da97c7e4326e0}} 
+\index{State Engine@{State Engine}!last\_task\_end\_times@{last\_task\_end\_times}}
+\index{last\_task\_end\_times@{last\_task\_end\_times}!State Engine@{State Engine}}
+\doxysubsubsection{\texorpdfstring{last\_task\_end\_times}{last\_task\_end\_times}}
+{\footnotesize\ttfamily Tick\+Type\+\_\+t$\ast$ last\+\_\+task\+\_\+end\+\_\+times = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 29 of file uvfr\+\_\+state\+\_\+engine.\+c.
+
+
+
+Referenced by uv\+Task\+Manager().
+
+\mbox{\Hypertarget{group__state__engine_gac5868023f8ec284bd14c50db7a815e78}\label{group__state__engine_gac5868023f8ec284bd14c50db7a815e78}} 
+\index{State Engine@{State Engine}!last\_task\_start\_times@{last\_task\_start\_times}}
+\index{last\_task\_start\_times@{last\_task\_start\_times}!State Engine@{State Engine}}
+\doxysubsubsection{\texorpdfstring{last\_task\_start\_times}{last\_task\_start\_times}}
+{\footnotesize\ttfamily Tick\+Type\+\_\+t$\ast$ last\+\_\+task\+\_\+start\+\_\+times = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 28 of file uvfr\+\_\+state\+\_\+engine.\+c.
+
+
+
+Referenced by uv\+Task\+Manager().
+
+\mbox{\Hypertarget{group__state__engine_ga6f4abbac22d8261c588c551b1d153ef6}\label{group__state__engine_ga6f4abbac22d8261c588c551b1d153ef6}} 
+\index{State Engine@{State Engine}!nc\_throttling@{nc\_throttling}}
+\index{nc\_throttling@{nc\_throttling}!State Engine@{State Engine}}
+\doxysubsubsection{\texorpdfstring{nc\_throttling}{nc\_throttling}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{uvfr__utils_8h_a0ecf26b576b9a54eca656b9be7ba6a06}{bool}} nc\+\_\+throttling = 1\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 40 of file uvfr\+\_\+state\+\_\+engine.\+c.
+
+
+
+Referenced by uv\+Task\+Manager(), and uv\+Task\+Period\+End().
+
+\mbox{\Hypertarget{group__state__engine_ga026f8ea8b80f88c90cb35e3ec3588237}\label{group__state__engine_ga026f8ea8b80f88c90cb35e3ec3588237}} 
+\index{State Engine@{State Engine}!os\_settings@{os\_settings}}
+\index{os\_settings@{os\_settings}!State Engine@{State Engine}}
+\doxysubsubsection{\texorpdfstring{os\_settings}{os\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structuv__os__settings}{uv\+\_\+os\+\_\+settings}}$\ast$ os\+\_\+settings = N\+U\+LL}
+
+
+
+Definition at line 53 of file uvfr\+\_\+state\+\_\+engine.\+c.
+
+
+
+Referenced by uv\+Start\+State\+Machine(), and uv\+Task\+Manager().
 
 \mbox{\Hypertarget{group__state__engine_ga2ce6eef16a78c095592954d2fe68af2e}\label{group__state__engine_ga2ce6eef16a78c095592954d2fe68af2e}} 
 \index{State Engine@{State Engine}!previous\_state@{previous\_state}}
@@ -216,7 +316,7 @@ Referenced by setup\+Default\+Settings().
 
 
 
-Definition at line 40 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 46 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -230,7 +330,7 @@ Referenced by change\+Vehicle\+State(), and uv\+Start\+State\+Machine().
 
 
 
-Definition at line 34 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 38 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -244,7 +344,7 @@ Referenced by \+\_\+state\+Change\+Daemon().
 
 
 
-Definition at line 31 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 35 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 \mbox{\Hypertarget{group__state__engine_ga6837d935e61f84062544da8971a18560}\label{group__state__engine_ga6837d935e61f84062544da8971a18560}} 
 \index{State Engine@{State Engine}!state\_change\_queue@{state\_change\_queue}}
@@ -254,7 +354,7 @@ Definition at line 31 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-Definition at line 35 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 41 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -268,7 +368,7 @@ Referenced by \+\_\+state\+Change\+Daemon(), kill\+Self(), and suspend\+Self().
 
 
 
-Definition at line 43 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 49 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -282,7 +382,7 @@ Referenced by uv\+Init\+State\+Engine(), and uv\+Start\+State\+Machine().
 
 
 
-Definition at line 42 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 48 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
@@ -296,7 +396,41 @@ Referenced by uv\+Init\+State\+Engine(), and uv\+Start\+State\+Machine().
 
 
 
-Definition at line 37 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 43 of file uvfr\+\_\+state\+\_\+engine.\+c.
+
+\mbox{\Hypertarget{group__state__engine_gaaed35d33599a21d98d0500c5f0a1385a}\label{group__state__engine_gaaed35d33599a21d98d0500c5f0a1385a}} 
+\index{State Engine@{State Engine}!task\_name\_tree@{task\_name\_tree}}
+\index{task\_name\_tree@{task\_name\_tree}!State Engine@{State Engine}}
+\doxysubsubsection{\texorpdfstring{task\_name\_tree}{task\_name\_tree}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structrbtree}{rbtree}}$\ast$ task\+\_\+name\+\_\+tree}
+
+
+
+Definition at line 51 of file uvfr\+\_\+state\+\_\+engine.\+c.
+
+\mbox{\Hypertarget{group__state__engine_gaf622d52254e824f6da1204abc93b18db}\label{group__state__engine_gaf622d52254e824f6da1204abc93b18db}} 
+\index{State Engine@{State Engine}!task\_tardiness@{task\_tardiness}}
+\index{task\_tardiness@{task\_tardiness}!State Engine@{State Engine}}
+\doxysubsubsection{\texorpdfstring{task\_tardiness}{task\_tardiness}}
+{\footnotesize\ttfamily uint8\+\_\+t$\ast$ task\+\_\+tardiness}
+
+
+
+Definition at line 30 of file uvfr\+\_\+state\+\_\+engine.\+c.
+
+
+
+Referenced by uv\+Late\+Task\+Handler(), uv\+Task\+Manager(), and uv\+Task\+Period\+End().
+
+\mbox{\Hypertarget{group__state__engine_ga23b0c19ff219812065d876d2daaa26fd}\label{group__state__engine_ga23b0c19ff219812065d876d2daaa26fd}} 
+\index{State Engine@{State Engine}!throttle\_daq@{throttle\_daq}}
+\index{throttle\_daq@{throttle\_daq}!State Engine@{State Engine}}
+\doxysubsubsection{\texorpdfstring{throttle\_daq}{throttle\_daq}}
+{\footnotesize\ttfamily volatile \mbox{\hyperlink{uvfr__utils_8h_a0ecf26b576b9a54eca656b9be7ba6a06}{bool}} throttle\+\_\+daq = \mbox{\hyperlink{group__utility__macros_ga65e9886d74aaee76545e83dd09011727}{false}}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 39 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 \mbox{\Hypertarget{group__state__engine_ga2f58cf65b3566bc390600f877f8bed35}\label{group__state__engine_ga2f58cf65b3566bc390600f877f8bed35}} 
 \index{State Engine@{State Engine}!vehicle\_state@{vehicle\_state}}
@@ -306,9 +440,9 @@ Definition at line 37 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-Definition at line 39 of file uvfr\+\_\+state\+\_\+engine.\+c.
+Definition at line 45 of file uvfr\+\_\+state\+\_\+engine.\+c.
 
 
 
-Referenced by \+\_\+state\+Change\+Daemon(), change\+Vehicle\+State(), daq\+Master\+Task(), and uv\+Start\+State\+Machine().
+Referenced by \+\_\+state\+Change\+Daemon(), change\+Vehicle\+State(), daq\+Master\+Task(), testfunc(), and uv\+Start\+State\+Machine().
 

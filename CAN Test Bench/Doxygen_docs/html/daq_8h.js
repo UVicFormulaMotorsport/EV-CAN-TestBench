@@ -9,17 +9,6 @@ var daq_8h =
     [ "daq_datapoint", "daq_8h.html#ad3bc3bc1c9ab04b22cc999a6f7c82c40", null ],
     [ "daq_loop_args", "daq_8h.html#a8895dc742d7ce8449057f317e7f9c81b", null ],
     [ "daq_param_list_node", "daq_8h.html#a4a7e5c4a5e65c315010bab902f2268a6", null ],
-    [ "data_type", "daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14", [
-      [ "UV_UINT8", "daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d", null ],
-      [ "UV_INT8", "daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318", null ],
-      [ "UV_UINT16", "daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0", null ],
-      [ "UV_INT16", "daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787", null ],
-      [ "UV_UINT32", "daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0", null ],
-      [ "UV_INT32", "daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc", null ],
-      [ "UV_FLOAT", "daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9", null ],
-      [ "UV_DOUBLE", "daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038", null ],
-      [ "UV_STRING", "daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de", null ]
-    ] ],
     [ "loggable_params", "daq_8h.html#a5249d5d3ad44df9d4479b814028469a9", [
       [ "MOTOR_RPM", "daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a2237bba50d7e27353f72b7d26837fee4", null ],
       [ "MOTOR_TEMP", "daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a1b5652598a4eb9009556ed9d79bc3481", null ],

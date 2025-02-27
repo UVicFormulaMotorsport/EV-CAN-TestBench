@@ -25,13 +25,19 @@
 static uv_task_id _next_task_id = 0;
 static uv_task_info* _task_register = NULL;
 
+static TickType_t* last_task_start_times = NULL;
+static TickType_t* last_task_end_times = NULL;
+uint8_t* task_tardiness;
+
 static uv_task_id _next_svc_task_id = 0;
-static uv_task_info* _svc_task_register = NULL;
+//static uv_task_info* _svc_task_register = NULL;
 
 TaskHandle_t* scd_handle_ptr;
 
 
 static volatile bool SCD_active = false;
+static volatile bool throttle_daq = false;
+static volatile bool nc_throttling = 1;
 static QueueHandle_t state_change_queue = NULL;
 
 rbtree* task_name_lut = NULL;
@@ -42,18 +48,25 @@ enum uv_vehicle_state_t previous_state = UV_BOOT;
 uv_task_info* task_manager = NULL;
 uv_task_info* svc_task_manager = NULL;
 
+rbtree* task_name_tree;
+
+uv_os_settings* os_settings = NULL;
+
 uv_os_settings default_os_settings ={
 		.svc_task_manager_period = 50,
 		.task_manager_period = 50,
 		.max_svc_task_period = 250,
 		.max_task_period = 500,
-
+		.min_task_period = 3,
+		.task_overshoot_margin_noncrit = 1.5F,
+		.task_overshoot_margin_crit = 1.1F
 };
 
 //Function prototypes
 uv_status killEmAll();
 void uvSVCTaskManager(void* args);
 void uvTaskManager(void* args);
+int compareTaskByName(uv_task_info* t1, uv_task_info* t2);
 
 typedef struct state_change_daemon_args{
 	TaskHandle_t meta_task_handle;
@@ -116,7 +129,7 @@ uv_status changeVehicleState(uint16_t state){
 
 		default:
 			//invalid transitions that should not exist
-			uvPanic("Invalid State Transition",0);
+			//uvPanic("Invalid State Transition",0);
 			break;
 	}
 
@@ -178,6 +191,8 @@ uv_status uvInitStateEngine(){
  */
 uv_status uvStartStateMachine(){
 
+	os_settings = current_vehicle_settings->os_settings;
+
 
 	previous_state = vehicle_state;
 	vehicle_state = UV_INIT;
@@ -188,7 +203,7 @@ uv_status uvStartStateMachine(){
 	svc_task_manager->task_flags |= UV_TASK_MISSION_CRITICAL | UV_TASK_SCD_IGNORE;
 	svc_task_manager->task_function = uvSVCTaskManager;
 	svc_task_manager->stack_size = 256;
-	svc_task_manager->task_period = 25;
+	svc_task_manager->task_period = os_settings->svc_task_manager_period;
 
 	task_manager->task_name = "taskManager"; //Task info for regular uvTaskManager struct
 	task_manager->task_flags |= UV_TASK_MISSION_CRITICAL | UV_TASK_SCD_IGNORE;
@@ -314,10 +329,10 @@ uv_status _uvValidateSpecificTask(uv_task_id id){
 		return UV_ERROR;
 	}
 
-	if((current_task->active_states | current_task->deletion_states | current_task->suspension_states) != 0x01FF){
-		if((current_task->task_flags & UV_TASK_MANAGER_MASK) == UV_TASK_VEHICLE_APPLICATION)
-		return UV_ERROR; //This avoids undefined states where the task state is not specified for a given vehicle state
-	}
+//	if((current_task->active_states | current_task->deletion_states | current_task->suspension_states) != 0x01FF){
+//		if((current_task->task_flags & UV_TASK_MANAGER_MASK) == UV_TASK_VEHICLE_APPLICATION)
+//		return UV_ERROR; //This avoids undefined states where the task state is not specified for a given vehicle state
+//	}
 
 	if(current_task->task_function == NULL){
 				//Invalid, since no task assigned
@@ -385,6 +400,8 @@ uv_status uvStartTask(uint32_t* tracker,uv_task_info* t){
 	}
 
 
+
+
 	/** If a task has been suspended, we do not want to create a new instance
 	 * of the task, becuase then the task will go out of scope, and changing the task
 	 * handle to a new instance will result in the task never being de-initialized, therefore causing a
@@ -397,6 +414,7 @@ uv_status uvStartTask(uint32_t* tracker,uv_task_info* t){
 		}
 
 		vTaskResume(t->task_handle);
+		t->last_execution_time = xTaskGetTickCount(); // so we can continue tracking task period
 
 		t->task_state = UV_TASK_RUNNING;
 		*tracker &= ~_BV_32(t->task_id); //Set the bit in the tracker so that we won't have issues down the road
@@ -417,28 +435,16 @@ uv_status uvStartTask(uint32_t* tracker,uv_task_info* t){
 	if(x_return != pdPASS){ //thats not very good, or very cash money of you
 		return UV_ERROR;
 	}
-	/** The function @c osThreadCreate returns null if it fails to create a thread.
-	 * If that happens, we really do have a problem, so we will be returning an error value
-	 *
-	 */
+
 	if(t->task_handle == NULL){ //WTF, how has this occurred
 		return UV_ERROR;
 	}
 
 	//we may need to explicitely start a task. Ha, JK
 	t->task_state = UV_TASK_RUNNING;
+	t->last_execution_time = xTaskGetTickCount();
 	return UV_OK;
 }
-
-
-
-
-
-
-
-
-
-
 
 /** @brief The name should be pretty self explanatory
  *
@@ -657,26 +663,7 @@ uv_status uvTaskCrashHandler(uv_task_info* t){
 
 
 
-//state_change_daemon_args* scd_args = NULL;
 
-
-
-/** @brief Function to put vehicle into safe state.
- *
- * Should perform the following functions in order:
- * - Prevent new MC torque or speed requests
- * - Open shutdown cct
- *
- */
-void uvSecureVehicle(){
-	//Stop MCU Torque requests
-
-
-
-	//open SDC >:)
-
-
-}
 
 
 /** @brief Something bad has occurred here now we in trouble
@@ -700,6 +687,10 @@ void __uvPanic(char* msg, uint8_t msg_len, const char* file, const int line, con
 
 
 	uvSecureVehicle(); // ensure safe state of vehicle.
+
+	changeVehicleState(UV_ERROR_STATE);
+
+	//TODO: We should probably keep a log of this or something
 
 	//ruh roh, something has gone a little bit fucky wucky
 	//vTaskSuspendAll();
@@ -853,6 +844,10 @@ static uv_status proccessSCDMsg(uv_scd_response* msg){
 
 
 	return UV_OK;
+}
+
+void uvSendTaskStatusReport(uv_task_info* t){
+
 }
 
 //TODO Give SCD Object permanence, make a function that is called by the task manager. Allocation of SCD resources costs valuable time in the event of a fault
@@ -1043,12 +1038,30 @@ void _stateChangeDaemon(void * args) PRIVILEGED_FUNCTION{
 }
 //end of SCD
 
-/** @brief used to wake up the SCD
- *
- * This is only called from uvTaskManager to wake up the SCD
- *
- */
-inline uv_status uvInvokeSCD(void* scd_params){
+uv_status uvThrottleNonCritTasks(){
+
+}
+
+
+void uvLateTaskHandler(uv_task_info* t ,TickType_t tdiff , uint8_t task_tardiness){
+
+	if(t == NULL){
+		//bruh
+	}
+
+	if(tdiff == portMAX_DELAY){
+		//only base task lateness on the tardiness level, ignore tdiff
+	}
+
+	if(t->task_flags & UV_TASK_MISSION_CRITICAL){
+		//SHIT FUCK SHIT WE GOTTA STOP THE CAR
+		if(task_tardiness >= 2 || tdiff > (t->task_period * 2)){
+			uvPanic("Critical Task Excessively Delayed",0);//This means task delayed AF
+		}else{
+
+		}
+
+	}
 
 }
 
@@ -1056,7 +1069,7 @@ inline uv_status uvInvokeSCD(void* scd_params){
  *
  * The responsibilities of this task are as follows:
  * - Monitor tasks to ensure they are on schedule
- * - Setup inter-task communication channels
+ * - Setup inter-task communication channels?
  * - Invoke SCD if necessary
  * - Track mem usage if needed
  *
@@ -1067,67 +1080,109 @@ inline uv_status uvInvokeSCD(void* scd_params){
 void uvTaskManager(void* args) PRIVILEGED_FUNCTION{
 	uv_task_info* params = (uv_task_info*) args;
 	task_management_info* tmi = params->tmi; //Task Manager interface;
-//	tmi->task_handle = params->task_handle;
-//	tmi->parent_msg_queue = xQueueCreate(8,sizeof(uv_task_msg));//our good ol friend the message queue
-//	//Init the variables we need
-//	uv_task_msg incoming_msg;
-//	uv_msg_type incoming_msg_type = UV_INVALID_MSG;
-//
-//
-//	BaseType_t queue_status;
-
-	for(;;){
-		/** Wait for incoming instructions from tasks
-		 *
-		 */
-		vTaskDelay(1000);
-//		queue_status = xQueueReceive(tmi->parent_msg_queue,&incoming_msg,pdMS_TO_TICKS(params->task_period));
-//
-//		if(queue_status == pdTRUE){
-//			//You've got mail
-//
-//			if(incoming_msg.intended_recipient != params){
-//				//this is not our message
-//			}
-//
-//			incoming_msg_type = incoming_msg.message_type;
-//
-//
-//			switch(incoming_msg_type){
-//			case UV_TASK_STATUS_REPORT:
-//				//this means that we have an incoming TSB
-//				//read the TSB and ensure that everything is within appropriate
-//				//parameters, and that there isnt any catasrophic problems.
-//
-//
-//
-//				break;
-//
-//
-//			case UV_COMMAND_ACKNOWLEDGEMENT:
-//
-//
-//				break;
-//
-//			case UV_ERROR_REPORT:
-//				previous_state = vehicle_state;
-//				vehicle_state = UV_ERROR_STATE;
-//
-//
-//
-//				break;
-//
-//			case UV_SC_COMMAND:
-//
-//				break;
-//
-//			default:
-//
-//				break;
-//			}
-//		}
+	tmi->task_handle = params->task_handle;
+	tmi->parent_msg_queue = xQueueCreate(8,sizeof(uv_task_msg));//our good ol friend the message queue
+	//Init the variables we need
+	uv_task_msg incoming_msg;
+	uv_msg_type incoming_msg_type = UV_INVALID_MSG;
 
 
+
+	last_task_start_times = uvMalloc(MAX_NUM_MANAGED_TASKS*sizeof(TickType_t));
+	last_task_end_times = uvMalloc(MAX_NUM_MANAGED_TASKS*sizeof(TickType_t));
+	task_tardiness = uvMalloc(MAX_NUM_MANAGED_TASKS*sizeof(uint8_t));
+
+	uint32_t late_tasks = 0;
+
+
+	BaseType_t queue_status;
+
+	for(;;){ //Loop checking for late tasks
+
+
+		//vTaskDelayUntil( &last_time, tick_period);
+		if(params->cmd_data == UV_KILL_CMD){
+
+			//TASK DESTRUCTOR: CLEAN UP ANY RESOURCES USED BY THE TASK HERE
+
+			uvFree(last_task_start_times);
+			uvFree(last_task_end_times);
+			uvFree(task_tardiness);
+
+			last_task_start_times = NULL;
+			last_task_end_times = NULL;
+			task_tardiness = NULL;
+
+
+			killSelf(params);
+		}else if(params->cmd_data == UV_SUSPEND_CMD){
+
+			//TASK SUSPENSION DESTRUCTOR: RELEASE THINGS LIKE MUTICES OR SEMAPHORES, BUT NO NEED TO DEALLOCATE ANY MEMORY
+
+			suspendSelf(params);
+		}
+
+
+		uv_task_info* tmp = NULL;
+		TickType_t time = xTaskGetTickCount();
+		TickType_t threshold = 0xFF;
+		TickType_t tdiff = 0;
+		for(int i = 0; i<_next_task_id; i++){//iterate through the tasks
+			tmp = &(_task_register[i]);
+
+			if((tmp->task_flags & UV_TASK_MANAGER_MASK)!= UV_TASK_VEHICLE_APPLICATION){
+				continue;
+			}
+
+			if(tmp->task_state != UV_TASK_RUNNING){
+				task_tardiness[i] = 0;
+				continue;
+			}
+
+			if(task_tardiness[i] > 2){
+				uvLateTaskHandler(tmp, portMAX_DELAY, task_tardiness[i]);
+			}
+
+			if(tmp->task_flags & UV_TASK_MISSION_CRITICAL){
+				threshold = (tmp->task_period)*nc_throttling*(os_settings->task_overshoot_margin_crit);
+			}else{
+				threshold = (tmp->task_period)*nc_throttling*(os_settings->task_overshoot_margin_noncrit);
+			}
+
+			tdiff = time - tmp->last_execution_time;
+
+			if(tdiff > threshold){
+				//YOU're LATE
+				late_tasks |= (0x01U<<i);
+				task_tardiness[i] ++;
+				uvLateTaskHandler(tmp, tdiff, task_tardiness[i]);
+			}else{
+				//perhaps I judged you too harshly
+				if(task_tardiness[i] > 0){
+					task_tardiness[i]--;
+				}
+				late_tasks &= (0x01U<<i);
+			}
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+		//HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15); //BLUE
+
+		if(params->cmd_data == UV_KILL_CMD || params->cmd_data == UV_SUSPEND_CMD){
+			continue; // The idea here is to skip the delay
+		}
+
+		uvTaskPeriodEnd(params);
 	}
 
 
@@ -1169,7 +1224,7 @@ uv_task_info* uvCreateServiceTask(){
 
 	_newtask->task_handle = NULL;
 
-	_newtask->task_flags = UV_TASK_GENERIC_SVC;
+	_newtask->task_flags = UV_TASK_GENERIC_SVC | UV_TASK_SCD_IGNORE;
 
 	return _newtask;
 }
@@ -1306,9 +1361,15 @@ void uvSVCTaskManager(void* args){
 	canTxtask->task_function = CANbusTxSvcDaemon;
 	canTxtask->active_states = 0xFFFF;
 	canTxtask->task_name = CAN_TX_DAEMON_NAME;
+
+	uv_task_info* canRxtask = uvCreateServiceTask();
+	canRxtask->task_function = CANbusRxSvcDaemon;
+	canRxtask->active_states = 0xFFFF;
+	canRxtask->task_name = CAN_RX_DAEMON_NAME;
 	//super basic for now, just need something working
 	uint32_t var = 0; //retarded dummy var
 	uvStartTask(&var,canTxtask);
+	uvStartTask(&var,canRxtask);
 
 	//vTaskSuspend(params->task_handle);
 	//iterate through the list
@@ -1336,6 +1397,39 @@ void uvSVCTaskManager(void* args){
 	vTaskDelete(params->task_handle);
 }
 
+int compareTaskByName(uv_task_info* t1, uv_task_info* t2){
+
+	if(t1 == NULL || t2 == NULL){
+		return 0;
+	}
+
+	char* name1 = t1->task_name;
+	char* name2 = t2->task_name;
+
+	for(int i = 0; i<16; i++){
+		if(name1[i] == '\0'){
+			if(name2[i] == '\0'){
+				return 0;
+			}else{
+				return -1; //name 2 has not ended but name 1 has
+			}
+		}else if(name2[i] == '\0'){
+			return 1;
+		}
+
+
+		if(name1[i] > name2[i]){
+			return 1;
+		}else if (name1[i] < name2[i]){
+			return -1;
+		}
+	}
+
+	return 0;
+
+
+}
+
 /** Sometimes you just gottta deal with it lol
  *
  */
@@ -1359,6 +1453,41 @@ uv_task_info* uvGetTaskFromRTOSHandle(TaskHandle_t t_handle){
 }
 
 /** @} */ //end of backend
+
+void uvTaskPeriodEnd(uv_task_info* t){
+	//BaseType_t successful_delay;
+	bool is_late = 0;
+
+	TickType_t end_of_loop_time = xTaskGetTickCount;
+
+	if((end_of_loop_time - t->last_execution_time)>t->task_period){
+		is_late = 1;
+		if(task_tardiness != NULL){
+			task_tardiness[t->task_id]++; //missed a period
+		}
+	}else{
+		if(task_tardiness != NULL){
+			if(task_tardiness[t->task_id] > 0){
+				task_tardiness[t->task_id]--; //missed a period
+			}
+		}
+	}
+
+
+
+
+	if(!is_late){// if the task identifies that it is late, it will try to catch up by not bothering with the delay
+		uvTaskSetDelayBit(t);
+		vTaskDelayUntil(&t->last_execution_time,pdMS_TO_TICKS(t->task_period * nc_throttling));
+		uvTaskResetDelayBit(t);
+	}
+
+	t->last_execution_time = xTaskGetTickCount();
+
+
+
+
+}
 
 /** @}
  *

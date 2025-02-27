@@ -12,6 +12,8 @@
 extern TaskHandle_t init_task_handle;
 extern uint8_t               TxData[8];
 
+TaskHandle_t reset_handle = NULL;
+
 
 //#define CAN_TRANSMIT_TEST_IN_INIT
 
@@ -228,6 +230,11 @@ void uvInit(void * arguments){
 
 }
 
+void uvSysResetDaemon(void* args){
+
+
+}
+
 /**@brief This function is a soft-reboot of the uv_utils_backend and OS abstraction.
  *
  * The idea here is to basically start from a blank slate and boot up everything. So therefore we must:
@@ -241,6 +248,7 @@ void uvInit(void * arguments){
  *
  */
 enum uv_status_t uvUtilsReset(){
+	xTaskCreate(uvSysResetDaemon,"reset",128,NULL,5,&reset_handle);
 	return UV_OK;
 }
 

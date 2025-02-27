@@ -29,5 +29,5 @@ var dir_b596f468b52957496e4f78b80e029268 =
     [ "uvfr_settings.c", "uvfr__settings_8c.html", "uvfr__settings_8c" ],
     [ "uvfr_state_engine.c", "uvfr__state__engine_8c.html", "uvfr__state__engine_8c" ],
     [ "uvfr_utils.c", "uvfr__utils_8c.html", "uvfr__utils_8c" ],
-    [ "uvfr_vehicle_commands.c", "uvfr__vehicle__commands_8c.html", null ]
+    [ "uvfr_vehicle_commands.c", "uvfr__vehicle__commands_8c.html", "uvfr__vehicle__commands_8c" ]
 ];

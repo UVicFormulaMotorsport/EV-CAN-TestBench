@@ -27,7 +27,7 @@ Representative of a C\+AN message.
 
 
 
-Definition at line 255 of file uvfr\+\_\+utils.\+h.
+Definition at line 270 of file uvfr\+\_\+utils.\+h.
 
 
 
@@ -38,13 +38,13 @@ Definition at line 255 of file uvfr\+\_\+utils.\+h.
 \doxysubsubsection{\texorpdfstring{data}{data}}
 {\footnotesize\ttfamily uint8\+\_\+t uv\+\_\+\+C\+A\+N\+\_\+msg\+::data\mbox{[}8\mbox{]}}
 
+The actual data packet contained within the C\+AN message 
+
+Definition at line 277 of file uvfr\+\_\+utils.\+h.
 
 
-Definition at line 262 of file uvfr\+\_\+utils.\+h.
 
-
-
-Referenced by C\+A\+Nbus\+Tx\+Svc\+Daemon().
+Referenced by \+\_\+\+\_\+uv\+C\+A\+Ntx\+Crit\+Section(), C\+A\+Nbus\+Tx\+Svc\+Daemon(), H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback(), temp\+Monitor\+Task(), and testfunc2().
 
 \mbox{\Hypertarget{structuv___c_a_n__msg_aa74af3745c8b56910d7c309245541d37}\label{structuv___c_a_n__msg_aa74af3745c8b56910d7c309245541d37}} 
 \index{uv\_CAN\_msg@{uv\_CAN\_msg}!dlc@{dlc}}
@@ -52,13 +52,13 @@ Referenced by C\+A\+Nbus\+Tx\+Svc\+Daemon().
 \doxysubsubsection{\texorpdfstring{dlc}{dlc}}
 {\footnotesize\ttfamily uint8\+\_\+t uv\+\_\+\+C\+A\+N\+\_\+msg\+::dlc}
 
+Data Length Code, representing how many bytes of data are present 
+
+Definition at line 275 of file uvfr\+\_\+utils.\+h.
 
 
-Definition at line 260 of file uvfr\+\_\+utils.\+h.
 
-
-
-Referenced by C\+A\+Nbus\+Tx\+Svc\+Daemon().
+Referenced by \+\_\+\+\_\+uv\+C\+A\+Ntx\+Crit\+Section(), C\+A\+Nbus\+Tx\+Svc\+Daemon(), H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback(), and temp\+Monitor\+Task().
 
 \mbox{\Hypertarget{structuv___c_a_n__msg_a3a3fdc7fed06a631fefa58ea44052d8d}\label{structuv___c_a_n__msg_a3a3fdc7fed06a631fefa58ea44052d8d}} 
 \index{uv\_CAN\_msg@{uv\_CAN\_msg}!flags@{flags}}
@@ -66,13 +66,13 @@ Referenced by C\+A\+Nbus\+Tx\+Svc\+Daemon().
 \doxysubsubsection{\texorpdfstring{flags}{flags}}
 {\footnotesize\ttfamily uint8\+\_\+t uv\+\_\+\+C\+A\+N\+\_\+msg\+::flags}
 
+Bitfield that contains some basic information about the message\+: -\/Bit 0\+: Is the message an extended ID message, or a standard ID message? 1 For extended. -\/Bits 1\+:2 Which C\+A\+Nbus is being used to send the message? 01 -\/$>$ C\+A\+N1 10 -\/$>$ C\+A\+N2 11-\/$>$ C\+A\+N3 (doesnt exist yet). Will default to C\+A\+N1 if all zeros 
+
+Definition at line 271 of file uvfr\+\_\+utils.\+h.
 
 
-Definition at line 256 of file uvfr\+\_\+utils.\+h.
 
-
-
-Referenced by C\+A\+Nbus\+Tx\+Svc\+Daemon().
+Referenced by \+\_\+\+\_\+uv\+C\+A\+Ntx\+Crit\+Section(), C\+A\+Nbus\+Tx\+Svc\+Daemon(), temp\+Monitor\+Task(), and testfunc2().
 
 \mbox{\Hypertarget{structuv___c_a_n__msg_aae369fbabe3cc5b71a89bb641c24aace}\label{structuv___c_a_n__msg_aae369fbabe3cc5b71a89bb641c24aace}} 
 \index{uv\_CAN\_msg@{uv\_CAN\_msg}!msg\_id@{msg\_id}}
@@ -80,13 +80,13 @@ Referenced by C\+A\+Nbus\+Tx\+Svc\+Daemon().
 \doxysubsubsection{\texorpdfstring{msg\_id}{msg\_id}}
 {\footnotesize\ttfamily uint32\+\_\+t uv\+\_\+\+C\+A\+N\+\_\+msg\+::msg\+\_\+id}
 
+The ID of a message 
+
+Definition at line 276 of file uvfr\+\_\+utils.\+h.
 
 
-Definition at line 261 of file uvfr\+\_\+utils.\+h.
 
-
-
-Referenced by C\+A\+Nbus\+Tx\+Svc\+Daemon().
+Referenced by \+\_\+\+\_\+uv\+C\+A\+Ntx\+Crit\+Section(), call\+Function\+From\+C\+A\+Nid(), C\+A\+Nbus\+Tx\+Svc\+Daemon(), H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback(), temp\+Monitor\+Task(), and testfunc2().
 
 
 

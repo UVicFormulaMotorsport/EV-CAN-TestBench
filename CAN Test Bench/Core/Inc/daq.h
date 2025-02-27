@@ -13,18 +13,7 @@
 
 #define _NUM_LOGGABLE_PARAMS
 
-typedef enum  {
-	UV_UINT8,
-	UV_INT8,
-	UV_UINT16,
-	UV_INT16,
-	UV_UINT32,
-	UV_INT32,
-	UV_FLOAT,
-	UV_DOUBLE,
-	UV_STRING
 
-}data_type;
 
 typedef enum{
 	MOTOR_RPM,

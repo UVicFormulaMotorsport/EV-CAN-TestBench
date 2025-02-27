@@ -1,6 +1,8 @@
 /*
  * Copyright (c) 2019 xieqing. https://github.com/xieqing
  * May be freely redistributed, but copyright notice must be retained.
+ *
+ * Big shout-out to this dude^^^
  */
 
 #include "rb_tree.h"
@@ -111,18 +113,32 @@ rbnode *rbSuccessor(rbtree *rbt, rbnode *node)
  * apply func
  * return non-zero if error
  */
-int rb_apply(rbtree *rbt, rbnode *node, int (*func)(void *, void *), void *cookie, enum rbtraversal order)
+int rbApplyNode(rbtree *rbt, rbnode *node, int (*func)(void *, void *), void *cookie, enum rbtraversal order)
 {
 	int err;
+
+	if(rbt == NULL){
+		return 1;
+	}
+
+	if(node == NULL){
+		return 1;
+	}
+
+	if(func == NULL){
+		return 1;
+	}
+
+	//Cookie is allowed to be null, because cookie is not always required.
 
 	if (node != RB_NIL(rbt)) {
 		if (order == PREORDER && (err = func(node->data, cookie)) != 0) /* preorder */
 			return err;
-		if ((err = rb_apply(rbt, node->left, func, cookie, order)) != 0) /* left */
+		if ((err = rbApplyNode(rbt, node->left, func, cookie, order)) != 0) /* left */
 			return err;
 		if (order == INORDER && (err = func(node->data, cookie)) != 0) /* inorder */
 			return err;
-		if ((err = rb_apply(rbt, node->right, func, cookie, order)) != 0) /* right */
+		if ((err = rbApplyNode(rbt, node->right, func, cookie, order)) != 0) /* right */
 			return err;
 		if (order == POSTORDER && (err = func(node->data, cookie)) != 0) /* postorder */
 			return err;
@@ -346,6 +362,10 @@ void *rbDelete(rbtree *rbt, rbnode *node, int keep)
 	rbnode *target, *child;
 	void *data;
 	
+	if(rbt == NULL || target == NULL){
+		return NULL;
+	}
+
 	data = node->data;
 
 	/* choose node's in-order successor if it has two children */

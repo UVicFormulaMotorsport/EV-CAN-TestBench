@@ -284,9 +284,18 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ga6166ed80f8e3bd62f1e7e6122c8817f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Priority of a managed task. Maps directly to OS priority.  <a href="group__state__engine__api.html#ga6166ed80f8e3bd62f1e7e6122c8817f6">More...</a><br /></td></tr>
 <tr class="separator:ga6166ed80f8e3bd62f1e7e6122c8817f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae85df48ed635b45630243b13b6e7d890"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gae85df48ed635b45630243b13b6e7d890">os_flag</a> { <a class="el" href="group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890a01fe6bc8a712283339b685288b720cca">UV_OS_LOG_MEM</a> = 0x01, 
+<a class="el" href="group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890a06369476715fdc7bedeec037bf3256cf">UV_OS_LOG_TASK_END_TIME</a> = 0x02, 
+<a class="el" href="group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890aad5d44cbab735a2f51cb37bfb71b8bb3">UV_OS_ATTEMPT_RESTART_NC_TASK</a> = 0x04, 
+<a class="el" href="group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890ab40c36b801f8a9439ca8255b6f740882">UV_OS_ENABLE_NONCRIT_TASK_THROTTLE</a> = 0x08
+ }</td></tr>
+<tr class="separator:gae85df48ed635b45630243b13b6e7d890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ga0e6167ef18c2ec8b65fbe070d0ffb6c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga0e6167ef18c2ec8b65fbe070d0ffb6c9">uvTaskPeriodEnd</a> (<a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
+<tr class="memdesc:ga0e6167ef18c2ec8b65fbe070d0ffb6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function called at the end of the task period.  <a href="group__state__engine__api.html#ga0e6167ef18c2ec8b65fbe070d0ffb6c9">More...</a><br /></td></tr>
+<tr class="separator:ga0e6167ef18c2ec8b65fbe070d0ffb6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga99bfc92472cdc99e9005e9d3c792909a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga99bfc92472cdc99e9005e9d3c792909a">uvCreateTask</a> ()</td></tr>
 <tr class="memdesc:ga99bfc92472cdc99e9005e9d3c792909a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function gets called when you want to create a task, and register it with the task register. Theres some gnarlyness here, but not unacceptable levels. Pray this thing doesn't hang itself.  <a href="group__state__engine__api.html#ga99bfc92472cdc99e9005e9d3c792909a">More...</a><br /></td></tr>
 <tr class="separator:ga99bfc92472cdc99e9005e9d3c792909a"><td class="memSeparator" colspan="2">&#160;</td></tr>

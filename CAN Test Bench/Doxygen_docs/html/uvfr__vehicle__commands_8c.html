@@ -86,12 +86,50 @@ $(document).ready(function(){initNavTree('uvfr__vehicle__commands_8c.html','');}
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">uvfr_vehicle_commands.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &quot;<a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>&quot;</code><br />
+</div>
 <p><a href="uvfr__vehicle__commands_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a8073be27b31b156bee66e3b3038144c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__vehicle__commands_8c.html#a8073be27b31b156bee66e3b3038144c9">uvSecureVehicle</a> ()</td></tr>
+<tr class="memdesc:a8073be27b31b156bee66e3b3038144c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to put vehicle into safe state.  <a href="uvfr__vehicle__commands_8c.html#a8073be27b31b156bee66e3b3038144c9">More...</a><br /></td></tr>
+<tr class="separator:a8073be27b31b156bee66e3b3038144c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a8073be27b31b156bee66e3b3038144c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8073be27b31b156bee66e3b3038144c9">&#9670;&nbsp;</a></span>uvSecureVehicle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void uvSecureVehicle </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to put vehicle into safe state. </p>
+<p>Should perform the following functions in order:</p><ul>
+<li>Prevent new MC torque or speed requests</li>
+<li>Open shutdown cct </li>
+</ul>
+
+<p class="definition">Definition at line <a class="el" href="uvfr__vehicle__commands_8c_source.html#l00011">11</a> of file <a class="el" href="uvfr__vehicle__commands_8c_source.html">uvfr_vehicle_commands.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00686">__uvPanic()</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
