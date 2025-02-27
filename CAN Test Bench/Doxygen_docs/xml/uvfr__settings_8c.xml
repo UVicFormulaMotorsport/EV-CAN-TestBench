@@ -1,0 +1,476 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="uvfr__settings_8c" kind="file" language="C++">
+    <compoundname>uvfr_settings.c</compoundname>
+    <includes refid="uvfr__utils_8h" local="yes">uvfr_utils.h</includes>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includes local="yes">stdlib.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>stdarg.h</label>
+      </node>
+      <node id="12">
+        <label>tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>stdint.h</label>
+      </node>
+      <node id="33">
+        <label>stdlib.h</label>
+      </node>
+      <node id="28">
+        <label>oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cmsis_os.h</label>
+      </node>
+      <node id="2">
+        <label>uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>message_buffer.h</label>
+      </node>
+      <node id="23">
+        <label>bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Core/Src/uvfr_settings.c</label>
+        <link refid="uvfr__settings_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>rb_tree.h</label>
+        <link refid="rb__tree_8h"/>
+      </node>
+      <node id="10">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="9">
+        <label>can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>uvfr_global_config.h</label>
+        <link refid="uvfr__global__config_8h"/>
+      </node>
+      <node id="31">
+        <label>FreeRTOSConfig.h</label>
+        <link refid="_free_r_t_o_s_config_8h"/>
+      </node>
+      <node id="24">
+        <label>uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>odometer.h</label>
+        <link refid="odometer_8h"/>
+      </node>
+      <node id="5">
+        <label>stm32f4xx_hal.h</label>
+      </node>
+      <node id="15">
+        <label>FreeRTOS.h</label>
+      </node>
+      <node id="11">
+        <label>dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>task.h</label>
+      </node>
+      <node id="4">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="uvfr__settings_8c_1a7350f4a84cab7a08d99c9e88b248a180" prot="public" static="no">
+        <name>SRC_UVFR_SETTINGS_C_</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/uvfr_settings.c" line="7" column="9" bodyfile="Core/Src/uvfr_settings.c" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="uvfr__settings_8c_1a03566822d1b8893362970a459bd67daf" prot="public" static="no" mutable="no">
+        <type><ref refid="structuv__vehicle__settings" kindref="compound">uv_vehicle_settings</ref> *</type>
+        <definition>uv_vehicle_settings* current_vehicle_settings</definition>
+        <argsstring></argsstring>
+        <name>current_vehicle_settings</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/uvfr_settings.c" line="15" column="21" bodyfile="Core/Src/uvfr_settings.c" bodystart="15" bodyend="-1"/>
+        <referencedby refid="uvfr__settings_8c_1a42f7a1907bfe84d7b0f9fb4e2260018b" compoundref="uvfr__settings_8c" startline="42" endline="49">setupDefaultSettings</referencedby>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
+        <referencedby refid="group__state__engine__api_1ga2ad1d74b5783a51355c047be6642fab8" compoundref="uvfr__state__engine_8c" startline="192" endline="246">uvStartStateMachine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="group__state__engine_1gad9e02be6d2d0bc1ab5cd9fd8cae34230" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structuv__os__settings" kindref="compound">uv_os_settings</ref></type>
+        <definition>struct uv_os_settings default_os_settings</definition>
+        <argsstring></argsstring>
+        <name>default_os_settings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/uvfr_settings.c" line="15" column="21" bodyfile="Core/Src/uvfr_state_engine.c" bodystart="55" bodyend="-1" declfile="Core/Src/uvfr_settings.c" declline="15" declcolumn="21"/>
+        <referencedby refid="uvfr__settings_8c_1a42f7a1907bfe84d7b0f9fb4e2260018b" compoundref="uvfr__settings_8c" startline="42" endline="49">setupDefaultSettings</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="uvfr__settings_8c_1a42f7a1907bfe84d7b0f9fb4e2260018b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void setupDefaultSettings</definition>
+        <argsstring>()</argsstring>
+        <name>setupDefaultSettings</name>
+        <briefdescription>
+<para>Function that allocates the neccessary space for all the vehicle settings, and handles sets all of the settings structs to defaults. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/uvfr_settings.c" line="42" column="6" bodyfile="Core/Src/uvfr_settings.c" bodystart="42" bodyend="49"/>
+        <references refid="uvfr__settings_8c_1a03566822d1b8893362970a459bd67daf" compoundref="uvfr__settings_8c" startline="15">current_vehicle_settings</references>
+        <references refid="group__state__engine_1gad9e02be6d2d0bc1ab5cd9fd8cae34230" compoundref="uvfr__state__engine_8c" startline="55">default_os_settings</references>
+        <references refid="structuv__vehicle__settings_1adbfed76ceedc0479ff023fea9ba7a84c" compoundref="uvfr__settings_8h" startline="34">uv_vehicle_settings::os_settings</references>
+        <referencedby refid="uvfr__settings_8c_1a80856a38d7040ca10b8106ff0fa4acf4" compoundref="uvfr__settings_8c" startline="64" endline="86">uvSettingsInit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="uvfr__settings_8c_1a4648237563030182a8309d8c75e12205" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void nukeSettings</definition>
+        <argsstring>(uv_vehicle_settings **settings_to_delete)</argsstring>
+        <name>nukeSettings</name>
+        <param>
+          <type><ref refid="structuv__vehicle__settings" kindref="compound">uv_vehicle_settings</ref> **</type>
+          <declname>settings_to_delete</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/uvfr_settings.c" line="51" column="6" bodyfile="Core/Src/uvfr_settings.c" bodystart="51" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="uvfr__settings_8c_1a80856a38d7040ca10b8106ff0fa4acf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>enum <ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9e" kindref="member">uv_status_t</ref></type>
+        <definition>enum uv_status_t uvSettingsInit</definition>
+        <argsstring>()</argsstring>
+        <name>uvSettingsInit</name>
+        <briefdescription>
+<para>this function does one thing, and one thing only, it checks if we have custom settings, then it attempts to get them. If it fails, then we revert to factory defaults. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/uvfr_settings.c" line="51" column="6" bodyfile="Core/Src/uvfr_settings.c" bodystart="64" bodyend="86"/>
+        <references refid="uvfr__settings_8c_1a42f7a1907bfe84d7b0f9fb4e2260018b" compoundref="uvfr__settings_8c" startline="42" endline="49">setupDefaultSettings</references>
+        <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a" compoundref="uvfr__utils_8h" startline="170">UV_ABORTED</references>
+        <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" compoundref="uvfr__utils_8h" startline="169">UV_ERROR</references>
+        <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="uvfr__settings_8c_1aa4405e1cc3fcec217efd4de0ea6b55ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void uvSettingsProgrammerTask</definition>
+        <argsstring>(void *args)</argsstring>
+        <name>uvSettingsProgrammerTask</name>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/uvfr_settings.c" line="88" column="6" bodyfile="Core/Src/uvfr_settings.c" bodystart="88" bodyend="94"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>uvfr_settings.c</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>Oct<sp/>10,<sp/>2024</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>byo10</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="uvfr__settings_8c_1a7350f4a84cab7a08d99c9e88b248a180" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SRC_UVFR_SETTINGS_C_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="uvfr__utils_8h" kindref="compound">uvfr_utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stdlib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//global<sp/>variables<sp/>for<sp/>all<sp/>to<sp/>enjoy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="uvfr__settings_8c_1a03566822d1b8893362970a459bd67daf" refkind="member"><highlight class="normal"><ref refid="structuv__vehicle__settings" kindref="compound">uv_vehicle_settings</ref>*<sp/><ref refid="uvfr__settings_8c_1a03566822d1b8893362970a459bd67daf" kindref="member">current_vehicle_settings</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structuv__os__settings" kindref="compound">uv_os_settings</ref><sp/><ref refid="group__state__engine_1gad9e02be6d2d0bc1ab5cd9fd8cae34230" kindref="member">default_os_settings</ref>;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>ENABLE_FLASH_SETTINGS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9e" kindref="member">uv_status_t</ref><sp/>getSettingsFromFlash(){</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//if<sp/>there<sp/>exists<sp/>settings<sp/>in<sp/>flash<sp/>somewhere,<sp/>then<sp/>get<sp/>them.<sp/>Otherwise<sp/>we<sp/>use<sp/>the<sp/>defaults</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a" kindref="member">UV_ABORTED</ref>;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>uvAreCustomSettingsActive(){</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">false</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="28"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><ref refid="can_8h_1aef3770e45bbacbf527fd93dd80eea9b9" kindref="member">uv_status</ref><sp/>saveSettings(){</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a" kindref="member">UV_ABORTED</ref>;</highlight></codeline>
+<codeline lineno="32"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42" refid="uvfr__settings_8c_1a42f7a1907bfe84d7b0f9fb4e2260018b" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__settings_8c_1a42f7a1907bfe84d7b0f9fb4e2260018b" kindref="member">setupDefaultSettings</ref>(){</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<ref refid="uvfr__settings_8c_1a03566822d1b8893362970a459bd67daf" kindref="member">current_vehicle_settings</ref><sp/>!=<sp/>NULL){</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uvFree(<ref refid="uvfr__settings_8c_1a03566822d1b8893362970a459bd67daf" kindref="member">current_vehicle_settings</ref>);</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//real<sp/>trap<sp/>shit</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__settings_8c_1a03566822d1b8893362970a459bd67daf" kindref="member">current_vehicle_settings</ref><sp/>=<sp/>uvMalloc(</highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<ref refid="structuv__vehicle__settings" kindref="compound">uv_vehicle_settings</ref>));</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__settings_8c_1a03566822d1b8893362970a459bd67daf" kindref="member">current_vehicle_settings</ref>-&gt;<ref refid="structuv__vehicle__settings_1adbfed76ceedc0479ff023fea9ba7a84c" kindref="member">os_settings</ref><sp/>=<sp/>&amp;<ref refid="group__state__engine_1gad9e02be6d2d0bc1ab5cd9fd8cae34230" kindref="member">default_os_settings</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="uvfr__settings_8c_1a4648237563030182a8309d8c75e12205" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__settings_8c_1a4648237563030182a8309d8c75e12205" kindref="member">nukeSettings</ref>(<ref refid="structuv__vehicle__settings" kindref="compound">uv_vehicle_settings</ref>**<sp/>settings_to_delete){</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>uvFree(*settings_to_delete);</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>*settings_to_delete<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="uvfr__settings_8c_1a80856a38d7040ca10b8106ff0fa4acf4" refkind="member"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9e" kindref="member">uv_status_t</ref><sp/><ref refid="uvfr__settings_8c_1a80856a38d7040ca10b8106ff0fa4acf4" kindref="member">uvSettingsInit</ref>(){</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>ENABLE_FLASH_SETTINGS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="can_8h_1aef3770e45bbacbf527fd93dd80eea9b9" kindref="member">uv_status</ref><sp/>setting_success<sp/>=<sp/>get_settings_from_flash();</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(setting_success<sp/>==<sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a" kindref="member">UV_ABORTED</ref>){</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>setting_success<sp/>=<sp/><ref refid="uvfr__settings_8c_1a42f7a1907bfe84d7b0f9fb4e2260018b" kindref="member">setupDefaultSettings</ref>();</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(setting_success<sp/>==<sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" kindref="member">UV_ERROR</ref>){</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" kindref="member">UV_ERROR</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(setting_success<sp/>==<sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" kindref="member">UV_OK</ref>){</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" kindref="member">UV_OK</ref>;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight><highlight class="keywordflow">else</highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//handle<sp/>the<sp/>resulting<sp/>error,<sp/>maybe<sp/>soft<sp/>reboot<sp/>ngl</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__settings_8c_1a42f7a1907bfe84d7b0f9fb4e2260018b" kindref="member">setupDefaultSettings</ref>();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" kindref="member">UV_OK</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88" refid="uvfr__settings_8c_1aa4405e1cc3fcec217efd4de0ea6b55ee" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__settings_8c_1aa4405e1cc3fcec217efd4de0ea6b55ee" kindref="member">uvSettingsProgrammerTask</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args){</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structuv__task__info" kindref="compound">uv_task_info</ref>*<sp/>params<sp/>=<sp/>(<ref refid="structuv__task__info" kindref="compound">uv_task_info</ref>*)<sp/>args;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>new_tmp_settings<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;;){</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Core/Src/uvfr_settings.c"/>
+  </compounddef>
+</doxygen>

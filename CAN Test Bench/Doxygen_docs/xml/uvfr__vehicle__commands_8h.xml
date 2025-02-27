@@ -1,0 +1,586 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="uvfr__vehicle__commands_8h" kind="file" language="C++">
+    <compoundname>uvfr_vehicle_commands.h</compoundname>
+    <includes refid="uvfr__global__config_8h" local="yes">uvfr_global_config.h</includes>
+    <includes refid="uvfr__utils_8h" local="yes">uvfr_utils.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>stdarg.h</label>
+      </node>
+      <node id="12">
+        <label>tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>stdint.h</label>
+      </node>
+      <node id="33">
+        <label>stdlib.h</label>
+      </node>
+      <node id="28">
+        <label>oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cmsis_os.h</label>
+      </node>
+      <node id="3">
+        <label>uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>message_buffer.h</label>
+      </node>
+      <node id="23">
+        <label>bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>rb_tree.h</label>
+        <link refid="rb__tree_8h"/>
+      </node>
+      <node id="10">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="9">
+        <label>can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>uvfr_global_config.h</label>
+        <link refid="uvfr__global__config_8h"/>
+      </node>
+      <node id="31">
+        <label>FreeRTOSConfig.h</label>
+        <link refid="_free_r_t_o_s_config_8h"/>
+      </node>
+      <node id="24">
+        <label>uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Core/Inc/uvfr_vehicle_commands.h</label>
+        <link refid="uvfr__vehicle__commands_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>odometer.h</label>
+        <link refid="odometer_8h"/>
+      </node>
+      <node id="5">
+        <label>stm32f4xx_hal.h</label>
+      </node>
+      <node id="15">
+        <label>FreeRTOS.h</label>
+      </node>
+      <node id="11">
+        <label>dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>task.h</label>
+      </node>
+      <node id="4">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="uvfr__vehicle__commands_8h_1aef33c5773dc84e4e8771bf0303bb5211" prot="public" static="no">
+        <name>uvOpenSDC</name>
+        <param><defname>x</defname></param>
+        <initializer><ref refid="uvfr__vehicle__commands_8h_1ad5dc3682f628e02c6439047ef0dcbbc2" kindref="member">_uvOpenSDC_canBased</ref>(x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="29" column="10" bodyfile="Core/Inc/uvfr_vehicle_commands.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__vehicle__commands_8h_1aef33c5773dc84e4e8771bf0303bb5211" prot="public" static="no">
+        <name>uvOpenSDC</name>
+        <param><defname>x</defname></param>
+        <initializer><ref refid="uvfr__vehicle__commands_8h_1a47c0b0e03b584b9da6a7528241e9f394" kindref="member">_uvCloseSDC_canBased</ref>(x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="40" column="10" bodyfile="Core/Inc/uvfr_vehicle_commands.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__vehicle__commands_8h_1aad370c2dc7b3674289ccdb44073afd77" prot="public" static="no">
+        <name>uvStartFans</name>
+        <param><defname>x</defname></param>
+        <initializer>_uvStartFans_canBased(x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="51" column="9" bodyfile="Core/Inc/uvfr_vehicle_commands.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__vehicle__commands_8h_1a4fc23bd2fec1b901a6dfefe566c16910" prot="public" static="no">
+        <name>uvStopFans</name>
+        <param><defname>x</defname></param>
+        <initializer>_uvStopFans_canBased(x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="61" column="9" bodyfile="Core/Inc/uvfr_vehicle_commands.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__vehicle__commands_8h_1a1a4bb015014b3e6b9c1b80be6d735ed7" prot="public" static="no">
+        <name>uvStartCoolantPump</name>
+        <param></param>
+        <initializer><ref refid="uvfr__vehicle__commands_8h_1adadd25f1a685b099a701b4f69f1d991f" kindref="member">_uvStartCoolantPump_canBased</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="72" column="9" bodyfile="Core/Inc/uvfr_vehicle_commands.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__vehicle__commands_8h_1a5d702ded662531d96c17f1eccea8cfce" prot="public" static="no">
+        <name>uvStopCoolantPump</name>
+        <param></param>
+        <initializer><ref refid="uvfr__vehicle__commands_8h_1a1699a9b68dbb545e11988e8b3f54b5b2" kindref="member">_uvStopCoolantPump_canBased</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="83" column="10" bodyfile="Core/Inc/uvfr_vehicle_commands.h" bodystart="83" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__vehicle__commands_8h_1a330698c381c94ef968c17f1afca141e2" prot="public" static="no">
+        <name>uvHonkHorn</name>
+        <param></param>
+        <initializer><ref refid="uvfr__vehicle__commands_8h_1aafa3ee5af10074f2ba38ab29b9365e4a" kindref="member">_uvHonkHorn_canBased</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="95" column="10" bodyfile="Core/Inc/uvfr_vehicle_commands.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__vehicle__commands_8h_1a6cd67a615a3b11e9ad92be17e8bbae7f" prot="public" static="no">
+        <name>uvSilenceHorn</name>
+        <param></param>
+        <initializer><ref refid="uvfr__vehicle__commands_8h_1afd296693b24ee1bf0c4dc7c289420ce8" kindref="member">_uvSilenceHorn_canBased</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="107" column="10" bodyfile="Core/Inc/uvfr_vehicle_commands.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__vehicle__commands_8h_1a6cd67a615a3b11e9ad92be17e8bbae7f" prot="public" static="no">
+        <name>uvSilenceHorn</name>
+        <param></param>
+        <initializer><ref refid="uvfr__vehicle__commands_8h_1afd296693b24ee1bf0c4dc7c289420ce8" kindref="member">_uvSilenceHorn_canBased</ref>()</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="110" column="10" bodyfile="Core/Inc/uvfr_vehicle_commands.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="uvfr__vehicle__commands_8h_1ad5dc3682f628e02c6439047ef0dcbbc2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _uvOpenSDC_canBased</definition>
+        <argsstring>()</argsstring>
+        <name>_uvOpenSDC_canBased</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="28" column="6" declfile="Core/Inc/uvfr_vehicle_commands.h" declline="28" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="uvfr__vehicle__commands_8h_1a47c0b0e03b584b9da6a7528241e9f394" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _uvCloseSDC_canBased</definition>
+        <argsstring>()</argsstring>
+        <name>_uvCloseSDC_canBased</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="39" column="6" declfile="Core/Inc/uvfr_vehicle_commands.h" declline="39" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="uvfr__vehicle__commands_8h_1adadd25f1a685b099a701b4f69f1d991f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _uvStartCoolantPump_canBased</definition>
+        <argsstring>()</argsstring>
+        <name>_uvStartCoolantPump_canBased</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="71" column="6" declfile="Core/Inc/uvfr_vehicle_commands.h" declline="71" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="uvfr__vehicle__commands_8h_1a1699a9b68dbb545e11988e8b3f54b5b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _uvStopCoolantPump_canBased</definition>
+        <argsstring>()</argsstring>
+        <name>_uvStopCoolantPump_canBased</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="82" column="6" declfile="Core/Inc/uvfr_vehicle_commands.h" declline="82" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="uvfr__vehicle__commands_8h_1aafa3ee5af10074f2ba38ab29b9365e4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _uvHonkHorn_canBased</definition>
+        <argsstring>()</argsstring>
+        <name>_uvHonkHorn_canBased</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="94" column="6" declfile="Core/Inc/uvfr_vehicle_commands.h" declline="94" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="uvfr__vehicle__commands_8h_1afd296693b24ee1bf0c4dc7c289420ce8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void _uvSilenceHorn_canBased</definition>
+        <argsstring>()</argsstring>
+        <name>_uvSilenceHorn_canBased</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="106" column="6" declfile="Core/Inc/uvfr_vehicle_commands.h" declline="106" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="uvfr__vehicle__commands_8h_1a8073be27b31b156bee66e3b3038144c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void uvSecureVehicle</definition>
+        <argsstring>()</argsstring>
+        <name>uvSecureVehicle</name>
+        <briefdescription>
+<para>Function to put vehicle into safe state. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Should perform the following functions in order:<itemizedlist>
+<listitem><para>Prevent new MC torque or speed requests</para>
+</listitem><listitem><para>Open shutdown cct </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_vehicle_commands.h" line="116" column="6" bodyfile="Core/Src/uvfr_vehicle_commands.c" bodystart="11" bodyend="19" declfile="Core/Inc/uvfr_vehicle_commands.h" declline="116" declcolumn="6"/>
+        <referencedby refid="group__state__engine__backend_1gab2449f66698295ebfaff451c2f63607f" compoundref="uvfr__state__engine_8c" startline="686" endline="701">__uvPanic</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>uvfr_vehicle_commands.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>Nov<sp/>27,<sp/>2024</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>byo10</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="preprocessor">#ifndef<sp/>INC_UVFR_VEHICLE_COMMANDS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INC_UVFR_VEHICLE_COMMANDS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="uvfr__global__config_8h" kindref="compound">uvfr_global_config.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="uvfr__utils_8h" kindref="compound">uvfr_utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>(UV19_PDU<sp/>+<sp/>ECUMASTER_PMU)<sp/>&gt;<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>&quot;Invalid<sp/>PDU<sp/>configuration&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>uvOpenSDC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>UV19_PDU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__vehicle__commands_8h_1ad5dc3682f628e02c6439047ef0dcbbc2" kindref="member">_uvOpenSDC_canBased</ref>();</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvOpenSDC(x)<sp/>_uvOpenSDC_canBased(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>ECUMASTER_PMU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvOpenSDC(x)<sp/>_uvOpenSDC_canBased(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvOpenSDC(x)<sp/>_uvOpenSDC_internal(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>uvCloseSDC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>UV19_PDU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__vehicle__commands_8h_1a47c0b0e03b584b9da6a7528241e9f394" kindref="member">_uvCloseSDC_canBased</ref>();</highlight></codeline>
+<codeline lineno="40" refid="uvfr__vehicle__commands_8h_1aef33c5773dc84e4e8771bf0303bb5211" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvOpenSDC(x)<sp/>_uvCloseSDC_canBased(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>ECUMASTER_PMU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__vehicle__commands_8h_1a47c0b0e03b584b9da6a7528241e9f394" kindref="member">_uvCloseSDC_canBased</ref>(x);</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvOpenSDC(x)<sp/>_uvCloseSDC_canBased(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvOpenSDC(x)<sp/>_uvCloseSDC_internal(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//Close<sp/>SDC</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>uvStartFans</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>UV19_PDU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="uvfr__vehicle__commands_8h_1aad370c2dc7b3674289ccdb44073afd77" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uvStartFans(x)<sp/>_uvStartFans_canBased(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>ECUMASTER_PMU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uvStartFans(x)<sp/>_uvStartFans_canBased(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uvStartFans(x)<sp/>_uvStartFans_internal(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//start<sp/>fans</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>uvStopFans</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>UV19_PDU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="uvfr__vehicle__commands_8h_1a4fc23bd2fec1b901a6dfefe566c16910" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uvStopFans(x)<sp/>_uvStopFans_canBased(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>ECUMASTER_PMU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uvStopFans(x)<sp/>_uvStopFans_canBased(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uvStopFans(x)<sp/>_uvStopFans_internal(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//start<sp/>fans</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>uvStartCoolantPump</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>UV19_PDU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__vehicle__commands_8h_1adadd25f1a685b099a701b4f69f1d991f" kindref="member">_uvStartCoolantPump_canBased</ref>();</highlight></codeline>
+<codeline lineno="72" refid="uvfr__vehicle__commands_8h_1a1a4bb015014b3e6b9c1b80be6d735ed7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uvStartCoolantPump()<sp/>_uvStartCoolantPump_canBased()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>ECUMASTER_PMU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uvStartCoolantPump()<sp/>_uvStartCoolantPump_canBased()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uvStartCoolantPump()<sp/>_uvStartCoolantPump_internal()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>uvStopCoolantPump</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>UV19_PDU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__vehicle__commands_8h_1a1699a9b68dbb545e11988e8b3f54b5b2" kindref="member">_uvStopCoolantPump_canBased</ref>();</highlight></codeline>
+<codeline lineno="83" refid="uvfr__vehicle__commands_8h_1a5d702ded662531d96c17f1eccea8cfce" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvStopCoolantPump()<sp/>_uvStopCoolantPump_canBased()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>ECUMASTER_PMU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__vehicle__commands_8h_1a1699a9b68dbb545e11988e8b3f54b5b2" kindref="member">_uvStopCoolantPump_canBased</ref>();</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uvStopCoolantPump()<sp/>_uvStopCoolantPump_canBased()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uvStopCoolantPump()<sp/>_uvStopCoolantPump_internal()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>uvHonkHorn</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>UV19_PDU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__vehicle__commands_8h_1aafa3ee5af10074f2ba38ab29b9365e4a" kindref="member">_uvHonkHorn_canBased</ref>();</highlight></codeline>
+<codeline lineno="95" refid="uvfr__vehicle__commands_8h_1a330698c381c94ef968c17f1afca141e2" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvHonkHorn()<sp/>_uvHonkHorn_canBased()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"></highlight><highlight class="preprocessor">#elif<sp/>ECUMASTER_PMU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>_uvHonkHorn_CanBased();</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvHonkHorn()<sp/>_uvHonkHorn_canBased()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uvHonkHorn()<sp/>_uvHonkHorn_internal()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>uvSilenceHorn</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>UV19_PDU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__vehicle__commands_8h_1afd296693b24ee1bf0c4dc7c289420ce8" kindref="member">_uvSilenceHorn_canBased</ref>();</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvSilenceHorn()<sp/>_uvSilenceHorn_canBased()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight><highlight class="preprocessor">#elif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__vehicle__commands_8h_1afd296693b24ee1bf0c4dc7c289420ce8" kindref="member">_uvSilenceHorn_canBased</ref>();</highlight></codeline>
+<codeline lineno="110" refid="uvfr__vehicle__commands_8h_1a6cd67a615a3b11e9ad92be17e8bbae7f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvSilenceHorn()<sp/>_uvSilenceHorn_canBased()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>uvSilenceHorn<sp/>_uvSilenceHorn_internal()</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__vehicle__commands_8h_1a8073be27b31b156bee66e3b3038144c9" kindref="member">uvSecureVehicle</ref>();</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INC_UVFR_VEHICLE_COMMANDS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="Core/Inc/uvfr_vehicle_commands.h"/>
+  </compounddef>
+</doxygen>

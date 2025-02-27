@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structtask__management__info" kind="struct" language="C++" prot="public">
+    <compoundname>task_management_info</compoundname>
+    <includes refid="uvfr__state__engine_8h" local="no">uvfr_state_engine.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structtask__management__info_1a29b374b2d26cc5a52c75160816da83aa" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t task_management_info::task_handle</definition>
+        <argsstring></argsstring>
+        <name>task_handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Actual handle of parent </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_state_engine.h" line="155" column="14" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="155" bodyend="-1"/>
+        <referencedby refid="group__state__engine_1gaff684308203d45e9e16ad3d115c54279" compoundref="uvfr__state__engine_8c" startline="1341" endline="1398">uvSVCTaskManager</referencedby>
+        <referencedby refid="group__state__engine__backend_1gaf2dbdd0d9d9aa8bcbef120661117fc5e" compoundref="uvfr__state__engine_8c" startline="1080" endline="1189">uvTaskManager</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structtask__management__info_1a82d650741c82974c81a22c6bdd8c556d" prot="public" static="no" mutable="no">
+        <type>QueueHandle_t</type>
+        <definition>QueueHandle_t task_management_info::parent_msg_queue</definition>
+        <argsstring></argsstring>
+        <name>parent_msg_queue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_state_engine.h" line="156" column="15" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="156" bodyend="-1"/>
+        <referencedby refid="group__state__engine__backend_1gaf2dbdd0d9d9aa8bcbef120661117fc5e" compoundref="uvfr__state__engine_8c" startline="1080" endline="1189">uvTaskManager</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct to contain data about a parent task. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This contains the information required for the child task to communicate with it&apos;s parent.</para>
+<para>This will be a queue, since one parent task can in theory have several child tasks </para>
+    </detaileddescription>
+    <location file="Core/Inc/uvfr_state_engine.h" line="154" column="35" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="154" bodyend="157"/>
+    <listofallmembers>
+      <member refid="structtask__management__info_1a82d650741c82974c81a22c6bdd8c556d" prot="public" virt="non-virtual"><scope>task_management_info</scope><name>parent_msg_queue</name></member>
+      <member refid="structtask__management__info_1a29b374b2d26cc5a52c75160816da83aa" prot="public" virt="non-virtual"><scope>task_management_info</scope><name>task_handle</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

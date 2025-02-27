@@ -140,154 +140,177 @@ $(document).ready(function(){initNavTree('freertos_8c_source.html','');});
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="comment">/* GetIdleTaskMemory prototype (linked to static allocation support) */</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a1988aa923b19fa6f31c93afa7773f793">vApplicationGetIdleTaskMemory</a>( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/* Hook prototypes */</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a109d34fc5d6dd8982815445df5790016">vApplicationTickHook</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#af646b5639eb494882d42203f289f37ce">vApplicationStackOverflowHook</a>(xTaskHandle xTask, <span class="keywordtype">signed</span> <span class="keywordtype">char</span> *pcTaskName);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a92b5bd8c1938973f010621d23aa88c3d">vApplicationMallocFailedHook</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="comment">/* USER CODE BEGIN 3 */</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="freertos_8c.html#a109d34fc5d6dd8982815445df5790016">   73</a></span>&#160;__weak <span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a109d34fc5d6dd8982815445df5790016">vApplicationTickHook</a>( <span class="keywordtype">void</span> )</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;   <span class="comment">/* This function will be called by each tick interrupt if</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">   configUSE_TICK_HOOK is set to 1 in FreeRTOSConfig.h. User code can be</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;<span class="comment">   added here, but the tick hook is called from an interrupt context, so</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;<span class="comment">   code must not attempt to block, and only the interrupt safe FreeRTOS API</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   functions can be used (those that end in FromISR()). */</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">/* USER CODE END 3 */</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">/* USER CODE BEGIN 4 */</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno"><a class="line" href="freertos_8c.html#af646b5639eb494882d42203f289f37ce">   84</a></span>&#160;__weak <span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#af646b5639eb494882d42203f289f37ce">vApplicationStackOverflowHook</a>(xTaskHandle xTask, <span class="keywordtype">signed</span> <span class="keywordtype">char</span> *pcTaskName)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;{</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;   <span class="comment">/* Run time stack overflow checking is performed if</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">   configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2. This hook function is</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">   called if a stack overflow is detected. */</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">while</span>(1){</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">//THIS IS VERY MUCH NOT GOOD. BIG SUCK</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="comment">//double plus ungood</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="freertos_8c.html#a97fd430f36f8b065226e2bff9bad1de5">   96</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a97fd430f36f8b065226e2bff9bad1de5">vApplicationIdleHook</a>( <span class="keywordtype">void</span> ){</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    i++;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="comment">/* GetTimerTaskMemory prototype (linked to static allocation support) */</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a1e80ecbd3fc2d04f18d6409ffa893a86">vApplicationGetTimerTaskMemory</a>( StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **ppxTimerTaskStackBuffer, uint32_t *pulTimerTaskStackSize );</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">/* Hook prototypes */</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a109d34fc5d6dd8982815445df5790016">vApplicationTickHook</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a771797a7892e3fb45ba038b6317f956e">vApplicationStackOverflowHook</a>(TaskHandle_t xTask, <span class="keywordtype">signed</span> <span class="keywordtype">char</span> *pcTaskName);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a92b5bd8c1938973f010621d23aa88c3d">vApplicationMallocFailedHook</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">/* USER CODE BEGIN 3 */</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="freertos_8c.html#a109d34fc5d6dd8982815445df5790016">   76</a></span>&#160;__weak <span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a109d34fc5d6dd8982815445df5790016">vApplicationTickHook</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;   <span class="comment">/* This function will be called by each tick interrupt if</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="comment">   configUSE_TICK_HOOK is set to 1 in FreeRTOSConfig.h. User code can be</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">   added here, but the tick hook is called from an interrupt context, so</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="comment">   code must not attempt to block, and only the interrupt safe FreeRTOS API</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="comment">   functions can be used (those that end in FromISR()). */</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">/* USER CODE END 3 */</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">/* USER CODE BEGIN 4 */</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="freertos_8c.html#a771797a7892e3fb45ba038b6317f956e">   89</a></span>&#160;__weak <span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a771797a7892e3fb45ba038b6317f956e">vApplicationStackOverflowHook</a>(TaskHandle_t xTask, <span class="keywordtype">signed</span> <span class="keywordtype">char</span> *pcTaskName)</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;   <span class="comment">/* Run time stack overflow checking is performed if</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment">   configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2. This hook function is</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">   called if a stack overflow is detected. */</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordflow">while</span>(1){</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="comment">//THIS IS VERY MUCH NOT GOOD. BIG SUCK</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">//double plus ungood</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;}</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">/* USER CODE END 4 */</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">/* USER CODE BEGIN 5 */</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="freertos_8c.html#a92b5bd8c1938973f010621d23aa88c3d">  103</a></span>&#160;__weak <span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a92b5bd8c1938973f010621d23aa88c3d">vApplicationMallocFailedHook</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;   <span class="comment">/* vApplicationMallocFailedHook() will only be called if</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment">   configUSE_MALLOC_FAILED_HOOK is set to 1 in FreeRTOSConfig.h. It is a hook</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">   function that will get called if a call to pvPortMalloc() fails.</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment">   pvPortMalloc() is called internally by the kernel whenever a task, queue,</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment">   timer or semaphore is created. It is also called by various parts of the</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment">   demo application. If heap_1.c or heap_2.c are used, then the size of the</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">   heap available to pvPortMalloc() is defined by configTOTAL_HEAP_SIZE in</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">   FreeRTOSConfig.h, and the xPortGetFreeHeapSize() API function can be used</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">   to query the size of free heap space that remains (although it does not</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">   provide information on how the remaining heap might be fragmented). */</span></div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">while</span>(1){</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            <span class="comment">//THIS IS VERY MUCH NOT GOOD. BIG SUCK</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            <span class="comment">//double plus ungood</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;}</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="comment">/* USER CODE END 5 */</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">/* USER CODE BEGIN GET_IDLE_TASK_MEMORY */</span></div>
-<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="freertos_8c.html#a2dd1013c5ef8f355ac2f1479e36ec659">  124</a></span>&#160;<span class="keyword">static</span> StaticTask_t <a class="code" href="freertos_8c.html#a2dd1013c5ef8f355ac2f1479e36ec659">xIdleTaskTCBBuffer</a>;</div>
-<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="freertos_8c.html#af311b04396149ce536fe1a3b5f127445">  125</a></span>&#160;<span class="keyword">static</span> StackType_t <a class="code" href="freertos_8c.html#af311b04396149ce536fe1a3b5f127445">xIdleStack</a>[<a class="code" href="_free_r_t_o_s_config_8h.html#a6c534a6cf8a00528fe0be42083484f9a">configMINIMAL_STACK_SIZE</a>];</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="freertos_8c.html#a1988aa923b19fa6f31c93afa7773f793">  127</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a1988aa923b19fa6f31c93afa7773f793">vApplicationGetIdleTaskMemory</a>( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;{</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  *ppxIdleTaskTCBBuffer = &amp;<a class="code" href="freertos_8c.html#a2dd1013c5ef8f355ac2f1479e36ec659">xIdleTaskTCBBuffer</a>;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  *ppxIdleTaskStackBuffer = &amp;<a class="code" href="freertos_8c.html#af311b04396149ce536fe1a3b5f127445">xIdleStack</a>[0];</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  *pulIdleTaskStackSize = <a class="code" href="_free_r_t_o_s_config_8h.html#a6c534a6cf8a00528fe0be42083484f9a">configMINIMAL_STACK_SIZE</a>;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <span class="comment">/* place for user code */</span></div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">/* USER CODE END GET_IDLE_TASK_MEMORY */</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="main_8c.html#abade755e13d07c10889ae83143656158">  141</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#abade755e13d07c10889ae83143656158">MX_FREERTOS_Init</a>(<span class="keywordtype">void</span>) {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  <span class="comment">/* USER CODE BEGIN Init */</span></div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <a class="code" href="freertos_8c.html#a3afad2adffd2b662e26b56ede2b1ccc5">init_settings</a>.<a class="code" href="structuv__init__struct.html#a5275182451a7f4931006e5ff393f1cdb">use_default_settings</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="comment">/* USER CODE END Init */</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="freertos_8c.html#a97fd430f36f8b065226e2bff9bad1de5">  101</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a97fd430f36f8b065226e2bff9bad1de5">vApplicationIdleHook</a>( <span class="keywordtype">void</span> ){</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    i++;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">/* USER CODE END 4 */</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment">/* USER CODE BEGIN 5 */</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="freertos_8c.html#a92b5bd8c1938973f010621d23aa88c3d">  108</a></span>&#160;__weak <span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a92b5bd8c1938973f010621d23aa88c3d">vApplicationMallocFailedHook</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;   <span class="comment">/* vApplicationMallocFailedHook() will only be called if</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">   configUSE_MALLOC_FAILED_HOOK is set to 1 in FreeRTOSConfig.h. It is a hook</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">   function that will get called if a call to pvPortMalloc() fails.</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment">   pvPortMalloc() is called internally by the kernel whenever a task, queue,</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="comment">   timer or semaphore is created. It is also called by various parts of the</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">   demo application. If heap_1.c or heap_2.c are used, then the size of the</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">   heap available to pvPortMalloc() is defined by configTOTAL_HEAP_SIZE in</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="comment">   FreeRTOSConfig.h, and the xPortGetFreeHeapSize() API function can be used</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">   to query the size of free heap space that remains (although it does not</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="comment">   provide information on how the remaining heap might be fragmented). */</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordflow">while</span>(1){</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="comment">//THIS IS VERY MUCH NOT GOOD. BIG SUCK</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            <span class="comment">//double plus ungood</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;<span class="comment">/* USER CODE END 5 */</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="comment">/* USER CODE BEGIN GET_IDLE_TASK_MEMORY */</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="freertos_8c.html#a2dd1013c5ef8f355ac2f1479e36ec659">  129</a></span>&#160;<span class="keyword">static</span> StaticTask_t <a class="code" href="freertos_8c.html#a2dd1013c5ef8f355ac2f1479e36ec659">xIdleTaskTCBBuffer</a>;</div>
+<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="freertos_8c.html#af311b04396149ce536fe1a3b5f127445">  130</a></span>&#160;<span class="keyword">static</span> StackType_t <a class="code" href="freertos_8c.html#af311b04396149ce536fe1a3b5f127445">xIdleStack</a>[<a class="code" href="_free_r_t_o_s_config_8h.html#a6c534a6cf8a00528fe0be42083484f9a">configMINIMAL_STACK_SIZE</a>];</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00132"></a><span class="lineno"><a class="line" href="freertos_8c.html#a1988aa923b19fa6f31c93afa7773f793">  132</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a1988aa923b19fa6f31c93afa7773f793">vApplicationGetIdleTaskMemory</a>( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;{</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  *ppxIdleTaskTCBBuffer = &amp;<a class="code" href="freertos_8c.html#a2dd1013c5ef8f355ac2f1479e36ec659">xIdleTaskTCBBuffer</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  *ppxIdleTaskStackBuffer = &amp;<a class="code" href="freertos_8c.html#af311b04396149ce536fe1a3b5f127445">xIdleStack</a>[0];</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  *pulIdleTaskStackSize = <a class="code" href="_free_r_t_o_s_config_8h.html#a6c534a6cf8a00528fe0be42083484f9a">configMINIMAL_STACK_SIZE</a>;</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="comment">/* place for user code */</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;}</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="comment">/* USER CODE END GET_IDLE_TASK_MEMORY */</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;<span class="comment">/* USER CODE BEGIN GET_TIMER_TASK_MEMORY */</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160; </div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="freertos_8c.html#a38d479dc434b1716ec493c97d862680e">  143</a></span>&#160;<span class="keyword">static</span> StaticTask_t <a class="code" href="freertos_8c.html#a38d479dc434b1716ec493c97d862680e">xTimerTaskTCBBuffer</a>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="freertos_8c.html#ac4bbf08a713d317769fd40e9474a279b">  144</a></span>&#160;<span class="keyword">static</span> StackType_t <a class="code" href="freertos_8c.html#ac4bbf08a713d317769fd40e9474a279b">xTimerStack</a>[<a class="code" href="_free_r_t_o_s_config_8h.html#aed7c7ebcdee603583a55e8ce04e55841">configTIMER_TASK_STACK_DEPTH</a>];</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <span class="comment">/* USER CODE BEGIN RTOS_MUTEX */</span></div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="comment">/* add mutexes, ... */</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  <span class="comment">/* USER CODE END RTOS_MUTEX */</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="comment">/* USER CODE BEGIN RTOS_SEMAPHORES */</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="comment">/* add semaphores, ... */</span></div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;  <span class="comment">/* USER CODE END RTOS_SEMAPHORES */</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  <span class="comment">/* USER CODE BEGIN RTOS_TIMERS */</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="comment">/* start timers, add new ones, ... */</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="comment">/* USER CODE END RTOS_TIMERS */</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="comment">/* USER CODE BEGIN RTOS_QUEUES */</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="comment">/* add queues, ... */</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="comment">//EVIL GOTO HACK - DO NOT TOUCH</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="comment"></span>    <span class="keywordflow">goto</span> MX_FREERTOS_INIT_IGNORE_CMSIS;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="comment">/* USER CODE END RTOS_QUEUES */</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="freertos_8c.html#a1e80ecbd3fc2d04f18d6409ffa893a86">  146</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a1e80ecbd3fc2d04f18d6409ffa893a86">vApplicationGetTimerTaskMemory</a>( StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **ppxTimerTaskStackBuffer, uint32_t *pulTimerTaskStackSize )</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;{</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;  *ppxTimerTaskTCBBuffer = &amp;<a class="code" href="freertos_8c.html#a38d479dc434b1716ec493c97d862680e">xTimerTaskTCBBuffer</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  *ppxTimerTaskStackBuffer = &amp;<a class="code" href="freertos_8c.html#ac4bbf08a713d317769fd40e9474a279b">xTimerStack</a>[0];</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  *pulTimerTaskStackSize = <a class="code" href="_free_r_t_o_s_config_8h.html#aed7c7ebcdee603583a55e8ce04e55841">configTIMER_TASK_STACK_DEPTH</a>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  <span class="comment">/* place for user code */</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment">/* USER CODE END GET_TIMER_TASK_MEMORY */</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="main_8c.html#abade755e13d07c10889ae83143656158">  160</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#abade755e13d07c10889ae83143656158">MX_FREERTOS_Init</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="comment">/* USER CODE BEGIN Init */</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <a class="code" href="freertos_8c.html#a3afad2adffd2b662e26b56ede2b1ccc5">init_settings</a>.<a class="code" href="structuv__init__struct.html#a5275182451a7f4931006e5ff393f1cdb">use_default_settings</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="comment">/* USER CODE END Init */</span></div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160; </div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="comment">/* Create the thread(s) */</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="comment">/* definition and creation of defaultTask */</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  osThreadDef(defaultTask, <a class="code" href="freertos_8c.html#a016544463b4842ced7191baf8f449cea">StartDefaultTask</a>, osPriorityNormal, 0, 128);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <a class="code" href="freertos_8c.html#aa658fe134a5d1309d7a15c8116fa142c">defaultTaskHandle</a> = osThreadCreate(osThread(defaultTask), NULL);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="comment">/* USER CODE BEGIN RTOS_THREADS */</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="comment">/* add threads, ... */</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  MX_FREERTOS_INIT_IGNORE_CMSIS:</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  BaseType_t x_task_return = xTaskCreate(<a class="code" href="uvfr__utils_8h.html#a6d40598f9d8daa89ca159a2e87f4fd01">uvInit</a>,<span class="stringliteral">&quot;init&quot;</span>,512,&amp;<a class="code" href="freertos_8c.html#a3afad2adffd2b662e26b56ede2b1ccc5">init_settings</a>,osPriorityNormal,&amp;<a class="code" href="freertos_8c.html#a142da7a698285a444ffffb0d1d791023">init_task_handle</a>);</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="keywordflow">if</span>(x_task_return != pdPASS){</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;      <span class="keywordflow">while</span>(1){</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;          <span class="comment">//Program hangs itself, like bro, we couldnt even create the INITIALISATION task, thats fucked</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      }</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;  }</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;  <span class="comment">/* USER CODE END RTOS_THREADS */</span></div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160; </div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="comment">/* USER CODE BEGIN RTOS_MUTEX */</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="comment">/* add mutexes, ... */</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="comment">/* USER CODE END RTOS_MUTEX */</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="comment">/* USER CODE BEGIN RTOS_SEMAPHORES */</span></div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <span class="comment">/* add semaphores, ... */</span></div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="comment">/* USER CODE END RTOS_SEMAPHORES */</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  <span class="comment">/* USER CODE BEGIN RTOS_TIMERS */</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;  <span class="comment">/* start timers, add new ones, ... */</span></div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  <span class="comment">/* USER CODE END RTOS_TIMERS */</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;  <span class="comment">/* USER CODE BEGIN RTOS_QUEUES */</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;  <span class="comment">/* add queues, ... */</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="comment">//EVIL GOTO HACK - DO NOT TOUCH</span></div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="comment"></span>    <span class="keywordflow">goto</span> MX_FREERTOS_INIT_IGNORE_CMSIS;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;  <span class="comment">/* USER CODE END RTOS_QUEUES */</span></div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="comment">/* USER CODE BEGIN Header_StartDefaultTask */</span></div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;<span class="comment">/* USER CODE END Header_StartDefaultTask */</span></div>
-<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="freertos_8c.html#a016544463b4842ced7191baf8f449cea">  190</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a016544463b4842ced7191baf8f449cea">StartDefaultTask</a>(<span class="keywordtype">void</span> <span class="keyword">const</span> * argument)</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;{</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;  <span class="comment">/* USER CODE BEGIN StartDefaultTask */</span></div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  <span class="comment">/* Infinite loop */</span></div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">for</span>(;;)</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  {</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    osDelay(1);</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  }</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  <span class="comment">/* USER CODE END StartDefaultTask */</span></div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;}</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;  <span class="comment">/* Create the thread(s) */</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;  <span class="comment">/* definition and creation of defaultTask */</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  osThreadDef(defaultTask, <a class="code" href="freertos_8c.html#a016544463b4842ced7191baf8f449cea">StartDefaultTask</a>, osPriorityNormal, 0, 128);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;  <a class="code" href="freertos_8c.html#aa658fe134a5d1309d7a15c8116fa142c">defaultTaskHandle</a> = osThreadCreate(osThread(defaultTask), NULL);</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160; </div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;  <span class="comment">/* USER CODE BEGIN RTOS_THREADS */</span></div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  <span class="comment">/* add threads, ... */</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  MX_FREERTOS_INIT_IGNORE_CMSIS:</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;  BaseType_t x_task_return = xTaskCreate(<a class="code" href="uvfr__utils_8h.html#a6d40598f9d8daa89ca159a2e87f4fd01">uvInit</a>,<span class="stringliteral">&quot;init&quot;</span>,512,&amp;<a class="code" href="freertos_8c.html#a3afad2adffd2b662e26b56ede2b1ccc5">init_settings</a>,osPriorityNormal,&amp;<a class="code" href="freertos_8c.html#a142da7a698285a444ffffb0d1d791023">init_task_handle</a>);</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;  <span class="keywordflow">if</span>(x_task_return != pdPASS){</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;      <span class="keywordflow">while</span>(1){</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;          <span class="comment">//Program hangs itself, like bro, we couldnt even create the INITIALISATION task, thats fucked</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;      }</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  }</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="comment">/* USER CODE END RTOS_THREADS */</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="comment">/* Private application code --------------------------------------------------*/</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="comment">/* USER CODE BEGIN Application */</span></div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="comment">/* USER CODE END Application */</span></div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="comment">/* USER CODE BEGIN Header_StartDefaultTask */</span></div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;<span class="comment">/* USER CODE END Header_StartDefaultTask */</span></div>
+<div class="line"><a name="l00209"></a><span class="lineno"><a class="line" href="freertos_8c.html#a016544463b4842ced7191baf8f449cea">  209</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="freertos_8c.html#a016544463b4842ced7191baf8f449cea">StartDefaultTask</a>(<span class="keywordtype">void</span> <span class="keyword">const</span> * argument)</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;{</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;  <span class="comment">/* USER CODE BEGIN StartDefaultTask */</span></div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;  <span class="comment">/* Infinite loop */</span></div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;  <span class="keywordflow">for</span>(;;)</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  {</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    osDelay(1);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;  }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;  <span class="comment">/* USER CODE END StartDefaultTask */</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;}</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">/* Private application code --------------------------------------------------*/</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">/* USER CODE BEGIN Application */</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">/* USER CODE END Application */</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="afreertos_8c_html_a2dd1013c5ef8f355ac2f1479e36ec659"><div class="ttname"><a href="freertos_8c.html#a2dd1013c5ef8f355ac2f1479e36ec659">xIdleTaskTCBBuffer</a></div><div class="ttdeci">static StaticTask_t xIdleTaskTCBBuffer</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00124">freertos.c:124</a></div></div>
+<div class="ttc" id="afreertos_8c_html_a2dd1013c5ef8f355ac2f1479e36ec659"><div class="ttname"><a href="freertos_8c.html#a2dd1013c5ef8f355ac2f1479e36ec659">xIdleTaskTCBBuffer</a></div><div class="ttdeci">static StaticTask_t xIdleTaskTCBBuffer</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00129">freertos.c:129</a></div></div>
 <div class="ttc" id="a_free_r_t_o_s_config_8h_html_a6c534a6cf8a00528fe0be42083484f9a"><div class="ttname"><a href="_free_r_t_o_s_config_8h.html#a6c534a6cf8a00528fe0be42083484f9a">configMINIMAL_STACK_SIZE</a></div><div class="ttdeci">#define configMINIMAL_STACK_SIZE</div><div class="ttdef"><b>Definition:</b> <a href="_free_r_t_o_s_config_8h_source.html#l00066">FreeRTOSConfig.h:66</a></div></div>
 <div class="ttc" id="afreertos_8c_html_aa658fe134a5d1309d7a15c8116fa142c"><div class="ttname"><a href="freertos_8c.html#aa658fe134a5d1309d7a15c8116fa142c">defaultTaskHandle</a></div><div class="ttdeci">osThreadId defaultTaskHandle</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00053">freertos.c:53</a></div></div>
 <div class="ttc" id="afreertos_8c_html_a3afad2adffd2b662e26b56ede2b1ccc5"><div class="ttname"><a href="freertos_8c.html#a3afad2adffd2b662e26b56ede2b1ccc5">init_settings</a></div><div class="ttdeci">uv_init_struct init_settings</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00048">freertos.c:48</a></div></div>
 <div class="ttc" id="auvfr__utils_8h_html"><div class="ttname"><a href="uvfr__utils_8h.html">uvfr_utils.h</a></div></div>
-<div class="ttc" id="astructuv__init__struct_html"><div class="ttname"><a href="structuv__init__struct.html">uv_init_struct</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00220">uvfr_utils.h:220</a></div></div>
-<div class="ttc" id="afreertos_8c_html_af646b5639eb494882d42203f289f37ce"><div class="ttname"><a href="freertos_8c.html#af646b5639eb494882d42203f289f37ce">vApplicationStackOverflowHook</a></div><div class="ttdeci">void vApplicationStackOverflowHook(xTaskHandle xTask, signed char *pcTaskName)</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00084">freertos.c:84</a></div></div>
-<div class="ttc" id="afreertos_8c_html_a97fd430f36f8b065226e2bff9bad1de5"><div class="ttname"><a href="freertos_8c.html#a97fd430f36f8b065226e2bff9bad1de5">vApplicationIdleHook</a></div><div class="ttdeci">void vApplicationIdleHook(void)</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00096">freertos.c:96</a></div></div>
-<div class="ttc" id="afreertos_8c_html_a016544463b4842ced7191baf8f449cea"><div class="ttname"><a href="freertos_8c.html#a016544463b4842ced7191baf8f449cea">StartDefaultTask</a></div><div class="ttdeci">void StartDefaultTask(void const *argument)</div><div class="ttdoc">Function implementing the defaultTask thread.</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00190">freertos.c:190</a></div></div>
-<div class="ttc" id="afreertos_8c_html_a1988aa923b19fa6f31c93afa7773f793"><div class="ttname"><a href="freertos_8c.html#a1988aa923b19fa6f31c93afa7773f793">vApplicationGetIdleTaskMemory</a></div><div class="ttdeci">void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize)</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00127">freertos.c:127</a></div></div>
-<div class="ttc" id="afreertos_8c_html_a109d34fc5d6dd8982815445df5790016"><div class="ttname"><a href="freertos_8c.html#a109d34fc5d6dd8982815445df5790016">vApplicationTickHook</a></div><div class="ttdeci">void vApplicationTickHook(void)</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00073">freertos.c:73</a></div></div>
+<div class="ttc" id="astructuv__init__struct_html"><div class="ttname"><a href="structuv__init__struct.html">uv_init_struct</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00284">uvfr_utils.h:284</a></div></div>
+<div class="ttc" id="afreertos_8c_html_a97fd430f36f8b065226e2bff9bad1de5"><div class="ttname"><a href="freertos_8c.html#a97fd430f36f8b065226e2bff9bad1de5">vApplicationIdleHook</a></div><div class="ttdeci">void vApplicationIdleHook(void)</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00101">freertos.c:101</a></div></div>
+<div class="ttc" id="afreertos_8c_html_a1e80ecbd3fc2d04f18d6409ffa893a86"><div class="ttname"><a href="freertos_8c.html#a1e80ecbd3fc2d04f18d6409ffa893a86">vApplicationGetTimerTaskMemory</a></div><div class="ttdeci">void vApplicationGetTimerTaskMemory(StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **ppxTimerTaskStackBuffer, uint32_t *pulTimerTaskStackSize)</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00146">freertos.c:146</a></div></div>
+<div class="ttc" id="afreertos_8c_html_a016544463b4842ced7191baf8f449cea"><div class="ttname"><a href="freertos_8c.html#a016544463b4842ced7191baf8f449cea">StartDefaultTask</a></div><div class="ttdeci">void StartDefaultTask(void const *argument)</div><div class="ttdoc">Function implementing the defaultTask thread.</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00209">freertos.c:209</a></div></div>
+<div class="ttc" id="afreertos_8c_html_a771797a7892e3fb45ba038b6317f956e"><div class="ttname"><a href="freertos_8c.html#a771797a7892e3fb45ba038b6317f956e">vApplicationStackOverflowHook</a></div><div class="ttdeci">void vApplicationStackOverflowHook(TaskHandle_t xTask, signed char *pcTaskName)</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00089">freertos.c:89</a></div></div>
+<div class="ttc" id="a_free_r_t_o_s_config_8h_html_aed7c7ebcdee603583a55e8ce04e55841"><div class="ttname"><a href="_free_r_t_o_s_config_8h.html#aed7c7ebcdee603583a55e8ce04e55841">configTIMER_TASK_STACK_DEPTH</a></div><div class="ttdeci">#define configTIMER_TASK_STACK_DEPTH</div><div class="ttdef"><b>Definition:</b> <a href="_free_r_t_o_s_config_8h_source.html#l00097">FreeRTOSConfig.h:97</a></div></div>
+<div class="ttc" id="afreertos_8c_html_a38d479dc434b1716ec493c97d862680e"><div class="ttname"><a href="freertos_8c.html#a38d479dc434b1716ec493c97d862680e">xTimerTaskTCBBuffer</a></div><div class="ttdeci">static StaticTask_t xTimerTaskTCBBuffer</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00143">freertos.c:143</a></div></div>
+<div class="ttc" id="afreertos_8c_html_a1988aa923b19fa6f31c93afa7773f793"><div class="ttname"><a href="freertos_8c.html#a1988aa923b19fa6f31c93afa7773f793">vApplicationGetIdleTaskMemory</a></div><div class="ttdeci">void vApplicationGetIdleTaskMemory(StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize)</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00132">freertos.c:132</a></div></div>
+<div class="ttc" id="afreertos_8c_html_a109d34fc5d6dd8982815445df5790016"><div class="ttname"><a href="freertos_8c.html#a109d34fc5d6dd8982815445df5790016">vApplicationTickHook</a></div><div class="ttdeci">void vApplicationTickHook(void)</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00076">freertos.c:76</a></div></div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">: Header for main.c file. This file contains the common defines of the application.</div></div>
+<div class="ttc" id="afreertos_8c_html_ac4bbf08a713d317769fd40e9474a279b"><div class="ttname"><a href="freertos_8c.html#ac4bbf08a713d317769fd40e9474a279b">xTimerStack</a></div><div class="ttdeci">static StackType_t xTimerStack[configTIMER_TASK_STACK_DEPTH]</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00144">freertos.c:144</a></div></div>
 <div class="ttc" id="afreertos_8c_html_a142da7a698285a444ffffb0d1d791023"><div class="ttname"><a href="freertos_8c.html#a142da7a698285a444ffffb0d1d791023">init_task_handle</a></div><div class="ttdeci">TaskHandle_t init_task_handle</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00051">freertos.c:51</a></div></div>
-<div class="ttc" id="astructuv__init__struct_html_a5275182451a7f4931006e5ff393f1cdb"><div class="ttname"><a href="structuv__init__struct.html#a5275182451a7f4931006e5ff393f1cdb">uv_init_struct::use_default_settings</a></div><div class="ttdeci">bool use_default_settings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00221">uvfr_utils.h:221</a></div></div>
-<div class="ttc" id="afreertos_8c_html_abade755e13d07c10889ae83143656158"><div class="ttname"><a href="freertos_8c.html#abade755e13d07c10889ae83143656158">MX_FREERTOS_Init</a></div><div class="ttdeci">void MX_FREERTOS_Init(void)</div><div class="ttdoc">FreeRTOS initialization.</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00141">freertos.c:141</a></div></div>
-<div class="ttc" id="auvfr__utils_8h_html_a6d40598f9d8daa89ca159a2e87f4fd01"><div class="ttname"><a href="uvfr__utils_8h.html#a6d40598f9d8daa89ca159a2e87f4fd01">uvInit</a></div><div class="ttdeci">void uvInit(void *arguments)</div><div class="ttdoc">: Function that initializes all of the car's stuff.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8c_source.html#l00037">uvfr_utils.c:37</a></div></div>
-<div class="ttc" id="afreertos_8c_html_a92b5bd8c1938973f010621d23aa88c3d"><div class="ttname"><a href="freertos_8c.html#a92b5bd8c1938973f010621d23aa88c3d">vApplicationMallocFailedHook</a></div><div class="ttdeci">void vApplicationMallocFailedHook(void)</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00103">freertos.c:103</a></div></div>
-<div class="ttc" id="afreertos_8c_html_af311b04396149ce536fe1a3b5f127445"><div class="ttname"><a href="freertos_8c.html#af311b04396149ce536fe1a3b5f127445">xIdleStack</a></div><div class="ttdeci">static StackType_t xIdleStack[configMINIMAL_STACK_SIZE]</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00125">freertos.c:125</a></div></div>
+<div class="ttc" id="astructuv__init__struct_html_a5275182451a7f4931006e5ff393f1cdb"><div class="ttname"><a href="structuv__init__struct.html#a5275182451a7f4931006e5ff393f1cdb">uv_init_struct::use_default_settings</a></div><div class="ttdeci">bool use_default_settings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00285">uvfr_utils.h:285</a></div></div>
+<div class="ttc" id="afreertos_8c_html_abade755e13d07c10889ae83143656158"><div class="ttname"><a href="freertos_8c.html#abade755e13d07c10889ae83143656158">MX_FREERTOS_Init</a></div><div class="ttdeci">void MX_FREERTOS_Init(void)</div><div class="ttdoc">FreeRTOS initialization.</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00160">freertos.c:160</a></div></div>
+<div class="ttc" id="auvfr__utils_8h_html_a6d40598f9d8daa89ca159a2e87f4fd01"><div class="ttname"><a href="uvfr__utils_8h.html#a6d40598f9d8daa89ca159a2e87f4fd01">uvInit</a></div><div class="ttdeci">void uvInit(void *arguments)</div><div class="ttdoc">: Function that initializes all of the car's stuff.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8c_source.html#l00039">uvfr_utils.c:39</a></div></div>
+<div class="ttc" id="afreertos_8c_html_a92b5bd8c1938973f010621d23aa88c3d"><div class="ttname"><a href="freertos_8c.html#a92b5bd8c1938973f010621d23aa88c3d">vApplicationMallocFailedHook</a></div><div class="ttdeci">void vApplicationMallocFailedHook(void)</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00108">freertos.c:108</a></div></div>
+<div class="ttc" id="afreertos_8c_html_af311b04396149ce536fe1a3b5f127445"><div class="ttname"><a href="freertos_8c.html#af311b04396149ce536fe1a3b5f127445">xIdleStack</a></div><div class="ttdeci">static StackType_t xIdleStack[configMINIMAL_STACK_SIZE]</div><div class="ttdef"><b>Definition:</b> <a href="freertos_8c_source.html#l00130">freertos.c:130</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -1,0 +1,111 @@
+\hypertarget{structrbnode}{}\doxysection{rbnode Struct Reference}
+\label{structrbnode}\index{rbnode@{rbnode}}
+
+
+Node of a Red-\/\+Black binary search tree.  
+
+
+
+
+{\ttfamily \#include $<$rb\+\_\+tree.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$ \mbox{\hyperlink{structrbnode_a079337ce0b6a84f59162a3ca60445011}{left}}
+\item 
+struct \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$ \mbox{\hyperlink{structrbnode_a76b1a4f6c0dcadb4f06b25c183d59a6e}{right}}
+\item 
+struct \mbox{\hyperlink{structrbnode}{rbnode}} $\ast$ \mbox{\hyperlink{structrbnode_ab20426153daaf021fff401c4f1f5ccd1}{parent}}
+\item 
+void $\ast$ \mbox{\hyperlink{structrbnode_af238e0920ca118f7dae3490c22b1c805}{data}}
+\item 
+char \mbox{\hyperlink{structrbnode_a5fbba1bc9c383790847090d4c6ff6af4}{color}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Node of a Red-\/\+Black binary search tree. 
+
+
+
+Definition at line 27 of file rb\+\_\+tree.\+h.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structrbnode_a5fbba1bc9c383790847090d4c6ff6af4}\label{structrbnode_a5fbba1bc9c383790847090d4c6ff6af4}} 
+\index{rbnode@{rbnode}!color@{color}}
+\index{color@{color}!rbnode@{rbnode}}
+\doxysubsubsection{\texorpdfstring{color}{color}}
+{\footnotesize\ttfamily char rbnode\+::color}
+
+The color of the node (internal use only) 
+
+Definition at line 32 of file rb\+\_\+tree.\+h.
+
+
+
+Referenced by check\+Black\+Height(), delete\+Repair(), insert\+Repair(), print(), rb\+Create(), rb\+Delete(), and rb\+Insert().
+
+\mbox{\Hypertarget{structrbnode_af238e0920ca118f7dae3490c22b1c805}\label{structrbnode_af238e0920ca118f7dae3490c22b1c805}} 
+\index{rbnode@{rbnode}!data@{data}}
+\index{data@{data}!rbnode@{rbnode}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily void$\ast$ rbnode\+::data}
+
+Pointer to some data contained by the tree 
+
+Definition at line 31 of file rb\+\_\+tree.\+h.
+
+
+
+Referenced by check\+Order(), destroy\+All\+Nodes(), print(), rb\+Apply\+Node(), rb\+Create(), rb\+Delete(), rb\+Find(), and rb\+Insert().
+
+\mbox{\Hypertarget{structrbnode_a079337ce0b6a84f59162a3ca60445011}\label{structrbnode_a079337ce0b6a84f59162a3ca60445011}} 
+\index{rbnode@{rbnode}!left@{left}}
+\index{left@{left}!rbnode@{rbnode}}
+\doxysubsubsection{\texorpdfstring{left}{left}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structrbnode}{rbnode}}$\ast$ rbnode\+::left}
+
+Left sub-\/tree 
+
+Definition at line 28 of file rb\+\_\+tree.\+h.
+
+
+
+Referenced by check\+Black\+Height(), check\+Order(), delete\+Repair(), destroy\+All\+Nodes(), insert\+Repair(), print(), rb\+Apply\+Node(), rb\+Create(), rb\+Delete(), rb\+Find(), rb\+Insert(), rb\+Successor(), rotate\+Left(), and rotate\+Right().
+
+\mbox{\Hypertarget{structrbnode_ab20426153daaf021fff401c4f1f5ccd1}\label{structrbnode_ab20426153daaf021fff401c4f1f5ccd1}} 
+\index{rbnode@{rbnode}!parent@{parent}}
+\index{parent@{parent}!rbnode@{rbnode}}
+\doxysubsubsection{\texorpdfstring{parent}{parent}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structrbnode}{rbnode}}$\ast$ rbnode\+::parent}
+
+Parent of node 
+
+Definition at line 30 of file rb\+\_\+tree.\+h.
+
+
+
+Referenced by check\+Black\+Height(), delete\+Repair(), destroy\+All\+Nodes(), insert\+Repair(), rb\+Create(), rb\+Delete(), rb\+Insert(), rb\+Successor(), rotate\+Left(), and rotate\+Right().
+
+\mbox{\Hypertarget{structrbnode_a76b1a4f6c0dcadb4f06b25c183d59a6e}\label{structrbnode_a76b1a4f6c0dcadb4f06b25c183d59a6e}} 
+\index{rbnode@{rbnode}!right@{right}}
+\index{right@{right}!rbnode@{rbnode}}
+\doxysubsubsection{\texorpdfstring{right}{right}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structrbnode}{rbnode}}$\ast$ rbnode\+::right}
+
+Right sub-\/tree 
+
+Definition at line 29 of file rb\+\_\+tree.\+h.
+
+
+
+Referenced by check\+Black\+Height(), check\+Order(), delete\+Repair(), destroy\+All\+Nodes(), insert\+Repair(), print(), rb\+Apply\+Node(), rb\+Create(), rb\+Delete(), rb\+Find(), rb\+Insert(), rb\+Successor(), rotate\+Left(), and rotate\+Right().
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+Inc/\mbox{\hyperlink{rb__tree_8h}{rb\+\_\+tree.\+h}}\end{DoxyCompactItemize}

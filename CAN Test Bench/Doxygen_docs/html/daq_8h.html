@@ -91,23 +91,27 @@ $(document).ready(function(){initNavTree('daq_8h.html','');});
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">daq.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rb__tree_8h_source.html">rb_tree.h</a>&quot;</code><br />
 </div>
 <p><a href="daq_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uniondaq__type.html">daq_type</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdaq__param__list__node.html">daq_param_list_node</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdaq__datapoint.html">daq_datapoint</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This struct holds info of what needs to be logged.  <a href="structdaq__datapoint.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdaq__loop__args.html">daq_loop_args</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdaq__child__task.html">daq_child_task</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -117,31 +121,51 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:aed86f8ec15afd10cf046f83fcf7f327b"><td class="memItemLeft" align="right" valign="top">typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="daq_8h.html#aed86f8ec15afd10cf046f83fcf7f327b">daq_log_entry</a></td></tr>
-<tr class="separator:aed86f8ec15afd10cf046f83fcf7f327b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3e1f11c0574282ff1e736d6fe360df6"><td class="memItemLeft" align="right" valign="top">typedef union <a class="el" href="uniondaq__type.html">daq_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="daq_8h.html#af3e1f11c0574282ff1e736d6fe360df6">daq_type</a></td></tr>
-<tr class="separator:af3e1f11c0574282ff1e736d6fe360df6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a7e5c4a5e65c315010bab902f2268a6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structdaq__param__list__node.html">daq_param_list_node</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="daq_8h.html#a4a7e5c4a5e65c315010bab902f2268a6">daq_param_list_node</a></td></tr>
+<tr class="separator:a4a7e5c4a5e65c315010bab902f2268a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3bc3bc1c9ab04b22cc999a6f7c82c40"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structdaq__datapoint.html">daq_datapoint</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="daq_8h.html#ad3bc3bc1c9ab04b22cc999a6f7c82c40">daq_datapoint</a></td></tr>
 <tr class="memdesc:ad3bc3bc1c9ab04b22cc999a6f7c82c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">This struct holds info of what needs to be logged.  <a href="daq_8h.html#ad3bc3bc1c9ab04b22cc999a6f7c82c40">More...</a><br /></td></tr>
 <tr class="separator:ad3bc3bc1c9ab04b22cc999a6f7c82c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8895dc742d7ce8449057f317e7f9c81b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structdaq__loop__args.html">daq_loop_args</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="daq_8h.html#a8895dc742d7ce8449057f317e7f9c81b">daq_loop_args</a></td></tr>
 <tr class="separator:a8895dc742d7ce8449057f317e7f9c81b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2104fed000d8cb392baf5d14e06193c1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structdaq__child__task.html">daq_child_task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="daq_8h.html#a2104fed000d8cb392baf5d14e06193c1">daq_child_task</a></td></tr>
+<tr class="separator:a2104fed000d8cb392baf5d14e06193c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ac2ad7f431e3446fddcd9b6b9f93c4c14"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14">data_type</a> { <br />
-&#160;&#160;<a class="el" href="daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d">UV_UINT8</a>, 
-<a class="el" href="daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318">UV_INT8</a>, 
-<a class="el" href="daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0">UV_UINT16</a>, 
-<a class="el" href="daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787">UV_INT16</a>, 
+<tr class="memitem:a5249d5d3ad44df9d4479b814028469a9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9">loggable_params</a> { <br />
+&#160;&#160;<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a2237bba50d7e27353f72b7d26837fee4">MOTOR_RPM</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a1b5652598a4eb9009556ed9d79bc3481">MOTOR_TEMP</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9af753a5d3c1a828a48de12e24724ca9fa">MOTOR_CURRENT</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9aa74badbb2f7ca3577612ade967c76aa0">MC_VOLTAGE</a>, 
 <br />
-&#160;&#160;<a class="el" href="daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0">UV_UINT32</a>, 
-<a class="el" href="daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc">UV_INT32</a>, 
-<a class="el" href="daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9">UV_FLOAT</a>, 
-<a class="el" href="daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038">UV_DOUBLE</a>
+&#160;&#160;<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9ab63fa780a7f16ee35fe9ef429cca5642">MC_CURRENT</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9af299eda494c1accd4296669bfce3c874">MC_TEMP</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a3c3a6d5acba65131b33bf8ee304a535b">MC_ERRORS</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a0f5f85010ae23f1b49eae8057df620ff">BMS_CURRENT</a>, 
+<br />
+&#160;&#160;<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a6bdcb863dc969154ade799d6a547510d">BMS_VOLTAGE</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a7d1c4ad6640f0879f3d74f49fe3d5663">BMS_ERRORS</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9afe28f8aaa8c772e8fc42b5f47d2898ed">MAX_CELL_TEMP</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a2834d7adb4c1ad0ac9300d6085d52d3a">MIN_CELL_TEMP</a>, 
+<br />
+&#160;&#160;<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9ae7f3b5d1940d153a2bd99515a410059d">AVG_CELL_TEMP</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a4ef281749693cf7082dc226a1ab26974">ACC_POWER</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9aef39c43ab7f393dc2bf798232d6af580">ACC_POWER_LIMIT</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a4aa469f8ff609f64a67cb8f94bbae331">APPS1_ADC_VAL</a>, 
+<br />
+&#160;&#160;<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a649cfa800751dbfadfee50fbb49f8a0c">APPS2_ADC_VAL</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a217d6550cdad0d3eaff0189d269d8929">BPS1_ADC_VAL</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a75e438f4c4f3e2113352eb85475f8fa7">BPS2_ADC_VAL</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9addc059db90f422ed0d251cd94a2022cf">ACCELERATOR_PEDAL_RATIO</a>, 
+<br />
+&#160;&#160;<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a032b8af77af595ca0945a474d4c10101">BRAKE_PRESSURE_PA</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9a9dd0829e0b91b1c3c07d12aa6dd7effb">POWER_DERATE_FACTOR</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9ad3d7141ef864656b0311087f12528a00">CURRENT_DRIVING_MODE</a>, 
+<a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9ab17c72af1b52d361cceed996a9cbc502">MAX_LOGGABLE_PARAMS</a>
 <br />
  }</td></tr>
-<tr class="separator:ac2ad7f431e3446fddcd9b6b9f93c4c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a5249d5d3ad44df9d4479b814028469a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -150,6 +174,11 @@ Functions</h2></td></tr>
 <tr class="separator:adecae26482eb2c3289131a2a486ac8b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a433bb586ceab47aed8d633fa2ff8ce56"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="daq_8h.html#a433bb586ceab47aed8d633fa2ff8ce56">daqMasterTask</a> (void *args)</td></tr>
 <tr class="separator:a433bb586ceab47aed8d633fa2ff8ce56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a07e7f750fa90de582a1e994dcf9b57d0"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="daq_8h.html#a07e7f750fa90de582a1e994dcf9b57d0">param_LUT</a> [126]</td></tr>
+<tr class="separator:a07e7f750fa90de582a1e994dcf9b57d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a81ace76d60c42037a62eaeb1687a96ce"></a>
@@ -164,11 +193,25 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="daq_8h_source.html#l00013">13</a> of file <a class="el" href="daq_8h_source.html">daq.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="daq_8h_source.html#l00014">14</a> of file <a class="el" href="daq_8h_source.html">daq.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
+<a id="a2104fed000d8cb392baf5d14e06193c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2104fed000d8cb392baf5d14e06193c1">&#9670;&nbsp;</a></span>daq_child_task</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structdaq__child__task.html">daq_child_task</a> <a class="el" href="structdaq__child__task.html">daq_child_task</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad3bc3bc1c9ab04b22cc999a6f7c82c40"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad3bc3bc1c9ab04b22cc999a6f7c82c40">&#9670;&nbsp;</a></span>daq_datapoint</h2>
 
@@ -182,22 +225,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>This struct holds info of what needs to be logged. </p>
-
-</div>
-</div>
-<a id="aed86f8ec15afd10cf046f83fcf7f327b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed86f8ec15afd10cf046f83fcf7f327b">&#9670;&nbsp;</a></span>daq_log_entry</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef uint16_t <a class="el" href="daq_8h.html#aed86f8ec15afd10cf046f83fcf7f327b">daq_log_entry</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="daq_8h_source.html#l00027">27</a> of file <a class="el" href="daq_8h_source.html">daq.h</a>.</p>
 
 </div>
 </div>
@@ -215,14 +242,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af3e1f11c0574282ff1e736d6fe360df6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3e1f11c0574282ff1e736d6fe360df6">&#9670;&nbsp;</a></span>daq_type</h2>
+<a id="a4a7e5c4a5e65c315010bab902f2268a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a7e5c4a5e65c315010bab902f2268a6">&#9670;&nbsp;</a></span>daq_param_list_node</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef union <a class="el" href="uniondaq__type.html">daq_type</a> <a class="el" href="uniondaq__type.html">daq_type</a></td>
+          <td class="memname">typedef struct <a class="el" href="structdaq__param__list__node.html">daq_param_list_node</a> <a class="el" href="structdaq__param__list__node.html">daq_param_list_node</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -230,29 +257,45 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="ac2ad7f431e3446fddcd9b6b9f93c4c14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2ad7f431e3446fddcd9b6b9f93c4c14">&#9670;&nbsp;</a></span>data_type</h2>
+<a id="a5249d5d3ad44df9d4479b814028469a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5249d5d3ad44df9d4479b814028469a9">&#9670;&nbsp;</a></span>loggable_params</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="daq_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14">data_type</a></td>
+          <td class="memname">enum <a class="el" href="daq_8h.html#a5249d5d3ad44df9d4479b814028469a9">loggable_params</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d"></a>UV_UINT8&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318"></a>UV_INT8&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0"></a>UV_UINT16&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787"></a>UV_INT16&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0"></a>UV_UINT32&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc"></a>UV_INT32&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9"></a>UV_FLOAT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038"></a>UV_DOUBLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a2237bba50d7e27353f72b7d26837fee4"></a>MOTOR_RPM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a1b5652598a4eb9009556ed9d79bc3481"></a>MOTOR_TEMP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9af753a5d3c1a828a48de12e24724ca9fa"></a>MOTOR_CURRENT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9aa74badbb2f7ca3577612ade967c76aa0"></a>MC_VOLTAGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9ab63fa780a7f16ee35fe9ef429cca5642"></a>MC_CURRENT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9af299eda494c1accd4296669bfce3c874"></a>MC_TEMP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a3c3a6d5acba65131b33bf8ee304a535b"></a>MC_ERRORS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a0f5f85010ae23f1b49eae8057df620ff"></a>BMS_CURRENT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a6bdcb863dc969154ade799d6a547510d"></a>BMS_VOLTAGE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a7d1c4ad6640f0879f3d74f49fe3d5663"></a>BMS_ERRORS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9afe28f8aaa8c772e8fc42b5f47d2898ed"></a>MAX_CELL_TEMP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a2834d7adb4c1ad0ac9300d6085d52d3a"></a>MIN_CELL_TEMP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9ae7f3b5d1940d153a2bd99515a410059d"></a>AVG_CELL_TEMP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a4ef281749693cf7082dc226a1ab26974"></a>ACC_POWER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9aef39c43ab7f393dc2bf798232d6af580"></a>ACC_POWER_LIMIT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a4aa469f8ff609f64a67cb8f94bbae331"></a>APPS1_ADC_VAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a649cfa800751dbfadfee50fbb49f8a0c"></a>APPS2_ADC_VAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a217d6550cdad0d3eaff0189d269d8929"></a>BPS1_ADC_VAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a75e438f4c4f3e2113352eb85475f8fa7"></a>BPS2_ADC_VAL&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9addc059db90f422ed0d251cd94a2022cf"></a>ACCELERATOR_PEDAL_RATIO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a032b8af77af595ca0945a474d4c10101"></a>BRAKE_PRESSURE_PA&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9a9dd0829e0b91b1c3c07d12aa6dd7effb"></a>POWER_DERATE_FACTOR&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9ad3d7141ef864656b0311087f12528a00"></a>CURRENT_DRIVING_MODE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a5249d5d3ad44df9d4479b814028469a9ab17c72af1b52d361cceed996a9cbc502"></a>MAX_LOGGABLE_PARAMS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="daq_8h_source.html#l00015">15</a> of file <a class="el" href="daq_8h_source.html">daq.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="daq_8h_source.html#l00018">18</a> of file <a class="el" href="daq_8h_source.html">daq.h</a>.</p>
 
 </div>
 </div>
@@ -277,11 +320,11 @@ Functions</h2></td></tr>
 <div class="line">TickType_t tick_period = pdMS_TO_TICKS(params-&gt;task_period); <span class="comment">//Convert ms of period to the RTOS ticks</span></div>
 <div class="line"><span class="comment">//TickType_t last_time = xTaskGetTickCount();       /**</span></div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="daq_8c_source.html#l00044">44</a> of file <a class="el" href="daq_8c_source.html">daq.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="daq_8c_source.html#l00062">62</a> of file <a class="el" href="daq_8c_source.html">daq.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00426">changeVehicleState()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00284">uv_task_info::cmd_data</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00496">killSelf()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00546">suspendSelf()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00258">uv_task_info::task_period</a>, <a class="el" href="uvfr__utils_8h_source.html#l00147">UV_DRIVING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00150">UV_ERROR_STATE</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00035">UV_KILL_CMD</a>, <a class="el" href="uvfr__utils_8h_source.html#l00145">UV_READY</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00036">UV_SUSPEND_CMD</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00028">vehicle_state</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00099">changeVehicleState()</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00241">uv_task_info::cmd_data</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00708">killSelf()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00749">suspendSelf()</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00224">uv_task_info::task_period</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00085">UV_DRIVING</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00088">UV_ERROR_STATE</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00098">UV_KILL_CMD</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00083">UV_READY</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00099">UV_SUSPEND_CMD</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00045">vehicle_state</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="daq_8c_source.html#l00010">initDaqTask()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="daq_8c_source.html#l00030">initDaqTask()</a>.</p>
 
 </div>
 </div>
@@ -304,11 +347,28 @@ Functions</h2></td></tr>
 <p>initializes the master DAQ task, all that fun stuff. This task probably manages a while plethora of smaller tasks </p>
 <p>This is a fairly standard function </p>
 
-<p class="definition">Definition at line <a class="el" href="daq_8c_source.html#l00010">10</a> of file <a class="el" href="daq_8c_source.html">daq.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="daq_8c_source.html#l00030">30</a> of file <a class="el" href="daq_8c_source.html">daq.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__state__engine_8h_source.html#l00021">_UV_DEFAULT_TASK_STACK_SIZE</a>, <a class="el" href="uvfr__utils_8h_source.html#l00278">uv_task_info::active_states</a>, <a class="el" href="daq_8c_source.html#l00044">daqMasterTask()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00279">uv_task_info::deletion_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00263">uv_task_info::max_instances</a>, <a class="el" href="uvfr__utils_8h_source.html#l00146">PROGRAMMING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00264">uv_task_info::stack_size</a>, <a class="el" href="uvfr__utils_8h_source.html#l00280">uv_task_info::suspension_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00286">uv_task_info::task_args</a>, <a class="el" href="uvfr__utils_8h_source.html#l00260">uv_task_info::task_function</a>, <a class="el" href="uvfr__utils_8h_source.html#l00256">uv_task_info::task_name</a>, <a class="el" href="uvfr__utils_8h_source.html#l00258">uv_task_info::task_period</a>, <a class="el" href="uvfr__utils_8h_source.html#l00261">uv_task_info::task_priority</a>, <a class="el" href="uvfr__utils_8h_source.html#l00147">UV_DRIVING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00117">UV_ERROR</a>, <a class="el" href="uvfr__utils_8h_source.html#l00150">UV_ERROR_STATE</a>, <a class="el" href="uvfr__utils_8h_source.html#l00149">UV_LAUNCH_CONTROL</a>, <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>, <a class="el" href="uvfr__utils_8h_source.html#l00145">UV_READY</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00040">uvCreateTask()</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__state__engine_8h_source.html#l00058">_UV_DEFAULT_TASK_STACK_SIZE</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00251">uv_task_info::active_states</a>, <a class="el" href="daq_8c_source.html#l00062">daqMasterTask()</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00252">uv_task_info::deletion_states</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00084">PROGRAMMING</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00231">uv_task_info::stack_size</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00253">uv_task_info::suspension_states</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00243">uv_task_info::task_args</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00227">uv_task_info::task_function</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00222">uv_task_info::task_name</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00224">uv_task_info::task_period</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00228">uv_task_info::task_priority</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00085">UV_DRIVING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00169">UV_ERROR</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00088">UV_ERROR_STATE</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00087">UV_LAUNCH_CONTROL</a>, <a class="el" href="uvfr__utils_8h_source.html#l00167">UV_OK</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00083">UV_READY</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00264">uvCreateTask()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00202">uvInitStateEngine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00164">uvInitStateEngine()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a07e7f750fa90de582a1e994dcf9b57d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07e7f750fa90de582a1e994dcf9b57d0">&#9670;&nbsp;</a></span>param_LUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* param_LUT[126]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="daq_8c_source.html#l00007">7</a> of file <a class="el" href="daq_8c_source.html">daq.c</a>.</p>
 
 </div>
 </div>

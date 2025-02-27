@@ -12,6 +12,8 @@
 extern TaskHandle_t init_task_handle;
 extern uint8_t               TxData[8];
 
+TaskHandle_t reset_handle = NULL;
+
 
 //#define CAN_TRANSMIT_TEST_IN_INIT
 
@@ -36,44 +38,6 @@ extern uint8_t               TxData[8];
  */
 void uvInit(void * arguments){
 	HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_15); //For debugging purposes, I wanna see if we actually end up here at some point
-
-
-#ifdef CAN_TRANSMIT_TEST_IN_INIT
-	TxData[0] = 0b10101010;
-	TxData[1] = 0b10101010;
-	TxData[2] = 0b10101010;
-	TxData[3] = 1;
-	TxData[4] = 2;
-	TxData[5] = 3;
-	TxData[6] = 0b10101010;
-	TxData[7] = 0b10101010;
-
-
-	HAL_StatusTypeDef can_send_status;
-		for(;;){
-			vTaskDelay(400);
-
-
-
-			TxHeader.IDE = CAN_ID_EXT;
-			TxHeader.ExtId = 0x1234;
-
-
-			TxHeader.DLC = 8;
-
-
-			//taskENTER_CRITICAL();
-			can_send_status = HAL_CAN_AddTxMessage(&hcan2, &TxHeader, TxData, &TxMailbox);
-			//taskEXIT_CRITICAL();
-
-			if (can_send_status != HAL_OK){
-											/* Transmission request Error */
-				//uvPanic("Unable to Transmit CAN msg",can_send_status);
-				handleCANbusError(&hcan2, 0);
-			}
-		}
-#endif //CAN Tx testing
-
 
 	char* error_msg = NULL;
 	uint8_t msg_length = 0;
@@ -133,7 +97,7 @@ void uvInit(void * arguments){
 	//osThreadDef_t MC_init_thread = {"MC_init",MC_Startup,osPriorityNormal,128,0};
 	uv_init_task_args* MC_init_args = uvMalloc(sizeof(uv_init_task_args));
 	MC_init_args->init_info_queue = init_validation_queue;
-	MC_init_args->specific_args = &(current_vehicle_settings->motor_controller_settings);
+	MC_init_args->specific_args = &(current_vehicle_settings->mc_settings);
 	//MC_init_args->meta_task_handle = osThreadCreate(&MC_init_thread,MC_init_args);
 	//vTaskResume( MC_init_args->meta_task_handle );
 	retval = xTaskCreate(MC_Startup,"MC_init",128,MC_init_args,osPriorityAboveNormal,&(MC_init_args->meta_task_handle));
@@ -266,6 +230,11 @@ void uvInit(void * arguments){
 
 }
 
+void uvSysResetDaemon(void* args){
+
+
+}
+
 /**@brief This function is a soft-reboot of the uv_utils_backend and OS abstraction.
  *
  * The idea here is to basically start from a blank slate and boot up everything. So therefore we must:
@@ -279,10 +248,12 @@ void uvInit(void * arguments){
  *
  */
 enum uv_status_t uvUtilsReset(){
+	xTaskCreate(uvSysResetDaemon,"reset",128,NULL,5,&reset_handle);
 	return UV_OK;
 }
 
-/** @deprecated I really dunno why this still exists
+/** @deprecated I really dunno why this still exists, but this gets called somewhere so Im leaving it.
+ * I think we just pass it NULL.
  *
  */
 void setup_extern_devices(void * argument){

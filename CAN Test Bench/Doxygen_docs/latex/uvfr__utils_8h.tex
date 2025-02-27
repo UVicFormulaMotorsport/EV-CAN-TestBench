@@ -1,5 +1,6 @@
 \hypertarget{uvfr__utils_8h}{}\doxysection{Core/\+Inc/uvfr\+\_\+utils.h File Reference}
 \label{uvfr__utils_8h}\index{Core/Inc/uvfr\_utils.h@{Core/Inc/uvfr\_utils.h}}
+{\ttfamily \#include \char`\"{}uvfr\+\_\+global\+\_\+config.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}cmsis\+\_\+os.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}adc.\+h\char`\"{}}\newline
@@ -10,8 +11,10 @@
 {\ttfamily \#include \char`\"{}spi.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Free\+R\+T\+O\+S.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}message\+\_\+buffer.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}uvfr\+\_\+settings.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}uvfr\+\_\+state\+\_\+engine.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}rb\+\_\+tree.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}bms.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}motor\+\_\+controller.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}dash.\+h\char`\"{}}\newline
@@ -37,13 +40,11 @@ struct \mbox{\hyperlink{structuv__semaphore__info}{uv\+\_\+semaphore\+\_\+info}}
 union \mbox{\hyperlink{unionaccess__control__info}{access\+\_\+control\+\_\+info}}
 \item 
 struct \mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}}
-\item 
+\begin{DoxyCompactList}\small\item\em Representative of a C\+AN message. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structuv__init__struct}{uv\+\_\+init\+\_\+struct}}
 \item 
-struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}}
-\begin{DoxyCompactList}\small\item\em This struct is designed to hold neccessary information about an R\+T\+OS task that will be managed by uvfr\+\_\+state\+\_\+engine. \end{DoxyCompactList}\item 
-struct \mbox{\hyperlink{structtm__data}{tm\+\_\+data}}
-\item 
+struct \mbox{\hyperlink{structuv__task__msg__t}{uv\+\_\+task\+\_\+msg\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Struct containing a message between two tasks. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structp__status}{p\+\_\+status}}
 \item 
 struct \mbox{\hyperlink{structuv__init__task__args}{uv\+\_\+init\+\_\+task\+\_\+args}}
@@ -55,41 +56,49 @@ struct \mbox{\hyperlink{structuv__init__task__response}{uv\+\_\+init\+\_\+task\+
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a483c9de27db573099572f5485ef841c9}{\+\_\+\+BV}}(x)~\mbox{\hyperlink{uvfr__utils_8h_aa17e4b09cf528c30099398ddedc48955}{\+\_\+\+B\+V\+\_\+16}}(x)
+\#define \mbox{\hyperlink{group__utility__macros_ga483c9de27db573099572f5485ef841c9}{\+\_\+\+BV}}(x)~\mbox{\hyperlink{group__utility__macros_gaa17e4b09cf528c30099398ddedc48955}{\+\_\+\+B\+V\+\_\+16}}(x)
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_adb4693d786f01e486ce4191758995c8f}{\+\_\+\+B\+V\+\_\+8}}(x)~((uint8\+\_\+t)(0x01U $>$$>$ x))
+\#define \mbox{\hyperlink{group__utility__macros_gadb4693d786f01e486ce4191758995c8f}{\+\_\+\+B\+V\+\_\+8}}(x)~((uint8\+\_\+t)(0x01U $>$$>$ x))
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_aa17e4b09cf528c30099398ddedc48955}{\+\_\+\+B\+V\+\_\+16}}(x)~((uint16\+\_\+t)(0x01U $>$$>$ x))
+\#define \mbox{\hyperlink{group__utility__macros_gaa17e4b09cf528c30099398ddedc48955}{\+\_\+\+B\+V\+\_\+16}}(x)~((uint16\+\_\+t)(0x01U $>$$>$ x))
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a581e5838a8a85f12137dd310b210024d}{\+\_\+\+B\+V\+\_\+32}}(x)~((uint32\+\_\+t)(0x01U $>$$>$ x))
+\#define \mbox{\hyperlink{group__utility__macros_ga581e5838a8a85f12137dd310b210024d}{\+\_\+\+B\+V\+\_\+32}}(x)~((uint32\+\_\+t)(0x01U $>$$>$ x))
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_ac590e01547ebac3946ea03be39e9a891}{endian\+Swap}}(x)~\mbox{\hyperlink{uvfr__utils_8h_aaffae84b1475df9ae84949feb94f556b}{endian\+Swap16}}(x)
+\#define \mbox{\hyperlink{group__utility__macros_gac590e01547ebac3946ea03be39e9a891}{endian\+Swap}}(x)~\mbox{\hyperlink{group__utility__macros_gaaffae84b1475df9ae84949feb94f556b}{endian\+Swap16}}(x)
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a250d3a099625ba439eb4ba4304d5faae}{endian\+Swap8}}(x)~x
+\#define \mbox{\hyperlink{group__utility__macros_ga250d3a099625ba439eb4ba4304d5faae}{endian\+Swap8}}(x)~x
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_aaffae84b1475df9ae84949feb94f556b}{endian\+Swap16}}(x)~(((x \& 0x00\+FF)$<$$<$8) $\vert$ ((x \& 0x\+F\+F00)$>$$>$8))
+\#define \mbox{\hyperlink{group__utility__macros_gaaffae84b1475df9ae84949feb94f556b}{endian\+Swap16}}(x)~(((x \& 0x00\+FF)$<$$<$8) $\vert$ ((x \& 0x\+F\+F00)$>$$>$8))
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_acb855e60a6051d73730aa95259a085af}{endian\+Swap32}}(x)~(((x \& 0x000000\+FF)$<$$<$16)$\vert$((x \& 0x0000\+F\+F00)$<$$<$8)$\vert$((x \& 0x00\+F\+F0000)$>$$>$8)$\vert$((x \& 0x\+F\+F000000)$>$$>$16))
+\#define \mbox{\hyperlink{group__utility__macros_gacb855e60a6051d73730aa95259a085af}{endian\+Swap32}}(x)~(((x \& 0x000000\+FF)$<$$<$16)$\vert$((x \& 0x0000\+F\+F00)$<$$<$8)$\vert$((x \& 0x00\+F\+F0000)$>$$>$8)$\vert$((x \& 0x\+F\+F000000)$>$$>$16))
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a829f8b8ab166c6d07df7023ee0b68300}{deserialize\+Small\+E16}}(x,  i)~((x\mbox{[}i\mbox{]})$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$8))
+\#define \mbox{\hyperlink{group__utility__macros_ga829f8b8ab166c6d07df7023ee0b68300}{deserialize\+Small\+E16}}(x,  i)~((x\mbox{[}i\mbox{]})$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$8))
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a6c69adff0f827031b2ec0a2220aa1fc8}{deserialize\+Small\+E32}}(x,  i)~((x\mbox{[}i\mbox{]})$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+2\mbox{]}$<$$<$16)$\vert$(x\mbox{[}i+3\mbox{]}$<$$<$24))
+\#define \mbox{\hyperlink{group__utility__macros_ga6c69adff0f827031b2ec0a2220aa1fc8}{deserialize\+Small\+E32}}(x,  i)~((x\mbox{[}i\mbox{]})$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+2\mbox{]}$<$$<$16)$\vert$(x\mbox{[}i+3\mbox{]}$<$$<$24))
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_adeeabe9f9f082a786e959610607229ae}{deserialize\+Big\+E16}}(x,  i)~((x\mbox{[}i\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+1\mbox{]}))
+\#define \mbox{\hyperlink{group__utility__macros_gadeeabe9f9f082a786e959610607229ae}{deserialize\+Big\+E16}}(x,  i)~((x\mbox{[}i\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+1\mbox{]}))
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a3c5631fa43a00757c6dd44f55650b051}{deserialize\+Big\+E32}}(x,  i)~((x\mbox{[}i\mbox{]}$<$$<$24)$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$16)$\vert$(x\mbox{[}i+2\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+3\mbox{]}))
+\#define \mbox{\hyperlink{group__utility__macros_ga3c5631fa43a00757c6dd44f55650b051}{deserialize\+Big\+E32}}(x,  i)~((x\mbox{[}i\mbox{]}$<$$<$24)$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$16)$\vert$(x\mbox{[}i+2\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+3\mbox{]}))
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a5c017766f44df98dde492a5e406e221c}{serialize\+Small\+E16}}(x,  d,  i)~x\mbox{[}i\mbox{]}=d\&0x00\+FF; x\mbox{[}i+1\mbox{]}=(d\&0x\+F\+F00)$>$$>$8
+\#define \mbox{\hyperlink{group__utility__macros_ga5c017766f44df98dde492a5e406e221c}{serialize\+Small\+E16}}(x,  d,  i)~x\mbox{[}i\mbox{]}=d\&0x00\+FF; x\mbox{[}i+1\mbox{]}=(d\&0x\+F\+F00)$>$$>$8
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a0fa9d4460bcee65d79e048b43dc879fd}{serialize\+Small\+E32}}(x,  d,  i)~x\mbox{[}i\mbox{]}=d\&0x000000\+FF; x\mbox{[}i+1\mbox{]}=(d\&0x0000\+F\+F00)$>$$>$8; x\mbox{[}i+2\mbox{]}=(d\&0x00\+F\+F0000)$>$$>$16; x\mbox{[}i+3\mbox{]}=(d\&0x\+F\+F000000)$>$$>$24
+\#define \mbox{\hyperlink{group__utility__macros_ga0fa9d4460bcee65d79e048b43dc879fd}{serialize\+Small\+E32}}(x,  d,  i)~x\mbox{[}i\mbox{]}=d\&0x000000\+FF; x\mbox{[}i+1\mbox{]}=(d\&0x0000\+F\+F00)$>$$>$8; x\mbox{[}i+2\mbox{]}=(d\&0x00\+F\+F0000)$>$$>$16; x\mbox{[}i+3\mbox{]}=(d\&0x\+F\+F000000)$>$$>$24
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a505ca43923e2bb2162e218c3b8484357}{serialize\+Big\+E16}}(x,  d,  i)~x\mbox{[}i+1\mbox{]}=d\&0x00\+FF; x\mbox{[}i\mbox{]}=(d\&0x\+F\+F00)$>$$>$8
+\#define \mbox{\hyperlink{group__utility__macros_ga505ca43923e2bb2162e218c3b8484357}{serialize\+Big\+E16}}(x,  d,  i)~x\mbox{[}i+1\mbox{]}=d\&0x00\+FF; x\mbox{[}i\mbox{]}=(d\&0x\+F\+F00)$>$$>$8
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a053aa19e84e50fd8c74f8d4bb0d7820f}{serialize\+Big\+E32}}(x,  d,  i)~x\mbox{[}i+3\mbox{]}=d\&0x000000\+FF; x\mbox{[}i+2\mbox{]}=(d\&0x0000\+F\+F00)$>$$>$8; x\mbox{[}i+1\mbox{]}=(d\&0x00\+F\+F0000)$>$$>$16; x\mbox{[}i\mbox{]}=(d\&0x\+F\+F000000)$>$$>$24
+\#define \mbox{\hyperlink{group__utility__macros_ga053aa19e84e50fd8c74f8d4bb0d7820f}{serialize\+Big\+E32}}(x,  d,  i)~x\mbox{[}i+3\mbox{]}=d\&0x000000\+FF; x\mbox{[}i+2\mbox{]}=(d\&0x0000\+F\+F00)$>$$>$8; x\mbox{[}i+1\mbox{]}=(d\&0x00\+F\+F0000)$>$$>$16; x\mbox{[}i\mbox{]}=(d\&0x\+F\+F000000)$>$$>$24
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a65e9886d74aaee76545e83dd09011727}{false}}~0
+\#define \mbox{\hyperlink{group__utility__macros_ga50e87beac8a57dd01bdaed51450269e3}{set\+Bits}}(x,  msk,  data)~x=(x\&($\sim$msk)$\vert$data)
+\begin{DoxyCompactList}\small\item\em macro to set bits of an int without touching the ones we dont want to edit \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__utility__macros_gade3043fb92536f8e1a616ba8aaef4ab9}{is\+Power\+Of\+Two}}(x)~(x\&\&(!(x\&(x-\/1))))
+\begin{DoxyCompactList}\small\item\em Returns a truthy value if \char`\"{}x\char`\"{} is a power of two. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__utility__macros_gaac2f65c6267d74d5d5136f82bf217efa}{safe\+Ptr\+Read}}(x)~($\ast$((x)?x\+:uv\+Panic(\char`\"{}nullptr\+\_\+deref\char`\"{},0)))
+\begin{DoxyCompactList}\small\item\em lil treat to help us avoid the dreaded null pointer dereference \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__utility__macros_gaf506fac19ab4ad3f5b7ddd00643e0b46}{safe\+Ptr\+Write}}(p,  x)~($\ast$((p)?p\+:\&x))
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}}~!\mbox{\hyperlink{uvfr__utils_8h_a65e9886d74aaee76545e83dd09011727}{false}}
+\#define \mbox{\hyperlink{group__utility__macros_ga65e9886d74aaee76545e83dd09011727}{false}}~0
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}}~!\mbox{\hyperlink{group__utility__macros_ga65e9886d74aaee76545e83dd09011727}{false}}
 \item 
 \#define \mbox{\hyperlink{uvfr__utils_8h_a40d625666ff5a3c5918ec7591f0628ed}{M\+A\+X\+\_\+\+I\+N\+I\+T\+\_\+\+T\+I\+ME}}~2500
 \item 
@@ -105,19 +114,7 @@ struct \mbox{\hyperlink{structuv__init__task__response}{uv\+\_\+init\+\_\+task\+
 \item 
 \#define \mbox{\hyperlink{uvfr__utils_8h_a3c2758e5f0e3f8d8e1470616418f60c8}{U\+V\+\_\+\+C\+A\+N\+\_\+\+C\+H\+A\+N\+N\+E\+L\+\_\+\+M\+A\+SK}}~0b00000110
 \item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a253c75b331d0976b9a414657cef780cd}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+V\+E\+H\+I\+C\+L\+E\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON}}~0b00000001
-\item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a3142d67aec5c34719e90cf122948f1db}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+P\+E\+R\+I\+O\+D\+I\+C\+\_\+\+S\+VC}}~0b00000010
-\item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_aae81d88a64e53c686e8e0fd01bfe723d}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+D\+O\+R\+M\+A\+N\+T\+\_\+\+S\+VC}}~0b00000011
-\item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a96c7c915194ecba48edd70def54a700b}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+M\+A\+SK}}~0b00000011
-\item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_afc49f7a5303ebabaa3fc0886d67f3e9a}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+L\+O\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+T\+O\+P\+\_\+\+T\+I\+ME}}~0b00000100
-\item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a0c0d91f0feee4f7b0816b3c06b61b459}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+L\+O\+G\+\_\+\+M\+E\+M\+\_\+\+U\+S\+A\+GE}}~0b00001000
-\item 
-\#define \mbox{\hyperlink{uvfr__utils_8h_a4d87bda0a72990876364bd8764777cb2}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+C\+D\+\_\+\+I\+G\+N\+O\+RE}}~0b00010000
+\#define \mbox{\hyperlink{uvfr__utils_8h_aa6688039909b8ed4eca05ab7a36fa8bd}{U\+V\+\_\+\+C\+A\+N\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+M\+EM}}~0b00001000
 \end{DoxyCompactItemize}
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
@@ -126,7 +123,7 @@ typedef uint8\+\_\+t \mbox{\hyperlink{uvfr__utils_8h_a0ecf26b576b9a54eca656b9be7
 \item 
 typedef uint8\+\_\+t \mbox{\hyperlink{uvfr__utils_8h_aa6ffd72eb4909ddb38c37a1369e13f09}{uv\+\_\+task\+\_\+id}}
 \item 
-typedef enum \mbox{\hyperlink{uvfr__state__engine_8h_af11e8677926913f2dd803fabbed3455c}{uv\+\_\+task\+\_\+cmd\+\_\+e}} \mbox{\hyperlink{uvfr__utils_8h_ae1b70a2c1baa7da5592e7324008636e4}{uv\+\_\+task\+\_\+cmd}}
+typedef enum \mbox{\hyperlink{group__state__engine__api_gaf11e8677926913f2dd803fabbed3455c}{uv\+\_\+task\+\_\+cmd\+\_\+e}} \mbox{\hyperlink{uvfr__utils_8h_ae1b70a2c1baa7da5592e7324008636e4}{uv\+\_\+task\+\_\+cmd}}
 \item 
 typedef uint8\+\_\+t \mbox{\hyperlink{uvfr__utils_8h_a96651e94773864de5bcf9028ab64ad19}{uv\+\_\+ext\+\_\+device\+\_\+id}}
 \item 
@@ -134,22 +131,18 @@ typedef uint32\+\_\+t \mbox{\hyperlink{uvfr__utils_8h_af1ca0b89ee88cdf48a7640d6e
 \item 
 typedef enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__utils_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}}
 \begin{DoxyCompactList}\small\item\em This is meant to be a return type from functions that indicates what is actually going on. \end{DoxyCompactList}\item 
-typedef enum \mbox{\hyperlink{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88}{uv\+\_\+task\+\_\+state\+\_\+t}} \mbox{\hyperlink{uvfr__utils_8h_a82006c09ffd194e360785bb51a39ec3f}{uv\+\_\+task\+\_\+status}}
-\item 
-typedef enum \mbox{\hyperlink{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6}{task\+\_\+priority}} \mbox{\hyperlink{uvfr__utils_8h_a0faa8cc05082e150c515bbddea144d90}{task\+\_\+priority}}
-\item 
 typedef enum \mbox{\hyperlink{uvfr__utils_8h_ac4bac060238ca2be3b3b3ca25c77cc8c}{access\+\_\+control\+\_\+t}} \mbox{\hyperlink{uvfr__utils_8h_a25c322a5b050bc1ab514e6d3e47c56a5}{access\+\_\+control\+\_\+type}}
 \item 
+typedef enum \mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0}{uv\+\_\+msg\+\_\+type\+\_\+t}} \mbox{\hyperlink{uvfr__utils_8h_ae0e8ee9ac0315ecdd228d9358e395c3d}{uv\+\_\+msg\+\_\+type}}
+\begin{DoxyCompactList}\small\item\em Enum dictating the meaning of a generic message. \end{DoxyCompactList}\item 
 typedef union \mbox{\hyperlink{unionaccess__control__info}{access\+\_\+control\+\_\+info}} \mbox{\hyperlink{uvfr__utils_8h_a93fd2ffb9029bc071a783fbfe4e3fcc9}{access\+\_\+control\+\_\+info}}
 \item 
 typedef struct \mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} \mbox{\hyperlink{uvfr__utils_8h_ad857192b5d0529e73642f1293d6bed75}{uv\+\_\+\+C\+A\+N\+\_\+msg}}
-\item 
+\begin{DoxyCompactList}\small\item\em Representative of a C\+AN message. \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{structuv__init__struct}{uv\+\_\+init\+\_\+struct}} \mbox{\hyperlink{uvfr__utils_8h_a43d8765a7826292bdbd7d5d9f6b865fd}{uv\+\_\+init\+\_\+struct}}
 \item 
-typedef struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} \mbox{\hyperlink{uvfr__utils_8h_aebe69bead1b7c3a1371ffe610708e0ef}{uv\+\_\+task\+\_\+info}}
-\begin{DoxyCompactList}\small\item\em This struct is designed to hold neccessary information about an R\+T\+OS task that will be managed by uvfr\+\_\+state\+\_\+engine. \end{DoxyCompactList}\item 
-typedef struct \mbox{\hyperlink{structtm__data}{tm\+\_\+data}} \mbox{\hyperlink{uvfr__utils_8h_ae05f8b07c18b39ec17c66903ecf90af9}{task\+\_\+management\+\_\+data}}
-\item 
+typedef struct \mbox{\hyperlink{structuv__task__msg__t}{uv\+\_\+task\+\_\+msg\+\_\+t}} \mbox{\hyperlink{uvfr__utils_8h_af54e76be0a4de86596cdf342473361e3}{uv\+\_\+task\+\_\+msg}}
+\begin{DoxyCompactList}\small\item\em Struct containing a message between two tasks. \end{DoxyCompactList}\item 
 typedef struct \mbox{\hyperlink{structp__status}{p\+\_\+status}} \mbox{\hyperlink{uvfr__utils_8h_a861993718f780fec899b00c842bae43b}{p\+\_\+status}}
 \item 
 typedef struct \mbox{\hyperlink{structuv__init__task__args}{uv\+\_\+init\+\_\+task\+\_\+args}} \mbox{\hyperlink{uvfr__utils_8h_a22371cac9dbfb95de19acc59e359d3df}{uv\+\_\+init\+\_\+task\+\_\+args}}
@@ -167,37 +160,22 @@ enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+
 \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a}{U\+V\+\_\+\+A\+B\+O\+R\+T\+ED}}
  \}
 \begin{DoxyCompactList}\small\item\em This is meant to be a return type from functions that indicates what is actually going on. \end{DoxyCompactList}\item 
-enum \mbox{\hyperlink{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88}{uv\+\_\+task\+\_\+state\+\_\+t}} \{ \mbox{\hyperlink{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88a529c3f9ad3ef9a8e387d875c7a118c7e}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+N\+O\+T\+\_\+\+S\+T\+A\+R\+T\+ED}}, 
-\mbox{\hyperlink{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88af6465f57e0b6515721c5cbebd769e691}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+D\+E\+L\+E\+T\+ED}}, 
-\mbox{\hyperlink{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88ad4da927019afea812b31d46d28b7354c}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+R\+U\+N\+N\+I\+NG}}, 
-\mbox{\hyperlink{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88a147f6febce613c666fe922907472ca0f}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+U\+S\+P\+E\+N\+D\+ED}}
- \}
-\item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6}{task\+\_\+priority}} \{ \newline
-\mbox{\hyperlink{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6ae1e0864e3b20ced26bebc93aa0766aec}{I\+D\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}, 
-\mbox{\hyperlink{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6adb8ee22a232a2787f32ba28da55c43c1}{L\+O\+W\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}, 
-\mbox{\hyperlink{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6afe8b192d5f5af86fd93c4f84f7ef3383}{B\+E\+L\+O\+W\+\_\+\+N\+O\+R\+M\+AL}}, 
-\mbox{\hyperlink{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6a06b314d863076d54942e065d90c179c4}{M\+E\+D\+I\+U\+M\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}, 
+enum \mbox{\hyperlink{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14}{data\+\_\+type}} \{ \newline
+\mbox{\hyperlink{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d}{U\+V\+\_\+\+U\+I\+N\+T8}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318}{U\+V\+\_\+\+I\+N\+T8}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0}{U\+V\+\_\+\+U\+I\+N\+T16}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787}{U\+V\+\_\+\+I\+N\+T16}}, 
 \newline
-\mbox{\hyperlink{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6a052e6887345173e8b7556738c28fa920}{A\+B\+O\+V\+E\+\_\+\+N\+O\+R\+M\+AL}}, 
-\mbox{\hyperlink{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6acb1785f11dd02aa7f5d164fb314c594e}{H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}, 
-\mbox{\hyperlink{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6aa20ceda9447596a05151a4a66db46a92}{R\+E\+A\+L\+T\+I\+M\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY}}
- \}
-\item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4}{uv\+\_\+vehicle\+\_\+state\+\_\+t}} \{ \newline
-\mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a5e3e7ecab0a58b320912cb4129641579}{U\+V\+\_\+\+I\+N\+IT}} = 0x0001, 
-\mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8}{U\+V\+\_\+\+R\+E\+A\+DY}} = 0x0002, 
-\mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4abed5371c079ef927fb67d8bb8e8aa286}{P\+R\+O\+G\+R\+A\+M\+M\+I\+NG}} = 0x0004, 
-\mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969}{U\+V\+\_\+\+D\+R\+I\+V\+I\+NG}} = 0x0008, 
+\mbox{\hyperlink{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0}{U\+V\+\_\+\+U\+I\+N\+T32}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc}{U\+V\+\_\+\+I\+N\+T32}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9}{U\+V\+\_\+\+F\+L\+O\+AT}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038}{U\+V\+\_\+\+D\+O\+U\+B\+LE}}, 
 \newline
-\mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4abfddf18c580c465bb3c27b522aa4e4a9}{U\+V\+\_\+\+S\+U\+S\+P\+E\+N\+D\+ED}} = 0x0010, 
-\mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a7ff39f8abdc9adbfd693e412e4aaeb6e}{U\+V\+\_\+\+L\+A\+U\+N\+C\+H\+\_\+\+C\+O\+N\+T\+R\+OL}} = 0x0020, 
-\mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4ac1fcacc095b8c0f1c9f452d51815bcb5}{U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE}} = 0x0040, 
-\mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4afdfc4cdb8c5210e05bdfdc3df51f80ff}{U\+V\+\_\+\+B\+O\+OT}} = 0x0080, 
-\newline
-\mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a2d3dc239e61931f9f779b71e84005b1b}{U\+V\+\_\+\+H\+A\+LT}} = 0x0100
+\mbox{\hyperlink{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a4e148426880e8cf1e81ceea15ddf2d7a}{U\+V\+\_\+\+I\+N\+T64}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a04c45245ce9c00f905a60cc34cca2de6}{U\+V\+\_\+\+U\+I\+N\+T64}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de}{U\+V\+\_\+\+S\+T\+R\+I\+NG}}
  \}
-\item 
+\begin{DoxyCompactList}\small\item\em Represents the data type of some variable. \end{DoxyCompactList}\item 
 enum \mbox{\hyperlink{uvfr__utils_8h_acd907d24ac9b557d684429bb0cd1ddb1}{uv\+\_\+driving\+\_\+mode\+\_\+t}} \{ \mbox{\hyperlink{uvfr__utils_8h_acd907d24ac9b557d684429bb0cd1ddb1aebc81705969b8c5ae986b0b2ec08d1d5}{normal}}, 
 \mbox{\hyperlink{uvfr__utils_8h_acd907d24ac9b557d684429bb0cd1ddb1ac67554de85b7a3c2ac961da6faf22e1e}{accel}}, 
 \mbox{\hyperlink{uvfr__utils_8h_acd907d24ac9b557d684429bb0cd1ddb1a6e980d942af313712cd3ac6e66c002a5}{econ}}, 
@@ -218,7 +196,26 @@ enum \mbox{\hyperlink{uvfr__utils_8h_ac4bac060238ca2be3b3b3ca25c77cc8c}{access\+
 \newline
 \mbox{\hyperlink{uvfr__utils_8h_ac4bac060238ca2be3b3b3ca25c77cc8ca3f79dc438166cce27d710db648212f3f}{U\+V\+\_\+\+S\+E\+M\+A\+P\+H\+O\+RE}}
  \}
-\end{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0}{uv\+\_\+msg\+\_\+type\+\_\+t}} \{ \newline
+\mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a177375f17a35e857332eaa8257d69828}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+R\+T\+\_\+\+C\+O\+M\+M\+A\+ND}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a2c3c485ade048e2c4f5ea03084ec8303}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+C\+O\+M\+M\+A\+ND}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0ae0d7301df0967632c5ee33579903e3c0}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+O\+M\+M\+A\+ND}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a316743e83f3e750384743efc5d0fc222}{U\+V\+\_\+\+C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+C\+K\+N\+O\+W\+L\+E\+D\+G\+E\+M\+E\+NT}}, 
+\newline
+\mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a01bdfc6895e649a6e3a8ab2753c91e98}{U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+P\+O\+RT}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0aaf1294570b3749c466ed23c61b36a2da}{U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+P\+O\+RT}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0ac15cb73f9ea395ab88e1ed539f448bd9}{U\+V\+\_\+\+W\+A\+K\+E\+UP}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0ab101873d13add058eea62b85ba752394}{U\+V\+\_\+\+P\+A\+R\+A\+M\+\_\+\+R\+E\+Q\+U\+E\+ST}}, 
+\newline
+\mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a62f939f7ac5c846756ae44422f04b6f3}{U\+V\+\_\+\+P\+A\+R\+A\+M\+\_\+\+R\+E\+A\+DY}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a6a2bfefeed4656cb00151759346573f7}{U\+V\+\_\+\+R\+A\+W\+\_\+\+D\+A\+T\+A\+\_\+\+T\+R\+A\+N\+S\+F\+ER}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0ad11ac6253dd171a0da8ddbe8f22b8922}{U\+V\+\_\+\+S\+C\+\_\+\+C\+O\+M\+M\+A\+ND}}, 
+\mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a1656d54e7fad0fc7b4ea4b113a866eae}{U\+V\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+SG}}, 
+\newline
+\mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a2cba2eda91eccb3d355a0f2dc64f8a36}{U\+V\+\_\+\+A\+S\+S\+I\+G\+N\+\_\+\+T\+A\+SK}}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum dictating the meaning of a generic message. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -226,7 +223,7 @@ void \mbox{\hyperlink{uvfr__utils_8h_a6d40598f9d8daa89ca159a2e87f4fd01}{uv\+Init
 \begin{DoxyCompactList}\small\item\em \+: Function that initializes all of the car\textquotesingle{}s stuff. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{uvfr__utils_8h_a92b5ac44171d49acd084c274385a043a}{\+\_\+\+\_\+uv\+Init\+Panic}} ()
 \begin{DoxyCompactList}\small\item\em Low Level Panic, that does not require the full U\+V\+FR utils functionality to be operational. \end{DoxyCompactList}\item 
-\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__utils_8h_a0186c036688c7852cf0ceaee96b343a3}{uv\+Is\+P\+T\+R\+Valid}} (void $\ast$ptr)
+\mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{uvfr__utils_8h_a0186c036688c7852cf0ceaee96b343a3}{uv\+Is\+P\+T\+R\+Valid}} (void $\ast$ptr)
 \begin{DoxyCompactList}\small\item\em function that checks to make sure a pointer points to a place it is allowed to point to \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -235,137 +232,13 @@ void \mbox{\hyperlink{uvfr__utils_8h_a92b5ac44171d49acd084c274385a043a}{\+\_\+\+
 \end{DoxyCompactItemize}
 
 
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+Byron Oser 
+\end{DoxyAuthor}
+
+
 \doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{uvfr__utils_8h_a483c9de27db573099572f5485ef841c9}\label{uvfr__utils_8h_a483c9de27db573099572f5485ef841c9}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!\_BV@{\_BV}}
-\index{\_BV@{\_BV}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{\_BV}{\_BV}}
-{\footnotesize\ttfamily \#define \+\_\+\+BV(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\mbox{\hyperlink{uvfr__utils_8h_aa17e4b09cf528c30099398ddedc48955}{\+\_\+\+B\+V\+\_\+16}}(x)}
-
-
-
-Definition at line 51 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_aa17e4b09cf528c30099398ddedc48955}\label{uvfr__utils_8h_aa17e4b09cf528c30099398ddedc48955}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!\_BV\_16@{\_BV\_16}}
-\index{\_BV\_16@{\_BV\_16}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{\_BV\_16}{\_BV\_16}}
-{\footnotesize\ttfamily \#define \+\_\+\+B\+V\+\_\+16(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((uint16\+\_\+t)(0x01U $>$$>$ x))}
-
-
-
-Definition at line 53 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a581e5838a8a85f12137dd310b210024d}\label{uvfr__utils_8h_a581e5838a8a85f12137dd310b210024d}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!\_BV\_32@{\_BV\_32}}
-\index{\_BV\_32@{\_BV\_32}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{\_BV\_32}{\_BV\_32}}
-{\footnotesize\ttfamily \#define \+\_\+\+B\+V\+\_\+32(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((uint32\+\_\+t)(0x01U $>$$>$ x))}
-
-
-
-Definition at line 54 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_adb4693d786f01e486ce4191758995c8f}\label{uvfr__utils_8h_adb4693d786f01e486ce4191758995c8f}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!\_BV\_8@{\_BV\_8}}
-\index{\_BV\_8@{\_BV\_8}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{\_BV\_8}{\_BV\_8}}
-{\footnotesize\ttfamily \#define \+\_\+\+B\+V\+\_\+8(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((uint8\+\_\+t)(0x01U $>$$>$ x))}
-
-
-
-Definition at line 52 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_adeeabe9f9f082a786e959610607229ae}\label{uvfr__utils_8h_adeeabe9f9f082a786e959610607229ae}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!deserializeBigE16@{deserializeBigE16}}
-\index{deserializeBigE16@{deserializeBigE16}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{deserializeBigE16}{deserializeBigE16}}
-{\footnotesize\ttfamily \#define deserialize\+Big\+E16(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{i }\end{DoxyParamCaption})~((x\mbox{[}i\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+1\mbox{]}))}
-
-
-
-Definition at line 63 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a3c5631fa43a00757c6dd44f55650b051}\label{uvfr__utils_8h_a3c5631fa43a00757c6dd44f55650b051}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!deserializeBigE32@{deserializeBigE32}}
-\index{deserializeBigE32@{deserializeBigE32}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{deserializeBigE32}{deserializeBigE32}}
-{\footnotesize\ttfamily \#define deserialize\+Big\+E32(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{i }\end{DoxyParamCaption})~((x\mbox{[}i\mbox{]}$<$$<$24)$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$16)$\vert$(x\mbox{[}i+2\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+3\mbox{]}))}
-
-
-
-Definition at line 64 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a829f8b8ab166c6d07df7023ee0b68300}\label{uvfr__utils_8h_a829f8b8ab166c6d07df7023ee0b68300}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!deserializeSmallE16@{deserializeSmallE16}}
-\index{deserializeSmallE16@{deserializeSmallE16}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{deserializeSmallE16}{deserializeSmallE16}}
-{\footnotesize\ttfamily \#define deserialize\+Small\+E16(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{i }\end{DoxyParamCaption})~((x\mbox{[}i\mbox{]})$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$8))}
-
-
-
-Definition at line 61 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a6c69adff0f827031b2ec0a2220aa1fc8}\label{uvfr__utils_8h_a6c69adff0f827031b2ec0a2220aa1fc8}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!deserializeSmallE32@{deserializeSmallE32}}
-\index{deserializeSmallE32@{deserializeSmallE32}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{deserializeSmallE32}{deserializeSmallE32}}
-{\footnotesize\ttfamily \#define deserialize\+Small\+E32(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{i }\end{DoxyParamCaption})~((x\mbox{[}i\mbox{]})$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+2\mbox{]}$<$$<$16)$\vert$(x\mbox{[}i+3\mbox{]}$<$$<$24))}
-
-
-
-Definition at line 62 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_ac590e01547ebac3946ea03be39e9a891}\label{uvfr__utils_8h_ac590e01547ebac3946ea03be39e9a891}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!endianSwap@{endianSwap}}
-\index{endianSwap@{endianSwap}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{endianSwap}{endianSwap}}
-{\footnotesize\ttfamily \#define endian\+Swap(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\mbox{\hyperlink{uvfr__utils_8h_aaffae84b1475df9ae84949feb94f556b}{endian\+Swap16}}(x)}
-
-
-
-Definition at line 56 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_aaffae84b1475df9ae84949feb94f556b}\label{uvfr__utils_8h_aaffae84b1475df9ae84949feb94f556b}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!endianSwap16@{endianSwap16}}
-\index{endianSwap16@{endianSwap16}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{endianSwap16}{endianSwap16}}
-{\footnotesize\ttfamily \#define endian\+Swap16(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(((x \& 0x00\+FF)$<$$<$8) $\vert$ ((x \& 0x\+F\+F00)$>$$>$8))}
-
-
-
-Definition at line 58 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_acb855e60a6051d73730aa95259a085af}\label{uvfr__utils_8h_acb855e60a6051d73730aa95259a085af}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!endianSwap32@{endianSwap32}}
-\index{endianSwap32@{endianSwap32}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{endianSwap32}{endianSwap32}}
-{\footnotesize\ttfamily \#define endian\+Swap32(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(((x \& 0x000000\+FF)$<$$<$16)$\vert$((x \& 0x0000\+F\+F00)$<$$<$8)$\vert$((x \& 0x00\+F\+F0000)$>$$>$8)$\vert$((x \& 0x\+F\+F000000)$>$$>$16))}
-
-
-
-Definition at line 59 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a250d3a099625ba439eb4ba4304d5faae}\label{uvfr__utils_8h_a250d3a099625ba439eb4ba4304d5faae}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!endianSwap8@{endianSwap8}}
-\index{endianSwap8@{endianSwap8}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{endianSwap8}{endianSwap8}}
-{\footnotesize\ttfamily \#define endian\+Swap8(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x}
-
-
-
-Definition at line 57 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a65e9886d74aaee76545e83dd09011727}\label{uvfr__utils_8h_a65e9886d74aaee76545e83dd09011727}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!false@{false}}
-\index{false@{false}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{false}{false}}
-{\footnotesize\ttfamily \#define false~0}
-
-
-
-Definition at line 72 of file uvfr\+\_\+utils.\+h.
-
 \mbox{\Hypertarget{uvfr__utils_8h_a4808a3bb38a3243b37a3690b9a02eba7}\label{uvfr__utils_8h_a4808a3bb38a3243b37a3690b9a02eba7}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!INIT\_CHECK\_PERIOD@{INIT\_CHECK\_PERIOD}}
 \index{INIT\_CHECK\_PERIOD@{INIT\_CHECK\_PERIOD}!uvfr\_utils.h@{uvfr\_utils.h}}
@@ -374,7 +247,7 @@ Definition at line 72 of file uvfr\+\_\+utils.\+h.
 
 
 
-Definition at line 88 of file uvfr\+\_\+utils.\+h.
+Definition at line 146 of file uvfr\+\_\+utils.\+h.
 
 \mbox{\Hypertarget{uvfr__utils_8h_a40d625666ff5a3c5918ec7591f0628ed}\label{uvfr__utils_8h_a40d625666ff5a3c5918ec7591f0628ed}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!MAX\_INIT\_TIME@{MAX\_INIT\_TIME}}
@@ -384,57 +257,7 @@ Definition at line 88 of file uvfr\+\_\+utils.\+h.
 
 
 
-Definition at line 87 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a505ca43923e2bb2162e218c3b8484357}\label{uvfr__utils_8h_a505ca43923e2bb2162e218c3b8484357}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!serializeBigE16@{serializeBigE16}}
-\index{serializeBigE16@{serializeBigE16}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{serializeBigE16}{serializeBigE16}}
-{\footnotesize\ttfamily \#define serialize\+Big\+E16(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{d,  }\item[{}]{i }\end{DoxyParamCaption})~x\mbox{[}i+1\mbox{]}=d\&0x00\+FF; x\mbox{[}i\mbox{]}=(d\&0x\+F\+F00)$>$$>$8}
-
-
-
-Definition at line 68 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a053aa19e84e50fd8c74f8d4bb0d7820f}\label{uvfr__utils_8h_a053aa19e84e50fd8c74f8d4bb0d7820f}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!serializeBigE32@{serializeBigE32}}
-\index{serializeBigE32@{serializeBigE32}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{serializeBigE32}{serializeBigE32}}
-{\footnotesize\ttfamily \#define serialize\+Big\+E32(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{d,  }\item[{}]{i }\end{DoxyParamCaption})~x\mbox{[}i+3\mbox{]}=d\&0x000000\+FF; x\mbox{[}i+2\mbox{]}=(d\&0x0000\+F\+F00)$>$$>$8; x\mbox{[}i+1\mbox{]}=(d\&0x00\+F\+F0000)$>$$>$16; x\mbox{[}i\mbox{]}=(d\&0x\+F\+F000000)$>$$>$24}
-
-
-
-Definition at line 69 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a5c017766f44df98dde492a5e406e221c}\label{uvfr__utils_8h_a5c017766f44df98dde492a5e406e221c}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!serializeSmallE16@{serializeSmallE16}}
-\index{serializeSmallE16@{serializeSmallE16}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{serializeSmallE16}{serializeSmallE16}}
-{\footnotesize\ttfamily \#define serialize\+Small\+E16(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{d,  }\item[{}]{i }\end{DoxyParamCaption})~x\mbox{[}i\mbox{]}=d\&0x00\+FF; x\mbox{[}i+1\mbox{]}=(d\&0x\+F\+F00)$>$$>$8}
-
-
-
-Definition at line 66 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a0fa9d4460bcee65d79e048b43dc879fd}\label{uvfr__utils_8h_a0fa9d4460bcee65d79e048b43dc879fd}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!serializeSmallE32@{serializeSmallE32}}
-\index{serializeSmallE32@{serializeSmallE32}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{serializeSmallE32}{serializeSmallE32}}
-{\footnotesize\ttfamily \#define serialize\+Small\+E32(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{d,  }\item[{}]{i }\end{DoxyParamCaption})~x\mbox{[}i\mbox{]}=d\&0x000000\+FF; x\mbox{[}i+1\mbox{]}=(d\&0x0000\+F\+F00)$>$$>$8; x\mbox{[}i+2\mbox{]}=(d\&0x00\+F\+F0000)$>$$>$16; x\mbox{[}i+3\mbox{]}=(d\&0x\+F\+F000000)$>$$>$24}
-
-
-
-Definition at line 67 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a41f9c5fb8b08eb5dc3edce4dcb37fee7}\label{uvfr__utils_8h_a41f9c5fb8b08eb5dc3edce4dcb37fee7}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!true@{true}}
-\index{true@{true}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{true}{true}}
-{\footnotesize\ttfamily \#define true~!\mbox{\hyperlink{uvfr__utils_8h_a65e9886d74aaee76545e83dd09011727}{false}}}
-
-
-
-Definition at line 73 of file uvfr\+\_\+utils.\+h.
+Definition at line 145 of file uvfr\+\_\+utils.\+h.
 
 \mbox{\Hypertarget{uvfr__utils_8h_a16b23f220af0f78310f4fe6cfeb6ab0d}\label{uvfr__utils_8h_a16b23f220af0f78310f4fe6cfeb6ab0d}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!USE\_OLED\_DEBUG@{USE\_OLED\_DEBUG}}
@@ -444,7 +267,7 @@ Definition at line 73 of file uvfr\+\_\+utils.\+h.
 
 
 
-Definition at line 105 of file uvfr\+\_\+utils.\+h.
+Definition at line 157 of file uvfr\+\_\+utils.\+h.
 
 \mbox{\Hypertarget{uvfr__utils_8h_abdad0cac69564db7eec85ef103281130}\label{uvfr__utils_8h_abdad0cac69564db7eec85ef103281130}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_CAN1@{UV\_CAN1}}
@@ -454,7 +277,7 @@ Definition at line 105 of file uvfr\+\_\+utils.\+h.
 
 
 
-Definition at line 101 of file uvfr\+\_\+utils.\+h.
+Definition at line 153 of file uvfr\+\_\+utils.\+h.
 
 \mbox{\Hypertarget{uvfr__utils_8h_a0b946cc6e8a3f7995d65c1921cfe989d}\label{uvfr__utils_8h_a0b946cc6e8a3f7995d65c1921cfe989d}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_CAN2@{UV\_CAN2}}
@@ -464,7 +287,7 @@ Definition at line 101 of file uvfr\+\_\+utils.\+h.
 
 
 
-Definition at line 102 of file uvfr\+\_\+utils.\+h.
+Definition at line 154 of file uvfr\+\_\+utils.\+h.
 
 \mbox{\Hypertarget{uvfr__utils_8h_a3c2758e5f0e3f8d8e1470616418f60c8}\label{uvfr__utils_8h_a3c2758e5f0e3f8d8e1470616418f60c8}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_CAN\_CHANNEL\_MASK@{UV\_CAN\_CHANNEL\_MASK}}
@@ -474,7 +297,17 @@ Definition at line 102 of file uvfr\+\_\+utils.\+h.
 
 
 
-Definition at line 205 of file uvfr\+\_\+utils.\+h.
+Definition at line 263 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{uvfr__utils_8h_aa6688039909b8ed4eca05ab7a36fa8bd}\label{uvfr__utils_8h_aa6688039909b8ed4eca05ab7a36fa8bd}} 
+\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_CAN\_DYNAMIC\_MEM@{UV\_CAN\_DYNAMIC\_MEM}}
+\index{UV\_CAN\_DYNAMIC\_MEM@{UV\_CAN\_DYNAMIC\_MEM}!uvfr\_utils.h@{uvfr\_utils.h}}
+\doxysubsubsection{\texorpdfstring{UV\_CAN\_DYNAMIC\_MEM}{UV\_CAN\_DYNAMIC\_MEM}}
+{\footnotesize\ttfamily \#define U\+V\+\_\+\+C\+A\+N\+\_\+\+D\+Y\+N\+A\+M\+I\+C\+\_\+\+M\+EM~0b00001000}
+
+
+
+Definition at line 264 of file uvfr\+\_\+utils.\+h.
 
 \mbox{\Hypertarget{uvfr__utils_8h_aa55012016c572366a0747ff7298c7fec}\label{uvfr__utils_8h_aa55012016c572366a0747ff7298c7fec}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_CAN\_EXTENDED\_ID@{UV\_CAN\_EXTENDED\_ID}}
@@ -484,77 +317,7 @@ Definition at line 205 of file uvfr\+\_\+utils.\+h.
 
 
 
-Definition at line 204 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_aae81d88a64e53c686e8e0fd01bfe723d}\label{uvfr__utils_8h_aae81d88a64e53c686e8e0fd01bfe723d}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_DORMANT\_SVC@{UV\_TASK\_DORMANT\_SVC}}
-\index{UV\_TASK\_DORMANT\_SVC@{UV\_TASK\_DORMANT\_SVC}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{UV\_TASK\_DORMANT\_SVC}{UV\_TASK\_DORMANT\_SVC}}
-{\footnotesize\ttfamily \#define U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+D\+O\+R\+M\+A\+N\+T\+\_\+\+S\+VC~0b00000011}
-
-
-
-Definition at line 228 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a0c0d91f0feee4f7b0816b3c06b61b459}\label{uvfr__utils_8h_a0c0d91f0feee4f7b0816b3c06b61b459}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_LOG\_MEM\_USAGE@{UV\_TASK\_LOG\_MEM\_USAGE}}
-\index{UV\_TASK\_LOG\_MEM\_USAGE@{UV\_TASK\_LOG\_MEM\_USAGE}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{UV\_TASK\_LOG\_MEM\_USAGE}{UV\_TASK\_LOG\_MEM\_USAGE}}
-{\footnotesize\ttfamily \#define U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+L\+O\+G\+\_\+\+M\+E\+M\+\_\+\+U\+S\+A\+GE~0b00001000}
-
-
-
-Definition at line 231 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_afc49f7a5303ebabaa3fc0886d67f3e9a}\label{uvfr__utils_8h_afc49f7a5303ebabaa3fc0886d67f3e9a}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_LOG\_START\_STOP\_TIME@{UV\_TASK\_LOG\_START\_STOP\_TIME}}
-\index{UV\_TASK\_LOG\_START\_STOP\_TIME@{UV\_TASK\_LOG\_START\_STOP\_TIME}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{UV\_TASK\_LOG\_START\_STOP\_TIME}{UV\_TASK\_LOG\_START\_STOP\_TIME}}
-{\footnotesize\ttfamily \#define U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+L\+O\+G\+\_\+\+S\+T\+A\+R\+T\+\_\+\+S\+T\+O\+P\+\_\+\+T\+I\+ME~0b00000100}
-
-
-
-Definition at line 230 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a96c7c915194ecba48edd70def54a700b}\label{uvfr__utils_8h_a96c7c915194ecba48edd70def54a700b}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_MANAGER\_MASK@{UV\_TASK\_MANAGER\_MASK}}
-\index{UV\_TASK\_MANAGER\_MASK@{UV\_TASK\_MANAGER\_MASK}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{UV\_TASK\_MANAGER\_MASK}{UV\_TASK\_MANAGER\_MASK}}
-{\footnotesize\ttfamily \#define U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+M\+A\+N\+A\+G\+E\+R\+\_\+\+M\+A\+SK~0b00000011}
-
-
-
-Definition at line 229 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a3142d67aec5c34719e90cf122948f1db}\label{uvfr__utils_8h_a3142d67aec5c34719e90cf122948f1db}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_PERIODIC\_SVC@{UV\_TASK\_PERIODIC\_SVC}}
-\index{UV\_TASK\_PERIODIC\_SVC@{UV\_TASK\_PERIODIC\_SVC}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{UV\_TASK\_PERIODIC\_SVC}{UV\_TASK\_PERIODIC\_SVC}}
-{\footnotesize\ttfamily \#define U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+P\+E\+R\+I\+O\+D\+I\+C\+\_\+\+S\+VC~0b00000010}
-
-
-
-Definition at line 227 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a4d87bda0a72990876364bd8764777cb2}\label{uvfr__utils_8h_a4d87bda0a72990876364bd8764777cb2}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_SCD\_IGNORE@{UV\_TASK\_SCD\_IGNORE}}
-\index{UV\_TASK\_SCD\_IGNORE@{UV\_TASK\_SCD\_IGNORE}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{UV\_TASK\_SCD\_IGNORE}{UV\_TASK\_SCD\_IGNORE}}
-{\footnotesize\ttfamily \#define U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+C\+D\+\_\+\+I\+G\+N\+O\+RE~0b00010000}
-
-
-
-Definition at line 232 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a253c75b331d0976b9a414657cef780cd}\label{uvfr__utils_8h_a253c75b331d0976b9a414657cef780cd}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_VEHICLE\_APPLICATION@{UV\_TASK\_VEHICLE\_APPLICATION}}
-\index{UV\_TASK\_VEHICLE\_APPLICATION@{UV\_TASK\_VEHICLE\_APPLICATION}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{UV\_TASK\_VEHICLE\_APPLICATION}{UV\_TASK\_VEHICLE\_APPLICATION}}
-{\footnotesize\ttfamily \#define U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+V\+E\+H\+I\+C\+L\+E\+\_\+\+A\+P\+P\+L\+I\+C\+A\+T\+I\+ON~0b00000001}
-
-
-
-Definition at line 226 of file uvfr\+\_\+utils.\+h.
+Definition at line 262 of file uvfr\+\_\+utils.\+h.
 
 
 
@@ -579,7 +342,7 @@ Definition at line 226 of file uvfr\+\_\+utils.\+h.
 
 
 
-Definition at line 77 of file uvfr\+\_\+utils.\+h.
+Definition at line 134 of file uvfr\+\_\+utils.\+h.
 
 \mbox{\Hypertarget{uvfr__utils_8h_a861993718f780fec899b00c842bae43b}\label{uvfr__utils_8h_a861993718f780fec899b00c842bae43b}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!p\_status@{p\_status}}
@@ -587,23 +350,15 @@ Definition at line 77 of file uvfr\+\_\+utils.\+h.
 \doxysubsubsection{\texorpdfstring{p\_status}{p\_status}}
 {\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structp__status}{p\+\_\+status}} \mbox{\hyperlink{structp__status}{p\+\_\+status}}}
 
-\mbox{\Hypertarget{uvfr__utils_8h_ae05f8b07c18b39ec17c66903ecf90af9}\label{uvfr__utils_8h_ae05f8b07c18b39ec17c66903ecf90af9}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!task\_management\_data@{task\_management\_data}}
-\index{task\_management\_data@{task\_management\_data}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{task\_management\_data}{task\_management\_data}}
-{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structtm__data}{tm\+\_\+data}} \mbox{\hyperlink{uvfr__utils_8h_ae05f8b07c18b39ec17c66903ecf90af9}{task\+\_\+management\+\_\+data}}}
-
-\mbox{\Hypertarget{uvfr__utils_8h_a0faa8cc05082e150c515bbddea144d90}\label{uvfr__utils_8h_a0faa8cc05082e150c515bbddea144d90}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!task\_priority@{task\_priority}}
-\index{task\_priority@{task\_priority}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{task\_priority}{task\_priority}}
-{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6}{task\+\_\+priority}} \mbox{\hyperlink{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6}{task\+\_\+priority}}}
-
 \mbox{\Hypertarget{uvfr__utils_8h_ad857192b5d0529e73642f1293d6bed75}\label{uvfr__utils_8h_ad857192b5d0529e73642f1293d6bed75}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_CAN\_msg@{uv\_CAN\_msg}}
 \index{uv\_CAN\_msg@{uv\_CAN\_msg}!uvfr\_utils.h@{uvfr\_utils.h}}
 \doxysubsubsection{\texorpdfstring{uv\_CAN\_msg}{uv\_CAN\_msg}}
 {\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} \mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}}}
+
+
+
+Representative of a C\+AN message. 
 
 \mbox{\Hypertarget{uvfr__utils_8h_a96651e94773864de5bcf9028ab64ad19}\label{uvfr__utils_8h_a96651e94773864de5bcf9028ab64ad19}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_ext\_device\_id@{uv\_ext\_device\_id}}
@@ -613,7 +368,7 @@ Definition at line 77 of file uvfr\+\_\+utils.\+h.
 
 
 
-Definition at line 81 of file uvfr\+\_\+utils.\+h.
+Definition at line 138 of file uvfr\+\_\+utils.\+h.
 
 \mbox{\Hypertarget{uvfr__utils_8h_a43d8765a7826292bdbd7d5d9f6b865fd}\label{uvfr__utils_8h_a43d8765a7826292bdbd7d5d9f6b865fd}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_init\_struct@{uv\_init\_struct}}
@@ -651,11 +406,21 @@ Is returned in the initialization queue, and is read by {\ttfamily \mbox{\hyperl
 
 Data used by the uvfr\+\_\+utils library to do what it needs to do \+:) 
 
-This is a global variable that is initialized at some point at launch \mbox{\Hypertarget{uvfr__utils_8h_aef3770e45bbacbf527fd93dd80eea9b9}\label{uvfr__utils_8h_aef3770e45bbacbf527fd93dd80eea9b9}} 
+This is a global variable that is initialized at some point at launch \mbox{\Hypertarget{uvfr__utils_8h_ae0e8ee9ac0315ecdd228d9358e395c3d}\label{uvfr__utils_8h_ae0e8ee9ac0315ecdd228d9358e395c3d}} 
+\index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_msg\_type@{uv\_msg\_type}}
+\index{uv\_msg\_type@{uv\_msg\_type}!uvfr\_utils.h@{uvfr\_utils.h}}
+\doxysubsubsection{\texorpdfstring{uv\_msg\_type}{uv\_msg\_type}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0}{uv\+\_\+msg\+\_\+type\+\_\+t}} \mbox{\hyperlink{uvfr__utils_8h_ae0e8ee9ac0315ecdd228d9358e395c3d}{uv\+\_\+msg\+\_\+type}}}
+
+
+
+Enum dictating the meaning of a generic message. 
+
+\mbox{\Hypertarget{uvfr__utils_8h_aef3770e45bbacbf527fd93dd80eea9b9}\label{uvfr__utils_8h_aef3770e45bbacbf527fd93dd80eea9b9}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_status@{uv\_status}}
 \index{uv\_status@{uv\_status}!uvfr\_utils.h@{uvfr\_utils.h}}
 \doxysubsubsection{\texorpdfstring{uv\_status}{uv\_status}}
-{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}}}
 
 
 
@@ -665,11 +430,11 @@ Use this as a return value for functions you want to know the success of. In gen
 \index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_task\_cmd@{uv\_task\_cmd}}
 \index{uv\_task\_cmd@{uv\_task\_cmd}!uvfr\_utils.h@{uvfr\_utils.h}}
 \doxysubsubsection{\texorpdfstring{uv\_task\_cmd}{uv\_task\_cmd}}
-{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{uvfr__state__engine_8h_af11e8677926913f2dd803fabbed3455c}{uv\+\_\+task\+\_\+cmd\+\_\+e}} \mbox{\hyperlink{uvfr__state__engine_8h_ae1b70a2c1baa7da5592e7324008636e4}{uv\+\_\+task\+\_\+cmd}}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{group__state__engine__api_gaf11e8677926913f2dd803fabbed3455c}{uv\+\_\+task\+\_\+cmd\+\_\+e}} \mbox{\hyperlink{group__state__engine__api_gae1b70a2c1baa7da5592e7324008636e4}{uv\+\_\+task\+\_\+cmd}}}
 
 
 
-Definition at line 79 of file uvfr\+\_\+utils.\+h.
+Definition at line 136 of file uvfr\+\_\+utils.\+h.
 
 \mbox{\Hypertarget{uvfr__utils_8h_aa6ffd72eb4909ddb38c37a1369e13f09}\label{uvfr__utils_8h_aa6ffd72eb4909ddb38c37a1369e13f09}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_task\_id@{uv\_task\_id}}
@@ -679,41 +444,27 @@ Definition at line 79 of file uvfr\+\_\+utils.\+h.
 
 
 
-Definition at line 78 of file uvfr\+\_\+utils.\+h.
+Definition at line 135 of file uvfr\+\_\+utils.\+h.
 
-\mbox{\Hypertarget{uvfr__utils_8h_aebe69bead1b7c3a1371ffe610708e0ef}\label{uvfr__utils_8h_aebe69bead1b7c3a1371ffe610708e0ef}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_task\_info@{uv\_task\_info}}
-\index{uv\_task\_info@{uv\_task\_info}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{uv\_task\_info}{uv\_task\_info}}
-{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}}}
+\mbox{\Hypertarget{uvfr__utils_8h_af54e76be0a4de86596cdf342473361e3}\label{uvfr__utils_8h_af54e76be0a4de86596cdf342473361e3}} 
+\index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_task\_msg@{uv\_task\_msg}}
+\index{uv\_task\_msg@{uv\_task\_msg}!uvfr\_utils.h@{uvfr\_utils.h}}
+\doxysubsubsection{\texorpdfstring{uv\_task\_msg}{uv\_task\_msg}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuv__task__msg__t}{uv\+\_\+task\+\_\+msg\+\_\+t}} \mbox{\hyperlink{uvfr__utils_8h_af54e76be0a4de86596cdf342473361e3}{uv\+\_\+task\+\_\+msg}}}
 
 
 
-This struct is designed to hold neccessary information about an R\+T\+OS task that will be managed by uvfr\+\_\+state\+\_\+engine. 
+Struct containing a message between two tasks. 
 
-{\ttfamily task\+\_\+id} is an internal ID assigned to every task and is used by uvfr\+\_\+utils. {\ttfamily task\+\_\+name} is the name of the task. This must be less than 15 characters, and ended with a null terminator.
-
-{\ttfamily task\+\_\+function} is a pointer to the function we want the task to run {\ttfamily task\+\_\+priority} is the priority of the task {\ttfamily max\+\_\+instances} is the number of legal instances
-
-{\ttfamily task\+\_\+state} is an internal representation of what the task is up to. This is needed because the R\+T\+OS task may not actually exist. {\ttfamily active\+\_\+states} dictates when the states are active
-
-{\ttfamily task\+\_\+handle} is an os\+Thread\+Id created by Free\+R\+T\+OS when it initializes the task. {\ttfamily next} exists because this shit needs to exist in a linked list, and my ass is too lazy to create a generic struct with it
-
-{\ttfamily cmd\+\_\+data} stores the command we really want this task to execute \mbox{\Hypertarget{uvfr__utils_8h_a82006c09ffd194e360785bb51a39ec3f}\label{uvfr__utils_8h_a82006c09ffd194e360785bb51a39ec3f}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_task\_status@{uv\_task\_status}}
-\index{uv\_task\_status@{uv\_task\_status}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{uv\_task\_status}{uv\_task\_status}}
-{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88}{uv\+\_\+task\+\_\+state\+\_\+t}}  \mbox{\hyperlink{uvfr__utils_8h_a82006c09ffd194e360785bb51a39ec3f}{uv\+\_\+task\+\_\+status}}}
-
-\mbox{\Hypertarget{uvfr__utils_8h_af1ca0b89ee88cdf48a7640d6ec793350}\label{uvfr__utils_8h_af1ca0b89ee88cdf48a7640d6ec793350}} 
+This is a generic type that is best used in situations where the message could mean a variety of different things. For niche applications or where efficiency is paramount, we recommend creating a bespoke protocol. \mbox{\Hypertarget{uvfr__utils_8h_af1ca0b89ee88cdf48a7640d6ec793350}\label{uvfr__utils_8h_af1ca0b89ee88cdf48a7640d6ec793350}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_timespan\_ms@{uv\_timespan\_ms}}
 \index{uv\_timespan\_ms@{uv\_timespan\_ms}!uvfr\_utils.h@{uvfr\_utils.h}}
 \doxysubsubsection{\texorpdfstring{uv\_timespan\_ms}{uv\_timespan\_ms}}
-{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{uvfr__utils_8h_af1ca0b89ee88cdf48a7640d6ec793350}{uv\+\_\+timespan\+\_\+ms}}}
+{\footnotesize\ttfamily typedef uint32\+\_\+t \mbox{\hyperlink{uvfr__state__engine_8h_af1ca0b89ee88cdf48a7640d6ec793350}{uv\+\_\+timespan\+\_\+ms}}}
 
 
 
-Definition at line 82 of file uvfr\+\_\+utils.\+h.
+Definition at line 139 of file uvfr\+\_\+utils.\+h.
 
 
 
@@ -748,47 +499,67 @@ U\+V\+\_\+\+S\+E\+M\+A\+P\+H\+O\+RE&\\
 \end{DoxyEnumFields}
 
 
-Definition at line 173 of file uvfr\+\_\+utils.\+h.
+Definition at line 211 of file uvfr\+\_\+utils.\+h.
 
-\mbox{\Hypertarget{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6}\label{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!task\_priority@{task\_priority}}
-\index{task\_priority@{task\_priority}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{task\_priority}{task\_priority}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6}{task\+\_\+priority}}}
+\mbox{\Hypertarget{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14}\label{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14}} 
+\index{uvfr\_utils.h@{uvfr\_utils.h}!data\_type@{data\_type}}
+\index{data\_type@{data\_type}!uvfr\_utils.h@{uvfr\_utils.h}}
+\doxysubsubsection{\texorpdfstring{data\_type}{data\_type}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14}{data\+\_\+type}}}
+
+
+
+Represents the data type of some variable. 
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{IDLE\_TASK\_PRIORITY@{IDLE\_TASK\_PRIORITY}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!IDLE\_TASK\_PRIORITY@{IDLE\_TASK\_PRIORITY}}}\mbox{\Hypertarget{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6ae1e0864e3b20ced26bebc93aa0766aec}\label{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6ae1e0864e3b20ced26bebc93aa0766aec}} 
-I\+D\+L\+E\+\_\+\+T\+A\+S\+K\+\_\+\+P\+R\+I\+O\+R\+I\+TY&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_UINT8@{UV\_UINT8}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_UINT8@{UV\_UINT8}}}\mbox{\Hypertarget{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d}\label{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d}} 
+U\+V\+\_\+\+U\+I\+N\+T8&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LOW\_PRIORITY@{LOW\_PRIORITY}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!LOW\_PRIORITY@{LOW\_PRIORITY}}}\mbox{\Hypertarget{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6adb8ee22a232a2787f32ba28da55c43c1}\label{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6adb8ee22a232a2787f32ba28da55c43c1}} 
-L\+O\+W\+\_\+\+P\+R\+I\+O\+R\+I\+TY&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_INT8@{UV\_INT8}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_INT8@{UV\_INT8}}}\mbox{\Hypertarget{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318}\label{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318}} 
+U\+V\+\_\+\+I\+N\+T8&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{BELOW\_NORMAL@{BELOW\_NORMAL}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!BELOW\_NORMAL@{BELOW\_NORMAL}}}\mbox{\Hypertarget{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6afe8b192d5f5af86fd93c4f84f7ef3383}\label{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6afe8b192d5f5af86fd93c4f84f7ef3383}} 
-B\+E\+L\+O\+W\+\_\+\+N\+O\+R\+M\+AL&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_UINT16@{UV\_UINT16}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_UINT16@{UV\_UINT16}}}\mbox{\Hypertarget{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0}\label{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0}} 
+U\+V\+\_\+\+U\+I\+N\+T16&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MEDIUM\_PRIORITY@{MEDIUM\_PRIORITY}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!MEDIUM\_PRIORITY@{MEDIUM\_PRIORITY}}}\mbox{\Hypertarget{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6a06b314d863076d54942e065d90c179c4}\label{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6a06b314d863076d54942e065d90c179c4}} 
-M\+E\+D\+I\+U\+M\+\_\+\+P\+R\+I\+O\+R\+I\+TY&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_INT16@{UV\_INT16}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_INT16@{UV\_INT16}}}\mbox{\Hypertarget{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787}\label{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787}} 
+U\+V\+\_\+\+I\+N\+T16&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{ABOVE\_NORMAL@{ABOVE\_NORMAL}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!ABOVE\_NORMAL@{ABOVE\_NORMAL}}}\mbox{\Hypertarget{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6a052e6887345173e8b7556738c28fa920}\label{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6a052e6887345173e8b7556738c28fa920}} 
-A\+B\+O\+V\+E\+\_\+\+N\+O\+R\+M\+AL&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_UINT32@{UV\_UINT32}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_UINT32@{UV\_UINT32}}}\mbox{\Hypertarget{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0}\label{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0}} 
+U\+V\+\_\+\+U\+I\+N\+T32&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{HIGH\_PRIORITY@{HIGH\_PRIORITY}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!HIGH\_PRIORITY@{HIGH\_PRIORITY}}}\mbox{\Hypertarget{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6acb1785f11dd02aa7f5d164fb314c594e}\label{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6acb1785f11dd02aa7f5d164fb314c594e}} 
-H\+I\+G\+H\+\_\+\+P\+R\+I\+O\+R\+I\+TY&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_INT32@{UV\_INT32}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_INT32@{UV\_INT32}}}\mbox{\Hypertarget{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc}\label{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc}} 
+U\+V\+\_\+\+I\+N\+T32&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{REALTIME\_PRIORITY@{REALTIME\_PRIORITY}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!REALTIME\_PRIORITY@{REALTIME\_PRIORITY}}}\mbox{\Hypertarget{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6aa20ceda9447596a05151a4a66db46a92}\label{uvfr__utils_8h_a6166ed80f8e3bd62f1e7e6122c8817f6aa20ceda9447596a05151a4a66db46a92}} 
-R\+E\+A\+L\+T\+I\+M\+E\+\_\+\+P\+R\+I\+O\+R\+I\+TY&\\
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_FLOAT@{UV\_FLOAT}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_FLOAT@{UV\_FLOAT}}}\mbox{\Hypertarget{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9}\label{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9}} 
+U\+V\+\_\+\+F\+L\+O\+AT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_DOUBLE@{UV\_DOUBLE}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_DOUBLE@{UV\_DOUBLE}}}\mbox{\Hypertarget{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038}\label{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038}} 
+U\+V\+\_\+\+D\+O\+U\+B\+LE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_INT64@{UV\_INT64}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_INT64@{UV\_INT64}}}\mbox{\Hypertarget{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a4e148426880e8cf1e81ceea15ddf2d7a}\label{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a4e148426880e8cf1e81ceea15ddf2d7a}} 
+U\+V\+\_\+\+I\+N\+T64&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_UINT64@{UV\_UINT64}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_UINT64@{UV\_UINT64}}}\mbox{\Hypertarget{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a04c45245ce9c00f905a60cc34cca2de6}\label{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a04c45245ce9c00f905a60cc34cca2de6}} 
+U\+V\+\_\+\+U\+I\+N\+T64&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_STRING@{UV\_STRING}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_STRING@{UV\_STRING}}}\mbox{\Hypertarget{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de}\label{uvfr__utils_8h_ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de}} 
+U\+V\+\_\+\+S\+T\+R\+I\+NG&\\
 \hline
 
 \end{DoxyEnumFields}
 
 
-Definition at line 130 of file uvfr\+\_\+utils.\+h.
+Definition at line 177 of file uvfr\+\_\+utils.\+h.
 
 \mbox{\Hypertarget{uvfr__utils_8h_acd907d24ac9b557d684429bb0cd1ddb1}\label{uvfr__utils_8h_acd907d24ac9b557d684429bb0cd1ddb1}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_driving\_mode\_t@{uv\_driving\_mode\_t}}
@@ -816,7 +587,7 @@ limp&\\
 \end{DoxyEnumFields}
 
 
-Definition at line 156 of file uvfr\+\_\+utils.\+h.
+Definition at line 194 of file uvfr\+\_\+utils.\+h.
 
 \mbox{\Hypertarget{uvfr__utils_8h_ad70cbc8929c4ad7a5901cd9eef5ca9b0}\label{uvfr__utils_8h_ad70cbc8929c4ad7a5901cd9eef5ca9b0}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_external\_device@{uv\_external\_device}}
@@ -848,7 +619,75 @@ P\+DU&\\
 \end{DoxyEnumFields}
 
 
-Definition at line 166 of file uvfr\+\_\+utils.\+h.
+Definition at line 204 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0}} 
+\index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_msg\_type\_t@{uv\_msg\_type\_t}}
+\index{uv\_msg\_type\_t@{uv\_msg\_type\_t}!uvfr\_utils.h@{uvfr\_utils.h}}
+\doxysubsubsection{\texorpdfstring{uv\_msg\_type\_t}{uv\_msg\_type\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0}{uv\+\_\+msg\+\_\+type\+\_\+t}}}
+
+
+
+Enum dictating the meaning of a generic message. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_TASK\_START\_COMMAND@{UV\_TASK\_START\_COMMAND}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_START\_COMMAND@{UV\_TASK\_START\_COMMAND}}}\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a177375f17a35e857332eaa8257d69828}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a177375f17a35e857332eaa8257d69828}} 
+U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+R\+T\+\_\+\+C\+O\+M\+M\+A\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_TASK\_DELETE\_COMMAND@{UV\_TASK\_DELETE\_COMMAND}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_DELETE\_COMMAND@{UV\_TASK\_DELETE\_COMMAND}}}\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a2c3c485ade048e2c4f5ea03084ec8303}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a2c3c485ade048e2c4f5ea03084ec8303}} 
+U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+D\+E\+L\+E\+T\+E\+\_\+\+C\+O\+M\+M\+A\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_TASK\_SUSPEND\_COMMAND@{UV\_TASK\_SUSPEND\_COMMAND}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_SUSPEND\_COMMAND@{UV\_TASK\_SUSPEND\_COMMAND}}}\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0ae0d7301df0967632c5ee33579903e3c0}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0ae0d7301df0967632c5ee33579903e3c0}} 
+U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+O\+M\+M\+A\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_COMMAND\_ACKNOWLEDGEMENT@{UV\_COMMAND\_ACKNOWLEDGEMENT}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_COMMAND\_ACKNOWLEDGEMENT@{UV\_COMMAND\_ACKNOWLEDGEMENT}}}\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a316743e83f3e750384743efc5d0fc222}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a316743e83f3e750384743efc5d0fc222}} 
+U\+V\+\_\+\+C\+O\+M\+M\+A\+N\+D\+\_\+\+A\+C\+K\+N\+O\+W\+L\+E\+D\+G\+E\+M\+E\+NT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_TASK\_STATUS\_REPORT@{UV\_TASK\_STATUS\_REPORT}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_STATUS\_REPORT@{UV\_TASK\_STATUS\_REPORT}}}\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a01bdfc6895e649a6e3a8ab2753c91e98}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a01bdfc6895e649a6e3a8ab2753c91e98}} 
+U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+P\+O\+RT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_ERROR\_REPORT@{UV\_ERROR\_REPORT}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_ERROR\_REPORT@{UV\_ERROR\_REPORT}}}\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0aaf1294570b3749c466ed23c61b36a2da}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0aaf1294570b3749c466ed23c61b36a2da}} 
+U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+R\+E\+P\+O\+RT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_WAKEUP@{UV\_WAKEUP}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_WAKEUP@{UV\_WAKEUP}}}\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0ac15cb73f9ea395ab88e1ed539f448bd9}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0ac15cb73f9ea395ab88e1ed539f448bd9}} 
+U\+V\+\_\+\+W\+A\+K\+E\+UP&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_PARAM\_REQUEST@{UV\_PARAM\_REQUEST}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_PARAM\_REQUEST@{UV\_PARAM\_REQUEST}}}\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0ab101873d13add058eea62b85ba752394}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0ab101873d13add058eea62b85ba752394}} 
+U\+V\+\_\+\+P\+A\+R\+A\+M\+\_\+\+R\+E\+Q\+U\+E\+ST&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_PARAM\_READY@{UV\_PARAM\_READY}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_PARAM\_READY@{UV\_PARAM\_READY}}}\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a62f939f7ac5c846756ae44422f04b6f3}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a62f939f7ac5c846756ae44422f04b6f3}} 
+U\+V\+\_\+\+P\+A\+R\+A\+M\+\_\+\+R\+E\+A\+DY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_RAW\_DATA\_TRANSFER@{UV\_RAW\_DATA\_TRANSFER}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_RAW\_DATA\_TRANSFER@{UV\_RAW\_DATA\_TRANSFER}}}\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a6a2bfefeed4656cb00151759346573f7}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a6a2bfefeed4656cb00151759346573f7}} 
+U\+V\+\_\+\+R\+A\+W\+\_\+\+D\+A\+T\+A\+\_\+\+T\+R\+A\+N\+S\+F\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_SC\_COMMAND@{UV\_SC\_COMMAND}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_SC\_COMMAND@{UV\_SC\_COMMAND}}}\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0ad11ac6253dd171a0da8ddbe8f22b8922}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0ad11ac6253dd171a0da8ddbe8f22b8922}} 
+U\+V\+\_\+\+S\+C\+\_\+\+C\+O\+M\+M\+A\+ND&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_INVALID\_MSG@{UV\_INVALID\_MSG}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_INVALID\_MSG@{UV\_INVALID\_MSG}}}\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a1656d54e7fad0fc7b4ea4b113a866eae}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a1656d54e7fad0fc7b4ea4b113a866eae}} 
+U\+V\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+M\+SG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_ASSIGN\_TASK@{UV\_ASSIGN\_TASK}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_ASSIGN\_TASK@{UV\_ASSIGN\_TASK}}}\mbox{\Hypertarget{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a2cba2eda91eccb3d355a0f2dc64f8a36}\label{uvfr__utils_8h_ab1a7ab8d68287c5f3027a59e355d32e0a2cba2eda91eccb3d355a0f2dc64f8a36}} 
+U\+V\+\_\+\+A\+S\+S\+I\+G\+N\+\_\+\+T\+A\+SK&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 222 of file uvfr\+\_\+utils.\+h.
 
 \mbox{\Hypertarget{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}\label{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}} 
 \index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_status\_t@{uv\_status\_t}}
@@ -880,83 +719,7 @@ U\+V\+\_\+\+A\+B\+O\+R\+T\+ED&\\
 \end{DoxyEnumFields}
 
 
-Definition at line 114 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88}\label{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_task\_state\_t@{uv\_task\_state\_t}}
-\index{uv\_task\_state\_t@{uv\_task\_state\_t}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{uv\_task\_state\_t}{uv\_task\_state\_t}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88}{uv\+\_\+task\+\_\+state\+\_\+t}}}
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_TASK\_NOT\_STARTED@{UV\_TASK\_NOT\_STARTED}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_NOT\_STARTED@{UV\_TASK\_NOT\_STARTED}}}\mbox{\Hypertarget{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88a529c3f9ad3ef9a8e387d875c7a118c7e}\label{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88a529c3f9ad3ef9a8e387d875c7a118c7e}} 
-U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+N\+O\+T\+\_\+\+S\+T\+A\+R\+T\+ED&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_TASK\_DELETED@{UV\_TASK\_DELETED}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_DELETED@{UV\_TASK\_DELETED}}}\mbox{\Hypertarget{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88af6465f57e0b6515721c5cbebd769e691}\label{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88af6465f57e0b6515721c5cbebd769e691}} 
-U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+D\+E\+L\+E\+T\+ED&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_TASK\_RUNNING@{UV\_TASK\_RUNNING}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_RUNNING@{UV\_TASK\_RUNNING}}}\mbox{\Hypertarget{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88ad4da927019afea812b31d46d28b7354c}\label{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88ad4da927019afea812b31d46d28b7354c}} 
-U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+R\+U\+N\+N\+I\+NG&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_TASK\_SUSPENDED@{UV\_TASK\_SUSPENDED}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_TASK\_SUSPENDED@{UV\_TASK\_SUSPENDED}}}\mbox{\Hypertarget{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88a147f6febce613c666fe922907472ca0f}\label{uvfr__utils_8h_ac94b6bd11853173599ccff034055cc88a147f6febce613c666fe922907472ca0f}} 
-U\+V\+\_\+\+T\+A\+S\+K\+\_\+\+S\+U\+S\+P\+E\+N\+D\+ED&\\
-\hline
-
-\end{DoxyEnumFields}
-
-
-Definition at line 123 of file uvfr\+\_\+utils.\+h.
-
-\mbox{\Hypertarget{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4}\label{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4}} 
-\index{uvfr\_utils.h@{uvfr\_utils.h}!uv\_vehicle\_state\_t@{uv\_vehicle\_state\_t}}
-\index{uv\_vehicle\_state\_t@{uv\_vehicle\_state\_t}!uvfr\_utils.h@{uvfr\_utils.h}}
-\doxysubsubsection{\texorpdfstring{uv\_vehicle\_state\_t}{uv\_vehicle\_state\_t}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4}{uv\+\_\+vehicle\+\_\+state\+\_\+t}}}
-
-Type made to represent the state of the vehicle, and the location in the state machine The states are powers of two to make it easier to discern tasks that need to happen in multiple states \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_INIT@{UV\_INIT}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_INIT@{UV\_INIT}}}\mbox{\Hypertarget{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a5e3e7ecab0a58b320912cb4129641579}\label{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a5e3e7ecab0a58b320912cb4129641579}} 
-U\+V\+\_\+\+I\+N\+IT&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_READY@{UV\_READY}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_READY@{UV\_READY}}}\mbox{\Hypertarget{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8}\label{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8}} 
-U\+V\+\_\+\+R\+E\+A\+DY&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{PROGRAMMING@{PROGRAMMING}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!PROGRAMMING@{PROGRAMMING}}}\mbox{\Hypertarget{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4abed5371c079ef927fb67d8bb8e8aa286}\label{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4abed5371c079ef927fb67d8bb8e8aa286}} 
-P\+R\+O\+G\+R\+A\+M\+M\+I\+NG&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_DRIVING@{UV\_DRIVING}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_DRIVING@{UV\_DRIVING}}}\mbox{\Hypertarget{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969}\label{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969}} 
-U\+V\+\_\+\+D\+R\+I\+V\+I\+NG&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_SUSPENDED@{UV\_SUSPENDED}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_SUSPENDED@{UV\_SUSPENDED}}}\mbox{\Hypertarget{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4abfddf18c580c465bb3c27b522aa4e4a9}\label{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4abfddf18c580c465bb3c27b522aa4e4a9}} 
-U\+V\+\_\+\+S\+U\+S\+P\+E\+N\+D\+ED&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_LAUNCH\_CONTROL@{UV\_LAUNCH\_CONTROL}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_LAUNCH\_CONTROL@{UV\_LAUNCH\_CONTROL}}}\mbox{\Hypertarget{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a7ff39f8abdc9adbfd693e412e4aaeb6e}\label{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a7ff39f8abdc9adbfd693e412e4aaeb6e}} 
-U\+V\+\_\+\+L\+A\+U\+N\+C\+H\+\_\+\+C\+O\+N\+T\+R\+OL&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_ERROR\_STATE@{UV\_ERROR\_STATE}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_ERROR\_STATE@{UV\_ERROR\_STATE}}}\mbox{\Hypertarget{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4ac1fcacc095b8c0f1c9f452d51815bcb5}\label{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4ac1fcacc095b8c0f1c9f452d51815bcb5}} 
-U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_BOOT@{UV\_BOOT}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_BOOT@{UV\_BOOT}}}\mbox{\Hypertarget{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4afdfc4cdb8c5210e05bdfdc3df51f80ff}\label{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4afdfc4cdb8c5210e05bdfdc3df51f80ff}} 
-U\+V\+\_\+\+B\+O\+OT&\\
-\hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{UV\_HALT@{UV\_HALT}!uvfr\_utils.h@{uvfr\_utils.h}}\index{uvfr\_utils.h@{uvfr\_utils.h}!UV\_HALT@{UV\_HALT}}}\mbox{\Hypertarget{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a2d3dc239e61931f9f779b71e84005b1b}\label{uvfr__utils_8h_a259abff5a03eaf908dc8f03d99f478e4a2d3dc239e61931f9f779b71e84005b1b}} 
-U\+V\+\_\+\+H\+A\+LT&\\
-\hline
-
-\end{DoxyEnumFields}
-
-
-Definition at line 143 of file uvfr\+\_\+utils.\+h.
+Definition at line 166 of file uvfr\+\_\+utils.\+h.
 
 
 
@@ -976,7 +739,7 @@ Calling \+\_\+uv\+Init\+Panic() is irreversable and will cause the vehicle to ha
 \end{DoxyAttention}
 
 
-Definition at line 300 of file uvfr\+\_\+utils.\+c.
+Definition at line 271 of file uvfr\+\_\+utils.\+c.
 
 
 
@@ -1031,7 +794,7 @@ Now we are going to create a bunch of tasks that will initialize our car\textquo
 \DoxyCodeLine{\textcolor{comment}{//osThreadDef\_t MC\_init\_thread = \{"MC\_init",MC\_Startup,osPriorityNormal,128,0\};}}
 \DoxyCodeLine{\mbox{\hyperlink{structuv__init__task__args}{uv\_init\_task\_args}}* MC\_init\_args = uvMalloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structuv__init__task__args}{uv\_init\_task\_args}}));}
 \DoxyCodeLine{MC\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_adec47e7a54822cacfb8fcfc35a22157f}{init\_info\_queue}} = init\_validation\_queue;}
-\DoxyCodeLine{MC\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_a61a9b579a1e65a3875a4edf3201a39f3}{specific\_args}} = \&(\mbox{\hyperlink{uvfr__settings_8h_a03566822d1b8893362970a459bd67daf}{current\_vehicle\_settings}}-\/>\mbox{\hyperlink{structuv__vehicle__settings_afe1add4c8e85f7fa1da768b50dee7b88}{motor\_controller\_settings}});}
+\DoxyCodeLine{MC\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_a61a9b579a1e65a3875a4edf3201a39f3}{specific\_args}} = \&(\mbox{\hyperlink{uvfr__settings_8h_a03566822d1b8893362970a459bd67daf}{current\_vehicle\_settings}}-\/>\mbox{\hyperlink{structuv__vehicle__settings_ad0b0375d2c1674abc6f972eec47e9cb7}{mc\_settings}});}
 \DoxyCodeLine{\textcolor{comment}{//MC\_init\_args-\/>meta\_task\_handle = osThreadCreate(\&MC\_init\_thread,MC\_init\_args);}}
 \DoxyCodeLine{\textcolor{comment}{//vTaskResume( MC\_init\_args-\/>meta\_task\_handle );}}
 \DoxyCodeLine{retval = xTaskCreate(\mbox{\hyperlink{motor__controller_8h_aed1407e1e0fd59dc7c5e5d6db671f0ab}{MC\_Startup}},\textcolor{stringliteral}{"MC\_init"},128,MC\_init\_args,osPriorityAboveNormal,\&(MC\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_a3b81430245e7f832dc1112e53b0ef7ad}{meta\_task\_handle}}));}
@@ -1048,7 +811,7 @@ Now we are going to create a bunch of tasks that will initialize our car\textquo
 \DoxyCodeLine{\textcolor{comment}{//osThreadDef\_t BMS\_init\_thread = \{"BMS\_init",BMS\_Init,osPriorityNormal,128,0\};}}
 \DoxyCodeLine{\mbox{\hyperlink{structuv__init__task__args}{uv\_init\_task\_args}}* BMS\_init\_args = uvMalloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{structuv__init__task__args}{uv\_init\_task\_args}}));}
 \DoxyCodeLine{BMS\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_adec47e7a54822cacfb8fcfc35a22157f}{init\_info\_queue}} = init\_validation\_queue;}
-\DoxyCodeLine{BMS\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_a61a9b579a1e65a3875a4edf3201a39f3}{specific\_args}} = \&(\mbox{\hyperlink{uvfr__settings_8h_a03566822d1b8893362970a459bd67daf}{current\_vehicle\_settings}}-\/>\mbox{\hyperlink{structuv__vehicle__settings_a0eeeba4e1c97c6bf86257c612da451e5}{bms\_settings}});}
+\DoxyCodeLine{BMS\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_a61a9b579a1e65a3875a4edf3201a39f3}{specific\_args}} = \&(\mbox{\hyperlink{uvfr__settings_8h_a03566822d1b8893362970a459bd67daf}{current\_vehicle\_settings}}-\/>\mbox{\hyperlink{structuv__vehicle__settings_a6cdca5b5474080f1dff4d19ef96435e1}{bms\_settings}});}
 \DoxyCodeLine{\textcolor{comment}{//BMS\_init\_args-\/>meta\_task\_handle = osThreadCreate(\&BMS\_init\_thread,BMS\_init\_args);}}
 \DoxyCodeLine{retval = xTaskCreate(\mbox{\hyperlink{bms_8h_aa9af83736568f74c94d41f3f16adf513}{BMS\_Init}},\textcolor{stringliteral}{"BMS\_init"},128,BMS\_init\_args,osPriorityAboveNormal,\&(BMS\_init\_args-\/>\mbox{\hyperlink{structuv__init__task__args_a3b81430245e7f832dc1112e53b0ef7ad}{meta\_task\_handle}}));}
 \DoxyCodeLine{\textcolor{keywordflow}{if}(retval != pdPASS)\{}
@@ -1093,11 +856,11 @@ We allocate space for a response from the initialization.
 
 Clean up, clean up, everybody clean up, clean up, clean up, everybody do your share! The following code cleans up all the threads that were running, and free up used memory
 
-Definition at line 37 of file uvfr\+\_\+utils.\+c.
+Definition at line 39 of file uvfr\+\_\+utils.\+c.
 
 
 
-References \+\_\+\+\_\+uv\+Init\+Panic(), B\+M\+S\+\_\+\+Init(), uv\+\_\+vehicle\+\_\+settings\+::bms\+\_\+settings, change\+Vehicle\+State(), current\+\_\+vehicle\+\_\+settings, uv\+\_\+init\+\_\+task\+\_\+response\+::device, uv\+\_\+init\+\_\+task\+\_\+response\+::errmsg, handle\+C\+A\+Nbus\+Error(), hcan2, uv\+\_\+vehicle\+\_\+settings\+::imd\+\_\+settings, I\+N\+I\+T\+\_\+\+C\+H\+E\+C\+K\+\_\+\+P\+E\+R\+I\+OD, uv\+\_\+init\+\_\+task\+\_\+args\+::init\+\_\+info\+\_\+queue, init\+\_\+task\+\_\+handle, init\+I\+M\+D(), init\+P\+D\+U(), M\+A\+X\+\_\+\+I\+N\+I\+T\+\_\+\+T\+I\+ME, M\+C\+\_\+\+Startup(), uv\+\_\+init\+\_\+task\+\_\+args\+::meta\+\_\+task\+\_\+handle, uv\+\_\+vehicle\+\_\+settings\+::motor\+\_\+controller\+\_\+settings, uv\+\_\+init\+\_\+task\+\_\+response\+::nchar, uv\+\_\+init\+\_\+task\+\_\+args\+::specific\+\_\+args, uv\+\_\+init\+\_\+task\+\_\+response\+::status, Tx\+Data, Tx\+Header, Tx\+Mailbox, U\+V\+\_\+\+OK, U\+V\+\_\+\+R\+E\+A\+DY, uv\+Free(), uv\+Init\+State\+Engine(), uv\+Panic(), uv\+Settings\+Init(), and uv\+Start\+State\+Machine().
+References \+\_\+\+\_\+uv\+Init\+Panic(), B\+M\+S\+\_\+\+Init(), uv\+\_\+vehicle\+\_\+settings\+::bms\+\_\+settings, change\+Vehicle\+State(), current\+\_\+vehicle\+\_\+settings, uv\+\_\+init\+\_\+task\+\_\+response\+::device, uv\+\_\+init\+\_\+task\+\_\+response\+::errmsg, uv\+\_\+vehicle\+\_\+settings\+::imd\+\_\+settings, I\+N\+I\+T\+\_\+\+C\+H\+E\+C\+K\+\_\+\+P\+E\+R\+I\+OD, uv\+\_\+init\+\_\+task\+\_\+args\+::init\+\_\+info\+\_\+queue, init\+\_\+task\+\_\+handle, init\+I\+M\+D(), init\+P\+D\+U(), M\+A\+X\+\_\+\+I\+N\+I\+T\+\_\+\+T\+I\+ME, uv\+\_\+vehicle\+\_\+settings\+::mc\+\_\+settings, M\+C\+\_\+\+Startup(), uv\+\_\+init\+\_\+task\+\_\+args\+::meta\+\_\+task\+\_\+handle, uv\+\_\+init\+\_\+task\+\_\+response\+::nchar, uv\+\_\+init\+\_\+task\+\_\+args\+::specific\+\_\+args, uv\+\_\+init\+\_\+task\+\_\+response\+::status, U\+V\+\_\+\+OK, U\+V\+\_\+\+R\+E\+A\+DY, uv\+Init\+State\+Engine(), uv\+Settings\+Init(), and uv\+Start\+State\+Machine().
 
 
 
@@ -1107,7 +870,7 @@ Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
 \index{uvfr\_utils.h@{uvfr\_utils.h}!uvIsPTRValid@{uvIsPTRValid}}
 \index{uvIsPTRValid@{uvIsPTRValid}!uvfr\_utils.h@{uvfr\_utils.h}}
 \doxysubsubsection{\texorpdfstring{uvIsPTRValid()}{uvIsPTRValid()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+Is\+P\+T\+R\+Valid (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+Is\+P\+T\+R\+Valid (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
 
 
 
@@ -1117,7 +880,7 @@ The primary motivation for this is to avoid trying to dereference a pointer that
 
 Exiting gracefully can be pretty neat sometimes. 
 
-Definition at line 430 of file uvfr\+\_\+utils.\+c.
+Definition at line 401 of file uvfr\+\_\+utils.\+c.
 
 
 

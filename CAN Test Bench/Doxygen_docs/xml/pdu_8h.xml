@@ -1,0 +1,1117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="pdu_8h" kind="file" language="C++">
+    <compoundname>pdu.h</compoundname>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includedby refid="uvfr__utils_8h" local="yes">Core/Inc/uvfr_utils.h</includedby>
+    <includedby refid="bms_8c" local="yes">Core/Src/bms.c</includedby>
+    <includedby refid="can_8c" local="yes">Core/Src/can.c</includedby>
+    <includedby refid="imd_8c" local="yes">Core/Src/imd.c</includedby>
+    <includedby refid="main_8c" local="yes">Core/Src/main.c</includedby>
+    <includedby refid="motor__controller_8c" local="yes">Core/Src/motor_controller.c</includedby>
+    <includedby refid="pdu_8c" local="yes">Core/Src/pdu.c</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>stdarg.h</label>
+      </node>
+      <node id="12">
+        <label>tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>stdint.h</label>
+      </node>
+      <node id="32">
+        <label>stdlib.h</label>
+      </node>
+      <node id="27">
+        <label>oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cmsis_os.h</label>
+      </node>
+      <node id="5">
+        <label>uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>message_buffer.h</label>
+      </node>
+      <node id="23">
+        <label>bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Core/Inc/pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>rb_tree.h</label>
+        <link refid="rb__tree_8h"/>
+      </node>
+      <node id="10">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="9">
+        <label>can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>uvfr_global_config.h</label>
+        <link refid="uvfr__global__config_8h"/>
+      </node>
+      <node id="30">
+        <label>FreeRTOSConfig.h</label>
+        <link refid="_free_r_t_o_s_config_8h"/>
+      </node>
+      <node id="24">
+        <label>uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>odometer.h</label>
+        <link refid="odometer_8h"/>
+      </node>
+      <node id="3">
+        <label>stm32f4xx_hal.h</label>
+      </node>
+      <node id="15">
+        <label>FreeRTOS.h</label>
+      </node>
+      <node id="11">
+        <label>dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>task.h</label>
+      </node>
+      <node id="2">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="17">
+        <label>Core/Inc/tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>Core/Inc/imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>Core/Src/daq.c</label>
+        <link refid="daq_8c"/>
+      </node>
+      <node id="28">
+        <label>Core/Inc/dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>Core/Inc/driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>Core/Inc/temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Core/Src/pdu.c</label>
+        <link refid="pdu_8c"/>
+      </node>
+      <node id="10">
+        <label>Core/Src/dash.c</label>
+        <link refid="dash_8c"/>
+      </node>
+      <node id="18">
+        <label>Core/Src/tim.c</label>
+        <link refid="tim_8c"/>
+      </node>
+      <node id="44">
+        <label>Core/Src/uvfr_state_engine.c</label>
+        <link refid="uvfr__state__engine_8c"/>
+      </node>
+      <node id="39">
+        <label>Core/Inc/oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Core/Inc/adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>Core/Src/stm32f4xx_hal_msp.c</label>
+        <link refid="stm32f4xx__hal__msp_8c"/>
+      </node>
+      <node id="2">
+        <label>Core/Inc/uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>Core/Src/odometer.c</label>
+        <link refid="odometer_8c"/>
+      </node>
+      <node id="31">
+        <label>Core/Src/freertos.c</label>
+        <link refid="freertos_8c"/>
+      </node>
+      <node id="8">
+        <label>Core/Src/bms.c</label>
+        <link refid="bms_8c"/>
+      </node>
+      <node id="27">
+        <label>Core/Inc/bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Core/Src/motor_controller.c</label>
+        <link refid="motor__controller_8c"/>
+      </node>
+      <node id="35">
+        <label>Core/Src/uvfr_settings.c</label>
+        <link refid="uvfr__settings_8c"/>
+      </node>
+      <node id="11">
+        <label>Core/Src/driving_loop.c</label>
+        <link refid="driving__loop_8c"/>
+      </node>
+      <node id="22">
+        <label>Core/Inc/spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Core/Inc/pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Core/Src/gpio.c</label>
+        <link refid="gpio_8c"/>
+      </node>
+      <node id="24">
+        <label>Core/Inc/motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>Core/Inc/uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>Core/Src/rb_tree.c</label>
+        <link refid="rb__tree_8c"/>
+      </node>
+      <node id="16">
+        <label>Core/Src/dma.c</label>
+        <link refid="dma_8c"/>
+      </node>
+      <node id="21">
+        <label>Core/Src/temp_monitoring.c</label>
+        <link refid="temp__monitoring_8c"/>
+      </node>
+      <node id="46">
+        <label>Core/Src/uvfr_vehicle_commands.c</label>
+        <link refid="uvfr__vehicle__commands_8c"/>
+      </node>
+      <node id="36">
+        <label>Core/Inc/daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Core/Inc/gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>Core/Src/uvfr_utils.c</label>
+        <link refid="uvfr__utils_8c"/>
+      </node>
+      <node id="23">
+        <label>Core/Src/spi.c</label>
+        <link refid="spi_8c"/>
+      </node>
+      <node id="30">
+        <label>Core/Src/constants.c</label>
+        <link refid="constants_8c"/>
+      </node>
+      <node id="12">
+        <label>Core/Src/imd.c</label>
+        <link refid="imd_8c"/>
+      </node>
+      <node id="7">
+        <label>Core/Inc/can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>Core/Src/stm32f4xx_it.c</label>
+        <link refid="stm32f4xx__it_8c"/>
+      </node>
+      <node id="38">
+        <label>Core/Inc/uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Core/Src/can.c</label>
+        <link refid="can_8c"/>
+      </node>
+      <node id="41">
+        <label>Core/Inc/uvfr_vehicle_commands.h</label>
+        <link refid="uvfr__vehicle__commands_8h"/>
+      </node>
+      <node id="32">
+        <label>Core/Src/oled.c</label>
+        <link refid="oled_8c"/>
+      </node>
+      <node id="5">
+        <label>Core/Src/adc.c</label>
+        <link refid="adc_8c"/>
+      </node>
+      <node id="6">
+        <label>Core/Src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="15">
+        <label>Core/Inc/dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Core/Inc/main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48" prot="public" static="no" strong="no">
+        <type></type>
+        <name>pdu_messages_5A</name>
+        <enumvalue id="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48afd52538722f49b70993ee24fd1533d29" prot="public">
+          <name>enable_speaker_msg</name>
+          <initializer>= 0x1C</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48af4dab4ce5ee0966d1c1e9256fa916500" prot="public">
+          <name>disable_speaker_msg</name>
+          <initializer>= 0x0C</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48a57feb7349b7d37f8aacf96fabee1ae37" prot="public">
+          <name>enable_brake_light_msg</name>
+          <initializer>= 0x1B</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48a7b020e5a7642d08fa93c5a2b02a4ba85" prot="public">
+          <name>disable_brake_light_msg</name>
+          <initializer>= 0x0B</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48a10bd3064fa0faf27494d6ca0aaf61047" prot="public">
+          <name>enable_motor_controller_msg</name>
+          <initializer>= 0x1E</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48ab0af732058b3fad72fd4872e4471653a" prot="public">
+          <name>disable_motor_controller_msg</name>
+          <initializer>= 0x0E</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48af94075d96d491d676ff5188dac627820" prot="public">
+          <name>enable_shutdown_circuit_msg</name>
+          <initializer>= 0x1F</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48ac2ef53cf9e41b5b6a0c0eb4d6d981900" prot="public">
+          <name>disable_shutdown_circuit_msg</name>
+          <initializer>= 0x0F</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="13" column="21" bodyfile="Core/Inc/pdu.h" bodystart="13" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="enum" id="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6" prot="public" static="no" strong="no">
+        <type></type>
+        <name>pdu_messages_20A</name>
+        <enumvalue id="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a1b3de6d118ec94c8254a719eb4affdf6" prot="public">
+          <name>enable_left_cooling_fan_msg</name>
+          <initializer>= 0x33</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a7b960f0f0ff602f3a276e2a9a4a23967" prot="public">
+          <name>disable_left_cooling_fan_msg</name>
+          <initializer>= 0x23</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a15482c2204bbcaa786ec1659ab97b051" prot="public">
+          <name>enable_right_cooling_fan_msg</name>
+          <initializer>= 0x34</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a6fccdbe26ef1fe66ecd3ee62fb12007e" prot="public">
+          <name>disable_right_cooling_fan_msg</name>
+          <initializer>= 0x24</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a09a6f1d46f6583f69ddb997adf4571c2" prot="public">
+          <name>enable_coolant_pump_msg</name>
+          <initializer>= 0x31</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a2beb5f82c3d5098c13b0328938f72c6f" prot="public">
+          <name>disable_coolant_pump_msg</name>
+          <initializer>= 0x21</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="24" column="22" bodyfile="Core/Inc/pdu.h" bodystart="24" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="pdu_8h_1a42e33c33fc1dea26555ff7b20984b186" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PDU_speaker_chirp</definition>
+        <argsstring>()</argsstring>
+        <name>PDU_speaker_chirp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="35" column="6" bodyfile="Core/Src/pdu.c" bodystart="11" bodyend="31" declfile="Core/Inc/pdu.h" declline="35" declcolumn="6"/>
+        <references refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48af4dab4ce5ee0966d1c1e9256fa916500" compoundref="pdu_8h" startline="15">disable_speaker_msg</references>
+        <references refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48afd52538722f49b70993ee24fd1533d29" compoundref="pdu_8h" startline="14">enable_speaker_msg</references>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" compoundref="constants_8h" startline="18">PDU_CAN_ID_Tx</references>
+        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+      </memberdef>
+      <memberdef kind="function" id="pdu_8h_1aa5479c0d6ab8d58683e99bf102d60db8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PDU_enable_brake_light</definition>
+        <argsstring>()</argsstring>
+        <name>PDU_enable_brake_light</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="36" column="6" bodyfile="Core/Src/pdu.c" bodystart="34" bodyend="46" declfile="Core/Inc/pdu.h" declline="36" declcolumn="6"/>
+        <references refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48a57feb7349b7d37f8aacf96fabee1ae37" compoundref="pdu_8h" startline="16">enable_brake_light_msg</references>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" compoundref="constants_8h" startline="18">PDU_CAN_ID_Tx</references>
+        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+      </memberdef>
+      <memberdef kind="function" id="pdu_8h_1ad7b67b3c1618a7c50a5d6d9f9e13a89f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PDU_disable_brake_light</definition>
+        <argsstring>()</argsstring>
+        <name>PDU_disable_brake_light</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="37" column="6" bodyfile="Core/Src/pdu.c" bodystart="48" bodyend="60" declfile="Core/Inc/pdu.h" declline="37" declcolumn="6"/>
+        <references refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48a7b020e5a7642d08fa93c5a2b02a4ba85" compoundref="pdu_8h" startline="17">disable_brake_light_msg</references>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" compoundref="constants_8h" startline="18">PDU_CAN_ID_Tx</references>
+        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+      </memberdef>
+      <memberdef kind="function" id="pdu_8h_1ae3eaaae4438e04d63fe04cc23a201810" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PDU_enable_motor_controller</definition>
+        <argsstring>()</argsstring>
+        <name>PDU_enable_motor_controller</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="38" column="6" bodyfile="Core/Src/pdu.c" bodystart="62" bodyend="73" declfile="Core/Inc/pdu.h" declline="38" declcolumn="6"/>
+        <references refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48a10bd3064fa0faf27494d6ca0aaf61047" compoundref="pdu_8h" startline="18">enable_motor_controller_msg</references>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" compoundref="constants_8h" startline="18">PDU_CAN_ID_Tx</references>
+        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+      </memberdef>
+      <memberdef kind="function" id="pdu_8h_1a6b189c4013c1cb97ff696a9bc05def5e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PDU_disable_motor_controller</definition>
+        <argsstring>()</argsstring>
+        <name>PDU_disable_motor_controller</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="39" column="6" bodyfile="Core/Src/pdu.c" bodystart="74" bodyend="85" declfile="Core/Inc/pdu.h" declline="39" declcolumn="6"/>
+        <references refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48ab0af732058b3fad72fd4872e4471653a" compoundref="pdu_8h" startline="19">disable_motor_controller_msg</references>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" compoundref="constants_8h" startline="18">PDU_CAN_ID_Tx</references>
+        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+      </memberdef>
+      <memberdef kind="function" id="pdu_8h_1a0f2b86f2db7ee86b014ccc246c8b674d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PDU_enable_shutdown_circuit</definition>
+        <argsstring>()</argsstring>
+        <name>PDU_enable_shutdown_circuit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="40" column="6" bodyfile="Core/Src/pdu.c" bodystart="87" bodyend="98" declfile="Core/Inc/pdu.h" declline="40" declcolumn="6"/>
+        <references refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48af94075d96d491d676ff5188dac627820" compoundref="pdu_8h" startline="20">enable_shutdown_circuit_msg</references>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" compoundref="constants_8h" startline="18">PDU_CAN_ID_Tx</references>
+        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+      </memberdef>
+      <memberdef kind="function" id="pdu_8h_1a67ed21c50014c891cc0031655a30aef9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PDU_disable_shutdown_circuit</definition>
+        <argsstring>()</argsstring>
+        <name>PDU_disable_shutdown_circuit</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="41" column="6" bodyfile="Core/Src/pdu.c" bodystart="100" bodyend="111" declfile="Core/Inc/pdu.h" declline="41" declcolumn="6"/>
+        <references refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48ac2ef53cf9e41b5b6a0c0eb4d6d981900" compoundref="pdu_8h" startline="21">disable_shutdown_circuit_msg</references>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" compoundref="constants_8h" startline="18">PDU_CAN_ID_Tx</references>
+        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+      </memberdef>
+      <memberdef kind="function" id="pdu_8h_1a9d736981007eb7fc9691275dc7b6c05c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PDU_enable_cooling_fans</definition>
+        <argsstring>()</argsstring>
+        <name>PDU_enable_cooling_fans</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="44" column="6" bodyfile="Core/Src/pdu.c" bodystart="115" bodyend="134" declfile="Core/Inc/pdu.h" declline="44" declcolumn="6"/>
+        <references refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a1b3de6d118ec94c8254a719eb4affdf6" compoundref="pdu_8h" startline="25">enable_left_cooling_fan_msg</references>
+        <references refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a15482c2204bbcaa786ec1659ab97b051" compoundref="pdu_8h" startline="27">enable_right_cooling_fan_msg</references>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" compoundref="constants_8h" startline="18">PDU_CAN_ID_Tx</references>
+        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+      </memberdef>
+      <memberdef kind="function" id="pdu_8h_1a3c665494b7f9fb4e025ff31d24c97072" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PDU_disable_cooling_fans</definition>
+        <argsstring>()</argsstring>
+        <name>PDU_disable_cooling_fans</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="45" column="6" bodyfile="Core/Src/pdu.c" bodystart="136" bodyend="155" declfile="Core/Inc/pdu.h" declline="45" declcolumn="6"/>
+        <references refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a7b960f0f0ff602f3a276e2a9a4a23967" compoundref="pdu_8h" startline="26">disable_left_cooling_fan_msg</references>
+        <references refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a6fccdbe26ef1fe66ecd3ee62fb12007e" compoundref="pdu_8h" startline="28">disable_right_cooling_fan_msg</references>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" compoundref="constants_8h" startline="18">PDU_CAN_ID_Tx</references>
+        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+      </memberdef>
+      <memberdef kind="function" id="pdu_8h_1aef2fd854287906cac1734f08a6edcf2a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PDU_enable_coolant_pump</definition>
+        <argsstring>()</argsstring>
+        <name>PDU_enable_coolant_pump</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="46" column="6" bodyfile="Core/Src/pdu.c" bodystart="158" bodyend="169" declfile="Core/Inc/pdu.h" declline="46" declcolumn="6"/>
+        <references refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a09a6f1d46f6583f69ddb997adf4571c2" compoundref="pdu_8h" startline="29">enable_coolant_pump_msg</references>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" compoundref="constants_8h" startline="18">PDU_CAN_ID_Tx</references>
+        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+      </memberdef>
+      <memberdef kind="function" id="pdu_8h_1aebeb35957c80be85dc938efe72c8e825" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void PDU_disable_coolant_pump</definition>
+        <argsstring>()</argsstring>
+        <name>PDU_disable_coolant_pump</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="47" column="6" bodyfile="Core/Src/pdu.c" bodystart="170" bodyend="181" declfile="Core/Inc/pdu.h" declline="47" declcolumn="6"/>
+        <references refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a2beb5f82c3d5098c13b0328938f72c6f" compoundref="pdu_8h" startline="30">disable_coolant_pump_msg</references>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" compoundref="constants_8h" startline="18">PDU_CAN_ID_Tx</references>
+        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+      </memberdef>
+      <memberdef kind="function" id="pdu_8h_1afaa6671d51bcd0687c87ac635ff70d95" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void initPDU</definition>
+        <argsstring>(void *args)</argsstring>
+        <name>initPDU</name>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/pdu.h" line="49" column="6" bodyfile="Core/Src/pdu.c" bodystart="183" bodyend="195" declfile="Core/Inc/pdu.h" declline="49" declcolumn="6"/>
+        <references refid="structuv__init__task__args_1adec47e7a54822cacfb8fcfc35a22157f" compoundref="uvfr__utils_8h" startline="331">uv_init_task_args::init_info_queue</references>
+        <references refid="structuv__init__task__args_1a3b81430245e7f832dc1112e53b0ef7ad" compoundref="uvfr__utils_8h" startline="332">uv_init_task_args::meta_task_handle</references>
+        <references refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a5c9bd57c4115223d6c0954b9c2438262" compoundref="uvfr__utils_8h" startline="208">PDU</references>
+        <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Code<sp/>to<sp/>make<sp/>human<sp/>readable<sp/>CAN<sp/>messages<sp/>for<sp/>the<sp/>device</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>will<sp/>define<sp/>message<sp/>data<sp/>as<sp/>human<sp/>readable<sp/>stuff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Can<sp/>ID:<sp/>0x710</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__PDU_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__PDU_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48" kindref="member">pdu_messages_5A</ref>{</highlight></codeline>
+<codeline lineno="14" refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48afd52538722f49b70993ee24fd1533d29" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48afd52538722f49b70993ee24fd1533d29" kindref="member">enable_speaker_msg</ref><sp/>=<sp/>0x1C,</highlight></codeline>
+<codeline lineno="15" refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48af4dab4ce5ee0966d1c1e9256fa916500" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48af4dab4ce5ee0966d1c1e9256fa916500" kindref="member">disable_speaker_msg</ref><sp/>=<sp/>0x0C,</highlight></codeline>
+<codeline lineno="16" refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48a57feb7349b7d37f8aacf96fabee1ae37" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48a57feb7349b7d37f8aacf96fabee1ae37" kindref="member">enable_brake_light_msg</ref><sp/>=<sp/>0x1B,</highlight></codeline>
+<codeline lineno="17" refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48a7b020e5a7642d08fa93c5a2b02a4ba85" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48a7b020e5a7642d08fa93c5a2b02a4ba85" kindref="member">disable_brake_light_msg</ref><sp/>=<sp/>0x0B,</highlight></codeline>
+<codeline lineno="18" refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48a10bd3064fa0faf27494d6ca0aaf61047" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48a10bd3064fa0faf27494d6ca0aaf61047" kindref="member">enable_motor_controller_msg</ref><sp/>=<sp/>0x1E,</highlight></codeline>
+<codeline lineno="19" refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48ab0af732058b3fad72fd4872e4471653a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48ab0af732058b3fad72fd4872e4471653a" kindref="member">disable_motor_controller_msg</ref><sp/>=<sp/>0x0E,</highlight></codeline>
+<codeline lineno="20" refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48af94075d96d491d676ff5188dac627820" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48af94075d96d491d676ff5188dac627820" kindref="member">enable_shutdown_circuit_msg</ref><sp/>=<sp/>0x1F,</highlight></codeline>
+<codeline lineno="21" refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48ac2ef53cf9e41b5b6a0c0eb4d6d981900" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a572d423626195b99cf1a26b4b8eb7e48ac2ef53cf9e41b5b6a0c0eb4d6d981900" kindref="member">disable_shutdown_circuit_msg</ref><sp/>=<sp/>0x0F</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6" kindref="member">pdu_messages_20A</ref>{</highlight></codeline>
+<codeline lineno="25" refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a1b3de6d118ec94c8254a719eb4affdf6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a1b3de6d118ec94c8254a719eb4affdf6" kindref="member">enable_left_cooling_fan_msg</ref><sp/>=<sp/>0x33,</highlight></codeline>
+<codeline lineno="26" refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a7b960f0f0ff602f3a276e2a9a4a23967" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a7b960f0f0ff602f3a276e2a9a4a23967" kindref="member">disable_left_cooling_fan_msg</ref><sp/>=<sp/>0x23,</highlight></codeline>
+<codeline lineno="27" refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a15482c2204bbcaa786ec1659ab97b051" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a15482c2204bbcaa786ec1659ab97b051" kindref="member">enable_right_cooling_fan_msg</ref><sp/>=<sp/>0x34,</highlight></codeline>
+<codeline lineno="28" refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a6fccdbe26ef1fe66ecd3ee62fb12007e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a6fccdbe26ef1fe66ecd3ee62fb12007e" kindref="member">disable_right_cooling_fan_msg</ref><sp/>=<sp/>0x24,</highlight></codeline>
+<codeline lineno="29" refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a09a6f1d46f6583f69ddb997adf4571c2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a09a6f1d46f6583f69ddb997adf4571c2" kindref="member">enable_coolant_pump_msg</ref><sp/>=<sp/>0x31,</highlight></codeline>
+<codeline lineno="30" refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a2beb5f82c3d5098c13b0328938f72c6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="pdu_8h_1a9da17cdb854b14b04e25bc942810f7e6a2beb5f82c3d5098c13b0328938f72c6f" kindref="member">disable_coolant_pump_msg</ref><sp/>=<sp/>0x21</highlight></codeline>
+<codeline lineno="31"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>PDU<sp/>functions<sp/>(5<sp/>Amp)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1a42e33c33fc1dea26555ff7b20984b186" kindref="member">PDU_speaker_chirp</ref>();</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1aa5479c0d6ab8d58683e99bf102d60db8" kindref="member">PDU_enable_brake_light</ref>();</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1ad7b67b3c1618a7c50a5d6d9f9e13a89f" kindref="member">PDU_disable_brake_light</ref>();</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1ae3eaaae4438e04d63fe04cc23a201810" kindref="member">PDU_enable_motor_controller</ref>();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1a6b189c4013c1cb97ff696a9bc05def5e" kindref="member">PDU_disable_motor_controller</ref>();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1a0f2b86f2db7ee86b014ccc246c8b674d" kindref="member">PDU_enable_shutdown_circuit</ref>();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1a67ed21c50014c891cc0031655a30aef9" kindref="member">PDU_disable_shutdown_circuit</ref>();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">//<sp/>PDU<sp/>functions<sp/>(20<sp/>Amp)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1a9d736981007eb7fc9691275dc7b6c05c" kindref="member">PDU_enable_cooling_fans</ref>();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1a3c665494b7f9fb4e025ff31d24c97072" kindref="member">PDU_disable_cooling_fans</ref>();</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1aef2fd854287906cac1734f08a6edcf2a" kindref="member">PDU_enable_coolant_pump</ref>();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1aebeb35957c80be85dc938efe72c8e825" kindref="member">PDU_disable_coolant_pump</ref>();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="pdu_8h_1afaa6671d51bcd0687c87ac635ff70d95" kindref="member">initPDU</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args);</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Core/Inc/pdu.h"/>
+  </compounddef>
+</doxygen>

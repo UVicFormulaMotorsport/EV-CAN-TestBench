@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structdaq__loop__args" kind="struct" language="C++" prot="public">
+    <compoundname>daq_loop_args</compoundname>
+    <includes refid="daq_8h" local="no">daq.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structdaq__loop__args_1a8bb73e70ee9f47ffa9916c6067ff3eb5" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t daq_loop_args::throttle_daq_to_preserve_performance</definition>
+        <argsstring></argsstring>
+        <name>throttle_daq_to_preserve_performance</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/daq.h" line="63" column="9" bodyfile="Core/Inc/daq.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdaq__loop__args_1a4411f711c3bba9466f3f90c125bc6614" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t daq_loop_args::minimum_daq_period</definition>
+        <argsstring></argsstring>
+        <name>minimum_daq_period</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/daq.h" line="64" column="9" bodyfile="Core/Inc/daq.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdaq__loop__args_1a653d8fd8f6c526c6680f2406767bb7ca" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t daq_loop_args::padding</definition>
+        <argsstring></argsstring>
+        <name>padding</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/daq.h" line="65" column="10" bodyfile="Core/Inc/daq.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdaq__loop__args_1ad0f351d376aef4c061a6f122a8a46aff" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t daq_loop_args::padding2</definition>
+        <argsstring></argsstring>
+        <name>padding2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/daq.h" line="66" column="10" bodyfile="Core/Inc/daq.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdaq__loop__args_1ab4d8dba247b8b415c2a49356ac8a8dbc" prot="public" static="no" mutable="no">
+        <type><ref refid="structdaq__datapoint" kindref="compound">daq_datapoint</ref></type>
+        <definition>daq_datapoint daq_loop_args::datapoints[MAX_LOGGABLE_PARAMS]</definition>
+        <argsstring>[MAX_LOGGABLE_PARAMS]</argsstring>
+        <name>datapoints</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/daq.h" line="67" column="15" bodyfile="Core/Inc/daq.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>daq_datapoint</label>
+        <link refid="structdaq__datapoint"/>
+      </node>
+      <node id="1">
+        <label>daq_loop_args</label>
+        <link refid="structdaq__loop__args"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>datapoints</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Core/Inc/daq.h" line="62" column="28" bodyfile="Core/Inc/daq.h" bodystart="62" bodyend="68"/>
+    <listofallmembers>
+      <member refid="structdaq__loop__args_1ab4d8dba247b8b415c2a49356ac8a8dbc" prot="public" virt="non-virtual"><scope>daq_loop_args</scope><name>datapoints</name></member>
+      <member refid="structdaq__loop__args_1a4411f711c3bba9466f3f90c125bc6614" prot="public" virt="non-virtual"><scope>daq_loop_args</scope><name>minimum_daq_period</name></member>
+      <member refid="structdaq__loop__args_1a653d8fd8f6c526c6680f2406767bb7ca" prot="public" virt="non-virtual"><scope>daq_loop_args</scope><name>padding</name></member>
+      <member refid="structdaq__loop__args_1ad0f351d376aef4c061a6f122a8a46aff" prot="public" virt="non-virtual"><scope>daq_loop_args</scope><name>padding2</name></member>
+      <member refid="structdaq__loop__args_1a8bb73e70ee9f47ffa9916c6067ff3eb5" prot="public" virt="non-virtual"><scope>daq_loop_args</scope><name>throttle_daq_to_preserve_performance</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

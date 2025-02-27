@@ -1,0 +1,543 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="uvfr__global__config_8h" kind="file" language="C++">
+    <compoundname>uvfr_global_config.h</compoundname>
+    <includedby refid="uvfr__utils_8h" local="yes">Core/Inc/uvfr_utils.h</includedby>
+    <includedby refid="uvfr__vehicle__commands_8h" local="yes">Core/Inc/uvfr_vehicle_commands.h</includedby>
+    <invincdepgraph>
+      <node id="17">
+        <label>Core/Inc/tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>Core/Inc/imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>Core/Src/daq.c</label>
+        <link refid="daq_8c"/>
+      </node>
+      <node id="28">
+        <label>Core/Inc/dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>Core/Inc/driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>Core/Inc/temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Core/Src/pdu.c</label>
+        <link refid="pdu_8c"/>
+      </node>
+      <node id="10">
+        <label>Core/Src/dash.c</label>
+        <link refid="dash_8c"/>
+      </node>
+      <node id="18">
+        <label>Core/Src/tim.c</label>
+        <link refid="tim_8c"/>
+      </node>
+      <node id="45">
+        <label>Core/Src/uvfr_state_engine.c</label>
+        <link refid="uvfr__state__engine_8c"/>
+      </node>
+      <node id="40">
+        <label>Core/Inc/oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Core/Inc/adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>Core/Src/stm32f4xx_hal_msp.c</label>
+        <link refid="stm32f4xx__hal__msp_8c"/>
+      </node>
+      <node id="2">
+        <label>Core/Inc/uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>Core/Src/odometer.c</label>
+        <link refid="odometer_8c"/>
+      </node>
+      <node id="32">
+        <label>Core/Src/freertos.c</label>
+        <link refid="freertos_8c"/>
+      </node>
+      <node id="8">
+        <label>Core/Src/bms.c</label>
+        <link refid="bms_8c"/>
+      </node>
+      <node id="27">
+        <label>Core/Inc/bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Core/Src/motor_controller.c</label>
+        <link refid="motor__controller_8c"/>
+      </node>
+      <node id="36">
+        <label>Core/Src/uvfr_settings.c</label>
+        <link refid="uvfr__settings_8c"/>
+      </node>
+      <node id="11">
+        <label>Core/Src/driving_loop.c</label>
+        <link refid="driving__loop_8c"/>
+      </node>
+      <node id="22">
+        <label>Core/Inc/spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>Core/Inc/pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Core/Src/gpio.c</label>
+        <link refid="gpio_8c"/>
+      </node>
+      <node id="24">
+        <label>Core/Inc/motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>Core/Inc/uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>Core/Src/rb_tree.c</label>
+        <link refid="rb__tree_8c"/>
+      </node>
+      <node id="16">
+        <label>Core/Src/dma.c</label>
+        <link refid="dma_8c"/>
+      </node>
+      <node id="21">
+        <label>Core/Src/temp_monitoring.c</label>
+        <link refid="temp__monitoring_8c"/>
+      </node>
+      <node id="47">
+        <label>Core/Src/uvfr_vehicle_commands.c</label>
+        <link refid="uvfr__vehicle__commands_8c"/>
+      </node>
+      <node id="37">
+        <label>Core/Inc/daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Core/Inc/gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>Core/Src/uvfr_utils.c</label>
+        <link refid="uvfr__utils_8c"/>
+      </node>
+      <node id="23">
+        <label>Core/Src/spi.c</label>
+        <link refid="spi_8c"/>
+      </node>
+      <node id="31">
+        <label>Core/Src/constants.c</label>
+        <link refid="constants_8c"/>
+      </node>
+      <node id="12">
+        <label>Core/Src/imd.c</label>
+        <link refid="imd_8c"/>
+      </node>
+      <node id="7">
+        <label>Core/Inc/can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>Core/Src/stm32f4xx_it.c</label>
+        <link refid="stm32f4xx__it_8c"/>
+      </node>
+      <node id="1">
+        <label>Core/Inc/uvfr_global_config.h</label>
+        <link refid="uvfr__global__config_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>Core/Inc/uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Core/Src/can.c</label>
+        <link refid="can_8c"/>
+      </node>
+      <node id="42">
+        <label>Core/Inc/uvfr_vehicle_commands.h</label>
+        <link refid="uvfr__vehicle__commands_8h"/>
+      </node>
+      <node id="33">
+        <label>Core/Src/oled.c</label>
+        <link refid="oled_8c"/>
+      </node>
+      <node id="5">
+        <label>Core/Src/adc.c</label>
+        <link refid="adc_8c"/>
+      </node>
+      <node id="6">
+        <label>Core/Src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="15">
+        <label>Core/Inc/dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Core/Inc/main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="uvfr__global__config_8h_1a62c784d11109903a5b4b37086d1442f5" prot="public" static="no">
+        <name>UV19_PDU</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_global_config.h" line="12" column="9" bodyfile="Core/Inc/uvfr_global_config.h" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__global__config_8h_1a0db9878509bed12a5285918640a6c309" prot="public" static="no">
+        <name>ECUMASTER_PMU</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_global_config.h" line="13" column="9" bodyfile="Core/Inc/uvfr_global_config.h" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__global__config_8h_1ad2ffeade407a690d34c80397981a9326" prot="public" static="no">
+        <name>STM32_F407</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_global_config.h" line="15" column="9" bodyfile="Core/Inc/uvfr_global_config.h" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__global__config_8h_1a6d9ab034d353afd623acde9fc618176c" prot="public" static="no">
+        <name>STM32_H7xx</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_global_config.h" line="16" column="9" bodyfile="Core/Inc/uvfr_global_config.h" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__global__config_8h_1a93d6d1e888beb1e52dcb61b2f1be2591" prot="public" static="no">
+        <name>UV_MALLOC_LIMIT</name>
+        <initializer>((size_t)1024)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_global_config.h" line="22" column="9" bodyfile="Core/Inc/uvfr_global_config.h" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__global__config_8h_1a683423f7993a3b962eeba1629a028a0e" prot="public" static="no">
+        <name>USE_OS_MEM_MGMT</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_global_config.h" line="26" column="9" bodyfile="Core/Inc/uvfr_global_config.h" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>uvfr_global_config.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>Nov<sp/>27,<sp/>2024</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>byo10</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>INC_UVFR_GLOBAL_CONFIG_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INC_UVFR_GLOBAL_CONFIG_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="comment">//VCU<sp/>Port<sp/>Configuration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12" refid="uvfr__global__config_8h_1a62c784d11109903a5b4b37086d1442f5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UV19_PDU<sp/>1<sp/>//if<sp/>1,<sp/>then<sp/>we<sp/>still<sp/>use<sp/>the<sp/>uv19<sp/>PMU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13" refid="uvfr__global__config_8h_1a0db9878509bed12a5285918640a6c309" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>ECUMASTER_PMU<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="uvfr__global__config_8h_1ad2ffeade407a690d34c80397981a9326" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STM32_F407<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="uvfr__global__config_8h_1a6d9ab034d353afd623acde9fc618176c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>STM32_H7xx<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//memory<sp/>management<sp/>configuration</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>UV_MALLOC_LIMIT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="uvfr__global__config_8h_1a93d6d1e888beb1e52dcb61b2f1be2591" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UV_MALLOC_LIMIT<sp/>((size_t)1024)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>USE_OS_MEM_MGMT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="uvfr__global__config_8h_1a683423f7993a3b962eeba1629a028a0e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>USE_OS_MEM_MGMT<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INC_UVFR_GLOBAL_CONFIG_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="Core/Inc/uvfr_global_config.h"/>
+  </compounddef>
+</doxygen>

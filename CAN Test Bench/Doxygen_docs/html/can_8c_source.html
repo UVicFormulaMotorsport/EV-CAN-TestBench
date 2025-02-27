@@ -96,404 +96,637 @@ $(document).ready(function(){initNavTree('can_8c_source.html','');});
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="can_8h.html">can.h</a>&quot;</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="comment">/* USER CODE BEGIN 0 */</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="constants_8h.html">constants.h</a>&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="imd_8h.html">imd.h</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="motor__controller_8h.html">motor_controller.h</a>&quot;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dash_8h.html">dash.h</a>&quot;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bms_8h.html">bms.h</a>&quot;</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pdu_8h.html">pdu.h</a>&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="uvfr__utils_8h.html">uvfr_utils.h</a>&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#ifndef HAL_CAN_ERROR_INVALID_CALLBACK</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="can_8c.html#a81ca550f56875553f534a4d72adff10d">   35</a></span>&#160;<span class="preprocessor">#define HAL_CAN_ERROR_INVALID_CALLBACK (0x00400000U)</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="can_8c.html#aff5c4caa2b4968b309deaffdc58f1e92">   38</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#aff5c4caa2b4968b309deaffdc58f1e92">handleCANbusError</a>(<span class="keyword">const</span> CAN_HandleTypeDef* hcan, <span class="keyword">const</span> uint32_t err_to_ignore){</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span>(hcan == NULL){</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;null can handle&quot;</span>,0);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="constants_8h.html">constants.h</a>&quot;</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="imd_8h.html">imd.h</a>&quot;</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="motor__controller_8h.html">motor_controller.h</a>&quot;</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="dash_8h.html">dash.h</a>&quot;</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="bms_8h.html">bms.h</a>&quot;</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="pdu_8h.html">pdu.h</a>&quot;</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="uvfr__utils_8h.html">uvfr_utils.h</a>&quot;</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#include &quot;task.h&quot;</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="preprocessor">#include &quot;stdlib.h&quot;</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#include &quot;string.h&quot;</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    uint32_t errcode = HAL_CAN_GetError(hcan);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="preprocessor">#ifndef HAL_CAN_ERROR_INVALID_CALLBACK</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="can_8c.html#a81ca550f56875553f534a4d72adff10d">   46</a></span>&#160;<span class="preprocessor">#define HAL_CAN_ERROR_INVALID_CALLBACK (0x00400000U)</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span>(errcode &amp; err_to_ignore){</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span>(errcode == HAL_CAN_ERROR_NONE){</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_EWG){ <span class="comment">//protocol error</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN protocol error&quot;</span>,0);</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_EPV){ <span class="comment">//passive</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN passive error&quot;</span>,0);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_BOF){ <span class="comment">//Bus-off error</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN Bus off error&quot;</span>,0);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_STF){ <span class="comment">//Stuff error</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN Stuff error&quot;</span>,0);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_FOR){ <span class="comment">//Form error</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN Form error&quot;</span>,0);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_ACK){ <span class="comment">//Acknowledgement error</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN Ack error&quot;</span>,0);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_BR){ <span class="comment">//bit recessive</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN Recessive Bit error&quot;</span>,0);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_BD){ <span class="comment">//bit dominant</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN Dominant Bit error&quot;</span>,0);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_CRC){<span class="comment">//cyclic redundancy check</span></div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN CRC Failed&quot;</span>,0);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_RX_FOV0){<span class="comment">//overrun rx fifo0</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN RX FIFO0&quot;</span>,0);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_RX_FOV1){<span class="comment">//overrun rx fifo1</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN RX FIFO1&quot;</span>,0);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TX_ALST0){<span class="comment">//tx mailbox 0 arbitration lost</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN0 arbitration&quot;</span>,0);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TX_TERR0){<span class="comment">//tx mailbox 0 transmit error</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN0 transmit err&quot;</span>,0);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TX_ALST1){<span class="comment">//tx mailbox 1 arbitration lost error</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN1 arbitration&quot;</span>,0);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TX_TERR1){<span class="comment">//tx mailbox 1 transmit error</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN1 transmit err&quot;</span>,0);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TX_ALST2){<span class="comment">//tx mailbox 2 arbitration lost error</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN2 arbitration&quot;</span>,0);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TX_TERR2){<span class="comment">//tx mailbox 2 transmit error</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN2 transmit err&quot;</span>,0);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TIMEOUT){<span class="comment">//timeout</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN timeout&quot;</span>,0);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_NOT_INITIALIZED){<span class="comment">//is not initialized</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN not init&quot;</span>,0);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_NOT_READY){<span class="comment">//Not ready</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN_not_ready&quot;</span>,0);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_NOT_STARTED){<span class="comment">//not started</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;HAL_CAN_NOT_STARTED&quot;</span>,0);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_PARAM){<span class="comment">//Param</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;CAN Param&quot;</span>,0);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; <a class="code" href="can_8c.html#a81ca550f56875553f534a4d72adff10d">HAL_CAN_ERROR_INVALID_CALLBACK</a>){<span class="comment">//invalid callback</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;Invalid_callback&quot;</span>,0);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_INTERNAL){<span class="comment">//internal error</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;HAL_internal&quot;</span>,0);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="comment">//no clue how we got here</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;}</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">/* USER CODE END 0 */</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="stm32f4xx__it_8c.html#ab77168d14df04ccca5d48612ee21ced8">  114</a></span>&#160;CAN_HandleTypeDef <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="comment">/* CAN2 init function */</span></div>
-<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="can_8c.html#a1ee5cd592134235b6c07f676784d47c3">  117</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a1ee5cd592134235b6c07f676784d47c3">MX_CAN2_Init</a>(<span class="keywordtype">void</span>)</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_Init 0 */</span></div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;  <span class="comment">/* USER CODE END CAN2_Init 0 */</span></div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160; </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_Init 1 */</span></div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160; </div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;  <span class="comment">/* USER CODE END CAN2_Init 1 */</span></div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Instance = CAN2;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.Prescaler = 8;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.Mode = CAN_MODE_NORMAL;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.SyncJumpWidth = CAN_SJW_1TQ;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.TimeSeg1 = CAN_BS1_12TQ;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.TimeSeg2 = CAN_BS2_8TQ;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.TimeTriggeredMode = DISABLE;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.AutoBusOff = DISABLE;</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.AutoWakeUp = DISABLE;</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.AutoRetransmission = DISABLE;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.ReceiveFifoLocked = DISABLE;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.TransmitFifoPriority = DISABLE;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <span class="keywordflow">if</span> (HAL_CAN_Init(&amp;<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>) != HAL_OK)</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  {</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <a class="code" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  }</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_Init 2 */</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="can_8c.html#a39f60bf61979059355fc4916aa3500db">   49</a></span>&#160;<span class="keyword">static</span> QueueHandle_t <a class="code" href="can_8c.html#a39f60bf61979059355fc4916aa3500db">Tx_msg_queue</a> = NULL;</div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="can_8c.html#ad0e232ce658c38916aee908ceae1db1e">   50</a></span>&#160;<span class="keyword">static</span> QueueHandle_t <a class="code" href="can_8c.html#ad0e232ce658c38916aee908ceae1db1e">Rx_msg_queue</a> = NULL;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="can_8c.html#a286ec093b36200ab124adf66d0671198">   52</a></span>&#160;<span class="preprocessor">#define table_size 128 //CHAANGE THIS TO HOW MANY CAN_MESSAGES YOU NEED TO HANDLE!!!!!!</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="struct_c_a_n___callback.html">   56</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_c_a_n___callback.html">CAN_Callback</a> {</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="struct_c_a_n___callback.html#a2dbb9c56fe79ad5ce0165d7300b62ff5">   57</a></span>&#160;    uint32_t <a class="code" href="struct_c_a_n___callback.html#a2dbb9c56fe79ad5ce0165d7300b62ff5">CAN_id</a>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="struct_c_a_n___callback.html#aaf6c1d8dd4ecbcac59008b8b5c7cbbaa">   58</a></span>&#160;    <span class="keywordtype">void</span>* <span class="keyword">function</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">   59</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_c_a_n___callback.html">CAN_Callback</a>* <a class="code" href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">next</a>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}<a class="code" href="can_8c.html#af825ed4c7d0f1a7278410ab245a5ea8d">CAN_Callback</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">   67</a></span>&#160;<a class="code" href="struct_c_a_n___callback.html">CAN_Callback</a> <a class="code" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">CAN_callback_table</a>[<a class="code" href="can_8c.html#a286ec093b36200ab124adf66d0671198">table_size</a>] = {0};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">   69</a></span>&#160;SemaphoreHandle_t <a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a> = NULL;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="can_8c.html#aff5c4caa2b4968b309deaffdc58f1e92">   71</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#aff5c4caa2b4968b309deaffdc58f1e92">handleCANbusError</a>(<span class="keyword">const</span> CAN_HandleTypeDef* hcan, <span class="keyword">const</span> uint32_t err_to_ignore){</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span>(hcan == NULL){</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        uvPanic(<span class="stringliteral">&quot;null can handle&quot;</span>,0);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    uint32_t errcode = HAL_CAN_GetError(hcan);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span>(errcode &amp; err_to_ignore){</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span>(errcode == HAL_CAN_ERROR_NONE){</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_EWG){ <span class="comment">//protocol error</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN protocol error&quot;</span>,0);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_EPV){ <span class="comment">//passive</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN passive error&quot;</span>,0);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_BOF){ <span class="comment">//Bus-off error</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN Bus off error&quot;</span>,0);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_STF){ <span class="comment">//Stuff error</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN Stuff error&quot;</span>,0);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_FOR){ <span class="comment">//Form error</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN Form error&quot;</span>,0);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_ACK){ <span class="comment">//Acknowledgement error</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN Ack error&quot;</span>,0);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_BR){ <span class="comment">//bit recessive</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN Recessive Bit error&quot;</span>,0);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_BD){ <span class="comment">//bit dominant</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN Dominant Bit error&quot;</span>,0);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_CRC){<span class="comment">//cyclic redundancy check</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN CRC Failed&quot;</span>,0);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_RX_FOV0){<span class="comment">//overrun rx fifo0</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN RX FIFO0&quot;</span>,0);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_RX_FOV1){<span class="comment">//overrun rx fifo1</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN RX FIFO1&quot;</span>,0);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TX_ALST0){<span class="comment">//tx mailbox 0 arbitration lost</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN0 arbitration&quot;</span>,0);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TX_TERR0){<span class="comment">//tx mailbox 0 transmit error</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN0 transmit err&quot;</span>,0);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TX_ALST1){<span class="comment">//tx mailbox 1 arbitration lost error</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN1 arbitration&quot;</span>,0);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TX_TERR1){<span class="comment">//tx mailbox 1 transmit error</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN1 transmit err&quot;</span>,0);</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TX_ALST2){<span class="comment">//tx mailbox 2 arbitration lost error</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN2 arbitration&quot;</span>,0);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TX_TERR2){<span class="comment">//tx mailbox 2 transmit error</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN2 transmit err&quot;</span>,0);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_TIMEOUT){<span class="comment">//timeout</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN timeout&quot;</span>,0);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_NOT_INITIALIZED){<span class="comment">//is not initialized</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN not init&quot;</span>,0);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_NOT_READY){<span class="comment">//Not ready</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN_not_ready&quot;</span>,0);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_NOT_STARTED){<span class="comment">//not started</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        uvPanic(<span class="stringliteral">&quot;HAL_CAN_NOT_STARTED&quot;</span>,0);</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_PARAM){<span class="comment">//Param</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        uvPanic(<span class="stringliteral">&quot;CAN Param&quot;</span>,0);</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; <a class="code" href="can_8c.html#a81ca550f56875553f534a4d72adff10d">HAL_CAN_ERROR_INVALID_CALLBACK</a>){<span class="comment">//invalid callback</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        uvPanic(<span class="stringliteral">&quot;Invalid_callback&quot;</span>,0);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    }<span class="keywordflow">else</span> <span class="keywordflow">if</span>(errcode &amp; HAL_CAN_ERROR_INTERNAL){<span class="comment">//internal error</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        uvPanic(<span class="stringliteral">&quot;HAL_internal&quot;</span>,0);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        <span class="comment">//no clue how we got here</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;}</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="comment">// Define the CAN Filter</span></div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    CAN_FilterTypeDef FilterConfig;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="comment">// Set the data length and ID to a temporary value</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;     <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.DLC= 1; <span class="comment">// Data Length Code</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;     <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.StdId= 0x244; <span class="comment">// This is the CAN ID</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160; </div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;     <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.IDE=CAN_ID_STD; <span class="comment">//set identifier to standard</span></div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;     <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.RTR=CAN_RTR_DATA;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;     <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.ExtId = 0x01;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;     <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.TransmitGlobalTime = DISABLE;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="comment">/* USER CODE END 0 */</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="stm32f4xx__it_8c.html#ab77168d14df04ccca5d48612ee21ced8">  147</a></span>&#160;CAN_HandleTypeDef <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">/* CAN2 init function */</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno"><a class="line" href="can_8c.html#a1ee5cd592134235b6c07f676784d47c3">  150</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a1ee5cd592134235b6c07f676784d47c3">MX_CAN2_Init</a>(<span class="keywordtype">void</span>)</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;{</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_Init 0 */</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;  <span class="comment">/* USER CODE END CAN2_Init 0 */</span></div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160; </div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="comment">//filter one (stack light blink)</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;     FilterConfig.FilterFIFOAssignment=CAN_RX_FIFO0; <span class="comment">//set fifo assignment</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;     FilterConfig.FilterIdHigh = 0x0000; <span class="comment">// filter of zero allows all messages</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;     FilterConfig.FilterIdLow = 0x0000;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;     FilterConfig.FilterMaskIdHigh = 0x0000;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;     FilterConfig.FilterMaskIdLow = 0x0000;</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;     FilterConfig.FilterScale=CAN_FILTERSCALE_32BIT; <span class="comment">//set filter scale</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;     FilterConfig.FilterActivation=ENABLE;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;     FilterConfig.FilterBank = 0;</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;     FilterConfig.FilterMode = CAN_FILTERMODE_IDMASK;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;     FilterConfig.SlaveStartFilterBank = 14;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;     FilterConfig.FilterBank = 14;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160; </div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;     <span class="comment">// try to configure the filter</span></div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;     <span class="keywordflow">if</span> (HAL_CAN_ConfigFilter(&amp;<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>, &amp;FilterConfig) != HAL_OK)</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;      {</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;       <span class="comment">/* Filter configuration Error */</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;       <a class="code" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;      }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;      <span class="comment">// Try to set up interrupts for receiving mailbox</span></div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;      <span class="keywordflow">if</span> (HAL_CAN_ActivateNotification(&amp;<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK)</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;         {</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;          <a class="code" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;         }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;      <span class="comment">// Try to start CAN communication - this is not sending a message, this just initializes it</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;      <span class="comment">// If HAL_CAN_Start returns an error, then we want to go into the error handler</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;      <span class="keywordflow">if</span> (HAL_CAN_Start(&amp;<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>) != HAL_OK)</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        {</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;         <span class="comment">/* Start Error */</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;         <a class="code" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        }</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160; </div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;  <span class="comment">/* USER CODE END CAN2_Init 2 */</span></div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
-<div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="can_8c.html#a2778ce7f3a2de42769b6de9fec4cedb9">  195</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a2778ce7f3a2de42769b6de9fec4cedb9">HAL_CAN_MspInit</a>(CAN_HandleTypeDef* canHandle)</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;{</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160; </div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  GPIO_InitTypeDef GPIO_InitStruct = {0};</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  <span class="keywordflow">if</span>(canHandle-&gt;Instance==CAN2)</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_MspInit 0 */</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_Init 1 */</span></div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="comment">/* USER CODE END CAN2_Init 1 */</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Instance = CAN2;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.Prescaler = 8;</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.Mode = CAN_MODE_NORMAL;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.SyncJumpWidth = CAN_SJW_1TQ;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.TimeSeg1 = CAN_BS1_12TQ;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.TimeSeg2 = CAN_BS2_8TQ;</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.TimeTriggeredMode = DISABLE;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.AutoBusOff = DISABLE;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.AutoWakeUp = DISABLE;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.AutoRetransmission = DISABLE;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.ReceiveFifoLocked = DISABLE;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>.Init.TransmitFifoPriority = ENABLE;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <span class="keywordflow">if</span> (HAL_CAN_Init(&amp;<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>) != HAL_OK)</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;  {</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <a class="code" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;  }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_Init 2 */</span></div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="comment">// Define the CAN Filter</span></div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    CAN_FilterTypeDef FilterConfig;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="comment">// Set the data length and ID to a temporary value</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;     <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.DLC= 1; <span class="comment">// Data Length Code</span></div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;     <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.StdId= 0x244; <span class="comment">// This is the CAN ID</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;     <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.IDE=CAN_ID_STD; <span class="comment">//set identifier to standard</span></div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;     <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.RTR=CAN_RTR_DATA;</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;     <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.ExtId = 0x01;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;     <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.TransmitGlobalTime = DISABLE;</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    <span class="comment">//filter one (stack light blink)</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;     FilterConfig.FilterFIFOAssignment=CAN_RX_FIFO0; <span class="comment">//set fifo assignment</span></div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;     FilterConfig.FilterIdHigh = 0x0000; <span class="comment">// filter of zero allows all messages</span></div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;     FilterConfig.FilterIdLow = 0x0000;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;     FilterConfig.FilterMaskIdHigh = 0x0000;</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;     FilterConfig.FilterMaskIdLow = 0x0000;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;     FilterConfig.FilterScale=CAN_FILTERSCALE_32BIT; <span class="comment">//set filter scale</span></div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;     FilterConfig.FilterActivation=ENABLE;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;     FilterConfig.FilterBank = 0;</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;     FilterConfig.FilterMode = CAN_FILTERMODE_IDMASK;</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;     FilterConfig.SlaveStartFilterBank = 14;</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;     FilterConfig.FilterBank = 14;</div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;  <span class="comment">/* USER CODE END CAN2_MspInit 0 */</span></div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    <span class="comment">/* CAN2 clock enable */</span></div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    __HAL_RCC_CAN2_CLK_ENABLE();</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    __HAL_RCC_CAN1_CLK_ENABLE();</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    __HAL_RCC_GPIOB_CLK_ENABLE();</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13;</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    GPIO_InitStruct.Alternate = GPIO_AF9_CAN2;</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    HAL_GPIO_Init(GPIOB, &amp;GPIO_InitStruct);</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    <span class="comment">/* CAN2 interrupt Init */</span></div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    HAL_NVIC_SetPriority(CAN2_TX_IRQn, 5, 0);</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    HAL_NVIC_EnableIRQ(CAN2_TX_IRQn);</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    HAL_NVIC_SetPriority(CAN2_RX0_IRQn, 5, 0);</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    HAL_NVIC_EnableIRQ(CAN2_RX0_IRQn);</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    HAL_NVIC_SetPriority(CAN2_RX1_IRQn, 5, 0);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    HAL_NVIC_EnableIRQ(CAN2_RX1_IRQn);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_MspInit 1 */</span></div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="comment">/* USER CODE END CAN2_MspInit 1 */</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  }</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;}</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno"><a class="line" href="can_8c.html#a4b39e42353b2781bc75d83c018640b67">  233</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a4b39e42353b2781bc75d83c018640b67">HAL_CAN_MspDeInit</a>(CAN_HandleTypeDef* canHandle)</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;{</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;     <span class="comment">// try to configure the filter</span></div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;     <span class="keywordflow">if</span> (HAL_CAN_ConfigFilter(&amp;<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>, &amp;FilterConfig) != HAL_OK)</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;      {</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;       <span class="comment">/* Filter configuration Error */</span></div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;       <a class="code" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;      }</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;      <span class="comment">// Try to set up interrupts for receiving mailbox</span></div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;      <span class="keywordflow">if</span> (HAL_CAN_ActivateNotification(&amp;<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>, CAN_IT_RX_FIFO0_MSG_PENDING) != HAL_OK)</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;         {</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;          <a class="code" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;         }</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;      <span class="comment">// Try to start CAN communication - this is not sending a message, this just initializes it</span></div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;      <span class="comment">// If HAL_CAN_Start returns an error, then we want to go into the error handler</span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;      <span class="keywordflow">if</span> (HAL_CAN_Start(&amp;<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>) != HAL_OK)</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        {</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;         <span class="comment">/* Start Error */</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;         <a class="code" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;        }</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160; </div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="comment">/* USER CODE END CAN2_Init 2 */</span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160; </div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="line" href="can_8c.html#a2778ce7f3a2de42769b6de9fec4cedb9">  228</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a2778ce7f3a2de42769b6de9fec4cedb9">HAL_CAN_MspInit</a>(CAN_HandleTypeDef* canHandle)</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;{</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160; </div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  GPIO_InitTypeDef GPIO_InitStruct = {0};</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;  <span class="keywordflow">if</span>(canHandle-&gt;Instance==CAN2)</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  {</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_MspInit 0 */</span></div>
 <div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160; </div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordflow">if</span>(canHandle-&gt;Instance==CAN2)</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  {</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_MspDeInit 0 */</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="comment">/* USER CODE END CAN2_MspDeInit 0 */</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">/* Peripheral clock disable */</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    __HAL_RCC_CAN2_CLK_DISABLE();</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    __HAL_RCC_CAN1_CLK_DISABLE();</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_12|GPIO_PIN_13);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <span class="comment">/* CAN2 interrupt Deinit */</span></div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    HAL_NVIC_DisableIRQ(CAN2_TX_IRQn);</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    HAL_NVIC_DisableIRQ(CAN2_RX0_IRQn);</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    HAL_NVIC_DisableIRQ(CAN2_RX1_IRQn);</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_MspDeInit 1 */</span></div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="comment">/* USER CODE END CAN2_MspDeInit 1 */</span></div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  }</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;}</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;<span class="comment">/* USER CODE BEGIN 1 */</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160; </div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="comment">// When a CAN message comes, the interrupt will call this function</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="comment">// We need to figure out what device sent it, what the data is, and handle it appropriately</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno"><a class="line" href="can_8c.html#a4e0742fef0f265347a75b7fa12012229">  265</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a4e0742fef0f265347a75b7fa12012229">HAL_CAN_RxFifo0MsgPendingCallback</a>(CAN_HandleTypeDef *<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>){</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <span class="keywordflow">if</span> (HAL_CAN_GetRxMessage(<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>, CAN_RX_FIFO0, &amp;<a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>, <a class="code" href="constants_8h.html#a14629afcc7f0b2d62c2b617b07d98184">RxData</a>) != HAL_OK)</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <a class="code" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  }</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160; </div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <span class="comment">//uint8_t Data[8] = {0};</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="comment">//int CAN_ID = 0;</span></div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="comment">//int DLC = 0;</span></div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="comment">// Extract the ID</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;<span class="comment">//  if (RxHeader.IDE == CAN_ID_STD){</span></div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;<span class="comment">//    CAN_ID = RxHeader.StdId;</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">//  }</span></div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;<span class="comment">//  if (RxHeader.IDE == CAN_ID_EXT){</span></div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;<span class="comment">//        CAN_ID = RxHeader.ExtId;</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;<span class="comment">//  }</span></div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="comment">//</span></div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="comment">//  // Extract the data length</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="comment">//  DLC = RxHeader.DLC; // Data Length Code</span></div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160; </div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160; </div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;   <span class="comment">// The data length will be different for each message, so we need to handle the possibilities</span></div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;<span class="comment">//   for (int i = 0; i &lt; RxHeader.DLC; ++i){</span></div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;<span class="comment">//     Data[i] = RxData[i];</span></div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="comment">//   }</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="comment">/* USER CODE END CAN2_MspInit 0 */</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    <span class="comment">/* CAN2 clock enable */</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    __HAL_RCC_CAN2_CLK_ENABLE();</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    __HAL_RCC_CAN1_CLK_ENABLE();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    __HAL_RCC_GPIOB_CLK_ENABLE();</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    GPIO_InitStruct.Pin = GPIO_PIN_12|GPIO_PIN_13;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    GPIO_InitStruct.Pull = GPIO_NOPULL;</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_VERY_HIGH;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    GPIO_InitStruct.Alternate = GPIO_AF9_CAN2;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    HAL_GPIO_Init(GPIOB, &amp;GPIO_InitStruct);</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="comment">/* CAN2 interrupt Init */</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    HAL_NVIC_SetPriority(CAN2_TX_IRQn, 5, 0);</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    HAL_NVIC_EnableIRQ(CAN2_TX_IRQn);</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    HAL_NVIC_SetPriority(CAN2_RX0_IRQn, 5, 0);</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    HAL_NVIC_EnableIRQ(CAN2_RX0_IRQn);</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    HAL_NVIC_SetPriority(CAN2_RX1_IRQn, 5, 0);</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    HAL_NVIC_EnableIRQ(CAN2_RX1_IRQn);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_MspInit 1 */</span></div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160; </div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  <span class="comment">/* USER CODE END CAN2_MspInit 1 */</span></div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;}</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
+<div class="line"><a name="l00266"></a><span class="lineno"><a class="line" href="can_8c.html#a4b39e42353b2781bc75d83c018640b67">  266</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a4b39e42353b2781bc75d83c018640b67">HAL_CAN_MspDeInit</a>(CAN_HandleTypeDef* canHandle)</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;{</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="keywordflow">if</span>(canHandle-&gt;Instance==CAN2)</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  {</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_MspDeInit 0 */</span></div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160; </div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="comment">/* USER CODE END CAN2_MspDeInit 0 */</span></div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    <span class="comment">/* Peripheral clock disable */</span></div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    __HAL_RCC_CAN2_CLK_DISABLE();</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    __HAL_RCC_CAN1_CLK_DISABLE();</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    HAL_GPIO_DeInit(GPIOB, GPIO_PIN_12|GPIO_PIN_13);</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160; </div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="comment">/* CAN2 interrupt Deinit */</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    HAL_NVIC_DisableIRQ(CAN2_TX_IRQn);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    HAL_NVIC_DisableIRQ(CAN2_RX0_IRQn);</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    HAL_NVIC_DisableIRQ(CAN2_RX1_IRQn);</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;  <span class="comment">/* USER CODE BEGIN CAN2_MspDeInit 1 */</span></div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160; </div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;  <span class="comment">/* USER CODE END CAN2_MspDeInit 1 */</span></div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;  }</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;}</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160; </div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;   <span class="comment">//TANNER AND FLO CALL YOUR FUNCTION HERE TO DO STUFF</span></div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;<span class="comment">/* USER CODE BEGIN 1 */</span></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160; </div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160; </div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160; </div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;}</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160; </div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;<span class="comment">// Here is where the second mailbox ISR would live</span></div>
-<div class="line"><a name="l00301"></a><span class="lineno"><a class="line" href="can_8c.html#a4c51ef84434a42d4c5f9524d361c0703">  301</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a4c51ef84434a42d4c5f9524d361c0703">HAL_CAN_RxFifo1MsgPendingCallback</a>(CAN_HandleTypeDef *<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>){</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    <span class="comment">// do something</span></div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
-<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;<span class="preprocessor">#ifdef BRUH</span></div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<a class="code" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> __uvCANtxCritSection(){</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>;</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160; </div>
-<div class="line"><a name="l00318"></a><span class="lineno"><a class="line" href="can_8c.html#acc24d5acdcc2015b59e63769a397353b">  318</a></span>&#160;<a class="code" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> <a class="code" href="can_8c.html#acc24d5acdcc2015b59e63769a397353b">uvSendCanMSG</a>(<a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a>* msg){</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160; </div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    <span class="keyword">static</span> TaskHandle_t can_tx_daemon_handle = NULL;</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    <span class="keyword">static</span> <a class="code" href="uvfr__state__engine_8h.html#aa6ffd72eb4909ddb38c37a1369e13f09">uv_task_id</a> can_tx_daemon_task_id;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160; </div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordflow">if</span>(can_tx_daemon_handle == NULL ){</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        can_tx_daemon_handle = xTaskGetHandle(<a class="code" href="can_8h.html#a8258cafd2b5e0bfb1e4228e7a45750bf">CAN_TX_DAEMON_NAME</a>);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">if</span>(can_tx_daemon_handle == NULL){</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="comment">//This means that the can_tx_daemon is probably not running</span></div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a>;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        }</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    }</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;<span class="comment">// When a CAN message comes, the interrupt will call this function</span></div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;<span class="comment">// We need to figure out what device sent it, what the data is, and handle it appropriately</span></div>
+<div class="line"><a name="l00298"></a><span class="lineno"><a class="line" href="can_8c.html#a4e0742fef0f265347a75b7fa12012229">  298</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a4e0742fef0f265347a75b7fa12012229">HAL_CAN_RxFifo0MsgPendingCallback</a>(CAN_HandleTypeDef *<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>){</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a> tmp;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    BaseType_t was_higher_priority_task_woken;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;  <span class="keywordflow">if</span> (HAL_CAN_GetRxMessage(<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>, CAN_RX_FIFO0, &amp;<a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>, tmp.<a class="code" href="structuv___c_a_n__msg.html#aec63cc112176da7895d0cfc8b32e6935">data</a>) != HAL_OK)</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;  {</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <a class="code" href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;  }</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;  <span class="keywordflow">if</span>(<a class="code" href="can_8c.html#ad0e232ce658c38916aee908ceae1db1e">Rx_msg_queue</a> == NULL){</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      <span class="keywordflow">return</span>; <span class="comment">//RxDaemon not active yet</span></div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;  }</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160; </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  <span class="comment">//uint8_t Data[8] = {0};</span></div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  <span class="comment">//int CAN_ID = 0;</span></div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="comment">//int DLC = 0;</span></div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160; </div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  <span class="comment">// Extract the ID</span></div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>.IDE == CAN_ID_STD){</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;      tmp.<a class="code" href="structuv___c_a_n__msg.html#aae369fbabe3cc5b71a89bb641c24aace">msg_id</a> = <a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>.StdId;</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;  }<span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>.IDE == CAN_ID_EXT){</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;      tmp.<a class="code" href="structuv___c_a_n__msg.html#aae369fbabe3cc5b71a89bb641c24aace">msg_id</a> = <a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>.ExtId;</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;  }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;      <span class="comment">//How did we get here?</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;  }</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="comment">//</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;<span class="comment">//  // Extract the data length</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  tmp.<a class="code" href="structuv___c_a_n__msg.html#aa74af3745c8b56910d7c309245541d37">dlc</a> = <a class="code" href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a>.DLC; <span class="comment">// Data Length Code</span></div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;   <span class="comment">//TANNER AND FLO CALL YOUR FUNCTION HERE TO DO STUFF</span></div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160; </div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;  xQueueSendFromISR( <a class="code" href="can_8c.html#ad0e232ce658c38916aee908ceae1db1e">Rx_msg_queue</a>, &amp;tmp, &amp;was_higher_priority_task_woken );</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">if</span>(msg == NULL){</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a>;</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    }</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160; </div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">//BaseType_t higher_priority_task_woken = pdFALSE;</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160; </div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    <span class="comment">//if(xQueueSendToBack(Tx_msg_queue,&amp;msg,1) != pdPASS){</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="comment">//uvPanic(&quot;couldnt enqueue CAN message&quot;,0);</span></div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="comment">//}//else if(xTaskNotify(can_tx_daemon_handle, 0x00, eNoAction) != pdPASS){</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="comment">//Do something</span></div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    <span class="comment">//}</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160; </div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;}</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="can_8c.html#a2357e197a9ac26277eec808769fe409f">  356</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a2357e197a9ac26277eec808769fe409f">CANbusTxSvcDaemon</a>(<span class="keywordtype">void</span>* args){</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160; </div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="comment">//CAN_TxHeaderTypeDef tx_header;</span></div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160; </div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <span class="comment">//Tx_msg_queue = xQueueCreate(8,sizeof(uv_CAN_msg*));</span></div>
-<div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160; </div>
-<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="comment">//BaseType_t retval;</span></div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160; </div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a>* tx_msg = NULL;</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="comment">//tx_header.TransmitGlobalTime = DISABLE;</span></div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    BaseType_t result;</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    uint32_t notif_val = 0;</div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    <span class="keywordflow">for</span>(;;){</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160; </div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160; </div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="comment">//result = xQueueReceive(Tx_msg_queue,&amp;tx_msg,portMAX_DELAY);</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;        <span class="keywordflow">if</span>(tx_msg == NULL){</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;            <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;cannot send null CAN msg&quot;</span>,0);</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;        }</div>
-<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160; </div>
-<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;        <span class="keywordflow">if</span>((tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#a3a3fdc7fed06a631fefa58ea44052d8d">flags</a>)&amp; <a class="code" href="uvfr__utils_8h.html#aa55012016c572366a0747ff7298c7fec">UV_CAN_EXTENDED_ID</a>){</div>
-<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.IDE = CAN_ID_EXT;</div>
-<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;            <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.ExtId = tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aae369fbabe3cc5b71a89bb641c24aace">msg_id</a>;</div>
-<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;            <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.IDE = CAN_ID_STD;</div>
-<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;            <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.StdId = tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aae369fbabe3cc5b71a89bb641c24aace">msg_id</a>;</div>
-<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;        }</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;  <span class="keywordflow">if</span>(was_higher_priority_task_woken == pdTRUE){</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;      taskYIELD();</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  }</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;}</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;<span class="comment">// Here is where the second mailbox ISR would live</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="can_8c.html#a4c51ef84434a42d4c5f9524d361c0703">  338</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a4c51ef84434a42d4c5f9524d361c0703">HAL_CAN_RxFifo1MsgPendingCallback</a>(CAN_HandleTypeDef *<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>){</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="comment">// do something</span></div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;}</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="comment">// CAN_Messages_Tanner</span></div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160; </div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160; </div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
+<div class="line"><a name="l00351"></a><span class="lineno"><a class="line" href="can_8c.html#affa7bfe9532060be4358706525e4f36e">  351</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="can_8c.html#affa7bfe9532060be4358706525e4f36e">generateHash</a>(uint32_t Incoming_CAN_id) {</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> hash = 0;</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    uint32_t <span class="keywordtype">id</span> = Incoming_CAN_id;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160; </div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 4; i++) {</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;        hash += ((<span class="keywordtype">id</span> &gt;&gt; (8 * i)) &amp; 0xFF) * i;</div>
+<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;    }</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordflow">return</span> hash % <a class="code" href="can_8c.html#a286ec093b36200ab124adf66d0671198">table_size</a>;</div>
+<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
+<div class="line"><a name="l00368"></a><span class="lineno"><a class="line" href="can_8c.html#aa5d470f815f2c11378233e0f3ca9ed8b">  368</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <a class="code" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> <a class="code" href="can_8c.html#aa5d470f815f2c11378233e0f3ca9ed8b">callFunctionFromCANid</a>(<a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a>* msg) {</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index = <a class="code" href="can_8c.html#affa7bfe9532060be4358706525e4f36e">generateHash</a>(msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aae369fbabe3cc5b71a89bb641c24aace">msg_id</a>);</div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <a class="code" href="struct_c_a_n___callback.html">CAN_Callback</a>* current = &amp;<a class="code" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">CAN_callback_table</a>[index]; <span class="comment">//getting hash function and checking table entry</span></div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160; </div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;    <span class="keywordflow">while</span> (current != NULL) {</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">if</span> (current-&gt;<a class="code" href="struct_c_a_n___callback.html#a2dbb9c56fe79ad5ce0165d7300b62ff5">CAN_id</a> == msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aae369fbabe3cc5b71a89bb641c24aace">msg_id</a>) {<span class="comment">//if the ID matches, execute, else keep going</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            void (*function_ptr)(<a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a>* msg) = (<span class="keywordtype">void</span> (*)(<a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a>*))current-&gt;<a class="code" href="struct_c_a_n___callback.html#aaf6c1d8dd4ecbcac59008b8b5c7cbbaa">function</a>;</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <span class="keywordflow">if</span> (function_ptr != NULL) {</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;                function_ptr(msg);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>;</div>
+<div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;            }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;                <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a>;</div>
+<div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;            }</div>
+<div class="line"><a name="l00381"></a><span class="lineno">  381</span>&#160;        }</div>
+<div class="line"><a name="l00382"></a><span class="lineno">  382</span>&#160;        current = current-&gt;<a class="code" href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">next</a>;</div>
+<div class="line"><a name="l00383"></a><span class="lineno">  383</span>&#160;    }</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea87c01f9029276637a8c9568fd67efcac">UV_WARNING</a>;</div>
+<div class="line"><a name="l00385"></a><span class="lineno">  385</span>&#160;}</div>
 <div class="line"><a name="l00386"></a><span class="lineno">  386</span>&#160; </div>
-<div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;        <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.DLC = tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aa74af3745c8b56910d7c309245541d37">dlc</a>;</div>
-<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160; </div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160; </div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160; </div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160; </div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">if</span> (HAL_CAN_AddTxMessage(&amp;<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>, &amp;<a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>, tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aec63cc112176da7895d0cfc8b32e6935">data</a>, &amp;<a class="code" href="constants_8h.html#aedd1e4ac418a9697f9f41a2713d49569">TxMailbox</a>) != HAL_OK){</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;                                <span class="comment">/* Transmission request Error */</span></div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;Unable to Transmit CAN msg&quot;</span>,0);</div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;        }</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160; </div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    }<span class="comment">//main for loop</span></div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160; </div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;}</div>
+<div class="line"><a name="l00395"></a><span class="lineno"><a class="line" href="group__uvfr__can__api.html#ga81adc4a577110ce8fe1158b0dc302cc2">  395</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="group__uvfr__can__api.html#ga81adc4a577110ce8fe1158b0dc302cc2">insertCANMessageHandler</a>(uint32_t <span class="keywordtype">id</span>, <span class="keywordtype">void</span>* handlerfunc) {</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index = <a class="code" href="can_8c.html#affa7bfe9532060be4358706525e4f36e">generateHash</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a> != NULL){</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordflow">if</span>(xSemaphoreTake(<a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a>,10) == pdTRUE){</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160; </div>
-<div class="line"><a name="l00401"></a><span class="lineno"><a class="line" href="can_8c.html#ae81ac633e5983dde276f930615a1e03a">  401</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#ae81ac633e5983dde276f930615a1e03a">CANbusRxSVCDaemon</a>(<span class="keywordtype">void</span>* args){</div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        }<span class="keywordflow">else</span>{</div>
 <div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160; </div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keywordflow">for</span>(;;){</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160; </div>
-<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;    }</div>
-<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;}</div>
-<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160; </div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="comment">/* USER CODE END 1 */</span></div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        }</div>
+<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;    }</div>
+<div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160; </div>
+<div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">CAN_callback_table</a>[index].<a class="code" href="struct_c_a_n___callback.html#a2dbb9c56fe79ad5ce0165d7300b62ff5">CAN_id</a> == 0){ <span class="comment">//This means the hash entry is empty and can now be used, since 0 is not a real CAN id</span></div>
+<div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        <a class="code" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">CAN_callback_table</a>[index].<a class="code" href="struct_c_a_n___callback.html#a2dbb9c56fe79ad5ce0165d7300b62ff5">CAN_id</a> = id;</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;        <a class="code" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">CAN_callback_table</a>[index].<a class="code" href="struct_c_a_n___callback.html#aaf6c1d8dd4ecbcac59008b8b5c7cbbaa">function</a> = handlerfunc;</div>
+<div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;        <a class="code" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">CAN_callback_table</a>[index].<a class="code" href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">next</a> = NULL;</div>
+<div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a> != NULL){xSemaphoreGive(<a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a>);}</div>
+<div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    }</div>
+<div class="line"><a name="l00413"></a><span class="lineno">  413</span>&#160; </div>
+<div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">CAN_callback_table</a>[index].<a class="code" href="struct_c_a_n___callback.html#a2dbb9c56fe79ad5ce0165d7300b62ff5">CAN_id</a> == <span class="keywordtype">id</span>){ <span class="comment">//You are editing a duplicate, overwrite it</span></div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;        <a class="code" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">CAN_callback_table</a>[index].<a class="code" href="struct_c_a_n___callback.html#a2dbb9c56fe79ad5ce0165d7300b62ff5">CAN_id</a> = id;</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;        <a class="code" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">CAN_callback_table</a>[index].<a class="code" href="struct_c_a_n___callback.html#aaf6c1d8dd4ecbcac59008b8b5c7cbbaa">function</a> = handlerfunc;</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a> != NULL){xSemaphoreGive(<a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a>);}</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;    }</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160; </div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <a class="code" href="struct_c_a_n___callback.html">CAN_Callback</a>* temp = &amp;<a class="code" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">CAN_callback_table</a>[index]; <span class="comment">//if we are here: The table entry is not empty, but is not the id we are looking for</span></div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordflow">while</span>(temp-&gt;<a class="code" href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">next</a> != NULL){</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;        temp = temp-&gt;<a class="code" href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">next</a>;</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;        <span class="keywordflow">if</span>(temp-&gt;<a class="code" href="struct_c_a_n___callback.html#a2dbb9c56fe79ad5ce0165d7300b62ff5">CAN_id</a> == <span class="keywordtype">id</span>){</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;            temp-&gt;<a class="code" href="struct_c_a_n___callback.html#a2dbb9c56fe79ad5ce0165d7300b62ff5">CAN_id</a> = id;</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            temp-&gt;<a class="code" href="struct_c_a_n___callback.html#aaf6c1d8dd4ecbcac59008b8b5c7cbbaa">function</a> = handlerfunc;</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a> != NULL){xSemaphoreGive(<a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a>);}</div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;        }</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    }</div>
+<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160; </div>
+<div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    temp-&gt;<a class="code" href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">next</a> = uvMalloc(<span class="keyword">sizeof</span>(<a class="code" href="struct_c_a_n___callback.html">CAN_Callback</a>)); <span class="comment">//reaching this point means temp-&gt;next == NULL</span></div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordflow">if</span>(temp-&gt;<a class="code" href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">next</a> == NULL){</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a> != NULL){xSemaphoreGive(<a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a>);}</div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;        temp = temp-&gt;<a class="code" href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">next</a>;</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;        temp-&gt;<a class="code" href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">next</a> = NULL;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;        temp-&gt;<a class="code" href="struct_c_a_n___callback.html#a2dbb9c56fe79ad5ce0165d7300b62ff5">CAN_id</a> = id;</div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;        temp-&gt;<a class="code" href="struct_c_a_n___callback.html#aaf6c1d8dd4ecbcac59008b8b5c7cbbaa">function</a> = handlerfunc;</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    }</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160; </div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a> != NULL){xSemaphoreGive(<a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a>);}</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160; </div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160; </div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160; </div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;}</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160; </div>
+<div class="line"><a name="l00453"></a><span class="lineno"><a class="line" href="can_8c.html#acadda9ab3aa926b92a84e3f192c66547">  453</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#acadda9ab3aa926b92a84e3f192c66547">nuke_hash_table</a>() {</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <a class="code" href="struct_c_a_n___callback.html">CAN_Callback</a>* temp;</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160; </div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="can_8c.html#a286ec093b36200ab124adf66d0671198">table_size</a>; i++) {</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;        temp = <a class="code" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">CAN_callback_table</a> + i*<span class="keyword">sizeof</span>(<a class="code" href="can_8c.html#af825ed4c7d0f1a7278410ab245a5ea8d">CAN_Callback</a>);</div>
+<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;        <span class="keywordflow">if</span>(temp-&gt;<a class="code" href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">next</a> != NULL){</div>
+<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;            temp = temp-&gt;<a class="code" href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">next</a>;</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;            <a class="code" href="struct_c_a_n___callback.html">CAN_Callback</a>* tmp2;</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;            <span class="keywordflow">while</span>(temp != NULL){</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;                tmp2 = temp-&gt;<a class="code" href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">next</a>;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;                uvFree(temp);</div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;                temp = tmp2;</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;            }</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;        }</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    }</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160; </div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    (void)memset(<a class="code" href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">CAN_callback_table</a>,0,<a class="code" href="can_8c.html#a286ec093b36200ab124adf66d0671198">table_size</a>*<span class="keyword">sizeof</span>(<a class="code" href="struct_c_a_n___callback.html">CAN_Callback</a>)); <span class="comment">//set the table to all 0s</span></div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160; </div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160; </div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;}</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160; </div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;  </div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160; </div>
+<div class="line"><a name="l00476"></a><span class="lineno"><a class="line" href="can_8c.html#ae025787f17f6312df1e71c731b2a0fe4">  476</a></span>&#160;<a class="code" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> <a class="code" href="can_8c.html#ae025787f17f6312df1e71c731b2a0fe4">__uvCANtxCritSection</a>(<a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a>* tx_msg){</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <span class="keywordflow">if</span>(tx_msg == NULL){</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        uvPanic(<span class="stringliteral">&quot;cannot send null CAN msg&quot;</span>,0);</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    }</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <span class="keywordflow">if</span>((tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#a3a3fdc7fed06a631fefa58ea44052d8d">flags</a>)&amp; <a class="code" href="uvfr__utils_8h.html#aa55012016c572366a0747ff7298c7fec">UV_CAN_EXTENDED_ID</a>){</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;        <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.IDE = CAN_ID_EXT;</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;        <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.ExtId = tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aae369fbabe3cc5b71a89bb641c24aace">msg_id</a>;</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;    }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;        <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.IDE = CAN_ID_STD;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;        <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.StdId = tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aae369fbabe3cc5b71a89bb641c24aace">msg_id</a>;</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    }</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160; </div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.DLC = tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aa74af3745c8b56910d7c309245541d37">dlc</a>;</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160; </div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160; </div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    taskENTER_CRITICAL();</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;    <span class="keywordflow">if</span> (HAL_CAN_AddTxMessage(&amp;<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>, &amp;<a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>, tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aec63cc112176da7895d0cfc8b32e6935">data</a>, &amp;<a class="code" href="constants_8h.html#aedd1e4ac418a9697f9f41a2713d49569">TxMailbox</a>) != HAL_OK){</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;        <span class="comment">/* Transmission request Error */</span></div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;        taskEXIT_CRITICAL();</div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;        uvPanic(<span class="stringliteral">&quot;Unable to Transmit CAN msg&quot;</span>,0);</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a>;</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        taskEXIT_CRITICAL();</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;    }</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>;</div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;}</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160; </div>
+<div class="line"><a name="l00513"></a><span class="lineno"><a class="line" href="group__uvfr__can__api.html#ga62414944c3b631f57fdd08e467bcf5a4">  513</a></span>&#160;<a class="code" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> <a class="code" href="group__uvfr__can__api.html#ga62414944c3b631f57fdd08e467bcf5a4">uvSendCanMSG</a>(<a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a>* tx_msg){</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160; </div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <span class="comment">//static TaskHandle_t can_tx_daemon_handle = NULL;</span></div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;    <span class="comment">//static uv_task_id can_tx_daemon_task_id;</span></div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160; </div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;    <span class="comment">//TODO: CanTxDaemon being inactive will brick this. FIX IT!!</span></div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;    <span class="keywordflow">if</span>(tx_msg == NULL){</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a>;</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    }</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160; </div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160; </div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;    <span class="comment">//BaseType_t higher_priority_task_woken = pdFALSE;</span></div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="can_8c.html#a39f60bf61979059355fc4916aa3500db">Tx_msg_queue</a> != NULL){</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;        <span class="keywordflow">if</span>(xQueueSendToBack(<a class="code" href="can_8c.html#a39f60bf61979059355fc4916aa3500db">Tx_msg_queue</a>,&amp;tx_msg,0) != pdPASS){</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;            uvPanic(<span class="stringliteral">&quot;couldnt enqueue CAN message&quot;</span>,0);</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;        }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>;</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;        }</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a>;</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="can_8c.html#ae025787f17f6312df1e71c731b2a0fe4">__uvCANtxCritSection</a>(tx_msg)!=<a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>){</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a>;</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        }</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;    }</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>;</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;}</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160; </div>
+<div class="line"><a name="l00551"></a><span class="lineno"><a class="line" href="can_8c.html#a2357e197a9ac26277eec808769fe409f">  551</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a2357e197a9ac26277eec808769fe409f">CANbusTxSvcDaemon</a>(<span class="keywordtype">void</span>* args){</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;    <a class="code" href="structuv__task__info.html">uv_task_info</a>* params = (<a class="code" href="structuv__task__info.html">uv_task_info</a>*) args;</div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;    <span class="comment">//CAN_TxHeaderTypeDef tx_header;</span></div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160; </div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;    <a class="code" href="can_8c.html#a39f60bf61979059355fc4916aa3500db">Tx_msg_queue</a> = xQueueCreate(8,<span class="keyword">sizeof</span>(<a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a>*));</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160; </div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160; </div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160; </div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;    <span class="comment">//BaseType_t retval;</span></div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160; </div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;    <a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a>* tx_msg = NULL;</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160; </div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;    <span class="comment">//tx_header.TransmitGlobalTime = DISABLE;</span></div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160; </div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160; </div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    BaseType_t result;</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    <span class="comment">//uint32_t notif_val = 0;</span></div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    <span class="keywordflow">for</span>(;;){</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160; </div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160; </div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;        result = xQueueReceive(<a class="code" href="can_8c.html#a39f60bf61979059355fc4916aa3500db">Tx_msg_queue</a>,&amp;tx_msg,20);</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160; </div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160;        <span class="keywordflow">if</span>(result == pdTRUE){</div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160; </div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;            <span class="keywordflow">if</span>(tx_msg == NULL){</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                uvPanic(<span class="stringliteral">&quot;cannot send null CAN msg&quot;</span>,0);</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;            }</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160; </div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;            <span class="keywordflow">if</span>((tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#a3a3fdc7fed06a631fefa58ea44052d8d">flags</a>)&amp; <a class="code" href="uvfr__utils_8h.html#aa55012016c572366a0747ff7298c7fec">UV_CAN_EXTENDED_ID</a>){</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;                <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.IDE = CAN_ID_EXT;</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.ExtId = tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aae369fbabe3cc5b71a89bb641c24aace">msg_id</a>;</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;            }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.IDE = CAN_ID_STD;</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.StdId = tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aae369fbabe3cc5b71a89bb641c24aace">msg_id</a>;</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;            }</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160; </div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;            <a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>.DLC = tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aa74af3745c8b56910d7c309245541d37">dlc</a>;</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160; </div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160; </div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160; </div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160; </div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;            <span class="keywordflow">if</span> (HAL_CAN_AddTxMessage(&amp;<a class="code" href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a>, &amp;<a class="code" href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a>, tx_msg-&gt;<a class="code" href="structuv___c_a_n__msg.html#aec63cc112176da7895d0cfc8b32e6935">data</a>, &amp;<a class="code" href="constants_8h.html#aedd1e4ac418a9697f9f41a2713d49569">TxMailbox</a>) != HAL_OK){</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                                <span class="comment">/* Transmission request Error */</span></div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                uvPanic(<span class="stringliteral">&quot;Unable to Transmit CAN msg&quot;</span>,0);</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;            }</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;        }</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160; </div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;        <span class="keywordflow">if</span>(params-&gt;<a class="code" href="structuv__task__info.html#af532b5031cd6a168a3ec45ab9ead4f23">cmd_data</a> == <a class="code" href="group__state__engine__api.html#ggaf11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6">UV_KILL_CMD</a>){</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;            QueueHandle_t tmpqueue = <a class="code" href="can_8c.html#a39f60bf61979059355fc4916aa3500db">Tx_msg_queue</a>;</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;            <a class="code" href="can_8c.html#a39f60bf61979059355fc4916aa3500db">Tx_msg_queue</a> = NULL;</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;            vQueueDelete(tmpqueue);</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160; </div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160;            <a class="code" href="group__state__engine__backend.html#ga5f35b34432afed7f18f91fb8607f096f">killSelf</a>(params);</div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(params-&gt;<a class="code" href="structuv__task__info.html#af532b5031cd6a168a3ec45ab9ead4f23">cmd_data</a> == <a class="code" href="group__state__engine__api.html#ggaf11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077">UV_SUSPEND_CMD</a>){</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;            <a class="code" href="group__state__engine__backend.html#gad6117850b55ad52be51d93915bcc313c">suspendSelf</a>(params);</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;        }</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160; </div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;    }<span class="comment">//main for loop</span></div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; </div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;}</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160; </div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160; </div>
+<div class="line"><a name="l00618"></a><span class="lineno"><a class="line" href="can_8c.html#a2b32305988f51945b7c220ca60ab68e8">  618</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="can_8c.html#a2b32305988f51945b7c220ca60ab68e8">CANbusRxSvcDaemon</a>(<span class="keywordtype">void</span>* args){</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;    <a class="code" href="structuv__task__info.html">uv_task_info</a>* params = (<a class="code" href="structuv__task__info.html">uv_task_info</a>*) args;</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160; </div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    <a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a> tmp;</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160; </div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;    BaseType_t retval;</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;    <a class="code" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> func_status;</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160; </div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;    <a class="code" href="can_8c.html#ad0e232ce658c38916aee908ceae1db1e">Rx_msg_queue</a> = xQueueCreate(8,<span class="keyword">sizeof</span>(<a class="code" href="structuv___c_a_n__msg.html">uv_CAN_msg</a>));</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; </div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;    <a class="code" href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a> = xSemaphoreCreateMutex();</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160; </div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160; </div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;    <span class="keywordflow">for</span>(;;){</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;        retval = xQueueReceive(<a class="code" href="can_8c.html#ad0e232ce658c38916aee908ceae1db1e">Rx_msg_queue</a>,&amp;tmp,10);</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;        <span class="keywordflow">if</span>(retval == pdTRUE){</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;            func_status = <a class="code" href="can_8c.html#aa5d470f815f2c11378233e0f3ca9ed8b">callFunctionFromCANid</a>(&amp;tmp);</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;            <span class="keywordflow">if</span>(func_status != <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>){</div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160; </div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;            }</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;        }</div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160; </div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;        <span class="keywordflow">if</span>(params-&gt;<a class="code" href="structuv__task__info.html#af532b5031cd6a168a3ec45ab9ead4f23">cmd_data</a> == <a class="code" href="group__state__engine__api.html#ggaf11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6">UV_KILL_CMD</a>){</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;            QueueHandle_t tmpqueue = <a class="code" href="can_8c.html#ad0e232ce658c38916aee908ceae1db1e">Rx_msg_queue</a>;</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;            <a class="code" href="can_8c.html#ad0e232ce658c38916aee908ceae1db1e">Rx_msg_queue</a> = NULL;</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;            vQueueDelete(tmpqueue);</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160; </div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;            <a class="code" href="group__state__engine__backend.html#ga5f35b34432afed7f18f91fb8607f096f">killSelf</a>(params);</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;        } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(params-&gt;<a class="code" href="structuv__task__info.html#af532b5031cd6a168a3ec45ab9ead4f23">cmd_data</a> == <a class="code" href="group__state__engine__api.html#ggaf11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077">UV_SUSPEND_CMD</a>){</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;            <a class="code" href="group__state__engine__backend.html#gad6117850b55ad52be51d93915bcc313c">suspendSelf</a>(params);</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;        }</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;    }</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160; </div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;    vQueueDelete(<a class="code" href="can_8c.html#ad0e232ce658c38916aee908ceae1db1e">Rx_msg_queue</a>);</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;    <a class="code" href="can_8c.html#ad0e232ce658c38916aee908ceae1db1e">Rx_msg_queue</a> = NULL;</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;    vTaskDelete(params-&gt;<a class="code" href="structuv__task__info.html#a5347f41c4b15b2d6b039c339613fde43">task_handle</a>);</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; </div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;}</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160; </div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;<span class="comment">/* USER CODE END 1 */</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="acan_8c_html_ab77168d14df04ccca5d48612ee21ced8"><div class="ttname"><a href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a></div><div class="ttdeci">CAN_HandleTypeDef hcan2</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00114">can.c:114</a></div></div>
-<div class="ttc" id="auvfr__state__engine_8h_html_aef3770e45bbacbf527fd93dd80eea9b9"><div class="ttname"><a href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a></div><div class="ttdeci">enum uv_status_t uv_status</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00016">uvfr_state_engine.h:16</a></div></div>
-<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00115">uvfr_utils.h:115</a></div></div>
+<div class="ttc" id="astructuv__task__info_html_af532b5031cd6a168a3ec45ab9ead4f23"><div class="ttname"><a href="structuv__task__info.html#af532b5031cd6a168a3ec45ab9ead4f23">uv_task_info::cmd_data</a></div><div class="ttdeci">uv_task_cmd cmd_data</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00241">uvfr_state_engine.h:241</a></div></div>
+<div class="ttc" id="acan_8c_html_ab77168d14df04ccca5d48612ee21ced8"><div class="ttname"><a href="can_8c.html#ab77168d14df04ccca5d48612ee21ced8">hcan2</a></div><div class="ttdeci">CAN_HandleTypeDef hcan2</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00147">can.c:147</a></div></div>
+<div class="ttc" id="astruct_c_a_n___callback_html_a2dbb9c56fe79ad5ce0165d7300b62ff5"><div class="ttname"><a href="struct_c_a_n___callback.html#a2dbb9c56fe79ad5ce0165d7300b62ff5">CAN_Callback::CAN_id</a></div><div class="ttdeci">uint32_t CAN_id</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00057">can.c:57</a></div></div>
+<div class="ttc" id="agroup__state__engine__api_html_ggaf11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6"><div class="ttname"><a href="group__state__engine__api.html#ggaf11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6">UV_KILL_CMD</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00098">uvfr_state_engine.h:98</a></div></div>
+<div class="ttc" id="agroup__state__engine__backend_html_gad6117850b55ad52be51d93915bcc313c"><div class="ttname"><a href="group__state__engine__backend.html#gad6117850b55ad52be51d93915bcc313c">suspendSelf</a></div><div class="ttdeci">void suspendSelf(struct uv_task_info *t)</div><div class="ttdoc">Called by a task that needs to suspend itself, once the task has determined it is safe to do so.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8c_source.html#l00749">uvfr_state_engine.c:749</a></div></div>
+<div class="ttc" id="acan_8c_html_aa5d470f815f2c11378233e0f3ca9ed8b"><div class="ttname"><a href="can_8c.html#aa5d470f815f2c11378233e0f3ca9ed8b">callFunctionFromCANid</a></div><div class="ttdeci">static uv_status callFunctionFromCANid(uv_CAN_msg *msg)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00368">can.c:368</a></div></div>
+<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00167">uvfr_utils.h:167</a></div></div>
+<div class="ttc" id="acan_8c_html_affa7bfe9532060be4358706525e4f36e"><div class="ttname"><a href="can_8c.html#affa7bfe9532060be4358706525e4f36e">generateHash</a></div><div class="ttdeci">unsigned int generateHash(uint32_t Incoming_CAN_id)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00351">can.c:351</a></div></div>
 <div class="ttc" id="abms_8h_html"><div class="ttname"><a href="bms_8h.html">bms.h</a></div></div>
-<div class="ttc" id="astructuv___c_a_n__msg_html_a3a3fdc7fed06a631fefa58ea44052d8d"><div class="ttname"><a href="structuv___c_a_n__msg.html#a3a3fdc7fed06a631fefa58ea44052d8d">uv_CAN_msg::flags</a></div><div class="ttdeci">uint8_t flags</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00207">uvfr_utils.h:207</a></div></div>
+<div class="ttc" id="astructuv__task__info_html"><div class="ttname"><a href="structuv__task__info.html">uv_task_info</a></div><div class="ttdoc">This struct is designed to hold neccessary information about an RTOS task that will be managed by uvf...</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00220">uvfr_state_engine.h:220</a></div></div>
+<div class="ttc" id="astructuv___c_a_n__msg_html_a3a3fdc7fed06a631fefa58ea44052d8d"><div class="ttname"><a href="structuv___c_a_n__msg.html#a3a3fdc7fed06a631fefa58ea44052d8d">uv_CAN_msg::flags</a></div><div class="ttdeci">uint8_t flags</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00271">uvfr_utils.h:271</a></div></div>
 <div class="ttc" id="auvfr__utils_8h_html"><div class="ttname"><a href="uvfr__utils_8h.html">uvfr_utils.h</a></div></div>
-<div class="ttc" id="aconstants_8h_html_a14629afcc7f0b2d62c2b617b07d98184"><div class="ttname"><a href="constants_8h.html#a14629afcc7f0b2d62c2b617b07d98184">RxData</a></div><div class="ttdeci">uint8_t RxData[8]</div><div class="ttdef"><b>Definition:</b> <a href="constants_8c_source.html#l00009">constants.c:9</a></div></div>
-<div class="ttc" id="acan_8c_html_acc24d5acdcc2015b59e63769a397353b"><div class="ttname"><a href="can_8c.html#acc24d5acdcc2015b59e63769a397353b">uvSendCanMSG</a></div><div class="ttdeci">uv_status uvSendCanMSG(uv_CAN_msg *msg)</div><div class="ttdoc">Function to send can message.</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00318">can.c:318</a></div></div>
-<div class="ttc" id="auvfr__state__engine_8h_html_aa6ffd72eb4909ddb38c37a1369e13f09"><div class="ttname"><a href="uvfr__state__engine_8h.html#aa6ffd72eb4909ddb38c37a1369e13f09">uv_task_id</a></div><div class="ttdeci">uint8_t uv_task_id</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00017">uvfr_state_engine.h:17</a></div></div>
+<div class="ttc" id="acan_8c_html_acadda9ab3aa926b92a84e3f192c66547"><div class="ttname"><a href="can_8c.html#acadda9ab3aa926b92a84e3f192c66547">nuke_hash_table</a></div><div class="ttdeci">void nuke_hash_table()</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00453">can.c:453</a></div></div>
+<div class="ttc" id="agroup__uvfr__can__api_html_ga62414944c3b631f57fdd08e467bcf5a4"><div class="ttname"><a href="group__uvfr__can__api.html#ga62414944c3b631f57fdd08e467bcf5a4">uvSendCanMSG</a></div><div class="ttdeci">uv_status uvSendCanMSG(uv_CAN_msg *tx_msg)</div><div class="ttdoc">Function to send CAN message.</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00513">can.c:513</a></div></div>
+<div class="ttc" id="agroup__state__engine__backend_html_ga5f35b34432afed7f18f91fb8607f096f"><div class="ttname"><a href="group__state__engine__backend.html#ga5f35b34432afed7f18f91fb8607f096f">killSelf</a></div><div class="ttdeci">void killSelf(struct uv_task_info *t)</div><div class="ttdoc">This function is called by a task to nuke itself. Is a wrapper function that is used to do all the di...</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8c_source.html#l00708">uvfr_state_engine.c:708</a></div></div>
+<div class="ttc" id="astructuv__task__info_html_a5347f41c4b15b2d6b039c339613fde43"><div class="ttname"><a href="structuv__task__info.html#a5347f41c4b15b2d6b039c339613fde43">uv_task_info::task_handle</a></div><div class="ttdeci">TaskHandle_t task_handle</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00239">uvfr_state_engine.h:239</a></div></div>
+<div class="ttc" id="acan_8c_html_ae025787f17f6312df1e71c731b2a0fe4"><div class="ttname"><a href="can_8c.html#ae025787f17f6312df1e71c731b2a0fe4">__uvCANtxCritSection</a></div><div class="ttdeci">uv_status __uvCANtxCritSection(uv_CAN_msg *tx_msg)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00476">can.c:476</a></div></div>
+<div class="ttc" id="agroup__uvfr__can__api_html_ga81adc4a577110ce8fe1158b0dc302cc2"><div class="ttname"><a href="group__uvfr__can__api.html#ga81adc4a577110ce8fe1158b0dc302cc2">insertCANMessageHandler</a></div><div class="ttdeci">void insertCANMessageHandler(uint32_t id, void *handlerfunc)</div><div class="ttdoc">Function to insert an id and function into the lookup table of callback functions.</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00395">can.c:395</a></div></div>
+<div class="ttc" id="astruct_c_a_n___callback_html_aaf6c1d8dd4ecbcac59008b8b5c7cbbaa"><div class="ttname"><a href="struct_c_a_n___callback.html#aaf6c1d8dd4ecbcac59008b8b5c7cbbaa">CAN_Callback::function</a></div><div class="ttdeci">void * function</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00058">can.c:58</a></div></div>
 <div class="ttc" id="aconstants_8h_html_a6ee6e13063b860648180eea65852cc71"><div class="ttname"><a href="constants_8h.html#a6ee6e13063b860648180eea65852cc71">RxHeader</a></div><div class="ttdeci">CAN_RxHeaderTypeDef RxHeader</div><div class="ttdef"><b>Definition:</b> <a href="constants_8c_source.html#l00005">constants.c:5</a></div></div>
-<div class="ttc" id="acan_8c_html_ae81ac633e5983dde276f930615a1e03a"><div class="ttname"><a href="can_8c.html#ae81ac633e5983dde276f930615a1e03a">CANbusRxSVCDaemon</a></div><div class="ttdeci">void CANbusRxSVCDaemon(void *args)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00401">can.c:401</a></div></div>
+<div class="ttc" id="acan_8c_html_af825ed4c7d0f1a7278410ab245a5ea8d"><div class="ttname"><a href="can_8c.html#af825ed4c7d0f1a7278410ab245a5ea8d">CAN_Callback</a></div><div class="ttdeci">struct CAN_Callback CAN_Callback</div></div>
+<div class="ttc" id="acan_8c_html_a286ec093b36200ab124adf66d0671198"><div class="ttname"><a href="can_8c.html#a286ec093b36200ab124adf66d0671198">table_size</a></div><div class="ttdeci">#define table_size</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00052">can.c:52</a></div></div>
 <div class="ttc" id="apdu_8h_html"><div class="ttname"><a href="pdu_8h.html">pdu.h</a></div></div>
-<div class="ttc" id="acan_8c_html_aff5c4caa2b4968b309deaffdc58f1e92"><div class="ttname"><a href="can_8c.html#aff5c4caa2b4968b309deaffdc58f1e92">handleCANbusError</a></div><div class="ttdeci">void handleCANbusError(const CAN_HandleTypeDef *hcan, const uint32_t err_to_ignore)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00038">can.c:38</a></div></div>
-<div class="ttc" id="astructuv___c_a_n__msg_html_aec63cc112176da7895d0cfc8b32e6935"><div class="ttname"><a href="structuv___c_a_n__msg.html#aec63cc112176da7895d0cfc8b32e6935">uv_CAN_msg::data</a></div><div class="ttdeci">uint8_t data[8]</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00213">uvfr_utils.h:213</a></div></div>
+<div class="ttc" id="acan_8c_html_aff5c4caa2b4968b309deaffdc58f1e92"><div class="ttname"><a href="can_8c.html#aff5c4caa2b4968b309deaffdc58f1e92">handleCANbusError</a></div><div class="ttdeci">void handleCANbusError(const CAN_HandleTypeDef *hcan, const uint32_t err_to_ignore)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00071">can.c:71</a></div></div>
+<div class="ttc" id="astructuv___c_a_n__msg_html_aec63cc112176da7895d0cfc8b32e6935"><div class="ttname"><a href="structuv___c_a_n__msg.html#aec63cc112176da7895d0cfc8b32e6935">uv_CAN_msg::data</a></div><div class="ttdeci">uint8_t data[8]</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00277">uvfr_utils.h:277</a></div></div>
+<div class="ttc" id="acan_8c_html_a2b32305988f51945b7c220ca60ab68e8"><div class="ttname"><a href="can_8c.html#a2b32305988f51945b7c220ca60ab68e8">CANbusRxSvcDaemon</a></div><div class="ttdeci">void CANbusRxSvcDaemon(void *args)</div><div class="ttdoc">Background task that executes the CAN message callback functions.</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00618">can.c:618</a></div></div>
+<div class="ttc" id="acan_8h_html_aef3770e45bbacbf527fd93dd80eea9b9"><div class="ttname"><a href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a></div><div class="ttdeci">enum uv_status_t uv_status</div><div class="ttdef"><b>Definition:</b> <a href="can_8h_source.html#l00044">can.h:44</a></div></div>
 <div class="ttc" id="aconstants_8h_html_a3e35a666d459f2ac92fc7c35334ff0ff"><div class="ttname"><a href="constants_8h.html#a3e35a666d459f2ac92fc7c35334ff0ff">TxHeader</a></div><div class="ttdeci">CAN_TxHeaderTypeDef TxHeader</div><div class="ttdef"><b>Definition:</b> <a href="constants_8c_source.html#l00004">constants.c:4</a></div></div>
 <div class="ttc" id="amotor__controller_8h_html"><div class="ttname"><a href="motor__controller_8h.html">motor_controller.h</a></div></div>
-<div class="ttc" id="astructuv___c_a_n__msg_html_aa74af3745c8b56910d7c309245541d37"><div class="ttname"><a href="structuv___c_a_n__msg.html#aa74af3745c8b56910d7c309245541d37">uv_CAN_msg::dlc</a></div><div class="ttdeci">uint8_t dlc</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00211">uvfr_utils.h:211</a></div></div>
-<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00117">uvfr_utils.h:117</a></div></div>
-<div class="ttc" id="auvfr__utils_8h_html_aa55012016c572366a0747ff7298c7fec"><div class="ttname"><a href="uvfr__utils_8h.html#aa55012016c572366a0747ff7298c7fec">UV_CAN_EXTENDED_ID</a></div><div class="ttdeci">#define UV_CAN_EXTENDED_ID</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00204">uvfr_utils.h:204</a></div></div>
-<div class="ttc" id="astructuv___c_a_n__msg_html_aae369fbabe3cc5b71a89bb641c24aace"><div class="ttname"><a href="structuv___c_a_n__msg.html#aae369fbabe3cc5b71a89bb641c24aace">uv_CAN_msg::msg_id</a></div><div class="ttdeci">uint32_t msg_id</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00212">uvfr_utils.h:212</a></div></div>
+<div class="ttc" id="acan_8c_html_a2bd63a687f9513e4fcaf3c97d5821515"><div class="ttname"><a href="can_8c.html#a2bd63a687f9513e4fcaf3c97d5821515">callback_table_mutex</a></div><div class="ttdeci">SemaphoreHandle_t callback_table_mutex</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00069">can.c:69</a></div></div>
+<div class="ttc" id="astructuv___c_a_n__msg_html_aa74af3745c8b56910d7c309245541d37"><div class="ttname"><a href="structuv___c_a_n__msg.html#aa74af3745c8b56910d7c309245541d37">uv_CAN_msg::dlc</a></div><div class="ttdeci">uint8_t dlc</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00275">uvfr_utils.h:275</a></div></div>
+<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00169">uvfr_utils.h:169</a></div></div>
+<div class="ttc" id="auvfr__utils_8h_html_aa55012016c572366a0747ff7298c7fec"><div class="ttname"><a href="uvfr__utils_8h.html#aa55012016c572366a0747ff7298c7fec">UV_CAN_EXTENDED_ID</a></div><div class="ttdeci">#define UV_CAN_EXTENDED_ID</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00262">uvfr_utils.h:262</a></div></div>
+<div class="ttc" id="acan_8c_html_a323f3f73f5588982a51a55276dbc5738"><div class="ttname"><a href="can_8c.html#a323f3f73f5588982a51a55276dbc5738">CAN_callback_table</a></div><div class="ttdeci">CAN_Callback CAN_callback_table[table_size]</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00067">can.c:67</a></div></div>
+<div class="ttc" id="astructuv___c_a_n__msg_html_aae369fbabe3cc5b71a89bb641c24aace"><div class="ttname"><a href="structuv___c_a_n__msg.html#aae369fbabe3cc5b71a89bb641c24aace">uv_CAN_msg::msg_id</a></div><div class="ttdeci">uint32_t msg_id</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00276">uvfr_utils.h:276</a></div></div>
+<div class="ttc" id="acan_8c_html_a39f60bf61979059355fc4916aa3500db"><div class="ttname"><a href="can_8c.html#a39f60bf61979059355fc4916aa3500db">Tx_msg_queue</a></div><div class="ttdeci">static QueueHandle_t Tx_msg_queue</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00049">can.c:49</a></div></div>
 <div class="ttc" id="aconstants_8h_html_aedd1e4ac418a9697f9f41a2713d49569"><div class="ttname"><a href="constants_8h.html#aedd1e4ac418a9697f9f41a2713d49569">TxMailbox</a></div><div class="ttdeci">uint32_t TxMailbox</div><div class="ttdef"><b>Definition:</b> <a href="constants_8c_source.html#l00008">constants.c:8</a></div></div>
-<div class="ttc" id="acan_8c_html_a4c51ef84434a42d4c5f9524d361c0703"><div class="ttname"><a href="can_8c.html#a4c51ef84434a42d4c5f9524d361c0703">HAL_CAN_RxFifo1MsgPendingCallback</a></div><div class="ttdeci">void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00301">can.c:301</a></div></div>
+<div class="ttc" id="astruct_c_a_n___callback_html"><div class="ttname"><a href="struct_c_a_n___callback.html">CAN_Callback</a></div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00056">can.c:56</a></div></div>
+<div class="ttc" id="acan_8c_html_a4c51ef84434a42d4c5f9524d361c0703"><div class="ttname"><a href="can_8c.html#a4c51ef84434a42d4c5f9524d361c0703">HAL_CAN_RxFifo1MsgPendingCallback</a></div><div class="ttdeci">void HAL_CAN_RxFifo1MsgPendingCallback(CAN_HandleTypeDef *hcan2)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00338">can.c:338</a></div></div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">: Header for main.c file. This file contains the common defines of the application.</div></div>
-<div class="ttc" id="amain_8h_html_a1730ffe1e560465665eb47d9264826f9"><div class="ttname"><a href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is executed in case of error occurrence.</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00341">main.c:341</a></div></div>
+<div class="ttc" id="amain_8h_html_a1730ffe1e560465665eb47d9264826f9"><div class="ttname"><a href="main_8h.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is executed in case of error occurrence.</div><div class="ttdef"><b>Definition:</b> <a href="main_8c_source.html#l00378">main.c:378</a></div></div>
 <div class="ttc" id="aconstants_8h_html"><div class="ttname"><a href="constants_8h.html">constants.h</a></div></div>
-<div class="ttc" id="acan_8c_html_a1ee5cd592134235b6c07f676784d47c3"><div class="ttname"><a href="can_8c.html#a1ee5cd592134235b6c07f676784d47c3">MX_CAN2_Init</a></div><div class="ttdeci">void MX_CAN2_Init(void)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00117">can.c:117</a></div></div>
+<div class="ttc" id="acan_8c_html_a1ee5cd592134235b6c07f676784d47c3"><div class="ttname"><a href="can_8c.html#a1ee5cd592134235b6c07f676784d47c3">MX_CAN2_Init</a></div><div class="ttdeci">void MX_CAN2_Init(void)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00150">can.c:150</a></div></div>
 <div class="ttc" id="aimd_8h_html"><div class="ttname"><a href="imd_8h.html">imd.h</a></div></div>
-<div class="ttc" id="acan_8c_html_a2357e197a9ac26277eec808769fe409f"><div class="ttname"><a href="can_8c.html#a2357e197a9ac26277eec808769fe409f">CANbusTxSvcDaemon</a></div><div class="ttdeci">void CANbusTxSvcDaemon(void *args)</div><div class="ttdoc">Background task that handles any CAN messages that are being sent.</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00356">can.c:356</a></div></div>
-<div class="ttc" id="astructuv___c_a_n__msg_html"><div class="ttname"><a href="structuv___c_a_n__msg.html">uv_CAN_msg</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00206">uvfr_utils.h:206</a></div></div>
-<div class="ttc" id="acan_8h_html_a8258cafd2b5e0bfb1e4228e7a45750bf"><div class="ttname"><a href="can_8h.html#a8258cafd2b5e0bfb1e4228e7a45750bf">CAN_TX_DAEMON_NAME</a></div><div class="ttdeci">#define CAN_TX_DAEMON_NAME</div><div class="ttdef"><b>Definition:</b> <a href="can_8h_source.html#l00040">can.h:40</a></div></div>
+<div class="ttc" id="agroup__state__engine__api_html_ggaf11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077"><div class="ttname"><a href="group__state__engine__api.html#ggaf11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077">UV_SUSPEND_CMD</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00099">uvfr_state_engine.h:99</a></div></div>
+<div class="ttc" id="acan_8c_html_a2357e197a9ac26277eec808769fe409f"><div class="ttname"><a href="can_8c.html#a2357e197a9ac26277eec808769fe409f">CANbusTxSvcDaemon</a></div><div class="ttdeci">void CANbusTxSvcDaemon(void *args)</div><div class="ttdoc">Background task that handles any CAN messages that are being sent.</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00551">can.c:551</a></div></div>
+<div class="ttc" id="astructuv___c_a_n__msg_html"><div class="ttname"><a href="structuv___c_a_n__msg.html">uv_CAN_msg</a></div><div class="ttdoc">Representative of a CAN message.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00270">uvfr_utils.h:270</a></div></div>
 <div class="ttc" id="acan_8h_html"><div class="ttname"><a href="can_8h.html">can.h</a></div><div class="ttdoc">This file contains all the function prototypes for the can.c file.</div></div>
-<div class="ttc" id="acan_8c_html_a2778ce7f3a2de42769b6de9fec4cedb9"><div class="ttname"><a href="can_8c.html#a2778ce7f3a2de42769b6de9fec4cedb9">HAL_CAN_MspInit</a></div><div class="ttdeci">void HAL_CAN_MspInit(CAN_HandleTypeDef *canHandle)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00195">can.c:195</a></div></div>
-<div class="ttc" id="acan_8c_html_a81ca550f56875553f534a4d72adff10d"><div class="ttname"><a href="can_8c.html#a81ca550f56875553f534a4d72adff10d">HAL_CAN_ERROR_INVALID_CALLBACK</a></div><div class="ttdeci">#define HAL_CAN_ERROR_INVALID_CALLBACK</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00035">can.c:35</a></div></div>
-<div class="ttc" id="auvfr__state__engine_8c_html_aaa277ffa1af90e363ed58510872d0fed"><div class="ttname"><a href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a></div><div class="ttdeci">uvPanic(&quot;SCD Timeout&quot;, 0)</div></div>
-<div class="ttc" id="acan_8c_html_a4b39e42353b2781bc75d83c018640b67"><div class="ttname"><a href="can_8c.html#a4b39e42353b2781bc75d83c018640b67">HAL_CAN_MspDeInit</a></div><div class="ttdeci">void HAL_CAN_MspDeInit(CAN_HandleTypeDef *canHandle)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00233">can.c:233</a></div></div>
-<div class="ttc" id="acan_8c_html_a4e0742fef0f265347a75b7fa12012229"><div class="ttname"><a href="can_8c.html#a4e0742fef0f265347a75b7fa12012229">HAL_CAN_RxFifo0MsgPendingCallback</a></div><div class="ttdeci">void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00265">can.c:265</a></div></div>
+<div class="ttc" id="acan_8c_html_a2778ce7f3a2de42769b6de9fec4cedb9"><div class="ttname"><a href="can_8c.html#a2778ce7f3a2de42769b6de9fec4cedb9">HAL_CAN_MspInit</a></div><div class="ttdeci">void HAL_CAN_MspInit(CAN_HandleTypeDef *canHandle)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00228">can.c:228</a></div></div>
+<div class="ttc" id="acan_8c_html_a81ca550f56875553f534a4d72adff10d"><div class="ttname"><a href="can_8c.html#a81ca550f56875553f534a4d72adff10d">HAL_CAN_ERROR_INVALID_CALLBACK</a></div><div class="ttdeci">#define HAL_CAN_ERROR_INVALID_CALLBACK</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00046">can.c:46</a></div></div>
+<div class="ttc" id="acan_8c_html_a4b39e42353b2781bc75d83c018640b67"><div class="ttname"><a href="can_8c.html#a4b39e42353b2781bc75d83c018640b67">HAL_CAN_MspDeInit</a></div><div class="ttdeci">void HAL_CAN_MspDeInit(CAN_HandleTypeDef *canHandle)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00266">can.c:266</a></div></div>
+<div class="ttc" id="acan_8c_html_a4e0742fef0f265347a75b7fa12012229"><div class="ttname"><a href="can_8c.html#a4e0742fef0f265347a75b7fa12012229">HAL_CAN_RxFifo0MsgPendingCallback</a></div><div class="ttdeci">void HAL_CAN_RxFifo0MsgPendingCallback(CAN_HandleTypeDef *hcan2)</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00298">can.c:298</a></div></div>
 <div class="ttc" id="adash_8h_html"><div class="ttname"><a href="dash_8h.html">dash.h</a></div></div>
+<div class="ttc" id="astruct_c_a_n___callback_html_ace8db41695ac99095f81f37c97056076"><div class="ttname"><a href="struct_c_a_n___callback.html#ace8db41695ac99095f81f37c97056076">CAN_Callback::next</a></div><div class="ttdeci">struct CAN_Callback * next</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00059">can.c:59</a></div></div>
+<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9ea87c01f9029276637a8c9568fd67efcac"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea87c01f9029276637a8c9568fd67efcac">UV_WARNING</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00168">uvfr_utils.h:168</a></div></div>
+<div class="ttc" id="acan_8c_html_ad0e232ce658c38916aee908ceae1db1e"><div class="ttname"><a href="can_8c.html#ad0e232ce658c38916aee908ceae1db1e">Rx_msg_queue</a></div><div class="ttdeci">static QueueHandle_t Rx_msg_queue</div><div class="ttdef"><b>Definition:</b> <a href="can_8c_source.html#l00050">can.c:50</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

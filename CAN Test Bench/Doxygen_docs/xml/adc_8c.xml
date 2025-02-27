@@ -1,0 +1,632 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="adc_8c" kind="file" language="C++">
+    <compoundname>adc.c</compoundname>
+    <includes refid="adc_8h" local="yes">adc.h</includes>
+    <incdepgraph>
+      <node id="5">
+        <label>stdarg.h</label>
+      </node>
+      <node id="12">
+        <label>tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>stdint.h</label>
+      </node>
+      <node id="33">
+        <label>stdlib.h</label>
+      </node>
+      <node id="28">
+        <label>oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>cmsis_os.h</label>
+      </node>
+      <node id="6">
+        <label>uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>message_buffer.h</label>
+      </node>
+      <node id="23">
+        <label>bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>rb_tree.h</label>
+        <link refid="rb__tree_8h"/>
+      </node>
+      <node id="10">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="9">
+        <label>can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>uvfr_global_config.h</label>
+        <link refid="uvfr__global__config_8h"/>
+      </node>
+      <node id="31">
+        <label>FreeRTOSConfig.h</label>
+        <link refid="_free_r_t_o_s_config_8h"/>
+      </node>
+      <node id="24">
+        <label>uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>odometer.h</label>
+        <link refid="odometer_8h"/>
+      </node>
+      <node id="4">
+        <label>stm32f4xx_hal.h</label>
+      </node>
+      <node id="15">
+        <label>FreeRTOS.h</label>
+      </node>
+      <node id="1">
+        <label>Core/Src/adc.c</label>
+        <link refid="adc_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>task.h</label>
+      </node>
+      <node id="3">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="adc_8c_1a22b804736f5648d52f639b2647d4ed13" prot="public" static="no" mutable="no">
+        <type>ADC_HandleTypeDef</type>
+        <definition>ADC_HandleTypeDef hadc1</definition>
+        <argsstring></argsstring>
+        <name>hadc1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/adc.c" line="27" column="19" bodyfile="Core/Src/adc.c" bodystart="27" bodyend="-1"/>
+        <referencedby refid="main_8c_1a8cf5c59c6355fe7cf3c10816c761b9c2" compoundref="main_8c" startline="330" endline="341">HAL_ADC_LevelOutOfWindowCallback</referencedby>
+        <referencedby refid="adc_8c_1acccd58aa70215a6b184ad242312ffd0c" compoundref="adc_8c" startline="32" endline="116">MX_ADC1_Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" prot="public" static="no" mutable="no">
+        <type>ADC_HandleTypeDef</type>
+        <definition>ADC_HandleTypeDef hadc2</definition>
+        <argsstring></argsstring>
+        <name>hadc2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/adc.c" line="28" column="19" bodyfile="Core/Src/adc.c" bodystart="28" bodyend="-1"/>
+        <referencedby refid="main_8c_1a8a3b0ad512a6e6c6157440b68d395eac" compoundref="main_8c" startline="354" endline="372">HAL_TIM_PeriodElapsedCallback</referencedby>
+        <referencedby refid="adc_8c_1a101e2e3433dfe72bbbd0ae3a84489263" compoundref="adc_8c" startline="118" endline="163">MX_ADC2_Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" prot="public" static="no" mutable="no">
+        <type>DMA_HandleTypeDef</type>
+        <definition>DMA_HandleTypeDef hdma_adc1</definition>
+        <argsstring></argsstring>
+        <name>hdma_adc1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/adc.c" line="29" column="19" bodyfile="Core/Src/adc.c" bodystart="29" bodyend="-1"/>
+        <referencedby refid="stm32f4xx__it_8c_1aaf6ce196dde98712e1223b99766e06c0" compoundref="stm32f4xx__it_8c" startline="195" endline="204">DMA2_Stream0_IRQHandler</referencedby>
+        <referencedby refid="adc_8c_1ac3139540667c403c5dfd37a99c610b1c" compoundref="adc_8c" startline="165" endline="234">HAL_ADC_MspInit</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="adc_8c_1acccd58aa70215a6b184ad242312ffd0c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MX_ADC1_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>MX_ADC1_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)</para>
+<para>Configure the analog watchdog</para>
+<para>Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.</para>
+<para>Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.</para>
+<para>Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.</para>
+<para>Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.</para>
+        </inbodydescription>
+        <location file="Core/Src/adc.c" line="32" column="6" bodyfile="Core/Src/adc.c" bodystart="32" bodyend="116"/>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" compoundref="adc_8c" startline="27">hadc1</references>
+        <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="adc_8c_1a101e2e3433dfe72bbbd0ae3a84489263" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MX_ADC2_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>MX_ADC2_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Configure the global features of the ADC (Clock, Resolution, Data Alignment and number of conversion)</para>
+<para>Configure for the selected ADC regular channel its corresponding rank in the sequencer and its sample time.</para>
+        </inbodydescription>
+        <location file="Core/Src/adc.c" line="118" column="6" bodyfile="Core/Src/adc.c" bodystart="118" bodyend="163"/>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" compoundref="adc_8c" startline="28">hadc2</references>
+        <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="adc_8c_1ac3139540667c403c5dfd37a99c610b1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_ADC_MspInit</definition>
+        <argsstring>(ADC_HandleTypeDef *adcHandle)</argsstring>
+        <name>HAL_ADC_MspInit</name>
+        <param>
+          <type>ADC_HandleTypeDef *</type>
+          <declname>adcHandle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>ADC1 GPIO Configuration PA1 ---<mdash/>&gt; ADC1_IN1 PA2 ---<mdash/>&gt; ADC1_IN2 PA3 ---<mdash/>&gt; ADC1_IN3 PA4 ---<mdash/>&gt; ADC1_IN4</para>
+<para>ADC2 GPIO Configuration PA5 ---<mdash/>&gt; ADC2_IN5 PA6 ---<mdash/>&gt; ADC2_IN6</para>
+        </inbodydescription>
+        <location file="Core/Src/adc.c" line="165" column="6" bodyfile="Core/Src/adc.c" bodystart="165" bodyend="234"/>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" compoundref="adc_8c" startline="29">hdma_adc1</references>
+      </memberdef>
+      <memberdef kind="function" id="adc_8c_1a3f61f2c2af0f122f81a87af8ad7b4360" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_ADC_MspDeInit</definition>
+        <argsstring>(ADC_HandleTypeDef *adcHandle)</argsstring>
+        <name>HAL_ADC_MspDeInit</name>
+        <param>
+          <type>ADC_HandleTypeDef *</type>
+          <declname>adcHandle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>ADC1 GPIO Configuration PA1 ---<mdash/>&gt; ADC1_IN1 PA2 ---<mdash/>&gt; ADC1_IN2 PA3 ---<mdash/>&gt; ADC1_IN3 PA4 ---<mdash/>&gt; ADC1_IN4</para>
+<para>ADC2 GPIO Configuration PA5 ---<mdash/>&gt; ADC2_IN5 PA6 ---<mdash/>&gt; ADC2_IN6</para>
+        </inbodydescription>
+        <location file="Core/Src/adc.c" line="236" column="6" bodyfile="Core/Src/adc.c" bodystart="236" bodyend="279"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This file provides code for the configuration of the ADC instances. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="attention"><para></para>
+</simplesect>
+Copyright (c) 2023 STMicroelectronics. All rights reserved.</para>
+<para>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Header<sp/>*/</highlight></codeline>
+<codeline lineno="19"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="adc_8h" kindref="compound">adc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27" refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" refkind="member"><highlight class="normal">ADC_HandleTypeDef<sp/><ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>;</highlight></codeline>
+<codeline lineno="28" refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" refkind="member"><highlight class="normal">ADC_HandleTypeDef<sp/><ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>;</highlight></codeline>
+<codeline lineno="29" refid="stm32f4xx__it_8c_1a1c126854bb1813d31ab4776b21dcc51f" refkind="member"><highlight class="normal">DMA_HandleTypeDef<sp/><ref refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>ADC1<sp/>init<sp/>function<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="adc_8c_1acccd58aa70215a6b184ad242312ffd0c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="adc_8c_1acccd58aa70215a6b184ad242312ffd0c" kindref="member">MX_ADC1_Init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="33"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC1_Init<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//code<sp/>most<sp/>be<sp/>here<sp/>or<sp/>it<sp/>will<sp/>be<sp/>deleted</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC1_Init<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/>ADC_AnalogWDGConfTypeDef<sp/>AnalogWDGConfig<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>ADC_ChannelConfTypeDef<sp/>sConfig<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC1_Init<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC1_Init<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>.Instance<sp/>=<sp/>ADC1;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>.Init.ClockPrescaler<sp/>=<sp/>ADC_CLOCK_SYNC_PCLK_DIV4;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>.Init.Resolution<sp/>=<sp/>ADC_RESOLUTION_12B;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>.Init.ScanConvMode<sp/>=<sp/>ENABLE;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>.Init.ContinuousConvMode<sp/>=<sp/>ENABLE;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>.Init.DiscontinuousConvMode<sp/>=<sp/>DISABLE;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>.Init.ExternalTrigConvEdge<sp/>=<sp/>ADC_EXTERNALTRIGCONVEDGE_NONE;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>.Init.ExternalTrigConv<sp/>=<sp/>ADC_SOFTWARE_START;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>.Init.DataAlign<sp/>=<sp/>ADC_DATAALIGN_RIGHT;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>.Init.NbrOfConversion<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>.Init.DMAContinuousRequests<sp/>=<sp/>ENABLE;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>.Init.EOCSelection<sp/>=<sp/>ADC_EOC_SINGLE_CONV;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_ADC_Init(&amp;<ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/>AnalogWDGConfig.WatchdogMode<sp/>=<sp/>ADC_ANALOGWATCHDOG_ALL_REG;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/>AnalogWDGConfig.HighThreshold<sp/>=<sp/>2850;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/>AnalogWDGConfig.LowThreshold<sp/>=<sp/>500;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>AnalogWDGConfig.ITMode<sp/>=<sp/>ENABLE;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_ADC_AnalogWDGConfig(&amp;<ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>,<sp/>&amp;AnalogWDGConfig)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/>sConfig.Channel<sp/>=<sp/>ADC_CHANNEL_1;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>sConfig.Rank<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>sConfig.SamplingTime<sp/>=<sp/>ADC_SAMPLETIME_84CYCLES;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_ADC_ConfigChannel(&amp;<ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>,<sp/>&amp;sConfig)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/>sConfig.Channel<sp/>=<sp/>ADC_CHANNEL_2;</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/>sConfig.Rank<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_ADC_ConfigChannel(&amp;<ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>,<sp/>&amp;sConfig)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>sConfig.Channel<sp/>=<sp/>ADC_CHANNEL_3;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>sConfig.Rank<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_ADC_ConfigChannel(&amp;<ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>,<sp/>&amp;sConfig)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>sConfig.Channel<sp/>=<sp/>ADC_CHANNEL_4;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>sConfig.Rank<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_ADC_ConfigChannel(&amp;<ref refid="adc_8c_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>,<sp/>&amp;sConfig)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC1_Init<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC1_Init<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>ADC2<sp/>init<sp/>function<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="adc_8c_1a101e2e3433dfe72bbbd0ae3a84489263" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="adc_8c_1a101e2e3433dfe72bbbd0ae3a84489263" kindref="member">MX_ADC2_Init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="119"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC2_Init<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC2_Init<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/>ADC_ChannelConfTypeDef<sp/>sConfig<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC2_Init<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC2_Init<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>.Instance<sp/>=<sp/>ADC2;</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>.Init.ClockPrescaler<sp/>=<sp/>ADC_CLOCK_SYNC_PCLK_DIV4;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>.Init.Resolution<sp/>=<sp/>ADC_RESOLUTION_12B;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>.Init.ScanConvMode<sp/>=<sp/>DISABLE;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>.Init.ContinuousConvMode<sp/>=<sp/>DISABLE;</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>.Init.DiscontinuousConvMode<sp/>=<sp/>DISABLE;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>.Init.ExternalTrigConvEdge<sp/>=<sp/>ADC_EXTERNALTRIGCONVEDGE_NONE;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>.Init.ExternalTrigConv<sp/>=<sp/>ADC_SOFTWARE_START;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>.Init.DataAlign<sp/>=<sp/>ADC_DATAALIGN_RIGHT;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>.Init.NbrOfConversion<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>.Init.DMAContinuousRequests<sp/>=<sp/>DISABLE;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>.Init.EOCSelection<sp/>=<sp/>ADC_EOC_SINGLE_CONV;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_ADC_Init(&amp;<ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/>sConfig.Channel<sp/>=<sp/>ADC_CHANNEL_6;</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/>sConfig.Rank<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/>sConfig.SamplingTime<sp/>=<sp/>ADC_SAMPLETIME_3CYCLES;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_ADC_ConfigChannel(&amp;<ref refid="adc_8c_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>,<sp/>&amp;sConfig)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC2_Init<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC2_Init<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165" refid="adc_8c_1ac3139540667c403c5dfd37a99c610b1c" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="adc_8c_1ac3139540667c403c5dfd37a99c610b1c" kindref="member">HAL_ADC_MspInit</ref>(ADC_HandleTypeDef*<sp/>adcHandle)</highlight></codeline>
+<codeline lineno="166"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/>GPIO_InitTypeDef<sp/>GPIO_InitStruct<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(adcHandle-&gt;Instance==ADC1)</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC1_MspInit<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC1_MspInit<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ADC1<sp/>clock<sp/>enable<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>__HAL_RCC_ADC1_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>__HAL_RCC_GPIOA_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIO_InitStruct.Pin<sp/>=<sp/>GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4;</highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIO_InitStruct.Mode<sp/>=<sp/>GPIO_MODE_ANALOG;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIO_InitStruct.Pull<sp/>=<sp/>GPIO_NOPULL;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_GPIO_Init(GPIOA,<sp/>&amp;GPIO_InitStruct);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ADC1<sp/>DMA<sp/>Init<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ADC1<sp/>Init<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>.Instance<sp/>=<sp/>DMA2_Stream0;</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>.Init.Channel<sp/>=<sp/>DMA_CHANNEL_0;</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>.Init.Direction<sp/>=<sp/>DMA_PERIPH_TO_MEMORY;</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>.Init.PeriphInc<sp/>=<sp/>DMA_PINC_DISABLE;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>.Init.MemInc<sp/>=<sp/>DMA_MINC_ENABLE;</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>.Init.PeriphDataAlignment<sp/>=<sp/>DMA_PDATAALIGN_WORD;</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>.Init.MemDataAlignment<sp/>=<sp/>DMA_MDATAALIGN_WORD;</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>.Init.Mode<sp/>=<sp/>DMA_CIRCULAR;</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>.Init.Priority<sp/>=<sp/>DMA_PRIORITY_HIGH;</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>.Init.FIFOMode<sp/>=<sp/>DMA_FIFOMODE_DISABLE;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_DMA_Init(&amp;<ref refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>__HAL_LINKDMA(adcHandle,DMA_Handle,<ref refid="adc_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>);</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC1_MspInit<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC1_MspInit<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(adcHandle-&gt;Instance==ADC2)</highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC2_MspInit<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC2_MspInit<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ADC2<sp/>clock<sp/>enable<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/>__HAL_RCC_ADC2_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>__HAL_RCC_GPIOA_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIO_InitStruct.Pin<sp/>=<sp/>GPIO_PIN_5|GPIO_PIN_6;</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIO_InitStruct.Mode<sp/>=<sp/>GPIO_MODE_ANALOG;</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIO_InitStruct.Pull<sp/>=<sp/>GPIO_NOPULL;</highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_GPIO_Init(GPIOA,<sp/>&amp;GPIO_InitStruct);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC2_MspInit<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC2_MspInit<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="234"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight></codeline>
+<codeline lineno="236" refid="adc_8c_1a3f61f2c2af0f122f81a87af8ad7b4360" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="adc_8c_1a3f61f2c2af0f122f81a87af8ad7b4360" kindref="member">HAL_ADC_MspDeInit</ref>(ADC_HandleTypeDef*<sp/>adcHandle)</highlight></codeline>
+<codeline lineno="237"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(adcHandle-&gt;Instance==ADC1)</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC1_MspDeInit<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC1_MspDeInit<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Peripheral<sp/>clock<sp/>disable<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/>__HAL_RCC_ADC1_CLK_DISABLE();</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_GPIO_DeInit(GPIOA,<sp/>GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3|GPIO_PIN_4);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>ADC1<sp/>DMA<sp/>DeInit<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_DMA_DeInit(adcHandle-&gt;DMA_Handle);</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC1_MspDeInit<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC1_MspDeInit<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="261"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(adcHandle-&gt;Instance==ADC2)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC2_MspDeInit<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC2_MspDeInit<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Peripheral<sp/>clock<sp/>disable<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>__HAL_RCC_ADC2_CLK_DISABLE();</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_GPIO_DeInit(GPIOA,<sp/>GPIO_PIN_5|GPIO_PIN_6);</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>ADC2_MspDeInit<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="276"><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>ADC2_MspDeInit<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="279"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Core/Src/adc.c"/>
+  </compounddef>
+</doxygen>

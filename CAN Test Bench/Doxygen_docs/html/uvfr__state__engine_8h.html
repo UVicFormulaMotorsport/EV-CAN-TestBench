@@ -106,6 +106,16 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuv__scd__response.html">uv_scd_response</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtask__management__info.html">task_management_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to contain data about a parent task.  <a href="structtask__management__info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtask__status__block.html">task_status_block</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information about the task.  <a href="structtask__status__block.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuv__os__settings.html">uv_os_settings</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Settings that dictate state engine behavior.  <a href="structuv__os__settings.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuv__task__info.html">uv_task_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This struct is designed to hold neccessary information about an RTOS task that will be managed by uvfr_state_engine.  <a href="structuv__task__info.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
@@ -124,6 +134,64 @@ Macros</h2></td></tr>
 <tr class="separator:a092c530d4a0cd880a59598dc0fca95d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa84e50f417bfe6026bd922b546e4daa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#afa84e50f417bfe6026bd922b546e4daa">SVC_TASK_MAX_CHECKIN_PERIOD</a>&#160;&#160;&#160;500</td></tr>
 <tr class="separator:afa84e50f417bfe6026bd922b546e4daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga253c75b331d0976b9a414657cef780cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga253c75b331d0976b9a414657cef780cd">UV_TASK_VEHICLE_APPLICATION</a>&#160;&#160;&#160;0x0001U&lt;&lt;(0)</td></tr>
+<tr class="separator:ga253c75b331d0976b9a414657cef780cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3142d67aec5c34719e90cf122948f1db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga3142d67aec5c34719e90cf122948f1db">UV_TASK_PERIODIC_SVC</a>&#160;&#160;&#160;0x0001U&lt;&lt;(1)</td></tr>
+<tr class="separator:ga3142d67aec5c34719e90cf122948f1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaae81d88a64e53c686e8e0fd01bfe723d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gaae81d88a64e53c686e8e0fd01bfe723d">UV_TASK_DORMANT_SVC</a>&#160;&#160;&#160;0b0000000000000011</td></tr>
+<tr class="separator:gaae81d88a64e53c686e8e0fd01bfe723d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga056a2272c9356c78597c5c82bc58db2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga056a2272c9356c78597c5c82bc58db2f">UV_TASK_GENERIC_SVC</a>&#160;&#160;&#160;0x0001U&lt;&lt;(2)</td></tr>
+<tr class="separator:ga056a2272c9356c78597c5c82bc58db2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga96c7c915194ecba48edd70def54a700b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga96c7c915194ecba48edd70def54a700b">UV_TASK_MANAGER_MASK</a>&#160;&#160;&#160;0b0000000000000011</td></tr>
+<tr class="separator:ga96c7c915194ecba48edd70def54a700b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafc49f7a5303ebabaa3fc0886d67f3e9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gafc49f7a5303ebabaa3fc0886d67f3e9a">UV_TASK_LOG_START_STOP_TIME</a>&#160;&#160;&#160;0x0001U&lt;&lt;(2)</td></tr>
+<tr class="separator:gafc49f7a5303ebabaa3fc0886d67f3e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0c0d91f0feee4f7b0816b3c06b61b459"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga0c0d91f0feee4f7b0816b3c06b61b459">UV_TASK_LOG_MEM_USAGE</a>&#160;&#160;&#160;0x0001U&lt;&lt;(3)</td></tr>
+<tr class="separator:ga0c0d91f0feee4f7b0816b3c06b61b459"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d87bda0a72990876364bd8764777cb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga4d87bda0a72990876364bd8764777cb2">UV_TASK_SCD_IGNORE</a>&#160;&#160;&#160;0x0001U&lt;&lt;(4)</td></tr>
+<tr class="separator:ga4d87bda0a72990876364bd8764777cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga732a956baeb0b603c6c935f1bea13fab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga732a956baeb0b603c6c935f1bea13fab">UV_TASK_IS_PARENT</a>&#160;&#160;&#160;0x0001U&lt;&lt;(5)</td></tr>
+<tr class="separator:ga732a956baeb0b603c6c935f1bea13fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5030c3ffc04fb93607cf1d4880a66731"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga5030c3ffc04fb93607cf1d4880a66731">UV_TASK_IS_CHILD</a>&#160;&#160;&#160;0x0001U&lt;&lt;(6)</td></tr>
+<tr class="separator:ga5030c3ffc04fb93607cf1d4880a66731"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab3967da84c26663341e0cb2ed5177c70"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gab3967da84c26663341e0cb2ed5177c70">UV_TASK_IS_ORPHAN</a>&#160;&#160;&#160;0x0001U&lt;&lt;(7)</td></tr>
+<tr class="separator:gab3967da84c26663341e0cb2ed5177c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga52394ced81b82c523082ed2c4bb9e2d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga52394ced81b82c523082ed2c4bb9e2d7">UV_TASK_ERR_IN_CHILD</a>&#160;&#160;&#160;0x0001U&lt;&lt;(8)</td></tr>
+<tr class="separator:ga52394ced81b82c523082ed2c4bb9e2d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ce66ea8b0c49749cc05a3ba06b2df75"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga0ce66ea8b0c49749cc05a3ba06b2df75">UV_TASK_AWAITING_DELETION</a>&#160;&#160;&#160;0x0001U&lt;&lt;(9)</td></tr>
+<tr class="separator:ga0ce66ea8b0c49749cc05a3ba06b2df75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf1374f633bd37be99d7d58e33270ce8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gaf1374f633bd37be99d7d58e33270ce8c">UV_TASK_DEFER_DELETION</a>&#160;&#160;&#160;0x0001U&lt;&lt;(10)</td></tr>
+<tr class="separator:gaf1374f633bd37be99d7d58e33270ce8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4d88012d785bba8a4aa943c23c4450a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga4d88012d785bba8a4aa943c23c4450a2">UV_TASK_DEADLINE_NOT_ENFORCED</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="separator:ga4d88012d785bba8a4aa943c23c4450a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga337aaae50133aedb5d733b6ede6fb10d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga337aaae50133aedb5d733b6ede6fb10d">UV_TASK_PRIO_INCREMENTATION</a>&#160;&#160;&#160;0x0001U&lt;&lt;(11)</td></tr>
+<tr class="separator:ga337aaae50133aedb5d733b6ede6fb10d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3b4befdf874ecfeac5face2cf1ae1a5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gaa3b4befdf874ecfeac5face2cf1ae1a5">UV_TASK_DEADLINE_FIRM</a>&#160;&#160;&#160;0x0001U&lt;&lt;(12)</td></tr>
+<tr class="separator:gaa3b4befdf874ecfeac5face2cf1ae1a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50fac7a227841deccc8b30cef230ba08"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga50fac7a227841deccc8b30cef230ba08">UV_TASK_DEADLINE_HARD</a>&#160;&#160;&#160;(0x0001U&lt;&lt;(11)|0x0001U&lt;&lt;(12))</td></tr>
+<tr class="separator:ga50fac7a227841deccc8b30cef230ba08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga04e93f880387fe61195800f0dfaac0bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga04e93f880387fe61195800f0dfaac0bd">UV_TASK_DEADLINE_MASK</a>&#160;&#160;&#160;(0x0001U&lt;&lt;(11)|0x0001U&lt;&lt;(12))</td></tr>
+<tr class="separator:ga04e93f880387fe61195800f0dfaac0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab37af27fe89f1987ee38bdb0bc945c43"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gab37af27fe89f1987ee38bdb0bc945c43">UV_TASK_MISSION_CRITICAL</a>&#160;&#160;&#160;0x0001U&lt;&lt;(13)</td></tr>
+<tr class="separator:gab37af27fe89f1987ee38bdb0bc945c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga70b5081fb012f121afe19c5ad2da9622"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga70b5081fb012f121afe19c5ad2da9622">UV_TASK_DELAYING</a>&#160;&#160;&#160;0x0001U&lt;&lt;(14)</td></tr>
+<tr class="separator:ga70b5081fb012f121afe19c5ad2da9622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga07dcd5b5c28f257e50e0d04f519b5e7a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga07dcd5b5c28f257e50e0d04f519b5e7a">uvTaskSetDeletionBit</a>(t)&#160;&#160;&#160;(t-&gt;task_flags|=<a class="el" href="group__state__engine__api.html#ga0ce66ea8b0c49749cc05a3ba06b2df75">UV_TASK_AWAITING_DELETION</a>)</td></tr>
+<tr class="separator:ga07dcd5b5c28f257e50e0d04f519b5e7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe734bf4eb30c1a532e083dc9bdf938c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gabe734bf4eb30c1a532e083dc9bdf938c">uvTaskResetDeletionBit</a>(t)&#160;&#160;&#160;(t-&gt;task_flags &amp;=(~<a class="el" href="group__state__engine__api.html#ga0ce66ea8b0c49749cc05a3ba06b2df75">UV_TASK_AWAITING_DELETION</a>))</td></tr>
+<tr class="separator:gabe734bf4eb30c1a532e083dc9bdf938c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3cab3b3fd6589348dceaf91b14e2a6ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga3cab3b3fd6589348dceaf91b14e2a6ef">uvTaskSetDelayBit</a>(t)&#160;&#160;&#160;(t-&gt;task_flags|=<a class="el" href="group__state__engine__api.html#ga70b5081fb012f121afe19c5ad2da9622">UV_TASK_DELAYING</a>)</td></tr>
+<tr class="separator:ga3cab3b3fd6589348dceaf91b14e2a6ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2d3d223399d12a0af224266487f35483"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga2d3d223399d12a0af224266487f35483">uvTaskResetDelayBit</a>(t)&#160;&#160;&#160;(t-&gt;task_flags&amp;=(~<a class="el" href="group__state__engine__api.html#ga70b5081fb012f121afe19c5ad2da9622">UV_TASK_DELAYING</a>))</td></tr>
+<tr class="separator:ga2d3d223399d12a0af224266487f35483"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e5d6feafad4764ab2ffd4604ab633b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga0e5d6feafad4764ab2ffd4604ab633b5">uvTaskIsDelaying</a>(t)&#160;&#160;&#160;((t-&gt;task_flags&amp;<a class="el" href="group__state__engine__api.html#ga70b5081fb012f121afe19c5ad2da9622">UV_TASK_DELAYING</a>)==<a class="el" href="group__state__engine__api.html#ga70b5081fb012f121afe19c5ad2da9622">UV_TASK_DELAYING</a>)</td></tr>
+<tr class="separator:ga0e5d6feafad4764ab2ffd4604ab633b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5073c1aa60fa9292bc88054a2184daee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga5073c1aa60fa9292bc88054a2184daee">uvTaskDelay</a>(x,  t)</td></tr>
+<tr class="memdesc:ga5073c1aa60fa9292bc88054a2184daee"><td class="mdescLeft">&#160;</td><td class="mdescRight">State engine aware vTaskDelay wrapper.  <a href="group__state__engine__api.html#ga5073c1aa60fa9292bc88054a2184daee">More...</a><br /></td></tr>
+<tr class="separator:ga5073c1aa60fa9292bc88054a2184daee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1fc770ae6f3a6643548e0fb00a732ae5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga1fc770ae6f3a6643548e0fb00a732ae5">uvTaskDelayUntil</a>(x,  lasttim,  per)</td></tr>
+<tr class="memdesc:ga1fc770ae6f3a6643548e0fb00a732ae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">State engine aware vTaskDelayUntil wrapper.  <a href="group__state__engine__api.html#ga1fc770ae6f3a6643548e0fb00a732ae5">More...</a><br /></td></tr>
+<tr class="separator:ga1fc770ae6f3a6643548e0fb00a732ae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -131,90 +199,158 @@ Typedefs</h2></td></tr>
 <tr class="separator:aef3770e45bbacbf527fd93dd80eea9b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6ffd72eb4909ddb38c37a1369e13f09"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#aa6ffd72eb4909ddb38c37a1369e13f09">uv_task_id</a></td></tr>
 <tr class="separator:aa6ffd72eb4909ddb38c37a1369e13f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1b70a2c1baa7da5592e7324008636e4"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455c">uv_task_cmd_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#ae1b70a2c1baa7da5592e7324008636e4">uv_task_cmd</a></td></tr>
-<tr class="separator:ae1b70a2c1baa7da5592e7324008636e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a856f7f6f3b6b92f655aafc552606ffea"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structuv__scd__response.html">uv_scd_response</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a856f7f6f3b6b92f655aafc552606ffea">uv_scd_response</a></td></tr>
-<tr class="separator:a856f7f6f3b6b92f655aafc552606ffea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae41267a13309a303a826aa55c4873a31"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structtask__management__info.html">task_management_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#ae41267a13309a303a826aa55c4873a31">task_management_info</a></td></tr>
-<tr class="separator:ae41267a13309a303a826aa55c4873a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ca0b89ee88cdf48a7640d6ec793350"><td class="memItemLeft" align="right" valign="top">typedef uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#af1ca0b89ee88cdf48a7640d6ec793350">uv_timespan_ms</a></td></tr>
+<tr class="separator:af1ca0b89ee88cdf48a7640d6ec793350"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga140983d0a0ccbfd2d5f2c93183cbe797"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__state__engine__api.html#ga259abff5a03eaf908dc8f03d99f478e4">uv_vehicle_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga140983d0a0ccbfd2d5f2c93183cbe797">uv_vehicle_state</a></td></tr>
+<tr class="memdesc:ga140983d0a0ccbfd2d5f2c93183cbe797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type representing the overall state and operating mode of the vehicle.  <a href="group__state__engine__api.html#ga140983d0a0ccbfd2d5f2c93183cbe797">More...</a><br /></td></tr>
+<tr class="separator:ga140983d0a0ccbfd2d5f2c93183cbe797"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1b70a2c1baa7da5592e7324008636e4"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__state__engine__api.html#gaf11e8677926913f2dd803fabbed3455c">uv_task_cmd_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gae1b70a2c1baa7da5592e7324008636e4">uv_task_cmd</a></td></tr>
+<tr class="memdesc:gae1b70a2c1baa7da5592e7324008636e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Special commands used to start and shutdown tasks.  <a href="group__state__engine__api.html#gae1b70a2c1baa7da5592e7324008636e4">More...</a><br /></td></tr>
+<tr class="separator:gae1b70a2c1baa7da5592e7324008636e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga856f7f6f3b6b92f655aafc552606ffea"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structuv__scd__response.html">uv_scd_response</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga856f7f6f3b6b92f655aafc552606ffea">uv_scd_response</a></td></tr>
+<tr class="separator:ga856f7f6f3b6b92f655aafc552606ffea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga82006c09ffd194e360785bb51a39ec3f"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__state__engine__api.html#gac94b6bd11853173599ccff034055cc88">uv_task_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga82006c09ffd194e360785bb51a39ec3f">uv_task_status</a></td></tr>
+<tr class="memdesc:ga82006c09ffd194e360785bb51a39ec3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the state of a managed task.  <a href="group__state__engine__api.html#ga82006c09ffd194e360785bb51a39ec3f">More...</a><br /></td></tr>
+<tr class="separator:ga82006c09ffd194e360785bb51a39ec3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0faa8cc05082e150c515bbddea144d90"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__state__engine__api.html#ga6166ed80f8e3bd62f1e7e6122c8817f6">task_priority</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga0faa8cc05082e150c515bbddea144d90">task_priority</a></td></tr>
+<tr class="memdesc:ga0faa8cc05082e150c515bbddea144d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Priority of a managed task. Maps directly to OS priority.  <a href="group__state__engine__api.html#ga0faa8cc05082e150c515bbddea144d90">More...</a><br /></td></tr>
+<tr class="separator:ga0faa8cc05082e150c515bbddea144d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae41267a13309a303a826aa55c4873a31"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structtask__management__info.html">task_management_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gae41267a13309a303a826aa55c4873a31">task_management_info</a></td></tr>
+<tr class="memdesc:gae41267a13309a303a826aa55c4873a31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to contain data about a parent task.  <a href="group__state__engine__api.html#gae41267a13309a303a826aa55c4873a31">More...</a><br /></td></tr>
+<tr class="separator:gae41267a13309a303a826aa55c4873a31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d368f40115996d74f2e3833ff1a5396"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structtask__status__block.html">task_status_block</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga0d368f40115996d74f2e3833ff1a5396">task_status_block</a></td></tr>
+<tr class="memdesc:ga0d368f40115996d74f2e3833ff1a5396"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information about the task.  <a href="group__state__engine__api.html#ga0d368f40115996d74f2e3833ff1a5396">More...</a><br /></td></tr>
+<tr class="separator:ga0d368f40115996d74f2e3833ff1a5396"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4622e8f893111a8641c8e5a44df3d3dd"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structuv__os__settings.html">uv_os_settings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga4622e8f893111a8641c8e5a44df3d3dd">uv_os_settings</a></td></tr>
+<tr class="memdesc:ga4622e8f893111a8641c8e5a44df3d3dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Settings that dictate state engine behavior.  <a href="group__state__engine__api.html#ga4622e8f893111a8641c8e5a44df3d3dd">More...</a><br /></td></tr>
+<tr class="separator:ga4622e8f893111a8641c8e5a44df3d3dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaebe69bead1b7c3a1371ffe610708e0ef"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structuv__task__info.html">uv_task_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gaebe69bead1b7c3a1371ffe610708e0ef">uv_task_info</a></td></tr>
+<tr class="memdesc:gaebe69bead1b7c3a1371ffe610708e0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">This struct is designed to hold neccessary information about an RTOS task that will be managed by uvfr_state_engine.  <a href="group__state__engine__api.html#gaebe69bead1b7c3a1371ffe610708e0ef">More...</a><br /></td></tr>
+<tr class="separator:gaebe69bead1b7c3a1371ffe610708e0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:af11e8677926913f2dd803fabbed3455c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455c">uv_task_cmd_e</a> { <a class="el" href="uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455ca3641b5b35403903b66faf4d615c3199d">UV_NO_CMD</a>, 
-<a class="el" href="uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6">UV_KILL_CMD</a>, 
-<a class="el" href="uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077">UV_SUSPEND_CMD</a>, 
-<a class="el" href="uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455cabac2ecce11df7b3e4b872ba4d22f7564">UV_TASK_START_CMD</a>
- }</td></tr>
-<tr class="separator:af11e8677926913f2dd803fabbed3455c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adfdfabf66fb37e4e702a1019bf1a9a76"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76">uv_scd_response_e</a> { <br />
-&#160;&#160;<a class="el" href="uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76a886d929188a37a7fdae4b18b65a261ca">UV_SUCCESSFUL_DELETION</a>, 
-<a class="el" href="uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76a75d7f4415a6450a9c3d35aaf7b9577cd">UV_SUCCESSFUL_SUSPENSION</a>, 
-<a class="el" href="uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76aa66da42f9355512e286812074433015b">UV_COULDNT_DELETE</a>, 
-<a class="el" href="uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76a3c33585e5ac7f76a9bc4dc1fccb764ec">UV_COULDNT_SUSPEND</a>, 
+<tr class="memitem:ga259abff5a03eaf908dc8f03d99f478e4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga259abff5a03eaf908dc8f03d99f478e4">uv_vehicle_state_t</a> { <br />
+&#160;&#160;<a class="el" href="group__state__engine__api.html#gga259abff5a03eaf908dc8f03d99f478e4a5e3e7ecab0a58b320912cb4129641579">UV_INIT</a> = 0x0001, 
+<a class="el" href="group__state__engine__api.html#gga259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8">UV_READY</a> = 0x0002, 
+<a class="el" href="group__state__engine__api.html#gga259abff5a03eaf908dc8f03d99f478e4abed5371c079ef927fb67d8bb8e8aa286">PROGRAMMING</a> = 0x0004, 
+<a class="el" href="group__state__engine__api.html#gga259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969">UV_DRIVING</a> = 0x0008, 
 <br />
-&#160;&#160;<a class="el" href="uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76a0dd4e6d2bbbde83536ed21ac4ce2bd00">UV_UNSAFE_STATE</a>
+&#160;&#160;<a class="el" href="group__state__engine__api.html#gga259abff5a03eaf908dc8f03d99f478e4abfddf18c580c465bb3c27b522aa4e4a9">UV_SUSPENDED</a> = 0x0010, 
+<a class="el" href="group__state__engine__api.html#gga259abff5a03eaf908dc8f03d99f478e4a7ff39f8abdc9adbfd693e412e4aaeb6e">UV_LAUNCH_CONTROL</a> = 0x0020, 
+<a class="el" href="group__state__engine__api.html#gga259abff5a03eaf908dc8f03d99f478e4ac1fcacc095b8c0f1c9f452d51815bcb5">UV_ERROR_STATE</a> = 0x0040, 
+<a class="el" href="group__state__engine__api.html#gga259abff5a03eaf908dc8f03d99f478e4afdfc4cdb8c5210e05bdfdc3df51f80ff">UV_BOOT</a> = 0x0080, 
+<br />
+&#160;&#160;<a class="el" href="group__state__engine__api.html#gga259abff5a03eaf908dc8f03d99f478e4a2d3dc239e61931f9f779b71e84005b1b">UV_HALT</a> = 0x0100
 <br />
  }</td></tr>
-<tr class="separator:adfdfabf66fb37e4e702a1019bf1a9a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:ga259abff5a03eaf908dc8f03d99f478e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type representing the overall state and operating mode of the vehicle.  <a href="group__state__engine__api.html#ga259abff5a03eaf908dc8f03d99f478e4">More...</a><br /></td></tr>
+<tr class="separator:ga259abff5a03eaf908dc8f03d99f478e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf11e8677926913f2dd803fabbed3455c"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gaf11e8677926913f2dd803fabbed3455c">uv_task_cmd_e</a> { <a class="el" href="group__state__engine__api.html#ggaf11e8677926913f2dd803fabbed3455ca3641b5b35403903b66faf4d615c3199d">UV_NO_CMD</a>, 
+<a class="el" href="group__state__engine__api.html#ggaf11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6">UV_KILL_CMD</a>, 
+<a class="el" href="group__state__engine__api.html#ggaf11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077">UV_SUSPEND_CMD</a>, 
+<a class="el" href="group__state__engine__api.html#ggaf11e8677926913f2dd803fabbed3455cabac2ecce11df7b3e4b872ba4d22f7564">UV_TASK_START_CMD</a>
+ }</td></tr>
+<tr class="memdesc:gaf11e8677926913f2dd803fabbed3455c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Special commands used to start and shutdown tasks.  <a href="group__state__engine__api.html#gaf11e8677926913f2dd803fabbed3455c">More...</a><br /></td></tr>
+<tr class="separator:gaf11e8677926913f2dd803fabbed3455c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadfdfabf66fb37e4e702a1019bf1a9a76"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gadfdfabf66fb37e4e702a1019bf1a9a76">uv_scd_response_e</a> { <br />
+&#160;&#160;<a class="el" href="group__state__engine__api.html#ggadfdfabf66fb37e4e702a1019bf1a9a76a886d929188a37a7fdae4b18b65a261ca">UV_SUCCESSFUL_DELETION</a>, 
+<a class="el" href="group__state__engine__api.html#ggadfdfabf66fb37e4e702a1019bf1a9a76a75d7f4415a6450a9c3d35aaf7b9577cd">UV_SUCCESSFUL_SUSPENSION</a>, 
+<a class="el" href="group__state__engine__api.html#ggadfdfabf66fb37e4e702a1019bf1a9a76aa66da42f9355512e286812074433015b">UV_COULDNT_DELETE</a>, 
+<a class="el" href="group__state__engine__api.html#ggadfdfabf66fb37e4e702a1019bf1a9a76a3c33585e5ac7f76a9bc4dc1fccb764ec">UV_COULDNT_SUSPEND</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__state__engine__api.html#ggadfdfabf66fb37e4e702a1019bf1a9a76a0dd4e6d2bbbde83536ed21ac4ce2bd00">UV_UNSAFE_STATE</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:gadfdfabf66fb37e4e702a1019bf1a9a76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Response from a task confirming it has been either deleted or suspended.  <a href="group__state__engine__api.html#gadfdfabf66fb37e4e702a1019bf1a9a76">More...</a><br /></td></tr>
+<tr class="separator:gadfdfabf66fb37e4e702a1019bf1a9a76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac94b6bd11853173599ccff034055cc88"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gac94b6bd11853173599ccff034055cc88">uv_task_state_t</a> { <a class="el" href="group__state__engine__api.html#ggac94b6bd11853173599ccff034055cc88a529c3f9ad3ef9a8e387d875c7a118c7e">UV_TASK_NOT_STARTED</a>, 
+<a class="el" href="group__state__engine__api.html#ggac94b6bd11853173599ccff034055cc88af6465f57e0b6515721c5cbebd769e691">UV_TASK_DELETED</a>, 
+<a class="el" href="group__state__engine__api.html#ggac94b6bd11853173599ccff034055cc88ad4da927019afea812b31d46d28b7354c">UV_TASK_RUNNING</a>, 
+<a class="el" href="group__state__engine__api.html#ggac94b6bd11853173599ccff034055cc88a147f6febce613c666fe922907472ca0f">UV_TASK_SUSPENDED</a>
+ }</td></tr>
+<tr class="memdesc:gac94b6bd11853173599ccff034055cc88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum representing the state of a managed task.  <a href="group__state__engine__api.html#gac94b6bd11853173599ccff034055cc88">More...</a><br /></td></tr>
+<tr class="separator:gac94b6bd11853173599ccff034055cc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6166ed80f8e3bd62f1e7e6122c8817f6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga6166ed80f8e3bd62f1e7e6122c8817f6">task_priority</a> { <br />
+&#160;&#160;<a class="el" href="group__state__engine__api.html#gga6166ed80f8e3bd62f1e7e6122c8817f6ae1e0864e3b20ced26bebc93aa0766aec">IDLE_TASK_PRIORITY</a>, 
+<a class="el" href="group__state__engine__api.html#gga6166ed80f8e3bd62f1e7e6122c8817f6adb8ee22a232a2787f32ba28da55c43c1">LOW_PRIORITY</a>, 
+<a class="el" href="group__state__engine__api.html#gga6166ed80f8e3bd62f1e7e6122c8817f6afe8b192d5f5af86fd93c4f84f7ef3383">BELOW_NORMAL</a>, 
+<a class="el" href="group__state__engine__api.html#gga6166ed80f8e3bd62f1e7e6122c8817f6a06b314d863076d54942e065d90c179c4">MEDIUM_PRIORITY</a>, 
+<br />
+&#160;&#160;<a class="el" href="group__state__engine__api.html#gga6166ed80f8e3bd62f1e7e6122c8817f6a052e6887345173e8b7556738c28fa920">ABOVE_NORMAL</a>, 
+<a class="el" href="group__state__engine__api.html#gga6166ed80f8e3bd62f1e7e6122c8817f6acb1785f11dd02aa7f5d164fb314c594e">HIGH_PRIORITY</a>, 
+<a class="el" href="group__state__engine__api.html#gga6166ed80f8e3bd62f1e7e6122c8817f6aa20ceda9447596a05151a4a66db46a92">REALTIME_PRIORITY</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ga6166ed80f8e3bd62f1e7e6122c8817f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Priority of a managed task. Maps directly to OS priority.  <a href="group__state__engine__api.html#ga6166ed80f8e3bd62f1e7e6122c8817f6">More...</a><br /></td></tr>
+<tr class="separator:ga6166ed80f8e3bd62f1e7e6122c8817f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae85df48ed635b45630243b13b6e7d890"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gae85df48ed635b45630243b13b6e7d890">os_flag</a> { <a class="el" href="group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890a01fe6bc8a712283339b685288b720cca">UV_OS_LOG_MEM</a> = 0x01, 
+<a class="el" href="group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890a06369476715fdc7bedeec037bf3256cf">UV_OS_LOG_TASK_END_TIME</a> = 0x02, 
+<a class="el" href="group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890aad5d44cbab735a2f51cb37bfb71b8bb3">UV_OS_ATTEMPT_RESTART_NC_TASK</a> = 0x04, 
+<a class="el" href="group__state__engine__api.html#ggae85df48ed635b45630243b13b6e7d890ab40c36b801f8a9439ca8255b6f740882">UV_OS_ENABLE_NONCRIT_TASK_THROTTLE</a> = 0x08
+ }</td></tr>
+<tr class="separator:gae85df48ed635b45630243b13b6e7d890"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5fb34d3f66377a9939da1a3a345bb48c"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a5fb34d3f66377a9939da1a3a345bb48c">uvCreateTask</a> ()</td></tr>
-<tr class="memdesc:a5fb34d3f66377a9939da1a3a345bb48c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function gets called when you want to create a task, and register it with the task register. Theres some gnarlyness here, but not unacceptable levels. Pray this thing doesn't hang itself.  <a href="uvfr__state__engine_8h.html#a5fb34d3f66377a9939da1a3a345bb48c">More...</a><br /></td></tr>
-<tr class="separator:a5fb34d3f66377a9939da1a3a345bb48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0e6167ef18c2ec8b65fbe070d0ffb6c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga0e6167ef18c2ec8b65fbe070d0ffb6c9">uvTaskPeriodEnd</a> (<a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
+<tr class="memdesc:ga0e6167ef18c2ec8b65fbe070d0ffb6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function called at the end of the task period.  <a href="group__state__engine__api.html#ga0e6167ef18c2ec8b65fbe070d0ffb6c9">More...</a><br /></td></tr>
+<tr class="separator:ga0e6167ef18c2ec8b65fbe070d0ffb6c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga99bfc92472cdc99e9005e9d3c792909a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga99bfc92472cdc99e9005e9d3c792909a">uvCreateTask</a> ()</td></tr>
+<tr class="memdesc:ga99bfc92472cdc99e9005e9d3c792909a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function gets called when you want to create a task, and register it with the task register. Theres some gnarlyness here, but not unacceptable levels. Pray this thing doesn't hang itself.  <a href="group__state__engine__api.html#ga99bfc92472cdc99e9005e9d3c792909a">More...</a><br /></td></tr>
+<tr class="separator:ga99bfc92472cdc99e9005e9d3c792909a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga20334b4aff0cfdab7be1d2864089c5ce"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__backend.html#ga20334b4aff0cfdab7be1d2864089c5ce">uvCreateServiceTask</a> ()</td></tr>
+<tr class="memdesc:ga20334b4aff0cfdab7be1d2864089c5ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new service task, because fuck you, thats why.  <a href="group__state__engine__backend.html#ga20334b4aff0cfdab7be1d2864089c5ce">More...</a><br /></td></tr>
+<tr class="separator:ga20334b4aff0cfdab7be1d2864089c5ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac77de2c18076b8e04742d2ca927dbd55"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#ac77de2c18076b8e04742d2ca927dbd55">uvGetTaskById</a> (uint8_t id)</td></tr>
 <tr class="separator:ac77de2c18076b8e04742d2ca927dbd55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb45f9e769808c80cf3a76d28ea7424b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#aeb45f9e769808c80cf3a76d28ea7424b">_uvValidateSpecificTask</a> (uint8_t id)</td></tr>
-<tr class="separator:aeb45f9e769808c80cf3a76d28ea7424b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c1618caac0d7f29836107f1a44833e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a8c1618caac0d7f29836107f1a44833e8">uvValidateManagedTasks</a> ()</td></tr>
-<tr class="memdesc:a8c1618caac0d7f29836107f1a44833e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ensure that all the tasks people have created actually make sense, and are valid  <a href="uvfr__state__engine_8h.html#a8c1618caac0d7f29836107f1a44833e8">More...</a><br /></td></tr>
-<tr class="separator:a8c1618caac0d7f29836107f1a44833e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94752124bb13b855d4bfb7744d58a986"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a94752124bb13b855d4bfb7744d58a986">uvStartTask</a> (uint32_t *tracker, struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
-<tr class="memdesc:a94752124bb13b855d4bfb7744d58a986"><td class="mdescLeft">&#160;</td><td class="mdescRight">: This is a function that starts tasks which are already registered in the system  <a href="uvfr__state__engine_8h.html#a94752124bb13b855d4bfb7744d58a986">More...</a><br /></td></tr>
-<tr class="separator:a94752124bb13b855d4bfb7744d58a986"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0547a08e521248754efe91c5de5ec182"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a0547a08e521248754efe91c5de5ec182">uvRegisterTask</a> ()</td></tr>
+<tr class="memitem:gaf342326f88e8accc1efa35e02cdd6c37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__backend.html#gaf342326f88e8accc1efa35e02cdd6c37">_uvValidateSpecificTask</a> (uint8_t id)</td></tr>
+<tr class="memdesc:gaf342326f88e8accc1efa35e02cdd6c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">make sure the parameters of a task_info struct is valid  <a href="group__state__engine__backend.html#gaf342326f88e8accc1efa35e02cdd6c37">More...</a><br /></td></tr>
+<tr class="separator:gaf342326f88e8accc1efa35e02cdd6c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8c1618caac0d7f29836107f1a44833e8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__backend.html#ga8c1618caac0d7f29836107f1a44833e8">uvValidateManagedTasks</a> ()</td></tr>
+<tr class="memdesc:ga8c1618caac0d7f29836107f1a44833e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ensure that all the tasks people have created actually make sense, and are valid  <a href="group__state__engine__backend.html#ga8c1618caac0d7f29836107f1a44833e8">More...</a><br /></td></tr>
+<tr class="separator:ga8c1618caac0d7f29836107f1a44833e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15cdf09b5625c2ba29a6c6d5c96214dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__backend.html#ga15cdf09b5625c2ba29a6c6d5c96214dc">uvStartTask</a> (uint32_t *tracker, struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
+<tr class="memdesc:ga15cdf09b5625c2ba29a6c6d5c96214dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">: This is a function that starts tasks which are already registered in the system  <a href="group__state__engine__backend.html#ga15cdf09b5625c2ba29a6c6d5c96214dc">More...</a><br /></td></tr>
+<tr class="separator:ga15cdf09b5625c2ba29a6c6d5c96214dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0547a08e521248754efe91c5de5ec182"><td class="memItemLeft" align="right" valign="top"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a0547a08e521248754efe91c5de5ec182">uvRegisterTask</a> ()</td></tr>
 <tr class="separator:a0547a08e521248754efe91c5de5ec182"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c608f3832c45eac6e2da198d4ef1ba0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a5c608f3832c45eac6e2da198d4ef1ba0">uvInitStateEngine</a> ()</td></tr>
-<tr class="memdesc:a5c608f3832c45eac6e2da198d4ef1ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that prepares the state engine to do its thing.  <a href="uvfr__state__engine_8h.html#a5c608f3832c45eac6e2da198d4ef1ba0">More...</a><br /></td></tr>
-<tr class="separator:a5c608f3832c45eac6e2da198d4ef1ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ad1d74b5783a51355c047be6642fab8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a2ad1d74b5783a51355c047be6642fab8">uvStartStateMachine</a> ()</td></tr>
-<tr class="separator:a2ad1d74b5783a51355c047be6642fab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a12e643ea3c804695a0b38ba07f890d9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a12e643ea3c804695a0b38ba07f890d9f">uvDeleteTask</a> (uint32_t *tracker, struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
-<tr class="memdesc:a12e643ea3c804695a0b38ba07f890d9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">deletes a managed task via the system  <a href="uvfr__state__engine_8h.html#a12e643ea3c804695a0b38ba07f890d9f">More...</a><br /></td></tr>
-<tr class="separator:a12e643ea3c804695a0b38ba07f890d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04e455e33d779d04a25a24f154079477"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a04e455e33d779d04a25a24f154079477">uvSuspendTask</a> (uint32_t *tracker, struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
-<tr class="memdesc:a04e455e33d779d04a25a24f154079477"><td class="mdescLeft">&#160;</td><td class="mdescRight">function to suspend one of the managed tasks  <a href="uvfr__state__engine_8h.html#a04e455e33d779d04a25a24f154079477">More...</a><br /></td></tr>
-<tr class="separator:a04e455e33d779d04a25a24f154079477"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5cb739823b10b90a139315356aa6b22f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a5cb739823b10b90a139315356aa6b22f">uvDeInitStateEngine</a> ()</td></tr>
-<tr class="memdesc:a5cb739823b10b90a139315356aa6b22f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops and frees all resources used by uvfr_state_engine.  <a href="uvfr__state__engine_8h.html#a5cb739823b10b90a139315356aa6b22f">More...</a><br /></td></tr>
-<tr class="separator:a5cb739823b10b90a139315356aa6b22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7493b2515639f60db83cd6ed77b50432"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a7493b2515639f60db83cd6ed77b50432">updateRunningTasks</a> ()</td></tr>
+<tr class="memitem:ga5c608f3832c45eac6e2da198d4ef1ba0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga5c608f3832c45eac6e2da198d4ef1ba0">uvInitStateEngine</a> ()</td></tr>
+<tr class="memdesc:ga5c608f3832c45eac6e2da198d4ef1ba0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that prepares the state engine to do its thing.  <a href="group__state__engine__api.html#ga5c608f3832c45eac6e2da198d4ef1ba0">More...</a><br /></td></tr>
+<tr class="separator:ga5c608f3832c45eac6e2da198d4ef1ba0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2ad1d74b5783a51355c047be6642fab8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga2ad1d74b5783a51355c047be6642fab8">uvStartStateMachine</a> ()</td></tr>
+<tr class="memdesc:ga2ad1d74b5783a51355c047be6642fab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actually starts up the state engine to do state engine things.  <a href="group__state__engine__api.html#ga2ad1d74b5783a51355c047be6642fab8">More...</a><br /></td></tr>
+<tr class="separator:ga2ad1d74b5783a51355c047be6642fab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6291142ec714ce1450099943b1b8d00a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__backend.html#ga6291142ec714ce1450099943b1b8d00a">uvDeleteTask</a> (uint32_t *tracker, struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
+<tr class="memdesc:ga6291142ec714ce1450099943b1b8d00a"><td class="mdescLeft">&#160;</td><td class="mdescRight">deletes a managed task via the system  <a href="group__state__engine__backend.html#ga6291142ec714ce1450099943b1b8d00a">More...</a><br /></td></tr>
+<tr class="separator:ga6291142ec714ce1450099943b1b8d00a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafd67eecbab2e6e6915bc6bc71806b715"><td class="memItemLeft" align="right" valign="top"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__backend.html#gafd67eecbab2e6e6915bc6bc71806b715">uvSuspendTask</a> (uint32_t *tracker, struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
+<tr class="memdesc:gafd67eecbab2e6e6915bc6bc71806b715"><td class="mdescLeft">&#160;</td><td class="mdescRight">function to suspend one of the managed tasks.  <a href="group__state__engine__backend.html#gafd67eecbab2e6e6915bc6bc71806b715">More...</a><br /></td></tr>
+<tr class="separator:gafd67eecbab2e6e6915bc6bc71806b715"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5cb739823b10b90a139315356aa6b22f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#ga5cb739823b10b90a139315356aa6b22f">uvDeInitStateEngine</a> ()</td></tr>
+<tr class="memdesc:ga5cb739823b10b90a139315356aa6b22f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops and frees all resources used by uvfr_state_engine.  <a href="group__state__engine__api.html#ga5cb739823b10b90a139315356aa6b22f">More...</a><br /></td></tr>
+<tr class="separator:ga5cb739823b10b90a139315356aa6b22f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7493b2515639f60db83cd6ed77b50432"><td class="memItemLeft" align="right" valign="top"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a7493b2515639f60db83cd6ed77b50432">updateRunningTasks</a> ()</td></tr>
 <tr class="separator:a7493b2515639f60db83cd6ed77b50432"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3ad3e8df75177c00265881c16563212"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#aa3ad3e8df75177c00265881c16563212">changeVehicleState</a> (uint16_t state)</td></tr>
-<tr class="memdesc:aa3ad3e8df75177c00265881c16563212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for changing the state of the vehicle, as well as the list of active + inactive tasks.  <a href="uvfr__state__engine_8h.html#aa3ad3e8df75177c00265881c16563212">More...</a><br /></td></tr>
-<tr class="separator:aa3ad3e8df75177c00265881c16563212"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab2449f66698295ebfaff451c2f63607f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#ab2449f66698295ebfaff451c2f63607f">__uvPanic</a> (char *msg, uint8_t msg_len, const char *file, const int line, const char *func)</td></tr>
-<tr class="memdesc:ab2449f66698295ebfaff451c2f63607f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Something bad has occurred here now we in trouble.  <a href="uvfr__state__engine_8h.html#ab2449f66698295ebfaff451c2f63607f">More...</a><br /></td></tr>
-<tr class="separator:ab2449f66698295ebfaff451c2f63607f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40337f99ed3553119614d722da7e765d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a40337f99ed3553119614d722da7e765d">killSelf</a> (struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
-<tr class="memdesc:a40337f99ed3553119614d722da7e765d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called by a task to nuke itself. Is a wrapper function that is used to do all the different things.  <a href="uvfr__state__engine_8h.html#a40337f99ed3553119614d722da7e765d">More...</a><br /></td></tr>
-<tr class="separator:a40337f99ed3553119614d722da7e765d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1696080304a0a849ec9d4d92701f910f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a1696080304a0a849ec9d4d92701f910f">suspendSelf</a> (struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
-<tr class="memdesc:a1696080304a0a849ec9d4d92701f910f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a task that needs to suspend itself, once the task has determined it is safe to do so.  <a href="uvfr__state__engine_8h.html#a1696080304a0a849ec9d4d92701f910f">More...</a><br /></td></tr>
-<tr class="separator:a1696080304a0a849ec9d4d92701f910f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45e3dba55fdad745f7394feb3764cd0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a45e3dba55fdad745f7394feb3764cd0a">_stateChangeDaemon</a> (void *args)</td></tr>
-<tr class="memdesc:a45e3dba55fdad745f7394feb3764cd0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This collects all the data changing from different tasks, and makes sure that everything works properly.  <a href="uvfr__state__engine_8h.html#a45e3dba55fdad745f7394feb3764cd0a">More...</a><br /></td></tr>
-<tr class="separator:a45e3dba55fdad745f7394feb3764cd0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff684308203d45e9e16ad3d115c54279"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#aff684308203d45e9e16ad3d115c54279">uvSVCTaskManager</a> (void *args)</td></tr>
-<tr class="memdesc:aff684308203d45e9e16ad3d115c54279"><td class="mdescLeft">&#160;</td><td class="mdescRight">oversees all of the service tasks, and makes sure that theyre alright  <a href="uvfr__state__engine_8h.html#aff684308203d45e9e16ad3d115c54279">More...</a><br /></td></tr>
-<tr class="separator:aff684308203d45e9e16ad3d115c54279"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa3ad3e8df75177c00265881c16563212"><td class="memItemLeft" align="right" valign="top"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__api.html#gaa3ad3e8df75177c00265881c16563212">changeVehicleState</a> (uint16_t state)</td></tr>
+<tr class="memdesc:gaa3ad3e8df75177c00265881c16563212"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for changing the state of the vehicle, as well as the list of active + inactive tasks.  <a href="group__state__engine__api.html#gaa3ad3e8df75177c00265881c16563212">More...</a><br /></td></tr>
+<tr class="separator:gaa3ad3e8df75177c00265881c16563212"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab2449f66698295ebfaff451c2f63607f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__backend.html#gab2449f66698295ebfaff451c2f63607f">__uvPanic</a> (char *msg, uint8_t msg_len, const char *file, const int line, const char *func)</td></tr>
+<tr class="memdesc:gab2449f66698295ebfaff451c2f63607f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Something bad has occurred here now we in trouble.  <a href="group__state__engine__backend.html#gab2449f66698295ebfaff451c2f63607f">More...</a><br /></td></tr>
+<tr class="separator:gab2449f66698295ebfaff451c2f63607f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f35b34432afed7f18f91fb8607f096f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__backend.html#ga5f35b34432afed7f18f91fb8607f096f">killSelf</a> (struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
+<tr class="memdesc:ga5f35b34432afed7f18f91fb8607f096f"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called by a task to nuke itself. Is a wrapper function that is used to do all the different things.  <a href="group__state__engine__backend.html#ga5f35b34432afed7f18f91fb8607f096f">More...</a><br /></td></tr>
+<tr class="separator:ga5f35b34432afed7f18f91fb8607f096f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad6117850b55ad52be51d93915bcc313c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine__backend.html#gad6117850b55ad52be51d93915bcc313c">suspendSelf</a> (struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *t)</td></tr>
+<tr class="memdesc:gad6117850b55ad52be51d93915bcc313c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Called by a task that needs to suspend itself, once the task has determined it is safe to do so.  <a href="group__state__engine__backend.html#gad6117850b55ad52be51d93915bcc313c">More...</a><br /></td></tr>
+<tr class="separator:gad6117850b55ad52be51d93915bcc313c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a502ae7695a8539242b8b18c2eb61c1c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uvfr__state__engine_8h.html#aa6ffd72eb4909ddb38c37a1369e13f09">uv_task_id</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a502ae7695a8539242b8b18c2eb61c1c7">getSVCTaskID</a> (char *tsk_name)</td></tr>
 <tr class="separator:a502ae7695a8539242b8b18c2eb61c1c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a2f58cf65b3566bc390600f877f8bed35"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4">uv_vehicle_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__state__engine_8h.html#a2f58cf65b3566bc390600f877f8bed35">vehicle_state</a></td></tr>
-<tr class="separator:a2f58cf65b3566bc390600f877f8bed35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f58cf65b3566bc390600f877f8bed35"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__state__engine__api.html#ga259abff5a03eaf908dc8f03d99f478e4">uv_vehicle_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__state__engine.html#ga2f58cf65b3566bc390600f877f8bed35">vehicle_state</a></td></tr>
+<tr class="separator:ga2f58cf65b3566bc390600f877f8bed35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a2b86418bd482f9d4a2a36f35e786798e"></a>
@@ -229,7 +365,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00026">26</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00063">63</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -245,7 +381,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00027">27</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00064">64</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -261,7 +397,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00019">19</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00056">56</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -277,7 +413,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00023">23</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00060">60</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -293,7 +429,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00021">21</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00058">58</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -309,7 +445,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00024">24</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00061">61</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -325,39 +461,11 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00029">29</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00066">66</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Typedef Documentation</h2>
-<a id="ae41267a13309a303a826aa55c4873a31"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae41267a13309a303a826aa55c4873a31">&#9670;&nbsp;</a></span>task_management_info</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structtask__management__info.html">task_management_info</a> <a class="el" href="structtask__management__info.html">task_management_info</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a856f7f6f3b6b92f655aafc552606ffea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a856f7f6f3b6b92f655aafc552606ffea">&#9670;&nbsp;</a></span>uv_scd_response</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structuv__scd__response.html">uv_scd_response</a> <a class="el" href="structuv__scd__response.html">uv_scd_response</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="aef3770e45bbacbf527fd93dd80eea9b9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aef3770e45bbacbf527fd93dd80eea9b9">&#9670;&nbsp;</a></span>uv_status</h2>
 
@@ -365,26 +473,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> <a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a></td>
+          <td class="memname">typedef enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> <a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00016">16</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
-
-</div>
-</div>
-<a id="ae1b70a2c1baa7da5592e7324008636e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1b70a2c1baa7da5592e7324008636e4">&#9670;&nbsp;</a></span>uv_task_cmd</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455c">uv_task_cmd_e</a> <a class="el" href="uvfr__state__engine_8h.html#ae1b70a2c1baa7da5592e7324008636e4">uv_task_cmd</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00051">51</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
@@ -400,262 +494,27 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00017">17</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00052">52</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="adfdfabf66fb37e4e702a1019bf1a9a76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adfdfabf66fb37e4e702a1019bf1a9a76">&#9670;&nbsp;</a></span>uv_scd_response_e</h2>
+<a id="af1ca0b89ee88cdf48a7640d6ec793350"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1ca0b89ee88cdf48a7640d6ec793350">&#9670;&nbsp;</a></span>uv_timespan_ms</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="uvfr__state__engine_8h.html#adfdfabf66fb37e4e702a1019bf1a9a76">uv_scd_response_e</a></td>
+          <td class="memname">typedef uint32_t <a class="el" href="uvfr__state__engine_8h.html#af1ca0b89ee88cdf48a7640d6ec793350">uv_timespan_ms</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="adfdfabf66fb37e4e702a1019bf1a9a76a886d929188a37a7fdae4b18b65a261ca"></a>UV_SUCCESSFUL_DELETION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="adfdfabf66fb37e4e702a1019bf1a9a76a75d7f4415a6450a9c3d35aaf7b9577cd"></a>UV_SUCCESSFUL_SUSPENSION&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="adfdfabf66fb37e4e702a1019bf1a9a76aa66da42f9355512e286812074433015b"></a>UV_COULDNT_DELETE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="adfdfabf66fb37e4e702a1019bf1a9a76a3c33585e5ac7f76a9bc4dc1fccb764ec"></a>UV_COULDNT_SUSPEND&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="adfdfabf66fb37e4e702a1019bf1a9a76a0dd4e6d2bbbde83536ed21ac4ce2bd00"></a>UV_UNSAFE_STATE&#160;</td><td class="fielddoc"></td></tr>
-</table>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00040">40</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
-
-</div>
-</div>
-<a id="af11e8677926913f2dd803fabbed3455c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af11e8677926913f2dd803fabbed3455c">&#9670;&nbsp;</a></span>uv_task_cmd_e</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455c">uv_task_cmd_e</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="af11e8677926913f2dd803fabbed3455ca3641b5b35403903b66faf4d615c3199d"></a>UV_NO_CMD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af11e8677926913f2dd803fabbed3455ca0e75e398c2bbcb663eaeb98684ca69d6"></a>UV_KILL_CMD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af11e8677926913f2dd803fabbed3455ca5f389a67f2a45fe1f51492b3b8f04077"></a>UV_SUSPEND_CMD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="af11e8677926913f2dd803fabbed3455cabac2ecce11df7b3e4b872ba4d22f7564"></a>UV_TASK_START_CMD&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00033">33</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8h_source.html#l00070">70</a> of file <a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab2449f66698295ebfaff451c2f63607f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab2449f66698295ebfaff451c2f63607f">&#9670;&nbsp;</a></span>__uvPanic()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void __uvPanic </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>msg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>msg_len</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>file</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const int&#160;</td>
-          <td class="paramname"><em>line</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>func</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Something bad has occurred here now we in trouble. </p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00482">482</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-</div>
-</div>
-<a id="a45e3dba55fdad745f7394feb3764cd0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45e3dba55fdad745f7394feb3764cd0a">&#9670;&nbsp;</a></span>_stateChangeDaemon()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void _stateChangeDaemon </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This collects all the data changing from different tasks, and makes sure that everything works properly. </p>
-<dl class="section attention"><dt>Attention</dt><dd>DO NOT EVER JUST CALL THIS FUNCTION. THIS SHOULD ONLY BE CALLED FROM changeVehicleState</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">This</td><td>accepts a <code>void*</code> pointer to avoid compile errors with freeRTOS, since freeRTOS expects a pointer to the function that accepts a void pointer</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>This is a one-shot RTOS task that spawns in when we want to change the state of the vehicle state. It performs this in the following way </p>
-<p>We get to iterate through all of the managed tasks. Goes via IDs as well. We load up the array entry as a temp pointer to a task info struct. As we go through it determines what to do by comparing the <code><a class="el" href="structuv__task__info.html#ab24dea3bde4de2d839bf15e65c2df0d6">uv_task_info.active_states</a></code> as well as <code><a class="el" href="structuv__task__info.html#a6986d7216c7f889164931b37ab752c29">uv_task_info.deletion_states</a></code> and <code><a class="el" href="structuv__task__info.html#aafd4e2d916f50b54b99fd02d63831e43">uv_task_info.suspension_states</a></code> with <code>uv_vehicle_state</code> </p>
-<p>This is done with the bitwise &amp; operator, since the definition of the <code>uv_vehicle_state_t</code> enum facilitates this by only using factors of two.</p>
-<p>Acquires pointer to task definition struct, then sets the queue in the struct to the SCD queue, so that the task actually does task things. Love when that happens. Next it sets the bit in the task_tracker corresponding to the task id, therefore marking that some action must be taken to either</p><ul>
-<li>confirm that no action is neccessary</li>
-<li>bring the task state into the correct state <div class="fragment"><div class="line"> */</div>
-<div class="line">        tmp_task = &amp;(<a class="code" href="uvfr__state__engine_8c.html#a6b49ab568bed9d9189782eebb90545b5">_task_register</a>[i]);</div>
-<div class="line"> </div>
-<div class="line">        task_tracker |= 0x01&lt;&lt;i;</div>
-<div class="line"> </div>
-<div class="line">        <span class="comment">//tmp_task-&gt;manager = incoming_scd_msg; //No longer using this var, instead using the state_change_queue static global var</span></div>
-<div class="line"><span class="comment">//      if(((tmp_task-&gt;task_flags)&amp;(UV_TASK_MANAGER_MASK | UV_TASK_SCD_IGNORE)) == UV_TASK_VEHICLE_APPLICATION){</span></div>
-<div class="line"><span class="comment">//          task_tracker |= 0x01&lt;&lt;i;</span></div>
-<div class="line"><span class="comment">//      }else{</span></div>
-<div class="line"><span class="comment">//          //If we get here that means that either:</span></div>
-<div class="line"><span class="comment">//          //This task has the SCD ignore flag active</span></div>
-<div class="line"><span class="comment">//          //This is a SVC task</span></div>
-<div class="line"><span class="comment">//          continue; //This is not the task you want</span></div>
-<div class="line"><span class="comment">//      }</span></div>
-<div class="line">        <span class="comment">//redundant_tracker |= 0x01&lt;&lt;i;</span></div>
-<div class="line">        <span class="comment">/**</span></div>
-</div><!-- fragment --></li>
-</ul>
-<p>Now we suspend the task because it has been misbehaving in school</p>
-<p>Wait for all the tasks that had changes made to respond.</p><div class="fragment"><div class="line"> */</div>
-<div class="line"> </div>
-<div class="line">    <a class="code" href="structuv__scd__response.html">uv_scd_response</a>* response = NULL;</div>
-<div class="line"> </div>
-<div class="line">    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="uvfr__state__engine_8h.html#a2b86418bd482f9d4a2a36f35e786798e">_LONGEST_SC_TIME</a>/<a class="code" href="uvfr__state__engine_8h.html#a092c530d4a0cd880a59598dc0fca95d4">_SC_DAEMON_PERIOD</a>; i++){</div>
-<div class="line">        vTaskDelay(<a class="code" href="uvfr__state__engine_8h.html#a092c530d4a0cd880a59598dc0fca95d4">_SC_DAEMON_PERIOD</a>);</div>
-<div class="line">        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j&lt;10;j++){</div>
-<div class="line"> </div>
-<div class="line">            <span class="keywordflow">if</span>(xQueueReceive(<a class="code" href="uvfr__state__engine_8c.html#a6837d935e61f84062544da8971a18560">state_change_queue</a>,&amp;response,1) == pdPASS){</div>
-<div class="line"> </div>
-<div class="line">                <span class="keywordflow">if</span>(response == NULL){<span class="comment">//definately not supposed to happen</span></div>
-<div class="line">                    <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;null scd response&quot;</span>,0);</div>
-<div class="line">                }</div>
-<div class="line"> </div>
-<div class="line">                <span class="keywordflow">if</span>(<a class="code" href="uvfr__state__engine_8c.html#a2e8a31626909ac17be499f2941d359d0">proccessSCDMsg</a>(response)==<a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>){</div>
-<div class="line"><span class="comment">//                  if(task_tracker &amp; 0xFFFFFFF0){</span></div>
-<div class="line"><span class="comment">//                                  //gotcha</span></div>
-<div class="line"><span class="comment">//                      uvPanic(&quot;gotcha bitch proccessSCDMsg!!&quot;,0);</span></div>
-<div class="line"><span class="comment">//                  }</span></div>
-<div class="line">                    <span class="comment">//has_task_succeeded |= (0x01&lt;&lt;response-&gt;meta_id);</span></div>
-<div class="line">                    task_tracker &amp;= ~(0x01&lt;&lt;response-&gt;<a class="code" href="structuv__scd__response.html#a0812669214881a452cc54e8783a74c4f">meta_id</a>);</div>
-<div class="line">                    <span class="keywordflow">if</span> (<a class="code" href="uvfr__state__engine_8c.html#a6b49ab568bed9d9189782eebb90545b5">_task_register</a>[response-&gt;<a class="code" href="structuv__scd__response.html#a0812669214881a452cc54e8783a74c4f">meta_id</a>].<a class="code" href="structuv__task__info.html#a43e5b3136b38dde4272aa510c5349ba3">task_state</a> == <a class="code" href="uvfr__utils_8h.html#ac94b6bd11853173599ccff034055cc88af6465f57e0b6515721c5cbebd769e691">UV_TASK_DELETED</a>){</div>
-<div class="line">                        <a class="code" href="uvfr__state__engine_8c.html#a6b49ab568bed9d9189782eebb90545b5">_task_register</a>[response-&gt;<a class="code" href="structuv__scd__response.html#a0812669214881a452cc54e8783a74c4f">meta_id</a>].<a class="code" href="structuv__task__info.html#a5347f41c4b15b2d6b039c339613fde43">task_handle</a> = NULL;</div>
-<div class="line">                    }</div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line">                }<span class="keywordflow">else</span>{</div>
-<div class="line">                    <span class="comment">//Not ok, this means that process SCD has returned something weird. More detailed error_handling can be added later.</span></div>
-<div class="line">                    <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;Task giving Sass to SCD&quot;</span>,0);</div>
-<div class="line">                }</div>
-<div class="line"> </div>
-<div class="line">                <span class="keywordflow">if</span>(<a class="code" href="uvfr__state__engine_8c.html#a0b9e8325d1d8f1027a7f563e4e8f22cb">uvFree</a>(response)!=<a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>){</div>
-<div class="line">                    <a class="code" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a>(<span class="stringliteral">&quot;failed to free memory&quot;</span>, 0);</div>
-<div class="line">                }</div>
-<div class="line">                response = NULL;</div>
-<div class="line"> </div>
-<div class="line">            }<span class="keywordflow">else</span>{</div>
-<div class="line">                <span class="keywordflow">break</span>;</div>
-<div class="line">            }</div>
-<div class="line"> </div>
-<div class="line"> </div>
-<div class="line">        }</div>
-</div><!-- fragment --><p>If this is 0, then that means that all the tasks have successfully had their states validated.</p>
-<p>This means we can just exit and we're chillin.</p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00657">657</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__state__engine_8h_source.html#l00026">_LONGEST_SC_TIME</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00018">_next_task_id</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00027">_SC_DAEMON_PERIOD</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00019">_task_register</a>, <a class="el" href="uvfr__utils_8h_source.html#l00278">uv_task_info::active_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00279">uv_task_info::deletion_states</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00050">uv_scd_response::meta_id</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00589">proccessSCDMsg()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00025">SCD_active</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00026">state_change_queue</a>, <a class="el" href="uvfr__utils_8h_source.html#l00280">uv_task_info::suspension_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00282">uv_task_info::task_handle</a>, <a class="el" href="uvfr__utils_8h_source.html#l00277">uv_task_info::task_state</a>, <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>, <a class="el" href="uvfr__utils_8h_source.html#l00125">UV_TASK_DELETED</a>, <a class="el" href="uvfr__utils_8h_source.html#l00124">UV_TASK_NOT_STARTED</a>, <a class="el" href="uvfr__utils_8h_source.html#l00126">UV_TASK_RUNNING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00127">UV_TASK_SUSPENDED</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00309">uvDeleteTask()</a>, <a class="el" href="uvfr__state__engine_8c.html#a0b9e8325d1d8f1027a7f563e4e8f22cb">uvFree()</a>, <a class="el" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00133">uvStartTask()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00368">uvSuspendTask()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00028">vehicle_state</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00426">changeVehicleState()</a>.</p>
-
-</div>
-</div>
-<a id="aeb45f9e769808c80cf3a76d28ea7424b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeb45f9e769808c80cf3a76d28ea7424b">&#9670;&nbsp;</a></span>_uvValidateSpecificTask()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> _uvValidateSpecificTask </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>id</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00083">83</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00019">_task_register</a>, <a class="el" href="uvfr__utils_8h_source.html#l00278">uv_task_info::active_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00279">uv_task_info::deletion_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00263">uv_task_info::max_instances</a>, <a class="el" href="uvfr__utils_8h_source.html#l00280">uv_task_info::suspension_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00260">uv_task_info::task_function</a>, <a class="el" href="uvfr__utils_8h_source.html#l00256">uv_task_info::task_name</a>, <a class="el" href="uvfr__utils_8h_source.html#l00117">UV_ERROR</a>, and <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00111">uvValidateManagedTasks()</a>.</p>
-
-</div>
-</div>
-<a id="aa3ad3e8df75177c00265881c16563212"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3ad3e8df75177c00265881c16563212">&#9670;&nbsp;</a></span>changeVehicleState()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> changeVehicleState </td>
-          <td>(</td>
-          <td class="paramtype">uint16_t&#160;</td>
-          <td class="paramname"><em>state</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Function for changing the state of the vehicle, as well as the list of active + inactive tasks. </p>
-<p>This function also changes out the tasks that are executing, by invoking the legendary state_change_daemon </p>
-<p>If the state we wish to change to is the same as the state we're in, then no need to be executing any of this fancy code</p>
-<p>Transition from <code>UV_INIT</code> to <code>UV_READY</code> states</p>
-<p>Transition from <code>UV_INIT</code> to <code>UV_ERROR</code> states</p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00426">426</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00657">_stateChangeDaemon()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00414">state_change_daemon_args::meta_task_handle</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00029">previous_state</a>, <a class="el" href="uvfr__utils_8h_source.html#l00118">UV_ABORTED</a>, <a class="el" href="uvfr__utils_8h_source.html#l00151">UV_BOOT</a>, <a class="el" href="uvfr__utils_8h_source.html#l00147">UV_DRIVING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00150">UV_ERROR_STATE</a>, <a class="el" href="uvfr__utils_8h_source.html#l00144">UV_INIT</a>, <a class="el" href="uvfr__utils_8h_source.html#l00149">UV_LAUNCH_CONTROL</a>, <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>, <a class="el" href="uvfr__utils_8h_source.html#l00145">UV_READY</a>, <a class="el" href="uvfr__state__engine_8c.html#a0b9e8325d1d8f1027a7f563e4e8f22cb">uvFree()</a>, <a class="el" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00028">vehicle_state</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="daq_8c_source.html#l00044">daqMasterTask()</a>, and <a class="el" href="uvfr__utils_8c_source.html#l00037">uvInit()</a>.</p>
-
-</div>
-</div>
 <a id="a502ae7695a8539242b8b18c2eb61c1c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a502ae7695a8539242b8b18c2eb61c1c7">&#9670;&nbsp;</a></span>getSVCTaskID()</h2>
 
@@ -671,62 +530,6 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Sometimes you just gottta deal with it lol </p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00985">985</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-</div>
-</div>
-<a id="a40337f99ed3553119614d722da7e765d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40337f99ed3553119614d722da7e765d">&#9670;&nbsp;</a></span>killSelf()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void killSelf </td>
-          <td>(</td>
-          <td class="paramtype">struct <a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function is called by a task to nuke itself. Is a wrapper function that is used to do all the different things. </p>
-<p>First lets load up the queue and the values in it. These come from the task we are doing.</p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00496">496</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00284">uv_task_info::cmd_data</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00050">uv_scd_response::meta_id</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00049">uv_scd_response::response_val</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00026">state_change_queue</a>, <a class="el" href="uvfr__utils_8h_source.html#l00282">uv_task_info::task_handle</a>, <a class="el" href="uvfr__utils_8h_source.html#l00255">uv_task_info::task_id</a>, <a class="el" href="uvfr__utils_8h_source.html#l00277">uv_task_info::task_state</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00034">UV_NO_CMD</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00041">UV_SUCCESSFUL_DELETION</a>, <a class="el" href="uvfr__utils_8h_source.html#l00125">UV_TASK_DELETED</a>, <a class="el" href="uvfr__state__engine_8c.html#a0b9e8325d1d8f1027a7f563e4e8f22cb">uvFree()</a>, and <a class="el" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="daq_8c_source.html#l00044">daqMasterTask()</a>, <a class="el" href="odometer_8c_source.html#l00046">odometerTask()</a>, <a class="el" href="driving__loop_8c_source.html#l00069">StartDrivingLoop()</a>, and <a class="el" href="temp__monitoring_8c_source.html#l00048">tempMonitorTask()</a>.</p>
-
-</div>
-</div>
-<a id="a1696080304a0a849ec9d4d92701f910f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1696080304a0a849ec9d4d92701f910f">&#9670;&nbsp;</a></span>suspendSelf()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void suspendSelf </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td>
-          <td class="paramname"><em>t</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Called by a task that needs to suspend itself, once the task has determined it is safe to do so. </p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00546">546</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00284">uv_task_info::cmd_data</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00050">uv_scd_response::meta_id</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00049">uv_scd_response::response_val</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00026">state_change_queue</a>, <a class="el" href="uvfr__utils_8h_source.html#l00282">uv_task_info::task_handle</a>, <a class="el" href="uvfr__utils_8h_source.html#l00255">uv_task_info::task_id</a>, <a class="el" href="uvfr__utils_8h_source.html#l00277">uv_task_info::task_state</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00034">UV_NO_CMD</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00042">UV_SUCCESSFUL_SUSPENSION</a>, <a class="el" href="uvfr__utils_8h_source.html#l00127">UV_TASK_SUSPENDED</a>, <a class="el" href="uvfr__state__engine_8c.html#a0b9e8325d1d8f1027a7f563e4e8f22cb">uvFree()</a>, and <a class="el" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="daq_8c_source.html#l00044">daqMasterTask()</a>, <a class="el" href="odometer_8c_source.html#l00046">odometerTask()</a>, <a class="el" href="driving__loop_8c_source.html#l00069">StartDrivingLoop()</a>, and <a class="el" href="temp__monitoring_8c_source.html#l00048">tempMonitorTask()</a>.</p>
 
 </div>
 </div>
@@ -737,103 +540,13 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> updateRunningTasks </td>
+          <td class="memname"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> updateRunningTasks </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a5fb34d3f66377a9939da1a3a345bb48c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fb34d3f66377a9939da1a3a345bb48c">&#9670;&nbsp;</a></span>uvCreateTask()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structuv__task__info.html">uv_task_info</a>* uvCreateTask </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function gets called when you want to create a task, and register it with the task register. Theres some gnarlyness here, but not unacceptable levels. Pray this thing doesn't hang itself. </p>
-<p>Do not exceed the number of tasks available</p>
-<p>Acquire the pointer to the spot in the array, we are doing this since we need to return the pointer anyways, and it cleans up the syntax a little.</p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00040">40</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00018">_next_task_id</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00019">_task_register</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00019">_UV_DEFAULT_TASK_INSTANCES</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00021">_UV_DEFAULT_TASK_STACK_SIZE</a>, <a class="el" href="uvfr__utils_8h_source.html#l00278">uv_task_info::active_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00279">uv_task_info::deletion_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00263">uv_task_info::max_instances</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00013">MAX_NUM_MANAGED_TASKS</a>, <a class="el" href="uvfr__utils_8h_source.html#l00283">uv_task_info::next</a>, <a class="el" href="uvfr__utils_8h_source.html#l00264">uv_task_info::stack_size</a>, <a class="el" href="uvfr__utils_8h_source.html#l00280">uv_task_info::suspension_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00260">uv_task_info::task_function</a>, <a class="el" href="uvfr__utils_8h_source.html#l00282">uv_task_info::task_handle</a>, <a class="el" href="uvfr__utils_8h_source.html#l00255">uv_task_info::task_id</a>, <a class="el" href="uvfr__utils_8h_source.html#l00256">uv_task_info::task_name</a>, <a class="el" href="uvfr__utils_8h_source.html#l00261">uv_task_info::task_priority</a>, <a class="el" href="uvfr__utils_8h_source.html#l00277">uv_task_info::task_state</a>, and <a class="el" href="uvfr__utils_8h_source.html#l00124">UV_TASK_NOT_STARTED</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="daq_8c_source.html#l00010">initDaqTask()</a>, <a class="el" href="driving__loop_8c_source.html#l00025">initDrivingLoop()</a>, <a class="el" href="odometer_8c_source.html#l00011">initOdometer()</a>, and <a class="el" href="temp__monitoring_8c_source.html#l00012">initTempMonitor()</a>.</p>
-
-</div>
-</div>
-<a id="a5cb739823b10b90a139315356aa6b22f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5cb739823b10b90a139315356aa6b22f">&#9670;&nbsp;</a></span>uvDeInitStateEngine()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> uvDeInitStateEngine </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Stops and frees all resources used by uvfr_state_engine. </p>
-<p>If we need to initialize the state engine, gotta de-initialize as well </p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00223">223</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00266">killEmAll()</a>.</p>
-
-</div>
-</div>
-<a id="a12e643ea3c804695a0b38ba07f890d9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a12e643ea3c804695a0b38ba07f890d9f">&#9670;&nbsp;</a></span>uvDeleteTask()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> uvDeleteTask </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t *&#160;</td>
-          <td class="paramname"><em>tracker</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>deletes a managed task via the system </p>
-<p>This function is the lowtier god of the program. It pulls up and is like "YOU SHOULD KILL YOURSELF, NOW!!" It sends a message to the task which tells it to kill itself. </p>
-<p>This checks with the RTOS kernel to see that the task as stated by the scheduler matches the state known by uvfr_utils</p>
-<p>if we have reached this point in the function, then the task is active and ready to get nuked</p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00309">309</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00284">uv_task_info::cmd_data</a>, <a class="el" href="uvfr__utils_8h_source.html#l00282">uv_task_info::task_handle</a>, <a class="el" href="uvfr__utils_8h_source.html#l00255">uv_task_info::task_id</a>, <a class="el" href="uvfr__utils_8h_source.html#l00277">uv_task_info::task_state</a>, <a class="el" href="uvfr__utils_8h_source.html#l00118">UV_ABORTED</a>, <a class="el" href="uvfr__utils_8h_source.html#l00117">UV_ERROR</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00035">UV_KILL_CMD</a>, <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>, <a class="el" href="uvfr__utils_8h_source.html#l00125">UV_TASK_DELETED</a>, <a class="el" href="uvfr__utils_8h_source.html#l00124">UV_TASK_NOT_STARTED</a>, <a class="el" href="uvfr__utils_8h_source.html#l00127">UV_TASK_SUSPENDED</a>, and <a class="el" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00657">_stateChangeDaemon()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00266">killEmAll()</a>.</p>
 
 </div>
 </div>
@@ -855,32 +568,6 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a5c608f3832c45eac6e2da198d4ef1ba0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c608f3832c45eac6e2da198d4ef1ba0">&#9670;&nbsp;</a></span>uvInitStateEngine()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> uvInitStateEngine </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Function that prepares the state engine to do its thing. </p>
-<p>Who even fucking knows at this point </p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00202">202</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__utils_8c_source.html#l00300">__uvInitPanic()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00019">_task_register</a>, <a class="el" href="daq_8c_source.html#l00010">initDaqTask()</a>, <a class="el" href="driving__loop_8c_source.html#l00025">initDrivingLoop()</a>, <a class="el" href="odometer_8c_source.html#l00011">initOdometer()</a>, <a class="el" href="temp__monitoring_8c_source.html#l00012">initTempMonitor()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00013">MAX_NUM_MANAGED_TASKS</a>, and <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00037">uvInit()</a>.</p>
-
-</div>
-</div>
 <a id="a0547a08e521248754efe91c5de5ec182"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0547a08e521248754efe91c5de5ec182">&#9670;&nbsp;</a></span>uvRegisterTask()</h2>
 
@@ -888,209 +575,18 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> uvRegisterTask </td>
+          <td class="memname"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> uvRegisterTask </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2ad1d74b5783a51355c047be6642fab8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ad1d74b5783a51355c047be6642fab8">&#9670;&nbsp;</a></span>uvStartStateMachine()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> uvStartStateMachine </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Actually starts up the state engine to do state engine things </p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00233">233</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00029">previous_state</a>, <a class="el" href="uvfr__utils_8h_source.html#l00117">UV_ERROR</a>, <a class="el" href="uvfr__utils_8h_source.html#l00144">UV_INIT</a>, <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00111">uvValidateManagedTasks()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00028">vehicle_state</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00037">uvInit()</a>.</p>
-
-</div>
-</div>
-<a id="a94752124bb13b855d4bfb7744d58a986"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94752124bb13b855d4bfb7744d58a986">&#9670;&nbsp;</a></span>uvStartTask()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> uvStartTask </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t *&#160;</td>
-          <td class="paramname"><em>tracker</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>: This is a function that starts tasks which are already registered in the system </p>
-<p>This bad boi gets called from the stateChangeDaemon because it's a special little snowflake. </p>
-<p>The first thing we will do is check if the task is running, since this could theoretically get called from literally anywhere. If the task is running, then we check to see if <code>t-&gt;task_handle</code> is set to <code>NULL</code> . If it is null, that is a physically impossible_state. Neither very mindful or very demure.</p>
-<p>That being said, if the task appears legit, then just update the corresponding bits in the tracker, and return that the task has aborted.</p>
-<p>If a task has been suspended, we do not want to create a new instance of the task, becuase then the task will go out of scope, and changing the task handle to a new instance will result in the task never being de-initialized, therefore causing a memory leak. We want to call <code>vTaskResume</code> instead, and just boot the task back into existence.</p>
-<p>If none of the previous if statements caught the task handle, then that means that either this is our first time attempting to activate this task, or the task has been deleted at some point prior to this one</p>
-<p>The function <code>osThreadCreate</code> returns null if it fails to create a thread. If that happens, we really do have a problem, so we will be returning an error value</p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00133">133</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00054">_BV_32</a>, <a class="el" href="uvfr__utils_8h_source.html#l00264">uv_task_info::stack_size</a>, <a class="el" href="uvfr__utils_8h_source.html#l00260">uv_task_info::task_function</a>, <a class="el" href="uvfr__utils_8h_source.html#l00282">uv_task_info::task_handle</a>, <a class="el" href="uvfr__utils_8h_source.html#l00255">uv_task_info::task_id</a>, <a class="el" href="uvfr__utils_8h_source.html#l00256">uv_task_info::task_name</a>, <a class="el" href="uvfr__utils_8h_source.html#l00261">uv_task_info::task_priority</a>, <a class="el" href="uvfr__utils_8h_source.html#l00277">uv_task_info::task_state</a>, <a class="el" href="uvfr__utils_8h_source.html#l00118">UV_ABORTED</a>, <a class="el" href="uvfr__utils_8h_source.html#l00117">UV_ERROR</a>, <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>, <a class="el" href="uvfr__utils_8h_source.html#l00126">UV_TASK_RUNNING</a>, and <a class="el" href="uvfr__utils_8h_source.html#l00127">UV_TASK_SUSPENDED</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00657">_stateChangeDaemon()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00929">uvSVCTaskManager()</a>.</p>
-
-</div>
-</div>
-<a id="a04e455e33d779d04a25a24f154079477"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04e455e33d779d04a25a24f154079477">&#9670;&nbsp;</a></span>uvSuspendTask()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> uvSuspendTask </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t *&#160;</td>
-          <td class="paramname"><em>tracker</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structuv__task__info.html">uv_task_info</a> *&#160;</td>
-          <td class="paramname"><em>t</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>function to suspend one of the managed tasks </p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00368">368</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00284">uv_task_info::cmd_data</a>, <a class="el" href="uvfr__utils_8h_source.html#l00282">uv_task_info::task_handle</a>, <a class="el" href="uvfr__utils_8h_source.html#l00255">uv_task_info::task_id</a>, <a class="el" href="uvfr__utils_8h_source.html#l00277">uv_task_info::task_state</a>, <a class="el" href="uvfr__utils_8h_source.html#l00117">UV_ERROR</a>, <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00036">UV_SUSPEND_CMD</a>, <a class="el" href="uvfr__utils_8h_source.html#l00125">UV_TASK_DELETED</a>, <a class="el" href="uvfr__utils_8h_source.html#l00124">UV_TASK_NOT_STARTED</a>, <a class="el" href="uvfr__utils_8h_source.html#l00127">UV_TASK_SUSPENDED</a>, and <a class="el" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic()</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00657">_stateChangeDaemon()</a>.</p>
-
-</div>
-</div>
-<a id="aff684308203d45e9e16ad3d115c54279"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff684308203d45e9e16ad3d115c54279">&#9670;&nbsp;</a></span>uvSVCTaskManager()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void uvSVCTaskManager </td>
-          <td>(</td>
-          <td class="paramtype">void *&#160;</td>
-          <td class="paramname"><em>args</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>oversees all of the service tasks, and makes sure that theyre alright </p>
-<p>Start all of the service tasks. This involves allocating neccessary memory, setting the appropriate task parameters, and saying "fuck it we ball" and adding the tasks to the central task tracking data structure.</p>
-<p>Now we deinitialize the svcTaskManager. This is done by doing the following:</p><ul>
-<li>actually shut down the svc tasks</li>
-<li>double check that the tasks have acually shut down</li>
-<li>if any svc tasks are resisting nature's call, they will be shut down forcibly</li>
-<li>deallocate data structures specific to <code>uvSVCTaskManager</code> </li>
-</ul>
-<p>Lovely times for all</p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00929">929</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__utils_8c_source.html#l00300">__uvInitPanic()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00022">_svc_task_register</a>, <a class="el" href="uvfr__utils_8h_source.html#l00278">uv_task_info::active_states</a>, <a class="el" href="can_8h_source.html#l00040">CAN_TX_DAEMON_NAME</a>, <a class="el" href="can_8c_source.html#l00356">CANbusTxSvcDaemon()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00014">MAX_NUM_SVC_TASKS</a>, <a class="el" href="uvfr__utils_8h_source.html#l00260">uv_task_info::task_function</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00065">task_management_info::task_handle</a>, <a class="el" href="uvfr__utils_8h_source.html#l00256">uv_task_info::task_name</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00848">uvCreateServiceTask()</a>, <a class="el" href="uvfr__state__engine_8c.html#a0b9e8325d1d8f1027a7f563e4e8f22cb">uvFree()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00133">uvStartTask()</a>.</p>
-
-</div>
-</div>
-<a id="a8c1618caac0d7f29836107f1a44833e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8c1618caac0d7f29836107f1a44833e8">&#9670;&nbsp;</a></span>uvValidateManagedTasks()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> uvValidateManagedTasks </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>ensure that all the tasks people have created actually make sense, and are valid </p>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00111">111</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">References <a class="el" href="uvfr__state__engine_8c_source.html#l00018">_next_task_id</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00083">_uvValidateSpecificTask()</a>, and <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00233">uvStartStateMachine()</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a2f58cf65b3566bc390600f877f8bed35"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f58cf65b3566bc390600f877f8bed35">&#9670;&nbsp;</a></span>vehicle_state</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4">uv_vehicle_state_t</a> vehicle_state</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__state__engine_8c_source.html#l00028">28</a> of file <a class="el" href="uvfr__state__engine_8c_source.html">uvfr_state_engine.c</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00657">_stateChangeDaemon()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00426">changeVehicleState()</a>, <a class="el" href="daq_8c_source.html#l00044">daqMasterTask()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00233">uvStartStateMachine()</a>.</p>
 
 </div>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="auvfr__utils_8h_html_ac94b6bd11853173599ccff034055cc88af6465f57e0b6515721c5cbebd769e691"><div class="ttname"><a href="uvfr__utils_8h.html#ac94b6bd11853173599ccff034055cc88af6465f57e0b6515721c5cbebd769e691">UV_TASK_DELETED</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00125">uvfr_utils.h:125</a></div></div>
-<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00115">uvfr_utils.h:115</a></div></div>
-<div class="ttc" id="auvfr__state__engine_8c_html_a0b9e8325d1d8f1027a7f563e4e8f22cb"><div class="ttname"><a href="uvfr__state__engine_8c.html#a0b9e8325d1d8f1027a7f563e4e8f22cb">uvFree</a></div><div class="ttdeci">uvFree(args)</div></div>
-<div class="ttc" id="astructuv__task__info_html_a5347f41c4b15b2d6b039c339613fde43"><div class="ttname"><a href="structuv__task__info.html#a5347f41c4b15b2d6b039c339613fde43">uv_task_info::task_handle</a></div><div class="ttdeci">TaskHandle_t task_handle</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00282">uvfr_utils.h:282</a></div></div>
-<div class="ttc" id="auvfr__state__engine_8c_html_a6837d935e61f84062544da8971a18560"><div class="ttname"><a href="uvfr__state__engine_8c.html#a6837d935e61f84062544da8971a18560">state_change_queue</a></div><div class="ttdeci">static QueueHandle_t state_change_queue</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8c_source.html#l00026">uvfr_state_engine.c:26</a></div></div>
-<div class="ttc" id="astructuv__scd__response_html_a0812669214881a452cc54e8783a74c4f"><div class="ttname"><a href="structuv__scd__response.html#a0812669214881a452cc54e8783a74c4f">uv_scd_response::meta_id</a></div><div class="ttdeci">uv_task_id meta_id</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00050">uvfr_state_engine.h:50</a></div></div>
-<div class="ttc" id="astructuv__scd__response_html"><div class="ttname"><a href="structuv__scd__response.html">uv_scd_response</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00048">uvfr_state_engine.h:48</a></div></div>
-<div class="ttc" id="auvfr__state__engine_8c_html_a6b49ab568bed9d9189782eebb90545b5"><div class="ttname"><a href="uvfr__state__engine_8c.html#a6b49ab568bed9d9189782eebb90545b5">_task_register</a></div><div class="ttdeci">static uv_task_info * _task_register</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8c_source.html#l00019">uvfr_state_engine.c:19</a></div></div>
-<div class="ttc" id="auvfr__state__engine_8h_html_a092c530d4a0cd880a59598dc0fca95d4"><div class="ttname"><a href="uvfr__state__engine_8h.html#a092c530d4a0cd880a59598dc0fca95d4">_SC_DAEMON_PERIOD</a></div><div class="ttdeci">#define _SC_DAEMON_PERIOD</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00027">uvfr_state_engine.h:27</a></div></div>
-<div class="ttc" id="auvfr__state__engine_8c_html_aaa277ffa1af90e363ed58510872d0fed"><div class="ttname"><a href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic</a></div><div class="ttdeci">uvPanic(&quot;SCD Timeout&quot;, 0)</div></div>
-<div class="ttc" id="astructuv__task__info_html_a43e5b3136b38dde4272aa510c5349ba3"><div class="ttname"><a href="structuv__task__info.html#a43e5b3136b38dde4272aa510c5349ba3">uv_task_info::task_state</a></div><div class="ttdeci">uv_task_status task_state</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00277">uvfr_utils.h:277</a></div></div>
-<div class="ttc" id="auvfr__state__engine_8h_html_a2b86418bd482f9d4a2a36f35e786798e"><div class="ttname"><a href="uvfr__state__engine_8h.html#a2b86418bd482f9d4a2a36f35e786798e">_LONGEST_SC_TIME</a></div><div class="ttdeci">#define _LONGEST_SC_TIME</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00026">uvfr_state_engine.h:26</a></div></div>
-<div class="ttc" id="auvfr__state__engine_8c_html_a2e8a31626909ac17be499f2941d359d0"><div class="ttname"><a href="uvfr__state__engine_8c.html#a2e8a31626909ac17be499f2941d359d0">proccessSCDMsg</a></div><div class="ttdeci">static uv_status proccessSCDMsg(uv_scd_response *msg)</div><div class="ttdoc">Helper function for the SCD, that proccesses a message, and double checks to make sure the task that ...</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8c_source.html#l00589">uvfr_state_engine.c:589</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

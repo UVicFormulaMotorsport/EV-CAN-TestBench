@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structuv__scd__response" kind="struct" language="C++" prot="public">
+    <compoundname>uv_scd_response</compoundname>
+    <includes refid="uvfr__state__engine_8h" local="no">uvfr_state_engine.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structuv__scd__response_1a92a8d03f9ffbbd860cb0bbe48f90bd7e" prot="public" static="no" mutable="no">
+        <type>enum <ref refid="group__state__engine__api_1gadfdfabf66fb37e4e702a1019bf1a9a76" kindref="member">uv_scd_response_e</ref></type>
+        <definition>enum uv_scd_response_e uv_scd_response::response_val</definition>
+        <argsstring></argsstring>
+        <name>response_val</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_state_engine.h" line="380" column="12" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="115" bodyend="-1"/>
+        <referencedby refid="group__state__engine__backend_1ga5f35b34432afed7f18f91fb8607f096f" compoundref="uvfr__state__engine_8c" startline="708" endline="741">killSelf</referencedby>
+        <referencedby refid="group__state__engine__backend_1ga2e8a31626909ac17be499f2941d359d0" compoundref="uvfr__state__engine_8c" startline="792" endline="847">proccessSCDMsg</referencedby>
+        <referencedby refid="group__state__engine__backend_1gad6117850b55ad52be51d93915bcc313c" compoundref="uvfr__state__engine_8c" startline="749" endline="780">suspendSelf</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__scd__response_1a0812669214881a452cc54e8783a74c4f" prot="public" static="no" mutable="no">
+        <type><ref refid="uvfr__state__engine_8h_1aa6ffd72eb4909ddb38c37a1369e13f09" kindref="member">uv_task_id</ref></type>
+        <definition>uv_task_id uv_scd_response::meta_id</definition>
+        <argsstring></argsstring>
+        <name>meta_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_state_engine.h" line="116" column="12" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="116" bodyend="-1"/>
+        <referencedby refid="group__state__engine__backend_1ga8519c96858b096f2fccb96d3334df93a" compoundref="uvfr__state__engine_8c" startline="865" endline="1038">_stateChangeDaemon</referencedby>
+        <referencedby refid="group__state__engine__backend_1ga5f35b34432afed7f18f91fb8607f096f" compoundref="uvfr__state__engine_8c" startline="708" endline="741">killSelf</referencedby>
+        <referencedby refid="group__state__engine__backend_1ga2e8a31626909ac17be499f2941d359d0" compoundref="uvfr__state__engine_8c" startline="792" endline="847">proccessSCDMsg</referencedby>
+        <referencedby refid="group__state__engine__backend_1gad6117850b55ad52be51d93915bcc313c" compoundref="uvfr__state__engine_8c" startline="749" endline="780">suspendSelf</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Core/Inc/uvfr_state_engine.h" line="114" column="30" bodyfile="Core/Inc/uvfr_state_engine.h" bodystart="114" bodyend="117"/>
+    <listofallmembers>
+      <member refid="structuv__scd__response_1a0812669214881a452cc54e8783a74c4f" prot="public" virt="non-virtual"><scope>uv_scd_response</scope><name>meta_id</name></member>
+      <member refid="structuv__scd__response_1a92a8d03f9ffbbd860cb0bbe48f90bd7e" prot="public" virt="non-virtual"><scope>uv_scd_response</scope><name>response_val</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

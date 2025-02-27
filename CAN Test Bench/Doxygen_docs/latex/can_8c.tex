@@ -14,10 +14,25 @@ This file provides code for the configuration of the C\+AN instances.
 {\ttfamily \#include \char`\"{}pdu.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_c_a_n___callback}{C\+A\+N\+\_\+\+Callback}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
 \#define \mbox{\hyperlink{can_8c_a81ca550f56875553f534a4d72adff10d}{H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+A\+L\+L\+B\+A\+CK}}~(0x00400000U)
+\item 
+\#define \mbox{\hyperlink{can_8c_a286ec093b36200ab124adf66d0671198}{table\+\_\+size}}~128
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct_c_a_n___callback}{C\+A\+N\+\_\+\+Callback}} \mbox{\hyperlink{can_8c_af825ed4c7d0f1a7278410ab245a5ea8d}{C\+A\+N\+\_\+\+Callback}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -34,14 +49,32 @@ void \mbox{\hyperlink{can_8c_a4e0742fef0f265347a75b7fa12012229}{H\+A\+L\+\_\+\+C
 \item 
 void \mbox{\hyperlink{can_8c_a4c51ef84434a42d4c5f9524d361c0703}{H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo1\+Msg\+Pending\+Callback}} (C\+A\+N\+\_\+\+Handle\+Type\+Def $\ast$\mbox{\hyperlink{stm32f4xx__it_8c_ab77168d14df04ccca5d48612ee21ced8}{hcan2}})
 \item 
-\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{can_8c_acc24d5acdcc2015b59e63769a397353b}{uv\+Send\+Can\+M\+SG}} (\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$msg)
-\begin{DoxyCompactList}\small\item\em Function to send can message. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{can_8c_affa7bfe9532060be4358706525e4f36e}{generate\+Hash}} (uint32\+\_\+t Incoming\+\_\+\+C\+A\+N\+\_\+id)
+\item 
+static \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{can_8c_aa5d470f815f2c11378233e0f3ca9ed8b}{call\+Function\+From\+C\+A\+Nid}} (\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$msg)
+\item 
+void \mbox{\hyperlink{group__uvfr__can__api_ga81adc4a577110ce8fe1158b0dc302cc2}{insert\+C\+A\+N\+Message\+Handler}} (uint32\+\_\+t id, void $\ast$handlerfunc)
+\begin{DoxyCompactList}\small\item\em Function to insert an id and function into the lookup table of callback functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{can_8c_acadda9ab3aa926b92a84e3f192c66547}{nuke\+\_\+hash\+\_\+table}} ()
+\item 
+\mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{can_8c_ae025787f17f6312df1e71c731b2a0fe4}{\+\_\+\+\_\+uv\+C\+A\+Ntx\+Crit\+Section}} (\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$tx\+\_\+msg)
+\item 
+\mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{group__uvfr__can__api_ga62414944c3b631f57fdd08e467bcf5a4}{uv\+Send\+Can\+M\+SG}} (\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$tx\+\_\+msg)
+\begin{DoxyCompactList}\small\item\em Function to send C\+AN message. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{can_8c_a2357e197a9ac26277eec808769fe409f}{C\+A\+Nbus\+Tx\+Svc\+Daemon}} (void $\ast$args)
 \begin{DoxyCompactList}\small\item\em Background task that handles any C\+AN messages that are being sent. \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{can_8c_ae81ac633e5983dde276f930615a1e03a}{C\+A\+Nbus\+Rx\+S\+V\+C\+Daemon}} (void $\ast$args)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{can_8c_a2b32305988f51945b7c220ca60ab68e8}{C\+A\+Nbus\+Rx\+Svc\+Daemon}} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Background task that executes the C\+AN message callback functions. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
+\item 
+static Queue\+Handle\+\_\+t \mbox{\hyperlink{can_8c_a39f60bf61979059355fc4916aa3500db}{Tx\+\_\+msg\+\_\+queue}} = N\+U\+LL
+\item 
+static Queue\+Handle\+\_\+t \mbox{\hyperlink{can_8c_ad0e232ce658c38916aee908ceae1db1e}{Rx\+\_\+msg\+\_\+queue}} = N\+U\+LL
+\item 
+\mbox{\hyperlink{struct_c_a_n___callback}{C\+A\+N\+\_\+\+Callback}} \mbox{\hyperlink{can_8c_a323f3f73f5588982a51a55276dbc5738}{C\+A\+N\+\_\+callback\+\_\+table}} \mbox{[}\mbox{\hyperlink{can_8c_a286ec093b36200ab124adf66d0671198}{table\+\_\+size}}\mbox{]} = \{0\}
+\item 
+Semaphore\+Handle\+\_\+t \mbox{\hyperlink{can_8c_a2bd63a687f9513e4fcaf3c97d5821515}{callback\+\_\+table\+\_\+mutex}} = N\+U\+LL
 \item 
 C\+A\+N\+\_\+\+Handle\+Type\+Def \mbox{\hyperlink{can_8c_ab77168d14df04ccca5d48612ee21ced8}{hcan2}}
 \end{DoxyCompactItemize}
@@ -66,20 +99,87 @@ This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE
 
 
 
-Definition at line 35 of file can.\+c.
+Definition at line 46 of file can.\+c.
+
+\mbox{\Hypertarget{can_8c_a286ec093b36200ab124adf66d0671198}\label{can_8c_a286ec093b36200ab124adf66d0671198}} 
+\index{can.c@{can.c}!table\_size@{table\_size}}
+\index{table\_size@{table\_size}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{table\_size}{table\_size}}
+{\footnotesize\ttfamily \#define table\+\_\+size~128}
+
+
+
+Definition at line 52 of file can.\+c.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{can_8c_af825ed4c7d0f1a7278410ab245a5ea8d}\label{can_8c_af825ed4c7d0f1a7278410ab245a5ea8d}} 
+\index{can.c@{can.c}!CAN\_Callback@{CAN\_Callback}}
+\index{CAN\_Callback@{CAN\_Callback}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{CAN\_Callback}{CAN\_Callback}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct_c_a_n___callback}{C\+A\+N\+\_\+\+Callback}} \mbox{\hyperlink{struct_c_a_n___callback}{C\+A\+N\+\_\+\+Callback}}}
 
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{can_8c_ae81ac633e5983dde276f930615a1e03a}\label{can_8c_ae81ac633e5983dde276f930615a1e03a}} 
-\index{can.c@{can.c}!CANbusRxSVCDaemon@{CANbusRxSVCDaemon}}
-\index{CANbusRxSVCDaemon@{CANbusRxSVCDaemon}!can.c@{can.c}}
-\doxysubsubsection{\texorpdfstring{CANbusRxSVCDaemon()}{CANbusRxSVCDaemon()}}
-{\footnotesize\ttfamily void C\+A\+Nbus\+Rx\+S\+V\+C\+Daemon (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{can_8c_ae025787f17f6312df1e71c731b2a0fe4}\label{can_8c_ae025787f17f6312df1e71c731b2a0fe4}} 
+\index{can.c@{can.c}!\_\_uvCANtxCritSection@{\_\_uvCANtxCritSection}}
+\index{\_\_uvCANtxCritSection@{\_\_uvCANtxCritSection}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{\_\_uvCANtxCritSection()}{\_\_uvCANtxCritSection()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \+\_\+\+\_\+uv\+C\+A\+Ntx\+Crit\+Section (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$}]{tx\+\_\+msg }\end{DoxyParamCaption})}
 
 
 
-Definition at line 401 of file can.\+c.
+Definition at line 476 of file can.\+c.
+
+
+
+References uv\+\_\+\+C\+A\+N\+\_\+msg\+::data, uv\+\_\+\+C\+A\+N\+\_\+msg\+::dlc, uv\+\_\+\+C\+A\+N\+\_\+msg\+::flags, hcan2, uv\+\_\+\+C\+A\+N\+\_\+msg\+::msg\+\_\+id, Tx\+Header, Tx\+Mailbox, U\+V\+\_\+\+C\+A\+N\+\_\+\+E\+X\+T\+E\+N\+D\+E\+D\+\_\+\+ID, U\+V\+\_\+\+E\+R\+R\+OR, and U\+V\+\_\+\+OK.
+
+
+
+Referenced by uv\+Send\+Can\+M\+S\+G().
+
+\mbox{\Hypertarget{can_8c_aa5d470f815f2c11378233e0f3ca9ed8b}\label{can_8c_aa5d470f815f2c11378233e0f3ca9ed8b}} 
+\index{can.c@{can.c}!callFunctionFromCANid@{callFunctionFromCANid}}
+\index{callFunctionFromCANid@{callFunctionFromCANid}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{callFunctionFromCANid()}{callFunctionFromCANid()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} call\+Function\+From\+C\+A\+Nid (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$}]{msg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Function to take C\+AN id and find its corresponding function Given a C\+AN id, find it in the hash table and call the function if it exists If it doesn\textquotesingle{}t exist, return 1 If it does exist but there are multiple can ids with the same hash follow the next pointer until the right C\+AN id is found Then call the function 
+
+Definition at line 368 of file can.\+c.
+
+
+
+References C\+A\+N\+\_\+callback\+\_\+table, C\+A\+N\+\_\+\+Callback\+::\+C\+A\+N\+\_\+id, C\+A\+N\+\_\+\+Callback\+::function, generate\+Hash(), uv\+\_\+\+C\+A\+N\+\_\+msg\+::msg\+\_\+id, C\+A\+N\+\_\+\+Callback\+::next, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+OK, and U\+V\+\_\+\+W\+A\+R\+N\+I\+NG.
+
+
+
+Referenced by C\+A\+Nbus\+Rx\+Svc\+Daemon().
+
+\mbox{\Hypertarget{can_8c_a2b32305988f51945b7c220ca60ab68e8}\label{can_8c_a2b32305988f51945b7c220ca60ab68e8}} 
+\index{can.c@{can.c}!CANbusRxSvcDaemon@{CANbusRxSvcDaemon}}
+\index{CANbusRxSvcDaemon@{CANbusRxSvcDaemon}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{CANbusRxSvcDaemon()}{CANbusRxSvcDaemon()}}
+{\footnotesize\ttfamily void C\+A\+Nbus\+Rx\+Svc\+Daemon (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Background task that executes the C\+AN message callback functions. 
+
+Basically just snoops through the hash table 
+
+Definition at line 618 of file can.\+c.
+
+
+
+References callback\+\_\+table\+\_\+mutex, call\+Function\+From\+C\+A\+Nid(), uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, kill\+Self(), Rx\+\_\+msg\+\_\+queue, suspend\+Self(), uv\+\_\+task\+\_\+info\+::task\+\_\+handle, U\+V\+\_\+\+K\+I\+L\+L\+\_\+\+C\+MD, U\+V\+\_\+\+OK, and U\+V\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+MD.
+
+
+
+Referenced by uv\+S\+V\+C\+Task\+Manager().
 
 \mbox{\Hypertarget{can_8c_a2357e197a9ac26277eec808769fe409f}\label{can_8c_a2357e197a9ac26277eec808769fe409f}} 
 \index{can.c@{can.c}!CANbusTxSvcDaemon@{CANbusTxSvcDaemon}}
@@ -93,15 +193,33 @@ Background task that handles any C\+AN messages that are being sent.
 
 This task sits idle, until the time is right (it receives a notification from the uv\+Send\+Can\+M\+SG function) Once this condition has been met, it will actually call the {\ttfamily H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Add\+Tx\+Message} function. This is a very high priority task, meaning that it will pause whatever other code is going in order to run 
 
-Definition at line 356 of file can.\+c.
+Definition at line 551 of file can.\+c.
 
 
 
-References uv\+\_\+\+C\+A\+N\+\_\+msg\+::data, uv\+\_\+\+C\+A\+N\+\_\+msg\+::dlc, uv\+\_\+\+C\+A\+N\+\_\+msg\+::flags, hcan2, uv\+\_\+\+C\+A\+N\+\_\+msg\+::msg\+\_\+id, Tx\+Header, Tx\+Mailbox, U\+V\+\_\+\+C\+A\+N\+\_\+\+E\+X\+T\+E\+N\+D\+E\+D\+\_\+\+ID, and uv\+Panic().
+References uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, uv\+\_\+\+C\+A\+N\+\_\+msg\+::data, uv\+\_\+\+C\+A\+N\+\_\+msg\+::dlc, uv\+\_\+\+C\+A\+N\+\_\+msg\+::flags, hcan2, kill\+Self(), uv\+\_\+\+C\+A\+N\+\_\+msg\+::msg\+\_\+id, suspend\+Self(), Tx\+\_\+msg\+\_\+queue, Tx\+Header, Tx\+Mailbox, U\+V\+\_\+\+C\+A\+N\+\_\+\+E\+X\+T\+E\+N\+D\+E\+D\+\_\+\+ID, U\+V\+\_\+\+K\+I\+L\+L\+\_\+\+C\+MD, and U\+V\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+MD.
 
 
 
 Referenced by uv\+S\+V\+C\+Task\+Manager().
+
+\mbox{\Hypertarget{can_8c_affa7bfe9532060be4358706525e4f36e}\label{can_8c_affa7bfe9532060be4358706525e4f36e}} 
+\index{can.c@{can.c}!generateHash@{generateHash}}
+\index{generateHash@{generateHash}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{generateHash()}{generateHash()}}
+{\footnotesize\ttfamily unsigned int generate\+Hash (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Incoming\+\_\+\+C\+A\+N\+\_\+id }\end{DoxyParamCaption})}
+
+H\+A\+SH F\+U\+N\+C\+T\+I\+ON Take a can id and return a \char`\"{}random\char`\"{} hash id The hash id is in range from 0 to table\+\_\+size The hash id is similar to an array index in its implementation 
+
+Definition at line 351 of file can.\+c.
+
+
+
+References table\+\_\+size.
+
+
+
+Referenced by call\+Function\+From\+C\+A\+Nid(), and insert\+C\+A\+N\+Message\+Handler().
 
 \mbox{\Hypertarget{can_8c_a4b39e42353b2781bc75d83c018640b67}\label{can_8c_a4b39e42353b2781bc75d83c018640b67}} 
 \index{can.c@{can.c}!HAL\_CAN\_MspDeInit@{HAL\_CAN\_MspDeInit}}
@@ -111,7 +229,7 @@ Referenced by uv\+S\+V\+C\+Task\+Manager().
 
 C\+A\+N2 G\+P\+IO Configuration P\+B12 -\/-\/-\/---$>$ C\+A\+N2\+\_\+\+RX P\+B13 -\/-\/-\/---$>$ C\+A\+N2\+\_\+\+TX
 
-Definition at line 233 of file can.\+c.
+Definition at line 266 of file can.\+c.
 
 \mbox{\Hypertarget{can_8c_a2778ce7f3a2de42769b6de9fec4cedb9}\label{can_8c_a2778ce7f3a2de42769b6de9fec4cedb9}} 
 \index{can.c@{can.c}!HAL\_CAN\_MspInit@{HAL\_CAN\_MspInit}}
@@ -121,7 +239,7 @@ Definition at line 233 of file can.\+c.
 
 C\+A\+N2 G\+P\+IO Configuration P\+B12 -\/-\/-\/---$>$ C\+A\+N2\+\_\+\+RX P\+B13 -\/-\/-\/---$>$ C\+A\+N2\+\_\+\+TX
 
-Definition at line 195 of file can.\+c.
+Definition at line 228 of file can.\+c.
 
 \mbox{\Hypertarget{can_8c_a4e0742fef0f265347a75b7fa12012229}\label{can_8c_a4e0742fef0f265347a75b7fa12012229}} 
 \index{can.c@{can.c}!HAL\_CAN\_RxFifo0MsgPendingCallback@{HAL\_CAN\_RxFifo0MsgPendingCallback}}
@@ -131,11 +249,11 @@ Definition at line 195 of file can.\+c.
 
 
 
-Definition at line 265 of file can.\+c.
+Definition at line 298 of file can.\+c.
 
 
 
-References Error\+\_\+\+Handler(), hcan2, Rx\+Data, and Rx\+Header.
+References uv\+\_\+\+C\+A\+N\+\_\+msg\+::data, uv\+\_\+\+C\+A\+N\+\_\+msg\+::dlc, Error\+\_\+\+Handler(), hcan2, uv\+\_\+\+C\+A\+N\+\_\+msg\+::msg\+\_\+id, Rx\+\_\+msg\+\_\+queue, and Rx\+Header.
 
 \mbox{\Hypertarget{can_8c_a4c51ef84434a42d4c5f9524d361c0703}\label{can_8c_a4c51ef84434a42d4c5f9524d361c0703}} 
 \index{can.c@{can.c}!HAL\_CAN\_RxFifo1MsgPendingCallback@{HAL\_CAN\_RxFifo1MsgPendingCallback}}
@@ -145,7 +263,7 @@ References Error\+\_\+\+Handler(), hcan2, Rx\+Data, and Rx\+Header.
 
 
 
-Definition at line 301 of file can.\+c.
+Definition at line 338 of file can.\+c.
 
 \mbox{\Hypertarget{can_8c_aff5c4caa2b4968b309deaffdc58f1e92}\label{can_8c_aff5c4caa2b4968b309deaffdc58f1e92}} 
 \index{can.c@{can.c}!handleCANbusError@{handleCANbusError}}
@@ -155,15 +273,15 @@ Definition at line 301 of file can.\+c.
 
 
 
-Definition at line 38 of file can.\+c.
+Definition at line 71 of file can.\+c.
 
 
 
-References H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+A\+L\+L\+B\+A\+CK, and uv\+Panic().
+References H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+C\+A\+L\+L\+B\+A\+CK.
 
 
 
-Referenced by uv\+Init().
+Referenced by main().
 
 \mbox{\Hypertarget{can_8c_a1ee5cd592134235b6c07f676784d47c3}\label{can_8c_a1ee5cd592134235b6c07f676784d47c3}} 
 \index{can.c@{can.c}!MX\_CAN2\_Init@{MX\_CAN2\_Init}}
@@ -173,7 +291,7 @@ Referenced by uv\+Init().
 
 
 
-Definition at line 117 of file can.\+c.
+Definition at line 150 of file can.\+c.
 
 
 
@@ -183,27 +301,51 @@ References Error\+\_\+\+Handler(), hcan2, and Tx\+Header.
 
 Referenced by main().
 
-\mbox{\Hypertarget{can_8c_acc24d5acdcc2015b59e63769a397353b}\label{can_8c_acc24d5acdcc2015b59e63769a397353b}} 
-\index{can.c@{can.c}!uvSendCanMSG@{uvSendCanMSG}}
-\index{uvSendCanMSG@{uvSendCanMSG}!can.c@{can.c}}
-\doxysubsubsection{\texorpdfstring{uvSendCanMSG()}{uvSendCanMSG()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} uv\+Send\+Can\+M\+SG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$}]{msg }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{can_8c_acadda9ab3aa926b92a84e3f192c66547}\label{can_8c_acadda9ab3aa926b92a84e3f192c66547}} 
+\index{can.c@{can.c}!nuke\_hash\_table@{nuke\_hash\_table}}
+\index{nuke\_hash\_table@{nuke\_hash\_table}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{nuke\_hash\_table()}{nuke\_hash\_table()}}
+{\footnotesize\ttfamily void nuke\+\_\+hash\+\_\+table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to free all malloced memory Index through the hash table and free all the malloced memory at each index 
+
+Definition at line 453 of file can.\+c.
 
 
 
-Function to send can message. 
-
-This function is the canonical team method of sending a C\+AN message. It invokes the can\+Tx\+Daemon, to avoid any conflicts due to a context switch mid transmission Is it a little bit convoluted? Yes. Is that worth it? Still yes. Check that the C\+AN Tx daemon is actually active
-
-Definition at line 318 of file can.\+c.
-
-
-
-References C\+A\+N\+\_\+\+T\+X\+\_\+\+D\+A\+E\+M\+O\+N\+\_\+\+N\+A\+ME, and U\+V\+\_\+\+E\+R\+R\+OR.
+References C\+A\+N\+\_\+callback\+\_\+table, C\+A\+N\+\_\+\+Callback\+::next, and table\+\_\+size.
 
 
 
 \doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{can_8c_a2bd63a687f9513e4fcaf3c97d5821515}\label{can_8c_a2bd63a687f9513e4fcaf3c97d5821515}} 
+\index{can.c@{can.c}!callback\_table\_mutex@{callback\_table\_mutex}}
+\index{callback\_table\_mutex@{callback\_table\_mutex}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{callback\_table\_mutex}{callback\_table\_mutex}}
+{\footnotesize\ttfamily Semaphore\+Handle\+\_\+t callback\+\_\+table\+\_\+mutex = N\+U\+LL}
+
+
+
+Definition at line 69 of file can.\+c.
+
+
+
+Referenced by C\+A\+Nbus\+Rx\+Svc\+Daemon(), and insert\+C\+A\+N\+Message\+Handler().
+
+\mbox{\Hypertarget{can_8c_a323f3f73f5588982a51a55276dbc5738}\label{can_8c_a323f3f73f5588982a51a55276dbc5738}} 
+\index{can.c@{can.c}!CAN\_callback\_table@{CAN\_callback\_table}}
+\index{CAN\_callback\_table@{CAN\_callback\_table}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{CAN\_callback\_table}{CAN\_callback\_table}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_c_a_n___callback}{C\+A\+N\+\_\+\+Callback}} C\+A\+N\+\_\+callback\+\_\+table\mbox{[}\mbox{\hyperlink{can_8c_a286ec093b36200ab124adf66d0671198}{table\+\_\+size}}\mbox{]} = \{0\}}
+
+Hash Table To Store C\+AN Messages Creates a hash table of size table\+\_\+size and type C\+A\+N\+\_\+\+Message Initialize all C\+AN messages in the hash table 
+
+Definition at line 67 of file can.\+c.
+
+
+
+Referenced by call\+Function\+From\+C\+A\+Nid(), insert\+C\+A\+N\+Message\+Handler(), and nuke\+\_\+hash\+\_\+table().
+
 \mbox{\Hypertarget{can_8c_ab77168d14df04ccca5d48612ee21ced8}\label{can_8c_ab77168d14df04ccca5d48612ee21ced8}} 
 \index{can.c@{can.c}!hcan2@{hcan2}}
 \index{hcan2@{hcan2}!can.c@{can.c}}
@@ -212,9 +354,37 @@ References C\+A\+N\+\_\+\+T\+X\+\_\+\+D\+A\+E\+M\+O\+N\+\_\+\+N\+A\+ME, and U\+V
 
 
 
-Definition at line 114 of file can.\+c.
+Definition at line 147 of file can.\+c.
 
 
 
-Referenced by C\+A\+N2\+\_\+\+R\+X0\+\_\+\+I\+R\+Q\+Handler(), C\+A\+N2\+\_\+\+R\+X1\+\_\+\+I\+R\+Q\+Handler(), C\+A\+N2\+\_\+\+T\+X\+\_\+\+I\+R\+Q\+Handler(), C\+A\+Nbus\+Tx\+Svc\+Daemon(), H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback(), I\+M\+D\+\_\+\+Request\+\_\+\+Status(), M\+C\+\_\+\+Request\+\_\+\+Data(), M\+C\+\_\+\+Send\+\_\+\+Data(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), P\+D\+U\+\_\+disable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+disable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+disable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+disable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+disable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+enable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+enable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+enable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+enable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+enable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+speaker\+\_\+chirp(), Update\+\_\+\+Batt\+\_\+\+Temp(), Update\+\_\+\+R\+P\+M(), Update\+\_\+\+State\+\_\+\+Of\+\_\+\+Charge(), and uv\+Init().
+Referenced by \+\_\+\+\_\+uv\+C\+A\+Ntx\+Crit\+Section(), C\+A\+N2\+\_\+\+R\+X0\+\_\+\+I\+R\+Q\+Handler(), C\+A\+N2\+\_\+\+R\+X1\+\_\+\+I\+R\+Q\+Handler(), C\+A\+N2\+\_\+\+T\+X\+\_\+\+I\+R\+Q\+Handler(), C\+A\+Nbus\+Tx\+Svc\+Daemon(), H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback(), I\+M\+D\+\_\+\+Request\+\_\+\+Status(), main(), M\+C\+\_\+\+Request\+\_\+\+Data(), Motor\+Controller\+Spin\+Test(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), P\+D\+U\+\_\+disable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+disable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+disable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+disable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+disable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+enable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+enable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+enable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+enable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+enable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+speaker\+\_\+chirp(), Update\+\_\+\+Batt\+\_\+\+Temp(), Update\+\_\+\+R\+P\+M(), and Update\+\_\+\+State\+\_\+\+Of\+\_\+\+Charge().
+
+\mbox{\Hypertarget{can_8c_ad0e232ce658c38916aee908ceae1db1e}\label{can_8c_ad0e232ce658c38916aee908ceae1db1e}} 
+\index{can.c@{can.c}!Rx\_msg\_queue@{Rx\_msg\_queue}}
+\index{Rx\_msg\_queue@{Rx\_msg\_queue}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{Rx\_msg\_queue}{Rx\_msg\_queue}}
+{\footnotesize\ttfamily Queue\+Handle\+\_\+t Rx\+\_\+msg\+\_\+queue = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 50 of file can.\+c.
+
+
+
+Referenced by C\+A\+Nbus\+Rx\+Svc\+Daemon(), and H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback().
+
+\mbox{\Hypertarget{can_8c_a39f60bf61979059355fc4916aa3500db}\label{can_8c_a39f60bf61979059355fc4916aa3500db}} 
+\index{can.c@{can.c}!Tx\_msg\_queue@{Tx\_msg\_queue}}
+\index{Tx\_msg\_queue@{Tx\_msg\_queue}!can.c@{can.c}}
+\doxysubsubsection{\texorpdfstring{Tx\_msg\_queue}{Tx\_msg\_queue}}
+{\footnotesize\ttfamily Queue\+Handle\+\_\+t Tx\+\_\+msg\+\_\+queue = N\+U\+LL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 49 of file can.\+c.
+
+
+
+Referenced by C\+A\+Nbus\+Tx\+Svc\+Daemon(), and uv\+Send\+Can\+M\+S\+G().
 

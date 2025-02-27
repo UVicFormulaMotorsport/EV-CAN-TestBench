@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structuv__vehicle__settings" kind="struct" language="C++" prot="public">
+    <compoundname>uv_vehicle_settings</compoundname>
+    <includes refid="uvfr__settings_8h" local="no">uvfr_settings.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structuv__vehicle__settings_1adbfed76ceedc0479ff023fea9ba7a84c" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structuv__os__settings" kindref="compound">uv_os_settings</ref> *</type>
+        <definition>struct uv_os_settings* uv_vehicle_settings::os_settings</definition>
+        <argsstring></argsstring>
+        <name>os_settings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_settings.h" line="34" column="22" bodyfile="Core/Inc/uvfr_settings.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="uvfr__settings_8c_1a42f7a1907bfe84d7b0f9fb4e2260018b" compoundref="uvfr__settings_8c" startline="42" endline="49">setupDefaultSettings</referencedby>
+        <referencedby refid="group__state__engine__api_1ga2ad1d74b5783a51355c047be6642fab8" compoundref="uvfr__state__engine_8c" startline="192" endline="246">uvStartStateMachine</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__vehicle__settings_1ad0b0375d2c1674abc6f972eec47e9cb7" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="motor__controller_8h_1ac9389d71d481a5381fe1d1e23b1e4ecc" kindref="member">motor_controller_settings</ref> *</type>
+        <definition>struct motor_controller_settings* uv_vehicle_settings::mc_settings</definition>
+        <argsstring></argsstring>
+        <name>mc_settings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_settings.h" line="35" column="33" bodyfile="Core/Inc/uvfr_settings.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__vehicle__settings_1a7a5207ef389290242764f49c6c48a5ad" prot="public" static="no" mutable="no">
+        <type><ref refid="structdriving__loop__args" kindref="compound">driving_loop_args</ref> *</type>
+        <definition>driving_loop_args* uv_vehicle_settings::driving_loop_settings</definition>
+        <argsstring></argsstring>
+        <name>driving_loop_settings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_settings.h" line="37" column="19" bodyfile="Core/Inc/uvfr_settings.h" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__vehicle__settings_1a5b56318f394bef60ff7da0b4995183e0" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* uv_vehicle_settings::imd_settings</definition>
+        <argsstring></argsstring>
+        <name>imd_settings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_settings.h" line="39" column="6" bodyfile="Core/Inc/uvfr_settings.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__vehicle__settings_1a6cdca5b5474080f1dff4d19ef96435e1" prot="public" static="no" mutable="no">
+        <type><ref refid="structbms__settings__t" kindref="compound">bms_settings_t</ref> *</type>
+        <definition>bms_settings_t* uv_vehicle_settings::bms_settings</definition>
+        <argsstring></argsstring>
+        <name>bms_settings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_settings.h" line="40" column="16" bodyfile="Core/Inc/uvfr_settings.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__vehicle__settings_1a6caecf0c9fd669e421c4005600d81b71" prot="public" static="no" mutable="no">
+        <type><ref refid="structdaq__loop__args" kindref="compound">daq_loop_args</ref> *</type>
+        <definition>daq_loop_args* uv_vehicle_settings::daq_settings</definition>
+        <argsstring></argsstring>
+        <name>daq_settings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_settings.h" line="42" column="15" bodyfile="Core/Inc/uvfr_settings.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__vehicle__settings_1afbb4746468289d0e88ee03e325917fb3" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* uv_vehicle_settings::pdu_settings</definition>
+        <argsstring></argsstring>
+        <name>pdu_settings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_settings.h" line="44" column="6" bodyfile="Core/Inc/uvfr_settings.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__vehicle__settings_1a5c9011e8b45d37e8963031285ece8f15" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t uv_vehicle_settings::is_default</definition>
+        <argsstring></argsstring>
+        <name>is_default</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Bitfield containing info on whether each settings instance is factory default. 0 default, 1 altered </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_settings.h" line="47" column="10" bodyfile="Core/Inc/uvfr_settings.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="9">
+        <label>drivingModeParams</label>
+        <link refid="uniondriving_mode_params"/>
+      </node>
+      <node id="3">
+        <label>uv_os_settings</label>
+        <link refid="structuv__os__settings"/>
+      </node>
+      <node id="8">
+        <label>drivingMode</label>
+        <link refid="structdriving_mode"/>
+        <childnode refid="9" relation="usage">
+          <edgelabel>map_fn_params</edgelabel>
+        </childnode>
+      </node>
+      <node id="6">
+        <label>motor_controllor_settings</label>
+        <link refid="structmotor__controllor__settings"/>
+      </node>
+      <node id="5">
+        <label>daq_datapoint</label>
+        <link refid="structdaq__datapoint"/>
+      </node>
+      <node id="4">
+        <label>daq_loop_args</label>
+        <link refid="structdaq__loop__args"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>datapoints</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>bms_settings_t</label>
+        <link refid="structbms__settings__t"/>
+      </node>
+      <node id="7">
+        <label>driving_loop_args</label>
+        <link refid="structdriving__loop__args"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>dmodes</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>uv_vehicle_settings</label>
+        <link refid="structuv__vehicle__settings"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>bms_settings</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>os_settings</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>daq_settings</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>mc_settings</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>driving_loop_settings</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Core/Inc/uvfr_settings.h" line="32" column="34" bodyfile="Core/Inc/uvfr_settings.h" bodystart="32" bodyend="50"/>
+    <listofallmembers>
+      <member refid="structuv__vehicle__settings_1a6cdca5b5474080f1dff4d19ef96435e1" prot="public" virt="non-virtual"><scope>uv_vehicle_settings</scope><name>bms_settings</name></member>
+      <member refid="structuv__vehicle__settings_1a6caecf0c9fd669e421c4005600d81b71" prot="public" virt="non-virtual"><scope>uv_vehicle_settings</scope><name>daq_settings</name></member>
+      <member refid="structuv__vehicle__settings_1a7a5207ef389290242764f49c6c48a5ad" prot="public" virt="non-virtual"><scope>uv_vehicle_settings</scope><name>driving_loop_settings</name></member>
+      <member refid="structuv__vehicle__settings_1a5b56318f394bef60ff7da0b4995183e0" prot="public" virt="non-virtual"><scope>uv_vehicle_settings</scope><name>imd_settings</name></member>
+      <member refid="structuv__vehicle__settings_1a5c9011e8b45d37e8963031285ece8f15" prot="public" virt="non-virtual"><scope>uv_vehicle_settings</scope><name>is_default</name></member>
+      <member refid="structuv__vehicle__settings_1ad0b0375d2c1674abc6f972eec47e9cb7" prot="public" virt="non-virtual"><scope>uv_vehicle_settings</scope><name>mc_settings</name></member>
+      <member refid="structuv__vehicle__settings_1adbfed76ceedc0479ff023fea9ba7a84c" prot="public" virt="non-virtual"><scope>uv_vehicle_settings</scope><name>os_settings</name></member>
+      <member refid="structuv__vehicle__settings_1afbb4746468289d0e88ee03e325917fb3" prot="public" virt="non-virtual"><scope>uv_vehicle_settings</scope><name>pdu_settings</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

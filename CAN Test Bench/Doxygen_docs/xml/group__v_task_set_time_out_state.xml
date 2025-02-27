@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="group__v_task_set_time_out_state" kind="group">
+    <compoundname>vTaskSetTimeOutState</compoundname>
+    <title>vTaskSetTimeOutState</title>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="task_8h" kindref="compound">task.h</ref> <preformatted>void <ref refid="task_8h_1a67155ad4ea2482b5f4597a69f2152be0" kindref="member">vTaskSetTimeOutState( TimeOut_t * const pxTimeOut )</ref></preformatted></para>
+<para>Capture the current time for future use with <ref refid="task_8h_1a3b018a85d339e536a6c05748dd666a3a" kindref="member">xTaskCheckForTimeOut()</ref>.</para>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pxTimeOut</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Pointer to a timeout object into which the current time is to be captured. The captured time includes the tick count and the number of times the tick count has overflowed since the system first booted. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

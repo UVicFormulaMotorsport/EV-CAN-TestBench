@@ -88,7 +88,6 @@ $(document).ready(function(){initNavTree('driving__loop_8h.html','');});
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
@@ -103,20 +102,22 @@ $(document).ready(function(){initNavTree('driving__loop_8h.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving_mode_params.html">drivingModeParams</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">this struct is designed to hold information about each drivingmode's map params  <a href="structdriving_mode_params.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structlinear__torque__map__args.html">linear_torque_map_args</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structexp__torque__map__args.html">exp_torque_map_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct to hold parameters used in an exponential torque map  <a href="structexp__torque__map__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structs__curve__torque__map__args.html">s_curve_torque_map_args</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct for s-curve parameters for torque  <a href="structs__curve__torque__map__args.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uniondriving_mode_params.html">drivingModeParams</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">this struct is designed to hold information about each drivingmode's map params  <a href="uniondriving_mode_params.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving_mode.html">drivingMode</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is where the driving mode and the deivingModeParams are at.  <a href="structdriving_mode.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is where the driving mode and the <a class="el" href="uniondriving_mode_params.html" title="this struct is designed to hold information about each drivingmode&#39;s map params">drivingModeParams</a> are at.  <a href="structdriving_mode.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdriving__loop__args.html">driving_loop_args</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a19ae3417888a615aca7350e9e1ba0204"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#a19ae3417888a615aca7350e9e1ba0204">DEFAULT_PERIOD</a>&#160;&#160;&#160;50</td></tr>
-<tr class="memdesc:a19ae3417888a615aca7350e9e1ba0204"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL_PERIOD is meant to represent how often the driving loop executes, in ms.  <a href="driving__loop_8h.html#a19ae3417888a615aca7350e9e1ba0204">More...</a><br /></td></tr>
-<tr class="separator:a19ae3417888a615aca7350e9e1ba0204"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -126,11 +127,19 @@ Typedefs</h2></td></tr>
 <tr class="separator:abd1701d9bbc137696fe99b6df6eb7d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93f3b2b453b1ad01d8555f12e529dfed"><td class="memItemLeft" align="right" valign="top">typedef uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#a93f3b2b453b1ad01d8555f12e529dfed">MC_POWER</a></td></tr>
 <tr class="separator:a93f3b2b453b1ad01d8555f12e529dfed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1d30630084a642c9209dca3a961ef12"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structdriving_mode_params.html">drivingModeParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#ac1d30630084a642c9209dca3a961ef12">drivingModeParams</a></td></tr>
-<tr class="memdesc:ac1d30630084a642c9209dca3a961ef12"><td class="mdescLeft">&#160;</td><td class="mdescRight">this struct is designed to hold information about each drivingmode's map params  <a href="driving__loop_8h.html#ac1d30630084a642c9209dca3a961ef12">More...</a><br /></td></tr>
-<tr class="separator:ac1d30630084a642c9209dca3a961ef12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21e30cbee7e12df40656ce0e97c8c1ea"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structlinear__torque__map__args.html">linear_torque_map_args</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#a21e30cbee7e12df40656ce0e97c8c1ea">linear_torque_map_args</a></td></tr>
+<tr class="separator:a21e30cbee7e12df40656ce0e97c8c1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa86f54df15fe3c127ae83c1fecbb5d24"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structexp__torque__map__args.html">exp_torque_map_args</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#aa86f54df15fe3c127ae83c1fecbb5d24">exp_torque_map_args</a></td></tr>
+<tr class="memdesc:aa86f54df15fe3c127ae83c1fecbb5d24"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct to hold parameters used in an exponential torque map  <a href="driving__loop_8h.html#aa86f54df15fe3c127ae83c1fecbb5d24">More...</a><br /></td></tr>
+<tr class="separator:aa86f54df15fe3c127ae83c1fecbb5d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32f012927e4624d674120b51cb6ee8c0"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structs__curve__torque__map__args.html">s_curve_torque_map_args</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#a32f012927e4624d674120b51cb6ee8c0">s_curve_torque_map_args</a></td></tr>
+<tr class="memdesc:a32f012927e4624d674120b51cb6ee8c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">struct for s-curve parameters for torque  <a href="driving__loop_8h.html#a32f012927e4624d674120b51cb6ee8c0">More...</a><br /></td></tr>
+<tr class="separator:a32f012927e4624d674120b51cb6ee8c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af90b0e528bd940abca8f5e2cf4bce18c"><td class="memItemLeft" align="right" valign="top">typedef union <a class="el" href="uniondriving_mode_params.html">drivingModeParams</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#af90b0e528bd940abca8f5e2cf4bce18c">drivingModeParams</a></td></tr>
+<tr class="memdesc:af90b0e528bd940abca8f5e2cf4bce18c"><td class="mdescLeft">&#160;</td><td class="mdescRight">this struct is designed to hold information about each drivingmode's map params  <a href="driving__loop_8h.html#af90b0e528bd940abca8f5e2cf4bce18c">More...</a><br /></td></tr>
+<tr class="separator:af90b0e528bd940abca8f5e2cf4bce18c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29e04283e579e9092d205b1937c785c6"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structdriving_mode.html">drivingMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#a29e04283e579e9092d205b1937c785c6">drivingMode</a></td></tr>
-<tr class="memdesc:a29e04283e579e9092d205b1937c785c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is where the driving mode and the deivingModeParams are at.  <a href="driving__loop_8h.html#a29e04283e579e9092d205b1937c785c6">More...</a><br /></td></tr>
+<tr class="memdesc:a29e04283e579e9092d205b1937c785c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is where the driving mode and the <a class="el" href="uniondriving_mode_params.html" title="this struct is designed to hold information about each drivingmode&#39;s map params">drivingModeParams</a> are at.  <a href="driving__loop_8h.html#a29e04283e579e9092d205b1937c785c6">More...</a><br /></td></tr>
 <tr class="separator:a29e04283e579e9092d205b1937c785c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa421e50f529a1770ef0b2a00a44a0601"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structdriving__loop__args.html">driving_loop_args</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#aa421e50f529a1770ef0b2a00a44a0601">driving_loop_args</a></td></tr>
 <tr class="separator:aa421e50f529a1770ef0b2a00a44a0601"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,7 +156,7 @@ Enumerations</h2></td></tr>
 <a class="el" href="driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800a22ffbb99cbb49917aac9c53aba81df32">exp_torque_map</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a9d8fd287924cbb6baa4afd1c585da800"><td class="mdescLeft">&#160;</td><td class="mdescRight">enum meant to represent the different types of pedal map  <a href="driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800">More...</a><br /></td></tr>
+<tr class="memdesc:a9d8fd287924cbb6baa4afd1c585da800"><td class="mdescLeft">&#160;</td><td class="mdescRight">DL_PERIOD is meant to represent how often the driving loop executes, in ms.  <a href="driving__loop_8h.html#a9d8fd287924cbb6baa4afd1c585da800">More...</a><br /></td></tr>
 <tr class="separator:a9d8fd287924cbb6baa4afd1c585da800"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adef4571b048b5b1f2b712713741296c7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7">DL_internal_state</a> { <a class="el" href="driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7a51000915ad3f7b4a5874322723d879ca">Plausible</a> = 0x01, 
 <a class="el" href="driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7a6425b90f597e6400cfb9422ec518334f">Implausible</a> = 0x02, 
@@ -163,27 +172,6 @@ Functions</h2></td></tr>
 <tr class="memdesc:a80cc48f06202edc29bcad26a956bcc98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function implementing the ledTask thread.  <a href="driving__loop_8h.html#a80cc48f06202edc29bcad26a956bcc98">More...</a><br /></td></tr>
 <tr class="separator:a80cc48f06202edc29bcad26a956bcc98"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a19ae3417888a615aca7350e9e1ba0204"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a19ae3417888a615aca7350e9e1ba0204">&#9670;&nbsp;</a></span>DEFAULT_PERIOD</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define DEFAULT_PERIOD&#160;&#160;&#160;50</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>DL_PERIOD is meant to represent how often the driving loop executes, in ms. </p>
-<p>This is a define since I would eventually like this to be configurable via a global variable, or possible be dynamic in the future.</p>
-<p>Just replace the number with the name of the variable, and you're all set. </p>
-
-<p class="definition">Definition at line <a class="el" href="driving__loop_8h_source.html#l00026">26</a> of file <a class="el" href="driving__loop_8h_source.html">driving_loop.h</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="aa421e50f529a1770ef0b2a00a44a0601"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa421e50f529a1770ef0b2a00a44a0601">&#9670;&nbsp;</a></span>driving_loop_args</h2>
@@ -211,23 +199,53 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This is where the driving mode and the deivingModeParams are at. </p>
+<p>This is where the driving mode and the <a class="el" href="uniondriving_mode_params.html" title="this struct is designed to hold information about each drivingmode&#39;s map params">drivingModeParams</a> are at. </p>
 
 </div>
 </div>
-<a id="ac1d30630084a642c9209dca3a961ef12"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac1d30630084a642c9209dca3a961ef12">&#9670;&nbsp;</a></span>drivingModeParams</h2>
+<a id="af90b0e528bd940abca8f5e2cf4bce18c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af90b0e528bd940abca8f5e2cf4bce18c">&#9670;&nbsp;</a></span>drivingModeParams</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="structdriving_mode_params.html">drivingModeParams</a> <a class="el" href="structdriving_mode_params.html">drivingModeParams</a></td>
+          <td class="memname">typedef union <a class="el" href="uniondriving_mode_params.html">drivingModeParams</a> <a class="el" href="uniondriving_mode_params.html">drivingModeParams</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>this struct is designed to hold information about each drivingmode's map params </p>
+
+</div>
+</div>
+<a id="aa86f54df15fe3c127ae83c1fecbb5d24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa86f54df15fe3c127ae83c1fecbb5d24">&#9670;&nbsp;</a></span>exp_torque_map_args</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structexp__torque__map__args.html">exp_torque_map_args</a> <a class="el" href="structexp__torque__map__args.html">exp_torque_map_args</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>struct to hold parameters used in an exponential torque map </p>
+
+</div>
+</div>
+<a id="a21e30cbee7e12df40656ce0e97c8c1ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21e30cbee7e12df40656ce0e97c8c1ea">&#9670;&nbsp;</a></span>linear_torque_map_args</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structlinear__torque__map__args.html">linear_torque_map_args</a> <a class="el" href="structlinear__torque__map__args.html">linear_torque_map_args</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -279,6 +297,22 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a32f012927e4624d674120b51cb6ee8c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32f012927e4624d674120b51cb6ee8c0">&#9670;&nbsp;</a></span>s_curve_torque_map_args</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structs__curve__torque__map__args.html">s_curve_torque_map_args</a> <a class="el" href="structs__curve__torque__map__args.html">s_curve_torque_map_args</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>struct for s-curve parameters for torque </p>
+
+</div>
+</div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="adef4571b048b5b1f2b712713741296c7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adef4571b048b5b1f2b712713741296c7">&#9670;&nbsp;</a></span>DL_internal_state</h2>
@@ -313,7 +347,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>enum meant to represent the different types of pedal map </p>
+<p>DL_PERIOD is meant to represent how often the driving loop executes, in ms. </p>
+<p>This is a define since I would eventually like this to be configurable via a global variable, or possible be dynamic in the future.</p>
+<p>Just replace the number with the name of the variable, and you're all set.</p>
+<p>enum meant to represent the different types of pedal map</p>
 <p>This enum is meant to represent different functions that map the torque to speed. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a9d8fd287924cbb6baa4afd1c585da800a24491cb716ed427ea52ef6cdbf415b52"></a>linear_speed_map&#160;</td><td class="fielddoc"></td></tr>
@@ -347,9 +384,9 @@ Functions</h2></td></tr>
 
 <p class="definition">Definition at line <a class="el" href="driving__loop_8c_source.html#l00025">25</a> of file <a class="el" href="driving__loop_8c_source.html">driving_loop.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00278">uv_task_info::active_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00279">uv_task_info::deletion_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00263">uv_task_info::max_instances</a>, <a class="el" href="uvfr__utils_8h_source.html#l00146">PROGRAMMING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00264">uv_task_info::stack_size</a>, <a class="el" href="driving__loop_8c_source.html#l00069">StartDrivingLoop()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00280">uv_task_info::suspension_states</a>, <a class="el" href="uvfr__utils_8h_source.html#l00286">uv_task_info::task_args</a>, <a class="el" href="uvfr__utils_8h_source.html#l00260">uv_task_info::task_function</a>, <a class="el" href="uvfr__utils_8h_source.html#l00256">uv_task_info::task_name</a>, <a class="el" href="uvfr__utils_8h_source.html#l00258">uv_task_info::task_period</a>, <a class="el" href="uvfr__utils_8h_source.html#l00261">uv_task_info::task_priority</a>, <a class="el" href="uvfr__utils_8h_source.html#l00147">UV_DRIVING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00117">UV_ERROR</a>, <a class="el" href="uvfr__utils_8h_source.html#l00150">UV_ERROR_STATE</a>, <a class="el" href="uvfr__utils_8h_source.html#l00149">UV_LAUNCH_CONTROL</a>, <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>, <a class="el" href="uvfr__utils_8h_source.html#l00145">UV_READY</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00040">uvCreateTask()</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__state__engine_8h_source.html#l00251">uv_task_info::active_states</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00252">uv_task_info::deletion_states</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00084">PROGRAMMING</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00231">uv_task_info::stack_size</a>, <a class="el" href="driving__loop_8c_source.html#l00068">StartDrivingLoop()</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00253">uv_task_info::suspension_states</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00243">uv_task_info::task_args</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00227">uv_task_info::task_function</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00222">uv_task_info::task_name</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00224">uv_task_info::task_period</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00228">uv_task_info::task_priority</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00085">UV_DRIVING</a>, <a class="el" href="uvfr__utils_8h_source.html#l00169">UV_ERROR</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00088">UV_ERROR_STATE</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00082">UV_INIT</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00087">UV_LAUNCH_CONTROL</a>, <a class="el" href="uvfr__utils_8h_source.html#l00167">UV_OK</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00083">UV_READY</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00086">UV_SUSPENDED</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00264">uvCreateTask()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00202">uvInitStateEngine()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__state__engine_8c_source.html#l00164">uvInitStateEngine()</a>.</p>
 
 </div>
 </div>
@@ -391,13 +428,13 @@ Functions</h2></td></tr>
 <div class="line">TickType_t tick_period = pdMS_TO_TICKS(params-&gt;task_period); <span class="comment">//Convert ms of period to the RTOS ticks</span></div>
 <div class="line">TickType_t last_time = xTaskGetTickCount();</div>
 <div class="line"><span class="comment">/**</span></div>
-</div><!-- fragment --><p>@heading Brake Plausibility Check</p>
+</div><!-- fragment --><p>Brake Plausibility Check</p>
 <p>The way that this works is that if the brake pressure is greater than some threshold, and the accelerator pedal position is also greater than some threshold, the thing will register that a brake implausibility has occurred. This is not very cash money.</p>
 <p>If this happens, we want to set the torque/speed output to zero. This will only reset itself once the brakes are set to less than a certain threshold. Honestly evil.</p>
 
-<p class="definition">Definition at line <a class="el" href="driving__loop_8c_source.html#l00069">69</a> of file <a class="el" href="driving__loop_8c_source.html">driving_loop.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="driving__loop_8c_source.html#l00068">68</a> of file <a class="el" href="driving__loop_8c_source.html">driving_loop.c</a>.</p>
 
-<p class="reference">References <a class="el" href="main_8c_source.html#l00064">adc1_APPS1</a>, <a class="el" href="main_8c_source.html#l00065">adc1_APPS2</a>, <a class="el" href="main_8c_source.html#l00066">adc1_BPS1</a>, <a class="el" href="main_8c_source.html#l00067">adc1_BPS2</a>, <a class="el" href="driving__loop_8h_source.html#l00090">driving_loop_args::apps_plausibility_check_threshold</a>, <a class="el" href="driving__loop_8h_source.html#l00091">driving_loop_args::bps_plausibility_check_threshold</a>, <a class="el" href="uvfr__utils_8h_source.html#l00284">uv_task_info::cmd_data</a>, <a class="el" href="driving__loop_8h_source.html#l00044">Implausible</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00496">killSelf()</a>, <a class="el" href="driving__loop_8h_source.html#l00081">driving_loop_args::max_apps_offset</a>, <a class="el" href="driving__loop_8h_source.html#l00083">driving_loop_args::max_apps_value</a>, <a class="el" href="driving__loop_8h_source.html#l00085">driving_loop_args::max_BPS_value</a>, <a class="el" href="driving__loop_8h_source.html#l00080">driving_loop_args::min_apps_offset</a>, <a class="el" href="driving__loop_8h_source.html#l00082">driving_loop_args::min_apps_value</a>, <a class="el" href="driving__loop_8h_source.html#l00043">Plausible</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00546">suspendSelf()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00286">uv_task_info::task_args</a>, <a class="el" href="uvfr__utils_8h_source.html#l00258">uv_task_info::task_period</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00035">UV_KILL_CMD</a>, and <a class="el" href="uvfr__state__engine_8h_source.html#l00036">UV_SUSPEND_CMD</a>.</p>
+<p class="reference">References <a class="el" href="main_8c_source.html#l00064">adc1_APPS1</a>, <a class="el" href="main_8c_source.html#l00065">adc1_APPS2</a>, <a class="el" href="main_8c_source.html#l00066">adc1_BPS1</a>, <a class="el" href="main_8c_source.html#l00067">adc1_BPS2</a>, <a class="el" href="driving__loop_8h_source.html#l00130">driving_loop_args::apps_plausibility_check_threshold</a>, <a class="el" href="driving__loop_8h_source.html#l00131">driving_loop_args::bps_plausibility_check_threshold</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00241">uv_task_info::cmd_data</a>, <a class="el" href="driving__loop_8h_source.html#l00044">Implausible</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00708">killSelf()</a>, <a class="el" href="driving__loop_8h_source.html#l00121">driving_loop_args::max_apps_offset</a>, <a class="el" href="driving__loop_8h_source.html#l00123">driving_loop_args::max_apps_value</a>, <a class="el" href="driving__loop_8h_source.html#l00125">driving_loop_args::max_BPS_value</a>, <a class="el" href="driving__loop_8h_source.html#l00043">Plausible</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00749">suspendSelf()</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00243">uv_task_info::task_args</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00224">uv_task_info::task_period</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00098">UV_KILL_CMD</a>, and <a class="el" href="uvfr__state__engine_8h_source.html#l00099">UV_SUSPEND_CMD</a>.</p>
 
 <p class="reference">Referenced by <a class="el" href="driving__loop_8c_source.html#l00025">initDrivingLoop()</a>.</p>
 
@@ -405,7 +442,7 @@ Functions</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="astructdriving__loop__args_html"><div class="ttname"><a href="structdriving__loop__args.html">driving_loop_args</a></div><div class="ttdef"><b>Definition:</b> <a href="driving__loop_8h_source.html#l00077">driving_loop.h:77</a></div></div>
+<div class="ttc" id="astructdriving__loop__args_html"><div class="ttname"><a href="structdriving__loop__args.html">driving_loop_args</a></div><div class="ttdef"><b>Definition:</b> <a href="driving__loop_8h_source.html#l00108">driving_loop.h:108</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="unionaccess__control__info" kind="union" language="C++" prot="public">
+    <compoundname>access_control_info</compoundname>
+    <includes refid="uvfr__utils_8h" local="no">uvfr_utils.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="unionaccess__control__info_1af0d083b46d231baa8e040c8666cbbdb3" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structuv__mutex__info" kindref="compound">uv_mutex_info</ref></type>
+        <definition>struct uv_mutex_info access_control_info::mutex</definition>
+        <argsstring></argsstring>
+        <name>mutex</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="250" column="19" bodyfile="Core/Inc/uvfr_utils.h" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionaccess__control__info_1a0165e868a0423f7d0f5ea750ca20760e" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structuv__binary__semaphore__info" kindref="compound">uv_binary_semaphore_info</ref></type>
+        <definition>struct uv_binary_semaphore_info access_control_info::bin_semaphore</definition>
+        <argsstring></argsstring>
+        <name>bin_semaphore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="250" column="19" bodyfile="Core/Inc/uvfr_utils.h" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="unionaccess__control__info_1a62c8e641c4d4d5d778c5e0f710bbddd1" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structuv__semaphore__info" kindref="compound">uv_semaphore_info</ref></type>
+        <definition>struct uv_semaphore_info access_control_info::semaphore</definition>
+        <argsstring></argsstring>
+        <name>semaphore</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="250" column="19" bodyfile="Core/Inc/uvfr_utils.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="4">
+        <label>uv_mutex_info</label>
+        <link refid="structuv__mutex__info"/>
+      </node>
+      <node id="1">
+        <label>access_control_info</label>
+        <link refid="unionaccess__control__info"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>bin_semaphore</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>semaphore</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>mutex</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>uv_binary_semaphore_info</label>
+        <link refid="structuv__binary__semaphore__info"/>
+      </node>
+      <node id="3">
+        <label>uv_semaphore_info</label>
+        <link refid="structuv__semaphore__info"/>
+      </node>
+    </collaborationgraph>
+    <location file="Core/Inc/uvfr_utils.h" line="254" column="34" bodyfile="Core/Inc/uvfr_utils.h" bodystart="254" bodyend="259"/>
+    <listofallmembers>
+      <member refid="unionaccess__control__info_1a0165e868a0423f7d0f5ea750ca20760e" prot="public" virt="non-virtual"><scope>access_control_info</scope><name>bin_semaphore</name></member>
+      <member refid="unionaccess__control__info_1af0d083b46d231baa8e040c8666cbbdb3" prot="public" virt="non-virtual"><scope>access_control_info</scope><name>mutex</name></member>
+      <member refid="unionaccess__control__info_1a62c8e641c4d4d5d778c5e0f710bbddd1" prot="public" virt="non-virtual"><scope>access_control_info</scope><name>semaphore</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

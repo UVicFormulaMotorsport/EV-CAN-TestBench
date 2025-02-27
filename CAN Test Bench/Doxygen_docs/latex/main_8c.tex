@@ -19,6 +19,11 @@
 {\ttfamily \#include \char`\"{}imd.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}motor\+\_\+controller.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}pdu.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{main_8c_a764dcd92a2e2229e53e2090201243643}{D\+E\+B\+U\+G\+\_\+\+C\+A\+N\+\_\+\+I\+N\+\_\+\+M\+A\+IN}}~0
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -69,6 +74,19 @@ Copyright (c) 2023 S\+T\+Microelectronics. All rights reserved.
 
 This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 
 
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{main_8c_a764dcd92a2e2229e53e2090201243643}\label{main_8c_a764dcd92a2e2229e53e2090201243643}} 
+\index{main.c@{main.c}!DEBUG\_CAN\_IN\_MAIN@{DEBUG\_CAN\_IN\_MAIN}}
+\index{DEBUG\_CAN\_IN\_MAIN@{DEBUG\_CAN\_IN\_MAIN}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{DEBUG\_CAN\_IN\_MAIN}{DEBUG\_CAN\_IN\_MAIN}}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+\_\+\+C\+A\+N\+\_\+\+I\+N\+\_\+\+M\+A\+IN~0}
+
+
+
+Definition at line 51 of file main.\+c.
+
+
+
 \doxysubsection{Function Documentation}
 \mbox{\Hypertarget{main_8c_a1730ffe1e560465665eb47d9264826f9}\label{main_8c_a1730ffe1e560465665eb47d9264826f9}} 
 \index{main.c@{main.c}!Error\_Handler@{Error\_Handler}}
@@ -87,11 +105,11 @@ This function is executed in case of error occurrence.
 \end{DoxyRetVals}
 
 
-Definition at line 341 of file main.\+c.
+Definition at line 378 of file main.\+c.
 
 
 
-Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Msp\+Init(), H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback(), I\+M\+D\+\_\+\+Parse\+\_\+\+Message(), I\+M\+D\+\_\+\+Request\+\_\+\+Status(), M\+C\+\_\+\+Parse\+\_\+\+Message(), M\+C\+\_\+\+Request\+\_\+\+Data(), M\+C\+\_\+\+Send\+\_\+\+Data(), M\+X\+\_\+\+A\+D\+C1\+\_\+\+Init(), M\+X\+\_\+\+A\+D\+C2\+\_\+\+Init(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), M\+X\+\_\+\+S\+P\+I1\+\_\+\+Init(), M\+X\+\_\+\+T\+I\+M3\+\_\+\+Init(), P\+D\+U\+\_\+disable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+disable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+disable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+disable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+disable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+enable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+enable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+enable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+enable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+enable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+speaker\+\_\+chirp(), System\+Clock\+\_\+\+Config(), Update\+\_\+\+Batt\+\_\+\+Temp(), Update\+\_\+\+R\+P\+M(), and Update\+\_\+\+State\+\_\+\+Of\+\_\+\+Charge().
+Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Msp\+Init(), H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo0\+Msg\+Pending\+Callback(), I\+M\+D\+\_\+\+Parse\+\_\+\+Message(), I\+M\+D\+\_\+\+Request\+\_\+\+Status(), M\+X\+\_\+\+A\+D\+C1\+\_\+\+Init(), M\+X\+\_\+\+A\+D\+C2\+\_\+\+Init(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), M\+X\+\_\+\+S\+P\+I1\+\_\+\+Init(), M\+X\+\_\+\+T\+I\+M3\+\_\+\+Init(), P\+D\+U\+\_\+disable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+disable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+disable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+disable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+disable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+enable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+enable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+enable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+enable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+enable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+speaker\+\_\+chirp(), System\+Clock\+\_\+\+Config(), Update\+\_\+\+Batt\+\_\+\+Temp(), Update\+\_\+\+R\+P\+M(), and Update\+\_\+\+State\+\_\+\+Of\+\_\+\+Charge().
 
 \mbox{\Hypertarget{main_8c_af20a88180db1113be1e89266917d148b}\label{main_8c_af20a88180db1113be1e89266917d148b}} 
 \index{main.c@{main.c}!HAL\_ADC\_ConvCpltCallback@{HAL\_ADC\_ConvCpltCallback}}
@@ -101,7 +119,7 @@ Referenced by H\+A\+L\+\_\+\+A\+D\+C\+\_\+\+Msp\+Init(), H\+A\+L\+\_\+\+C\+A\+N\
 
 
 
-Definition at line 238 of file main.\+c.
+Definition at line 275 of file main.\+c.
 
 
 
@@ -115,7 +133,7 @@ References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, adc1\+\_\+\+B\+P\+S
 
 
 
-Definition at line 293 of file main.\+c.
+Definition at line 330 of file main.\+c.
 
 
 
@@ -129,7 +147,7 @@ References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, hadc1, Red\+\_\+\+L
 
 
 
-Definition at line 284 of file main.\+c.
+Definition at line 321 of file main.\+c.
 
 \mbox{\Hypertarget{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}\label{main_8c_a8a3b0ad512a6e6c6157440b68d395eac}} 
 \index{main.c@{main.c}!HAL\_TIM\_PeriodElapsedCallback@{HAL\_TIM\_PeriodElapsedCallback}}
@@ -156,7 +174,7 @@ This function is called when T\+I\+M1 interrupt took place, inside H\+A\+L\+\_\+
 \end{DoxyRetVals}
 
 
-Definition at line 317 of file main.\+c.
+Definition at line 354 of file main.\+c.
 
 
 
@@ -183,7 +201,7 @@ Definition at line 97 of file main.\+c.
 
 
 
-References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, M\+X\+\_\+\+A\+D\+C1\+\_\+\+Init(), M\+X\+\_\+\+A\+D\+C2\+\_\+\+Init(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), M\+X\+\_\+\+D\+M\+A\+\_\+\+Init(), M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init(), M\+X\+\_\+\+S\+P\+I1\+\_\+\+Init(), M\+X\+\_\+\+T\+I\+M3\+\_\+\+Init(), System\+Clock\+\_\+\+Config(), and Update\+\_\+\+R\+P\+M().
+References adc1\+\_\+\+A\+P\+P\+S1, adc1\+\_\+\+A\+P\+P\+S2, handle\+C\+A\+Nbus\+Error(), hcan2, M\+X\+\_\+\+A\+D\+C1\+\_\+\+Init(), M\+X\+\_\+\+A\+D\+C2\+\_\+\+Init(), M\+X\+\_\+\+C\+A\+N2\+\_\+\+Init(), M\+X\+\_\+\+D\+M\+A\+\_\+\+Init(), M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), M\+X\+\_\+\+G\+P\+I\+O\+\_\+\+Init(), M\+X\+\_\+\+S\+P\+I1\+\_\+\+Init(), M\+X\+\_\+\+T\+I\+M3\+\_\+\+Init(), System\+Clock\+\_\+\+Config(), Tx\+Data, Tx\+Header, Tx\+Mailbox, and Update\+\_\+\+R\+P\+M().
 
 \mbox{\Hypertarget{main_8c_abade755e13d07c10889ae83143656158}\label{main_8c_abade755e13d07c10889ae83143656158}} 
 \index{main.c@{main.c}!MX\_FREERTOS\_Init@{MX\_FREERTOS\_Init}}
@@ -210,7 +228,7 @@ D\+O\+NT Y\+OU F\+U\+C\+K\+I\+NG D\+A\+RE D\+E\+L\+E\+TE T\+H\+E\+SE G\+O\+TO S\
 \end{DoxyAttention}
 
 
-Definition at line 141 of file freertos.\+c.
+Definition at line 160 of file freertos.\+c.
 
 
 
@@ -241,7 +259,7 @@ Initializes the R\+CC Oscillators according to the specified parameters in the R
 
 Initializes the C\+PU, A\+HB and A\+PB buses clocks
 
-Definition at line 180 of file main.\+c.
+Definition at line 217 of file main.\+c.
 
 
 

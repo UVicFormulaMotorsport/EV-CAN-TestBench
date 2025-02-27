@@ -1,0 +1,1286 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="_free_r_t_o_s_config_8h" kind="file" language="C++">
+    <compoundname>FreeRTOSConfig.h</compoundname>
+    <includedby refid="uvfr__utils_8h" local="yes">Core/Inc/uvfr_utils.h</includedby>
+    <invincdepgraph>
+      <node id="17">
+        <label>Core/Inc/tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>Core/Inc/imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>Core/Src/daq.c</label>
+        <link refid="daq_8c"/>
+      </node>
+      <node id="28">
+        <label>Core/Inc/dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>Core/Inc/driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>Core/Inc/temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Core/Src/pdu.c</label>
+        <link refid="pdu_8c"/>
+      </node>
+      <node id="10">
+        <label>Core/Src/dash.c</label>
+        <link refid="dash_8c"/>
+      </node>
+      <node id="18">
+        <label>Core/Src/tim.c</label>
+        <link refid="tim_8c"/>
+      </node>
+      <node id="45">
+        <label>Core/Src/uvfr_state_engine.c</label>
+        <link refid="uvfr__state__engine_8c"/>
+      </node>
+      <node id="40">
+        <label>Core/Inc/oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Core/Inc/adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>Core/Src/stm32f4xx_hal_msp.c</label>
+        <link refid="stm32f4xx__hal__msp_8c"/>
+      </node>
+      <node id="2">
+        <label>Core/Inc/uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>Core/Src/odometer.c</label>
+        <link refid="odometer_8c"/>
+      </node>
+      <node id="32">
+        <label>Core/Src/freertos.c</label>
+        <link refid="freertos_8c"/>
+      </node>
+      <node id="8">
+        <label>Core/Src/bms.c</label>
+        <link refid="bms_8c"/>
+      </node>
+      <node id="27">
+        <label>Core/Inc/bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Core/Src/motor_controller.c</label>
+        <link refid="motor__controller_8c"/>
+      </node>
+      <node id="36">
+        <label>Core/Src/uvfr_settings.c</label>
+        <link refid="uvfr__settings_8c"/>
+      </node>
+      <node id="11">
+        <label>Core/Src/driving_loop.c</label>
+        <link refid="driving__loop_8c"/>
+      </node>
+      <node id="22">
+        <label>Core/Inc/spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>Core/Inc/pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Core/Src/gpio.c</label>
+        <link refid="gpio_8c"/>
+      </node>
+      <node id="24">
+        <label>Core/Inc/motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>Core/Inc/uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>Core/Src/rb_tree.c</label>
+        <link refid="rb__tree_8c"/>
+      </node>
+      <node id="16">
+        <label>Core/Src/dma.c</label>
+        <link refid="dma_8c"/>
+      </node>
+      <node id="21">
+        <label>Core/Src/temp_monitoring.c</label>
+        <link refid="temp__monitoring_8c"/>
+      </node>
+      <node id="47">
+        <label>Core/Src/uvfr_vehicle_commands.c</label>
+        <link refid="uvfr__vehicle__commands_8c"/>
+      </node>
+      <node id="37">
+        <label>Core/Inc/daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Core/Inc/gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>Core/Src/uvfr_utils.c</label>
+        <link refid="uvfr__utils_8c"/>
+      </node>
+      <node id="23">
+        <label>Core/Src/spi.c</label>
+        <link refid="spi_8c"/>
+      </node>
+      <node id="31">
+        <label>Core/Src/constants.c</label>
+        <link refid="constants_8c"/>
+      </node>
+      <node id="12">
+        <label>Core/Src/imd.c</label>
+        <link refid="imd_8c"/>
+      </node>
+      <node id="7">
+        <label>Core/Inc/can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>Core/Src/stm32f4xx_it.c</label>
+        <link refid="stm32f4xx__it_8c"/>
+      </node>
+      <node id="1">
+        <label>Core/Inc/FreeRTOSConfig.h</label>
+        <link refid="_free_r_t_o_s_config_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>Core/Inc/uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Core/Src/can.c</label>
+        <link refid="can_8c"/>
+      </node>
+      <node id="42">
+        <label>Core/Inc/uvfr_vehicle_commands.h</label>
+        <link refid="uvfr__vehicle__commands_8h"/>
+      </node>
+      <node id="33">
+        <label>Core/Src/oled.c</label>
+        <link refid="oled_8c"/>
+      </node>
+      <node id="5">
+        <label>Core/Src/adc.c</label>
+        <link refid="adc_8c"/>
+      </node>
+      <node id="6">
+        <label>Core/Src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="15">
+        <label>Core/Inc/dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Core/Inc/main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a8c0327c63db06fda2294df6965508791" prot="public" static="no">
+        <name>configENABLE_FPU</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="55" column="10" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a60e94635ea7d211347de3bf09aa1a292" prot="public" static="no">
+        <name>configENABLE_MPU</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="56" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1adde83486022745409c40605922b0bdd6" prot="public" static="no">
+        <name>configUSE_PREEMPTION</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="58" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a1d6797a53b62d501b095f964036a7ac4" prot="public" static="no">
+        <name>configSUPPORT_STATIC_ALLOCATION</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="59" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1afa3f8d6510699d972c9af08fa41f66dc" prot="public" static="no">
+        <name>configSUPPORT_DYNAMIC_ALLOCATION</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="60" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1ac637ae45863c19fa2e919db0ed49301f" prot="public" static="no">
+        <name>configUSE_IDLE_HOOK</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="61" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a23c5922c077106fad3f70b54d9071466" prot="public" static="no">
+        <name>configUSE_TICK_HOOK</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="62" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1aa68082df879e6fc96bcb9b26513639e7" prot="public" static="no">
+        <name>configCPU_CLOCK_HZ</name>
+        <initializer>( <ref refid="group___s_t_m32_f4xx___system___private___variables_1gaa3cd3e43291e81e795d642b79b6088e6" kindref="member">SystemCoreClock</ref> )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="63" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a2f0258dd1e3b877e5bc013be54c2db6a" prot="public" static="no">
+        <name>configTICK_RATE_HZ</name>
+        <initializer>((TickType_t)1000)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="64" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a9a78f5ac61e6cb172dadf2a51f11db38" prot="public" static="no">
+        <name>configMAX_PRIORITIES</name>
+        <initializer>( 7 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="65" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a6c534a6cf8a00528fe0be42083484f9a" prot="public" static="no">
+        <name>configMINIMAL_STACK_SIZE</name>
+        <initializer>((uint16_t)128)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="66" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a9f213227674effff0122a75d94d87938" prot="public" static="no">
+        <name>configTOTAL_HEAP_SIZE</name>
+        <initializer>((size_t)15360)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="67" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1ac388dc4041aab6997348828eb27fc1a8" prot="public" static="no">
+        <name>configMAX_TASK_NAME_LEN</name>
+        <initializer>( 16 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="68" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1aac311ed9b9e5ae4d2d9648b33a24acce" prot="public" static="no">
+        <name>configUSE_16_BIT_TICKS</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="69" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a543bf3c79008974cc1d36bab51d94fbf" prot="public" static="no">
+        <name>configUSE_MUTEXES</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="70" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1aa4b5138c4e42a180f0abd4f2455f90fb" prot="public" static="no">
+        <name>configQUEUE_REGISTRY_SIZE</name>
+        <initializer>8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="71" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a847511ee433494b1e32c90602c967ae7" prot="public" static="no">
+        <name>configCHECK_FOR_STACK_OVERFLOW</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="72" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1abdf48e7c9cf513f083aa9cbed0dd7cd7" prot="public" static="no">
+        <name>configUSE_MALLOC_FAILED_HOOK</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="73" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a2eb2a0baf886a7adab15b5735029434b" prot="public" static="no">
+        <name>configUSE_APPLICATION_TASK_TAG</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="74" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a55778995203c57369d2fbfb10224943d" prot="public" static="no">
+        <name>configUSE_COUNTING_SEMAPHORES</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="75" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a815d63f3e973f88335f639b03786e37f" prot="public" static="no">
+        <name>configENABLE_BACKWARD_COMPATIBILITY</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="76" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1aebb8c3a87d591f60f974772be0ee798d" prot="public" static="no">
+        <name>configUSE_PORT_OPTIMISED_TASK_SELECTION</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="77" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a8299719d9fd640db65e6e59a4e5b0204" prot="public" static="no">
+        <name>configRECORD_STACK_HIGH_ADDRESS</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="78" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a847511ee433494b1e32c90602c967ae7" prot="public" static="no">
+        <name>configCHECK_FOR_STACK_OVERFLOW</name>
+        <initializer>2</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="81" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1abdf48e7c9cf513f083aa9cbed0dd7cd7" prot="public" static="no">
+        <name>configUSE_MALLOC_FAILED_HOOK</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="82" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a019c8bfcdd8eca676c7b9993bda95967" prot="public" static="no">
+        <name>configMESSAGE_BUFFER_LENGTH_TYPE</name>
+        <initializer>size_t</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="86" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a57990715eb06402474b8b47e1d562616" prot="public" static="no">
+        <name>configUSE_CO_ROUTINES</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="90" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1ae8f3fd645e6e78dfeb8a6e874af6195a" prot="public" static="no">
+        <name>configMAX_CO_ROUTINE_PRIORITIES</name>
+        <initializer>( 2 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="91" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1ac342ae309b0c53828d2ecad3e6de355b" prot="public" static="no">
+        <name>configUSE_TIMERS</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="94" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a05c75ff9029ba3f0ab5bde9196f1e873" prot="public" static="no">
+        <name>configTIMER_TASK_PRIORITY</name>
+        <initializer>( 2 )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="95" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1abb9aa0f31c1f3b14a15083a3c6120918" prot="public" static="no">
+        <name>configTIMER_QUEUE_LENGTH</name>
+        <initializer>10</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="96" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="96" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1aed7c7ebcdee603583a55e8ce04e55841" prot="public" static="no">
+        <name>configTIMER_TASK_STACK_DEPTH</name>
+        <initializer>256</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="97" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1ad6858ac8aaf726007fd19752956ef1bd" prot="public" static="no">
+        <name>INCLUDE_vTaskPrioritySet</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="101" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a1279eb797355460aeeec06aa524e91df" prot="public" static="no">
+        <name>INCLUDE_uxTaskPriorityGet</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="102" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="102" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a5ae1434fdf995108dc749ff9329f53bd" prot="public" static="no">
+        <name>INCLUDE_vTaskDelete</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="103" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a7ee138825e57f243c8ee5fd4207b9e26" prot="public" static="no">
+        <name>INCLUDE_vTaskCleanUpResources</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="104" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="104" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1aef8fbb97819ad3d962f334ac298206d1" prot="public" static="no">
+        <name>INCLUDE_vTaskSuspend</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="105" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1ae8459bfd5b428319bb10de9f504a53aa" prot="public" static="no">
+        <name>INCLUDE_vTaskDelayUntil</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="106" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="106" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a24361a6eb816a965f1ee4e2e08e364f8" prot="public" static="no">
+        <name>INCLUDE_vTaskDelay</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="107" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="107" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a9ed60ede556830584e6bfd4a3ab4f9de" prot="public" static="no">
+        <name>INCLUDE_xTaskGetSchedulerState</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="108" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1af93b5ef191e3e4bbf050119dacbd148b" prot="public" static="no">
+        <name>INCLUDE_xEventGroupSetBitFromISR</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="109" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="109" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a4b4336acd61a8e513ca2376be84326b5" prot="public" static="no">
+        <name>INCLUDE_xTimerPendFunctionCall</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="110" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a4e2902143b6abf777065c15940321911" prot="public" static="no">
+        <name>INCLUDE_xQueueGetMutexHolder</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="111" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1ad221128595137414579be33cf8e446d8" prot="public" static="no">
+        <name>INCLUDE_xSemaphoreGetMutexHolder</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="112" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a4a5ddd1e32d2945d509a19e4a14dccc7" prot="public" static="no">
+        <name>INCLUDE_pcTaskGetTaskName</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="113" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a23c7b4b41fe9b575cf2329c7cbe78b86" prot="public" static="no">
+        <name>INCLUDE_uxTaskGetStackHighWaterMark</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="114" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="114" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1aae20dbc3e4e870003109dcf121cbaee8" prot="public" static="no">
+        <name>INCLUDE_uxTaskGetStackHighWaterMark2</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="115" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="115" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1ac96b6a6e70667f266db4278be71cbd78" prot="public" static="no">
+        <name>INCLUDE_xTaskGetCurrentTaskHandle</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="116" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="116" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a4fd1d67d54044ac86e8ffc890180f9f6" prot="public" static="no">
+        <name>INCLUDE_eTaskGetState</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="117" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1ac54efb28edcc1d3b9d0844005ea20674" prot="public" static="no">
+        <name>INCLUDE_xTaskAbortDelay</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="118" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a33733d2bbe005751ec3a417e5ac373bf" prot="public" static="no">
+        <name>INCLUDE_xTaskGetHandle</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="119" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="119" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a5796db11ec6f9aa38d017d2ac393c5ba" prot="public" static="no">
+        <name>configPRIO_BITS</name>
+        <initializer>4</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="126" column="11" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="126" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a10da20f180ec9bd131b0052a802dbc39" prot="public" static="no">
+        <name>configLIBRARY_LOWEST_INTERRUPT_PRIORITY</name>
+        <initializer>15</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="131" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a2254bd235d882be3061bcad0b1e8be98" prot="public" static="no">
+        <name>configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY</name>
+        <initializer>5</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="137" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="137" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1ac42cff506ad61d4174fa23e952e3225e" prot="public" static="no">
+        <name>configKERNEL_INTERRUPT_PRIORITY</name>
+        <initializer>( <ref refid="_free_r_t_o_s_config_8h_1a10da20f180ec9bd131b0052a802dbc39" kindref="member">configLIBRARY_LOWEST_INTERRUPT_PRIORITY</ref> &lt;&lt; (8 - <ref refid="_free_r_t_o_s_config_8h_1a5796db11ec6f9aa38d017d2ac393c5ba" kindref="member">configPRIO_BITS</ref>) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="141" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="141" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a54bfc31c410ee452577a25a4552c3704" prot="public" static="no">
+        <name>configMAX_SYSCALL_INTERRUPT_PRIORITY</name>
+        <initializer>( <ref refid="_free_r_t_o_s_config_8h_1a2254bd235d882be3061bcad0b1e8be98" kindref="member">configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY</ref> &lt;&lt; (8 - <ref refid="_free_r_t_o_s_config_8h_1a5796db11ec6f9aa38d017d2ac393c5ba" kindref="member">configPRIO_BITS</ref>) )</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="144" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="144" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a228c70cd48927d6ab730ed1a6dfbe35f" prot="public" static="no">
+        <name>configASSERT</name>
+        <param><defname>x</defname></param>
+        <initializer>if ((x) == 0) {taskDISABLE_INTERRUPTS(); for( ;; );}</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="149" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="149" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1ad43047b3ea0a146673e30637488bf754" prot="public" static="no">
+        <name>vPortSVCHandler</name>
+        <initializer>SVC_Handler</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="154" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a6f30022da7d797dd31f1b8a11cae9a35" prot="public" static="no">
+        <name>xPortPendSVHandler</name>
+        <initializer>PendSV_Handler</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="155" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="155" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1ae42e6318b5d564e44f97f8c765859448" prot="public" static="no">
+        <name>xPortSysTickHandler</name>
+        <initializer>SysTick_Handler</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="160" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="160" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="_free_r_t_o_s_config_8h_1a488bcb8b6f5f076d88cf6650f4e15796" prot="public" static="no">
+        <name>INCLUDE_xTaskDelayUntil</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/FreeRTOSConfig.h" line="164" column="9" bodyfile="Core/Inc/FreeRTOSConfig.h" bodystart="164" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>FreeRTOS<sp/>Kernel<sp/>V10.3.1</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/>Portion<sp/>Copyright<sp/>(C)<sp/>2017<sp/>Amazon.com,<sp/>Inc.<sp/>or<sp/>its<sp/>affiliates.<sp/><sp/>All<sp/>Rights<sp/>Reserved.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Portion<sp/>Copyright<sp/>(C)<sp/>2019<sp/>StMicroelectronics,<sp/>Inc.<sp/><sp/>All<sp/>Rights<sp/>Reserved.</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*<sp/>Permission<sp/>is<sp/>hereby<sp/>granted,<sp/>free<sp/>of<sp/>charge,<sp/>to<sp/>any<sp/>person<sp/>obtaining<sp/>a<sp/>copy<sp/>of</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>this<sp/>software<sp/>and<sp/>associated<sp/>documentation<sp/>files<sp/>(the<sp/>&quot;Software&quot;),<sp/>to<sp/>deal<sp/>in</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>the<sp/>Software<sp/>without<sp/>restriction,<sp/>including<sp/>without<sp/>limitation<sp/>the<sp/>rights<sp/>to</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>use,<sp/>copy,<sp/>modify,<sp/>merge,<sp/>publish,<sp/>distribute,<sp/>sublicense,<sp/>and/or<sp/>sell<sp/>copies<sp/>of</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>the<sp/>Software,<sp/>and<sp/>to<sp/>permit<sp/>persons<sp/>to<sp/>whom<sp/>the<sp/>Software<sp/>is<sp/>furnished<sp/>to<sp/>do<sp/>so,</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>subject<sp/>to<sp/>the<sp/>following<sp/>conditions:</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>The<sp/>above<sp/>copyright<sp/>notice<sp/>and<sp/>this<sp/>permission<sp/>notice<sp/>shall<sp/>be<sp/>included<sp/>in<sp/>all</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>copies<sp/>or<sp/>substantial<sp/>portions<sp/>of<sp/>the<sp/>Software.</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>THE<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>&quot;AS<sp/>IS&quot;,<sp/>WITHOUT<sp/>WARRANTY<sp/>OF<sp/>ANY<sp/>KIND,<sp/>EXPRESS<sp/>OR</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/>IMPLIED,<sp/>INCLUDING<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO<sp/>THE<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY,<sp/>FITNESS</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>AND<sp/>NONINFRINGEMENT.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>AUTHORS<sp/>OR</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/>COPYRIGHT<sp/>HOLDERS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY<sp/>CLAIM,<sp/>DAMAGES<sp/>OR<sp/>OTHER<sp/>LIABILITY,<sp/>WHETHER</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/>IN<sp/>AN<sp/>ACTION<sp/>OF<sp/>CONTRACT,<sp/>TORT<sp/>OR<sp/>OTHERWISE,<sp/>ARISING<sp/>FROM,<sp/>OUT<sp/>OF<sp/>OR<sp/>IN</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/>CONNECTION<sp/>WITH<sp/>THE<sp/>SOFTWARE<sp/>OR<sp/>THE<sp/>USE<sp/>OR<sp/>OTHER<sp/>DEALINGS<sp/>IN<sp/>THE<sp/>SOFTWARE.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/>http://www.FreeRTOS.org</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/>http://aws.amazon.com/freertos</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>1<sp/>tab<sp/>==<sp/>4<sp/>spaces!</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>FREERTOS_CONFIG_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>FREERTOS_CONFIG_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*-----------------------------------------------------------</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>Application<sp/>specific<sp/>definitions.</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>These<sp/>definitions<sp/>should<sp/>be<sp/>adjusted<sp/>for<sp/>your<sp/>particular<sp/>hardware<sp/>and</highlight></codeline>
+<codeline lineno="38"><highlight class="comment"><sp/>*<sp/>application<sp/>requirements.</highlight></codeline>
+<codeline lineno="39"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="40"><highlight class="comment"><sp/>*<sp/>These<sp/>parameters<sp/>and<sp/>more<sp/>are<sp/>described<sp/>within<sp/>the<sp/>&apos;configuration&apos;<sp/>section<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="41"><highlight class="comment"><sp/>*<sp/>FreeRTOS<sp/>API<sp/>documentation<sp/>available<sp/>on<sp/>the<sp/>FreeRTOS.org<sp/>web<sp/>site.</highlight></codeline>
+<codeline lineno="42"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="43"><highlight class="comment"><sp/>*<sp/>See<sp/>http://www.freertos.org/a00110.html</highlight></codeline>
+<codeline lineno="44"><highlight class="comment"><sp/>*----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Section<sp/>where<sp/>include<sp/>file<sp/>can<sp/>be<sp/>added<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Ensure<sp/>definitions<sp/>are<sp/>only<sp/>used<sp/>by<sp/>the<sp/>compiler,<sp/>and<sp/>not<sp/>by<sp/>the<sp/>assembler.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__ICCARM__)<sp/>||<sp/>defined(__CC_ARM)<sp/>||<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/>#include<sp/>&lt;stdint.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="group___s_t_m32_f4xx___system___private___variables_1gaa3cd3e43291e81e795d642b79b6088e6" kindref="member">SystemCoreClock</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="_free_r_t_o_s_config_8h_1a8c0327c63db06fda2294df6965508791" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configENABLE_FPU<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56" refid="_free_r_t_o_s_config_8h_1a60e94635ea7d211347de3bf09aa1a292" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configENABLE_MPU<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="_free_r_t_o_s_config_8h_1adde83486022745409c40605922b0bdd6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configUSE_PREEMPTION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59" refid="_free_r_t_o_s_config_8h_1a1d6797a53b62d501b095f964036a7ac4" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configSUPPORT_STATIC_ALLOCATION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60" refid="_free_r_t_o_s_config_8h_1afa3f8d6510699d972c9af08fa41f66dc" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configSUPPORT_DYNAMIC_ALLOCATION<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="_free_r_t_o_s_config_8h_1ac637ae45863c19fa2e919db0ed49301f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configUSE_IDLE_HOOK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="_free_r_t_o_s_config_8h_1a23c5922c077106fad3f70b54d9071466" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configUSE_TICK_HOOK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63" refid="_free_r_t_o_s_config_8h_1aa68082df879e6fc96bcb9b26513639e7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configCPU_CLOCK_HZ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>SystemCoreClock<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="_free_r_t_o_s_config_8h_1a2f0258dd1e3b877e5bc013be54c2db6a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configTICK_RATE_HZ<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((TickType_t)1000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="_free_r_t_o_s_config_8h_1a9a78f5ac61e6cb172dadf2a51f11db38" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configMAX_PRIORITIES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>7<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66" refid="_free_r_t_o_s_config_8h_1a6c534a6cf8a00528fe0be42083484f9a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configMINIMAL_STACK_SIZE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((uint16_t)128)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67" refid="_free_r_t_o_s_config_8h_1a9f213227674effff0122a75d94d87938" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configTOTAL_HEAP_SIZE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((size_t)15360)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="_free_r_t_o_s_config_8h_1ac388dc4041aab6997348828eb27fc1a8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configMAX_TASK_NAME_LEN<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>16<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="_free_r_t_o_s_config_8h_1aac311ed9b9e5ae4d2d9648b33a24acce" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configUSE_16_BIT_TICKS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="_free_r_t_o_s_config_8h_1a543bf3c79008974cc1d36bab51d94fbf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configUSE_MUTEXES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="_free_r_t_o_s_config_8h_1aa4b5138c4e42a180f0abd4f2455f90fb" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configQUEUE_REGISTRY_SIZE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configCHECK_FOR_STACK_OVERFLOW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configUSE_MALLOC_FAILED_HOOK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="_free_r_t_o_s_config_8h_1a2eb2a0baf886a7adab15b5735029434b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configUSE_APPLICATION_TASK_TAG<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="_free_r_t_o_s_config_8h_1a55778995203c57369d2fbfb10224943d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configUSE_COUNTING_SEMAPHORES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="_free_r_t_o_s_config_8h_1a815d63f3e973f88335f639b03786e37f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configENABLE_BACKWARD_COMPATIBILITY<sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="_free_r_t_o_s_config_8h_1aebb8c3a87d591f60f974772be0ee798d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configUSE_PORT_OPTIMISED_TASK_SELECTION<sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="_free_r_t_o_s_config_8h_1a8299719d9fd640db65e6e59a4e5b0204" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configRECORD_STACK_HIGH_ADDRESS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>MESSAGE_BUFFER_LENGTH_TYPE<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="_free_r_t_o_s_config_8h_1a847511ee433494b1e32c90602c967ae7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configCHECK_FOR_STACK_OVERFLOW<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="_free_r_t_o_s_config_8h_1abdf48e7c9cf513f083aa9cbed0dd7cd7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configUSE_MALLOC_FAILED_HOOK<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Defaults<sp/>to<sp/>size_t<sp/>for<sp/>backward<sp/>compatibility,<sp/>but<sp/>can<sp/>be<sp/>changed</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/>if<sp/>lengths<sp/>will<sp/>always<sp/>be<sp/>less<sp/>than<sp/>the<sp/>number<sp/>of<sp/>bytes<sp/>in<sp/>a<sp/>size_t.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="_free_r_t_o_s_config_8h_1a019c8bfcdd8eca676c7b9993bda95967" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configMESSAGE_BUFFER_LENGTH_TYPE<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>size_t</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>MESSAGE_BUFFER_LENGTH_TYPE<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Co-routine<sp/>definitions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90" refid="_free_r_t_o_s_config_8h_1a57990715eb06402474b8b47e1d562616" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configUSE_CO_ROUTINES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91" refid="_free_r_t_o_s_config_8h_1ae8f3fd645e6e78dfeb8a6e874af6195a" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configMAX_CO_ROUTINE_PRIORITIES<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>2<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Software<sp/>timer<sp/>definitions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94" refid="_free_r_t_o_s_config_8h_1ac342ae309b0c53828d2ecad3e6de355b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configUSE_TIMERS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95" refid="_free_r_t_o_s_config_8h_1a05c75ff9029ba3f0ab5bde9196f1e873" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configTIMER_TASK_PRIORITY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>2<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96" refid="_free_r_t_o_s_config_8h_1abb9aa0f31c1f3b14a15083a3c6120918" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configTIMER_QUEUE_LENGTH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>10</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="_free_r_t_o_s_config_8h_1aed7c7ebcdee603583a55e8ce04e55841" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configTIMER_TASK_STACK_DEPTH<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>256</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Set<sp/>the<sp/>following<sp/>definitions<sp/>to<sp/>1<sp/>to<sp/>include<sp/>the<sp/>API<sp/>function,<sp/>or<sp/>zero</highlight></codeline>
+<codeline lineno="100"><highlight class="comment">to<sp/>exclude<sp/>the<sp/>API<sp/>function.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="_free_r_t_o_s_config_8h_1ad6858ac8aaf726007fd19752956ef1bd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_vTaskPrioritySet<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="_free_r_t_o_s_config_8h_1a1279eb797355460aeeec06aa524e91df" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_uxTaskPriorityGet<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103" refid="_free_r_t_o_s_config_8h_1a5ae1434fdf995108dc749ff9329f53bd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_vTaskDelete<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104" refid="_free_r_t_o_s_config_8h_1a7ee138825e57f243c8ee5fd4207b9e26" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_vTaskCleanUpResources<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105" refid="_free_r_t_o_s_config_8h_1aef8fbb97819ad3d962f334ac298206d1" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_vTaskSuspend<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106" refid="_free_r_t_o_s_config_8h_1ae8459bfd5b428319bb10de9f504a53aa" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_vTaskDelayUntil<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107" refid="_free_r_t_o_s_config_8h_1a24361a6eb816a965f1ee4e2e08e364f8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_vTaskDelay<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="_free_r_t_o_s_config_8h_1a9ed60ede556830584e6bfd4a3ab4f9de" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_xTaskGetSchedulerState<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109" refid="_free_r_t_o_s_config_8h_1af93b5ef191e3e4bbf050119dacbd148b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_xEventGroupSetBitFromISR<sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110" refid="_free_r_t_o_s_config_8h_1a4b4336acd61a8e513ca2376be84326b5" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_xTimerPendFunctionCall<sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="_free_r_t_o_s_config_8h_1a4e2902143b6abf777065c15940321911" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_xQueueGetMutexHolder<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="_free_r_t_o_s_config_8h_1ad221128595137414579be33cf8e446d8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_xSemaphoreGetMutexHolder<sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113" refid="_free_r_t_o_s_config_8h_1a4a5ddd1e32d2945d509a19e4a14dccc7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_pcTaskGetTaskName<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114" refid="_free_r_t_o_s_config_8h_1a23c7b4b41fe9b575cf2329c7cbe78b86" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_uxTaskGetStackHighWaterMark<sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115" refid="_free_r_t_o_s_config_8h_1aae20dbc3e4e870003109dcf121cbaee8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_uxTaskGetStackHighWaterMark2<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116" refid="_free_r_t_o_s_config_8h_1ac96b6a6e70667f266db4278be71cbd78" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_xTaskGetCurrentTaskHandle<sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="_free_r_t_o_s_config_8h_1a4fd1d67d54044ac86e8ffc890180f9f6" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_eTaskGetState<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118" refid="_free_r_t_o_s_config_8h_1ac54efb28edcc1d3b9d0844005ea20674" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_xTaskAbortDelay<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119" refid="_free_r_t_o_s_config_8h_1a33733d2bbe005751ec3a417e5ac373bf" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_xTaskGetHandle<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Cortex-M<sp/>specific<sp/>definitions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__NVIC_PRIO_BITS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/></highlight><highlight class="comment">/*<sp/>__BVIC_PRIO_BITS<sp/>will<sp/>be<sp/>specified<sp/>when<sp/>CMSIS<sp/>is<sp/>being<sp/>used.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#define<sp/>configPRIO_BITS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>__NVIC_PRIO_BITS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="_free_r_t_o_s_config_8h_1a5796db11ec6f9aa38d017d2ac393c5ba" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/>#define<sp/>configPRIO_BITS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>lowest<sp/>interrupt<sp/>priority<sp/>that<sp/>can<sp/>be<sp/>used<sp/>in<sp/>a<sp/>call<sp/>to<sp/>a<sp/>&quot;set<sp/>priority&quot;</highlight></codeline>
+<codeline lineno="130"><highlight class="comment">function.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131" refid="_free_r_t_o_s_config_8h_1a10da20f180ec9bd131b0052a802dbc39" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configLIBRARY_LOWEST_INTERRUPT_PRIORITY<sp/><sp/><sp/>15</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>The<sp/>highest<sp/>interrupt<sp/>priority<sp/>that<sp/>can<sp/>be<sp/>used<sp/>by<sp/>any<sp/>interrupt<sp/>service</highlight></codeline>
+<codeline lineno="134"><highlight class="comment">routine<sp/>that<sp/>makes<sp/>calls<sp/>to<sp/>interrupt<sp/>safe<sp/>FreeRTOS<sp/>API<sp/>functions.<sp/><sp/>DO<sp/>NOT<sp/>CALL</highlight></codeline>
+<codeline lineno="135"><highlight class="comment">INTERRUPT<sp/>SAFE<sp/>FREERTOS<sp/>API<sp/>FUNCTIONS<sp/>FROM<sp/>ANY<sp/>INTERRUPT<sp/>THAT<sp/>HAS<sp/>A<sp/>HIGHER</highlight></codeline>
+<codeline lineno="136"><highlight class="comment">PRIORITY<sp/>THAN<sp/>THIS!<sp/>(higher<sp/>priorities<sp/>are<sp/>lower<sp/>numeric<sp/>values.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137" refid="_free_r_t_o_s_config_8h_1a2254bd235d882be3061bcad0b1e8be98" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Interrupt<sp/>priorities<sp/>used<sp/>by<sp/>the<sp/>kernel<sp/>port<sp/>layer<sp/>itself.<sp/><sp/>These<sp/>are<sp/>generic</highlight></codeline>
+<codeline lineno="140"><highlight class="comment">to<sp/>all<sp/>Cortex-M<sp/>ports,<sp/>and<sp/>do<sp/>not<sp/>rely<sp/>on<sp/>any<sp/>particular<sp/>library<sp/>functions.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141" refid="_free_r_t_o_s_config_8h_1ac42cff506ad61d4174fa23e952e3225e" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configKERNEL_INTERRUPT_PRIORITY<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(<sp/>configLIBRARY_LOWEST_INTERRUPT_PRIORITY<sp/>&lt;&lt;<sp/>(8<sp/>-<sp/>configPRIO_BITS)<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>!!!!<sp/>configMAX_SYSCALL_INTERRUPT_PRIORITY<sp/>must<sp/>not<sp/>be<sp/>set<sp/>to<sp/>zero<sp/>!!!!</highlight></codeline>
+<codeline lineno="143"><highlight class="comment">See<sp/>http://www.FreeRTOS.org/RTOS-Cortex-M3-M4.html.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144" refid="_free_r_t_o_s_config_8h_1a54bfc31c410ee452577a25a4552c3704" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configMAX_SYSCALL_INTERRUPT_PRIORITY<sp/><sp/><sp/><sp/>(<sp/>configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY<sp/>&lt;&lt;<sp/>(8<sp/>-<sp/>configPRIO_BITS)<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Normal<sp/>assert()<sp/>semantics<sp/>without<sp/>relying<sp/>on<sp/>the<sp/>provision<sp/>of<sp/>an<sp/>assert.h</highlight></codeline>
+<codeline lineno="147"><highlight class="comment">header<sp/>file.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149" refid="_free_r_t_o_s_config_8h_1a228c70cd48927d6ab730ed1a6dfbe35f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>configASSERT(<sp/>x<sp/>)<sp/>if<sp/>((x)<sp/>==<sp/>0)<sp/>{taskDISABLE_INTERRUPTS();<sp/>for(<sp/>;;<sp/>);}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Definitions<sp/>that<sp/>map<sp/>the<sp/>FreeRTOS<sp/>port<sp/>interrupt<sp/>handlers<sp/>to<sp/>their<sp/>CMSIS</highlight></codeline>
+<codeline lineno="153"><highlight class="comment">standard<sp/>names.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="_free_r_t_o_s_config_8h_1ad43047b3ea0a146673e30637488bf754" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>vPortSVCHandler<sp/><sp/><sp/><sp/>SVC_Handler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155" refid="_free_r_t_o_s_config_8h_1a6f30022da7d797dd31f1b8a11cae9a35" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>xPortPendSVHandler<sp/>PendSV_Handler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>IMPORTANT:<sp/>This<sp/>define<sp/>is<sp/>commented<sp/>when<sp/>used<sp/>with<sp/>STM32Cube<sp/>firmware,<sp/>when<sp/>the<sp/>timebase<sp/>source<sp/>is<sp/>SysTick,</highlight></codeline>
+<codeline lineno="158"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>to<sp/>prevent<sp/>overwriting<sp/>SysTick_Handler<sp/>defined<sp/>within<sp/>STM32Cube<sp/>HAL<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="_free_r_t_o_s_config_8h_1ae42e6318b5d564e44f97f8c765859448" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>xPortSysTickHandler<sp/>SysTick_Handler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Defines<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Section<sp/>where<sp/>parameter<sp/>definitions<sp/>can<sp/>be<sp/>added<sp/>(for<sp/>instance,<sp/>to<sp/>override<sp/>default<sp/>ones<sp/>in<sp/>FreeRTOS.h)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164" refid="_free_r_t_o_s_config_8h_1a488bcb8b6f5f076d88cf6650f4e15796" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INCLUDE_xTaskDelayUntil<sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>configUSE_TIMERS<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>configTIMER_TASK_PRIORITY<sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>configTIMER_QUEUE_LENGTH<sp/><sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight><highlight class="comment">//#define<sp/>configTIMER_TASK_STACK_DEPTH<sp/>128</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Defines<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>FREERTOS_CONFIG_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="Core/Inc/FreeRTOSConfig.h"/>
+  </compounddef>
+</doxygen>

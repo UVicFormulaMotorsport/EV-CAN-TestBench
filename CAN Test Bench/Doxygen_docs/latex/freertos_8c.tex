@@ -14,9 +14,11 @@ void \mbox{\hyperlink{freertos_8c_abade755e13d07c10889ae83143656158}{M\+X\+\_\+\
 \begin{DoxyCompactList}\small\item\em Free\+R\+T\+OS initialization. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{freertos_8c_a1988aa923b19fa6f31c93afa7773f793}{v\+Application\+Get\+Idle\+Task\+Memory}} (Static\+Task\+\_\+t $\ast$$\ast$ppx\+Idle\+Task\+T\+C\+B\+Buffer, Stack\+Type\+\_\+t $\ast$$\ast$ppx\+Idle\+Task\+Stack\+Buffer, uint32\+\_\+t $\ast$pul\+Idle\+Task\+Stack\+Size)
 \item 
+void \mbox{\hyperlink{freertos_8c_a1e80ecbd3fc2d04f18d6409ffa893a86}{v\+Application\+Get\+Timer\+Task\+Memory}} (Static\+Task\+\_\+t $\ast$$\ast$ppx\+Timer\+Task\+T\+C\+B\+Buffer, Stack\+Type\+\_\+t $\ast$$\ast$ppx\+Timer\+Task\+Stack\+Buffer, uint32\+\_\+t $\ast$pul\+Timer\+Task\+Stack\+Size)
+\item 
 void \mbox{\hyperlink{freertos_8c_a109d34fc5d6dd8982815445df5790016}{v\+Application\+Tick\+Hook}} (void)
 \item 
-void \mbox{\hyperlink{freertos_8c_af646b5639eb494882d42203f289f37ce}{v\+Application\+Stack\+Overflow\+Hook}} (x\+Task\+Handle x\+Task, signed char $\ast$pc\+Task\+Name)
+void \mbox{\hyperlink{freertos_8c_a771797a7892e3fb45ba038b6317f956e}{v\+Application\+Stack\+Overflow\+Hook}} (Task\+Handle\+\_\+t x\+Task, signed char $\ast$pc\+Task\+Name)
 \item 
 void \mbox{\hyperlink{freertos_8c_a92b5bd8c1938973f010621d23aa88c3d}{v\+Application\+Malloc\+Failed\+Hook}} (void)
 \item 
@@ -34,6 +36,10 @@ os\+Thread\+Id \mbox{\hyperlink{freertos_8c_aa658fe134a5d1309d7a15c8116fa142c}{d
 static Static\+Task\+\_\+t \mbox{\hyperlink{freertos_8c_a2dd1013c5ef8f355ac2f1479e36ec659}{x\+Idle\+Task\+T\+C\+B\+Buffer}}
 \item 
 static Stack\+Type\+\_\+t \mbox{\hyperlink{freertos_8c_af311b04396149ce536fe1a3b5f127445}{x\+Idle\+Stack}} \mbox{[}\mbox{\hyperlink{_free_r_t_o_s_config_8h_a6c534a6cf8a00528fe0be42083484f9a}{config\+M\+I\+N\+I\+M\+A\+L\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE}}\mbox{]}
+\item 
+static Static\+Task\+\_\+t \mbox{\hyperlink{freertos_8c_a38d479dc434b1716ec493c97d862680e}{x\+Timer\+Task\+T\+C\+B\+Buffer}}
+\item 
+static Stack\+Type\+\_\+t \mbox{\hyperlink{freertos_8c_ac4bbf08a713d317769fd40e9474a279b}{x\+Timer\+Stack}} \mbox{[}\mbox{\hyperlink{_free_r_t_o_s_config_8h_aed7c7ebcdee603583a55e8ce04e55841}{config\+T\+I\+M\+E\+R\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+D\+E\+P\+TH}}\mbox{]}
 \end{DoxyCompactItemize}
 
 
@@ -63,7 +69,7 @@ D\+O\+NT Y\+OU F\+U\+C\+K\+I\+NG D\+A\+RE D\+E\+L\+E\+TE T\+H\+E\+SE G\+O\+TO S\
 \end{DoxyAttention}
 
 
-Definition at line 141 of file freertos.\+c.
+Definition at line 160 of file freertos.\+c.
 
 
 
@@ -88,7 +94,7 @@ DO N\+OT E\+V\+ER C\+A\+LL T\+H\+IS. IT E\+X\+I\+S\+TS TO S\+T\+OP A C\+O\+M\+P\
 \end{DoxyAttention}
 
 
-Definition at line 190 of file freertos.\+c.
+Definition at line 209 of file freertos.\+c.
 
 
 
@@ -102,11 +108,25 @@ Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init().
 
 
 
-Definition at line 127 of file freertos.\+c.
+Definition at line 132 of file freertos.\+c.
 
 
 
 References config\+M\+I\+N\+I\+M\+A\+L\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, x\+Idle\+Stack, and x\+Idle\+Task\+T\+C\+B\+Buffer.
+
+\mbox{\Hypertarget{freertos_8c_a1e80ecbd3fc2d04f18d6409ffa893a86}\label{freertos_8c_a1e80ecbd3fc2d04f18d6409ffa893a86}} 
+\index{freertos.c@{freertos.c}!vApplicationGetTimerTaskMemory@{vApplicationGetTimerTaskMemory}}
+\index{vApplicationGetTimerTaskMemory@{vApplicationGetTimerTaskMemory}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{vApplicationGetTimerTaskMemory()}{vApplicationGetTimerTaskMemory()}}
+{\footnotesize\ttfamily void v\+Application\+Get\+Timer\+Task\+Memory (\begin{DoxyParamCaption}\item[{Static\+Task\+\_\+t $\ast$$\ast$}]{ppx\+Timer\+Task\+T\+C\+B\+Buffer,  }\item[{Stack\+Type\+\_\+t $\ast$$\ast$}]{ppx\+Timer\+Task\+Stack\+Buffer,  }\item[{uint32\+\_\+t $\ast$}]{pul\+Timer\+Task\+Stack\+Size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 146 of file freertos.\+c.
+
+
+
+References config\+T\+I\+M\+E\+R\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+D\+E\+P\+TH, x\+Timer\+Stack, and x\+Timer\+Task\+T\+C\+B\+Buffer.
 
 \mbox{\Hypertarget{freertos_8c_a97fd430f36f8b065226e2bff9bad1de5}\label{freertos_8c_a97fd430f36f8b065226e2bff9bad1de5}} 
 \index{freertos.c@{freertos.c}!vApplicationIdleHook@{vApplicationIdleHook}}
@@ -116,7 +136,7 @@ References config\+M\+I\+N\+I\+M\+A\+L\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, x\+
 
 
 
-Definition at line 96 of file freertos.\+c.
+Definition at line 101 of file freertos.\+c.
 
 \mbox{\Hypertarget{freertos_8c_a92b5bd8c1938973f010621d23aa88c3d}\label{freertos_8c_a92b5bd8c1938973f010621d23aa88c3d}} 
 \index{freertos.c@{freertos.c}!vApplicationMallocFailedHook@{vApplicationMallocFailedHook}}
@@ -126,17 +146,17 @@ Definition at line 96 of file freertos.\+c.
 
 
 
-Definition at line 103 of file freertos.\+c.
+Definition at line 108 of file freertos.\+c.
 
-\mbox{\Hypertarget{freertos_8c_af646b5639eb494882d42203f289f37ce}\label{freertos_8c_af646b5639eb494882d42203f289f37ce}} 
+\mbox{\Hypertarget{freertos_8c_a771797a7892e3fb45ba038b6317f956e}\label{freertos_8c_a771797a7892e3fb45ba038b6317f956e}} 
 \index{freertos.c@{freertos.c}!vApplicationStackOverflowHook@{vApplicationStackOverflowHook}}
 \index{vApplicationStackOverflowHook@{vApplicationStackOverflowHook}!freertos.c@{freertos.c}}
 \doxysubsubsection{\texorpdfstring{vApplicationStackOverflowHook()}{vApplicationStackOverflowHook()}}
-{\footnotesize\ttfamily \+\_\+\+\_\+weak void v\+Application\+Stack\+Overflow\+Hook (\begin{DoxyParamCaption}\item[{x\+Task\+Handle}]{x\+Task,  }\item[{signed char $\ast$}]{pc\+Task\+Name }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \+\_\+\+\_\+weak void v\+Application\+Stack\+Overflow\+Hook (\begin{DoxyParamCaption}\item[{Task\+Handle\+\_\+t}]{x\+Task,  }\item[{signed char $\ast$}]{pc\+Task\+Name }\end{DoxyParamCaption})}
 
 
 
-Definition at line 84 of file freertos.\+c.
+Definition at line 89 of file freertos.\+c.
 
 \mbox{\Hypertarget{freertos_8c_a109d34fc5d6dd8982815445df5790016}\label{freertos_8c_a109d34fc5d6dd8982815445df5790016}} 
 \index{freertos.c@{freertos.c}!vApplicationTickHook@{vApplicationTickHook}}
@@ -146,7 +166,7 @@ Definition at line 84 of file freertos.\+c.
 
 
 
-Definition at line 73 of file freertos.\+c.
+Definition at line 76 of file freertos.\+c.
 
 
 
@@ -208,7 +228,7 @@ Referenced by M\+X\+\_\+\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+Init(), and uv\+Init().
 
 
 
-Definition at line 125 of file freertos.\+c.
+Definition at line 130 of file freertos.\+c.
 
 
 
@@ -222,9 +242,37 @@ Referenced by v\+Application\+Get\+Idle\+Task\+Memory().
 
 
 
-Definition at line 124 of file freertos.\+c.
+Definition at line 129 of file freertos.\+c.
 
 
 
 Referenced by v\+Application\+Get\+Idle\+Task\+Memory().
+
+\mbox{\Hypertarget{freertos_8c_ac4bbf08a713d317769fd40e9474a279b}\label{freertos_8c_ac4bbf08a713d317769fd40e9474a279b}} 
+\index{freertos.c@{freertos.c}!xTimerStack@{xTimerStack}}
+\index{xTimerStack@{xTimerStack}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{xTimerStack}{xTimerStack}}
+{\footnotesize\ttfamily Stack\+Type\+\_\+t x\+Timer\+Stack\mbox{[}\mbox{\hyperlink{_free_r_t_o_s_config_8h_aed7c7ebcdee603583a55e8ce04e55841}{config\+T\+I\+M\+E\+R\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+D\+E\+P\+TH}}\mbox{]}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 144 of file freertos.\+c.
+
+
+
+Referenced by v\+Application\+Get\+Timer\+Task\+Memory().
+
+\mbox{\Hypertarget{freertos_8c_a38d479dc434b1716ec493c97d862680e}\label{freertos_8c_a38d479dc434b1716ec493c97d862680e}} 
+\index{freertos.c@{freertos.c}!xTimerTaskTCBBuffer@{xTimerTaskTCBBuffer}}
+\index{xTimerTaskTCBBuffer@{xTimerTaskTCBBuffer}!freertos.c@{freertos.c}}
+\doxysubsubsection{\texorpdfstring{xTimerTaskTCBBuffer}{xTimerTaskTCBBuffer}}
+{\footnotesize\ttfamily Static\+Task\+\_\+t x\+Timer\+Task\+T\+C\+B\+Buffer\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 143 of file freertos.\+c.
+
+
+
+Referenced by v\+Application\+Get\+Timer\+Task\+Memory().
 

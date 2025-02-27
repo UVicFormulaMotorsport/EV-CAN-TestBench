@@ -1,0 +1,658 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="oled_8c" kind="file" language="C++">
+    <compoundname>oled.c</compoundname>
+    <includes local="no">stdio.h</includes>
+    <includes local="no">string.h</includes>
+    <includes refid="oled_8h" local="yes">oled.h</includes>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includes refid="uvfr__utils_8h" local="yes">uvfr_utils.h</includes>
+    <incdepgraph>
+      <node id="9">
+        <label>stdarg.h</label>
+      </node>
+      <node id="15">
+        <label>tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>stdint.h</label>
+      </node>
+      <node id="35">
+        <label>stdlib.h</label>
+      </node>
+      <node id="4">
+        <label>oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>cmsis_os.h</label>
+      </node>
+      <node id="5">
+        <label>uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>message_buffer.h</label>
+      </node>
+      <node id="26">
+        <label>bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>string.h</label>
+      </node>
+      <node id="21">
+        <label>uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>rb_tree.h</label>
+        <link refid="rb__tree_8h"/>
+      </node>
+      <node id="13">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="12">
+        <label>can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>uvfr_global_config.h</label>
+        <link refid="uvfr__global__config_8h"/>
+      </node>
+      <node id="33">
+        <label>FreeRTOSConfig.h</label>
+        <link refid="_free_r_t_o_s_config_8h"/>
+      </node>
+      <node id="27">
+        <label>uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>odometer.h</label>
+        <link refid="odometer_8h"/>
+      </node>
+      <node id="8">
+        <label>stm32f4xx_hal.h</label>
+      </node>
+      <node id="2">
+        <label>stdio.h</label>
+      </node>
+      <node id="18">
+        <label>FreeRTOS.h</label>
+      </node>
+      <node id="1">
+        <label>Core/Src/oled.c</label>
+        <link refid="oled_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>task.h</label>
+      </node>
+      <node id="7">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>oled.c</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>Nov<sp/>12,<sp/>2024</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>byo10</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdio.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="oled_8h" kindref="compound">oled.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="uvfr__utils_8h" kindref="compound">uvfr_utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>USE_OLED_DEBUG</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">SPI_HandleTypeDef<sp/>SPI_Handle;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">//could<sp/>not<sp/>tell<sp/>you<sp/>what&apos;s<sp/>up<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>oled_init_cmds[]<sp/>=</highlight></codeline>
+<codeline lineno="22"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>0xAE,</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>0x20,<sp/>0x00,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>0x40,</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>0xA0<sp/>|<sp/>0x01,</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>0xA8,<sp/>0x40<sp/>-<sp/>1,</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>0xC0<sp/>|<sp/>0x08,</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/>0xD3,<sp/>0x00,</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>0xDA,<sp/>0x32,</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>0xD5,<sp/>0x80,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>0xD9,<sp/>0x22,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>0xDB,<sp/>0x30,</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>0x81,<sp/>0xFF,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>0xA4,</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>0xA6,</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>0xAD,<sp/>0x30,</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>0x8D,<sp/>0x10,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>0xAE<sp/>|<sp/>0x01,</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>0xC0,</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/>0xA0</highlight></codeline>
+<codeline lineno="42"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Character<sp/>specifications<sp/>for<sp/>LED<sp/>Display<sp/>(1<sp/>row<sp/>=<sp/>8<sp/>bytes<sp/>=<sp/>1<sp/>ASCII<sp/>character)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Example:<sp/>to<sp/>display<sp/>&apos;4&apos;,<sp/>retrieve<sp/>8<sp/>data<sp/>bytes<sp/>stored<sp/>in<sp/>Characters[52][X]<sp/>row</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(where<sp/>X<sp/>=<sp/>0,<sp/>1,<sp/>...,<sp/>7)<sp/>and<sp/>send<sp/>them<sp/>one<sp/>by<sp/>one<sp/>to<sp/>LED<sp/>Display.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Row<sp/>number<sp/>=<sp/>character<sp/>ASCII<sp/>code<sp/>(e.g.,<sp/>ASCII<sp/>code<sp/>of<sp/>&apos;4&apos;<sp/>is<sp/>0x34<sp/>=<sp/>52)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>Characters[][8]<sp/>=<sp/>{</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>SPACE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b01011111,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000111,<sp/>0b00000000,<sp/>0b00000111,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00010100,<sp/>0b01111111,<sp/>0b00010100,<sp/>0b01111111,<sp/>0b00010100,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>#</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00100100,<sp/>0b00101010,<sp/>0b01111111,<sp/>0b00101010,<sp/>0b00010010,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>$</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00100011,<sp/>0b00010011,<sp/>0b00001000,<sp/>0b01100100,<sp/>0b01100010,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>%</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00110110,<sp/>0b01001001,<sp/>0b01010101,<sp/>0b00100010,<sp/>0b01010000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>&amp;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000101,<sp/>0b00000011,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00011100,<sp/>0b00100010,<sp/>0b01000001,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>(</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b01000001,<sp/>0b00100010,<sp/>0b00011100,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00010100,<sp/>0b00001000,<sp/>0b00111110,<sp/>0b00001000,<sp/>0b00010100,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>*</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00001000,<sp/>0b00001000,<sp/>0b00111110,<sp/>0b00001000,<sp/>0b00001000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>+</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b01010000,<sp/>0b00110000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00001000,<sp/>0b00001000,<sp/>0b00001000,<sp/>0b00001000,<sp/>0b00001000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b01100000,<sp/>0b01100000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00100000,<sp/>0b00010000,<sp/>0b00001000,<sp/>0b00000100,<sp/>0b00000010,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111110,<sp/>0b01010001,<sp/>0b01001001,<sp/>0b01000101,<sp/>0b00111110,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b01000010,<sp/>0b01111111,<sp/>0b01000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01000010,<sp/>0b01100001,<sp/>0b01010001,<sp/>0b01001001,<sp/>0b01000110,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00100001,<sp/>0b01000001,<sp/>0b01000101,<sp/>0b01001011,<sp/>0b00110001,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00011000,<sp/>0b00010100,<sp/>0b00010010,<sp/>0b01111111,<sp/>0b00010000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>4</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00100111,<sp/>0b01000101,<sp/>0b01000101,<sp/>0b01000101,<sp/>0b00111001,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>5</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111100,<sp/>0b01001010,<sp/>0b01001001,<sp/>0b01001001,<sp/>0b00110000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>6</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000011,<sp/>0b00000001,<sp/>0b01110001,<sp/>0b00001001,<sp/>0b00000111,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>7</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00110110,<sp/>0b01001001,<sp/>0b01001001,<sp/>0b01001001,<sp/>0b00110110,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000110,<sp/>0b01001001,<sp/>0b01001001,<sp/>0b00101001,<sp/>0b00011110,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>9</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00110110,<sp/>0b00110110,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b01010110,<sp/>0b00110110,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00001000,<sp/>0b00010100,<sp/>0b00100010,<sp/>0b01000001,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>&lt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00010100,<sp/>0b00010100,<sp/>0b00010100,<sp/>0b00010100,<sp/>0b00010100,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>=</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b01000001,<sp/>0b00100010,<sp/>0b00010100,<sp/>0b00001000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000010,<sp/>0b00000001,<sp/>0b01010001,<sp/>0b00001001,<sp/>0b00000110,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00110010,<sp/>0b01001001,<sp/>0b01111001,<sp/>0b01000001,<sp/>0b00111110,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>@</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111110,<sp/>0b00010001,<sp/>0b00010001,<sp/>0b00010001,<sp/>0b01111110,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>A</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b01001001,<sp/>0b01001001,<sp/>0b01001001,<sp/>0b00110110,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>B</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111110,<sp/>0b01000001,<sp/>0b01000001,<sp/>0b01000001,<sp/>0b00100010,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>C</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b01000001,<sp/>0b01000001,<sp/>0b00100010,<sp/>0b00011100,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>D</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b01001001,<sp/>0b01001001,<sp/>0b01001001,<sp/>0b01000001,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>E</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b00001001,<sp/>0b00001001,<sp/>0b00001001,<sp/>0b00000001,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>F</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111110,<sp/>0b01000001,<sp/>0b01001001,<sp/>0b01001001,<sp/>0b01111010,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>G</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b00001000,<sp/>0b00001000,<sp/>0b00001000,<sp/>0b01111111,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01000000,<sp/>0b01000001,<sp/>0b01111111,<sp/>0b01000001,<sp/>0b01000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>I</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00100000,<sp/>0b01000000,<sp/>0b01000001,<sp/>0b00111111,<sp/>0b00000001,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>J</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b00001000,<sp/>0b00010100,<sp/>0b00100010,<sp/>0b01000001,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>K</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b01000000,<sp/>0b01000000,<sp/>0b01000000,<sp/>0b01000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>L</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b00000010,<sp/>0b00001100,<sp/>0b00000010,<sp/>0b01111111,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>M</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b00000100,<sp/>0b00001000,<sp/>0b00010000,<sp/>0b01111111,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>N</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111110,<sp/>0b01000001,<sp/>0b01000001,<sp/>0b01000001,<sp/>0b00111110,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>O</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b00001001,<sp/>0b00001001,<sp/>0b00001001,<sp/>0b00000110,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>P</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111110,<sp/>0b01000001,<sp/>0b01010001,<sp/>0b00100001,<sp/>0b01011110,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>Q</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b00001001,<sp/>0b00011001,<sp/>0b00101001,<sp/>0b01000110,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>R</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01000110,<sp/>0b01001001,<sp/>0b01001001,<sp/>0b01001001,<sp/>0b00110001,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>S</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000001,<sp/>0b00000001,<sp/>0b01111111,<sp/>0b00000001,<sp/>0b00000001,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>T</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111111,<sp/>0b01000000,<sp/>0b01000000,<sp/>0b01000000,<sp/>0b00111111,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>U</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00011111,<sp/>0b00100000,<sp/>0b01000000,<sp/>0b00100000,<sp/>0b00011111,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>V</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111111,<sp/>0b01000000,<sp/>0b00111000,<sp/>0b01000000,<sp/>0b00111111,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>W</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01100011,<sp/>0b00010100,<sp/>0b00001000,<sp/>0b00010100,<sp/>0b01100011,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>X</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000111,<sp/>0b00001000,<sp/>0b01110000,<sp/>0b00001000,<sp/>0b00000111,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>Y</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01100001,<sp/>0b01010001,<sp/>0b01001001,<sp/>0b01000101,<sp/>0b01000011,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>Z</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b01000001,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>[</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00010101,<sp/>0b00010110,<sp/>0b01111100,<sp/>0b00010110,<sp/>0b00010101,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>back<sp/>slash</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b00000000,<sp/>0b01000001,<sp/>0b01111111,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>]</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000100,<sp/>0b00000010,<sp/>0b00000001,<sp/>0b00000010,<sp/>0b00000100,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>^</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01000000,<sp/>0b01000000,<sp/>0b01000000,<sp/>0b01000000,<sp/>0b01000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000001,<sp/>0b00000010,<sp/>0b00000100,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>`</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00100000,<sp/>0b01010100,<sp/>0b01010100,<sp/>0b01010100,<sp/>0b01111000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>a</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b01001000,<sp/>0b01000100,<sp/>0b01000100,<sp/>0b00111000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>b</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111000,<sp/>0b01000100,<sp/>0b01000100,<sp/>0b01000100,<sp/>0b00100000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>c</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111000,<sp/>0b01000100,<sp/>0b01000100,<sp/>0b01001000,<sp/>0b01111111,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>d</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111000,<sp/>0b01010100,<sp/>0b01010100,<sp/>0b01010100,<sp/>0b00011000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>e</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00001000,<sp/>0b01111110,<sp/>0b00001001,<sp/>0b00000001,<sp/>0b00000010,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>f</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00001100,<sp/>0b01010010,<sp/>0b01010010,<sp/>0b01010010,<sp/>0b00111110,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>g</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b00001000,<sp/>0b00000100,<sp/>0b00000100,<sp/>0b01111000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>h</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b01000100,<sp/>0b01111101,<sp/>0b01000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>i</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00100000,<sp/>0b01000000,<sp/>0b01000100,<sp/>0b00111101,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>j</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111111,<sp/>0b00010000,<sp/>0b00101000,<sp/>0b01000100,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>k</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b01000001,<sp/>0b01111111,<sp/>0b01000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>l</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111100,<sp/>0b00000100,<sp/>0b00011000,<sp/>0b00000100,<sp/>0b01111000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>m</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111100,<sp/>0b00001000,<sp/>0b00000100,<sp/>0b00000100,<sp/>0b01111000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>n</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111000,<sp/>0b01000100,<sp/>0b01000100,<sp/>0b01000100,<sp/>0b00111000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>o</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111100,<sp/>0b00010100,<sp/>0b00010100,<sp/>0b00010100,<sp/>0b00001000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>p</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00001000,<sp/>0b00010100,<sp/>0b00010100,<sp/>0b00011000,<sp/>0b01111100,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>q</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01111100,<sp/>0b00001000,<sp/>0b00000100,<sp/>0b00000100,<sp/>0b00001000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>r</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01001000,<sp/>0b01010100,<sp/>0b01010100,<sp/>0b01010100,<sp/>0b00100000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>s</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000100,<sp/>0b00111111,<sp/>0b01000100,<sp/>0b01000000,<sp/>0b00100000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>t</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111100,<sp/>0b01000000,<sp/>0b01000000,<sp/>0b00100000,<sp/>0b01111100,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>u</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00011100,<sp/>0b00100000,<sp/>0b01000000,<sp/>0b00100000,<sp/>0b00011100,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>v</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00111100,<sp/>0b01000000,<sp/>0b00111000,<sp/>0b01000000,<sp/>0b00111100,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>w</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01000100,<sp/>0b00101000,<sp/>0b00010000,<sp/>0b00101000,<sp/>0b01000100,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>x</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00001100,<sp/>0b01010000,<sp/>0b01010000,<sp/>0b01010000,<sp/>0b00111100,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>y</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b01000100,<sp/>0b01100100,<sp/>0b01010100,<sp/>0b01001100,<sp/>0b01000100,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>z</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00001000,<sp/>0b00110110,<sp/>0b01000001,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>{</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b00000000,<sp/>0b01111111,<sp/>0b00000000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>|</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00000000,<sp/>0b01000001,<sp/>0b00110110,<sp/>0b00001000,<sp/>0b00000000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00001000,<sp/>0b00001000,<sp/>0b00101010,<sp/>0b00011100,<sp/>0b00001000,0b00000000,<sp/>0b00000000,<sp/>0b00000000},<sp/><sp/></highlight><highlight class="comment">//<sp/>~</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>{0b00001000,<sp/>0b00011100,<sp/>0b00101010,<sp/>0b00001000,<sp/>0b00001000,0b00000000,<sp/>0b00000000,<sp/>0b00000000}<sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>&lt;-</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="oled_8h_1a1682d608b1f9752ad8db39d13327fd37" kindref="member">refresh_OLED</ref>(</highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Freq,<sp/></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>Res)</highlight></codeline>
+<codeline lineno="183"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Buffer<sp/>size<sp/>=<sp/>at<sp/>most<sp/>16<sp/>characters<sp/>per<sp/>PAGE<sp/>+<sp/>terminating<sp/>&apos;\0&apos;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>Buffer[17];</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>snprintf(<sp/>Buffer,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>Buffer<sp/>),<sp/></highlight><highlight class="stringliteral">&quot;R:<sp/>%5u<sp/>Ohms&quot;</highlight><highlight class="normal">,<sp/>Res<sp/>);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Buffer<sp/>now<sp/>contains<sp/>your<sp/>character<sp/>ASCII<sp/>codes<sp/>for<sp/>LED<sp/>Display</highlight></codeline>
+<codeline lineno="189"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>select<sp/>PAGE<sp/>(LED<sp/>Display<sp/>line)<sp/>and<sp/>set<sp/>starting<sp/>SEG<sp/>(column)</highlight></codeline>
+<codeline lineno="190"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>for<sp/>each<sp/>c<sp/>=<sp/>ASCII<sp/>code<sp/>=<sp/>Buffer[0],<sp/>Buffer[1],<sp/>...,</highlight></codeline>
+<codeline lineno="191"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send<sp/>8<sp/>bytes<sp/>in<sp/>Characters[c][0-7]<sp/>to<sp/>LED<sp/>Display</highlight></codeline>
+<codeline lineno="192"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="oled_8h_1aa570c9c43e3a859ef14fa6a6c6fc351f" kindref="member">oled_Write_Cmd</ref>(0xB0);<sp/></highlight><highlight class="comment">//first<sp/>page</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="oled_8h_1aa570c9c43e3a859ef14fa6a6c6fc351f" kindref="member">oled_Write_Cmd</ref>(0x04);<sp/></highlight><highlight class="comment">//reset<sp/>column</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="oled_8h_1aa570c9c43e3a859ef14fa6a6c6fc351f" kindref="member">oled_Write_Cmd</ref>(0x10);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>Buffer<sp/>);<sp/>i++){</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c<sp/>=<sp/>Buffer[i];</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>c<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c_byte<sp/>=<sp/>0;<sp/>c_byte<sp/>&lt;<sp/>8;<sp/>c_byte++){</highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="oled_8h_1ab5285a18d59cc6c9ab8cb6325c51f71a" kindref="member">oled_Write_Data</ref>(Characters[c][c_byte]);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/>snprintf(<sp/>Buffer,<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>Buffer<sp/>),<sp/></highlight><highlight class="stringliteral">&quot;F:<sp/>%5u<sp/>Hz&quot;</highlight><highlight class="normal">,<sp/>Freq<sp/>);</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>/*<sp/>Buffer<sp/>now<sp/>contains<sp/>your<sp/>character<sp/>ASCII<sp/>codes<sp/>for<sp/>LED<sp/>Display</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>select<sp/>PAGE<sp/>(LED<sp/>Display<sp/>line)<sp/>and<sp/>set<sp/>starting<sp/>SEG<sp/>(column)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>for<sp/>each<sp/>c<sp/>=<sp/>ASCII<sp/>code<sp/>=<sp/>Buffer[0],<sp/>Buffer[1],<sp/>...,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>send<sp/>8<sp/>bytes<sp/>in<sp/>Characters[c][0-7]<sp/>to<sp/>LED<sp/>Display</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="oled_8h_1aa570c9c43e3a859ef14fa6a6c6fc351f" kindref="member">oled_Write_Cmd</ref>(0xB3);<sp/></highlight><highlight class="comment">//page<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="oled_8h_1aa570c9c43e3a859ef14fa6a6c6fc351f" kindref="member">oled_Write_Cmd</ref>(0x04);<sp/></highlight><highlight class="comment">//reset<sp/>column</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="oled_8h_1aa570c9c43e3a859ef14fa6a6c6fc351f" kindref="member">oled_Write_Cmd</ref>(0x10);</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>Buffer<sp/>);<sp/>i++){</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>c<sp/>=<sp/>Buffer[i];</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(<sp/>c<sp/>==<sp/></highlight><highlight class="charliteral">&apos;\0&apos;</highlight><highlight class="normal">){</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">break</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c_byte<sp/>=<sp/>0;<sp/>c_byte<sp/>&lt;<sp/>8;<sp/>c_byte++){</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="oled_8h_1ab5285a18d59cc6c9ab8cb6325c51f71a" kindref="member">oled_Write_Data</ref>(Characters[(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)c][c_byte]);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="227"><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Fixes<sp/>glitch<sp/>with<sp/>6<sp/>digit<sp/>frequency</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>c_byte<sp/>=<sp/>0;<sp/>c_byte<sp/>&lt;<sp/>8;<sp/>c_byte++){</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="oled_8h_1ab5285a18d59cc6c9ab8cb6325c51f71a" kindref="member">oled_Write_Data</ref>(Characters[</highlight><highlight class="charliteral">&apos;<sp/>&apos;</highlight><highlight class="normal">][c_byte]);</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="234"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="235"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>/*<sp/>Wait<sp/>for<sp/>~100<sp/>ms<sp/>(for<sp/>example)<sp/>to<sp/>get<sp/>~10<sp/>frames/sec<sp/>refresh<sp/>rate</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>You<sp/>should<sp/>use<sp/>TIM3<sp/>to<sp/>implement<sp/>this<sp/>delay<sp/>(e.g.,<sp/>via<sp/>polling)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="239"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="oled_8h_1aa570c9c43e3a859ef14fa6a6c6fc351f" kindref="member">oled_Write_Cmd</ref>(<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>cmd<sp/>)</highlight></codeline>
+<codeline lineno="245"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>...<sp/>//<sp/>make<sp/>PB6<sp/>=<sp/>CS#<sp/>=<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOB-&gt;BSRR<sp/>=<sp/>0x1&lt;&lt;6;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>...<sp/>//<sp/>make<sp/>PB7<sp/>=<sp/>D/C#<sp/>=<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOB-&gt;BSRR<sp/>=<sp/>0x1&lt;&lt;23;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>...<sp/>//<sp/>make<sp/>PB6<sp/>=<sp/>CS#<sp/>=<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOB-&gt;BSRR<sp/>=<sp/>0x1&lt;&lt;22;</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="oled_8h_1a8597275739cdda868138aef82aa29a5b" kindref="member">oled_Write</ref>(<sp/>cmd<sp/>);</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"></highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>...<sp/>//<sp/>make<sp/>PB6<sp/>=<sp/>CS#<sp/>=<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOB-&gt;BSRR<sp/>=<sp/>0x1&lt;&lt;6;</highlight></codeline>
+<codeline lineno="259"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="oled_8h_1ab5285a18d59cc6c9ab8cb6325c51f71a" kindref="member">oled_Write_Data</ref>(<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>data<sp/>)</highlight></codeline>
+<codeline lineno="262"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//...<sp/>//<sp/>make<sp/>PB6<sp/>=<sp/>CS#<sp/>=<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOB-&gt;BSRR<sp/>=<sp/>0x1&lt;&lt;6;</highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//...<sp/>//<sp/>make<sp/>PB7<sp/>=<sp/>D/C#<sp/>=<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOB-&gt;BSRR<sp/>=<sp/>0x1&lt;&lt;7;</highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//...<sp/>//<sp/>make<sp/>PB6<sp/>=<sp/>CS#<sp/>=<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOB-&gt;BSRR<sp/>=<sp/>0x1&lt;&lt;22;</highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="oled_8h_1a8597275739cdda868138aef82aa29a5b" kindref="member">oled_Write</ref>(<sp/>data<sp/>);</highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//...<sp/>//<sp/>make<sp/>PB6<sp/>=<sp/>CS#<sp/>=<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOB-&gt;BSRR<sp/>=<sp/>0x1&lt;&lt;6;</highlight></codeline>
+<codeline lineno="276"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"></highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="oled_8h_1a8597275739cdda868138aef82aa29a5b" kindref="member">oled_Write</ref>(<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>Value<sp/>)</highlight></codeline>
+<codeline lineno="280"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"></highlight></codeline>
+<codeline lineno="282"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Wait<sp/>until<sp/>SPI1<sp/>is<sp/>ready<sp/>for<sp/>writing<sp/>(TXE<sp/>=<sp/>1<sp/>in<sp/>SPI1_SR)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">((SPI1-&gt;SR<sp/>&amp;<sp/>SPI_SR_TXE)<sp/>==<sp/>0<sp/>){}</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Send<sp/>one<sp/>8-bit<sp/>character:</highlight></codeline>
+<codeline lineno="287"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>This<sp/>function<sp/>also<sp/>sets<sp/>BIDIOE<sp/>=<sp/>1<sp/>in<sp/>SPI1_CR1</highlight></codeline>
+<codeline lineno="288"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_SPI_Transmit(<sp/>&amp;SPI_Handle,<sp/>&amp;Value,<sp/>1,<sp/>HAL_MAX_DELAY<sp/>);</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Wait<sp/>until<sp/>transmission<sp/>is<sp/>complete<sp/>(TXE<sp/>=<sp/>1<sp/>in<sp/>SPI1_SR)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">((SPI1-&gt;SR<sp/>&amp;<sp/>SPI_SR_TXE)<sp/>==<sp/>0<sp/>){}</highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="oled_8h_1ac16a604965fcef1fcd1c029a62c2164a" kindref="member">oled_config</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>){</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Don&apos;t<sp/>forget<sp/>to<sp/>enable<sp/>GPIOB<sp/>clock<sp/>in<sp/>RCC<sp/>-<sp/>Done</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Don&apos;t<sp/>forget<sp/>to<sp/>configure<sp/>PB3/PB5<sp/>as<sp/>AF0<sp/>-<sp/>Done</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Don&apos;t<sp/>forget<sp/>to<sp/>enable<sp/>SPI1<sp/>clock<sp/>in<sp/>RCC<sp/>-<sp/>Done</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/>RCC-&gt;APB2ENR<sp/>|=<sp/>0x1000;<sp/></highlight><highlight class="comment">//enable<sp/>SPI1<sp/>clock</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"><sp/><sp/><sp/><sp/>SPI_Handle.Instance<sp/>=<sp/>SPI1;</highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/>SPI_Handle.Init.Direction<sp/>=<sp/>SPI_DIRECTION_1LINE;</highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/>SPI_Handle.Init.Mode<sp/>=<sp/>SPI_MODE_MASTER;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/>SPI_Handle.Init.DataSize<sp/>=<sp/>SPI_DATASIZE_8BIT;</highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/>SPI_Handle.Init.CLKPolarity<sp/>=<sp/>SPI_POLARITY_LOW;</highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/>SPI_Handle.Init.CLKPhase<sp/>=<sp/>SPI_PHASE_1EDGE;</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>SPI_Handle.Init.NSS<sp/>=<sp/>SPI_NSS_SOFT;</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/>SPI_Handle.Init.BaudRatePrescaler<sp/>=<sp/>SPI_BAUDRATEPRESCALER_256;</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/>SPI_Handle.Init.FirstBit<sp/>=<sp/>SPI_FIRSTBIT_MSB;</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/>SPI_Handle.Init.CRCPolynomial<sp/>=<sp/>7;</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"></highlight></codeline>
+<codeline lineno="318"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Initialize<sp/>the<sp/>SPI<sp/>interface</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_SPI_Init(<sp/>&amp;SPI_Handle<sp/>);</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Enable<sp/>the<sp/>SPI</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>__HAL_SPI_ENABLE(<sp/>&amp;SPI_Handle<sp/>);</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"></highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Reset<sp/>LED<sp/>Display<sp/>(RES#<sp/>=<sp/>PB4):</highlight></codeline>
+<codeline lineno="330"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>make<sp/>pin<sp/>PB4<sp/>=<sp/>0,<sp/>wait<sp/>for<sp/>a<sp/>few<sp/>ms</highlight></codeline>
+<codeline lineno="331"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>make<sp/>pin<sp/>PB4<sp/>=<sp/>1,<sp/>wait<sp/>for<sp/>a<sp/>few<sp/>ms</highlight></codeline>
+<codeline lineno="332"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//...</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOB-&gt;BSRR<sp/>=<sp/>0x1&lt;&lt;20;</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="oled_8h_1af93671960400c7db99ba9c052d81fd7a" kindref="member">wait</ref>(10);</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/>GPIOB-&gt;BSRR<sp/>=<sp/>0x1&lt;&lt;4;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"></highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Send<sp/>initialization<sp/>commands<sp/>to<sp/>LED<sp/>Display</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="341"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="342"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/></highlight><highlight class="keyword">sizeof</highlight><highlight class="normal">(<sp/>oled_init_cmds<sp/>);<sp/>i++<sp/>){</highlight></codeline>
+<codeline lineno="343"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="oled_8h_1aa570c9c43e3a859ef14fa6a6c6fc351f" kindref="member">oled_Write_Cmd</ref>(<sp/>oled_init_cmds[i]<sp/>);</highlight></codeline>
+<codeline lineno="344"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="346"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Fill<sp/>LED<sp/>Display<sp/>data<sp/>memory<sp/>(GDDRAM)<sp/>with<sp/>zeros:</highlight></codeline>
+<codeline lineno="347"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/>-<sp/>for<sp/>each<sp/>PAGE<sp/>=<sp/>0,<sp/>1,<sp/>...,<sp/>7</highlight></codeline>
+<codeline lineno="348"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>set<sp/>starting<sp/>SEG<sp/>=<sp/>0</highlight></codeline>
+<codeline lineno="349"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>call<sp/>oled_Write_Data(<sp/>0x00<sp/>)<sp/>128<sp/>times</highlight></codeline>
+<codeline lineno="350"><highlight class="comment"><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="351"><highlight class="normal"></highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/><sp/>i&lt;8;<sp/>i++){</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="oled_8h_1aa570c9c43e3a859ef14fa6a6c6fc351f" kindref="member">oled_Write_Cmd</ref>(0xB0<sp/>|<sp/>((</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">)i));</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="oled_8h_1aa570c9c43e3a859ef14fa6a6c6fc351f" kindref="member">oled_Write_Cmd</ref>(0x02);</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="oled_8h_1aa570c9c43e3a859ef14fa6a6c6fc351f" kindref="member">oled_Write_Cmd</ref>(0x10);</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;<sp/>j&lt;128;<sp/>j++){</highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="oled_8h_1ab5285a18d59cc6c9ab8cb6325c51f71a" kindref="member">oled_Write_Data</ref>(0x00);</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="371"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>oledDebugTask(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args){</highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;;){</highlight></codeline>
+<codeline lineno="374"><highlight class="normal"></highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Core/Src/oled.c"/>
+  </compounddef>
+</doxygen>

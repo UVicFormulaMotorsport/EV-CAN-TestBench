@@ -1,0 +1,25 @@
+var group__utility__macros =
+[
+    [ "_BV", "group__utility__macros.html#ga483c9de27db573099572f5485ef841c9", null ],
+    [ "_BV_16", "group__utility__macros.html#gaa17e4b09cf528c30099398ddedc48955", null ],
+    [ "_BV_32", "group__utility__macros.html#ga581e5838a8a85f12137dd310b210024d", null ],
+    [ "_BV_8", "group__utility__macros.html#gadb4693d786f01e486ce4191758995c8f", null ],
+    [ "deserializeBigE16", "group__utility__macros.html#gadeeabe9f9f082a786e959610607229ae", null ],
+    [ "deserializeBigE32", "group__utility__macros.html#ga3c5631fa43a00757c6dd44f55650b051", null ],
+    [ "deserializeSmallE16", "group__utility__macros.html#ga829f8b8ab166c6d07df7023ee0b68300", null ],
+    [ "deserializeSmallE32", "group__utility__macros.html#ga6c69adff0f827031b2ec0a2220aa1fc8", null ],
+    [ "endianSwap", "group__utility__macros.html#gac590e01547ebac3946ea03be39e9a891", null ],
+    [ "endianSwap16", "group__utility__macros.html#gaaffae84b1475df9ae84949feb94f556b", null ],
+    [ "endianSwap32", "group__utility__macros.html#gacb855e60a6051d73730aa95259a085af", null ],
+    [ "endianSwap8", "group__utility__macros.html#ga250d3a099625ba439eb4ba4304d5faae", null ],
+    [ "false", "group__utility__macros.html#ga65e9886d74aaee76545e83dd09011727", null ],
+    [ "isPowerOfTwo", "group__utility__macros.html#gade3043fb92536f8e1a616ba8aaef4ab9", null ],
+    [ "safePtrRead", "group__utility__macros.html#gaac2f65c6267d74d5d5136f82bf217efa", null ],
+    [ "safePtrWrite", "group__utility__macros.html#gaf506fac19ab4ad3f5b7ddd00643e0b46", null ],
+    [ "serializeBigE16", "group__utility__macros.html#ga505ca43923e2bb2162e218c3b8484357", null ],
+    [ "serializeBigE32", "group__utility__macros.html#ga053aa19e84e50fd8c74f8d4bb0d7820f", null ],
+    [ "serializeSmallE16", "group__utility__macros.html#ga5c017766f44df98dde492a5e406e221c", null ],
+    [ "serializeSmallE32", "group__utility__macros.html#ga0fa9d4460bcee65d79e048b43dc879fd", null ],
+    [ "setBits", "group__utility__macros.html#ga50e87beac8a57dd01bdaed51450269e3", null ],
+    [ "true", "group__utility__macros.html#ga41f9c5fb8b08eb5dc3edce4dcb37fee7", null ]
+];

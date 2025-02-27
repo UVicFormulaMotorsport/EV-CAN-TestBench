@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structmotor__controllor__settings" kind="struct" language="C++" prot="public">
+    <compoundname>motor_controllor_settings</compoundname>
+    <includes refid="motor__controller_8h" local="no">motor_controller.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structmotor__controllor__settings_1a1229e590ebbf0159f0c829d5f8807294" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t motor_controllor_settings::can_id_tx</definition>
+        <argsstring></argsstring>
+        <name>can_id_tx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/motor_controller.h" line="152" column="14" bodyfile="Core/Inc/motor_controller.h" bodystart="152" bodyend="-1"/>
+        <referencedby refid="motor__controller_8c_1af6b3a4911f1bdac54d84b4dcc7b7ec4a" compoundref="motor__controller_8c" startline="230" endline="249">MC_Request_Data</referencedby>
+        <referencedby refid="motor__controller_8c_1a71371a5194c9b5c725abec77feffbc38" compoundref="motor__controller_8c" startline="62" endline="97">MotorControllerSpinTest</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structmotor__controllor__settings_1a0fafb17c00ec872a98dac74ca271b4cd" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t motor_controllor_settings::can_id_rx</definition>
+        <argsstring></argsstring>
+        <name>can_id_rx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/motor_controller.h" line="154" column="14" bodyfile="Core/Inc/motor_controller.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmotor__controllor__settings_1a16d6ebc9fb542b543c66bba5cb1572d7" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t motor_controllor_settings::mc_CAN_timeout</definition>
+        <argsstring></argsstring>
+        <name>mc_CAN_timeout</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/motor_controller.h" line="156" column="10" bodyfile="Core/Inc/motor_controller.h" bodystart="156" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmotor__controllor__settings_1ae2ba82196be75a510aad215ab0cc26de" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t motor_controllor_settings::proportional_gain</definition>
+        <argsstring></argsstring>
+        <name>proportional_gain</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/motor_controller.h" line="159" column="9" bodyfile="Core/Inc/motor_controller.h" bodystart="159" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmotor__controllor__settings_1a72937e13b105d1c12492b89218cb41c0" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t motor_controllor_settings::integral_time_constant</definition>
+        <argsstring></argsstring>
+        <name>integral_time_constant</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/motor_controller.h" line="161" column="10" bodyfile="Core/Inc/motor_controller.h" bodystart="161" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structmotor__controllor__settings_1a0d62a6e1afcb149473fd37d53c2058a5" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t motor_controllor_settings::integral_memory_max</definition>
+        <argsstring></argsstring>
+        <name>integral_memory_max</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/motor_controller.h" line="163" column="9" bodyfile="Core/Inc/motor_controller.h" bodystart="163" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Core/Inc/motor_controller.h" line="150" column="40" bodyfile="Core/Inc/motor_controller.h" bodystart="150" bodyend="165"/>
+    <listofallmembers>
+      <member refid="structmotor__controllor__settings_1a0fafb17c00ec872a98dac74ca271b4cd" prot="public" virt="non-virtual"><scope>motor_controllor_settings</scope><name>can_id_rx</name></member>
+      <member refid="structmotor__controllor__settings_1a1229e590ebbf0159f0c829d5f8807294" prot="public" virt="non-virtual"><scope>motor_controllor_settings</scope><name>can_id_tx</name></member>
+      <member refid="structmotor__controllor__settings_1a0d62a6e1afcb149473fd37d53c2058a5" prot="public" virt="non-virtual"><scope>motor_controllor_settings</scope><name>integral_memory_max</name></member>
+      <member refid="structmotor__controllor__settings_1a72937e13b105d1c12492b89218cb41c0" prot="public" virt="non-virtual"><scope>motor_controllor_settings</scope><name>integral_time_constant</name></member>
+      <member refid="structmotor__controllor__settings_1a16d6ebc9fb542b543c66bba5cb1572d7" prot="public" virt="non-virtual"><scope>motor_controllor_settings</scope><name>mc_CAN_timeout</name></member>
+      <member refid="structmotor__controllor__settings_1ae2ba82196be75a510aad215ab0cc26de" prot="public" virt="non-virtual"><scope>motor_controllor_settings</scope><name>proportional_gain</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

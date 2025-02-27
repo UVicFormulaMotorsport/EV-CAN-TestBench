@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structuv__internal__params" kind="struct" language="C++" prot="public">
+    <compoundname>uv_internal_params</compoundname>
+    <includes refid="uvfr__utils_8h" local="no">uvfr_utils.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structuv__internal__params_1a2d9661461ade0854d6f1082af72efb62" prot="public" static="no" mutable="no">
+        <type><ref refid="structuv__init__struct" kindref="compound">uv_init_struct</ref> *</type>
+        <definition>uv_init_struct* uv_internal_params::init_params</definition>
+        <argsstring></argsstring>
+        <name>init_params</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="342" column="16" bodyfile="Core/Inc/uvfr_utils.h" bodystart="342" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__internal__params_1ae2718f795900eeef5b28e3696c96a675" prot="public" static="no" mutable="no">
+        <type><ref refid="structuv__vehicle__settings" kindref="compound">uv_vehicle_settings</ref> *</type>
+        <definition>uv_vehicle_settings* uv_internal_params::vehicle_settings</definition>
+        <argsstring></argsstring>
+        <name>vehicle_settings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="343" column="21" bodyfile="Core/Inc/uvfr_utils.h" bodystart="343" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__internal__params_1a89db87ec62e0afc9c0ef6a9c327df2c3" prot="public" static="no" mutable="no">
+        <type><ref refid="structp__status" kindref="compound">p_status</ref></type>
+        <definition>p_status uv_internal_params::peripheral_status[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>peripheral_status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="344" column="10" bodyfile="Core/Inc/uvfr_utils.h" bodystart="344" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__internal__params_1a12f5abffdd80a5b28d8bbfaf9e310336" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t uv_internal_params::e_code[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>e_code</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="345" column="10" bodyfile="Core/Inc/uvfr_utils.h" bodystart="345" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Data used by the uvfr_utils library to do what it needs to do :) </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This is a global variable that is initialized at some point at launch </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="12">
+        <label>drivingModeParams</label>
+        <link refid="uniondriving_mode_params"/>
+      </node>
+      <node id="6">
+        <label>uv_os_settings</label>
+        <link refid="structuv__os__settings"/>
+      </node>
+      <node id="11">
+        <label>drivingMode</label>
+        <link refid="structdriving_mode"/>
+        <childnode refid="12" relation="usage">
+          <edgelabel>map_fn_params</edgelabel>
+        </childnode>
+      </node>
+      <node id="9">
+        <label>motor_controllor_settings</label>
+        <link refid="structmotor__controllor__settings"/>
+      </node>
+      <node id="8">
+        <label>daq_datapoint</label>
+        <link refid="structdaq__datapoint"/>
+      </node>
+      <node id="7">
+        <label>daq_loop_args</label>
+        <link refid="structdaq__loop__args"/>
+        <childnode refid="8" relation="usage">
+          <edgelabel>datapoints</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>uv_internal_params</label>
+        <link refid="structuv__internal__params"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>init_params</edgelabel>
+        </childnode>
+        <childnode refid="3" relation="usage">
+          <edgelabel>peripheral_status</edgelabel>
+        </childnode>
+        <childnode refid="4" relation="usage">
+          <edgelabel>vehicle_settings</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>bms_settings_t</label>
+        <link refid="structbms__settings__t"/>
+      </node>
+      <node id="10">
+        <label>driving_loop_args</label>
+        <link refid="structdriving__loop__args"/>
+        <childnode refid="11" relation="usage">
+          <edgelabel>dmodes</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>uv_init_struct</label>
+        <link refid="structuv__init__struct"/>
+      </node>
+      <node id="4">
+        <label>uv_vehicle_settings</label>
+        <link refid="structuv__vehicle__settings"/>
+        <childnode refid="5" relation="usage">
+          <edgelabel>bms_settings</edgelabel>
+        </childnode>
+        <childnode refid="6" relation="usage">
+          <edgelabel>os_settings</edgelabel>
+        </childnode>
+        <childnode refid="7" relation="usage">
+          <edgelabel>daq_settings</edgelabel>
+        </childnode>
+        <childnode refid="9" relation="usage">
+          <edgelabel>mc_settings</edgelabel>
+        </childnode>
+        <childnode refid="10" relation="usage">
+          <edgelabel>driving_loop_settings</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>p_status</label>
+        <link refid="structp__status"/>
+      </node>
+    </collaborationgraph>
+    <location file="Core/Inc/uvfr_utils.h" line="341" column="33" bodyfile="Core/Inc/uvfr_utils.h" bodystart="341" bodyend="346"/>
+    <listofallmembers>
+      <member refid="structuv__internal__params_1a12f5abffdd80a5b28d8bbfaf9e310336" prot="public" virt="non-virtual"><scope>uv_internal_params</scope><name>e_code</name></member>
+      <member refid="structuv__internal__params_1a2d9661461ade0854d6f1082af72efb62" prot="public" virt="non-virtual"><scope>uv_internal_params</scope><name>init_params</name></member>
+      <member refid="structuv__internal__params_1a89db87ec62e0afc9c0ef6a9c327df2c3" prot="public" virt="non-virtual"><scope>uv_internal_params</scope><name>peripheral_status</name></member>
+      <member refid="structuv__internal__params_1ae2718f795900eeef5b28e3696c96a675" prot="public" virt="non-virtual"><scope>uv_internal_params</scope><name>vehicle_settings</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

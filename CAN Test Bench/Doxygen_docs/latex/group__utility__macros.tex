@@ -1,0 +1,315 @@
+\hypertarget{group__utility__macros}{}\doxysection{Utility Macros}
+\label{group__utility__macros}\index{Utility Macros@{Utility Macros}}
+
+
+handy macros that perform very common functionality  
+
+
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga483c9de27db573099572f5485ef841c9}{\+\_\+\+BV}}(x)~\mbox{\hyperlink{group__utility__macros_gaa17e4b09cf528c30099398ddedc48955}{\+\_\+\+B\+V\+\_\+16}}(x)
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_gadb4693d786f01e486ce4191758995c8f}{\+\_\+\+B\+V\+\_\+8}}(x)~((uint8\+\_\+t)(0x01U $>$$>$ x))
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_gaa17e4b09cf528c30099398ddedc48955}{\+\_\+\+B\+V\+\_\+16}}(x)~((uint16\+\_\+t)(0x01U $>$$>$ x))
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga581e5838a8a85f12137dd310b210024d}{\+\_\+\+B\+V\+\_\+32}}(x)~((uint32\+\_\+t)(0x01U $>$$>$ x))
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_gac590e01547ebac3946ea03be39e9a891}{endian\+Swap}}(x)~\mbox{\hyperlink{group__utility__macros_gaaffae84b1475df9ae84949feb94f556b}{endian\+Swap16}}(x)
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga250d3a099625ba439eb4ba4304d5faae}{endian\+Swap8}}(x)~x
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_gaaffae84b1475df9ae84949feb94f556b}{endian\+Swap16}}(x)~(((x \& 0x00\+FF)$<$$<$8) $\vert$ ((x \& 0x\+F\+F00)$>$$>$8))
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_gacb855e60a6051d73730aa95259a085af}{endian\+Swap32}}(x)~(((x \& 0x000000\+FF)$<$$<$16)$\vert$((x \& 0x0000\+F\+F00)$<$$<$8)$\vert$((x \& 0x00\+F\+F0000)$>$$>$8)$\vert$((x \& 0x\+F\+F000000)$>$$>$16))
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga829f8b8ab166c6d07df7023ee0b68300}{deserialize\+Small\+E16}}(x,  i)~((x\mbox{[}i\mbox{]})$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$8))
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga6c69adff0f827031b2ec0a2220aa1fc8}{deserialize\+Small\+E32}}(x,  i)~((x\mbox{[}i\mbox{]})$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+2\mbox{]}$<$$<$16)$\vert$(x\mbox{[}i+3\mbox{]}$<$$<$24))
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_gadeeabe9f9f082a786e959610607229ae}{deserialize\+Big\+E16}}(x,  i)~((x\mbox{[}i\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+1\mbox{]}))
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga3c5631fa43a00757c6dd44f55650b051}{deserialize\+Big\+E32}}(x,  i)~((x\mbox{[}i\mbox{]}$<$$<$24)$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$16)$\vert$(x\mbox{[}i+2\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+3\mbox{]}))
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga5c017766f44df98dde492a5e406e221c}{serialize\+Small\+E16}}(x,  d,  i)~x\mbox{[}i\mbox{]}=d\&0x00\+FF; x\mbox{[}i+1\mbox{]}=(d\&0x\+F\+F00)$>$$>$8
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga0fa9d4460bcee65d79e048b43dc879fd}{serialize\+Small\+E32}}(x,  d,  i)~x\mbox{[}i\mbox{]}=d\&0x000000\+FF; x\mbox{[}i+1\mbox{]}=(d\&0x0000\+F\+F00)$>$$>$8; x\mbox{[}i+2\mbox{]}=(d\&0x00\+F\+F0000)$>$$>$16; x\mbox{[}i+3\mbox{]}=(d\&0x\+F\+F000000)$>$$>$24
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga505ca43923e2bb2162e218c3b8484357}{serialize\+Big\+E16}}(x,  d,  i)~x\mbox{[}i+1\mbox{]}=d\&0x00\+FF; x\mbox{[}i\mbox{]}=(d\&0x\+F\+F00)$>$$>$8
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga053aa19e84e50fd8c74f8d4bb0d7820f}{serialize\+Big\+E32}}(x,  d,  i)~x\mbox{[}i+3\mbox{]}=d\&0x000000\+FF; x\mbox{[}i+2\mbox{]}=(d\&0x0000\+F\+F00)$>$$>$8; x\mbox{[}i+1\mbox{]}=(d\&0x00\+F\+F0000)$>$$>$16; x\mbox{[}i\mbox{]}=(d\&0x\+F\+F000000)$>$$>$24
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga50e87beac8a57dd01bdaed51450269e3}{set\+Bits}}(x,  msk,  data)~x=(x\&($\sim$msk)$\vert$data)
+\begin{DoxyCompactList}\small\item\em macro to set bits of an int without touching the ones we dont want to edit \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__utility__macros_gade3043fb92536f8e1a616ba8aaef4ab9}{is\+Power\+Of\+Two}}(x)~(x\&\&(!(x\&(x-\/1))))
+\begin{DoxyCompactList}\small\item\em Returns a truthy value if \char`\"{}x\char`\"{} is a power of two. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__utility__macros_gaac2f65c6267d74d5d5136f82bf217efa}{safe\+Ptr\+Read}}(x)~($\ast$((x)?x\+:uv\+Panic(\char`\"{}nullptr\+\_\+deref\char`\"{},0)))
+\begin{DoxyCompactList}\small\item\em lil treat to help us avoid the dreaded null pointer dereference \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__utility__macros_gaf506fac19ab4ad3f5b7ddd00643e0b46}{safe\+Ptr\+Write}}(p,  x)~($\ast$((p)?p\+:\&x))
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga65e9886d74aaee76545e83dd09011727}{false}}~0
+\item 
+\#define \mbox{\hyperlink{group__utility__macros_ga41f9c5fb8b08eb5dc3edce4dcb37fee7}{true}}~!\mbox{\hyperlink{group__utility__macros_ga65e9886d74aaee76545e83dd09011727}{false}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+handy macros that perform very common functionality 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__utility__macros_ga483c9de27db573099572f5485ef841c9}\label{group__utility__macros_ga483c9de27db573099572f5485ef841c9}} 
+\index{Utility Macros@{Utility Macros}!\_BV@{\_BV}}
+\index{\_BV@{\_BV}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{\_BV}{\_BV}}
+{\footnotesize\ttfamily \#define \+\_\+\+BV(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\mbox{\hyperlink{group__utility__macros_gaa17e4b09cf528c30099398ddedc48955}{\+\_\+\+B\+V\+\_\+16}}(x)}
+
+
+
+Definition at line 69 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_gaa17e4b09cf528c30099398ddedc48955}\label{group__utility__macros_gaa17e4b09cf528c30099398ddedc48955}} 
+\index{Utility Macros@{Utility Macros}!\_BV\_16@{\_BV\_16}}
+\index{\_BV\_16@{\_BV\_16}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{\_BV\_16}{\_BV\_16}}
+{\footnotesize\ttfamily \#define \+\_\+\+B\+V\+\_\+16(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((uint16\+\_\+t)(0x01U $>$$>$ x))}
+
+
+
+Definition at line 71 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_ga581e5838a8a85f12137dd310b210024d}\label{group__utility__macros_ga581e5838a8a85f12137dd310b210024d}} 
+\index{Utility Macros@{Utility Macros}!\_BV\_32@{\_BV\_32}}
+\index{\_BV\_32@{\_BV\_32}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{\_BV\_32}{\_BV\_32}}
+{\footnotesize\ttfamily \#define \+\_\+\+B\+V\+\_\+32(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((uint32\+\_\+t)(0x01U $>$$>$ x))}
+
+
+
+Definition at line 72 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_gadb4693d786f01e486ce4191758995c8f}\label{group__utility__macros_gadb4693d786f01e486ce4191758995c8f}} 
+\index{Utility Macros@{Utility Macros}!\_BV\_8@{\_BV\_8}}
+\index{\_BV\_8@{\_BV\_8}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{\_BV\_8}{\_BV\_8}}
+{\footnotesize\ttfamily \#define \+\_\+\+B\+V\+\_\+8(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~((uint8\+\_\+t)(0x01U $>$$>$ x))}
+
+
+
+Definition at line 70 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_gadeeabe9f9f082a786e959610607229ae}\label{group__utility__macros_gadeeabe9f9f082a786e959610607229ae}} 
+\index{Utility Macros@{Utility Macros}!deserializeBigE16@{deserializeBigE16}}
+\index{deserializeBigE16@{deserializeBigE16}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{deserializeBigE16}{deserializeBigE16}}
+{\footnotesize\ttfamily \#define deserialize\+Big\+E16(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{i }\end{DoxyParamCaption})~((x\mbox{[}i\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+1\mbox{]}))}
+
+
+
+Definition at line 81 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_ga3c5631fa43a00757c6dd44f55650b051}\label{group__utility__macros_ga3c5631fa43a00757c6dd44f55650b051}} 
+\index{Utility Macros@{Utility Macros}!deserializeBigE32@{deserializeBigE32}}
+\index{deserializeBigE32@{deserializeBigE32}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{deserializeBigE32}{deserializeBigE32}}
+{\footnotesize\ttfamily \#define deserialize\+Big\+E32(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{i }\end{DoxyParamCaption})~((x\mbox{[}i\mbox{]}$<$$<$24)$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$16)$\vert$(x\mbox{[}i+2\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+3\mbox{]}))}
+
+
+
+Definition at line 82 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_ga829f8b8ab166c6d07df7023ee0b68300}\label{group__utility__macros_ga829f8b8ab166c6d07df7023ee0b68300}} 
+\index{Utility Macros@{Utility Macros}!deserializeSmallE16@{deserializeSmallE16}}
+\index{deserializeSmallE16@{deserializeSmallE16}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{deserializeSmallE16}{deserializeSmallE16}}
+{\footnotesize\ttfamily \#define deserialize\+Small\+E16(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{i }\end{DoxyParamCaption})~((x\mbox{[}i\mbox{]})$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$8))}
+
+
+
+Definition at line 79 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_ga6c69adff0f827031b2ec0a2220aa1fc8}\label{group__utility__macros_ga6c69adff0f827031b2ec0a2220aa1fc8}} 
+\index{Utility Macros@{Utility Macros}!deserializeSmallE32@{deserializeSmallE32}}
+\index{deserializeSmallE32@{deserializeSmallE32}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{deserializeSmallE32}{deserializeSmallE32}}
+{\footnotesize\ttfamily \#define deserialize\+Small\+E32(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{i }\end{DoxyParamCaption})~((x\mbox{[}i\mbox{]})$\vert$(x\mbox{[}i+1\mbox{]}$<$$<$8)$\vert$(x\mbox{[}i+2\mbox{]}$<$$<$16)$\vert$(x\mbox{[}i+3\mbox{]}$<$$<$24))}
+
+
+
+Definition at line 80 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_gac590e01547ebac3946ea03be39e9a891}\label{group__utility__macros_gac590e01547ebac3946ea03be39e9a891}} 
+\index{Utility Macros@{Utility Macros}!endianSwap@{endianSwap}}
+\index{endianSwap@{endianSwap}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{endianSwap}{endianSwap}}
+{\footnotesize\ttfamily \#define endian\+Swap(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~\mbox{\hyperlink{group__utility__macros_gaaffae84b1475df9ae84949feb94f556b}{endian\+Swap16}}(x)}
+
+
+
+Definition at line 74 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_gaaffae84b1475df9ae84949feb94f556b}\label{group__utility__macros_gaaffae84b1475df9ae84949feb94f556b}} 
+\index{Utility Macros@{Utility Macros}!endianSwap16@{endianSwap16}}
+\index{endianSwap16@{endianSwap16}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{endianSwap16}{endianSwap16}}
+{\footnotesize\ttfamily \#define endian\+Swap16(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(((x \& 0x00\+FF)$<$$<$8) $\vert$ ((x \& 0x\+F\+F00)$>$$>$8))}
+
+
+
+Definition at line 76 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_gacb855e60a6051d73730aa95259a085af}\label{group__utility__macros_gacb855e60a6051d73730aa95259a085af}} 
+\index{Utility Macros@{Utility Macros}!endianSwap32@{endianSwap32}}
+\index{endianSwap32@{endianSwap32}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{endianSwap32}{endianSwap32}}
+{\footnotesize\ttfamily \#define endian\+Swap32(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(((x \& 0x000000\+FF)$<$$<$16)$\vert$((x \& 0x0000\+F\+F00)$<$$<$8)$\vert$((x \& 0x00\+F\+F0000)$>$$>$8)$\vert$((x \& 0x\+F\+F000000)$>$$>$16))}
+
+
+
+Definition at line 77 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_ga250d3a099625ba439eb4ba4304d5faae}\label{group__utility__macros_ga250d3a099625ba439eb4ba4304d5faae}} 
+\index{Utility Macros@{Utility Macros}!endianSwap8@{endianSwap8}}
+\index{endianSwap8@{endianSwap8}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{endianSwap8}{endianSwap8}}
+{\footnotesize\ttfamily \#define endian\+Swap8(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~x}
+
+
+
+Definition at line 75 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_ga65e9886d74aaee76545e83dd09011727}\label{group__utility__macros_ga65e9886d74aaee76545e83dd09011727}} 
+\index{Utility Macros@{Utility Macros}!false@{false}}
+\index{false@{false}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{false}{false}}
+{\footnotesize\ttfamily \#define false~0}
+
+Wish.\+com Boolean 
+
+Definition at line 127 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_gade3043fb92536f8e1a616ba8aaef4ab9}\label{group__utility__macros_gade3043fb92536f8e1a616ba8aaef4ab9}} 
+\index{Utility Macros@{Utility Macros}!isPowerOfTwo@{isPowerOfTwo}}
+\index{isPowerOfTwo@{isPowerOfTwo}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{isPowerOfTwo}{isPowerOfTwo}}
+{\footnotesize\ttfamily \#define is\+Power\+Of\+Two(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~(x\&\&(!(x\&(x-\/1))))}
+
+
+
+Returns a truthy value if \char`\"{}x\char`\"{} is a power of two. 
+
+
+
+Definition at line 117 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_gaac2f65c6267d74d5d5136f82bf217efa}\label{group__utility__macros_gaac2f65c6267d74d5d5136f82bf217efa}} 
+\index{Utility Macros@{Utility Macros}!safePtrRead@{safePtrRead}}
+\index{safePtrRead@{safePtrRead}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{safePtrRead}{safePtrRead}}
+{\footnotesize\ttfamily \#define safe\+Ptr\+Read(\begin{DoxyParamCaption}\item[{}]{x }\end{DoxyParamCaption})~($\ast$((x)?x\+:uv\+Panic(\char`\"{}nullptr\+\_\+deref\char`\"{},0)))}
+
+
+
+lil treat to help us avoid the dreaded null pointer dereference 
+
+
+
+Definition at line 122 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_gaf506fac19ab4ad3f5b7ddd00643e0b46}\label{group__utility__macros_gaf506fac19ab4ad3f5b7ddd00643e0b46}} 
+\index{Utility Macros@{Utility Macros}!safePtrWrite@{safePtrWrite}}
+\index{safePtrWrite@{safePtrWrite}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{safePtrWrite}{safePtrWrite}}
+{\footnotesize\ttfamily \#define safe\+Ptr\+Write(\begin{DoxyParamCaption}\item[{}]{p,  }\item[{}]{x }\end{DoxyParamCaption})~($\ast$((p)?p\+:\&x))}
+
+
+
+Definition at line 123 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_ga505ca43923e2bb2162e218c3b8484357}\label{group__utility__macros_ga505ca43923e2bb2162e218c3b8484357}} 
+\index{Utility Macros@{Utility Macros}!serializeBigE16@{serializeBigE16}}
+\index{serializeBigE16@{serializeBigE16}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{serializeBigE16}{serializeBigE16}}
+{\footnotesize\ttfamily \#define serialize\+Big\+E16(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{d,  }\item[{}]{i }\end{DoxyParamCaption})~x\mbox{[}i+1\mbox{]}=d\&0x00\+FF; x\mbox{[}i\mbox{]}=(d\&0x\+F\+F00)$>$$>$8}
+
+
+
+Definition at line 86 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_ga053aa19e84e50fd8c74f8d4bb0d7820f}\label{group__utility__macros_ga053aa19e84e50fd8c74f8d4bb0d7820f}} 
+\index{Utility Macros@{Utility Macros}!serializeBigE32@{serializeBigE32}}
+\index{serializeBigE32@{serializeBigE32}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{serializeBigE32}{serializeBigE32}}
+{\footnotesize\ttfamily \#define serialize\+Big\+E32(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{d,  }\item[{}]{i }\end{DoxyParamCaption})~x\mbox{[}i+3\mbox{]}=d\&0x000000\+FF; x\mbox{[}i+2\mbox{]}=(d\&0x0000\+F\+F00)$>$$>$8; x\mbox{[}i+1\mbox{]}=(d\&0x00\+F\+F0000)$>$$>$16; x\mbox{[}i\mbox{]}=(d\&0x\+F\+F000000)$>$$>$24}
+
+
+
+Definition at line 87 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_ga5c017766f44df98dde492a5e406e221c}\label{group__utility__macros_ga5c017766f44df98dde492a5e406e221c}} 
+\index{Utility Macros@{Utility Macros}!serializeSmallE16@{serializeSmallE16}}
+\index{serializeSmallE16@{serializeSmallE16}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{serializeSmallE16}{serializeSmallE16}}
+{\footnotesize\ttfamily \#define serialize\+Small\+E16(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{d,  }\item[{}]{i }\end{DoxyParamCaption})~x\mbox{[}i\mbox{]}=d\&0x00\+FF; x\mbox{[}i+1\mbox{]}=(d\&0x\+F\+F00)$>$$>$8}
+
+
+
+Definition at line 84 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_ga0fa9d4460bcee65d79e048b43dc879fd}\label{group__utility__macros_ga0fa9d4460bcee65d79e048b43dc879fd}} 
+\index{Utility Macros@{Utility Macros}!serializeSmallE32@{serializeSmallE32}}
+\index{serializeSmallE32@{serializeSmallE32}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{serializeSmallE32}{serializeSmallE32}}
+{\footnotesize\ttfamily \#define serialize\+Small\+E32(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{d,  }\item[{}]{i }\end{DoxyParamCaption})~x\mbox{[}i\mbox{]}=d\&0x000000\+FF; x\mbox{[}i+1\mbox{]}=(d\&0x0000\+F\+F00)$>$$>$8; x\mbox{[}i+2\mbox{]}=(d\&0x00\+F\+F0000)$>$$>$16; x\mbox{[}i+3\mbox{]}=(d\&0x\+F\+F000000)$>$$>$24}
+
+
+
+Definition at line 85 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_ga50e87beac8a57dd01bdaed51450269e3}\label{group__utility__macros_ga50e87beac8a57dd01bdaed51450269e3}} 
+\index{Utility Macros@{Utility Macros}!setBits@{setBits}}
+\index{setBits@{setBits}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{setBits}{setBits}}
+{\footnotesize\ttfamily \#define set\+Bits(\begin{DoxyParamCaption}\item[{}]{x,  }\item[{}]{msk,  }\item[{}]{data }\end{DoxyParamCaption})~x=(x\&($\sim$msk)$\vert$data)}
+
+
+
+macro to set bits of an int without touching the ones we dont want to edit 
+
+Usage\+: Will set the values of certain bits of an int. This depends on the following however\+: 
+\begin{DoxyParams}{Parameters}
+{\em x} & represents the value you want to edit. Can be any signed or unsigned integer type. \\
+\hline
+{\em msk} & Bits of X will only be altered if the matching bit of msk is a 1 \\
+\hline
+{\em data} & Bits of data will map to bits of x, provided that the corresponding bit of msk is a one\\
+\hline
+\end{DoxyParams}
+In practice this looks like the following\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{uint8\_t num = 0xF0;  \textcolor{comment}{// int is 0b11110000}}
+\DoxyCodeLine{uint8\_t mask = 0x22; \textcolor{comment}{// msk is 0b00100010}}
+\DoxyCodeLine{uint8\_t data = 0x0F; \textcolor{comment}{// val is 0b00001111}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//now we deploy the macro}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{group__utility__macros_ga50e87beac8a57dd01bdaed51450269e3}{setBits}}(num,mask,data);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//now, num = 0b11010010}}
+\end{DoxyCode}
+ 
+
+Definition at line 112 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{group__utility__macros_ga41f9c5fb8b08eb5dc3edce4dcb37fee7}\label{group__utility__macros_ga41f9c5fb8b08eb5dc3edce4dcb37fee7}} 
+\index{Utility Macros@{Utility Macros}!true@{true}}
+\index{true@{true}!Utility Macros@{Utility Macros}}
+\doxysubsubsection{\texorpdfstring{true}{true}}
+{\footnotesize\ttfamily \#define true~!\mbox{\hyperlink{group__utility__macros_ga65e9886d74aaee76545e83dd09011727}{false}}}
+
+
+
+Definition at line 128 of file uvfr\+\_\+utils.\+h.
+

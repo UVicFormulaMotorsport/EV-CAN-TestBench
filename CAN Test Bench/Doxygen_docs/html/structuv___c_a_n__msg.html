@@ -93,6 +93,9 @@ $(document).ready(function(){initNavTree('structuv___c_a_n__msg.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>Representative of a CAN message.  
+ <a href="structuv___c_a_n__msg.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -107,8 +110,9 @@ Data Fields</h2></td></tr>
 <tr class="separator:aec63cc112176da7895d0cfc8b32e6935"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00206">206</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<div class="textblock"><p>Representative of a CAN message. </p>
+
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00270">270</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="aec63cc112176da7895d0cfc8b32e6935"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aec63cc112176da7895d0cfc8b32e6935">&#9670;&nbsp;</a></span>data</h2>
@@ -121,10 +125,11 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>The actual data packet contained within the CAN message </p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00213">213</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00277">277</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="can_8c_source.html#l00356">CANbusTxSvcDaemon()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="can_8c_source.html#l00476">__uvCANtxCritSection()</a>, <a class="el" href="can_8c_source.html#l00551">CANbusTxSvcDaemon()</a>, <a class="el" href="can_8c_source.html#l00298">HAL_CAN_RxFifo0MsgPendingCallback()</a>, <a class="el" href="temp__monitoring_8c_source.html#l00070">tempMonitorTask()</a>, and <a class="el" href="temp__monitoring_8c_source.html#l00052">testfunc2()</a>.</p>
 
 </div>
 </div>
@@ -139,10 +144,11 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Data Length Code, representing how many bytes of data are present </p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00211">211</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00275">275</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="can_8c_source.html#l00356">CANbusTxSvcDaemon()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="can_8c_source.html#l00476">__uvCANtxCritSection()</a>, <a class="el" href="can_8c_source.html#l00551">CANbusTxSvcDaemon()</a>, <a class="el" href="can_8c_source.html#l00298">HAL_CAN_RxFifo0MsgPendingCallback()</a>, and <a class="el" href="temp__monitoring_8c_source.html#l00070">tempMonitorTask()</a>.</p>
 
 </div>
 </div>
@@ -157,10 +163,11 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Bitfield that contains some basic information about the message: -Bit 0: Is the message an extended ID message, or a standard ID message? 1 For extended. -Bits 1:2 Which CANbus is being used to send the message? 01 -&gt; CAN1 10 -&gt; CAN2 11-&gt; CAN3 (doesnt exist yet). Will default to CAN1 if all zeros </p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00207">207</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00271">271</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="can_8c_source.html#l00356">CANbusTxSvcDaemon()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="can_8c_source.html#l00476">__uvCANtxCritSection()</a>, <a class="el" href="can_8c_source.html#l00551">CANbusTxSvcDaemon()</a>, <a class="el" href="temp__monitoring_8c_source.html#l00070">tempMonitorTask()</a>, and <a class="el" href="temp__monitoring_8c_source.html#l00052">testfunc2()</a>.</p>
 
 </div>
 </div>
@@ -175,10 +182,11 @@ Data Fields</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>The ID of a message </p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00212">212</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00276">276</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="can_8c_source.html#l00356">CANbusTxSvcDaemon()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="can_8c_source.html#l00476">__uvCANtxCritSection()</a>, <a class="el" href="can_8c_source.html#l00368">callFunctionFromCANid()</a>, <a class="el" href="can_8c_source.html#l00551">CANbusTxSvcDaemon()</a>, <a class="el" href="can_8c_source.html#l00298">HAL_CAN_RxFifo0MsgPendingCallback()</a>, <a class="el" href="temp__monitoring_8c_source.html#l00070">tempMonitorTask()</a>, and <a class="el" href="temp__monitoring_8c_source.html#l00052">testfunc2()</a>.</p>
 
 </div>
 </div>

@@ -1,8 +1,21 @@
-/*
- * uvfr_utils.h
+/**
+ * @file uvfr_utils.h
+ * @author Byron Oser
  *
- *  Created on: Oct 7, 2024
- *      Author: byo10
+ */
+
+/**
+ * @defgroup uvfr_utils UVFR Utilities
+ * @brief Module containing useful functions and abstractions that are used throughout the vehicle software system
+ *
+ * This contains several abstractions such as useful macros, global typedefs, memory allocation, etc...
+ */
+
+/**
+ * @defgroup utility_macros Utility Macros
+ * @brief handy macros that perform very common functionality
+ *
+ * \ingroup uvfr_utils
  */
 
 #ifndef INC_UVFR_UTILS_H_
@@ -21,9 +34,11 @@
 
 #include "FreeRTOS.h"
 #include "task.h"
+#include "message_buffer.h"
 
 #include "uvfr_settings.h"
 #include "uvfr_state_engine.h"
+#include "rb_tree.h"
 
 #include "bms.h"
 #include "motor_controller.h"
@@ -47,8 +62,9 @@
 #include <stdlib.h>
 
 
-/* Some syntactic sugar for ya'll to use in your code
- * Defaults to 16 bit unsigned int
+/** @addtogroup utility_macros
+ * @{
+ *
  */
 #define _BV(x) _BV_16(x)
 #define _BV_8(x) ((uint8_t)(0x01U >> x))
@@ -70,15 +86,48 @@
 #define serializeBigE16(x,d,i) x[i+1]=d&0x00FF; x[i]=(d&0xFF00)>>8
 #define serializeBigE32(x,d,i)x[i+3]=d&0x000000FF; x[i+2]=(d&0x0000FF00)>>8; x[i+1]=(d&0x00FF0000)>>16; x[i]=(d&0xFF000000)>>24
 
-#define setBits(x,msk,data) (x&(~msk)|data)
+/**@brief macro to set bits of an int without touching the ones we dont want to edit
 
+ Usage:
+ Will set the values of certain bits of an int. This depends on the following however:
+ @param x represents the value you want to edit. Can be any signed or unsigned integer type.
+ @param msk Bits of X will only be altered if the matching bit of msk is a 1
+ @param data Bits of data will map to bits of x, provided that the corresponding bit of msk is a one
+
+In practice this looks like the following:
+@code
+uint8_t num = 0xF0;  // int is 0b11110000
+uint8_t mask = 0x22; // msk is 0b00100010
+uint8_t data = 0x0F; // val is 0b00001111
+
+//now we deploy the macro
+
+setBits(num,mask,data);
+
+//now, num = 0b11010010
+
+@endcode
+
+ */
+#define setBits(x,msk,data) x=(x&(~msk)|data)
+
+/** @brief Returns a truthy value if "x" is a power of two
+ *
+ */
 #define isPowerOfTwo(x) (x&&(!(x&(x-1))))
 
+/** @brief lil treat to help us avoid the dreaded null pointer dereference
+ *
+ */
 #define safePtrRead(x) (*((x)?x:uvPanic("nullptr_deref",0)))
 #define safePtrWrite(p,x) (*((p)?p:&x))
 
+
+/** Wish.com Boolean */
 #define false 0
 #define true !false
+
+/**@} */
 
 //Typedefs used throughout vehicle
 
@@ -122,39 +171,23 @@ typedef enum uv_status_t{
 }uv_status;
 
 
-
-typedef enum uv_task_state_t{
-	UV_TASK_NOT_STARTED,
-	UV_TASK_DELETED,
-	UV_TASK_RUNNING,
-	UV_TASK_SUSPENDED
-} uv_task_status;
-
-typedef enum task_priority{
-	IDLE_TASK_PRIORITY,
-	LOW_PRIORITY,
-	BELOW_NORMAL,
-	MEDIUM_PRIORITY,
-	ABOVE_NORMAL,
-	HIGH_PRIORITY,
-	REALTIME_PRIORITY
-}task_priority;
-
-/** Type made to represent the state of the vehicle, and the location in the state machine
- *	The states are powers of two to make it easier to discern tasks that need to happen in multiple states
+/** @brief Represents the data type of some variable
+ *
  */
-typedef enum uv_vehicle_state_t{
-	UV_INIT = 0x0001, //Vehicle is Initialising
-	UV_READY = 0x0002, //Vehicle is ready to drive, but not actually driving
-	PROGRAMMING = 0x0004, //Vehicle is in proccess programming
-	UV_DRIVING = 0x0008, //actively driving
-	UV_SUSPENDED = 0x0010,
-	UV_LAUNCH_CONTROL = 0x0020, //Launch control doing it's thing
-	UV_ERROR_STATE = 0x0040,
-	UV_BOOT = 0x0080,
-	UV_HALT = 0x0100
-}uv_vehicle_state;
+typedef enum  {
+	UV_UINT8,
+	UV_INT8,
+	UV_UINT16,
+	UV_INT16,
+	UV_UINT32,
+	UV_INT32,
+	UV_FLOAT,
+	UV_DOUBLE,
+	UV_INT64,
+	UV_UINT64,
+	UV_STRING
 
+}data_type;
 
 
 //not really sure how I want this implemented yet. Variable number of driving modes?
@@ -183,7 +216,7 @@ typedef enum access_control_t{
 	UV_SEMAPHORE
 }access_control_type;
 
-/**
+/** @brief Enum dictating the meaning of a generic message
  *
  */
 typedef enum uv_msg_type_t{
@@ -197,7 +230,9 @@ typedef enum uv_msg_type_t{
 	UV_PARAM_REQUEST,
 	UV_PARAM_READY,
 	UV_RAW_DATA_TRANSFER,
-	UV_SC_COMMAND
+	UV_SC_COMMAND,
+	UV_INVALID_MSG,
+	UV_ASSIGN_TASK
 
 }uv_msg_type;
 
@@ -227,14 +262,19 @@ typedef union access_control_info{
 #define UV_CAN_EXTENDED_ID 0x01
 #define UV_CAN_CHANNEL_MASK 0b00000110
 #define UV_CAN_DYNAMIC_MEM  0b00001000
+
+
+/** @brief Representative of a CAN message
+ *
+ */
 typedef struct uv_CAN_msg{
-	uint8_t flags;
-	//Bit 0: extended id?
-	//Bit [1:2]: which actual CANbus do I use?
-	//Bit 3: dynamically allocated
-	uint8_t dlc;
-	uint32_t msg_id;
-	uint8_t data[8];
+	uint8_t flags; /**< Bitfield that contains some basic information about the message:
+	-Bit 0: Is the message an extended ID message, or a standard ID message? 1 For extended.
+	-Bits 1:2 Which CANbus is being used to send the message? 01 -> CAN1 10 -> CAN2 11-> CAN3 (doesnt exist yet). Will default to CAN1 if all zeros*/
+
+	uint8_t dlc; /**<Data Length Code, representing how many bytes of data are present*/
+	uint32_t msg_id; /**<The ID of a message*/
+	uint8_t data[8]; /**<The actual data packet contained within the CAN message */
 }uv_CAN_msg;
 
 
@@ -250,93 +290,12 @@ typedef struct uv_init_struct{
 
 
 
-#define UV_TASK_VEHICLE_APPLICATION    0x0001U<<(0)
-#define UV_TASK_PERIODIC_SVC           0x0001U<<(1)
-#define UV_TASK_DORMANT_SVC            0b0000000000000011
-#define UV_TASK_GENERIC_SVC			   0x0001U<<(2)
-#define UV_TASK_MANAGER_MASK           0b0000000000000011
-#define UV_TASK_LOG_START_STOP_TIME    0x0001U<<(2)
-#define UV_TASK_LOG_MEM_USAGE		   0x0001U<<(3)
-#define UV_TASK_SCD_IGNORE			   0x0001U<<(4)
-#define UV_TASK_IS_PARENT			   0x0001U<<(5)
-#define UV_TASK_IS_CHILD			   0x0001U<<(6)
-#define UV_TASK_IS_ORPHAN			   0x0001U<<(7)
-#define UV_TASK_ERR_IN_CHILD		   0x0001U<<(8)
-#define UV_TASK_AWAITING_DELETION	   0x0001U<<(9)
-#define UV_TASK_DEFER_DELETION		   0x0001U<<(10)
-#define UV_TASK_DEADLINE_NOT_ENFORCED  0x00
-#define UV_TASK_PRIO_INCREMENTATION    0x0001U<<(11)
-#define UV_TASK_DEADLINE_FIRM		   0x0001U<<(12)
-#define UV_TASK_DEADLINE_HARD		   (0x0001U<<(11)|0x0001U<<(12))
-#define UV_TASK_DEADLINE_MASK		   (0x0001U<<(11)|0x0001U<<(12))
-#define UV_TASK_MISSION_CRITICAL	   0x0001U<<(13)
 
-
-/** @brief This struct is designed to hold neccessary information about an RTOS task that
- * will be managed by uvfr_state_engine.
- *
- * @c task_id is an internal ID assigned to every task and is used by uvfr_utils.
- * @c task_name is the name of the task. This must be less than 15 characters, and ended with
- * a null terminator.
- *
- * @c task_function is a pointer to the function we want the task to run
- * @c task_priority is the priority of the task
- * @c max_instances is the number of legal instances
- *
- * @c task_state is an internal representation of what the task is up to. This is needed because the RTOS task may not actually exist.
- * @c active_states dictates when the states are active
- *
- * @c task_handle is an osThreadId created by FreeRTOS when it initializes the task.
- * @c next exists because this shit needs to exist in a linked list, and my ass is too lazy to create a generic struct with it
- *
- * @c cmd_data stores the command we really want this task to execute
- */
-typedef struct uv_task_info{
-	uv_task_id task_id;
-	char* task_name;
-
-	uv_timespan_ms task_period;
-	uv_timespan_ms deletion_delay;
-
-	TaskFunction_t task_function; //the thread function
-	osPriority task_priority; //priority of the task
-
-	uint8_t max_instances; //max number of task instances running at any moment
-	uint32_t stack_size; //stack size allocated to task
-
-	uint8_t num_instances; //number of instances running
-
-	uint16_t task_flags; //Some task flags for ya
-	//Bits 0:1 - | Task MGMT | Vehicle Application task - 01 | Periodic SVC Task - 10 | Dormant SVC Task - 11
-	//Bit 2  - Log task start + stop time
-	//Bit 3  - Log mem usage
-	//Bit 4  - SCD ignore flag (only use if task is application layer
-	//Bit 5  - is parent
-	//Bit 6	 - is child
-	//Bit 7  - is orphaned
-	//Bit 8	 - error in child task
-	//Bit 9	 - awaiting deferred deletion
-	//Bit 10 - deferred deletion enabled
-	//Bits 11:12 - Deadline firmness | No enforcement - 00 | Gradual Priority Incrimentation - 01 | Firm deadline 10 | Critical Deadline - 11
-	//Bit 13 - mission critical, if this specific task crashes, the car will not continue to run
-
-	uv_task_status task_state; //tracks the internal state of the task
-	uint16_t active_states; //corresponds to the vehicle states where the task should be active
-	uint16_t deletion_states; //corresponds to the vehicle states where the task should be suspended
-	uint16_t suspension_states; //when should the task be suspended? When it should exist, but shouldnt be active.
-
-	TaskHandle_t task_handle;
-	struct uv_task_info* next;
-	uv_task_cmd cmd_data; //every task gets it's own personal queue to have commands in it
-
-	void* task_args; //specific arguments for that task. Probably comes from the vehicle settings.
-
-	QueueHandle_t manager;//TODO: Fix type/impliment a better manager system than the SCD
-
-
-}uv_task_info;
 
 /** @brief Struct containing a message between two tasks
+ *
+ * This is a generic type that is best used in situations where the message could mean a variety of different things.
+ * For niche applications or where efficiency is paramount, we recommend creating a bespoke protocol.
  *
  */
 typedef struct uv_task_msg_t{
@@ -382,10 +341,8 @@ typedef struct uv_init_task_args{
 typedef struct uv_internal_params{
 	uv_init_struct* init_params;
 	uv_vehicle_settings* vehicle_settings;
-	p_status peripheral_status[];
-
-
-
+	p_status peripheral_status[8];
+	uint16_t e_code[8];
 }uv_internal_params;
 
 

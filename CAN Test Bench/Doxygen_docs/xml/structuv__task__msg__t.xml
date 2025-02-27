@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structuv__task__msg__t" kind="struct" language="C++" prot="public">
+    <compoundname>uv_task_msg_t</compoundname>
+    <includes refid="uvfr__utils_8h" local="no">uvfr_utils.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structuv__task__msg__t_1a55ec83138e3f306f2a54059835a86b4f" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t uv_task_msg_t::message_type</definition>
+        <argsstring></argsstring>
+        <name>message_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="302" column="10" bodyfile="Core/Inc/uvfr_utils.h" bodystart="302" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__task__msg__t_1ac308e85e87284abc3a1edc9e9fb963e1" prot="public" static="no" mutable="no">
+        <type><ref refid="structuv__task__info" kindref="compound">uv_task_info</ref> *</type>
+        <definition>uv_task_info* uv_task_msg_t::sender</definition>
+        <argsstring></argsstring>
+        <name>sender</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="303" column="14" bodyfile="Core/Inc/uvfr_utils.h" bodystart="303" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__task__msg__t_1a08a1b8f5551ea5ca5694bf764b6a9ca5" prot="public" static="no" mutable="no">
+        <type><ref refid="structuv__task__info" kindref="compound">uv_task_info</ref> *</type>
+        <definition>uv_task_info* uv_task_msg_t::intended_recipient</definition>
+        <argsstring></argsstring>
+        <name>intended_recipient</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="304" column="14" bodyfile="Core/Inc/uvfr_utils.h" bodystart="304" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__task__msg__t_1a3f1a92858e8ce24bdfde9ee72be4c8aa" prot="public" static="no" mutable="no">
+        <type>TickType_t</type>
+        <definition>TickType_t uv_task_msg_t::time_sent</definition>
+        <argsstring></argsstring>
+        <name>time_sent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="305" column="12" bodyfile="Core/Inc/uvfr_utils.h" bodystart="305" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__task__msg__t_1a2fc3897d5e2c4f0b92f3dee0981a7182" prot="public" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t uv_task_msg_t::message_size</definition>
+        <argsstring></argsstring>
+        <name>message_size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="306" column="8" bodyfile="Core/Inc/uvfr_utils.h" bodystart="306" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__task__msg__t_1a4d48277de745dfd9168f7809af04ef3f" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* uv_task_msg_t::msg_contents</definition>
+        <argsstring></argsstring>
+        <name>msg_contents</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="307" column="6" bodyfile="Core/Inc/uvfr_utils.h" bodystart="307" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct containing a message between two tasks. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This is a generic type that is best used in situations where the message could mean a variety of different things. For niche applications or where efficiency is paramount, we recommend creating a bespoke protocol. </para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>uv_task_msg_t</label>
+        <link refid="structuv__task__msg__t"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>sender</edgelabel>
+          <edgelabel>intended_recipient</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>uv_task_info</label>
+        <link refid="structuv__task__info"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>tmi</edgelabel>
+        </childnode>
+      </node>
+      <node id="3">
+        <label>task_management_info</label>
+        <link refid="structtask__management__info"/>
+      </node>
+    </collaborationgraph>
+    <location file="Core/Inc/uvfr_utils.h" line="301" column="28" bodyfile="Core/Inc/uvfr_utils.h" bodystart="301" bodyend="309"/>
+    <listofallmembers>
+      <member refid="structuv__task__msg__t_1a08a1b8f5551ea5ca5694bf764b6a9ca5" prot="public" virt="non-virtual"><scope>uv_task_msg_t</scope><name>intended_recipient</name></member>
+      <member refid="structuv__task__msg__t_1a2fc3897d5e2c4f0b92f3dee0981a7182" prot="public" virt="non-virtual"><scope>uv_task_msg_t</scope><name>message_size</name></member>
+      <member refid="structuv__task__msg__t_1a55ec83138e3f306f2a54059835a86b4f" prot="public" virt="non-virtual"><scope>uv_task_msg_t</scope><name>message_type</name></member>
+      <member refid="structuv__task__msg__t_1a4d48277de745dfd9168f7809af04ef3f" prot="public" virt="non-virtual"><scope>uv_task_msg_t</scope><name>msg_contents</name></member>
+      <member refid="structuv__task__msg__t_1ac308e85e87284abc3a1edc9e9fb963e1" prot="public" virt="non-virtual"><scope>uv_task_msg_t</scope><name>sender</name></member>
+      <member refid="structuv__task__msg__t_1a3f1a92858e8ce24bdfde9ee72be4c8aa" prot="public" virt="non-virtual"><scope>uv_task_msg_t</scope><name>time_sent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

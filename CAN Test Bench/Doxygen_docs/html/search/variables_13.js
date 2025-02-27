@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['xidlestack_1287',['xIdleStack',['../freertos_8c.html#af311b04396149ce536fe1a3b5f127445',1,'freertos.c']]],
-  ['xidletasktcbbuffer_1288',['xIdleTaskTCBBuffer',['../freertos_8c.html#a2dd1013c5ef8f355ac2f1479e36ec659',1,'freertos.c']]]
+  ['vehicle_5fsettings_1670',['vehicle_settings',['../structuv__internal__params.html#ae2718f795900eeef5b28e3696c96a675',1,'uv_internal_params']]],
+  ['vehicle_5fstate_1671',['vehicle_state',['../group__state__engine.html#ga2f58cf65b3566bc390600f877f8bed35',1,'vehicle_state():&#160;uvfr_state_engine.c'],['../group__state__engine.html#ga2f58cf65b3566bc390600f877f8bed35',1,'vehicle_state():&#160;uvfr_state_engine.c']]]
 ];

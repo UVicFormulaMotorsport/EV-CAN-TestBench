@@ -1,0 +1,33 @@
+\hypertarget{uvfr__vehicle__commands_8c}{}\doxysection{Core/\+Src/uvfr\+\_\+vehicle\+\_\+commands.c File Reference}
+\label{uvfr__vehicle__commands_8c}\index{Core/Src/uvfr\_vehicle\_commands.c@{Core/Src/uvfr\_vehicle\_commands.c}}
+{\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{uvfr__vehicle__commands_8c_a8073be27b31b156bee66e3b3038144c9}{uv\+Secure\+Vehicle}} ()
+\begin{DoxyCompactList}\small\item\em Function to put vehicle into safe state. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{uvfr__vehicle__commands_8c_a8073be27b31b156bee66e3b3038144c9}\label{uvfr__vehicle__commands_8c_a8073be27b31b156bee66e3b3038144c9}} 
+\index{uvfr\_vehicle\_commands.c@{uvfr\_vehicle\_commands.c}!uvSecureVehicle@{uvSecureVehicle}}
+\index{uvSecureVehicle@{uvSecureVehicle}!uvfr\_vehicle\_commands.c@{uvfr\_vehicle\_commands.c}}
+\doxysubsubsection{\texorpdfstring{uvSecureVehicle()}{uvSecureVehicle()}}
+{\footnotesize\ttfamily void uv\+Secure\+Vehicle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to put vehicle into safe state. 
+
+Should perform the following functions in order\+:
+\begin{DoxyItemize}
+\item Prevent new MC torque or speed requests
+\item Open shutdown cct 
+\end{DoxyItemize}
+
+Definition at line 11 of file uvfr\+\_\+vehicle\+\_\+commands.\+c.
+
+
+
+Referenced by \+\_\+\+\_\+uv\+Panic().
+

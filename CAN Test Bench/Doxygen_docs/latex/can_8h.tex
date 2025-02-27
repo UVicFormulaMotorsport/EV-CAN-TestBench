@@ -19,6 +19,8 @@ This file contains all the function prototypes for the \mbox{\hyperlink{can_8c}{
 \begin{DoxyCompactItemize}
 \item 
 typedef struct \mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} \mbox{\hyperlink{can_8h_ad857192b5d0529e73642f1293d6bed75}{uv\+\_\+\+C\+A\+N\+\_\+msg}}
+\item 
+typedef enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}}
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -29,10 +31,16 @@ void \mbox{\hyperlink{can_8h_a4e0742fef0f265347a75b7fa12012229}{H\+A\+L\+\_\+\+C
 \item 
 void \mbox{\hyperlink{can_8h_a4c51ef84434a42d4c5f9524d361c0703}{H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Rx\+Fifo1\+Msg\+Pending\+Callback}} (C\+A\+N\+\_\+\+Handle\+Type\+Def $\ast$\mbox{\hyperlink{stm32f4xx__it_8c_ab77168d14df04ccca5d48612ee21ced8}{hcan2}})
 \item 
-enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{can_8h_a84a12245a474f90efeaa14a546811ec4}{uv\+Send\+Can\+M\+SG}} (\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$msg)
-\begin{DoxyCompactList}\small\item\em Function to send can message. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{group__uvfr__can__api_ga62414944c3b631f57fdd08e467bcf5a4}{uv\+Send\+Can\+M\+SG}} (\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$msg)
+\begin{DoxyCompactList}\small\item\em Function to send C\+AN message. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{can_8h_a2357e197a9ac26277eec808769fe409f}{C\+A\+Nbus\+Tx\+Svc\+Daemon}} (void $\ast$args)
-\begin{DoxyCompactList}\small\item\em Background task that handles any C\+AN messages that are being sent. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Background task that handles any C\+AN messages that are being sent. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{can_8h_a2b32305988f51945b7c220ca60ab68e8}{C\+A\+Nbus\+Rx\+Svc\+Daemon}} (void $\ast$args)
+\begin{DoxyCompactList}\small\item\em Background task that executes the C\+AN message callback functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__uvfr__can__api_ga81adc4a577110ce8fe1158b0dc302cc2}{insert\+C\+A\+N\+Message\+Handler}} (uint32\+\_\+t id, void $\ast$handlerfunc)
+\begin{DoxyCompactList}\small\item\em Function to insert an id and function into the lookup table of callback functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{can_8h_acadda9ab3aa926b92a84e3f192c66547}{nuke\+\_\+hash\+\_\+table}} ()
+\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
@@ -48,7 +56,9 @@ This file contains all the function prototypes for the \mbox{\hyperlink{can_8c}{
 \end{DoxyAttention}
 Copyright (c) 2023 S\+T\+Microelectronics. All rights reserved.
 
-This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS. 
+This software is licensed under terms that can be found in the L\+I\+C\+E\+N\+SE file in the root directory of this software component. If no L\+I\+C\+E\+N\+SE file comes with this software, it is provided A\+S-\/\+IS.
+
+/ /$\ast$ U\+S\+ER C\+O\+DE E\+ND Header 
 
 \doxysubsection{Macro Definition Documentation}
 \mbox{\Hypertarget{can_8h_a3cb7727094f40357f18ece08758738cc}\label{can_8h_a3cb7727094f40357f18ece08758738cc}} 
@@ -84,9 +94,41 @@ Definition at line 40 of file can.\+h.
 
 Definition at line 43 of file can.\+h.
 
+\mbox{\Hypertarget{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}\label{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}} 
+\index{can.h@{can.h}!uv\_status@{uv\_status}}
+\index{uv\_status@{uv\_status}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{uv\_status}{uv\_status}}
+{\footnotesize\ttfamily typedef enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}}}
+
+
+
+Definition at line 44 of file can.\+h.
+
 
 
 \doxysubsection{Function Documentation}
+\mbox{\Hypertarget{can_8h_a2b32305988f51945b7c220ca60ab68e8}\label{can_8h_a2b32305988f51945b7c220ca60ab68e8}} 
+\index{can.h@{can.h}!CANbusRxSvcDaemon@{CANbusRxSvcDaemon}}
+\index{CANbusRxSvcDaemon@{CANbusRxSvcDaemon}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{CANbusRxSvcDaemon()}{CANbusRxSvcDaemon()}}
+{\footnotesize\ttfamily void C\+A\+Nbus\+Rx\+Svc\+Daemon (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Background task that executes the C\+AN message callback functions. 
+
+Basically just snoops through the hash table 
+
+Definition at line 618 of file can.\+c.
+
+
+
+References callback\+\_\+table\+\_\+mutex, call\+Function\+From\+C\+A\+Nid(), uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, kill\+Self(), Rx\+\_\+msg\+\_\+queue, suspend\+Self(), uv\+\_\+task\+\_\+info\+::task\+\_\+handle, U\+V\+\_\+\+K\+I\+L\+L\+\_\+\+C\+MD, U\+V\+\_\+\+OK, and U\+V\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+MD.
+
+
+
+Referenced by uv\+S\+V\+C\+Task\+Manager().
+
 \mbox{\Hypertarget{can_8h_a2357e197a9ac26277eec808769fe409f}\label{can_8h_a2357e197a9ac26277eec808769fe409f}} 
 \index{can.h@{can.h}!CANbusTxSvcDaemon@{CANbusTxSvcDaemon}}
 \index{CANbusTxSvcDaemon@{CANbusTxSvcDaemon}!can.h@{can.h}}
@@ -99,11 +141,11 @@ Background task that handles any C\+AN messages that are being sent.
 
 This task sits idle, until the time is right (it receives a notification from the uv\+Send\+Can\+M\+SG function) Once this condition has been met, it will actually call the {\ttfamily H\+A\+L\+\_\+\+C\+A\+N\+\_\+\+Add\+Tx\+Message} function. This is a very high priority task, meaning that it will pause whatever other code is going in order to run 
 
-Definition at line 356 of file can.\+c.
+Definition at line 551 of file can.\+c.
 
 
 
-References uv\+\_\+\+C\+A\+N\+\_\+msg\+::data, uv\+\_\+\+C\+A\+N\+\_\+msg\+::dlc, uv\+\_\+\+C\+A\+N\+\_\+msg\+::flags, hcan2, uv\+\_\+\+C\+A\+N\+\_\+msg\+::msg\+\_\+id, Tx\+Header, Tx\+Mailbox, U\+V\+\_\+\+C\+A\+N\+\_\+\+E\+X\+T\+E\+N\+D\+E\+D\+\_\+\+ID, and uv\+Panic().
+References uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, uv\+\_\+\+C\+A\+N\+\_\+msg\+::data, uv\+\_\+\+C\+A\+N\+\_\+msg\+::dlc, uv\+\_\+\+C\+A\+N\+\_\+msg\+::flags, hcan2, kill\+Self(), uv\+\_\+\+C\+A\+N\+\_\+msg\+::msg\+\_\+id, suspend\+Self(), Tx\+\_\+msg\+\_\+queue, Tx\+Header, Tx\+Mailbox, U\+V\+\_\+\+C\+A\+N\+\_\+\+E\+X\+T\+E\+N\+D\+E\+D\+\_\+\+ID, U\+V\+\_\+\+K\+I\+L\+L\+\_\+\+C\+MD, and U\+V\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+MD.
 
 
 
@@ -117,11 +159,11 @@ Referenced by uv\+S\+V\+C\+Task\+Manager().
 
 
 
-Definition at line 265 of file can.\+c.
+Definition at line 298 of file can.\+c.
 
 
 
-References Error\+\_\+\+Handler(), hcan2, Rx\+Data, and Rx\+Header.
+References uv\+\_\+\+C\+A\+N\+\_\+msg\+::data, uv\+\_\+\+C\+A\+N\+\_\+msg\+::dlc, Error\+\_\+\+Handler(), hcan2, uv\+\_\+\+C\+A\+N\+\_\+msg\+::msg\+\_\+id, Rx\+\_\+msg\+\_\+queue, and Rx\+Header.
 
 \mbox{\Hypertarget{can_8h_a4c51ef84434a42d4c5f9524d361c0703}\label{can_8h_a4c51ef84434a42d4c5f9524d361c0703}} 
 \index{can.h@{can.h}!HAL\_CAN\_RxFifo1MsgPendingCallback@{HAL\_CAN\_RxFifo1MsgPendingCallback}}
@@ -131,7 +173,7 @@ References Error\+\_\+\+Handler(), hcan2, Rx\+Data, and Rx\+Header.
 
 
 
-Definition at line 301 of file can.\+c.
+Definition at line 338 of file can.\+c.
 
 \mbox{\Hypertarget{can_8h_a1ee5cd592134235b6c07f676784d47c3}\label{can_8h_a1ee5cd592134235b6c07f676784d47c3}} 
 \index{can.h@{can.h}!MX\_CAN2\_Init@{MX\_CAN2\_Init}}
@@ -141,7 +183,7 @@ Definition at line 301 of file can.\+c.
 
 
 
-Definition at line 117 of file can.\+c.
+Definition at line 150 of file can.\+c.
 
 
 
@@ -151,23 +193,19 @@ References Error\+\_\+\+Handler(), hcan2, and Tx\+Header.
 
 Referenced by main().
 
-\mbox{\Hypertarget{can_8h_a84a12245a474f90efeaa14a546811ec4}\label{can_8h_a84a12245a474f90efeaa14a546811ec4}} 
-\index{can.h@{can.h}!uvSendCanMSG@{uvSendCanMSG}}
-\index{uvSendCanMSG@{uvSendCanMSG}!can.h@{can.h}}
-\doxysubsubsection{\texorpdfstring{uvSendCanMSG()}{uvSendCanMSG()}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} uv\+Send\+Can\+M\+SG (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$}]{msg }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{can_8h_acadda9ab3aa926b92a84e3f192c66547}\label{can_8h_acadda9ab3aa926b92a84e3f192c66547}} 
+\index{can.h@{can.h}!nuke\_hash\_table@{nuke\_hash\_table}}
+\index{nuke\_hash\_table@{nuke\_hash\_table}!can.h@{can.h}}
+\doxysubsubsection{\texorpdfstring{nuke\_hash\_table()}{nuke\_hash\_table()}}
+{\footnotesize\ttfamily void nuke\+\_\+hash\+\_\+table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to free all malloced memory Index through the hash table and free all the malloced memory at each index 
+
+Definition at line 453 of file can.\+c.
 
 
 
-Function to send can message. 
-
-This function is the canonical team method of sending a C\+AN message. It invokes the can\+Tx\+Daemon, to avoid any conflicts due to a context switch mid transmission Is it a little bit convoluted? Yes. Is that worth it? Still yes. Check that the C\+AN Tx daemon is actually active
-
-Definition at line 318 of file can.\+c.
-
-
-
-References C\+A\+N\+\_\+\+T\+X\+\_\+\+D\+A\+E\+M\+O\+N\+\_\+\+N\+A\+ME, and U\+V\+\_\+\+E\+R\+R\+OR.
+References C\+A\+N\+\_\+callback\+\_\+table, C\+A\+N\+\_\+\+Callback\+::next, and table\+\_\+size.
 
 
 
@@ -180,9 +218,9 @@ References C\+A\+N\+\_\+\+T\+X\+\_\+\+D\+A\+E\+M\+O\+N\+\_\+\+N\+A\+ME, and U\+V
 
 
 
-Definition at line 114 of file can.\+c.
+Definition at line 147 of file can.\+c.
 
 
 
-Referenced by I\+M\+D\+\_\+\+Request\+\_\+\+Status(), M\+C\+\_\+\+Request\+\_\+\+Data(), M\+C\+\_\+\+Send\+\_\+\+Data(), P\+D\+U\+\_\+disable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+disable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+disable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+disable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+disable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+enable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+enable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+enable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+enable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+enable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+speaker\+\_\+chirp(), Update\+\_\+\+Batt\+\_\+\+Temp(), Update\+\_\+\+R\+P\+M(), Update\+\_\+\+State\+\_\+\+Of\+\_\+\+Charge(), and uv\+Init().
+Referenced by I\+M\+D\+\_\+\+Request\+\_\+\+Status(), main(), M\+C\+\_\+\+Request\+\_\+\+Data(), Motor\+Controller\+Spin\+Test(), P\+D\+U\+\_\+disable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+disable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+disable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+disable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+disable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+enable\+\_\+brake\+\_\+light(), P\+D\+U\+\_\+enable\+\_\+coolant\+\_\+pump(), P\+D\+U\+\_\+enable\+\_\+cooling\+\_\+fans(), P\+D\+U\+\_\+enable\+\_\+motor\+\_\+controller(), P\+D\+U\+\_\+enable\+\_\+shutdown\+\_\+circuit(), P\+D\+U\+\_\+speaker\+\_\+chirp(), Update\+\_\+\+Batt\+\_\+\+Temp(), Update\+\_\+\+R\+P\+M(), and Update\+\_\+\+State\+\_\+\+Of\+\_\+\+Charge().
 

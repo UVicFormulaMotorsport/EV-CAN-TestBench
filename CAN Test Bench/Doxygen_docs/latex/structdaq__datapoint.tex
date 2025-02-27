@@ -12,17 +12,11 @@ This struct holds info of what needs to be logged.
 \doxysubsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-uint8\+\_\+t \mbox{\hyperlink{structdaq__datapoint_aa7f76caba8ea66bb0b9ba93bbefc2ae5}{is\+\_\+active}}
+uint16\+\_\+t \mbox{\hyperlink{structdaq__datapoint_a4980fdb5f68a228a79a55dccc9eb4ea9}{can\+\_\+id}}
 \item 
 uint8\+\_\+t \mbox{\hyperlink{structdaq__datapoint_a8f1ff0b0cde6cc45079cd85c764b2ebe}{period}}
 \item 
-\mbox{\hyperlink{daq_8h_aed86f8ec15afd10cf046f83fcf7f327b}{daq\+\_\+log\+\_\+entry}} \mbox{\hyperlink{structdaq__datapoint_a163d37f8129a5bc4dc93e00914d63a68}{daq\+\_\+log1}}
-\item 
-\mbox{\hyperlink{uniondaq__type}{daq\+\_\+type}} \mbox{\hyperlink{structdaq__datapoint_a6337e307003f4cedfdff54ec26e47e87}{daq\+\_\+type1}}
-\item 
-\mbox{\hyperlink{daq_8h_aed86f8ec15afd10cf046f83fcf7f327b}{daq\+\_\+log\+\_\+entry}} \mbox{\hyperlink{structdaq__datapoint_a869937a402a7fd43b6754f19b9f40107}{daq\+\_\+log2}}
-\item 
-\mbox{\hyperlink{uniondaq__type}{daq\+\_\+type}} \mbox{\hyperlink{structdaq__datapoint_ae79dd12cf775ade8e7008d2cf48c534f}{daq\+\_\+type2}}
+uint8\+\_\+t \mbox{\hyperlink{structdaq__datapoint_a44606584203d50acb9b885e45068846b}{type}}
 \end{DoxyCompactItemize}
 
 
@@ -31,60 +25,20 @@ This struct holds info of what needs to be logged.
 
 
 
-Definition at line 39 of file daq.\+h.
+Definition at line 56 of file daq.\+h.
 
 
 
 \doxysubsection{Field Documentation}
-\mbox{\Hypertarget{structdaq__datapoint_a163d37f8129a5bc4dc93e00914d63a68}\label{structdaq__datapoint_a163d37f8129a5bc4dc93e00914d63a68}} 
-\index{daq\_datapoint@{daq\_datapoint}!daq\_log1@{daq\_log1}}
-\index{daq\_log1@{daq\_log1}!daq\_datapoint@{daq\_datapoint}}
-\doxysubsubsection{\texorpdfstring{daq\_log1}{daq\_log1}}
-{\footnotesize\ttfamily \mbox{\hyperlink{daq_8h_aed86f8ec15afd10cf046f83fcf7f327b}{daq\+\_\+log\+\_\+entry}} daq\+\_\+datapoint\+::daq\+\_\+log1}
+\mbox{\Hypertarget{structdaq__datapoint_a4980fdb5f68a228a79a55dccc9eb4ea9}\label{structdaq__datapoint_a4980fdb5f68a228a79a55dccc9eb4ea9}} 
+\index{daq\_datapoint@{daq\_datapoint}!can\_id@{can\_id}}
+\index{can\_id@{can\_id}!daq\_datapoint@{daq\_datapoint}}
+\doxysubsubsection{\texorpdfstring{can\_id}{can\_id}}
+{\footnotesize\ttfamily uint16\+\_\+t daq\+\_\+datapoint\+::can\+\_\+id}
 
 
 
-Definition at line 42 of file daq.\+h.
-
-\mbox{\Hypertarget{structdaq__datapoint_a869937a402a7fd43b6754f19b9f40107}\label{structdaq__datapoint_a869937a402a7fd43b6754f19b9f40107}} 
-\index{daq\_datapoint@{daq\_datapoint}!daq\_log2@{daq\_log2}}
-\index{daq\_log2@{daq\_log2}!daq\_datapoint@{daq\_datapoint}}
-\doxysubsubsection{\texorpdfstring{daq\_log2}{daq\_log2}}
-{\footnotesize\ttfamily \mbox{\hyperlink{daq_8h_aed86f8ec15afd10cf046f83fcf7f327b}{daq\+\_\+log\+\_\+entry}} daq\+\_\+datapoint\+::daq\+\_\+log2}
-
-
-
-Definition at line 44 of file daq.\+h.
-
-\mbox{\Hypertarget{structdaq__datapoint_a6337e307003f4cedfdff54ec26e47e87}\label{structdaq__datapoint_a6337e307003f4cedfdff54ec26e47e87}} 
-\index{daq\_datapoint@{daq\_datapoint}!daq\_type1@{daq\_type1}}
-\index{daq\_type1@{daq\_type1}!daq\_datapoint@{daq\_datapoint}}
-\doxysubsubsection{\texorpdfstring{daq\_type1}{daq\_type1}}
-{\footnotesize\ttfamily \mbox{\hyperlink{uniondaq__type}{daq\+\_\+type}} daq\+\_\+datapoint\+::daq\+\_\+type1}
-
-
-
-Definition at line 43 of file daq.\+h.
-
-\mbox{\Hypertarget{structdaq__datapoint_ae79dd12cf775ade8e7008d2cf48c534f}\label{structdaq__datapoint_ae79dd12cf775ade8e7008d2cf48c534f}} 
-\index{daq\_datapoint@{daq\_datapoint}!daq\_type2@{daq\_type2}}
-\index{daq\_type2@{daq\_type2}!daq\_datapoint@{daq\_datapoint}}
-\doxysubsubsection{\texorpdfstring{daq\_type2}{daq\_type2}}
-{\footnotesize\ttfamily \mbox{\hyperlink{uniondaq__type}{daq\+\_\+type}} daq\+\_\+datapoint\+::daq\+\_\+type2}
-
-
-
-Definition at line 45 of file daq.\+h.
-
-\mbox{\Hypertarget{structdaq__datapoint_aa7f76caba8ea66bb0b9ba93bbefc2ae5}\label{structdaq__datapoint_aa7f76caba8ea66bb0b9ba93bbefc2ae5}} 
-\index{daq\_datapoint@{daq\_datapoint}!is\_active@{is\_active}}
-\index{is\_active@{is\_active}!daq\_datapoint@{daq\_datapoint}}
-\doxysubsubsection{\texorpdfstring{is\_active}{is\_active}}
-{\footnotesize\ttfamily uint8\+\_\+t daq\+\_\+datapoint\+::is\+\_\+active}
-
-
-
-Definition at line 40 of file daq.\+h.
+Definition at line 57 of file daq.\+h.
 
 \mbox{\Hypertarget{structdaq__datapoint_a8f1ff0b0cde6cc45079cd85c764b2ebe}\label{structdaq__datapoint_a8f1ff0b0cde6cc45079cd85c764b2ebe}} 
 \index{daq\_datapoint@{daq\_datapoint}!period@{period}}
@@ -94,7 +48,17 @@ Definition at line 40 of file daq.\+h.
 
 
 
-Definition at line 41 of file daq.\+h.
+Definition at line 58 of file daq.\+h.
+
+\mbox{\Hypertarget{structdaq__datapoint_a44606584203d50acb9b885e45068846b}\label{structdaq__datapoint_a44606584203d50acb9b885e45068846b}} 
+\index{daq\_datapoint@{daq\_datapoint}!type@{type}}
+\index{type@{type}!daq\_datapoint@{daq\_datapoint}}
+\doxysubsubsection{\texorpdfstring{type}{type}}
+{\footnotesize\ttfamily uint8\+\_\+t daq\+\_\+datapoint\+::type}
+
+
+
+Definition at line 59 of file daq.\+h.
 
 
 

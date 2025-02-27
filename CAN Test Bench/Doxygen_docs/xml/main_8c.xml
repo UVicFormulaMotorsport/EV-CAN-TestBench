@@ -1,0 +1,1081 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="main_8c" kind="file" language="C++">
+    <compoundname>main.c</compoundname>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includes local="yes">cmsis_os.h</includes>
+    <includes refid="adc_8h" local="yes">adc.h</includes>
+    <includes refid="can_8h" local="yes">can.h</includes>
+    <includes refid="dma_8h" local="yes">dma.h</includes>
+    <includes refid="spi_8h" local="yes">spi.h</includes>
+    <includes refid="tim_8h" local="yes">tim.h</includes>
+    <includes refid="gpio_8h" local="yes">gpio.h</includes>
+    <includes refid="constants_8h" local="yes">constants.h</includes>
+    <includes refid="bms_8h" local="yes">bms.h</includes>
+    <includes refid="dash_8h" local="yes">dash.h</includes>
+    <includes refid="imd_8h" local="yes">imd.h</includes>
+    <includes refid="motor__controller_8h" local="yes">motor_controller.h</includes>
+    <includes refid="pdu_8h" local="yes">pdu.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>stdarg.h</label>
+      </node>
+      <node id="12">
+        <label>tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>stdint.h</label>
+      </node>
+      <node id="33">
+        <label>stdlib.h</label>
+      </node>
+      <node id="28">
+        <label>oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cmsis_os.h</label>
+      </node>
+      <node id="5">
+        <label>uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>message_buffer.h</label>
+      </node>
+      <node id="23">
+        <label>bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>rb_tree.h</label>
+        <link refid="rb__tree_8h"/>
+      </node>
+      <node id="10">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="9">
+        <label>can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>uvfr_global_config.h</label>
+        <link refid="uvfr__global__config_8h"/>
+      </node>
+      <node id="31">
+        <label>FreeRTOSConfig.h</label>
+        <link refid="_free_r_t_o_s_config_8h"/>
+      </node>
+      <node id="24">
+        <label>uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>odometer.h</label>
+        <link refid="odometer_8h"/>
+      </node>
+      <node id="3">
+        <label>stm32f4xx_hal.h</label>
+      </node>
+      <node id="15">
+        <label>FreeRTOS.h</label>
+      </node>
+      <node id="1">
+        <label>Core/Src/main.c</label>
+        <link refid="main_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>task.h</label>
+      </node>
+      <node id="2">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="main_8c_1a764dcd92a2e2229e53e2090201243643" prot="public" static="no">
+        <name>DEBUG_CAN_IN_MAIN</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="51" column="9" bodyfile="Core/Src/main.c" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="main_8c_1a8c60277435d9f53a21fed2e4ae28a66a" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>volatile uint32_t adc_buf1[ADC1_BUF_LEN]</definition>
+        <argsstring>[ADC1_BUF_LEN]</argsstring>
+        <name>adc_buf1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="62" column="19" bodyfile="Core/Src/main.c" bodystart="62" bodyend="-1"/>
+        <referencedby refid="main_8c_1af20a88180db1113be1e89266917d148b" compoundref="main_8c" startline="275" endline="318">HAL_ADC_ConvCpltCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t adc1_APPS1</definition>
+        <argsstring></argsstring>
+        <name>adc1_APPS1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="64" column="10" bodyfile="Core/Src/main.c" bodystart="64" bodyend="-1"/>
+        <referencedby refid="main_8c_1af20a88180db1113be1e89266917d148b" compoundref="main_8c" startline="275" endline="318">HAL_ADC_ConvCpltCallback</referencedby>
+        <referencedby refid="main_8c_1a8cf5c59c6355fe7cf3c10816c761b9c2" compoundref="main_8c" startline="330" endline="341">HAL_ADC_LevelOutOfWindowCallback</referencedby>
+        <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
+        <referencedby refid="driving__loop_8c_1a80cc48f06202edc29bcad26a956bcc98" compoundref="driving__loop_8c" startline="68" endline="207">StartDrivingLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t adc1_APPS2</definition>
+        <argsstring></argsstring>
+        <name>adc1_APPS2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="65" column="10" bodyfile="Core/Src/main.c" bodystart="65" bodyend="-1"/>
+        <referencedby refid="main_8c_1af20a88180db1113be1e89266917d148b" compoundref="main_8c" startline="275" endline="318">HAL_ADC_ConvCpltCallback</referencedby>
+        <referencedby refid="main_8c_1a8cf5c59c6355fe7cf3c10816c761b9c2" compoundref="main_8c" startline="330" endline="341">HAL_ADC_LevelOutOfWindowCallback</referencedby>
+        <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
+        <referencedby refid="driving__loop_8c_1a80cc48f06202edc29bcad26a956bcc98" compoundref="driving__loop_8c" startline="68" endline="207">StartDrivingLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1ad36d3aa4037203058df6816d56f4c186" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t adc1_BPS1</definition>
+        <argsstring></argsstring>
+        <name>adc1_BPS1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="66" column="10" bodyfile="Core/Src/main.c" bodystart="66" bodyend="-1"/>
+        <referencedby refid="main_8c_1af20a88180db1113be1e89266917d148b" compoundref="main_8c" startline="275" endline="318">HAL_ADC_ConvCpltCallback</referencedby>
+        <referencedby refid="driving__loop_8c_1a80cc48f06202edc29bcad26a956bcc98" compoundref="driving__loop_8c" startline="68" endline="207">StartDrivingLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a277f7921a7a1e0fb8a6f953943dc06dc" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t adc1_BPS2</definition>
+        <argsstring></argsstring>
+        <name>adc1_BPS2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="67" column="10" bodyfile="Core/Src/main.c" bodystart="67" bodyend="-1"/>
+        <referencedby refid="main_8c_1af20a88180db1113be1e89266917d148b" compoundref="main_8c" startline="275" endline="318">HAL_ADC_ConvCpltCallback</referencedby>
+        <referencedby refid="driving__loop_8c_1a80cc48f06202edc29bcad26a956bcc98" compoundref="driving__loop_8c" startline="68" endline="207">StartDrivingLoop</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a820ab8aecc5744f003ca984a1d960da1" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>volatile uint32_t adc_buf2[ADC2_BUF_LEN]</definition>
+        <argsstring>[ADC2_BUF_LEN]</argsstring>
+        <name>adc_buf2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="69" column="19" bodyfile="Core/Src/main.c" bodystart="69" bodyend="-1"/>
+        <referencedby refid="main_8c_1af20a88180db1113be1e89266917d148b" compoundref="main_8c" startline="275" endline="318">HAL_ADC_ConvCpltCallback</referencedby>
+        <referencedby refid="main_8c_1a8a3b0ad512a6e6c6157440b68d395eac" compoundref="main_8c" startline="354" endline="372">HAL_TIM_PeriodElapsedCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a05d60ecdd2dcf9cb28968d8027d1d5ce" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t adc2_CoolantTemp</definition>
+        <argsstring></argsstring>
+        <name>adc2_CoolantTemp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="70" column="10" bodyfile="Core/Src/main.c" bodystart="70" bodyend="-1"/>
+        <referencedby refid="main_8c_1af20a88180db1113be1e89266917d148b" compoundref="main_8c" startline="275" endline="318">HAL_ADC_ConvCpltCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="main_8c_1a9211365d419c877b3b4f8074ef19cb33" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t adc2_CoolantFlow</definition>
+        <argsstring></argsstring>
+        <name>adc2_CoolantFlow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="71" column="10" bodyfile="Core/Src/main.c" bodystart="71" bodyend="-1"/>
+        <referencedby refid="main_8c_1af20a88180db1113be1e89266917d148b" compoundref="main_8c" startline="275" endline="318">HAL_ADC_ConvCpltCallback</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="main_8c_1a70af21c671abfcc773614a9a4f63d920" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void SystemClock_Config</definition>
+        <argsstring>(void)</argsstring>
+        <name>SystemClock_Config</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>System Clock Configuration. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>Configure the main internal regulator output voltage</para>
+<para>Initializes the RCC Oscillators according to the specified parameters in the RCC_OscInitTypeDef structure.</para>
+<para>Initializes the CPU, AHB and APB buses clocks</para>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="217" column="6" bodyfile="Core/Src/main.c" bodystart="217" bodyend="256" declfile="Core/Src/main.c" declline="82" declcolumn="6"/>
+        <references refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1abade755e13d07c10889ae83143656158" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MX_FREERTOS_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>MX_FREERTOS_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>FreeRTOS initialization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para><simplesect kind="attention"><para>DONT YOU FUCKING DARE DELETE THESE GOTO STATEMENTS, THEY ARE CRITICAL TO STOP THE OS FROM HANGING ITSELF</para>
+</simplesect>
+</para>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="83" column="6" bodyfile="Core/Src/freertos.c" bodystart="160" bodyend="201" declfile="Core/Src/main.c" declline="83" declcolumn="6"/>
+        <references refid="freertos_8c_1aa658fe134a5d1309d7a15c8116fa142c" compoundref="freertos_8c" startline="53">defaultTaskHandle</references>
+        <references refid="freertos_8c_1a3afad2adffd2b662e26b56ede2b1ccc5" compoundref="freertos_8c" startline="48">init_settings</references>
+        <references refid="freertos_8c_1a142da7a698285a444ffffb0d1d791023" compoundref="freertos_8c" startline="51">init_task_handle</references>
+        <references refid="freertos_8c_1a016544463b4842ced7191baf8f449cea" compoundref="freertos_8c" startline="209" endline="218">StartDefaultTask</references>
+        <references refid="structuv__init__struct_1a5275182451a7f4931006e5ff393f1cdb" compoundref="uvfr__utils_8h" startline="285">uv_init_struct::use_default_settings</references>
+        <references refid="uvfr__utils_8h_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</references>
+        <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int main</definition>
+        <argsstring>(void)</argsstring>
+        <name>main</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>The application entry point. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>int</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="97" column="5" bodyfile="Core/Src/main.c" bodystart="97" bodyend="211"/>
+        <references refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" compoundref="main_8c" startline="64">adc1_APPS1</references>
+        <references refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" compoundref="main_8c" startline="65">adc1_APPS2</references>
+        <references refid="can_8c_1aff5c4caa2b4968b309deaffdc58f1e92" compoundref="can_8c" startline="71" endline="142">handleCANbusError</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+        <references refid="adc_8h_1acccd58aa70215a6b184ad242312ffd0c" compoundref="adc_8c" startline="32" endline="116">MX_ADC1_Init</references>
+        <references refid="adc_8h_1a101e2e3433dfe72bbbd0ae3a84489263" compoundref="adc_8c" startline="118" endline="163">MX_ADC2_Init</references>
+        <references refid="can_8h_1a1ee5cd592134235b6c07f676784d47c3" compoundref="can_8c" startline="150" endline="226">MX_CAN2_Init</references>
+        <references refid="dma_8h_1a323249dac769f9855c10b4ec9446b707" compoundref="dma_8c" startline="39" endline="50">MX_DMA_Init</references>
+        <references refid="main_8c_1abade755e13d07c10889ae83143656158" compoundref="freertos_8c" startline="160" endline="201">MX_FREERTOS_Init</references>
+        <references refid="gpio_8h_1ac724e431d2af879252de35615be2bdea" compoundref="gpio_8c" startline="42" endline="73">MX_GPIO_Init</references>
+        <references refid="spi_8h_1af81398f9775695df0b172367651ca3e6" compoundref="spi_8c" startline="30" endline="60">MX_SPI1_Init</references>
+        <references refid="tim_8h_1a7912f2916786a2c33cb6fb8259ade58c" compoundref="tim_8c" startline="30" endline="68">MX_TIM3_Init</references>
+        <references refid="main_8c_1a70af21c671abfcc773614a9a4f63d920" compoundref="main_8c" startline="217" endline="256">SystemClock_Config</references>
+        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+        <references refid="dash_8h_1ab26e477047a5166efc8f2b34dbd38872" compoundref="dash_8c" startline="9" endline="26">Update_RPM</references>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1af20a88180db1113be1e89266917d148b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_ADC_ConvCpltCallback</definition>
+        <argsstring>(ADC_HandleTypeDef *hadc)</argsstring>
+        <name>HAL_ADC_ConvCpltCallback</name>
+        <param>
+          <type>ADC_HandleTypeDef *</type>
+          <declname>hadc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="275" column="6" bodyfile="Core/Src/main.c" bodystart="275" bodyend="318"/>
+        <references refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" compoundref="main_8c" startline="64">adc1_APPS1</references>
+        <references refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" compoundref="main_8c" startline="65">adc1_APPS2</references>
+        <references refid="main_8c_1ad36d3aa4037203058df6816d56f4c186" compoundref="main_8c" startline="66">adc1_BPS1</references>
+        <references refid="main_8c_1a277f7921a7a1e0fb8a6f953943dc06dc" compoundref="main_8c" startline="67">adc1_BPS2</references>
+        <references refid="adc_8h_1a11f08a78cccde778b1effca3c3081b75" compoundref="adc_8h" startline="45">ADC1_SAMPLES</references>
+        <references refid="main_8c_1a9211365d419c877b3b4f8074ef19cb33" compoundref="main_8c" startline="71">adc2_CoolantFlow</references>
+        <references refid="main_8c_1a05d60ecdd2dcf9cb28968d8027d1d5ce" compoundref="main_8c" startline="70">adc2_CoolantTemp</references>
+        <references refid="main_8c_1a8c60277435d9f53a21fed2e4ae28a66a" compoundref="main_8c" startline="62">adc_buf1</references>
+        <references refid="main_8c_1a820ab8aecc5744f003ca984a1d960da1" compoundref="main_8c" startline="69">adc_buf2</references>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a0cd91fd3a9608559c2a87a8ba6cba55f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_GPIO_EXTI_Callback</definition>
+        <argsstring>(uint16_t GPIO_Pin)</argsstring>
+        <name>HAL_GPIO_EXTI_Callback</name>
+        <param>
+          <type>uint16_t</type>
+          <declname>GPIO_Pin</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="321" column="6" bodyfile="Core/Src/main.c" bodystart="321" bodyend="327"/>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a8cf5c59c6355fe7cf3c10816c761b9c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_ADC_LevelOutOfWindowCallback</definition>
+        <argsstring>(ADC_HandleTypeDef *hadc)</argsstring>
+        <name>HAL_ADC_LevelOutOfWindowCallback</name>
+        <param>
+          <type>ADC_HandleTypeDef *</type>
+          <declname>hadc</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="330" column="6" bodyfile="Core/Src/main.c" bodystart="330" bodyend="341"/>
+        <references refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" compoundref="main_8c" startline="64">adc1_APPS1</references>
+        <references refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" compoundref="main_8c" startline="65">adc1_APPS2</references>
+        <references refid="adc_8h_1a22b804736f5648d52f639b2647d4ed13" compoundref="adc_8c" startline="27">hadc1</references>
+        <references refid="main_8h_1a20d53ed7496ff721dc9647b280148f1a" compoundref="main_8h" startline="70">Red_LED_GPIO_Port</references>
+        <references refid="main_8h_1a74d7905a14b6db421bd1d521d86789eb" compoundref="main_8h" startline="69">Red_LED_Pin</references>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a8a3b0ad512a6e6c6157440b68d395eac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HAL_TIM_PeriodElapsedCallback</definition>
+        <argsstring>(TIM_HandleTypeDef *htim)</argsstring>
+        <name>HAL_TIM_PeriodElapsedCallback</name>
+        <param>
+          <type>TIM_HandleTypeDef *</type>
+          <declname>htim</declname>
+        </param>
+        <briefdescription>
+<para>Period elapsed callback in non blocking mode. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="note"><para>This function is called when TIM1 interrupt took place, inside HAL_TIM_IRQHandler(). It makes a direct call to HAL_IncTick() to increment a global variable &quot;uwTick&quot; used as application time base. </para>
+</simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>htim</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>: TIM handle </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="354" column="6" bodyfile="Core/Src/main.c" bodystart="354" bodyend="372"/>
+        <references refid="adc_8h_1aa11cd6f12825030de59c9466913e011a" compoundref="adc_8h" startline="48">ADC2_BUF_LEN</references>
+        <references refid="main_8c_1a820ab8aecc5744f003ca984a1d960da1" compoundref="main_8c" startline="69">adc_buf2</references>
+        <references refid="adc_8h_1acd9221f1aa19aebfe0b744947f2daf49" compoundref="adc_8c" startline="28">hadc2</references>
+        <references refid="tim_8h_1aac3d2c59ee0e3bbae1b99529a154eb62" compoundref="tim_8c" startline="27">htim3</references>
+      </memberdef>
+      <memberdef kind="function" id="main_8c_1a1730ffe1e560465665eb47d9264826f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void Error_Handler</definition>
+        <argsstring>(void)</argsstring>
+        <name>Error_Handler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function is executed in case of error occurrence. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/main.c" line="378" column="6" bodyfile="Core/Src/main.c" bodystart="378" bodyend="388"/>
+        <referencedby refid="adc_8c_1ac3139540667c403c5dfd37a99c610b1c" compoundref="adc_8c" startline="165" endline="234">HAL_ADC_MspInit</referencedby>
+        <referencedby refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" compoundref="can_8c" startline="298" endline="335">HAL_CAN_RxFifo0MsgPendingCallback</referencedby>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+        <referencedby refid="imd_8c_1aeb7c937639c5385f5d2b4e3a4e60250f" compoundref="imd_8c" startline="180" endline="191">IMD_Request_Status</referencedby>
+        <referencedby refid="adc_8c_1acccd58aa70215a6b184ad242312ffd0c" compoundref="adc_8c" startline="32" endline="116">MX_ADC1_Init</referencedby>
+        <referencedby refid="adc_8c_1a101e2e3433dfe72bbbd0ae3a84489263" compoundref="adc_8c" startline="118" endline="163">MX_ADC2_Init</referencedby>
+        <referencedby refid="can_8c_1a1ee5cd592134235b6c07f676784d47c3" compoundref="can_8c" startline="150" endline="226">MX_CAN2_Init</referencedby>
+        <referencedby refid="spi_8c_1af81398f9775695df0b172367651ca3e6" compoundref="spi_8c" startline="30" endline="60">MX_SPI1_Init</referencedby>
+        <referencedby refid="tim_8c_1a7912f2916786a2c33cb6fb8259ade58c" compoundref="tim_8c" startline="30" endline="68">MX_TIM3_Init</referencedby>
+        <referencedby refid="pdu_8c_1ad7b67b3c1618a7c50a5d6d9f9e13a89f" compoundref="pdu_8c" startline="48" endline="60">PDU_disable_brake_light</referencedby>
+        <referencedby refid="pdu_8c_1aebeb35957c80be85dc938efe72c8e825" compoundref="pdu_8c" startline="170" endline="181">PDU_disable_coolant_pump</referencedby>
+        <referencedby refid="pdu_8c_1a3c665494b7f9fb4e025ff31d24c97072" compoundref="pdu_8c" startline="136" endline="155">PDU_disable_cooling_fans</referencedby>
+        <referencedby refid="pdu_8c_1a6b189c4013c1cb97ff696a9bc05def5e" compoundref="pdu_8c" startline="74" endline="85">PDU_disable_motor_controller</referencedby>
+        <referencedby refid="pdu_8c_1a67ed21c50014c891cc0031655a30aef9" compoundref="pdu_8c" startline="100" endline="111">PDU_disable_shutdown_circuit</referencedby>
+        <referencedby refid="pdu_8c_1aa5479c0d6ab8d58683e99bf102d60db8" compoundref="pdu_8c" startline="34" endline="46">PDU_enable_brake_light</referencedby>
+        <referencedby refid="pdu_8c_1aef2fd854287906cac1734f08a6edcf2a" compoundref="pdu_8c" startline="158" endline="169">PDU_enable_coolant_pump</referencedby>
+        <referencedby refid="pdu_8c_1a9d736981007eb7fc9691275dc7b6c05c" compoundref="pdu_8c" startline="115" endline="134">PDU_enable_cooling_fans</referencedby>
+        <referencedby refid="pdu_8c_1ae3eaaae4438e04d63fe04cc23a201810" compoundref="pdu_8c" startline="62" endline="73">PDU_enable_motor_controller</referencedby>
+        <referencedby refid="pdu_8c_1a0f2b86f2db7ee86b014ccc246c8b674d" compoundref="pdu_8c" startline="87" endline="98">PDU_enable_shutdown_circuit</referencedby>
+        <referencedby refid="pdu_8c_1a42e33c33fc1dea26555ff7b20984b186" compoundref="pdu_8c" startline="11" endline="31">PDU_speaker_chirp</referencedby>
+        <referencedby refid="main_8c_1a70af21c671abfcc773614a9a4f63d920" compoundref="main_8c" startline="217" endline="256">SystemClock_Config</referencedby>
+        <referencedby refid="dash_8c_1a66f84461e5c75202d12edfd8ea7c7f62" compoundref="dash_8c" startline="29" endline="45">Update_Batt_Temp</referencedby>
+        <referencedby refid="dash_8c_1ab26e477047a5166efc8f2b34dbd38872" compoundref="dash_8c" startline="9" endline="26">Update_RPM</referencedby>
+        <referencedby refid="dash_8c_1a30155b58ef3801f5693e953d4139d55f" compoundref="dash_8c" startline="48" endline="64">Update_State_Of_Charge</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>: Main program body </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="attention"><para></para>
+</simplesect>
+Copyright (c) 2023 STMicroelectronics. All rights reserved.</para>
+<para>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Header<sp/>*/</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;cmsis_os.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="adc_8h" kindref="compound">adc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="can_8h" kindref="compound">can.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dma_8h" kindref="compound">dma.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="spi_8h" kindref="compound">spi.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tim_8h" kindref="compound">tim.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="gpio_8h" kindref="compound">gpio.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>includes<sp/>----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>CAN<sp/>info<sp/>is<sp/>defined<sp/>in<sp/>constants</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="constants_8h" kindref="compound">constants.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bms_8h" kindref="compound">bms.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dash_8h" kindref="compound">dash.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="imd_8h" kindref="compound">imd.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="motor__controller_8h" kindref="compound">motor_controller.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pdu_8h" kindref="compound">pdu.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>typedef<sp/>-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PTD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PTD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>define<sp/>------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="main_8c_1a764dcd92a2e2229e53e2090201243643" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>DEBUG_CAN_IN_MAIN<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>macro<sp/>-------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PM<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PM<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>variables<sp/>---------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PV<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="main_8c_1a8c60277435d9f53a21fed2e4ae28a66a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="main_8c_1a8c60277435d9f53a21fed2e4ae28a66a" kindref="member">adc_buf1</ref>[<ref refid="adc_8h_1a241b375208136bfc174d8aac59759293" kindref="member">ADC1_BUF_LEN</ref>];<sp/></highlight><highlight class="comment">//<sp/>ADC1<sp/>-<sp/>high<sp/>priority<sp/>readings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" kindref="member">adc1_APPS1</ref>;<sp/></highlight><highlight class="comment">//These<sp/>are<sp/>the<sp/>locations<sp/>for<sp/>the<sp/>sensor<sp/>inputs<sp/>for<sp/>APPS<sp/>and<sp/>BPS</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65" refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" kindref="member">adc1_APPS2</ref>;</highlight></codeline>
+<codeline lineno="66" refid="main_8c_1ad36d3aa4037203058df6816d56f4c186" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="main_8c_1ad36d3aa4037203058df6816d56f4c186" kindref="member">adc1_BPS1</ref>;</highlight></codeline>
+<codeline lineno="67" refid="main_8c_1a277f7921a7a1e0fb8a6f953943dc06dc" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="main_8c_1a277f7921a7a1e0fb8a6f953943dc06dc" kindref="member">adc1_BPS2</ref>;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="main_8c_1a820ab8aecc5744f003ca984a1d960da1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">volatile</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="main_8c_1a820ab8aecc5744f003ca984a1d960da1" kindref="member">adc_buf2</ref>[<ref refid="adc_8h_1aa11cd6f12825030de59c9466913e011a" kindref="member">ADC2_BUF_LEN</ref>];<sp/></highlight><highlight class="comment">//<sp/>ADC2<sp/>-<sp/>lower<sp/>priority<sp/>readings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="main_8c_1a05d60ecdd2dcf9cb28968d8027d1d5ce" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="main_8c_1a05d60ecdd2dcf9cb28968d8027d1d5ce" kindref="member">adc2_CoolantTemp</ref>;</highlight></codeline>
+<codeline lineno="71" refid="main_8c_1a9211365d419c877b3b4f8074ef19cb33" refkind="member"><highlight class="normal">uint16_t<sp/><ref refid="main_8c_1a9211365d419c877b3b4f8074ef19cb33" kindref="member">adc2_CoolantFlow</ref>;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="comment">//int<sp/>adc_conv_complete_flag<sp/>=<sp/>0;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight><highlight class="comment">//State<sp/>of<sp/>da<sp/>vehicle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight><highlight class="comment">//enum<sp/>uv_vehicle_state_t<sp/>vehicle_state<sp/>=<sp/>UV_INIT;<sp/>//TODO:<sp/>Define<sp/>new<sp/>state<sp/>machine<sp/>logic</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PV<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>function<sp/>prototypes<sp/>-----------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a70af21c671abfcc773614a9a4f63d920" kindref="member">SystemClock_Config</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1abade755e13d07c10889ae83143656158" kindref="member">MX_FREERTOS_Init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PFP<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PFP<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>user<sp/>code<sp/>---------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="97" refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" refkind="member"><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" kindref="member">main</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>MCU<sp/>Configuration--------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Reset<sp/>of<sp/>all<sp/>peripherals,<sp/>Initializes<sp/>the<sp/>Flash<sp/>interface<sp/>and<sp/>the<sp/>Systick.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/>HAL_Init();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Init<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>CAN<sp/>clock<sp/>must<sp/>be<sp/>enabled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>__HAL_RCC_CAN2_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Init<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Configure<sp/>the<sp/>system<sp/>clock<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="normal"><sp/><sp/><ref refid="main_8c_1a70af21c671abfcc773614a9a4f63d920" kindref="member">SystemClock_Config</ref>();</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>SysInit<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>SysInit<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Initialize<sp/>all<sp/>configured<sp/>peripherals<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><ref refid="gpio_8h_1ac724e431d2af879252de35615be2bdea" kindref="member">MX_GPIO_Init</ref>();</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><ref refid="dma_8h_1a323249dac769f9855c10b4ec9446b707" kindref="member">MX_DMA_Init</ref>();</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><ref refid="can_8h_1a1ee5cd592134235b6c07f676784d47c3" kindref="member">MX_CAN2_Init</ref>();</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><ref refid="adc_8h_1acccd58aa70215a6b184ad242312ffd0c" kindref="member">MX_ADC1_Init</ref>();</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/><ref refid="adc_8h_1a101e2e3433dfe72bbbd0ae3a84489263" kindref="member">MX_ADC2_Init</ref>();</highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><sp/><sp/><ref refid="tim_8h_1a7912f2916786a2c33cb6fb8259ade58c" kindref="member">MX_TIM3_Init</ref>();</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><ref refid="spi_8h_1af81398f9775695df0b172367651ca3e6" kindref="member">MX_SPI1_Init</ref>();</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//HAL_ADC_Start_DMA(&amp;hadc1,<sp/>(uint32_t*)adc_buf1,<sp/>ADC1_BUF_LEN);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//HAL_TIM_Base_Start_IT(&amp;htim3);<sp/>This<sp/>is<sp/>getting<sp/>disabled,<sp/>since<sp/>measuring<sp/>temp<sp/>will<sp/>now<sp/>be<sp/>an<sp/>RTOS<sp/>task</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Just<sp/>to<sp/>prove<sp/>we<sp/>reached<sp/>this<sp/>point<sp/>in<sp/>the<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//ANYTHING<sp/>WE<sp/>NEED<sp/>TO<sp/>DO<sp/>BEFORE<sp/>THE<sp/>KERNEL<sp/>TAKES<sp/>OVER<sp/>SHOULD<sp/>HAPPEN<sp/>HERE:</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//HAL_NVIC_PriorityGroupConfig(<sp/>NVIC_PRIORITYGROUP_4<sp/>);<sp/>///&lt;<sp/>This<sp/>one<sp/>is<sp/>a<sp/>fun<sp/>function<sp/>to<sp/>do<sp/>some<sp/>NVIC<sp/>tomfoolery<sp/>because<sp/>we<sp/>need<sp/>to</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>DEBUG_CAN_IN_MAIN</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1){</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_14);</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[0]<sp/>=<sp/>0b10101010;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[1]<sp/>=<sp/>0b10101010;</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[2]<sp/>=<sp/>0b10101010;</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[3]<sp/>=<sp/>1;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[4]<sp/>=<sp/>2;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[5]<sp/>=<sp/>3;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[6]<sp/>=<sp/>0b10101010;</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[7]<sp/>=<sp/>0b10101010;</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>HAL_StatusTypeDef<sp/>can_send_status;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//vTaskDelay(400);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>HAL_Delay(200);</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.IDE<sp/>=<sp/>CAN_ID_EXT;</highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.ExtId<sp/>=<sp/>0x1234;</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>.DLC<sp/>=<sp/>8;</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//No<sp/>need<sp/>for<sp/>a<sp/>critical<sp/>section<sp/>when<sp/>we<sp/>out<sp/>here<sp/>in<sp/>main<sp/>without<sp/>a<sp/>scheduler<sp/>running<sp/>:)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//taskENTER_CRITICAL();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>can_send_status<sp/>=<sp/>HAL_CAN_AddTxMessage(&amp;<ref refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>,<sp/>&amp;<ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>,<sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>,<sp/>&amp;<ref refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" kindref="member">TxMailbox</ref>);</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//taskEXIT_CRITICAL();</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(can_send_status<sp/>!=<sp/>HAL_OK){</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Transmission<sp/>request<sp/>Error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//uvPanic(&quot;Unable<sp/>to<sp/>Transmit<sp/>CAN<sp/>msg&quot;,can_send_status);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="can_8c_1aff5c4caa2b4968b309deaffdc58f1e92" kindref="member">handleCANbusError</ref>(&amp;<ref refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>,<sp/>0);</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>2<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Call<sp/>init<sp/>function<sp/>for<sp/>freertos<sp/>objects<sp/>(in<sp/>cmsis_os2.c)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><ref refid="main_8c_1abade755e13d07c10889ae83143656158" kindref="member">MX_FREERTOS_Init</ref>();</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"></highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Start<sp/>scheduler<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/>osKernelStart();</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>We<sp/>should<sp/>never<sp/>get<sp/>here<sp/>as<sp/>control<sp/>is<sp/>now<sp/>taken<sp/>by<sp/>the<sp/>scheduler<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Infinite<sp/>loop<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>WHILE<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Update_Batt_Temp(69);<sp/>//<sp/>temp<sp/>debugging</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)<sp/></highlight><highlight class="comment">//we<sp/>should<sp/>deadass<sp/>never<sp/>reach<sp/>this<sp/>point<sp/>in<sp/>the<sp/>code<sp/>lol</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>debugging<sp/>purposes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_13);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>into<sp/>string<sp/>and<sp/>store<sp/>in<sp/>dma_result_buffer<sp/>character<sp/>array</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dash_8h_1ab26e477047a5166efc8f2b34dbd38872" kindref="member">Update_RPM</ref>(<ref refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" kindref="member">adc1_APPS1</ref>);</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>HAL_Delay(1000);</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="dash_8h_1ab26e477047a5166efc8f2b34dbd38872" kindref="member">Update_RPM</ref>(<ref refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" kindref="member">adc1_APPS2</ref>);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>HAL_Delay(1000);</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>WHILE<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>3<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>3<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="211"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217" refid="main_8c_1a70af21c671abfcc773614a9a4f63d920" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a70af21c671abfcc773614a9a4f63d920" kindref="member">SystemClock_Config</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="218"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/>RCC_OscInitTypeDef<sp/>RCC_OscInitStruct<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/>RCC_ClkInitTypeDef<sp/>RCC_ClkInitStruct<sp/>=<sp/>{0};</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/>__HAL_RCC_PWR_CLK_ENABLE();</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/>__HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);</highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.OscillatorType<sp/>=<sp/>RCC_OSCILLATORTYPE_HSE;</highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.HSEState<sp/>=<sp/>RCC_HSE_ON;</highlight></codeline>
+<codeline lineno="232"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.PLL.PLLState<sp/>=<sp/>RCC_PLL_ON;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.PLL.PLLSource<sp/>=<sp/>RCC_PLLSOURCE_HSE;</highlight></codeline>
+<codeline lineno="234"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.PLL.PLLM<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="235"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.PLL.PLLN<sp/>=<sp/>168;</highlight></codeline>
+<codeline lineno="236"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.PLL.PLLP<sp/>=<sp/>RCC_PLLP_DIV2;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/>RCC_OscInitStruct.PLL.PLLQ<sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_RCC_OscConfig(&amp;RCC_OscInitStruct)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="240"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="242"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/>RCC_ClkInitStruct.ClockType<sp/>=<sp/>RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/>RCC_ClkInitStruct.SYSCLKSource<sp/>=<sp/>RCC_SYSCLKSOURCE_PLLCLK;</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/>RCC_ClkInitStruct.AHBCLKDivider<sp/>=<sp/>RCC_SYSCLK_DIV1;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/>RCC_ClkInitStruct.APB1CLKDivider<sp/>=<sp/>RCC_HCLK_DIV4;</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/>RCC_ClkInitStruct.APB2CLKDivider<sp/>=<sp/>RCC_HCLK_DIV2;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(HAL_RCC_ClockConfig(&amp;RCC_ClkInitStruct,<sp/>FLASH_LATENCY_5)<sp/>!=<sp/>HAL_OK)</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>();</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="256"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>4<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight><highlight class="comment">//<sp/>called<sp/>when<sp/>timer<sp/>3<sp/>period<sp/>elapsed</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight><highlight class="comment">//void<sp/>HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef<sp/>*htim){</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="262"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>//<sp/>check<sp/>that<sp/>timer<sp/>3<sp/>created<sp/>the<sp/>interrupt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>if<sp/>(htim<sp/>==<sp/>&amp;htim3){</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>start<sp/>a<sp/>single<sp/>round<sp/>of<sp/>ADC2<sp/>conversions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>HAL_ADC_Start_DMA(&amp;hadc2,<sp/>(uint32_t*)adc_buf2,<sp/>ADC2_BUF_LEN);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="267"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="268"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>restart<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="269"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>HAL_TIM_Base_Start_IT(&amp;htim3);</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="270"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="271"><highlight class="normal"></highlight><highlight class="comment">//}</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Called<sp/>when<sp/>adc<sp/>dma<sp/>buffer<sp/>is<sp/>completely<sp/>filled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="275" refid="main_8c_1af20a88180db1113be1e89266917d148b" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1af20a88180db1113be1e89266917d148b" kindref="member">HAL_ADC_ConvCpltCallback</ref>(ADC_HandleTypeDef*<sp/>hadc)<sp/>{</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Could<sp/>toggle<sp/>an<sp/>LED<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(hadc-&gt;Instance<sp/>==<sp/>ADC1){<sp/></highlight><highlight class="comment">//TODO:<sp/>Fix<sp/>this<sp/>so<sp/>it<sp/>is<sp/>RTOS<sp/>compatible</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" kindref="member">adc1_APPS1</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" kindref="member">adc1_APPS2</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1ad36d3aa4037203058df6816d56f4c186" kindref="member">adc1_BPS1</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="281"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a277f7921a7a1e0fb8a6f953943dc06dc" kindref="member">adc1_BPS2</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="282"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Hmmm<sp/>this<sp/>should<sp/>honestly<sp/>probably<sp/>be<sp/>a<sp/>16<sp/>bit<sp/>type<sp/>but<sp/>aint<sp/>nobody<sp/>got<sp/>time<sp/>for<sp/>dat</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uint32_t*<sp/>buf1_pointer<sp/>=<sp/><ref refid="main_8c_1a8c60277435d9f53a21fed2e4ae28a66a" kindref="member">adc_buf1</ref>;</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/><ref refid="adc_8h_1a11f08a78cccde778b1effca3c3081b75" kindref="member">ADC1_SAMPLES</ref>;<sp/>i++){<sp/></highlight><highlight class="comment">//BUG:<sp/>pointer<sp/>incremented<sp/>by<sp/>one<sp/>rather<sp/>than<sp/>the<sp/>length<sp/>of<sp/>the<sp/>datatype</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" kindref="member">adc1_APPS1</ref><sp/>+=<sp/>*buf1_pointer++;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" kindref="member">adc1_APPS2</ref><sp/>+=<sp/>*buf1_pointer++;</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1ad36d3aa4037203058df6816d56f4c186" kindref="member">adc1_BPS1</ref><sp/>+=<sp/>*buf1_pointer++;</highlight></codeline>
+<codeline lineno="290"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a277f7921a7a1e0fb8a6f953943dc06dc" kindref="member">adc1_BPS2</ref><sp/>+=<sp/>*buf1_pointer++;</highlight></codeline>
+<codeline lineno="291"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//The<sp/>above<sp/>code<sp/>is<sp/>actually<sp/>even<sp/>worse<sp/>than<sp/>I<sp/>originally<sp/>suspected.<sp/>Seriously,<sp/>WTF.<sp/>If<sp/>multiple<sp/>writes<sp/>occur,<sp/>then<sp/>they<sp/>get<sp/>summed,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Rather<sp/>than<sp/>initial<sp/>writes<sp/>getting<sp/>overwritten<sp/>by<sp/>newer<sp/>ones.<sp/>UNDEFINED<sp/>BEHAVIOR!</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="295"><highlight class="normal"></highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>calculate<sp/>APPS<sp/>fraction<sp/>travelled<sp/>(see<sp/>spreadsheet<sp/>for<sp/>equation<sp/>derivation)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Byron<sp/>here:<sp/>I<sp/>want<sp/>these<sp/>constants<sp/>to<sp/>be<sp/>TUNABLE,<sp/>this<sp/>will<sp/>need<sp/>some<sp/>debugging<sp/>in<sp/>the<sp/>future</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="298"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" kindref="member">adc1_APPS1</ref><sp/>=<sp/>0.8082*<ref refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" kindref="member">adc1_APPS1</ref><sp/>-<sp/>0.3709;</highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" kindref="member">adc1_APPS2</ref><sp/>=<sp/>0.8405*<ref refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" kindref="member">adc1_APPS2</ref><sp/>-<sp/>0.8747;</highlight></codeline>
+<codeline lineno="300"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>APPS1<sp/>&amp;<sp/>APPS2<sp/>plausibility<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>suspend<sp/>if<sp/>error<sp/>persists<sp/>for<sp/>100<sp/>ms</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">((<ref refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" kindref="member">adc1_APPS1</ref>-<ref refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" kindref="member">adc1_APPS2</ref>)&gt;0.1<sp/>||<sp/>(<ref refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" kindref="member">adc1_APPS1</ref>-<ref refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" kindref="member">adc1_APPS2</ref>)&lt;-0.1){</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//START<sp/>TIMER<sp/>FOR<sp/>APPS<sp/>IMPLAUSIBILITY</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>APPS<sp/>&amp;<sp/>BPS<sp/>plausibility<sp/>check</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>immediate<sp/>suspend<sp/>if<sp/>error<sp/>occurs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(((<ref refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" kindref="member">adc1_APPS1</ref><sp/>&gt;<sp/>0.25)||(<ref refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" kindref="member">adc1_APPS2</ref><sp/>&gt;<sp/>0.25))&amp;&amp;((<ref refid="main_8c_1ad36d3aa4037203058df6816d56f4c186" kindref="member">adc1_BPS1</ref><sp/>&gt;<sp/>69)||(<ref refid="main_8c_1a277f7921a7a1e0fb8a6f953943dc06dc" kindref="member">adc1_BPS2</ref><sp/>&gt;<sp/>69))){</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>checking<sp/>for<sp/>hard<sp/>brake<sp/>+<sp/>accel</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>if<sp/>found,<sp/>enter<sp/>suspend</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(hadc-&gt;Instance<sp/>==<sp/>ADC2){</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a05d60ecdd2dcf9cb28968d8027d1d5ce" kindref="member">adc2_CoolantTemp</ref><sp/>=<sp/><ref refid="main_8c_1a820ab8aecc5744f003ca984a1d960da1" kindref="member">adc_buf2</ref>[0];</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a9211365d419c877b3b4f8074ef19cb33" kindref="member">adc2_CoolantFlow</ref><sp/>=<sp/><ref refid="main_8c_1a820ab8aecc5744f003ca984a1d960da1" kindref="member">adc_buf2</ref>[1];</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="318"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"></highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight><highlight class="comment">//<sp/>EXTI<sp/>gpio<sp/>pin<sp/>a0<sp/>External<sp/>Interrupt<sp/>ISR<sp/>Handler</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="321" refid="main_8c_1a0cd91fd3a9608559c2a87a8ba6cba55f" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a0cd91fd3a9608559c2a87a8ba6cba55f" kindref="member">HAL_GPIO_EXTI_Callback</ref>(uint16_t<sp/>GPIO_Pin)</highlight></codeline>
+<codeline lineno="322"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(GPIO_Pin<sp/>==<sp/>GPIO_PIN_0)<sp/></highlight><highlight class="comment">//<sp/>If<sp/>The<sp/>INT<sp/>Source<sp/>Is<sp/>EXTI<sp/>Line0<sp/>(A0<sp/>Pin)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"></highlight><highlight class="comment">//ready_to_drive<sp/>=<sp/>1;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="327"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Analog<sp/>Watchdog<sp/>Out-of-Range<sp/>handler,<sp/>ADC<sp/>conversion<sp/>values<sp/>range<sp/>from<sp/>0<sp/>to<sp/>4095</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="330" refid="main_8c_1a8cf5c59c6355fe7cf3c10816c761b9c2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a8cf5c59c6355fe7cf3c10816c761b9c2" kindref="member">HAL_ADC_LevelOutOfWindowCallback</ref>(ADC_HandleTypeDef*<sp/>hadc){</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(hadc-&gt;Instance<sp/>==<sp/>ADC1){</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>triggered<sp/>for<sp/>voltages<sp/>below<sp/>0.5V<sp/>(below<sp/>400)<sp/>or<sp/>above<sp/>4.5V<sp/>(above<sp/>3674)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HAL_GPIO_WritePin(<ref refid="main_8h_1a20d53ed7496ff721dc9647b280148f1a" kindref="member">Red_LED_GPIO_Port</ref>,<ref refid="main_8h_1a74d7905a14b6db421bd1d521d86789eb" kindref="member">Red_LED_Pin</ref>,<sp/>GPIO_PIN_SET);</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HAL_ADC_Stop_DMA(&amp;<ref refid="adc_8h_1a22b804736f5648d52f639b2647d4ed13" kindref="member">hadc1</ref>);</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a549b3590f54dfc129d2eebf2604c16e8" kindref="member">adc1_APPS1</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="main_8c_1a8567d6e2f5ad8bd53f71ecc2b2b0ae30" kindref="member">adc1_APPS2</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="337"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(hadc-&gt;Instance<sp/>==<sp/>ADC2){</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>handle<sp/>coolant<sp/>sensors<sp/>short<sp/>error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="340"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="341"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="342"><highlight class="normal"></highlight></codeline>
+<codeline lineno="343"><highlight class="normal"></highlight></codeline>
+<codeline lineno="344"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>4<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="345"><highlight class="normal"></highlight></codeline>
+<codeline lineno="354" refid="main_8c_1a8a3b0ad512a6e6c6157440b68d395eac" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a8a3b0ad512a6e6c6157440b68d395eac" kindref="member">HAL_TIM_PeriodElapsedCallback</ref>(TIM_HandleTypeDef<sp/>*htim)</highlight></codeline>
+<codeline lineno="355"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Callback<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Callback<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(htim-&gt;Instance<sp/>==<sp/>TIM1)<sp/>{</highlight></codeline>
+<codeline lineno="360"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_IncTick();</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="362"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Callback<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(htim<sp/>==<sp/>&amp;<ref refid="tim_8h_1aac3d2c59ee0e3bbae1b99529a154eb62" kindref="member">htim3</ref>){</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>start<sp/>a<sp/>single<sp/>round<sp/>of<sp/>ADC2<sp/>conversions</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="366"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HAL_ADC_Start_DMA(&amp;<ref refid="adc_8h_1acd9221f1aa19aebfe0b744947f2daf49" kindref="member">hadc2</ref>,<sp/>(uint32_t*)<ref refid="main_8c_1a820ab8aecc5744f003ca984a1d960da1" kindref="member">adc_buf2</ref>,<sp/><ref refid="adc_8h_1aa11cd6f12825030de59c9466913e011a" kindref="member">ADC2_BUF_LEN</ref>);</highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>restart<sp/>timer</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="369"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>HAL_TIM_Base_Start_IT(&amp;<ref refid="tim_8h_1aac3d2c59ee0e3bbae1b99529a154eb62" kindref="member">htim3</ref>);</highlight></codeline>
+<codeline lineno="370"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Callback<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378" refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="main_8c_1a1730ffe1e560465665eb47d9264826f9" kindref="member">Error_Handler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="379"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Error_Handler_Debug<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/>HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_12);<sp/></highlight><highlight class="comment">//Me<sp/>when<sp/>the<sp/>error<sp/>is<sp/>not<sp/>being<sp/>handled</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>User<sp/>can<sp/>add<sp/>his<sp/>own<sp/>implementation<sp/>to<sp/>report<sp/>the<sp/>HAL<sp/>error<sp/>return<sp/>state<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/>__disable_irq();</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="387"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Error_Handler_Debug<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="389"><highlight class="normal"></highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/><sp/>USE_FULL_ASSERT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>assert_failed(uint8_t<sp/>*file,<sp/>uint32_t<sp/>line)</highlight></codeline>
+<codeline lineno="399"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>6<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>User<sp/>can<sp/>add<sp/>his<sp/>own<sp/>implementation<sp/>to<sp/>report<sp/>the<sp/>file<sp/>name<sp/>and<sp/>line<sp/>number,</highlight></codeline>
+<codeline lineno="402"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/>ex:<sp/>printf(&quot;Wrong<sp/>parameters<sp/>value:<sp/>file<sp/>%s<sp/>on<sp/>line<sp/>%d\r\n&quot;,<sp/>file,<sp/>line)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>6<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="404"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="405"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>USE_FULL_ASSERT<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="Core/Src/main.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structdaq__param__list__node" kind="struct" language="C++" prot="public">
+    <compoundname>daq_param_list_node</compoundname>
+    <includes refid="daq_8h" local="no">daq.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structdaq__param__list__node_1a1213d4ad19f282a2e313f6ffe96584ac" prot="public" static="no" mutable="no">
+        <type>uint16_t</type>
+        <definition>uint16_t daq_param_list_node::param_idx</definition>
+        <argsstring></argsstring>
+        <name>param_idx</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/daq.h" line="49" column="10" bodyfile="Core/Inc/daq.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structdaq__param__list__node_1aa70718d4adff315eb53a8c00e4b1021a" prot="public" static="no" mutable="no">
+        <type>struct <ref refid="structdaq__param__list__node" kindref="compound">daq_param_list_node</ref> *</type>
+        <definition>struct daq_param_list_node* daq_param_list_node::next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/daq.h" line="50" column="27" bodyfile="Core/Inc/daq.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>daq_param_list_node</label>
+        <link refid="structdaq__param__list__node"/>
+        <childnode refid="1" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Core/Inc/daq.h" line="48" column="34" bodyfile="Core/Inc/daq.h" bodystart="48" bodyend="51"/>
+    <listofallmembers>
+      <member refid="structdaq__param__list__node_1aa70718d4adff315eb53a8c00e4b1021a" prot="public" virt="non-virtual"><scope>daq_param_list_node</scope><name>next</name></member>
+      <member refid="structdaq__param__list__node_1a1213d4ad19f282a2e313f6ffe96584ac" prot="public" virt="non-virtual"><scope>daq_param_list_node</scope><name>param_idx</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

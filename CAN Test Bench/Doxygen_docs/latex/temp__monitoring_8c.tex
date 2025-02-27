@@ -5,7 +5,11 @@
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{temp__monitoring_8c_a979dc6ff14a3ef1f72e3cbea884871b0}{init\+Temp\+Monitor}} (void $\ast$arguments)
+\mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{temp__monitoring_8c_a979dc6ff14a3ef1f72e3cbea884871b0}{init\+Temp\+Monitor}} (void $\ast$arguments)
+\item 
+void \mbox{\hyperlink{temp__monitoring_8c_a6ebc9edd0095edf64a08a3c2f9ed2efe}{testfunc}} (\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$msg)
+\item 
+void \mbox{\hyperlink{temp__monitoring_8c_a42aed0ca516238bb78f401d645b7b930}{testfunc2}} (\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$msg)
 \item 
 void \mbox{\hyperlink{temp__monitoring_8c_a2a1d7fee4cea6ce07e4d4acc1b2ca752}{temp\+Monitor\+Task}} (void $\ast$args)
 \begin{DoxyCompactList}\small\item\em Monitors the temperatures of various points in the tractive system, and activates various cooling systems and such accordingly. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -16,7 +20,7 @@ void \mbox{\hyperlink{temp__monitoring_8c_a2a1d7fee4cea6ce07e4d4acc1b2ca752}{tem
 \index{temp\_monitoring.c@{temp\_monitoring.c}!initTempMonitor@{initTempMonitor}}
 \index{initTempMonitor@{initTempMonitor}!temp\_monitoring.c@{temp\_monitoring.c}}
 \doxysubsubsection{\texorpdfstring{initTempMonitor()}{initTempMonitor()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} init\+Temp\+Monitor (\begin{DoxyParamCaption}\item[{void $\ast$}]{arguments }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} init\+Temp\+Monitor (\begin{DoxyParamCaption}\item[{void $\ast$}]{arguments }\end{DoxyParamCaption})}
 
 
 
@@ -24,7 +28,7 @@ Definition at line 12 of file temp\+\_\+monitoring.\+c.
 
 
 
-References \+\_\+\+U\+V\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, uv\+\_\+task\+\_\+info\+::active\+\_\+states, uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, uv\+\_\+task\+\_\+info\+::max\+\_\+instances, P\+R\+O\+G\+R\+A\+M\+M\+I\+NG, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+args, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+period, uv\+\_\+task\+\_\+info\+::task\+\_\+priority, temp\+Monitor\+Task(), U\+V\+\_\+\+D\+R\+I\+V\+I\+NG, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE, U\+V\+\_\+\+L\+A\+U\+N\+C\+H\+\_\+\+C\+O\+N\+T\+R\+OL, U\+V\+\_\+\+OK, U\+V\+\_\+\+R\+E\+A\+DY, and uv\+Create\+Task().
+References \+\_\+\+U\+V\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, uv\+\_\+task\+\_\+info\+::active\+\_\+states, uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, P\+R\+O\+G\+R\+A\+M\+M\+I\+NG, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+args, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+period, uv\+\_\+task\+\_\+info\+::task\+\_\+priority, temp\+Monitor\+Task(), U\+V\+\_\+\+D\+R\+I\+V\+I\+NG, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE, U\+V\+\_\+\+L\+A\+U\+N\+C\+H\+\_\+\+C\+O\+N\+T\+R\+OL, U\+V\+\_\+\+OK, U\+V\+\_\+\+R\+E\+A\+DY, and uv\+Create\+Task().
 
 
 
@@ -46,20 +50,56 @@ Atm, this is mostly serving as an example of a task These here lines set the del
 \begin{DoxyCode}{0}
 \DoxyCodeLine{ */}
 \DoxyCodeLine{TickType\_t tick\_period = pdMS\_TO\_TICKS(params-\/>task\_period); \textcolor{comment}{//Convert ms of period to the RTOS ticks}}
-\DoxyCodeLine{TickType\_t last\_time = xTaskGetTickCount();}
+\DoxyCodeLine{TickType\_t last\_time = 0;}
 \DoxyCodeLine{\textcolor{comment}{/**}}
 \end{DoxyCode}
 
 
 This is an example of a task control point, which is the spot in the task where the task decides what needs to be done, based on the commands it has received from the task manager and the S\+CD
 
-Definition at line 48 of file temp\+\_\+monitoring.\+c.
+Definition at line 70 of file temp\+\_\+monitoring.\+c.
 
 
 
-References uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, kill\+Self(), suspend\+Self(), uv\+\_\+task\+\_\+info\+::task\+\_\+period, U\+V\+\_\+\+K\+I\+L\+L\+\_\+\+C\+MD, and U\+V\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+MD.
+References uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, uv\+\_\+\+C\+A\+N\+\_\+msg\+::data, uv\+\_\+\+C\+A\+N\+\_\+msg\+::dlc, uv\+\_\+\+C\+A\+N\+\_\+msg\+::flags, insert\+C\+A\+N\+Message\+Handler(), kill\+Self(), uv\+\_\+\+C\+A\+N\+\_\+msg\+::msg\+\_\+id, suspend\+Self(), uv\+\_\+task\+\_\+info\+::task\+\_\+period, testfunc(), testfunc2(), Tx\+Data, Tx\+Header, U\+V\+\_\+\+K\+I\+L\+L\+\_\+\+C\+MD, U\+V\+\_\+\+S\+U\+S\+P\+E\+N\+D\+\_\+\+C\+MD, uv\+Send\+Can\+M\+S\+G(), and uv\+Task\+Delay\+Until.
 
 
 
 Referenced by init\+Temp\+Monitor().
+
+\mbox{\Hypertarget{temp__monitoring_8c_a6ebc9edd0095edf64a08a3c2f9ed2efe}\label{temp__monitoring_8c_a6ebc9edd0095edf64a08a3c2f9ed2efe}} 
+\index{temp\_monitoring.c@{temp\_monitoring.c}!testfunc@{testfunc}}
+\index{testfunc@{testfunc}!temp\_monitoring.c@{temp\_monitoring.c}}
+\doxysubsubsection{\texorpdfstring{testfunc()}{testfunc()}}
+{\footnotesize\ttfamily void testfunc (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file temp\+\_\+monitoring.\+c.
+
+
+
+References change\+Vehicle\+State(), U\+V\+\_\+\+D\+R\+I\+V\+I\+NG, U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE, U\+V\+\_\+\+R\+E\+A\+DY, and vehicle\+\_\+state.
+
+
+
+Referenced by temp\+Monitor\+Task().
+
+\mbox{\Hypertarget{temp__monitoring_8c_a42aed0ca516238bb78f401d645b7b930}\label{temp__monitoring_8c_a42aed0ca516238bb78f401d645b7b930}} 
+\index{temp\_monitoring.c@{temp\_monitoring.c}!testfunc2@{testfunc2}}
+\index{testfunc2@{testfunc2}!temp\_monitoring.c@{temp\_monitoring.c}}
+\doxysubsubsection{\texorpdfstring{testfunc2()}{testfunc2()}}
+{\footnotesize\ttfamily void testfunc2 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structuv___c_a_n__msg}{uv\+\_\+\+C\+A\+N\+\_\+msg}} $\ast$}]{msg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file temp\+\_\+monitoring.\+c.
+
+
+
+References uv\+\_\+\+C\+A\+N\+\_\+msg\+::data, uv\+\_\+\+C\+A\+N\+\_\+msg\+::flags, uv\+\_\+\+C\+A\+N\+\_\+msg\+::msg\+\_\+id, and uv\+Send\+Can\+M\+S\+G().
+
+
+
+Referenced by temp\+Monitor\+Task().
 

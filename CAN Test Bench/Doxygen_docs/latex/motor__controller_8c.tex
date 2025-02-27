@@ -3,18 +3,20 @@
 {\ttfamily \#include \char`\"{}motor\+\_\+controller.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}can.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}constants.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cmsis\+\_\+os.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}pdu.\+h\char`\"{}}\newline
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{motor__controller_8c_afa93c7b7fa3dc12bd6bf860c54c564ee}{M\+C\+\_\+\+Parse\+\_\+\+Message}} (int D\+LC, uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
+static uint32\+\_\+t \mbox{\hyperlink{motor__controller_8c_a6e0eaf3bbf353c1b2b7b4ae59e928722}{Parse\+\_\+\+Bamocar\+\_\+\+Response}} (uint8\+\_\+t $\ast$data, uint8\+\_\+t length)
+\item 
+static void \mbox{\hyperlink{motor__controller_8c_ae459dcb08bdf9b88ccc2de10bee4c409}{Motor\+Controller\+Error\+Handler}} (uint8\+\_\+t $\ast$data, uint8\+\_\+t length)
+\item 
+static uint16\+\_\+t \mbox{\hyperlink{motor__controller_8c_a71371a5194c9b5c725abec77feffbc38}{Motor\+Controller\+Spin\+Test}} (void)
+\item 
+static \mbox{\hyperlink{uvfr__utils_8h_a0ecf26b576b9a54eca656b9be7ba6a06}{bool}} \mbox{\hyperlink{motor__controller_8c_a560fd64fa21f9583f346b08cd371afa4}{Wait\+For\+\_\+\+C\+A\+N\+\_\+\+Response}} (void)
 \item 
 void \mbox{\hyperlink{motor__controller_8c_af6b3a4911f1bdac54d84b4dcc7b7ec4a}{M\+C\+\_\+\+Request\+\_\+\+Data}} (uint8\+\_\+t Reg\+ID)
-\item 
-void \mbox{\hyperlink{motor__controller_8c_af2e573366a03a695a8ba760440848206}{M\+C\+\_\+\+Send\+\_\+\+Data}} (uint8\+\_\+t Reg\+ID, uint8\+\_\+t data\+\_\+to\+\_\+send\mbox{[}$\,$\mbox{]}, uint8\+\_\+t size)
-\item 
-void \mbox{\hyperlink{motor__controller_8c_aa7294768824898480b6bcf6e98daa926}{M\+C\+\_\+\+Torque\+\_\+\+Control}} (int todo)
 \item 
 void \mbox{\hyperlink{motor__controller_8c_a40bf1b849ad7443bbe8af342006bb3cd}{M\+C\+\_\+\+Check\+\_\+\+Error\+\_\+\+Warning}} (uint8\+\_\+t Data\mbox{[}$\,$\mbox{]})
 \item 
@@ -29,13 +31,17 @@ void \mbox{\hyperlink{motor__controller_8c_aed1407e1e0fd59dc7c5e5d6db671f0ab}{M\
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
+Queue\+Handle\+\_\+t \mbox{\hyperlink{motor__controller_8c_a31e56f574be52c9850bb3034ebd9e010}{can\+Rx\+Queue}}
+\item 
+Queue\+Handle\+\_\+t \mbox{\hyperlink{motor__controller_8c_ad7e8e999e507ca3c4a6f1d4b5430cfff}{can\+Tx\+Queue}}
+\item 
 const uint32\+\_\+t \mbox{\hyperlink{motor__controller_8c_a26195bc72f07eeb97338e761432e03d2}{M\+C\+\_\+\+Expected\+\_\+\+Serial\+\_\+\+Number}} = 0x627\+E7\+A01
 \item 
 const uint16\+\_\+t \mbox{\hyperlink{motor__controller_8c_a8f25ebbc9bf59980fdc0458f271437ee}{M\+C\+\_\+\+Expected\+\_\+\+F\+W\+\_\+\+Version}} = 0x\+D\+C01
 \item 
 const uint32\+\_\+t \mbox{\hyperlink{motor__controller_8c_a347eaa173dae5d48ae87a4bc5532adfc}{max\+\_\+motor\+\_\+speed}} = 3277
 \item 
-uint8\+\_\+t \mbox{\hyperlink{motor__controller_8c_a4ace1e40a5ea83b51078f64f9c777e3f}{desired\+\_\+motor\+\_\+speed}} \mbox{[}2\mbox{]}
+\mbox{\hyperlink{motor__controller_8h_ac9389d71d481a5381fe1d1e23b1e4ecc}{motor\+\_\+controller\+\_\+settings}} \mbox{\hyperlink{motor__controller_8c_afb41a96439ba6d63dcc64f257c43a1d2}{mc\+\_\+default\+\_\+settings}}
 \end{DoxyCompactItemize}
 
 
@@ -48,15 +54,11 @@ uint8\+\_\+t \mbox{\hyperlink{motor__controller_8c_a4ace1e40a5ea83b51078f64f9c77
 
 
 
-Definition at line 122 of file motor\+\_\+controller.\+c.
+Definition at line 591 of file motor\+\_\+controller.\+c.
 
 
 
 References A\+C\+\_\+current\+\_\+offset\+\_\+fault, A\+D\+C\+\_\+measurement\+\_\+problem, A\+D\+C\+\_\+sequencer\+\_\+problem, auxiliary\+\_\+voltage\+\_\+min\+\_\+limit, bleed\+\_\+resistor\+\_\+overload, bleeder\+\_\+resistor\+\_\+warning, C\+A\+N\+\_\+timeout\+\_\+error, check\+\_\+ecode\+\_\+\+ID, critical\+\_\+\+A\+C\+\_\+current, ecode\+\_\+timeout\+\_\+error, eprom\+\_\+read\+\_\+error, feedback\+\_\+signal\+\_\+error, feedback\+\_\+signal\+\_\+problem, hardware\+\_\+fault, I\+G\+B\+T\+\_\+temp\+\_\+max\+\_\+limit, I\+G\+B\+T\+\_\+temperature\+\_\+warning, internal\+\_\+hardware\+\_\+voltage\+\_\+problem, mains\+\_\+voltage\+\_\+max\+\_\+limit, mains\+\_\+voltage\+\_\+min\+\_\+limit, motor\+\_\+temp\+\_\+max\+\_\+limit, motor\+\_\+temperature\+\_\+warning, parameter\+\_\+conflict\+\_\+detected, race\+\_\+away\+\_\+detected, rotate\+\_\+field\+\_\+enable\+\_\+not\+\_\+present\+\_\+norun, rotate\+\_\+field\+\_\+enable\+\_\+not\+\_\+present\+\_\+run, special\+\_\+\+C\+P\+U\+\_\+fault, speed\+\_\+actual\+\_\+resolution\+\_\+limit, tripzone\+\_\+glitch\+\_\+detected, Vout\+\_\+saturation\+\_\+max\+\_\+limit, warning\+\_\+5, warning\+\_\+9, and watchdog\+\_\+reset.
-
-
-
-Referenced by M\+C\+\_\+\+Parse\+\_\+\+Message().
 
 \mbox{\Hypertarget{motor__controller_8c_a877a1b68c89c7eeecc3ed294e5dc8a73}\label{motor__controller_8c_a877a1b68c89c7eeecc3ed294e5dc8a73}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Check\_Firmware@{MC\_Check\_Firmware}}
@@ -66,7 +68,7 @@ Referenced by M\+C\+\_\+\+Parse\+\_\+\+Message().
 
 
 
-Definition at line 256 of file motor\+\_\+controller.\+c.
+Definition at line 725 of file motor\+\_\+controller.\+c.
 
 \mbox{\Hypertarget{motor__controller_8c_af34e05da8add9233de12150656dad092}\label{motor__controller_8c_af34e05da8add9233de12150656dad092}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Check\_Serial\_Number@{MC\_Check\_Serial\_Number}}
@@ -76,21 +78,7 @@ Definition at line 256 of file motor\+\_\+controller.\+c.
 
 
 
-Definition at line 252 of file motor\+\_\+controller.\+c.
-
-\mbox{\Hypertarget{motor__controller_8c_afa93c7b7fa3dc12bd6bf860c54c564ee}\label{motor__controller_8c_afa93c7b7fa3dc12bd6bf860c54c564ee}} 
-\index{motor\_controller.c@{motor\_controller.c}!MC\_Parse\_Message@{MC\_Parse\_Message}}
-\index{MC\_Parse\_Message@{MC\_Parse\_Message}!motor\_controller.c@{motor\_controller.c}}
-\doxysubsubsection{\texorpdfstring{MC\_Parse\_Message()}{MC\_Parse\_Message()}}
-{\footnotesize\ttfamily void M\+C\+\_\+\+Parse\+\_\+\+Message (\begin{DoxyParamCaption}\item[{int}]{D\+LC,  }\item[{uint8\+\_\+t}]{Data\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
-
-
-
-Definition at line 26 of file motor\+\_\+controller.\+c.
-
-
-
-References Error\+\_\+\+Handler(), M\+C\+\_\+\+Check\+\_\+\+Error\+\_\+\+Warning(), and motor\+\_\+controller\+\_\+errors\+\_\+warnings.
+Definition at line 721 of file motor\+\_\+controller.\+c.
 
 \mbox{\Hypertarget{motor__controller_8c_af6b3a4911f1bdac54d84b4dcc7b7ec4a}\label{motor__controller_8c_af6b3a4911f1bdac54d84b4dcc7b7ec4a}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Request\_Data@{MC\_Request\_Data}}
@@ -98,27 +86,22 @@ References Error\+\_\+\+Handler(), M\+C\+\_\+\+Check\+\_\+\+Error\+\_\+\+Warning
 \doxysubsubsection{\texorpdfstring{MC\_Request\_Data()}{MC\_Request\_Data()}}
 {\footnotesize\ttfamily void M\+C\+\_\+\+Request\+\_\+\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Reg\+ID }\end{DoxyParamCaption})}
 
+Sends a C\+AN request to the motor controller to retrieve a specific register value. Constructs a C\+AN message with the specified register ID and sends it via the C\+AN queue. 
+\begin{DoxyParams}{Parameters}
+{\em Reg\+ID} & The ID of the register to request data from. \\
+\hline
+\end{DoxyParams}
 
 
-Definition at line 47 of file motor\+\_\+controller.\+c.
-
-
-
-References Error\+\_\+\+Handler(), hcan2, M\+C\+\_\+\+C\+A\+N\+\_\+\+I\+D\+\_\+\+Tx, Tx\+Data, Tx\+Header, and Tx\+Mailbox.
-
-\mbox{\Hypertarget{motor__controller_8c_af2e573366a03a695a8ba760440848206}\label{motor__controller_8c_af2e573366a03a695a8ba760440848206}} 
-\index{motor\_controller.c@{motor\_controller.c}!MC\_Send\_Data@{MC\_Send\_Data}}
-\index{MC\_Send\_Data@{MC\_Send\_Data}!motor\_controller.c@{motor\_controller.c}}
-\doxysubsubsection{\texorpdfstring{MC\_Send\_Data()}{MC\_Send\_Data()}}
-{\footnotesize\ttfamily void M\+C\+\_\+\+Send\+\_\+\+Data (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{Reg\+ID,  }\item[{uint8\+\_\+t}]{data\+\_\+to\+\_\+send\mbox{[}$\,$\mbox{]},  }\item[{uint8\+\_\+t}]{size }\end{DoxyParamCaption})}
+Definition at line 230 of file motor\+\_\+controller.\+c.
 
 
 
-Definition at line 69 of file motor\+\_\+controller.\+c.
+References motor\+\_\+controllor\+\_\+settings\+::can\+\_\+id\+\_\+tx, hcan2, mc\+\_\+default\+\_\+settings, and Tx\+Mailbox.
 
 
 
-References Error\+\_\+\+Handler(), hcan2, M\+C\+\_\+\+C\+A\+N\+\_\+\+I\+D\+\_\+\+Tx, Tx\+Data, Tx\+Header, and Tx\+Mailbox.
+Referenced by M\+C\+\_\+\+Startup(), and Motor\+Controller\+Spin\+Test().
 
 \mbox{\Hypertarget{motor__controller_8c_aed1407e1e0fd59dc7c5e5d6db671f0ab}\label{motor__controller_8c_aed1407e1e0fd59dc7c5e5d6db671f0ab}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Startup@{MC\_Startup}}
@@ -126,27 +109,24 @@ References Error\+\_\+\+Handler(), hcan2, M\+C\+\_\+\+C\+A\+N\+\_\+\+I\+D\+\_\+\
 \doxysubsubsection{\texorpdfstring{MC\_Startup()}{MC\_Startup()}}
 {\footnotesize\ttfamily void M\+C\+\_\+\+Startup (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
 
+Initializes the motor controller by performing the following steps\+:
+\begin{DoxyEnumerate}
+\item Verifies the serial number from the motor controller.
+\item Checks the firmware version to ensure compatibility.
+\item Executes a motor spin test at low R\+PM to validate functionality.
+\item Checks for errors and warnings from the motor controller.
+\item Logs successful initialization if all checks pass. 
+\end{DoxyEnumerate}
+
+Definition at line 739 of file motor\+\_\+controller.\+c.
 
 
-Definition at line 260 of file motor\+\_\+controller.\+c.
 
-
-
-References uv\+\_\+init\+\_\+task\+\_\+args\+::init\+\_\+info\+\_\+queue, uv\+\_\+init\+\_\+task\+\_\+args\+::meta\+\_\+task\+\_\+handle, M\+O\+T\+O\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER, uv\+\_\+init\+\_\+task\+\_\+args\+::specific\+\_\+args, U\+V\+\_\+\+OK, and uv\+Panic().
+References firmware\+\_\+version, F\+I\+R\+M\+W\+A\+R\+E\+\_\+\+V\+E\+R\+S\+I\+O\+N\+\_\+\+R\+E\+G\+I\+S\+T\+ER, uv\+\_\+init\+\_\+task\+\_\+args\+::init\+\_\+info\+\_\+queue, M\+C\+\_\+\+Expected\+\_\+\+F\+W\+\_\+\+Version, M\+C\+\_\+\+Expected\+\_\+\+Serial\+\_\+\+Number, M\+C\+\_\+\+Request\+\_\+\+Data(), uv\+\_\+init\+\_\+task\+\_\+args\+::meta\+\_\+task\+\_\+handle, M\+O\+T\+O\+R\+\_\+\+C\+O\+N\+T\+R\+O\+L\+L\+ER, motor\+\_\+controller\+\_\+errors\+\_\+warnings, Motor\+Controller\+Error\+Handler(), Motor\+Controller\+Spin\+Test(), Parse\+\_\+\+Bamocar\+\_\+\+Response(), Rx\+Data, S\+E\+R\+I\+A\+L\+\_\+\+N\+U\+M\+B\+E\+R\+\_\+\+R\+E\+G\+I\+S\+T\+ER, uv\+\_\+init\+\_\+task\+\_\+args\+::specific\+\_\+args, U\+V\+\_\+\+OK, and Wait\+For\+\_\+\+C\+A\+N\+\_\+\+Response().
 
 
 
 Referenced by uv\+Init().
-
-\mbox{\Hypertarget{motor__controller_8c_aa7294768824898480b6bcf6e98daa926}\label{motor__controller_8c_aa7294768824898480b6bcf6e98daa926}} 
-\index{motor\_controller.c@{motor\_controller.c}!MC\_Torque\_Control@{MC\_Torque\_Control}}
-\index{MC\_Torque\_Control@{MC\_Torque\_Control}!motor\_controller.c@{motor\_controller.c}}
-\doxysubsubsection{\texorpdfstring{MC\_Torque\_Control()}{MC\_Torque\_Control()}}
-{\footnotesize\ttfamily void M\+C\+\_\+\+Torque\+\_\+\+Control (\begin{DoxyParamCaption}\item[{int}]{todo }\end{DoxyParamCaption})}
-
-
-
-Definition at line 102 of file motor\+\_\+controller.\+c.
 
 \mbox{\Hypertarget{motor__controller_8c_ac592ffd65d2793aadca7ca158a3d2dbc}\label{motor__controller_8c_ac592ffd65d2793aadca7ca158a3d2dbc}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Validate@{MC\_Validate}}
@@ -156,20 +136,119 @@ Definition at line 102 of file motor\+\_\+controller.\+c.
 
 
 
-Definition at line 248 of file motor\+\_\+controller.\+c.
+Definition at line 717 of file motor\+\_\+controller.\+c.
+
+\mbox{\Hypertarget{motor__controller_8c_ae459dcb08bdf9b88ccc2de10bee4c409}\label{motor__controller_8c_ae459dcb08bdf9b88ccc2de10bee4c409}} 
+\index{motor\_controller.c@{motor\_controller.c}!MotorControllerErrorHandler@{MotorControllerErrorHandler}}
+\index{MotorControllerErrorHandler@{MotorControllerErrorHandler}!motor\_controller.c@{motor\_controller.c}}
+\doxysubsubsection{\texorpdfstring{MotorControllerErrorHandler()}{MotorControllerErrorHandler()}}
+{\footnotesize\ttfamily static void Motor\+Controller\+Error\+Handler (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint8\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Processes error and warning information from the motor controller.
+\begin{DoxyEnumerate}
+\item Extracts error and warning flags from the C\+AN message payload.
+\item Logs or triggers a panic if critical errors are detected. 
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the C\+AN message payload. \\
+\hline
+{\em length} & Length of the data payload. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyEnumerate}
+
+Definition at line 119 of file motor\+\_\+controller.\+c.
+
+
+
+References A\+C\+\_\+current\+\_\+offset\+\_\+fault, A\+D\+C\+\_\+measurement\+\_\+problem, A\+D\+C\+\_\+sequencer\+\_\+problem, auxiliary\+\_\+voltage\+\_\+min\+\_\+limit, bleed\+\_\+resistor\+\_\+overload, bleeder\+\_\+resistor\+\_\+warning, C\+A\+N\+\_\+timeout\+\_\+error, check\+\_\+ecode\+\_\+\+ID, critical\+\_\+\+A\+C\+\_\+current, ecode\+\_\+timeout\+\_\+error, eprom\+\_\+read\+\_\+error, feedback\+\_\+signal\+\_\+error, feedback\+\_\+signal\+\_\+problem, hardware\+\_\+fault, I\+G\+B\+T\+\_\+temp\+\_\+max\+\_\+limit, I\+G\+B\+T\+\_\+temperature\+\_\+warning, internal\+\_\+hardware\+\_\+voltage\+\_\+problem, mains\+\_\+voltage\+\_\+max\+\_\+limit, mains\+\_\+voltage\+\_\+min\+\_\+limit, motor\+\_\+temp\+\_\+max\+\_\+limit, motor\+\_\+temperature\+\_\+warning, parameter\+\_\+conflict\+\_\+detected, race\+\_\+away\+\_\+detected, rotate\+\_\+field\+\_\+enable\+\_\+not\+\_\+present\+\_\+norun, rotate\+\_\+field\+\_\+enable\+\_\+not\+\_\+present\+\_\+run, special\+\_\+\+C\+P\+U\+\_\+fault, speed\+\_\+actual\+\_\+resolution\+\_\+limit, tripzone\+\_\+glitch\+\_\+detected, Vout\+\_\+saturation\+\_\+max\+\_\+limit, warning\+\_\+5, warning\+\_\+9, and watchdog\+\_\+reset.
+
+
+
+Referenced by M\+C\+\_\+\+Startup().
+
+\mbox{\Hypertarget{motor__controller_8c_a71371a5194c9b5c725abec77feffbc38}\label{motor__controller_8c_a71371a5194c9b5c725abec77feffbc38}} 
+\index{motor\_controller.c@{motor\_controller.c}!MotorControllerSpinTest@{MotorControllerSpinTest}}
+\index{MotorControllerSpinTest@{MotorControllerSpinTest}!motor\_controller.c@{motor\_controller.c}}
+\doxysubsubsection{\texorpdfstring{MotorControllerSpinTest()}{MotorControllerSpinTest()}}
+{\footnotesize\ttfamily static uint16\+\_\+t Motor\+Controller\+Spin\+Test (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Commands the motor to spin at a low R\+PM and validates the motor\textquotesingle{}s response\+:
+\begin{DoxyEnumerate}
+\item Sends a spin command via C\+AN.
+\item Waits for the motor to reach the desired speed.
+\item Checks the actual speed from the motor controller.
+\item Stops the motor after validation. \begin{DoxyReturn}{Returns}
+0 if the test is successful, 1 for timeout, or 2 for insufficient speed. 
+\end{DoxyReturn}
+
+\end{DoxyEnumerate}
+
+Definition at line 62 of file motor\+\_\+controller.\+c.
+
+
+
+References motor\+\_\+controllor\+\_\+settings\+::can\+\_\+id\+\_\+tx, hcan2, mc\+\_\+default\+\_\+settings, M\+C\+\_\+\+Request\+\_\+\+Data(), N\+\_\+actual, N\+\_\+set, Rx\+Data, Tx\+Mailbox, and Wait\+For\+\_\+\+C\+A\+N\+\_\+\+Response().
+
+
+
+Referenced by M\+C\+\_\+\+Startup().
+
+\mbox{\Hypertarget{motor__controller_8c_a6e0eaf3bbf353c1b2b7b4ae59e928722}\label{motor__controller_8c_a6e0eaf3bbf353c1b2b7b4ae59e928722}} 
+\index{motor\_controller.c@{motor\_controller.c}!Parse\_Bamocar\_Response@{Parse\_Bamocar\_Response}}
+\index{Parse\_Bamocar\_Response@{Parse\_Bamocar\_Response}!motor\_controller.c@{motor\_controller.c}}
+\doxysubsubsection{\texorpdfstring{Parse\_Bamocar\_Response()}{Parse\_Bamocar\_Response()}}
+{\footnotesize\ttfamily static uint32\+\_\+t Parse\+\_\+\+Bamocar\+\_\+\+Response (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{data,  }\item[{uint8\+\_\+t}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Parses a 32-\/bit response value from a Bamocar C\+AN message. Combines the four bytes of the payload into a single 32-\/bit integer. 
+\begin{DoxyParams}{Parameters}
+{\em data} & Pointer to the C\+AN message payload. \\
+\hline
+{\em length} & Length of the data payload (expected to be 4 bytes). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Parsed 32-\/bit value. 
+\end{DoxyReturn}
+
+
+Definition at line 107 of file motor\+\_\+controller.\+c.
+
+
+
+Referenced by M\+C\+\_\+\+Startup().
+
+\mbox{\Hypertarget{motor__controller_8c_a560fd64fa21f9583f346b08cd371afa4}\label{motor__controller_8c_a560fd64fa21f9583f346b08cd371afa4}} 
+\index{motor\_controller.c@{motor\_controller.c}!WaitFor\_CAN\_Response@{WaitFor\_CAN\_Response}}
+\index{WaitFor\_CAN\_Response@{WaitFor\_CAN\_Response}!motor\_controller.c@{motor\_controller.c}}
+\doxysubsubsection{\texorpdfstring{WaitFor\_CAN\_Response()}{WaitFor\_CAN\_Response()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{uvfr__utils_8h_a0ecf26b576b9a54eca656b9be7ba6a06}{bool}} Wait\+For\+\_\+\+C\+A\+N\+\_\+\+Response (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Waits for a C\+AN response from the motor controller. Uses an R\+T\+OS semaphore to synchronize and check if a response is received within the timeout period. \begin{DoxyReturn}{Returns}
+True if a response is received, otherwise false. 
+\end{DoxyReturn}
+
+
+Definition at line 257 of file motor\+\_\+controller.\+c.
+
+
+
+Referenced by M\+C\+\_\+\+Startup(), and Motor\+Controller\+Spin\+Test().
 
 
 
 \doxysubsection{Variable Documentation}
-\mbox{\Hypertarget{motor__controller_8c_a4ace1e40a5ea83b51078f64f9c777e3f}\label{motor__controller_8c_a4ace1e40a5ea83b51078f64f9c777e3f}} 
-\index{motor\_controller.c@{motor\_controller.c}!desired\_motor\_speed@{desired\_motor\_speed}}
-\index{desired\_motor\_speed@{desired\_motor\_speed}!motor\_controller.c@{motor\_controller.c}}
-\doxysubsubsection{\texorpdfstring{desired\_motor\_speed}{desired\_motor\_speed}}
-{\footnotesize\ttfamily uint8\+\_\+t desired\+\_\+motor\+\_\+speed\mbox{[}2\mbox{]}}
+\mbox{\Hypertarget{motor__controller_8c_a31e56f574be52c9850bb3034ebd9e010}\label{motor__controller_8c_a31e56f574be52c9850bb3034ebd9e010}} 
+\index{motor\_controller.c@{motor\_controller.c}!canRxQueue@{canRxQueue}}
+\index{canRxQueue@{canRxQueue}!motor\_controller.c@{motor\_controller.c}}
+\doxysubsubsection{\texorpdfstring{canRxQueue}{canRxQueue}}
+{\footnotesize\ttfamily Queue\+Handle\+\_\+t can\+Rx\+Queue}
 
-
-
-Definition at line 22 of file motor\+\_\+controller.\+c.
+\mbox{\Hypertarget{motor__controller_8c_ad7e8e999e507ca3c4a6f1d4b5430cfff}\label{motor__controller_8c_ad7e8e999e507ca3c4a6f1d4b5430cfff}} 
+\index{motor\_controller.c@{motor\_controller.c}!canTxQueue@{canTxQueue}}
+\index{canTxQueue@{canTxQueue}!motor\_controller.c@{motor\_controller.c}}
+\doxysubsubsection{\texorpdfstring{canTxQueue}{canTxQueue}}
+{\footnotesize\ttfamily Queue\+Handle\+\_\+t can\+Tx\+Queue}
 
 \mbox{\Hypertarget{motor__controller_8c_a347eaa173dae5d48ae87a4bc5532adfc}\label{motor__controller_8c_a347eaa173dae5d48ae87a4bc5532adfc}} 
 \index{motor\_controller.c@{motor\_controller.c}!max\_motor\_speed@{max\_motor\_speed}}
@@ -181,6 +260,32 @@ Definition at line 22 of file motor\+\_\+controller.\+c.
 
 Definition at line 21 of file motor\+\_\+controller.\+c.
 
+\mbox{\Hypertarget{motor__controller_8c_afb41a96439ba6d63dcc64f257c43a1d2}\label{motor__controller_8c_afb41a96439ba6d63dcc64f257c43a1d2}} 
+\index{motor\_controller.c@{motor\_controller.c}!mc\_default\_settings@{mc\_default\_settings}}
+\index{mc\_default\_settings@{mc\_default\_settings}!motor\_controller.c@{motor\_controller.c}}
+\doxysubsubsection{\texorpdfstring{mc\_default\_settings}{mc\_default\_settings}}
+{\footnotesize\ttfamily \mbox{\hyperlink{motor__controller_8h_ac9389d71d481a5381fe1d1e23b1e4ecc}{motor\+\_\+controller\+\_\+settings}} mc\+\_\+default\+\_\+settings}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{= \{}
+\DoxyCodeLine{    .can\_id\_tx = 0x200,              }
+\DoxyCodeLine{    .can\_id\_rx = 0x201,              }
+\DoxyCodeLine{    .mc\_CAN\_timeout = 2,             }
+\DoxyCodeLine{    .proportional\_gain = 10,         }
+\DoxyCodeLine{    .integral\_time\_constant = 400,   }
+\DoxyCodeLine{    .integral\_memory\_max = 0.6       }
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Definition at line 26 of file motor\+\_\+controller.\+c.
+
+
+
+Referenced by M\+C\+\_\+\+Request\+\_\+\+Data(), and Motor\+Controller\+Spin\+Test().
+
 \mbox{\Hypertarget{motor__controller_8c_a8f25ebbc9bf59980fdc0458f271437ee}\label{motor__controller_8c_a8f25ebbc9bf59980fdc0458f271437ee}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Expected\_FW\_Version@{MC\_Expected\_FW\_Version}}
 \index{MC\_Expected\_FW\_Version@{MC\_Expected\_FW\_Version}!motor\_controller.c@{motor\_controller.c}}
@@ -189,7 +294,11 @@ Definition at line 21 of file motor\+\_\+controller.\+c.
 
 
 
-Definition at line 18 of file motor\+\_\+controller.\+c.
+Definition at line 20 of file motor\+\_\+controller.\+c.
+
+
+
+Referenced by M\+C\+\_\+\+Startup().
 
 \mbox{\Hypertarget{motor__controller_8c_a26195bc72f07eeb97338e761432e03d2}\label{motor__controller_8c_a26195bc72f07eeb97338e761432e03d2}} 
 \index{motor\_controller.c@{motor\_controller.c}!MC\_Expected\_Serial\_Number@{MC\_Expected\_Serial\_Number}}
@@ -199,5 +308,9 @@ Definition at line 18 of file motor\+\_\+controller.\+c.
 
 
 
-Definition at line 17 of file motor\+\_\+controller.\+c.
+Definition at line 19 of file motor\+\_\+controller.\+c.
+
+
+
+Referenced by M\+C\+\_\+\+Startup().
 

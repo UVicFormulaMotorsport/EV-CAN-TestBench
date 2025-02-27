@@ -209,11 +209,17 @@ $(document).ready(function(){initNavTree('globals_defs_u.html','');});
 <li>USE_OLED_DEBUG
 : <a class="el" href="uvfr__utils_8h.html#a16b23f220af0f78310f4fe6cfeb6ab0d">uvfr_utils.h</a>
 </li>
+<li>USE_OS_MEM_MGMT
+: <a class="el" href="uvfr__global__config_8h.html#a683423f7993a3b962eeba1629a028a0e">uvfr_global_config.h</a>
+</li>
 <li>USE_RTOS
 : <a class="el" href="stm32f4xx__hal__conf_8h.html#ad048ac737242c2c2cb9f4a72953d10ce">stm32f4xx_hal_conf.h</a>
 </li>
 <li>USE_SPI_CRC
 : <a class="el" href="stm32f4xx__hal__conf_8h.html#a4c6fab687afc7ba4469b1b2d34472358">stm32f4xx_hal_conf.h</a>
+</li>
+<li>UV19_PDU
+: <a class="el" href="uvfr__global__config_8h.html#a62c784d11109903a5b4b37086d1442f5">uvfr_global_config.h</a>
 </li>
 <li>UV_CAN1
 : <a class="el" href="uvfr__utils_8h.html#abdad0cac69564db7eec85ef103281130">uvfr_utils.h</a>
@@ -224,35 +230,125 @@ $(document).ready(function(){initNavTree('globals_defs_u.html','');});
 <li>UV_CAN_CHANNEL_MASK
 : <a class="el" href="uvfr__utils_8h.html#a3c2758e5f0e3f8d8e1470616418f60c8">uvfr_utils.h</a>
 </li>
+<li>UV_CAN_DYNAMIC_MEM
+: <a class="el" href="uvfr__utils_8h.html#aa6688039909b8ed4eca05ab7a36fa8bd">uvfr_utils.h</a>
+</li>
 <li>UV_CAN_EXTENDED_ID
 : <a class="el" href="uvfr__utils_8h.html#aa55012016c572366a0747ff7298c7fec">uvfr_utils.h</a>
 </li>
+<li>UV_MALLOC_LIMIT
+: <a class="el" href="uvfr__global__config_8h.html#a93d6d1e888beb1e52dcb61b2f1be2591">uvfr_global_config.h</a>
+</li>
+<li>UV_TASK_AWAITING_DELETION
+: <a class="el" href="group__state__engine__api.html#ga0ce66ea8b0c49749cc05a3ba06b2df75">uvfr_state_engine.h</a>
+</li>
+<li>UV_TASK_DEADLINE_FIRM
+: <a class="el" href="group__state__engine__api.html#gaa3b4befdf874ecfeac5face2cf1ae1a5">uvfr_state_engine.h</a>
+</li>
+<li>UV_TASK_DEADLINE_HARD
+: <a class="el" href="group__state__engine__api.html#ga50fac7a227841deccc8b30cef230ba08">uvfr_state_engine.h</a>
+</li>
+<li>UV_TASK_DEADLINE_MASK
+: <a class="el" href="group__state__engine__api.html#ga04e93f880387fe61195800f0dfaac0bd">uvfr_state_engine.h</a>
+</li>
+<li>UV_TASK_DEADLINE_NOT_ENFORCED
+: <a class="el" href="group__state__engine__api.html#ga4d88012d785bba8a4aa943c23c4450a2">uvfr_state_engine.h</a>
+</li>
+<li>UV_TASK_DEFER_DELETION
+: <a class="el" href="group__state__engine__api.html#gaf1374f633bd37be99d7d58e33270ce8c">uvfr_state_engine.h</a>
+</li>
+<li>UV_TASK_DELAYING
+: <a class="el" href="group__state__engine__api.html#ga70b5081fb012f121afe19c5ad2da9622">uvfr_state_engine.h</a>
+</li>
 <li>UV_TASK_DORMANT_SVC
-: <a class="el" href="uvfr__utils_8h.html#aae81d88a64e53c686e8e0fd01bfe723d">uvfr_utils.h</a>
+: <a class="el" href="group__state__engine__api.html#gaae81d88a64e53c686e8e0fd01bfe723d">uvfr_state_engine.h</a>
+</li>
+<li>UV_TASK_ERR_IN_CHILD
+: <a class="el" href="group__state__engine__api.html#ga52394ced81b82c523082ed2c4bb9e2d7">uvfr_state_engine.h</a>
+</li>
+<li>UV_TASK_GENERIC_SVC
+: <a class="el" href="group__state__engine__api.html#ga056a2272c9356c78597c5c82bc58db2f">uvfr_state_engine.h</a>
+</li>
+<li>UV_TASK_IS_CHILD
+: <a class="el" href="group__state__engine__api.html#ga5030c3ffc04fb93607cf1d4880a66731">uvfr_state_engine.h</a>
+</li>
+<li>UV_TASK_IS_ORPHAN
+: <a class="el" href="group__state__engine__api.html#gab3967da84c26663341e0cb2ed5177c70">uvfr_state_engine.h</a>
+</li>
+<li>UV_TASK_IS_PARENT
+: <a class="el" href="group__state__engine__api.html#ga732a956baeb0b603c6c935f1bea13fab">uvfr_state_engine.h</a>
 </li>
 <li>UV_TASK_LOG_MEM_USAGE
-: <a class="el" href="uvfr__utils_8h.html#a0c0d91f0feee4f7b0816b3c06b61b459">uvfr_utils.h</a>
+: <a class="el" href="group__state__engine__api.html#ga0c0d91f0feee4f7b0816b3c06b61b459">uvfr_state_engine.h</a>
 </li>
 <li>UV_TASK_LOG_START_STOP_TIME
-: <a class="el" href="uvfr__utils_8h.html#afc49f7a5303ebabaa3fc0886d67f3e9a">uvfr_utils.h</a>
+: <a class="el" href="group__state__engine__api.html#gafc49f7a5303ebabaa3fc0886d67f3e9a">uvfr_state_engine.h</a>
 </li>
 <li>UV_TASK_MANAGER_MASK
-: <a class="el" href="uvfr__utils_8h.html#a96c7c915194ecba48edd70def54a700b">uvfr_utils.h</a>
+: <a class="el" href="group__state__engine__api.html#ga96c7c915194ecba48edd70def54a700b">uvfr_state_engine.h</a>
+</li>
+<li>UV_TASK_MISSION_CRITICAL
+: <a class="el" href="group__state__engine__api.html#gab37af27fe89f1987ee38bdb0bc945c43">uvfr_state_engine.h</a>
 </li>
 <li>UV_TASK_PERIODIC_SVC
-: <a class="el" href="uvfr__utils_8h.html#a3142d67aec5c34719e90cf122948f1db">uvfr_utils.h</a>
+: <a class="el" href="group__state__engine__api.html#ga3142d67aec5c34719e90cf122948f1db">uvfr_state_engine.h</a>
+</li>
+<li>UV_TASK_PRIO_INCREMENTATION
+: <a class="el" href="group__state__engine__api.html#ga337aaae50133aedb5d733b6ede6fb10d">uvfr_state_engine.h</a>
 </li>
 <li>UV_TASK_SCD_IGNORE
-: <a class="el" href="uvfr__utils_8h.html#a4d87bda0a72990876364bd8764777cb2">uvfr_utils.h</a>
+: <a class="el" href="group__state__engine__api.html#ga4d87bda0a72990876364bd8764777cb2">uvfr_state_engine.h</a>
 </li>
 <li>UV_TASK_VEHICLE_APPLICATION
-: <a class="el" href="uvfr__utils_8h.html#a253c75b331d0976b9a414657cef780cd">uvfr_utils.h</a>
+: <a class="el" href="group__state__engine__api.html#ga253c75b331d0976b9a414657cef780cd">uvfr_state_engine.h</a>
 </li>
 <li>UV_UTILS_SRC_IMPLIMENTATION
 : <a class="el" href="uvfr__utils_8c.html#af0c3770bb8c05b338afd53946909189c">uvfr_utils.c</a>
 </li>
 <li>UVFR_STATE_MACHINE_IMPLIMENTATION
 : <a class="el" href="uvfr__state__engine_8c.html#a6cd439d1fb18334cd13cf3539aebca5c">uvfr_state_engine.c</a>
+</li>
+<li>uvHonkHorn
+: <a class="el" href="uvfr__vehicle__commands_8h.html#a330698c381c94ef968c17f1afca141e2">uvfr_vehicle_commands.h</a>
+</li>
+<li>uvOpenSDC
+: <a class="el" href="uvfr__vehicle__commands_8h.html#aef33c5773dc84e4e8771bf0303bb5211">uvfr_vehicle_commands.h</a>
+</li>
+<li>uvSilenceHorn
+: <a class="el" href="uvfr__vehicle__commands_8h.html#a6cd67a615a3b11e9ad92be17e8bbae7f">uvfr_vehicle_commands.h</a>
+</li>
+<li>uvStartCoolantPump
+: <a class="el" href="uvfr__vehicle__commands_8h.html#a1a4bb015014b3e6b9c1b80be6d735ed7">uvfr_vehicle_commands.h</a>
+</li>
+<li>uvStartFans
+: <a class="el" href="uvfr__vehicle__commands_8h.html#aad370c2dc7b3674289ccdb44073afd77">uvfr_vehicle_commands.h</a>
+</li>
+<li>uvStopCoolantPump
+: <a class="el" href="uvfr__vehicle__commands_8h.html#a5d702ded662531d96c17f1eccea8cfce">uvfr_vehicle_commands.h</a>
+</li>
+<li>uvStopFans
+: <a class="el" href="uvfr__vehicle__commands_8h.html#a4fc23bd2fec1b901a6dfefe566c16910">uvfr_vehicle_commands.h</a>
+</li>
+<li>uvTaskDelay
+: <a class="el" href="group__state__engine__api.html#ga5073c1aa60fa9292bc88054a2184daee">uvfr_state_engine.h</a>
+</li>
+<li>uvTaskDelayUntil
+: <a class="el" href="group__state__engine__api.html#ga1fc770ae6f3a6643548e0fb00a732ae5">uvfr_state_engine.h</a>
+</li>
+<li>uvTaskIsDelaying
+: <a class="el" href="group__state__engine__api.html#ga0e5d6feafad4764ab2ffd4604ab633b5">uvfr_state_engine.h</a>
+</li>
+<li>uvTaskResetDelayBit
+: <a class="el" href="group__state__engine__api.html#ga2d3d223399d12a0af224266487f35483">uvfr_state_engine.h</a>
+</li>
+<li>uvTaskResetDeletionBit
+: <a class="el" href="group__state__engine__api.html#gabe734bf4eb30c1a532e083dc9bdf938c">uvfr_state_engine.h</a>
+</li>
+<li>uvTaskSetDelayBit
+: <a class="el" href="group__state__engine__api.html#ga3cab3b3fd6589348dceaf91b14e2a6ef">uvfr_state_engine.h</a>
+</li>
+<li>uvTaskSetDeletionBit
+: <a class="el" href="group__state__engine__api.html#ga07dcd5b5c28f257e50e0d04f519b5e7a">uvfr_state_engine.h</a>
 </li>
 </ul>
 </div><!-- contents -->

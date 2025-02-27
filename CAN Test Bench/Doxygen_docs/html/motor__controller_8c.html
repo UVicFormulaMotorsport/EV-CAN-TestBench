@@ -96,21 +96,23 @@ $(document).ready(function(){initNavTree('motor__controller_8c.html','');});
 <div class="textblock"><code>#include &quot;<a class="el" href="motor__controller_8h_source.html">motor_controller.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="can_8h_source.html">can.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="constants_8h_source.html">constants.h</a>&quot;</code><br />
+<code>#include &quot;cmsis_os.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="pdu_8h_source.html">pdu.h</a>&quot;</code><br />
 </div>
 <p><a href="motor__controller_8c_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afa93c7b7fa3dc12bd6bf860c54c564ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#afa93c7b7fa3dc12bd6bf860c54c564ee">MC_Parse_Message</a> (int DLC, uint8_t Data[])</td></tr>
-<tr class="separator:afa93c7b7fa3dc12bd6bf860c54c564ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e0eaf3bbf353c1b2b7b4ae59e928722"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#a6e0eaf3bbf353c1b2b7b4ae59e928722">Parse_Bamocar_Response</a> (uint8_t *data, uint8_t length)</td></tr>
+<tr class="separator:a6e0eaf3bbf353c1b2b7b4ae59e928722"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae459dcb08bdf9b88ccc2de10bee4c409"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#ae459dcb08bdf9b88ccc2de10bee4c409">MotorControllerErrorHandler</a> (uint8_t *data, uint8_t length)</td></tr>
+<tr class="separator:ae459dcb08bdf9b88ccc2de10bee4c409"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71371a5194c9b5c725abec77feffbc38"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#a71371a5194c9b5c725abec77feffbc38">MotorControllerSpinTest</a> (void)</td></tr>
+<tr class="separator:a71371a5194c9b5c725abec77feffbc38"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a560fd64fa21f9583f346b08cd371afa4"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="uvfr__utils_8h.html#a0ecf26b576b9a54eca656b9be7ba6a06">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#a560fd64fa21f9583f346b08cd371afa4">WaitFor_CAN_Response</a> (void)</td></tr>
+<tr class="separator:a560fd64fa21f9583f346b08cd371afa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6b3a4911f1bdac54d84b4dcc7b7ec4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#af6b3a4911f1bdac54d84b4dcc7b7ec4a">MC_Request_Data</a> (uint8_t RegID)</td></tr>
 <tr class="separator:af6b3a4911f1bdac54d84b4dcc7b7ec4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af2e573366a03a695a8ba760440848206"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#af2e573366a03a695a8ba760440848206">MC_Send_Data</a> (uint8_t RegID, uint8_t data_to_send[], uint8_t size)</td></tr>
-<tr class="separator:af2e573366a03a695a8ba760440848206"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7294768824898480b6bcf6e98daa926"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#aa7294768824898480b6bcf6e98daa926">MC_Torque_Control</a> (int todo)</td></tr>
-<tr class="separator:aa7294768824898480b6bcf6e98daa926"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40bf1b849ad7443bbe8af342006bb3cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#a40bf1b849ad7443bbe8af342006bb3cd">MC_Check_Error_Warning</a> (uint8_t Data[])</td></tr>
 <tr class="separator:a40bf1b849ad7443bbe8af342006bb3cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac592ffd65d2793aadca7ca158a3d2dbc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#ac592ffd65d2793aadca7ca158a3d2dbc">MC_Validate</a> ()</td></tr>
@@ -124,14 +126,18 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a31e56f574be52c9850bb3034ebd9e010"><td class="memItemLeft" align="right" valign="top">QueueHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#a31e56f574be52c9850bb3034ebd9e010">canRxQueue</a></td></tr>
+<tr class="separator:a31e56f574be52c9850bb3034ebd9e010"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7e8e999e507ca3c4a6f1d4b5430cfff"><td class="memItemLeft" align="right" valign="top">QueueHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#ad7e8e999e507ca3c4a6f1d4b5430cfff">canTxQueue</a></td></tr>
+<tr class="separator:ad7e8e999e507ca3c4a6f1d4b5430cfff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26195bc72f07eeb97338e761432e03d2"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#a26195bc72f07eeb97338e761432e03d2">MC_Expected_Serial_Number</a> = 0x627E7A01</td></tr>
 <tr class="separator:a26195bc72f07eeb97338e761432e03d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f25ebbc9bf59980fdc0458f271437ee"><td class="memItemLeft" align="right" valign="top">const uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#a8f25ebbc9bf59980fdc0458f271437ee">MC_Expected_FW_Version</a> = 0xDC01</td></tr>
 <tr class="separator:a8f25ebbc9bf59980fdc0458f271437ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a347eaa173dae5d48ae87a4bc5532adfc"><td class="memItemLeft" align="right" valign="top">const uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#a347eaa173dae5d48ae87a4bc5532adfc">max_motor_speed</a> = 3277</td></tr>
 <tr class="separator:a347eaa173dae5d48ae87a4bc5532adfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ace1e40a5ea83b51078f64f9c777e3f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#a4ace1e40a5ea83b51078f64f9c777e3f">desired_motor_speed</a> [2]</td></tr>
-<tr class="separator:a4ace1e40a5ea83b51078f64f9c777e3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb41a96439ba6d63dcc64f257c43a1d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="motor__controller_8h.html#ac9389d71d481a5381fe1d1e23b1e4ecc">motor_controller_settings</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="motor__controller_8c.html#afb41a96439ba6d63dcc64f257c43a1d2">mc_default_settings</a></td></tr>
+<tr class="separator:afb41a96439ba6d63dcc64f257c43a1d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a40bf1b849ad7443bbe8af342006bb3cd"></a>
@@ -150,11 +156,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00122">122</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00591">591</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
 
-<p class="reference">References <a class="el" href="motor__controller_8h_source.html#l00086">AC_current_offset_fault</a>, <a class="el" href="motor__controller_8h_source.html#l00105">ADC_measurement_problem</a>, <a class="el" href="motor__controller_8h_source.html#l00104">ADC_sequencer_problem</a>, <a class="el" href="motor__controller_8h_source.html#l00094">auxiliary_voltage_min_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00088">bleed_resistor_overload</a>, <a class="el" href="motor__controller_8h_source.html#l00106">bleeder_resistor_warning</a>, <a class="el" href="motor__controller_8h_source.html#l00076">CAN_timeout_error</a>, <a class="el" href="motor__controller_8h_source.html#l00102">check_ecode_ID</a>, <a class="el" href="motor__controller_8h_source.html#l00082">critical_AC_current</a>, <a class="el" href="motor__controller_8h_source.html#l00084">ecode_timeout_error</a>, <a class="el" href="motor__controller_8h_source.html#l00073">eprom_read_error</a>, <a class="el" href="motor__controller_8h_source.html#l00077">feedback_signal_error</a>, <a class="el" href="motor__controller_8h_source.html#l00095">feedback_signal_problem</a>, <a class="el" href="motor__controller_8h_source.html#l00074">hardware_fault</a>, <a class="el" href="motor__controller_8h_source.html#l00080">IGBT_temp_max_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00098">IGBT_temperature_warning</a>, <a class="el" href="motor__controller_8h_source.html#l00087">internal_hardware_voltage_problem</a>, <a class="el" href="motor__controller_8h_source.html#l00081">mains_voltage_max_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00078">mains_voltage_min_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00079">motor_temp_max_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00097">motor_temperature_warning</a>, <a class="el" href="motor__controller_8h_source.html#l00091">parameter_conflict_detected</a>, <a class="el" href="motor__controller_8h_source.html#l00083">race_away_detected</a>, <a class="el" href="motor__controller_8h_source.html#l00093">rotate_field_enable_not_present_norun</a>, <a class="el" href="motor__controller_8h_source.html#l00075">rotate_field_enable_not_present_run</a>, <a class="el" href="motor__controller_8h_source.html#l00092">special_CPU_fault</a>, <a class="el" href="motor__controller_8h_source.html#l00101">speed_actual_resolution_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00103">tripzone_glitch_detected</a>, <a class="el" href="motor__controller_8h_source.html#l00099">Vout_saturation_max_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00096">warning_5</a>, <a class="el" href="motor__controller_8h_source.html#l00100">warning_9</a>, and <a class="el" href="motor__controller_8h_source.html#l00085">watchdog_reset</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="motor__controller_8c_source.html#l00026">MC_Parse_Message()</a>.</p>
+<p class="reference">References <a class="el" href="motor__controller_8h_source.html#l00089">AC_current_offset_fault</a>, <a class="el" href="motor__controller_8h_source.html#l00108">ADC_measurement_problem</a>, <a class="el" href="motor__controller_8h_source.html#l00107">ADC_sequencer_problem</a>, <a class="el" href="motor__controller_8h_source.html#l00097">auxiliary_voltage_min_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00091">bleed_resistor_overload</a>, <a class="el" href="motor__controller_8h_source.html#l00109">bleeder_resistor_warning</a>, <a class="el" href="motor__controller_8h_source.html#l00079">CAN_timeout_error</a>, <a class="el" href="motor__controller_8h_source.html#l00105">check_ecode_ID</a>, <a class="el" href="motor__controller_8h_source.html#l00085">critical_AC_current</a>, <a class="el" href="motor__controller_8h_source.html#l00087">ecode_timeout_error</a>, <a class="el" href="motor__controller_8h_source.html#l00076">eprom_read_error</a>, <a class="el" href="motor__controller_8h_source.html#l00080">feedback_signal_error</a>, <a class="el" href="motor__controller_8h_source.html#l00098">feedback_signal_problem</a>, <a class="el" href="motor__controller_8h_source.html#l00077">hardware_fault</a>, <a class="el" href="motor__controller_8h_source.html#l00083">IGBT_temp_max_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00101">IGBT_temperature_warning</a>, <a class="el" href="motor__controller_8h_source.html#l00090">internal_hardware_voltage_problem</a>, <a class="el" href="motor__controller_8h_source.html#l00084">mains_voltage_max_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00081">mains_voltage_min_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00082">motor_temp_max_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00100">motor_temperature_warning</a>, <a class="el" href="motor__controller_8h_source.html#l00094">parameter_conflict_detected</a>, <a class="el" href="motor__controller_8h_source.html#l00086">race_away_detected</a>, <a class="el" href="motor__controller_8h_source.html#l00096">rotate_field_enable_not_present_norun</a>, <a class="el" href="motor__controller_8h_source.html#l00078">rotate_field_enable_not_present_run</a>, <a class="el" href="motor__controller_8h_source.html#l00095">special_CPU_fault</a>, <a class="el" href="motor__controller_8h_source.html#l00104">speed_actual_resolution_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00106">tripzone_glitch_detected</a>, <a class="el" href="motor__controller_8h_source.html#l00102">Vout_saturation_max_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00099">warning_5</a>, <a class="el" href="motor__controller_8h_source.html#l00103">warning_9</a>, and <a class="el" href="motor__controller_8h_source.html#l00088">watchdog_reset</a>.</p>
 
 </div>
 </div>
@@ -174,7 +178,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00256">256</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00725">725</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
 
 </div>
 </div>
@@ -194,39 +198,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00252">252</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
-
-</div>
-</div>
-<a id="afa93c7b7fa3dc12bd6bf860c54c564ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afa93c7b7fa3dc12bd6bf860c54c564ee">&#9670;&nbsp;</a></span>MC_Parse_Message()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MC_Parse_Message </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>DLC</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>Data</em>[]&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00026">26</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
-
-<p class="reference">References <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="motor__controller_8c_source.html#l00122">MC_Check_Error_Warning()</a>, and <a class="el" href="motor__controller_8h_source.html#l00071">motor_controller_errors_warnings</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00721">721</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
 
 </div>
 </div>
@@ -245,48 +217,18 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Sends a CAN request to the motor controller to retrieve a specific register value. Constructs a CAN message with the specified register ID and sends it via the CAN queue. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">RegID</td><td>The ID of the register to request data from. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00047">47</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00230">230</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
 
-<p class="reference">References <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="constants_8h_source.html#l00019">MC_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
+<p class="reference">References <a class="el" href="motor__controller_8h_source.html#l00152">motor_controllor_settings::can_id_tx</a>, <a class="el" href="can_8c_source.html#l00147">hcan2</a>, <a class="el" href="motor__controller_8c_source.html#l00026">mc_default_settings</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
 
-</div>
-</div>
-<a id="af2e573366a03a695a8ba760440848206"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af2e573366a03a695a8ba760440848206">&#9670;&nbsp;</a></span>MC_Send_Data()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MC_Send_Data </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>RegID</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>data_to_send</em>[], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>size</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00069">69</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
-
-<p class="reference">References <a class="el" href="main_8c_source.html#l00341">Error_Handler()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="constants_8h_source.html#l00019">MC_CAN_ID_Tx</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, and <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>.</p>
+<p class="reference">Referenced by <a class="el" href="motor__controller_8c_source.html#l00739">MC_Startup()</a>, and <a class="el" href="motor__controller_8c_source.html#l00062">MotorControllerSpinTest()</a>.</p>
 
 </div>
 </div>
@@ -305,32 +247,19 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Initializes the motor controller by performing the following steps:</p><ol type="1">
+<li>Verifies the serial number from the motor controller.</li>
+<li>Checks the firmware version to ensure compatibility.</li>
+<li>Executes a motor spin test at low RPM to validate functionality.</li>
+<li>Checks for errors and warnings from the motor controller.</li>
+<li>Logs successful initialization if all checks pass. </li>
+</ol>
 
-<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00260">260</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00739">739</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00316">uv_init_task_args::init_info_queue</a>, <a class="el" href="uvfr__utils_8h_source.html#l00317">uv_init_task_args::meta_task_handle</a>, <a class="el" href="uvfr__utils_8h_source.html#l00167">MOTOR_CONTROLLER</a>, <a class="el" href="uvfr__utils_8h_source.html#l00315">uv_init_task_args::specific_args</a>, <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>, and <a class="el" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic()</a>.</p>
+<p class="reference">References <a class="el" href="motor__controller_8h_source.html#l00146">firmware_version</a>, <a class="el" href="motor__controller_8h_source.html#l00020">FIRMWARE_VERSION_REGISTER</a>, <a class="el" href="uvfr__utils_8h_source.html#l00331">uv_init_task_args::init_info_queue</a>, <a class="el" href="motor__controller_8c_source.html#l00020">MC_Expected_FW_Version</a>, <a class="el" href="motor__controller_8c_source.html#l00019">MC_Expected_Serial_Number</a>, <a class="el" href="motor__controller_8c_source.html#l00230">MC_Request_Data()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00332">uv_init_task_args::meta_task_handle</a>, <a class="el" href="uvfr__utils_8h_source.html#l00205">MOTOR_CONTROLLER</a>, <a class="el" href="motor__controller_8h_source.html#l00074">motor_controller_errors_warnings</a>, <a class="el" href="motor__controller_8c_source.html#l00119">MotorControllerErrorHandler()</a>, <a class="el" href="motor__controller_8c_source.html#l00062">MotorControllerSpinTest()</a>, <a class="el" href="motor__controller_8c_source.html#l00107">Parse_Bamocar_Response()</a>, <a class="el" href="constants_8c_source.html#l00009">RxData</a>, <a class="el" href="motor__controller_8h_source.html#l00019">SERIAL_NUMBER_REGISTER</a>, <a class="el" href="uvfr__utils_8h_source.html#l00330">uv_init_task_args::specific_args</a>, <a class="el" href="uvfr__utils_8h_source.html#l00167">UV_OK</a>, and <a class="el" href="motor__controller_8c_source.html#l00257">WaitFor_CAN_Response()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00037">uvInit()</a>.</p>
-
-</div>
-</div>
-<a id="aa7294768824898480b6bcf6e98daa926"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa7294768824898480b6bcf6e98daa926">&#9670;&nbsp;</a></span>MC_Torque_Control()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void MC_Torque_Control </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>todo</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00102">102</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00039">uvInit()</a>.</p>
 
 </div>
 </div>
@@ -349,24 +278,207 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00248">248</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00717">717</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+
+</div>
+</div>
+<a id="ae459dcb08bdf9b88ccc2de10bee4c409"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae459dcb08bdf9b88ccc2de10bee4c409">&#9670;&nbsp;</a></span>MotorControllerErrorHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void MotorControllerErrorHandler </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Processes error and warning information from the motor controller.</p><ol type="1">
+<li>Extracts error and warning flags from the CAN message payload.</li>
+<li>Logs or triggers a panic if critical errors are detected. <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Pointer to the CAN message payload. </td></tr>
+    <tr><td class="paramname">length</td><td>Length of the data payload. </td></tr>
+  </table>
+  </dd>
+</dl>
+</li>
+</ol>
+
+<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00119">119</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="motor__controller_8h_source.html#l00089">AC_current_offset_fault</a>, <a class="el" href="motor__controller_8h_source.html#l00108">ADC_measurement_problem</a>, <a class="el" href="motor__controller_8h_source.html#l00107">ADC_sequencer_problem</a>, <a class="el" href="motor__controller_8h_source.html#l00097">auxiliary_voltage_min_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00091">bleed_resistor_overload</a>, <a class="el" href="motor__controller_8h_source.html#l00109">bleeder_resistor_warning</a>, <a class="el" href="motor__controller_8h_source.html#l00079">CAN_timeout_error</a>, <a class="el" href="motor__controller_8h_source.html#l00105">check_ecode_ID</a>, <a class="el" href="motor__controller_8h_source.html#l00085">critical_AC_current</a>, <a class="el" href="motor__controller_8h_source.html#l00087">ecode_timeout_error</a>, <a class="el" href="motor__controller_8h_source.html#l00076">eprom_read_error</a>, <a class="el" href="motor__controller_8h_source.html#l00080">feedback_signal_error</a>, <a class="el" href="motor__controller_8h_source.html#l00098">feedback_signal_problem</a>, <a class="el" href="motor__controller_8h_source.html#l00077">hardware_fault</a>, <a class="el" href="motor__controller_8h_source.html#l00083">IGBT_temp_max_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00101">IGBT_temperature_warning</a>, <a class="el" href="motor__controller_8h_source.html#l00090">internal_hardware_voltage_problem</a>, <a class="el" href="motor__controller_8h_source.html#l00084">mains_voltage_max_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00081">mains_voltage_min_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00082">motor_temp_max_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00100">motor_temperature_warning</a>, <a class="el" href="motor__controller_8h_source.html#l00094">parameter_conflict_detected</a>, <a class="el" href="motor__controller_8h_source.html#l00086">race_away_detected</a>, <a class="el" href="motor__controller_8h_source.html#l00096">rotate_field_enable_not_present_norun</a>, <a class="el" href="motor__controller_8h_source.html#l00078">rotate_field_enable_not_present_run</a>, <a class="el" href="motor__controller_8h_source.html#l00095">special_CPU_fault</a>, <a class="el" href="motor__controller_8h_source.html#l00104">speed_actual_resolution_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00106">tripzone_glitch_detected</a>, <a class="el" href="motor__controller_8h_source.html#l00102">Vout_saturation_max_limit</a>, <a class="el" href="motor__controller_8h_source.html#l00099">warning_5</a>, <a class="el" href="motor__controller_8h_source.html#l00103">warning_9</a>, and <a class="el" href="motor__controller_8h_source.html#l00088">watchdog_reset</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__controller_8c_source.html#l00739">MC_Startup()</a>.</p>
+
+</div>
+</div>
+<a id="a71371a5194c9b5c725abec77feffbc38"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71371a5194c9b5c725abec77feffbc38">&#9670;&nbsp;</a></span>MotorControllerSpinTest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint16_t MotorControllerSpinTest </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Commands the motor to spin at a low RPM and validates the motor's response:</p><ol type="1">
+<li>Sends a spin command via CAN.</li>
+<li>Waits for the motor to reach the desired speed.</li>
+<li>Checks the actual speed from the motor controller.</li>
+<li>Stops the motor after validation. <dl class="section return"><dt>Returns</dt><dd>0 if the test is successful, 1 for timeout, or 2 for insufficient speed. </dd></dl>
+</li>
+</ol>
+
+<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00062">62</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="motor__controller_8h_source.html#l00152">motor_controllor_settings::can_id_tx</a>, <a class="el" href="can_8c_source.html#l00147">hcan2</a>, <a class="el" href="motor__controller_8c_source.html#l00026">mc_default_settings</a>, <a class="el" href="motor__controller_8c_source.html#l00230">MC_Request_Data()</a>, <a class="el" href="motor__controller_8h_source.html#l00024">N_actual</a>, <a class="el" href="motor__controller_8h_source.html#l00025">N_set</a>, <a class="el" href="constants_8c_source.html#l00009">RxData</a>, <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>, and <a class="el" href="motor__controller_8c_source.html#l00257">WaitFor_CAN_Response()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__controller_8c_source.html#l00739">MC_Startup()</a>.</p>
+
+</div>
+</div>
+<a id="a6e0eaf3bbf353c1b2b7b4ae59e928722"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e0eaf3bbf353c1b2b7b4ae59e928722">&#9670;&nbsp;</a></span>Parse_Bamocar_Response()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint32_t Parse_Bamocar_Response </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Parses a 32-bit response value from a Bamocar CAN message. Combines the four bytes of the payload into a single 32-bit integer. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>Pointer to the CAN message payload. </td></tr>
+    <tr><td class="paramname">length</td><td>Length of the data payload (expected to be 4 bytes). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Parsed 32-bit value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00107">107</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__controller_8c_source.html#l00739">MC_Startup()</a>.</p>
+
+</div>
+</div>
+<a id="a560fd64fa21f9583f346b08cd371afa4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a560fd64fa21f9583f346b08cd371afa4">&#9670;&nbsp;</a></span>WaitFor_CAN_Response()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="uvfr__utils_8h.html#a0ecf26b576b9a54eca656b9be7ba6a06">bool</a> WaitFor_CAN_Response </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Waits for a CAN response from the motor controller. Uses an RTOS semaphore to synchronize and check if a response is received within the timeout period. </p><dl class="section return"><dt>Returns</dt><dd>True if a response is received, otherwise false. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00257">257</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__controller_8c_source.html#l00739">MC_Startup()</a>, and <a class="el" href="motor__controller_8c_source.html#l00062">MotorControllerSpinTest()</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a4ace1e40a5ea83b51078f64f9c777e3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ace1e40a5ea83b51078f64f9c777e3f">&#9670;&nbsp;</a></span>desired_motor_speed</h2>
+<a id="a31e56f574be52c9850bb3034ebd9e010"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31e56f574be52c9850bb3034ebd9e010">&#9670;&nbsp;</a></span>canRxQueue</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t desired_motor_speed[2]</td>
+          <td class="memname">QueueHandle_t canRxQueue</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00022">22</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+</div>
+</div>
+<a id="ad7e8e999e507ca3c4a6f1d4b5430cfff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7e8e999e507ca3c4a6f1d4b5430cfff">&#9670;&nbsp;</a></span>canTxQueue</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">QueueHandle_t canTxQueue</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -386,6 +498,32 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="afb41a96439ba6d63dcc64f257c43a1d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb41a96439ba6d63dcc64f257c43a1d2">&#9670;&nbsp;</a></span>mc_default_settings</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="motor__controller_8h.html#ac9389d71d481a5381fe1d1e23b1e4ecc">motor_controller_settings</a> mc_default_settings</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .can_id_tx = 0x200,              </div>
+<div class="line">    .can_id_rx = 0x201,              </div>
+<div class="line">    .mc_CAN_timeout = 2,             </div>
+<div class="line">    .proportional_gain = 10,         </div>
+<div class="line">    .integral_time_constant = 400,   </div>
+<div class="line">    .integral_memory_max = 0.6       </div>
+<div class="line">}</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00026">26</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__controller_8c_source.html#l00230">MC_Request_Data()</a>, and <a class="el" href="motor__controller_8c_source.html#l00062">MotorControllerSpinTest()</a>.</p>
+
+</div>
+</div>
 <a id="a8f25ebbc9bf59980fdc0458f271437ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8f25ebbc9bf59980fdc0458f271437ee">&#9670;&nbsp;</a></span>MC_Expected_FW_Version</h2>
 
@@ -398,7 +536,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00018">18</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00020">20</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__controller_8c_source.html#l00739">MC_Startup()</a>.</p>
 
 </div>
 </div>
@@ -414,7 +554,9 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00017">17</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="motor__controller_8c_source.html#l00019">19</a> of file <a class="el" href="motor__controller_8c_source.html">motor_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="motor__controller_8c_source.html#l00739">MC_Startup()</a>.</p>
 
 </div>
 </div>

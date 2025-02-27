@@ -178,7 +178,14 @@
 \chapter{File Index}
 \input{files}
 \chapter{Module Documentation}
-\input{group___c_m_s_i_s}
+\input{group__state__engine}
+\include{group__state__engine__api}
+\include{group__state__engine__backend}
+\include{group__uvfr__utils}
+\include{group__utility__macros}
+\include{group__uvfr__veh__commands}
+\include{group__uvfr__can__api}
+\include{group___c_m_s_i_s}
 \include{group__stm32f4xx__system}
 \include{group___s_t_m32_f4xx___system___private___includes}
 \include{group___s_t_m32_f4xx___system___private___types_definitions}
@@ -190,19 +197,25 @@
 \chapter{Data Structure Documentation}
 \input{unionaccess__control__info}
 \input{structbms__settings__t}
+\input{struct_c_a_n___callback}
+\input{structdaq__child__task}
 \input{structdaq__datapoint}
 \input{structdaq__loop__args}
-\input{uniondaq__type}
+\input{structdaq__param__list__node}
 \input{structdriving__loop__args}
 \input{structdriving_loop_args}
 \input{structdriving_mode}
-\input{structdriving_mode_params}
-\input{structmotor__controller__settings__t}
+\input{uniondriving_mode_params}
+\input{structexp__torque__map__args}
+\input{structlinear__torque__map__args}
 \input{structmotor__controllor__settings}
 \input{structp__status}
+\input{structrbnode}
+\input{structrbtree}
+\input{structs__curve__torque__map__args}
 \input{structstate__change__daemon__args}
 \input{structtask__management__info}
-\input{structtm__data}
+\input{structtask__status__block}
 \input{structuv__binary__semaphore__info}
 \input{structuv___c_a_n__msg}
 \input{structuv__init__struct}
@@ -210,10 +223,13 @@
 \input{structuv__init__task__response}
 \input{structuv__internal__params}
 \input{structuv__mutex__info}
+\input{structuv__os__settings}
 \input{structuv__scd__response}
 \input{structuv__semaphore__info}
 \input{structuv__task__info}
+\input{structuv__task__msg__t}
 \input{structuv__vehicle__settings}
+\input{structveh__gen__info}
 \chapter{File Documentation}
 \input{adc_8h}
 \input{bms_8h}
@@ -232,14 +248,17 @@
 \input{odometer_8h}
 \input{oled_8h}
 \input{pdu_8h}
+\input{rb__tree_8h}
 \input{spi_8h}
 \input{stm32f4xx__hal__conf_8h}
 \input{stm32f4xx__it_8h}
 \input{temp__monitoring_8h}
 \input{tim_8h}
+\input{uvfr__global__config_8h}
 \input{uvfr__settings_8h}
 \input{uvfr__state__engine_8h}
 \input{uvfr__utils_8h}
+\input{uvfr__vehicle__commands_8h}
 \input{adc_8c}
 \input{bms_8c}
 \input{can_8c}
@@ -256,6 +275,7 @@
 \input{odometer_8c}
 \input{oled_8c}
 \input{pdu_8c}
+\input{rb__tree_8c}
 \input{spi_8c}
 \input{stm32f4xx__hal__msp_8c}
 \input{stm32f4xx__hal__timebase__tim_8c}
@@ -268,6 +288,7 @@
 \input{uvfr__settings_8c}
 \input{uvfr__state__engine_8c}
 \input{uvfr__utils_8c}
+\input{uvfr__vehicle__commands_8c}
 %--- End generated contents ---
 
 % Index

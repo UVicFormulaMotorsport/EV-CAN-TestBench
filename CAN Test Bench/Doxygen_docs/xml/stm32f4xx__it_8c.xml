@@ -1,0 +1,738 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="stm32f4xx__it_8c" kind="file" language="C++">
+    <compoundname>stm32f4xx_it.c</compoundname>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includes refid="stm32f4xx__it_8h" local="yes">stm32f4xx_it.h</includes>
+    <incdepgraph>
+      <node id="4">
+        <label>stdarg.h</label>
+      </node>
+      <node id="12">
+        <label>tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>stm32f4xx_it.h</label>
+        <link refid="stm32f4xx__it_8h"/>
+      </node>
+      <node id="32">
+        <label>stdint.h</label>
+      </node>
+      <node id="33">
+        <label>stdlib.h</label>
+      </node>
+      <node id="28">
+        <label>oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cmsis_os.h</label>
+      </node>
+      <node id="5">
+        <label>uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>message_buffer.h</label>
+      </node>
+      <node id="23">
+        <label>bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>rb_tree.h</label>
+        <link refid="rb__tree_8h"/>
+      </node>
+      <node id="10">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="9">
+        <label>can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Core/Src/stm32f4xx_it.c</label>
+        <link refid="stm32f4xx__it_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>uvfr_global_config.h</label>
+        <link refid="uvfr__global__config_8h"/>
+      </node>
+      <node id="31">
+        <label>FreeRTOSConfig.h</label>
+        <link refid="_free_r_t_o_s_config_8h"/>
+      </node>
+      <node id="24">
+        <label>uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>odometer.h</label>
+        <link refid="odometer_8h"/>
+      </node>
+      <node id="3">
+        <label>stm32f4xx_hal.h</label>
+      </node>
+      <node id="15">
+        <label>FreeRTOS.h</label>
+      </node>
+      <node id="11">
+        <label>dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>task.h</label>
+      </node>
+      <node id="2">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="stm32f4xx__it_8c_1a1c126854bb1813d31ab4776b21dcc51f" prot="public" static="no" mutable="no">
+        <type>DMA_HandleTypeDef</type>
+        <definition>DMA_HandleTypeDef hdma_adc1</definition>
+        <argsstring></argsstring>
+        <name>hdma_adc1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="58" column="26" bodyfile="Core/Src/adc.c" bodystart="29" bodyend="-1" declfile="Core/Src/stm32f4xx_it.c" declline="58" declcolumn="26"/>
+        <referencedby refid="stm32f4xx__it_8c_1aaf6ce196dde98712e1223b99766e06c0" compoundref="stm32f4xx__it_8c" startline="195" endline="204">DMA2_Stream0_IRQHandler</referencedby>
+        <referencedby refid="adc_8c_1ac3139540667c403c5dfd37a99c610b1c" compoundref="adc_8c" startline="165" endline="234">HAL_ADC_MspInit</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" prot="public" static="no" mutable="no">
+        <type>CAN_HandleTypeDef</type>
+        <definition>CAN_HandleTypeDef hcan2</definition>
+        <argsstring></argsstring>
+        <name>hcan2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="59" column="26" bodyfile="Core/Src/can.c" bodystart="147" bodyend="-1" declfile="Core/Src/stm32f4xx_it.c" declline="59" declcolumn="26"/>
+        <referencedby refid="can_8c_1ae025787f17f6312df1e71c731b2a0fe4" compoundref="can_8c" startline="476" endline="503">__uvCANtxCritSection</referencedby>
+        <referencedby refid="stm32f4xx__it_8c_1abf0ada95bd65ea0a24a25606a59a319d" compoundref="stm32f4xx__it_8c" startline="223" endline="232">CAN2_RX0_IRQHandler</referencedby>
+        <referencedby refid="stm32f4xx__it_8c_1ac67a8abbbb2e08b8c48726f65716295f" compoundref="stm32f4xx__it_8c" startline="237" endline="246">CAN2_RX1_IRQHandler</referencedby>
+        <referencedby refid="stm32f4xx__it_8c_1abc8a61d83a243d1d571a628a10f55733" compoundref="stm32f4xx__it_8c" startline="209" endline="218">CAN2_TX_IRQHandler</referencedby>
+        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="551" endline="610">CANbusTxSvcDaemon</referencedby>
+        <referencedby refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" compoundref="can_8c" startline="298" endline="335">HAL_CAN_RxFifo0MsgPendingCallback</referencedby>
+        <referencedby refid="can_8c_1a1ee5cd592134235b6c07f676784d47c3" compoundref="can_8c" startline="150" endline="226">MX_CAN2_Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="stm32f4xx__it_8c_1a25fc663547539bc49fecc0011bd76ab5" prot="public" static="no" mutable="no">
+        <type>TIM_HandleTypeDef</type>
+        <definition>TIM_HandleTypeDef htim1</definition>
+        <argsstring></argsstring>
+        <name>htim1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="60" column="26" bodyfile="Core/Src/stm32f4xx_hal_timebase_tim.c" bodystart="28" bodyend="-1" declfile="Core/Src/stm32f4xx_it.c" declline="60" declcolumn="26"/>
+        <referencedby refid="stm32f4xx__hal__timebase__tim_8c_1a879cdb21ef051eb81ec51c18147397d5" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="41" endline="101">HAL_InitTick</referencedby>
+        <referencedby refid="stm32f4xx__hal__timebase__tim_8c_1a24e0ee9dae1ec0f9d19200f5575ff790" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="121" endline="125">HAL_ResumeTick</referencedby>
+        <referencedby refid="stm32f4xx__hal__timebase__tim_8c_1aaf651af2afe688a991c657f64f8fa5f9" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="109" endline="113">HAL_SuspendTick</referencedby>
+        <referencedby refid="stm32f4xx__it_8c_1ad1fd361bc5ad89facee67c76d1ff8dc0" compoundref="stm32f4xx__it_8c" startline="181" endline="190">TIM1_UP_TIM10_IRQHandler</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="stm32f4xx__it_8c_1a6ad7a5e3ee69cb6db6a6b9111ba898bc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void NMI_Handler</definition>
+        <argsstring>(void)</argsstring>
+        <name>NMI_Handler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles Non maskable interrupt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="72" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="72" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4xx__it_8c_1a2bffc10d5bd4106753b7c30e86903bea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void HardFault_Handler</definition>
+        <argsstring>(void)</argsstring>
+        <name>HardFault_Handler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles Hard fault interrupt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="87" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="87" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4xx__it_8c_1a3150f74512510287a942624aa9b44cc5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MemManage_Handler</definition>
+        <argsstring>(void)</argsstring>
+        <name>MemManage_Handler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles Memory management fault. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="102" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="102" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4xx__it_8c_1a850cefb17a977292ae5eb4cafa9976c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void BusFault_Handler</definition>
+        <argsstring>(void)</argsstring>
+        <name>BusFault_Handler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles Pre-fetch fault, memory access fault. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="117" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="117" bodyend="127"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4xx__it_8c_1a1d98923de2ed6b7309b66f9ba2971647" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UsageFault_Handler</definition>
+        <argsstring>(void)</argsstring>
+        <name>UsageFault_Handler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles Undefined instruction or illegal state. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="132" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="132" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4xx__it_8c_1adbdfb05858cc36fc520974df37ec3cb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DebugMon_Handler</definition>
+        <argsstring>(void)</argsstring>
+        <name>DebugMon_Handler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles Debug monitor. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="147" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="147" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4xx__it_8c_1a17e9789a29a87d2df54f12b94dd1a0b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void EXTI0_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>EXTI0_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles EXTI line0 interrupt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="167" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="167" bodyend="176"/>
+        <references refid="main_8h_1a8a16d01b736134d204d72fdb2e8db7e4" compoundref="main_8h" startline="64">Start_Button_Input_Pin</references>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4xx__it_8c_1ad1fd361bc5ad89facee67c76d1ff8dc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void TIM1_UP_TIM10_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>TIM1_UP_TIM10_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles TIM1 update interrupt and TIM10 global interrupt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="181" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="181" bodyend="190"/>
+        <references refid="stm32f4xx__it_8c_1a25fc663547539bc49fecc0011bd76ab5" compoundref="stm32f4xx__hal__timebase__tim_8c" startline="28">htim1</references>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4xx__it_8c_1aaf6ce196dde98712e1223b99766e06c0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void DMA2_Stream0_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>DMA2_Stream0_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles DMA2 stream0 global interrupt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="195" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="195" bodyend="204"/>
+        <references refid="stm32f4xx__it_8c_1a1c126854bb1813d31ab4776b21dcc51f" compoundref="adc_8c" startline="29">hdma_adc1</references>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4xx__it_8c_1abc8a61d83a243d1d571a628a10f55733" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CAN2_TX_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>CAN2_TX_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles CAN2 TX interrupts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="209" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="209" bodyend="218"/>
+        <references refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4xx__it_8c_1abf0ada95bd65ea0a24a25606a59a319d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CAN2_RX0_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>CAN2_RX0_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles CAN2 RX0 interrupts. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="223" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="223" bodyend="232"/>
+        <references refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+      </memberdef>
+      <memberdef kind="function" id="stm32f4xx__it_8c_1ac67a8abbbb2e08b8c48726f65716295f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void CAN2_RX1_IRQHandler</definition>
+        <argsstring>(void)</argsstring>
+        <name>CAN2_RX1_IRQHandler</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>This function handles CAN2 RX1 interrupt. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/stm32f4xx_it.c" line="237" column="6" bodyfile="Core/Src/stm32f4xx_it.c" bodystart="237" bodyend="246"/>
+        <references refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interrupt Service Routines. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="attention"><para></para>
+</simplesect>
+Copyright (c) 2023 STMicroelectronics. All rights reserved.</para>
+<para>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Header<sp/>*/</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="stm32f4xx__it_8h" kindref="compound">stm32f4xx_it.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>includes<sp/>----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>typedef<sp/>-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>TD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>TD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>define<sp/>------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>macro<sp/>-------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PM<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PM<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>variables<sp/>---------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PV<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PV<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>function<sp/>prototypes<sp/>-----------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PFP<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PFP<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>user<sp/>code<sp/>---------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>External<sp/>variables<sp/>--------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>DMA_HandleTypeDef<sp/><ref refid="stm32f4xx__it_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>CAN_HandleTypeDef<sp/><ref refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>TIM_HandleTypeDef<sp/><ref refid="stm32f4xx__it_8c_1a25fc663547539bc49fecc0011bd76ab5" kindref="member">htim1</ref>;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>EV<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>EV<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/*<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Cortex-M4<sp/>Processor<sp/>Interruption<sp/>and<sp/>Exception<sp/>Handlers<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight></codeline>
+<codeline lineno="72" refid="stm32f4xx__it_8c_1a6ad7a5e3ee69cb6db6a6b9111ba898bc" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__it_8c_1a6ad7a5e3ee69cb6db6a6b9111ba898bc" kindref="member">NMI_Handler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="73"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>NonMaskableInt_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>NonMaskableInt_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>NonMaskableInt_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>NonMaskableInt_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="stm32f4xx__it_8c_1a2bffc10d5bd4106753b7c30e86903bea" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__it_8c_1a2bffc10d5bd4106753b7c30e86903bea" kindref="member">HardFault_Handler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="88"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>HardFault_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>HardFault_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>W1_HardFault_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>W1_HardFault_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="97"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102" refid="stm32f4xx__it_8c_1a3150f74512510287a942624aa9b44cc5" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__it_8c_1a3150f74512510287a942624aa9b44cc5" kindref="member">MemManage_Handler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>MemoryManagement_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>MemoryManagement_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>W1_MemoryManagement_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>W1_MemoryManagement_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="stm32f4xx__it_8c_1a850cefb17a977292ae5eb4cafa9976c3" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__it_8c_1a850cefb17a977292ae5eb4cafa9976c3" kindref="member">BusFault_Handler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="118"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>BusFault_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>BusFault_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>W1_BusFault_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>W1_BusFault_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="127"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="stm32f4xx__it_8c_1a1d98923de2ed6b7309b66f9ba2971647" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__it_8c_1a1d98923de2ed6b7309b66f9ba2971647" kindref="member">UsageFault_Handler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>UsageFault_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>UsageFault_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(1)</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>W1_UsageFault_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>W1_UsageFault_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147" refid="stm32f4xx__it_8c_1adbdfb05858cc36fc520974df37ec3cb0" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__it_8c_1adbdfb05858cc36fc520974df37ec3cb0" kindref="member">DebugMon_Handler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>DebugMonitor_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>DebugMonitor_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>DebugMonitor_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>DebugMonitor_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>STM32F4xx<sp/>Peripheral<sp/>Interrupt<sp/>Handlers<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Add<sp/>here<sp/>the<sp/>Interrupt<sp/>Handlers<sp/>for<sp/>the<sp/>used<sp/>peripherals.<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>For<sp/>the<sp/>available<sp/>peripheral<sp/>interrupt<sp/>handler<sp/>names,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>please<sp/>refer<sp/>to<sp/>the<sp/>startup<sp/>file<sp/>(startup_stm32f4xx.s).<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"></highlight><highlight class="comment">/******************************************************************************/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="163"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167" refid="stm32f4xx__it_8c_1a17e9789a29a87d2df54f12b94dd1a0b6" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__it_8c_1a17e9789a29a87d2df54f12b94dd1a0b6" kindref="member">EXTI0_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="168"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>EXTI0_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>EXTI0_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/>HAL_GPIO_EXTI_IRQHandler(<ref refid="main_8h_1a8a16d01b736134d204d72fdb2e8db7e4" kindref="member">Start_Button_Input_Pin</ref>);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>EXTI0_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>EXTI0_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181" refid="stm32f4xx__it_8c_1ad1fd361bc5ad89facee67c76d1ff8dc0" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__it_8c_1ad1fd361bc5ad89facee67c76d1ff8dc0" kindref="member">TIM1_UP_TIM10_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="182"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>TIM1_UP_TIM10_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>TIM1_UP_TIM10_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/>HAL_TIM_IRQHandler(&amp;<ref refid="stm32f4xx__it_8c_1a25fc663547539bc49fecc0011bd76ab5" kindref="member">htim1</ref>);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>TIM1_UP_TIM10_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>TIM1_UP_TIM10_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195" refid="stm32f4xx__it_8c_1aaf6ce196dde98712e1223b99766e06c0" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__it_8c_1aaf6ce196dde98712e1223b99766e06c0" kindref="member">DMA2_Stream0_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="196"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>DMA2_Stream0_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>DMA2_Stream0_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"><sp/><sp/>HAL_DMA_IRQHandler(&amp;<ref refid="stm32f4xx__it_8c_1a1c126854bb1813d31ab4776b21dcc51f" kindref="member">hdma_adc1</ref>);</highlight></codeline>
+<codeline lineno="201"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>DMA2_Stream0_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>DMA2_Stream0_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="204"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209" refid="stm32f4xx__it_8c_1abc8a61d83a243d1d571a628a10f55733" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__it_8c_1abc8a61d83a243d1d571a628a10f55733" kindref="member">CAN2_TX_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>CAN2_TX_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>CAN2_TX_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/>HAL_CAN_IRQHandler(&amp;<ref refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>);</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>CAN2_TX_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="216"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>CAN2_TX_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223" refid="stm32f4xx__it_8c_1abf0ada95bd65ea0a24a25606a59a319d" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__it_8c_1abf0ada95bd65ea0a24a25606a59a319d" kindref="member">CAN2_RX0_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="224"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>CAN2_RX0_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="226"><highlight class="normal"></highlight></codeline>
+<codeline lineno="227"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>CAN2_RX0_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="228"><highlight class="normal"><sp/><sp/>HAL_CAN_IRQHandler(&amp;<ref refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>);</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>CAN2_RX0_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="230"><highlight class="normal"></highlight></codeline>
+<codeline lineno="231"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>CAN2_RX0_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="232"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237" refid="stm32f4xx__it_8c_1ac67a8abbbb2e08b8c48726f65716295f" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="stm32f4xx__it_8c_1ac67a8abbbb2e08b8c48726f65716295f" kindref="member">CAN2_RX1_IRQHandler</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="238"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="239"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>CAN2_RX1_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="240"><highlight class="normal"></highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>CAN2_RX1_IRQn<sp/>0<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal"><sp/><sp/>HAL_CAN_IRQHandler(&amp;<ref refid="stm32f4xx__it_8c_1ab77168d14df04ccca5d48612ee21ced8" kindref="member">hcan2</ref>);</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>CAN2_RX1_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="244"><highlight class="normal"></highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>CAN2_RX1_IRQn<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"></highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="250"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>1<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Core/Src/stm32f4xx_it.c"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structuv__init__task__args" kind="struct" language="C++" prot="public">
+    <compoundname>uv_init_task_args</compoundname>
+    <includes refid="uvfr__utils_8h" local="no">uvfr_utils.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structuv__init__task__args_1a61a9b579a1e65a3875a4edf3201a39f3" prot="public" static="no" mutable="no">
+        <type>void *</type>
+        <definition>void* uv_init_task_args::specific_args</definition>
+        <argsstring></argsstring>
+        <name>specific_args</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="330" column="6" bodyfile="Core/Inc/uvfr_utils.h" bodystart="330" bodyend="-1"/>
+        <referencedby refid="motor__controller_8c_1aed1407e1e0fd59dc7c5e5d6db671f0ab" compoundref="motor__controller_8c" startline="739" endline="803">MC_Startup</referencedby>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__init__task__args_1adec47e7a54822cacfb8fcfc35a22157f" prot="public" static="no" mutable="no">
+        <type>QueueHandle_t</type>
+        <definition>QueueHandle_t uv_init_task_args::init_info_queue</definition>
+        <argsstring></argsstring>
+        <name>init_info_queue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="331" column="15" bodyfile="Core/Inc/uvfr_utils.h" bodystart="331" bodyend="-1"/>
+        <referencedby refid="bms_8c_1aa9af83736568f74c94d41f3f16adf513" compoundref="bms_8c" startline="11" endline="27">BMS_Init</referencedby>
+        <referencedby refid="imd_8c_1a19b4fd879f065cfe6e1b7bb3400cd0c3" compoundref="imd_8c" startline="554" endline="566">initIMD</referencedby>
+        <referencedby refid="pdu_8c_1afaa6671d51bcd0687c87ac635ff70d95" compoundref="pdu_8c" startline="183" endline="195">initPDU</referencedby>
+        <referencedby refid="motor__controller_8c_1aed1407e1e0fd59dc7c5e5d6db671f0ab" compoundref="motor__controller_8c" startline="739" endline="803">MC_Startup</referencedby>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structuv__init__task__args_1a3b81430245e7f832dc1112e53b0ef7ad" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t uv_init_task_args::meta_task_handle</definition>
+        <argsstring></argsstring>
+        <name>meta_task_handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="332" column="14" bodyfile="Core/Inc/uvfr_utils.h" bodystart="332" bodyend="-1"/>
+        <referencedby refid="bms_8c_1aa9af83736568f74c94d41f3f16adf513" compoundref="bms_8c" startline="11" endline="27">BMS_Init</referencedby>
+        <referencedby refid="imd_8c_1a19b4fd879f065cfe6e1b7bb3400cd0c3" compoundref="imd_8c" startline="554" endline="566">initIMD</referencedby>
+        <referencedby refid="pdu_8c_1afaa6671d51bcd0687c87ac635ff70d95" compoundref="pdu_8c" startline="183" endline="195">initPDU</referencedby>
+        <referencedby refid="motor__controller_8c_1aed1407e1e0fd59dc7c5e5d6db671f0ab" compoundref="motor__controller_8c" startline="739" endline="803">MC_Startup</referencedby>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Struct designed to act like the <computeroutput><ref refid="structuv__task__info" kindref="compound">uv_task_info</ref></computeroutput> struct, but for the initialisation tasks. As a result it takes fewer arguments. </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Core/Inc/uvfr_utils.h" line="329" column="32" bodyfile="Core/Inc/uvfr_utils.h" bodystart="329" bodyend="333"/>
+    <listofallmembers>
+      <member refid="structuv__init__task__args_1adec47e7a54822cacfb8fcfc35a22157f" prot="public" virt="non-virtual"><scope>uv_init_task_args</scope><name>init_info_queue</name></member>
+      <member refid="structuv__init__task__args_1a3b81430245e7f832dc1112e53b0ef7ad" prot="public" virt="non-virtual"><scope>uv_init_task_args</scope><name>meta_task_handle</name></member>
+      <member refid="structuv__init__task__args_1a61a9b579a1e65a3875a4edf3201a39f3" prot="public" virt="non-virtual"><scope>uv_init_task_args</scope><name>specific_args</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

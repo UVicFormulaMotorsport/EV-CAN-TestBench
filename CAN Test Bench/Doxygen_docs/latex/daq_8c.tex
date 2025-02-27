@@ -2,13 +2,46 @@
 \label{daq_8c}\index{Core/Src/daq.c@{Core/Src/daq.c}}
 {\ttfamily \#include \char`\"{}uvfr\+\_\+utils.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}daq.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{daq_8c_a5a6490a76926af0287e58c4b1af260bd}{\+\_\+\+S\+R\+C\+\_\+\+U\+V\+F\+R\+\_\+\+D\+AQ}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{daq_8c_af2c619df9f3d115dcbc511b0bb738e87}{init\+Daq\+Task}} (void $\ast$args)
+void \mbox{\hyperlink{daq_8c_a5ad861e87cf80d5723cc62a2fbc31c86}{delete\+Param\+List}} ()
+\item 
+void \mbox{\hyperlink{daq_8c_a25d6aad2bb791db6e28fdab0bbb026d5}{delete\+Daq\+Sub\+Task}} ()
+\item 
+\mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{daq_8c_a65df75bcd76d421bf28fca5704c8ff95}{start\+Daq\+Sub\+Tasks}} ()
+\item 
+\mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{daq_8c_ad3997ae047f3e30136b3f2b668c8030a}{stop\+Daq\+Sub\+Tasks}} ()
+\item 
+\mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} \mbox{\hyperlink{daq_8c_af2c619df9f3d115dcbc511b0bb738e87}{init\+Daq\+Task}} (void $\ast$args)
 \begin{DoxyCompactList}\small\item\em initializes the master D\+AQ task, all that fun stuff. This task probably manages a while plethora of smaller tasks \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{daq_8c_a433bb586ceab47aed8d633fa2ff8ce56}{daq\+Master\+Task}} (void $\ast$args)
+\item 
+void \mbox{\hyperlink{daq_8c_a740f6299f5ce19d6d94d148e13231dd9}{daq\+Sub\+Task}} (void $\ast$args)
 \end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{daq_8c_a07e7f750fa90de582a1e994dcf9b57d0}{param\+\_\+\+L\+UT}} \mbox{[}126\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{daq_8c_a5a6490a76926af0287e58c4b1af260bd}\label{daq_8c_a5a6490a76926af0287e58c4b1af260bd}} 
+\index{daq.c@{daq.c}!\_SRC\_UVFR\_DAQ@{\_SRC\_UVFR\_DAQ}}
+\index{\_SRC\_UVFR\_DAQ@{\_SRC\_UVFR\_DAQ}!daq.c@{daq.c}}
+\doxysubsubsection{\texorpdfstring{\_SRC\_UVFR\_DAQ}{\_SRC\_UVFR\_DAQ}}
+{\footnotesize\ttfamily \#define \+\_\+\+S\+R\+C\+\_\+\+U\+V\+F\+R\+\_\+\+D\+AQ}
+
+
+
+Definition at line 1 of file daq.\+c.
+
 
 
 \doxysubsection{Function Documentation}
@@ -28,7 +61,7 @@ These here lines set the delay. This task executes exactly at the period specifi
 \end{DoxyCode}
 
 
-Definition at line 44 of file daq.\+c.
+Definition at line 62 of file daq.\+c.
 
 
 
@@ -38,11 +71,41 @@ References change\+Vehicle\+State(), uv\+\_\+task\+\_\+info\+::cmd\+\_\+data, ki
 
 Referenced by init\+Daq\+Task().
 
+\mbox{\Hypertarget{daq_8c_a740f6299f5ce19d6d94d148e13231dd9}\label{daq_8c_a740f6299f5ce19d6d94d148e13231dd9}} 
+\index{daq.c@{daq.c}!daqSubTask@{daqSubTask}}
+\index{daqSubTask@{daqSubTask}!daq.c@{daq.c}}
+\doxysubsubsection{\texorpdfstring{daqSubTask()}{daqSubTask()}}
+{\footnotesize\ttfamily void daq\+Sub\+Task (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 103 of file daq.\+c.
+
+\mbox{\Hypertarget{daq_8c_a25d6aad2bb791db6e28fdab0bbb026d5}\label{daq_8c_a25d6aad2bb791db6e28fdab0bbb026d5}} 
+\index{daq.c@{daq.c}!deleteDaqSubTask@{deleteDaqSubTask}}
+\index{deleteDaqSubTask@{deleteDaqSubTask}!daq.c@{daq.c}}
+\doxysubsubsection{\texorpdfstring{deleteDaqSubTask()}{deleteDaqSubTask()}}
+{\footnotesize\ttfamily void delete\+Daq\+Sub\+Task (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file daq.\+c.
+
+\mbox{\Hypertarget{daq_8c_a5ad861e87cf80d5723cc62a2fbc31c86}\label{daq_8c_a5ad861e87cf80d5723cc62a2fbc31c86}} 
+\index{daq.c@{daq.c}!deleteParamList@{deleteParamList}}
+\index{deleteParamList@{deleteParamList}!daq.c@{daq.c}}
+\doxysubsubsection{\texorpdfstring{deleteParamList()}{deleteParamList()}}
+{\footnotesize\ttfamily void delete\+Param\+List (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file daq.\+c.
+
 \mbox{\Hypertarget{daq_8c_af2c619df9f3d115dcbc511b0bb738e87}\label{daq_8c_af2c619df9f3d115dcbc511b0bb738e87}} 
 \index{daq.c@{daq.c}!initDaqTask@{initDaqTask}}
 \index{initDaqTask@{initDaqTask}!daq.c@{daq.c}}
 \doxysubsubsection{\texorpdfstring{initDaqTask()}{initDaqTask()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{uvfr__state__engine_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} init\+Daq\+Task (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} init\+Daq\+Task (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
 
 
 
@@ -50,13 +113,54 @@ initializes the master D\+AQ task, all that fun stuff. This task probably manage
 
 This is a fairly standard function 
 
-Definition at line 10 of file daq.\+c.
+Definition at line 30 of file daq.\+c.
 
 
 
-References \+\_\+\+U\+V\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, uv\+\_\+task\+\_\+info\+::active\+\_\+states, daq\+Master\+Task(), uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, uv\+\_\+task\+\_\+info\+::max\+\_\+instances, P\+R\+O\+G\+R\+A\+M\+M\+I\+NG, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+args, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+period, uv\+\_\+task\+\_\+info\+::task\+\_\+priority, U\+V\+\_\+\+D\+R\+I\+V\+I\+NG, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE, U\+V\+\_\+\+L\+A\+U\+N\+C\+H\+\_\+\+C\+O\+N\+T\+R\+OL, U\+V\+\_\+\+OK, U\+V\+\_\+\+R\+E\+A\+DY, and uv\+Create\+Task().
+References \+\_\+\+U\+V\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+A\+S\+K\+\_\+\+S\+T\+A\+C\+K\+\_\+\+S\+I\+ZE, uv\+\_\+task\+\_\+info\+::active\+\_\+states, daq\+Master\+Task(), uv\+\_\+task\+\_\+info\+::deletion\+\_\+states, P\+R\+O\+G\+R\+A\+M\+M\+I\+NG, uv\+\_\+task\+\_\+info\+::stack\+\_\+size, uv\+\_\+task\+\_\+info\+::suspension\+\_\+states, uv\+\_\+task\+\_\+info\+::task\+\_\+args, uv\+\_\+task\+\_\+info\+::task\+\_\+function, uv\+\_\+task\+\_\+info\+::task\+\_\+name, uv\+\_\+task\+\_\+info\+::task\+\_\+period, uv\+\_\+task\+\_\+info\+::task\+\_\+priority, U\+V\+\_\+\+D\+R\+I\+V\+I\+NG, U\+V\+\_\+\+E\+R\+R\+OR, U\+V\+\_\+\+E\+R\+R\+O\+R\+\_\+\+S\+T\+A\+TE, U\+V\+\_\+\+L\+A\+U\+N\+C\+H\+\_\+\+C\+O\+N\+T\+R\+OL, U\+V\+\_\+\+OK, U\+V\+\_\+\+R\+E\+A\+DY, and uv\+Create\+Task().
 
 
 
 Referenced by uv\+Init\+State\+Engine().
+
+\mbox{\Hypertarget{daq_8c_a65df75bcd76d421bf28fca5704c8ff95}\label{daq_8c_a65df75bcd76d421bf28fca5704c8ff95}} 
+\index{daq.c@{daq.c}!startDaqSubTasks@{startDaqSubTasks}}
+\index{startDaqSubTasks@{startDaqSubTasks}!daq.c@{daq.c}}
+\doxysubsubsection{\texorpdfstring{startDaqSubTasks()}{startDaqSubTasks()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} start\+Daq\+Sub\+Tasks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 17 of file daq.\+c.
+
+
+
+References U\+V\+\_\+\+E\+R\+R\+OR.
+
+\mbox{\Hypertarget{daq_8c_ad3997ae047f3e30136b3f2b668c8030a}\label{daq_8c_ad3997ae047f3e30136b3f2b668c8030a}} 
+\index{daq.c@{daq.c}!stopDaqSubTasks@{stopDaqSubTasks}}
+\index{stopDaqSubTasks@{stopDaqSubTasks}!daq.c@{daq.c}}
+\doxysubsubsection{\texorpdfstring{stopDaqSubTasks()}{stopDaqSubTasks()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{can_8h_aef3770e45bbacbf527fd93dd80eea9b9}{uv\+\_\+status}} stop\+Daq\+Sub\+Tasks (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 21 of file daq.\+c.
+
+
+
+References U\+V\+\_\+\+E\+R\+R\+OR.
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{daq_8c_a07e7f750fa90de582a1e994dcf9b57d0}\label{daq_8c_a07e7f750fa90de582a1e994dcf9b57d0}} 
+\index{daq.c@{daq.c}!param\_LUT@{param\_LUT}}
+\index{param\_LUT@{param\_LUT}!daq.c@{daq.c}}
+\doxysubsubsection{\texorpdfstring{param\_LUT}{param\_LUT}}
+{\footnotesize\ttfamily void$\ast$ param\+\_\+\+L\+UT\mbox{[}126\mbox{]}}
+
+
+
+Definition at line 7 of file daq.\+c.
 

@@ -1,0 +1,1713 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="imd_8h" kind="file" language="C++">
+    <compoundname>imd.h</compoundname>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includedby refid="uvfr__utils_8h" local="yes">Core/Inc/uvfr_utils.h</includedby>
+    <includedby refid="can_8c" local="yes">Core/Src/can.c</includedby>
+    <includedby refid="imd_8c" local="yes">Core/Src/imd.c</includedby>
+    <includedby refid="main_8c" local="yes">Core/Src/main.c</includedby>
+    <incdepgraph>
+      <node id="4">
+        <label>stdarg.h</label>
+      </node>
+      <node id="12">
+        <label>tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Core/Inc/imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>stdint.h</label>
+      </node>
+      <node id="32">
+        <label>stdlib.h</label>
+      </node>
+      <node id="27">
+        <label>oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>cmsis_os.h</label>
+      </node>
+      <node id="5">
+        <label>uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>message_buffer.h</label>
+      </node>
+      <node id="23">
+        <label>bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>rb_tree.h</label>
+        <link refid="rb__tree_8h"/>
+      </node>
+      <node id="10">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="9">
+        <label>can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>uvfr_global_config.h</label>
+        <link refid="uvfr__global__config_8h"/>
+      </node>
+      <node id="30">
+        <label>FreeRTOSConfig.h</label>
+        <link refid="_free_r_t_o_s_config_8h"/>
+      </node>
+      <node id="24">
+        <label>uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>odometer.h</label>
+        <link refid="odometer_8h"/>
+      </node>
+      <node id="3">
+        <label>stm32f4xx_hal.h</label>
+      </node>
+      <node id="15">
+        <label>FreeRTOS.h</label>
+      </node>
+      <node id="11">
+        <label>dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>task.h</label>
+      </node>
+      <node id="2">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="17">
+        <label>Core/Inc/tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>Core/Inc/imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>Core/Src/daq.c</label>
+        <link refid="daq_8c"/>
+      </node>
+      <node id="28">
+        <label>Core/Inc/dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>Core/Inc/driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>Core/Inc/temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Core/Src/pdu.c</label>
+        <link refid="pdu_8c"/>
+      </node>
+      <node id="10">
+        <label>Core/Src/dash.c</label>
+        <link refid="dash_8c"/>
+      </node>
+      <node id="18">
+        <label>Core/Src/tim.c</label>
+        <link refid="tim_8c"/>
+      </node>
+      <node id="44">
+        <label>Core/Src/uvfr_state_engine.c</label>
+        <link refid="uvfr__state__engine_8c"/>
+      </node>
+      <node id="39">
+        <label>Core/Inc/oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Core/Inc/adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>Core/Src/stm32f4xx_hal_msp.c</label>
+        <link refid="stm32f4xx__hal__msp_8c"/>
+      </node>
+      <node id="2">
+        <label>Core/Inc/uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>Core/Src/odometer.c</label>
+        <link refid="odometer_8c"/>
+      </node>
+      <node id="31">
+        <label>Core/Src/freertos.c</label>
+        <link refid="freertos_8c"/>
+      </node>
+      <node id="8">
+        <label>Core/Src/bms.c</label>
+        <link refid="bms_8c"/>
+      </node>
+      <node id="27">
+        <label>Core/Inc/bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Core/Src/motor_controller.c</label>
+        <link refid="motor__controller_8c"/>
+      </node>
+      <node id="35">
+        <label>Core/Src/uvfr_settings.c</label>
+        <link refid="uvfr__settings_8c"/>
+      </node>
+      <node id="11">
+        <label>Core/Src/driving_loop.c</label>
+        <link refid="driving__loop_8c"/>
+      </node>
+      <node id="22">
+        <label>Core/Inc/spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>Core/Inc/pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Core/Src/gpio.c</label>
+        <link refid="gpio_8c"/>
+      </node>
+      <node id="24">
+        <label>Core/Inc/motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>Core/Inc/uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>Core/Src/rb_tree.c</label>
+        <link refid="rb__tree_8c"/>
+      </node>
+      <node id="16">
+        <label>Core/Src/dma.c</label>
+        <link refid="dma_8c"/>
+      </node>
+      <node id="21">
+        <label>Core/Src/temp_monitoring.c</label>
+        <link refid="temp__monitoring_8c"/>
+      </node>
+      <node id="46">
+        <label>Core/Src/uvfr_vehicle_commands.c</label>
+        <link refid="uvfr__vehicle__commands_8c"/>
+      </node>
+      <node id="36">
+        <label>Core/Inc/daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Core/Inc/gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>Core/Src/uvfr_utils.c</label>
+        <link refid="uvfr__utils_8c"/>
+      </node>
+      <node id="23">
+        <label>Core/Src/spi.c</label>
+        <link refid="spi_8c"/>
+      </node>
+      <node id="30">
+        <label>Core/Src/constants.c</label>
+        <link refid="constants_8c"/>
+      </node>
+      <node id="12">
+        <label>Core/Src/imd.c</label>
+        <link refid="imd_8c"/>
+      </node>
+      <node id="7">
+        <label>Core/Inc/can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>Core/Src/stm32f4xx_it.c</label>
+        <link refid="stm32f4xx__it_8c"/>
+      </node>
+      <node id="38">
+        <label>Core/Inc/uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>Core/Src/can.c</label>
+        <link refid="can_8c"/>
+      </node>
+      <node id="41">
+        <label>Core/Inc/uvfr_vehicle_commands.h</label>
+        <link refid="uvfr__vehicle__commands_8h"/>
+      </node>
+      <node id="32">
+        <label>Core/Src/oled.c</label>
+        <link refid="oled_8c"/>
+      </node>
+      <node id="5">
+        <label>Core/Src/adc.c</label>
+        <link refid="adc_8c"/>
+      </node>
+      <node id="6">
+        <label>Core/Src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="15">
+        <label>Core/Inc/dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Core/Inc/main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="imd_8h_1acf7b0534a43397021a0e474a499218be" prot="public" static="no" strong="no">
+        <type></type>
+        <name>imd_status_bits</name>
+        <enumvalue id="imd_8h_1acf7b0534a43397021a0e474a499218beafdb68e8ed34ae72c318cbd4a4d6fc250" prot="public">
+          <name>Isolation_status_bit0</name>
+          <initializer>= 0b00000001</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1acf7b0534a43397021a0e474a499218bea2d0990734ac774c2740c9e541e8700b3" prot="public">
+          <name>Isolation_status_bit1</name>
+          <initializer>= 0b00000010</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1acf7b0534a43397021a0e474a499218beacb8278060f1d4f8f423c3f7943618d0a" prot="public">
+          <name>Low_Battery_Voltage</name>
+          <initializer>= 0b00000100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1acf7b0534a43397021a0e474a499218bea446905b0f3e9fe48a178f0a6799324b4" prot="public">
+          <name>High_Battery_Voltage</name>
+          <initializer>= 0b00001000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1acf7b0534a43397021a0e474a499218bea8e572e8f9a6be9d801c0db642ece2c2a" prot="public">
+          <name>Exc_off</name>
+          <initializer>= 0b00010000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1acf7b0534a43397021a0e474a499218bea4c7193d6f28bf43ed6de8e1291917846" prot="public">
+          <name>High_Uncertainty</name>
+          <initializer>= 0b00100000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1acf7b0534a43397021a0e474a499218bea5392342181b601c30b6e537a0f5a0a08" prot="public">
+          <name>Touch_energy_fault</name>
+          <initializer>= 0b01000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1acf7b0534a43397021a0e474a499218bea48e3e4678c927a799f113e4688ab7886" prot="public">
+          <name>Hardware_Error</name>
+          <initializer>= 0b10000000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="16" column="21" bodyfile="Core/Inc/imd.h" bodystart="16" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="enum" id="imd_8h_1a0710286ee4b87e83845bd90c76e5c26a" prot="public" static="no" strong="no">
+        <type></type>
+        <name>imd_status_requests</name>
+        <enumvalue id="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aabbce6aa84dd484b90a148c9893f29c38" prot="public">
+          <name>isolation_state</name>
+          <initializer>= 0xE0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aac4f56ef8fddf7442d16abdcef0ee35ae" prot="public">
+          <name>isolation_resistances</name>
+          <initializer>= 0xE1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa1f57f433823678afb675a0118355b41c" prot="public">
+          <name>isolation_capacitances</name>
+          <initializer>= 0xE2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aab731b0ae179fe84519337374868be1d1" prot="public">
+          <name>voltages_Vp_and_Vn</name>
+          <initializer>= 0xE3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa88e842a14bd3662858b52abbefad1680" prot="public">
+          <name>battery_voltage</name>
+          <initializer>= 0xE4</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa86fdcb1bb1742680706316d50c9b8fcf" prot="public">
+          <name>Error_flags</name>
+          <initializer>= 0xE5</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aae62307414b8266d9beb9dcffc335f504" prot="public">
+          <name>safety_touch_energy</name>
+          <initializer>= 0xE6</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa64c31deedf3ed7b386711c4c6825456f" prot="public">
+          <name>safety_touch_current</name>
+          <initializer>= 0xE7</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa194e665f65c42e02190f2871ecfd3eed" prot="public">
+          <name>Max_battery_working_voltage</name>
+          <initializer>= 0xF0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa636f89bb3814dde8c07ec0446f72d28f" prot="public">
+          <name>Temperature</name>
+          <initializer>= 0x80</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="32" column="25" bodyfile="Core/Inc/imd.h" bodystart="32" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="enum" id="imd_8h_1a4456d255c2ceb447ad52b68087531b61" prot="public" static="no" strong="no">
+        <type></type>
+        <name>imd_error_flags</name>
+        <enumvalue id="imd_8h_1a4456d255c2ceb447ad52b68087531b61afa71f4893ad7f39c03d991a2eae95368" prot="public">
+          <name>Err_temp</name>
+          <initializer>= 0x0080</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a4456d255c2ceb447ad52b68087531b61a0bab46bce7066da8e52221c8283cccbd" prot="public">
+          <name>Err_clock</name>
+          <initializer>= 0x0100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a4456d255c2ceb447ad52b68087531b61aec0ab5944a70662e09e795646e5987ca" prot="public">
+          <name>Err_Watchdog</name>
+          <initializer>= 0x0200</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a4456d255c2ceb447ad52b68087531b61a22c4b1756e0cf536391cc6e5547470f6" prot="public">
+          <name>Err_Vpwr</name>
+          <initializer>= 0x0400</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a4456d255c2ceb447ad52b68087531b61a198b196da46ddeb177a05ed33f363df7" prot="public">
+          <name>Err_Vexi</name>
+          <initializer>= 0x0800</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a4456d255c2ceb447ad52b68087531b61aeccbe530442099dab4642a4dc399666f" prot="public">
+          <name>Err_VxR</name>
+          <initializer>= 0x1000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a4456d255c2ceb447ad52b68087531b61ae3dc5d0132a955458e722cb04ccd3900" prot="public">
+          <name>Err_CH</name>
+          <initializer>= 0x2000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a4456d255c2ceb447ad52b68087531b61a902d14d447c4552ea1f4f1634f2e4a61" prot="public">
+          <name>Err_Vx1</name>
+          <initializer>= 0x4000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a4456d255c2ceb447ad52b68087531b61a806c4e5614221c8b239f6620ab7d5d50" prot="public">
+          <name>Err_Vx2</name>
+          <initializer>= 0x8000</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="68" column="21" bodyfile="Core/Inc/imd.h" bodystart="68" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="enum" id="imd_8h_1a975959819df682c9adec7c667028674e" prot="public" static="no" strong="no">
+        <type></type>
+        <name>imd_manufacturer_requests</name>
+        <enumvalue id="imd_8h_1a975959819df682c9adec7c667028674ea9f7942276dd9e12e41f0463701086e7d" prot="public">
+          <name>Part_name_0</name>
+          <initializer>= 0x01</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a975959819df682c9adec7c667028674ea6172e87521e48caf627c729daa8b6f59" prot="public">
+          <name>Part_name_1</name>
+          <initializer>= 0x02</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a975959819df682c9adec7c667028674ea98d7a9f4550631a81ea2c5a4a215a981" prot="public">
+          <name>Part_name_2</name>
+          <initializer>= 0x03</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a975959819df682c9adec7c667028674ea086d70441c24f02a8abceeee41562cde" prot="public">
+          <name>Part_name_3</name>
+          <initializer>= 0x04</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a975959819df682c9adec7c667028674ea5eb2adcd1cb7d65f6c590b6f6b7ee322" prot="public">
+          <name>Version_0</name>
+          <initializer>= 0x05</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a975959819df682c9adec7c667028674eafcc458d57f1b3273ae319230922231a4" prot="public">
+          <name>Version_1</name>
+          <initializer>= 0x06</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a975959819df682c9adec7c667028674eafb60bb95154ac28254f2e8dfbc82c638" prot="public">
+          <name>Version_2</name>
+          <initializer>= 0x07</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a975959819df682c9adec7c667028674ea453d45b6245737d4987dd4b78a2e464a" prot="public">
+          <name>Serial_number_0</name>
+          <initializer>= 0x08</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a975959819df682c9adec7c667028674ea29cf9ca0d526194e6ce71ff99120ee9e" prot="public">
+          <name>Serial_number_1</name>
+          <initializer>= 0x09</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a975959819df682c9adec7c667028674ea87fc8ea63ac933e1e441f105dce28cdb" prot="public">
+          <name>Serial_number_2</name>
+          <initializer>= 0x0A</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a975959819df682c9adec7c667028674eaf9d06047340a1a4185e714ca761f891e" prot="public">
+          <name>Serial_number_3</name>
+          <initializer>= 0x0B</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1a975959819df682c9adec7c667028674eac87b1e30788367a709363dba4ad7f238" prot="public">
+          <name>Uptime_counter</name>
+          <initializer>= 0x0C</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="82" column="31" bodyfile="Core/Inc/imd.h" bodystart="82" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="enum" id="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>imd_high_resolution_measurements</name>
+        <enumvalue id="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca781dcc0628d7284c0e9e0be67cd3365b" prot="public">
+          <name>Vn_hi_res</name>
+          <initializer>= 0x60</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca6b90089e224b90d87a6cf113e5e36f22" prot="public">
+          <name>Vp_hi_res</name>
+          <initializer>= 0x61</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca65563450695b30beae4032ff330f0e6f" prot="public">
+          <name>Vexc_hi_res</name>
+          <initializer>= 0x62</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca23a10ada814d11a9a1044ede3a821688" prot="public">
+          <name>Vb_hi_res</name>
+          <initializer>= 0x63</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca6d4bdc992b68f8ee4aea88056639af5d" prot="public">
+          <name>Vpwr_hi_res</name>
+          <initializer>= 0x65</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="98" column="38" bodyfile="Core/Inc/imd.h" bodystart="98" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="imd_8h_1a1f6181c5ab49d963007eb9a212672bbd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Parse_Message</definition>
+        <argsstring>(int DLC, uint8_t Data[])</argsstring>
+        <name>IMD_Parse_Message</name>
+        <param>
+          <type>int</type>
+          <declname>DLC</declname>
+        </param>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="110" column="6" bodyfile="Core/Src/imd.c" bodystart="68" bodyend="173" declfile="Core/Inc/imd.h" declline="110" declcolumn="6"/>
+        <references refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa88e842a14bd3662858b52abbefad1680" compoundref="imd_8h" startline="49">battery_voltage</references>
+        <references refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa86fdcb1bb1742680706316d50c9b8fcf" compoundref="imd_8h" startline="52">Error_flags</references>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="imd_8c_1ac94e0b660190e6ce0d376d407627057e" compoundref="imd_8c" startline="351" endline="356">IMD_Check_Battery_Voltage</references>
+        <references refid="imd_8c_1a0cfe9b1a6472c4a5d0ca154a4e9e7bb0" compoundref="imd_8c" startline="257" endline="291">IMD_Check_Error_Flags</references>
+        <references refid="imd_8c_1a686301a85070c84e89af3e1cc0a159ae" compoundref="imd_8c" startline="337" endline="341">IMD_Check_Isolation_Capacitances</references>
+        <references refid="imd_8c_1adb4d085b7b1f3e5a860c45aa5a404294" compoundref="imd_8c" startline="312" endline="334">IMD_Check_Isolation_Resistances</references>
+        <references refid="imd_8c_1af81ff089b3fabafdfa49c3b816ded80e" compoundref="imd_8c" startline="296" endline="307">IMD_Check_Isolation_State</references>
+        <references refid="imd_8c_1a6f6abcfa57cc41a7b1249c0157702a1c" compoundref="imd_8c" startline="388" endline="395">IMD_Check_Max_Battery_Working_Voltage</references>
+        <references refid="imd_8c_1a72a595e6320ceeb17de4f7ce2ec66d30" compoundref="imd_8c" startline="401" endline="441">IMD_Check_Part_Name</references>
+        <references refid="imd_8c_1a00c843b8f3e8cf4569ea9008cd7db9d2" compoundref="imd_8c" startline="376" endline="378">IMD_Check_Safety_Touch_Current</references>
+        <references refid="imd_8c_1abc49be24256f1a93674e290546384348" compoundref="imd_8c" startline="369" endline="373">IMD_Check_Safety_Touch_Energy</references>
+        <references refid="imd_8c_1a6f1e850c527bdf0e1a7cfbc557b8501b" compoundref="imd_8c" startline="483" endline="522">IMD_Check_Serial_Number</references>
+        <references refid="imd_8c_1ab4e8b5af19cc6d0b08ace9185a542b01" compoundref="imd_8c" startline="213" endline="254">IMD_Check_Status_Bits</references>
+        <references refid="imd_8c_1a1a18f8d11173ee691822b5a712cf1617" compoundref="imd_8c" startline="358" endline="364">IMD_Check_Temperature</references>
+        <references refid="imd_8c_1a4a16ede06a18addd7ef3e67be2aaaf3d" compoundref="imd_8c" startline="443" endline="478">IMD_Check_Version</references>
+        <references refid="imd_8c_1a0fc857559d80dd701aec763dd6911383" compoundref="imd_8c" startline="344" endline="348">IMD_Check_Voltages_Vp_and_Vn</references>
+        <references refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa1f57f433823678afb675a0118355b41c" compoundref="imd_8h" startline="43">isolation_capacitances</references>
+        <references refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aac4f56ef8fddf7442d16abdcef0ee35ae" compoundref="imd_8h" startline="38">isolation_resistances</references>
+        <references refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aabbce6aa84dd484b90a148c9893f29c38" compoundref="imd_8h" startline="34">isolation_state</references>
+        <references refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa194e665f65c42e02190f2871ecfd3eed" compoundref="imd_8h" startline="61">Max_battery_working_voltage</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea9f7942276dd9e12e41f0463701086e7d" compoundref="imd_8h" startline="84">Part_name_0</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea6172e87521e48caf627c729daa8b6f59" compoundref="imd_8h" startline="85">Part_name_1</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea98d7a9f4550631a81ea2c5a4a215a981" compoundref="imd_8h" startline="86">Part_name_2</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea086d70441c24f02a8abceeee41562cde" compoundref="imd_8h" startline="87">Part_name_3</references>
+        <references refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa64c31deedf3ed7b386711c4c6825456f" compoundref="imd_8h" startline="58">safety_touch_current</references>
+        <references refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aae62307414b8266d9beb9dcffc335f504" compoundref="imd_8h" startline="55">safety_touch_energy</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea453d45b6245737d4987dd4b78a2e464a" compoundref="imd_8h" startline="91">Serial_number_0</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea29cf9ca0d526194e6ce71ff99120ee9e" compoundref="imd_8h" startline="92">Serial_number_1</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea87fc8ea63ac933e1e441f105dce28cdb" compoundref="imd_8h" startline="93">Serial_number_2</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674eaf9d06047340a1a4185e714ca761f891e" compoundref="imd_8h" startline="94">Serial_number_3</references>
+        <references refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa636f89bb3814dde8c07ec0446f72d28f" compoundref="imd_8h" startline="64">Temperature</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674eac87b1e30788367a709363dba4ad7f238" compoundref="imd_8h" startline="95">Uptime_counter</references>
+        <references refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca23a10ada814d11a9a1044ede3a821688" compoundref="imd_8h" startline="102">Vb_hi_res</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea5eb2adcd1cb7d65f6c590b6f6b7ee322" compoundref="imd_8h" startline="88">Version_0</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674eafcc458d57f1b3273ae319230922231a4" compoundref="imd_8h" startline="89">Version_1</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674eafb60bb95154ac28254f2e8dfbc82c638" compoundref="imd_8h" startline="90">Version_2</references>
+        <references refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca65563450695b30beae4032ff330f0e6f" compoundref="imd_8h" startline="101">Vexc_hi_res</references>
+        <references refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca781dcc0628d7284c0e9e0be67cd3365b" compoundref="imd_8h" startline="99">Vn_hi_res</references>
+        <references refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aab731b0ae179fe84519337374868be1d1" compoundref="imd_8h" startline="46">voltages_Vp_and_Vn</references>
+        <references refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca6b90089e224b90d87a6cf113e5e36f22" compoundref="imd_8h" startline="100">Vp_hi_res</references>
+        <references refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca6d4bdc992b68f8ee4aea88056639af5d" compoundref="imd_8h" startline="103">Vpwr_hi_res</references>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1ab4e8b5af19cc6d0b08ace9185a542b01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Status_Bits</definition>
+        <argsstring>(uint8_t Data)</argsstring>
+        <name>IMD_Check_Status_Bits</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="114" column="6" bodyfile="Core/Src/imd.c" bodystart="213" bodyend="254" declfile="Core/Inc/imd.h" declline="114" declcolumn="6"/>
+        <references refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa86fdcb1bb1742680706316d50c9b8fcf" compoundref="imd_8h" startline="52">Error_flags</references>
+        <references refid="imd_8h_1acf7b0534a43397021a0e474a499218bea48e3e4678c927a799f113e4688ab7886" compoundref="imd_8h" startline="26">Hardware_Error</references>
+        <references refid="imd_8h_1acf7b0534a43397021a0e474a499218bea446905b0f3e9fe48a178f0a6799324b4" compoundref="imd_8h" startline="22">High_Battery_Voltage</references>
+        <references refid="imd_8h_1acf7b0534a43397021a0e474a499218bea4c7193d6f28bf43ed6de8e1291917846" compoundref="imd_8h" startline="24">High_Uncertainty</references>
+        <references refid="imd_8c_1a208e957d0a18b23cb59f4eedd1c855cc" compoundref="imd_8c" startline="62">IMD_error_flags_requested</references>
+        <references refid="imd_8c_1adc15fc02a3a9fb34afc14ee1ba7434c0" compoundref="imd_8c" startline="20">IMD_High_Uncertainty</references>
+        <references refid="imd_8c_1aeb7c937639c5385f5d2b4e3a4e60250f" compoundref="imd_8c" startline="180" endline="191">IMD_Request_Status</references>
+        <references refid="imd_8h_1acf7b0534a43397021a0e474a499218beafdb68e8ed34ae72c318cbd4a4d6fc250" compoundref="imd_8h" startline="19">Isolation_status_bit0</references>
+        <references refid="imd_8h_1acf7b0534a43397021a0e474a499218bea2d0990734ac774c2740c9e541e8700b3" compoundref="imd_8h" startline="20">Isolation_status_bit1</references>
+        <references refid="imd_8h_1acf7b0534a43397021a0e474a499218beacb8278060f1d4f8f423c3f7943618d0a" compoundref="imd_8h" startline="21">Low_Battery_Voltage</references>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1a0cfe9b1a6472c4a5d0ca154a4e9e7bb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Error_Flags</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Error_Flags</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="115" column="6" bodyfile="Core/Src/imd.c" bodystart="257" bodyend="291" declfile="Core/Inc/imd.h" declline="115" declcolumn="6"/>
+        <references refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61ae3dc5d0132a955458e722cb04ccd3900" compoundref="imd_8h" startline="76">Err_CH</references>
+        <references refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a0bab46bce7066da8e52221c8283cccbd" compoundref="imd_8h" startline="71">Err_clock</references>
+        <references refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61afa71f4893ad7f39c03d991a2eae95368" compoundref="imd_8h" startline="70">Err_temp</references>
+        <references refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a198b196da46ddeb177a05ed33f363df7" compoundref="imd_8h" startline="74">Err_Vexi</references>
+        <references refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a22c4b1756e0cf536391cc6e5547470f6" compoundref="imd_8h" startline="73">Err_Vpwr</references>
+        <references refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a902d14d447c4552ea1f4f1634f2e4a61" compoundref="imd_8h" startline="77">Err_Vx1</references>
+        <references refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a806c4e5614221c8b239f6620ab7d5d50" compoundref="imd_8h" startline="78">Err_Vx2</references>
+        <references refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61aeccbe530442099dab4642a4dc399666f" compoundref="imd_8h" startline="75">Err_VxR</references>
+        <references refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61aec0ab5944a70662e09e795646e5987ca" compoundref="imd_8h" startline="72">Err_Watchdog</references>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1af81ff089b3fabafdfa49c3b816ded80e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Isolation_State</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Isolation_State</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="118" column="6" bodyfile="Core/Src/imd.c" bodystart="296" bodyend="307" declfile="Core/Inc/imd.h" declline="118" declcolumn="6"/>
+        <references refid="imd_8c_1adc15fc02a3a9fb34afc14ee1ba7434c0" compoundref="imd_8c" startline="20">IMD_High_Uncertainty</references>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1adb4d085b7b1f3e5a860c45aa5a404294" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Isolation_Resistances</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Isolation_Resistances</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="119" column="6" bodyfile="Core/Src/imd.c" bodystart="312" bodyend="334" declfile="Core/Inc/imd.h" declline="119" declcolumn="6"/>
+        <references refid="imd_8c_1adc15fc02a3a9fb34afc14ee1ba7434c0" compoundref="imd_8c" startline="20">IMD_High_Uncertainty</references>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1a686301a85070c84e89af3e1cc0a159ae" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Isolation_Capacitances</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Isolation_Capacitances</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="120" column="6" bodyfile="Core/Src/imd.c" bodystart="337" bodyend="341" declfile="Core/Inc/imd.h" declline="120" declcolumn="6"/>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1a0fc857559d80dd701aec763dd6911383" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Voltages_Vp_and_Vn</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Voltages_Vp_and_Vn</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="121" column="6" bodyfile="Core/Src/imd.c" bodystart="344" bodyend="348" declfile="Core/Inc/imd.h" declline="121" declcolumn="6"/>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1ac94e0b660190e6ce0d376d407627057e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Battery_Voltage</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Battery_Voltage</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="122" column="6" bodyfile="Core/Src/imd.c" bodystart="351" bodyend="356" declfile="Core/Inc/imd.h" declline="122" declcolumn="6"/>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1abc49be24256f1a93674e290546384348" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Safety_Touch_Energy</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Safety_Touch_Energy</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="123" column="6" bodyfile="Core/Src/imd.c" bodystart="369" bodyend="373" declfile="Core/Inc/imd.h" declline="123" declcolumn="6"/>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1a00c843b8f3e8cf4569ea9008cd7db9d2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Safety_Touch_Current</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Safety_Touch_Current</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="124" column="6" bodyfile="Core/Src/imd.c" bodystart="376" bodyend="378" declfile="Core/Inc/imd.h" declline="124" declcolumn="6"/>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1a1a18f8d11173ee691822b5a712cf1617" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Temperature</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Temperature</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="125" column="6" bodyfile="Core/Src/imd.c" bodystart="358" bodyend="364" declfile="Core/Inc/imd.h" declline="125" declcolumn="6"/>
+        <references refid="imd_8c_1a5b8ada827e9888be105e0bc8c27006f3" compoundref="imd_8c" startline="57">IMD_Temperature</references>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1a6f6abcfa57cc41a7b1249c0157702a1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Max_Battery_Working_Voltage</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Max_Battery_Working_Voltage</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="128" column="6" bodyfile="Core/Src/imd.c" bodystart="388" bodyend="395" declfile="Core/Inc/imd.h" declline="128" declcolumn="6"/>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1a72a595e6320ceeb17de4f7ce2ec66d30" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Part_Name</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Part_Name</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="129" column="6" bodyfile="Core/Src/imd.c" bodystart="401" bodyend="441" declfile="Core/Inc/imd.h" declline="129" declcolumn="6"/>
+        <references refid="imd_8c_1a4e45f48e8a434f56675ac3d5879de796" compoundref="imd_8c" startline="26">IMD_Expected_Part_Name</references>
+        <references refid="imd_8c_1a10a782cdb04731b5d092fb021edab5f3" compoundref="imd_8c" startline="28">IMD_Part_Name_0_Set</references>
+        <references refid="imd_8c_1a479ffaedc92d63ffd670ce28bd246076" compoundref="imd_8c" startline="29">IMD_Part_Name_1_Set</references>
+        <references refid="imd_8c_1ac9c5471411ecb29f7447f657747e55f5" compoundref="imd_8c" startline="30">IMD_Part_Name_2_Set</references>
+        <references refid="imd_8c_1a33de8b2346fb2365fb32570d16551fb9" compoundref="imd_8c" startline="31">IMD_Part_Name_3_Set</references>
+        <references refid="imd_8c_1abfc7f2bfdb786d652f47184917c4e06b" compoundref="imd_8c" startline="32">IMD_Part_Name_Set</references>
+        <references refid="imd_8c_1a5d147289d7432f5d61d43264c30305fb" compoundref="imd_8c" startline="25">IMD_Read_Part_Name</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea9f7942276dd9e12e41f0463701086e7d" compoundref="imd_8h" startline="84">Part_name_0</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea6172e87521e48caf627c729daa8b6f59" compoundref="imd_8h" startline="85">Part_name_1</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea98d7a9f4550631a81ea2c5a4a215a981" compoundref="imd_8h" startline="86">Part_name_2</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea086d70441c24f02a8abceeee41562cde" compoundref="imd_8h" startline="87">Part_name_3</references>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1a4a16ede06a18addd7ef3e67be2aaaf3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Version</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Version</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="130" column="6" bodyfile="Core/Src/imd.c" bodystart="443" bodyend="478" declfile="Core/Inc/imd.h" declline="130" declcolumn="6"/>
+        <references refid="imd_8c_1a3996ec9ae905b88cb1ee925f02f14d2b" compoundref="imd_8c" startline="36">IMD_Expected_Version</references>
+        <references refid="imd_8c_1ae29a8406dd97227ddcc5615fe44f5da5" compoundref="imd_8c" startline="35">IMD_Read_Version</references>
+        <references refid="imd_8c_1a882acf301b569fbc57a5df71faeedecc" compoundref="imd_8c" startline="38">IMD_Version_0_Set</references>
+        <references refid="imd_8c_1a89c19efcdae7b584557b4ef711837af6" compoundref="imd_8c" startline="39">IMD_Version_1_Set</references>
+        <references refid="imd_8c_1a462db37dc46e1576e9e615d468fc58ff" compoundref="imd_8c" startline="40">IMD_Version_2_Set</references>
+        <references refid="imd_8c_1adef02ad9e41f0d6f9e1f0f694a5d04f7" compoundref="imd_8c" startline="41">IMD_Version_Set</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea5eb2adcd1cb7d65f6c590b6f6b7ee322" compoundref="imd_8h" startline="88">Version_0</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674eafcc458d57f1b3273ae319230922231a4" compoundref="imd_8h" startline="89">Version_1</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674eafb60bb95154ac28254f2e8dfbc82c638" compoundref="imd_8h" startline="90">Version_2</references>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1a6f1e850c527bdf0e1a7cfbc557b8501b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Serial_Number</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Serial_Number</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="131" column="6" bodyfile="Core/Src/imd.c" bodystart="483" bodyend="522" declfile="Core/Inc/imd.h" declline="131" declcolumn="6"/>
+        <references refid="imd_8c_1ae609b1c80bcf96677b5f57ef1c7b7497" compoundref="imd_8c" startline="46">IMD_Expected_Serial_Number</references>
+        <references refid="imd_8c_1aae6f18f0f756ae490efe62f09636d4af" compoundref="imd_8c" startline="45">IMD_Read_Serial_Number</references>
+        <references refid="imd_8c_1a45d76c9654bc38b93b5132911d1a7d9e" compoundref="imd_8c" startline="50">IMD_Serial_Number_0_Set</references>
+        <references refid="imd_8c_1aa06ed9ddd147d5411e8f920171a54fc5" compoundref="imd_8c" startline="51">IMD_Serial_Number_1_Set</references>
+        <references refid="imd_8c_1a66157fb5f0181e14ef3730b945a70c97" compoundref="imd_8c" startline="52">IMD_Serial_Number_2_Set</references>
+        <references refid="imd_8c_1a44410c46ba61bd668ce70bf14f09f451" compoundref="imd_8c" startline="53">IMD_Serial_Number_3_Set</references>
+        <references refid="imd_8c_1ac493eb0ec9882a9ff2c6d340707c19e6" compoundref="imd_8c" startline="54">IMD_Serial_Number_Set</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea453d45b6245737d4987dd4b78a2e464a" compoundref="imd_8h" startline="91">Serial_number_0</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea29cf9ca0d526194e6ce71ff99120ee9e" compoundref="imd_8h" startline="92">Serial_number_1</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea87fc8ea63ac933e1e441f105dce28cdb" compoundref="imd_8h" startline="93">Serial_number_2</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674eaf9d06047340a1a4185e714ca761f891e" compoundref="imd_8h" startline="94">Serial_number_3</references>
+        <referencedby refid="imd_8c_1a1f6181c5ab49d963007eb9a212672bbd" compoundref="imd_8c" startline="68" endline="173">IMD_Parse_Message</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1ae0177fe52ae013a36014be506fd1fa93" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Check_Uptime</definition>
+        <argsstring>(uint8_t Data[])</argsstring>
+        <name>IMD_Check_Uptime</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Data</declname>
+          <array>[]</array>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="132" column="6" bodyfile="Core/Src/imd.c" bodystart="524" bodyend="526" declfile="Core/Inc/imd.h" declline="132" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1aeb7c937639c5385f5d2b4e3a4e60250f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Request_Status</definition>
+        <argsstring>(uint8_t Status)</argsstring>
+        <name>IMD_Request_Status</name>
+        <param>
+          <type>uint8_t</type>
+          <declname>Status</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="138" column="6" bodyfile="Core/Src/imd.c" bodystart="180" bodyend="191" declfile="Core/Inc/imd.h" declline="138" declcolumn="6"/>
+        <references refid="main_8h_1a1730ffe1e560465665eb47d9264826f9" compoundref="main_8c" startline="378" endline="388">Error_Handler</references>
+        <references refid="can_8h_1ab77168d14df04ccca5d48612ee21ced8" compoundref="can_8c" startline="147">hcan2</references>
+        <references refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a242c64f8aaa09a26d5f586483d692f83" compoundref="constants_8h" startline="16">IMD_CAN_ID_Tx</references>
+        <references refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" compoundref="constants_8c" startline="7">TxData</references>
+        <references refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" compoundref="constants_8c" startline="4">TxHeader</references>
+        <references refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" compoundref="constants_8c" startline="8">TxMailbox</references>
+        <referencedby refid="imd_8c_1ab4e8b5af19cc6d0b08ace9185a542b01" compoundref="imd_8c" startline="213" endline="254">IMD_Check_Status_Bits</referencedby>
+        <referencedby refid="imd_8c_1a80b26177d8aa0c0e803fac210eb456ac" compoundref="imd_8c" startline="528" endline="552">IMD_Startup</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1a80b26177d8aa0c0e803fac210eb456ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void IMD_Startup</definition>
+        <argsstring>()</argsstring>
+        <name>IMD_Startup</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="141" column="6" bodyfile="Core/Src/imd.c" bodystart="528" bodyend="552" declfile="Core/Inc/imd.h" declline="141" declcolumn="6"/>
+        <references refid="imd_8c_1aeb7c937639c5385f5d2b4e3a4e60250f" compoundref="imd_8c" startline="180" endline="191">IMD_Request_Status</references>
+        <references refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aabbce6aa84dd484b90a148c9893f29c38" compoundref="imd_8h" startline="34">isolation_state</references>
+        <references refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa194e665f65c42e02190f2871ecfd3eed" compoundref="imd_8h" startline="61">Max_battery_working_voltage</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea9f7942276dd9e12e41f0463701086e7d" compoundref="imd_8h" startline="84">Part_name_0</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea6172e87521e48caf627c729daa8b6f59" compoundref="imd_8h" startline="85">Part_name_1</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea98d7a9f4550631a81ea2c5a4a215a981" compoundref="imd_8h" startline="86">Part_name_2</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea086d70441c24f02a8abceeee41562cde" compoundref="imd_8h" startline="87">Part_name_3</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea453d45b6245737d4987dd4b78a2e464a" compoundref="imd_8h" startline="91">Serial_number_0</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea29cf9ca0d526194e6ce71ff99120ee9e" compoundref="imd_8h" startline="92">Serial_number_1</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea87fc8ea63ac933e1e441f105dce28cdb" compoundref="imd_8h" startline="93">Serial_number_2</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674eaf9d06047340a1a4185e714ca761f891e" compoundref="imd_8h" startline="94">Serial_number_3</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674ea5eb2adcd1cb7d65f6c590b6f6b7ee322" compoundref="imd_8h" startline="88">Version_0</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674eafcc458d57f1b3273ae319230922231a4" compoundref="imd_8h" startline="89">Version_1</references>
+        <references refid="imd_8h_1a975959819df682c9adec7c667028674eafb60bb95154ac28254f2e8dfbc82c638" compoundref="imd_8h" startline="90">Version_2</references>
+      </memberdef>
+      <memberdef kind="function" id="imd_8h_1a19b4fd879f065cfe6e1b7bb3400cd0c3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void initIMD</definition>
+        <argsstring>(void *args)</argsstring>
+        <name>initIMD</name>
+        <param>
+          <type>void *</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/imd.h" line="144" column="6" bodyfile="Core/Src/imd.c" bodystart="554" bodyend="566" declfile="Core/Inc/imd.h" declline="144" declcolumn="6"/>
+        <references refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a8c41c05a63a15c5d188d02f6f4db4303" compoundref="uvfr__utils_8h" startline="207">IMD</references>
+        <references refid="structuv__init__task__args_1adec47e7a54822cacfb8fcfc35a22157f" compoundref="uvfr__utils_8h" startline="331">uv_init_task_args::init_info_queue</references>
+        <references refid="structuv__init__task__args_1a3b81430245e7f832dc1112e53b0ef7ad" compoundref="uvfr__utils_8h" startline="332">uv_init_task_args::meta_task_handle</references>
+        <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">//<sp/>Code<sp/>to<sp/>make<sp/>human<sp/>readable<sp/>CAN<sp/>messages<sp/>for<sp/>the<sp/>device</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>file<sp/>will<sp/>define<sp/>message<sp/>data<sp/>as<sp/>human<sp/>readable<sp/>stuff</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>__IMD_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>__IMD_H__</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="comment">//<sp/>CAN<sp/>ID<sp/>is<sp/>currently<sp/>extended</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Needs<sp/>to<sp/>be<sp/>changed<sp/>to<sp/>standard<sp/>ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Faults</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>first<sp/>byte<sp/>returned<sp/>from<sp/>a<sp/>status<sp/>request<sp/>message<sp/>will<sp/>have<sp/>8<sp/>status<sp/>bits<sp/>and<sp/>the<sp/>data<sp/>as<sp/>the<sp/>rest</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="imd_8h_1acf7b0534a43397021a0e474a499218be" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1acf7b0534a43397021a0e474a499218be" kindref="member">imd_status_bits</ref>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>I<sp/>have<sp/>just<sp/>left<sp/>this<sp/>as<sp/>plain<sp/>binary.<sp/>Could<sp/>also<sp/>be<sp/>declared<sp/>by<sp/>bitshifting<sp/>but<sp/>I<sp/>think<sp/>this<sp/>is<sp/>easier</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>12345678</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="imd_8h_1acf7b0534a43397021a0e474a499218beafdb68e8ed34ae72c318cbd4a4d6fc250" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1acf7b0534a43397021a0e474a499218beafdb68e8ed34ae72c318cbd4a4d6fc250" kindref="member">Isolation_status_bit0</ref><sp/><sp/><sp/>=<sp/>0b00000001,<sp/></highlight><highlight class="comment">//<sp/>IS0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="imd_8h_1acf7b0534a43397021a0e474a499218bea2d0990734ac774c2740c9e541e8700b3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1acf7b0534a43397021a0e474a499218bea2d0990734ac774c2740c9e541e8700b3" kindref="member">Isolation_status_bit1</ref><sp/><sp/><sp/>=<sp/>0b00000010,<sp/></highlight><highlight class="comment">//<sp/>IS1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21" refid="imd_8h_1acf7b0534a43397021a0e474a499218beacb8278060f1d4f8f423c3f7943618d0a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1acf7b0534a43397021a0e474a499218beacb8278060f1d4f8f423c3f7943618d0a" kindref="member">Low_Battery_Voltage</ref><sp/><sp/><sp/><sp/><sp/>=<sp/>0b00000100,<sp/></highlight><highlight class="comment">//<sp/>LV<sp/>15V<sp/>threshold<sp/>(1<sp/>if<sp/>below<sp/>15V)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22" refid="imd_8h_1acf7b0534a43397021a0e474a499218bea446905b0f3e9fe48a178f0a6799324b4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1acf7b0534a43397021a0e474a499218bea446905b0f3e9fe48a178f0a6799324b4" kindref="member">High_Battery_Voltage</ref><sp/><sp/><sp/><sp/>=<sp/>0b00001000,<sp/></highlight><highlight class="comment">//<sp/>HV<sp/>(1<sp/>if<sp/>higher<sp/>than<sp/>Max_battery_working_voltage)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23" refid="imd_8h_1acf7b0534a43397021a0e474a499218bea8e572e8f9a6be9d801c0db642ece2c2a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1acf7b0534a43397021a0e474a499218bea8e572e8f9a6be9d801c0db642ece2c2a" kindref="member">Exc_off</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0b00010000,<sp/></highlight><highlight class="comment">//<sp/>EO<sp/>(Excitation<sp/>pulse<sp/>0<sp/>for<sp/>operating)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24" refid="imd_8h_1acf7b0534a43397021a0e474a499218bea4c7193d6f28bf43ed6de8e1291917846" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1acf7b0534a43397021a0e474a499218bea4c7193d6f28bf43ed6de8e1291917846" kindref="member">High_Uncertainty</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0b00100000,<sp/></highlight><highlight class="comment">//<sp/>HU<sp/>(1<sp/>for<sp/>greater<sp/>than<sp/>5%)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25" refid="imd_8h_1acf7b0534a43397021a0e474a499218bea5392342181b601c30b6e537a0f5a0a08" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1acf7b0534a43397021a0e474a499218bea5392342181b601c30b6e537a0f5a0a08" kindref="member">Touch_energy_fault</ref><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0b01000000,<sp/></highlight><highlight class="comment">//<sp/>EF<sp/>(1<sp/>for<sp/>energy<sp/>exceeds<sp/>0.2J)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26" refid="imd_8h_1acf7b0534a43397021a0e474a499218bea48e3e4678c927a799f113e4688ab7886" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1acf7b0534a43397021a0e474a499218bea48e3e4678c927a799f113e4688ab7886" kindref="member">Hardware_Error</ref><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0b10000000,<sp/></highlight><highlight class="comment">//<sp/>HE<sp/>(1<sp/>for<sp/>error)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>MCU<sp/>needs<sp/>to<sp/>send<sp/>a<sp/>message<sp/>to<sp/>the<sp/>IMD<sp/>requesting<sp/>info</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/>These<sp/>are<sp/>requests<sp/>that<sp/>will<sp/>return<sp/>status<sp/>bits<sp/>(defined<sp/>above)<sp/>&amp;<sp/>the<sp/>value<sp/>requested</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32" refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26a" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26a" kindref="member">imd_status_requests</ref>{</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>electrical<sp/>isolation<sp/>is<sp/>in<sp/>bytes<sp/>2<sp/>&amp;<sp/>3</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34" refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aabbce6aa84dd484b90a148c9893f29c38" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aabbce6aa84dd484b90a148c9893f29c38" kindref="member">isolation_state</ref><sp/>=<sp/>0xE0,</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Rp<sp/>is<sp/>the<sp/>resistance<sp/>from<sp/>the<sp/>positive<sp/>of<sp/>the<sp/>battery<sp/>to<sp/>chassis</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Rn<sp/>is<sp/>the<sp/>resistance<sp/>from<sp/>the<sp/>negative<sp/>of<sp/>the<sp/>battery<sp/>to<sp/>chassis</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38" refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aac4f56ef8fddf7442d16abdcef0ee35ae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aac4f56ef8fddf7442d16abdcef0ee35ae" kindref="member">isolation_resistances</ref><sp/>=<sp/>0xE1,</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cp<sp/>is<sp/>the<sp/>capacitance<sp/>from<sp/>the<sp/>positive<sp/>of<sp/>the<sp/>battery<sp/>to<sp/>chassis</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Cn<sp/>is<sp/>the<sp/>capacitance<sp/>from<sp/>the<sp/>negative<sp/>of<sp/>the<sp/>battery<sp/>to<sp/>chassis</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Bytes<sp/>2<sp/>&amp;<sp/>3<sp/>are<sp/>Cp,<sp/>bytes<sp/>5<sp/>&amp;<sp/>6<sp/>are<sp/>Cn,<sp/>in<sp/>nF</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43" refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa1f57f433823678afb675a0118355b41c" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa1f57f433823678afb675a0118355b41c" kindref="member">isolation_capacitances</ref><sp/>=<sp/>0xE2,</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>High<sp/>voltage<sp/>battery<sp/>voltages<sp/>to<sp/>chassis</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46" refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aab731b0ae179fe84519337374868be1d1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aab731b0ae179fe84519337374868be1d1" kindref="member">voltages_Vp_and_Vn</ref><sp/>=<sp/>0xE3,</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>GLV<sp/>battery<sp/>voltage</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49" refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa88e842a14bd3662858b52abbefad1680" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa88e842a14bd3662858b52abbefad1680" kindref="member">battery_voltage</ref><sp/>=<sp/>0xE4,</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Error<sp/>flags<sp/>are<sp/>a<sp/>series<sp/>of<sp/>bits<sp/>described<sp/>below</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa86fdcb1bb1742680706316d50c9b8fcf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa86fdcb1bb1742680706316d50c9b8fcf" kindref="member">Error_flags</ref><sp/>=<sp/>0xE5,</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>IMD<sp/>monitors<sp/>charge<sp/>stored<sp/>in<sp/>the<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55" refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aae62307414b8266d9beb9dcffc335f504" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aae62307414b8266d9beb9dcffc335f504" kindref="member">safety_touch_energy</ref><sp/>=<sp/>0xE6,</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Also<sp/>monitors<sp/>if<sp/>it<sp/>is<sp/>safe<sp/>to<sp/>touch</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="58" refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa64c31deedf3ed7b386711c4c6825456f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa64c31deedf3ed7b386711c4c6825456f" kindref="member">safety_touch_current</ref><sp/>=<sp/>0xE7,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>just<sp/>a<sp/>parameter<sp/>we<sp/>can<sp/>set</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61" refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa194e665f65c42e02190f2871ecfd3eed" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa194e665f65c42e02190f2871ecfd3eed" kindref="member">Max_battery_working_voltage</ref><sp/>=<sp/>0xF0,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>We<sp/>can<sp/>read<sp/>the<sp/>temperature<sp/>of<sp/>the<sp/>board</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64" refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa636f89bb3814dde8c07ec0446f72d28f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a0710286ee4b87e83845bd90c76e5c26aa636f89bb3814dde8c07ec0446f72d28f" kindref="member">Temperature</ref><sp/>=<sp/>0x80,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//<sp/>If<sp/>one<sp/>of<sp/>the<sp/>error<sp/>flags<sp/>is<sp/>set,<sp/>then<sp/>the<sp/>harware<sp/>error<sp/>bit<sp/>will<sp/>go<sp/>to<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68" refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61" kindref="member">imd_error_flags</ref>{</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Bits<sp/>0-6<sp/>are<sp/>reserved</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61afa71f4893ad7f39c03d991a2eae95368" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61afa71f4893ad7f39c03d991a2eae95368" kindref="member">Err_temp</ref><sp/>=<sp/>0x0080,<sp/></highlight><highlight class="comment">//<sp/>HT<sp/>high<sp/>temperature<sp/>(0<sp/>if<sp/>temperature<sp/>is<sp/>below<sp/>105C)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a0bab46bce7066da8e52221c8283cccbd" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a0bab46bce7066da8e52221c8283cccbd" kindref="member">Err_clock</ref><sp/>=<sp/>0x0100,<sp/></highlight><highlight class="comment">//<sp/>CE<sp/><sp/>(0<sp/>if<sp/>clock<sp/>is<sp/>good)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61aec0ab5944a70662e09e795646e5987ca" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61aec0ab5944a70662e09e795646e5987ca" kindref="member">Err_Watchdog</ref><sp/>=<sp/>0x0200,<sp/></highlight><highlight class="comment">//<sp/>WD<sp/>Watchdog<sp/>(0<sp/>if<sp/>watchdog<sp/>is<sp/>good)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73" refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a22c4b1756e0cf536391cc6e5547470f6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a22c4b1756e0cf536391cc6e5547470f6" kindref="member">Err_Vpwr</ref><sp/>=<sp/>0x0400,<sp/></highlight><highlight class="comment">//<sp/>V_PWR<sp/>power<sp/>supply<sp/>(0<sp/>if<sp/>power<sp/>supply<sp/>voltage<sp/>is<sp/>good)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a198b196da46ddeb177a05ed33f363df7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a198b196da46ddeb177a05ed33f363df7" kindref="member">Err_Vexi</ref><sp/>=<sp/>0x0800,<sp/></highlight><highlight class="comment">//<sp/>V_EXI<sp/>Excitation<sp/>voltage<sp/>(0<sp/>if<sp/>excitation<sp/>voltage<sp/>is<sp/>good)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61aeccbe530442099dab4642a4dc399666f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61aeccbe530442099dab4642a4dc399666f" kindref="member">Err_VxR</ref><sp/>=<sp/>0x1000,<sp/></highlight><highlight class="comment">//<sp/>VxR<sp/>(0<sp/>if<sp/>both<sp/>Vx1<sp/>and<sp/>Vx2<sp/>are<sp/>good)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61ae3dc5d0132a955458e722cb04ccd3900" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61ae3dc5d0132a955458e722cb04ccd3900" kindref="member">Err_CH</ref><sp/>=<sp/>0x2000,<sp/></highlight><highlight class="comment">//<sp/>CH<sp/>chassis<sp/>connections<sp/>(0<sp/>if<sp/>both<sp/>chassis<sp/>connections<sp/>are<sp/>good)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a902d14d447c4552ea1f4f1634f2e4a61" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a902d14d447c4552ea1f4f1634f2e4a61" kindref="member">Err_Vx1</ref><sp/>=<sp/>0x4000,<sp/></highlight><highlight class="comment">//<sp/>Vx1<sp/>connection<sp/>(0<sp/>if<sp/>SIM101<sp/>connection<sp/>to<sp/>Hv+<sp/>is<sp/>good)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78" refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a806c4e5614221c8b239f6620ab7d5d50" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a4456d255c2ceb447ad52b68087531b61a806c4e5614221c8b239f6620ab7d5d50" kindref="member">Err_Vx2</ref><sp/>=<sp/>0x8000,<sp/></highlight><highlight class="comment">//<sp/>Vx2<sp/>connection<sp/>(0<sp/>if<sp/>SIM101<sp/>connection<sp/>to<sp/>Hv-<sp/>is<sp/>good)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"></highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Probably<sp/>not<sp/>useful<sp/>and<sp/>won&apos;t<sp/>be<sp/>used<sp/>for<sp/>a<sp/>bit<sp/>but<sp/>may<sp/>be<sp/>useful<sp/>in<sp/>the<sp/>future</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="imd_8h_1a975959819df682c9adec7c667028674e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a975959819df682c9adec7c667028674e" kindref="member">imd_manufacturer_requests</ref>{</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>The<sp/>numbers<sp/>get<sp/>broken<sp/>up<sp/>over<sp/>multiple<sp/>bytes</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="imd_8h_1a975959819df682c9adec7c667028674ea9f7942276dd9e12e41f0463701086e7d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a975959819df682c9adec7c667028674ea9f7942276dd9e12e41f0463701086e7d" kindref="member">Part_name_0</ref><sp/>=<sp/>0x01,</highlight></codeline>
+<codeline lineno="85" refid="imd_8h_1a975959819df682c9adec7c667028674ea6172e87521e48caf627c729daa8b6f59" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a975959819df682c9adec7c667028674ea6172e87521e48caf627c729daa8b6f59" kindref="member">Part_name_1</ref><sp/>=<sp/>0x02,</highlight></codeline>
+<codeline lineno="86" refid="imd_8h_1a975959819df682c9adec7c667028674ea98d7a9f4550631a81ea2c5a4a215a981" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a975959819df682c9adec7c667028674ea98d7a9f4550631a81ea2c5a4a215a981" kindref="member">Part_name_2</ref><sp/>=<sp/>0x03,</highlight></codeline>
+<codeline lineno="87" refid="imd_8h_1a975959819df682c9adec7c667028674ea086d70441c24f02a8abceeee41562cde" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a975959819df682c9adec7c667028674ea086d70441c24f02a8abceeee41562cde" kindref="member">Part_name_3</ref><sp/>=<sp/>0x04,</highlight></codeline>
+<codeline lineno="88" refid="imd_8h_1a975959819df682c9adec7c667028674ea5eb2adcd1cb7d65f6c590b6f6b7ee322" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a975959819df682c9adec7c667028674ea5eb2adcd1cb7d65f6c590b6f6b7ee322" kindref="member">Version_0</ref><sp/>=<sp/>0x05,</highlight></codeline>
+<codeline lineno="89" refid="imd_8h_1a975959819df682c9adec7c667028674eafcc458d57f1b3273ae319230922231a4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a975959819df682c9adec7c667028674eafcc458d57f1b3273ae319230922231a4" kindref="member">Version_1</ref><sp/>=<sp/>0x06,</highlight></codeline>
+<codeline lineno="90" refid="imd_8h_1a975959819df682c9adec7c667028674eafb60bb95154ac28254f2e8dfbc82c638" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a975959819df682c9adec7c667028674eafb60bb95154ac28254f2e8dfbc82c638" kindref="member">Version_2</ref><sp/>=<sp/>0x07,</highlight></codeline>
+<codeline lineno="91" refid="imd_8h_1a975959819df682c9adec7c667028674ea453d45b6245737d4987dd4b78a2e464a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a975959819df682c9adec7c667028674ea453d45b6245737d4987dd4b78a2e464a" kindref="member">Serial_number_0</ref><sp/>=<sp/>0x08,</highlight></codeline>
+<codeline lineno="92" refid="imd_8h_1a975959819df682c9adec7c667028674ea29cf9ca0d526194e6ce71ff99120ee9e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a975959819df682c9adec7c667028674ea29cf9ca0d526194e6ce71ff99120ee9e" kindref="member">Serial_number_1</ref><sp/>=<sp/>0x09,</highlight></codeline>
+<codeline lineno="93" refid="imd_8h_1a975959819df682c9adec7c667028674ea87fc8ea63ac933e1e441f105dce28cdb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a975959819df682c9adec7c667028674ea87fc8ea63ac933e1e441f105dce28cdb" kindref="member">Serial_number_2</ref><sp/>=<sp/>0x0A,</highlight></codeline>
+<codeline lineno="94" refid="imd_8h_1a975959819df682c9adec7c667028674eaf9d06047340a1a4185e714ca761f891e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a975959819df682c9adec7c667028674eaf9d06047340a1a4185e714ca761f891e" kindref="member">Serial_number_3</ref><sp/>=<sp/>0x0B,</highlight></codeline>
+<codeline lineno="95" refid="imd_8h_1a975959819df682c9adec7c667028674eac87b1e30788367a709363dba4ad7f238" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1a975959819df682c9adec7c667028674eac87b1e30788367a709363dba4ad7f238" kindref="member">Uptime_counter</ref><sp/>=<sp/>0x0C,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98" refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0c" kindref="member">imd_high_resolution_measurements</ref>{</highlight></codeline>
+<codeline lineno="99" refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca781dcc0628d7284c0e9e0be67cd3365b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca781dcc0628d7284c0e9e0be67cd3365b" kindref="member">Vn_hi_res</ref><sp/>=<sp/>0x60,</highlight></codeline>
+<codeline lineno="100" refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca6b90089e224b90d87a6cf113e5e36f22" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca6b90089e224b90d87a6cf113e5e36f22" kindref="member">Vp_hi_res</ref><sp/>=<sp/>0x61,</highlight></codeline>
+<codeline lineno="101" refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca65563450695b30beae4032ff330f0e6f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca65563450695b30beae4032ff330f0e6f" kindref="member">Vexc_hi_res</ref><sp/>=<sp/>0x62,</highlight></codeline>
+<codeline lineno="102" refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca23a10ada814d11a9a1044ede3a821688" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca23a10ada814d11a9a1044ede3a821688" kindref="member">Vb_hi_res</ref><sp/>=<sp/>0x63,</highlight></codeline>
+<codeline lineno="103" refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca6d4bdc992b68f8ee4aea88056639af5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="imd_8h_1af8e85b806bce9c9cad944c261ff0aa0ca6d4bdc992b68f8ee4aea88056639af5d" kindref="member">Vpwr_hi_res</ref><sp/>=<sp/>0x65,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight><highlight class="comment">//<sp/>---------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Function<sp/>declarations</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight><highlight class="comment">//<sp/>This<sp/>will<sp/>parse<sp/>the<sp/>data<sp/>received<sp/>from<sp/>CAN<sp/>message</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a1f6181c5ab49d963007eb9a212672bbd" kindref="member">IMD_Parse_Message</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>DLC,<sp/>uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Functions<sp/>to<sp/>check<sp/>states<sp/>are<sp/>okay</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="114"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1ab4e8b5af19cc6d0b08ace9185a542b01" kindref="member">IMD_Check_Status_Bits</ref>(uint8_t<sp/>Data);</highlight></codeline>
+<codeline lineno="115"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a0cfe9b1a6472c4a5d0ca154a4e9e7bb0" kindref="member">IMD_Check_Error_Flags</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Functions<sp/>to<sp/>check<sp/>values<sp/>are<sp/>okay</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1af81ff089b3fabafdfa49c3b816ded80e" kindref="member">IMD_Check_Isolation_State</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1adb4d085b7b1f3e5a860c45aa5a404294" kindref="member">IMD_Check_Isolation_Resistances</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a686301a85070c84e89af3e1cc0a159ae" kindref="member">IMD_Check_Isolation_Capacitances</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a0fc857559d80dd701aec763dd6911383" kindref="member">IMD_Check_Voltages_Vp_and_Vn</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1ac94e0b660190e6ce0d376d407627057e" kindref="member">IMD_Check_Battery_Voltage</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1abc49be24256f1a93674e290546384348" kindref="member">IMD_Check_Safety_Touch_Energy</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a00c843b8f3e8cf4569ea9008cd7db9d2" kindref="member">IMD_Check_Safety_Touch_Current</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a1a18f8d11173ee691822b5a712cf1617" kindref="member">IMD_Check_Temperature</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Functions<sp/>to<sp/>check<sp/>on<sp/>startup</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a6f6abcfa57cc41a7b1249c0157702a1c" kindref="member">IMD_Check_Max_Battery_Working_Voltage</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a72a595e6320ceeb17de4f7ce2ec66d30" kindref="member">IMD_Check_Part_Name</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a4a16ede06a18addd7ef3e67be2aaaf3d" kindref="member">IMD_Check_Version</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a6f1e850c527bdf0e1a7cfbc557b8501b" kindref="member">IMD_Check_Serial_Number</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1ae0177fe52ae013a36014be506fd1fa93" kindref="member">IMD_Check_Uptime</ref>(uint8_t<sp/>Data[]);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"></highlight><highlight class="comment">//<sp/>High<sp/>resolution<sp/>measurements</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"></highlight></codeline>
+<codeline lineno="136"><highlight class="normal"></highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Function<sp/>to<sp/>request<sp/>data<sp/>from<sp/>the<sp/>IMD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1aeb7c937639c5385f5d2b4e3a4e60250f" kindref="member">IMD_Request_Status</ref>(uint8_t<sp/>Status);</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight><highlight class="comment">//<sp/>called<sp/>on<sp/>startup<sp/>@deprecated</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a80b26177d8aa0c0e803fac210eb456ac" kindref="member">IMD_Startup</ref>();</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="imd_8h_1a19b4fd879f065cfe6e1b7bb3400cd0c3" kindref="member">initIMD</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>args);</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+    </programlisting>
+    <location file="Core/Inc/imd.h"/>
+  </compounddef>
+</doxygen>

@@ -9,7 +9,7 @@
 \doxysubsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-struct \mbox{\hyperlink{structmotor__controller__settings__t}{motor\+\_\+controller\+\_\+settings\+\_\+t}}
+struct \mbox{\hyperlink{structveh__gen__info}{veh\+\_\+gen\+\_\+info}}
 \item 
 struct \mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}}
 \end{DoxyCompactItemize}
@@ -21,7 +21,7 @@ struct \mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settin
 \doxysubsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \mbox{\hyperlink{structmotor__controller__settings__t}{motor\+\_\+controller\+\_\+settings\+\_\+t}} \mbox{\hyperlink{uvfr__settings_8h_a2035a63c537a1aaf8eb33fb45bd1b29a}{motor\+\_\+controller\+\_\+settings\+\_\+t}}
+typedef struct \mbox{\hyperlink{structveh__gen__info}{veh\+\_\+gen\+\_\+info}} \mbox{\hyperlink{uvfr__settings_8h_a63c94a189304fb004523f327915010e0}{veh\+\_\+gen\+\_\+info}}
 \item 
 typedef struct \mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}} \mbox{\hyperlink{uvfr__settings_8h_a1c41697a3618ce0a5236b7ccb250d967}{uv\+\_\+vehicle\+\_\+settings}}
 \end{DoxyCompactItemize}
@@ -53,17 +53,17 @@ Definition at line 21 of file uvfr\+\_\+settings.\+h.
 
 
 \doxysubsection{Typedef Documentation}
-\mbox{\Hypertarget{uvfr__settings_8h_a2035a63c537a1aaf8eb33fb45bd1b29a}\label{uvfr__settings_8h_a2035a63c537a1aaf8eb33fb45bd1b29a}} 
-\index{uvfr\_settings.h@{uvfr\_settings.h}!motor\_controller\_settings\_t@{motor\_controller\_settings\_t}}
-\index{motor\_controller\_settings\_t@{motor\_controller\_settings\_t}!uvfr\_settings.h@{uvfr\_settings.h}}
-\doxysubsubsection{\texorpdfstring{motor\_controller\_settings\_t}{motor\_controller\_settings\_t}}
-{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structmotor__controller__settings__t}{motor\+\_\+controller\+\_\+settings\+\_\+t}} \mbox{\hyperlink{structmotor__controller__settings__t}{motor\+\_\+controller\+\_\+settings\+\_\+t}}}
-
 \mbox{\Hypertarget{uvfr__settings_8h_a1c41697a3618ce0a5236b7ccb250d967}\label{uvfr__settings_8h_a1c41697a3618ce0a5236b7ccb250d967}} 
 \index{uvfr\_settings.h@{uvfr\_settings.h}!uv\_vehicle\_settings@{uv\_vehicle\_settings}}
 \index{uv\_vehicle\_settings@{uv\_vehicle\_settings}!uvfr\_settings.h@{uvfr\_settings.h}}
 \doxysubsubsection{\texorpdfstring{uv\_vehicle\_settings}{uv\_vehicle\_settings}}
 {\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}} \mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}}}
+
+\mbox{\Hypertarget{uvfr__settings_8h_a63c94a189304fb004523f327915010e0}\label{uvfr__settings_8h_a63c94a189304fb004523f327915010e0}} 
+\index{uvfr\_settings.h@{uvfr\_settings.h}!veh\_gen\_info@{veh\_gen\_info}}
+\index{veh\_gen\_info@{veh\_gen\_info}!uvfr\_settings.h@{uvfr\_settings.h}}
+\doxysubsubsection{\texorpdfstring{veh\_gen\_info}{veh\_gen\_info}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structveh__gen__info}{veh\+\_\+gen\+\_\+info}} \mbox{\hyperlink{structveh__gen__info}{veh\+\_\+gen\+\_\+info}}}
 
 
 
@@ -76,11 +76,7 @@ Definition at line 21 of file uvfr\+\_\+settings.\+h.
 
 
 
-Definition at line 45 of file uvfr\+\_\+settings.\+c.
-
-
-
-References uv\+Free().
+Definition at line 51 of file uvfr\+\_\+settings.\+c.
 
 \mbox{\Hypertarget{uvfr__settings_8h_a80856a38d7040ca10b8106ff0fa4acf4}\label{uvfr__settings_8h_a80856a38d7040ca10b8106ff0fa4acf4}} 
 \index{uvfr\_settings.h@{uvfr\_settings.h}!uvSettingsInit@{uvSettingsInit}}
@@ -94,7 +90,7 @@ this function does one thing, and one thing only, it checks if we have custom se
 
 
 
-Definition at line 58 of file uvfr\+\_\+settings.\+c.
+Definition at line 64 of file uvfr\+\_\+settings.\+c.
 
 
 
@@ -119,5 +115,5 @@ Definition at line 15 of file uvfr\+\_\+settings.\+c.
 
 
 
-Referenced by setup\+Default\+Settings(), and uv\+Init().
+Referenced by setup\+Default\+Settings(), uv\+Init(), and uv\+Start\+State\+Machine().
 

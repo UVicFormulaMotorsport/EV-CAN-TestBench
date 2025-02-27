@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['mc_5fpower_1300',['MC_POWER',['../driving__loop_8h.html#a93f3b2b453b1ad01d8555f12e529dfed',1,'driving_loop.h']]],
-  ['mc_5frpm_1301',['MC_RPM',['../driving__loop_8h.html#abd1701d9bbc137696fe99b6df6eb7d3e',1,'driving_loop.h']]],
-  ['mc_5ftorque_1302',['MC_Torque',['../driving__loop_8h.html#a5ec2330fa2301c68498a6ff0825998c9',1,'driving_loop.h']]],
-  ['motor_5fcontroller_5fsettings_1303',['motor_controller_settings',['../motor__controller_8h.html#ac9389d71d481a5381fe1d1e23b1e4ecc',1,'motor_controller.h']]],
-  ['motor_5fcontroller_5fsettings_5ft_1304',['motor_controller_settings_t',['../uvfr__settings_8h.html#a2035a63c537a1aaf8eb33fb45bd1b29a',1,'uvfr_settings.h']]]
+  ['daq_5fchild_5ftask_1681',['daq_child_task',['../daq_8h.html#a2104fed000d8cb392baf5d14e06193c1',1,'daq.h']]],
+  ['daq_5fdatapoint_1682',['daq_datapoint',['../daq_8h.html#ad3bc3bc1c9ab04b22cc999a6f7c82c40',1,'daq.h']]],
+  ['daq_5floop_5fargs_1683',['daq_loop_args',['../daq_8h.html#a8895dc742d7ce8449057f317e7f9c81b',1,'daq.h']]],
+  ['daq_5fparam_5flist_5fnode_1684',['daq_param_list_node',['../daq_8h.html#a4a7e5c4a5e65c315010bab902f2268a6',1,'daq.h']]],
+  ['driving_5floop_5fargs_1685',['driving_loop_args',['../driving__loop_8h.html#aa421e50f529a1770ef0b2a00a44a0601',1,'driving_loop.h']]],
+  ['drivingmode_1686',['drivingMode',['../driving__loop_8h.html#a29e04283e579e9092d205b1937c785c6',1,'driving_loop.h']]],
+  ['drivingmodeparams_1687',['drivingModeParams',['../driving__loop_8h.html#af90b0e528bd940abca8f5e2cf4bce18c',1,'driving_loop.h']]]
 ];

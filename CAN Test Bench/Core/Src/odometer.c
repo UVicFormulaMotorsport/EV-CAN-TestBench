@@ -25,7 +25,7 @@ uv_status initOdometer(void* args){
 	odom_task->task_function = odometerTask;
 	odom_task->task_priority = osPriorityNormal;
 
-	odom_task->max_instances = 1;
+
 	odom_task->stack_size = _UV_DEFAULT_TASK_STACK_SIZE;
 
 	odom_task->active_states = UV_READY | UV_DRIVING;
@@ -61,6 +61,8 @@ void odometerTask(void* args){
 			suspendSelf(params);
 		}
 		vTaskDelayUntil( &last_time, tick_period);
+
+		//whatever you want
 
 		HAL_GPIO_TogglePin(GPIOD,GPIO_PIN_13);
 

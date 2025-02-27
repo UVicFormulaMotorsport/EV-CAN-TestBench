@@ -1,15 +1,20 @@
 var driving__loop_8h =
 [
-    [ "drivingModeParams", "structdriving_mode_params.html", "structdriving_mode_params" ],
+    [ "linear_torque_map_args", "structlinear__torque__map__args.html", "structlinear__torque__map__args" ],
+    [ "exp_torque_map_args", "structexp__torque__map__args.html", "structexp__torque__map__args" ],
+    [ "s_curve_torque_map_args", "structs__curve__torque__map__args.html", "structs__curve__torque__map__args" ],
+    [ "drivingModeParams", "uniondriving_mode_params.html", null ],
     [ "drivingMode", "structdriving_mode.html", "structdriving_mode" ],
     [ "driving_loop_args", "structdriving__loop__args.html", "structdriving__loop__args" ],
-    [ "DEFAULT_PERIOD", "driving__loop_8h.html#a19ae3417888a615aca7350e9e1ba0204", null ],
     [ "driving_loop_args", "driving__loop_8h.html#aa421e50f529a1770ef0b2a00a44a0601", null ],
     [ "drivingMode", "driving__loop_8h.html#a29e04283e579e9092d205b1937c785c6", null ],
-    [ "drivingModeParams", "driving__loop_8h.html#ac1d30630084a642c9209dca3a961ef12", null ],
+    [ "drivingModeParams", "driving__loop_8h.html#af90b0e528bd940abca8f5e2cf4bce18c", null ],
+    [ "exp_torque_map_args", "driving__loop_8h.html#aa86f54df15fe3c127ae83c1fecbb5d24", null ],
+    [ "linear_torque_map_args", "driving__loop_8h.html#a21e30cbee7e12df40656ce0e97c8c1ea", null ],
     [ "MC_POWER", "driving__loop_8h.html#a93f3b2b453b1ad01d8555f12e529dfed", null ],
     [ "MC_RPM", "driving__loop_8h.html#abd1701d9bbc137696fe99b6df6eb7d3e", null ],
     [ "MC_Torque", "driving__loop_8h.html#a5ec2330fa2301c68498a6ff0825998c9", null ],
+    [ "s_curve_torque_map_args", "driving__loop_8h.html#a32f012927e4624d674120b51cb6ee8c0", null ],
     [ "DL_internal_state", "driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7", [
       [ "Plausible", "driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7a51000915ad3f7b4a5874322723d879ca", null ],
       [ "Implausible", "driving__loop_8h.html#adef4571b048b5b1f2b712713741296c7a6425b90f597e6400cfb9422ec518334f", null ],

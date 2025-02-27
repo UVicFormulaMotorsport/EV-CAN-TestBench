@@ -106,81 +106,99 @@ $(document).ready(function(){initNavTree('uvfr__settings_8c_source.html','');});
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//global variables for all to enjoy</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="uvfr__settings_8c.html#a03566822d1b8893362970a459bd67daf">   15</a></span>&#160;<a class="code" href="structuv__vehicle__settings.html">uv_vehicle_settings</a>* <a class="code" href="uvfr__settings_8c.html#a03566822d1b8893362970a459bd67daf">current_vehicle_settings</a> = NULL;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#if ENABLE_FLASH_SETTINGS</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keyword">enum</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> getSettingsFromFlash(){</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="comment">//if there exists settings in flash somewhere, then get them. Otherwise we use the defaults</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a">UV_ABORTED</a>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">bool</span> uvAreCustomSettingsActive(){</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<a class="code" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> saveSettings(){</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a">UV_ABORTED</a>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;}</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">extern</span> <span class="keyword">struct </span><a class="code" href="structuv__os__settings.html">uv_os_settings</a> <a class="code" href="group__state__engine.html#gad9e02be6d2d0bc1ab5cd9fd8cae34230">default_os_settings</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#if ENABLE_FLASH_SETTINGS</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">enum</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> getSettingsFromFlash(){</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">//if there exists settings in flash somewhere, then get them. Otherwise we use the defaults</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a">UV_ABORTED</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keywordtype">bool</span> uvAreCustomSettingsActive(){</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<a class="code" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> saveSettings(){</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a">UV_ABORTED</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="uvfr__settings_8c.html#a42f7a1907bfe84d7b0f9fb4e2260018b">   40</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="uvfr__settings_8c.html#a42f7a1907bfe84d7b0f9fb4e2260018b">setupDefaultSettings</a>(){</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">//real trap shit</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="uvfr__settings_8c.html#a03566822d1b8893362970a459bd67daf">current_vehicle_settings</a> = uvMalloc(<span class="keyword">sizeof</span>(<a class="code" href="structuv__vehicle__settings.html">uv_vehicle_settings</a>));</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="uvfr__settings_8c.html#a4648237563030182a8309d8c75e12205">   45</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="uvfr__settings_8c.html#a4648237563030182a8309d8c75e12205">nukeSettings</a>(<a class="code" href="structuv__vehicle__settings.html">uv_vehicle_settings</a>** settings_to_delete){</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="uvfr__state__engine_8c.html#a0b9e8325d1d8f1027a7f563e4e8f22cb">uvFree</a>(*settings_to_delete);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    *settings_to_delete = NULL;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="uvfr__settings_8c.html#a42f7a1907bfe84d7b0f9fb4e2260018b">   42</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="uvfr__settings_8c.html#a42f7a1907bfe84d7b0f9fb4e2260018b">setupDefaultSettings</a>(){</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="uvfr__settings_8c.html#a03566822d1b8893362970a459bd67daf">current_vehicle_settings</a> != NULL){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        uvFree(<a class="code" href="uvfr__settings_8c.html#a03566822d1b8893362970a459bd67daf">current_vehicle_settings</a>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//real trap shit</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="uvfr__settings_8c.html#a03566822d1b8893362970a459bd67daf">current_vehicle_settings</a> = uvMalloc(<span class="keyword">sizeof</span>(<a class="code" href="structuv__vehicle__settings.html">uv_vehicle_settings</a>));</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="uvfr__settings_8c.html#a03566822d1b8893362970a459bd67daf">current_vehicle_settings</a>-&gt;<a class="code" href="structuv__vehicle__settings.html#adbfed76ceedc0479ff023fea9ba7a84c">os_settings</a> = &amp;<a class="code" href="group__state__engine.html#gad9e02be6d2d0bc1ab5cd9fd8cae34230">default_os_settings</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="uvfr__settings_8c.html#a4648237563030182a8309d8c75e12205">   51</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="uvfr__settings_8c.html#a4648237563030182a8309d8c75e12205">nukeSettings</a>(<a class="code" href="structuv__vehicle__settings.html">uv_vehicle_settings</a>** settings_to_delete){</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="uvfr__settings_8c.html#a80856a38d7040ca10b8106ff0fa4acf4">   58</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> <a class="code" href="uvfr__settings_8c.html#a80856a38d7040ca10b8106ff0fa4acf4">uvSettingsInit</a>(){</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#if ENABLE_FLASH_SETTINGS</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> setting_success = get_settings_from_flash();</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span>(setting_success == <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a">UV_ABORTED</a>){</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        setting_success = <a class="code" href="uvfr__settings_8c.html#a42f7a1907bfe84d7b0f9fb4e2260018b">setupDefaultSettings</a>();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(setting_success == <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a>){</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a>;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span>(setting_success == <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>){</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }<span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="comment">//handle the resulting error, maybe soft reboot ngl</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    uvFree(*settings_to_delete);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    *settings_to_delete = NULL;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="uvfr__settings_8c.html#a80856a38d7040ca10b8106ff0fa4acf4">   64</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> <a class="code" href="uvfr__settings_8c.html#a80856a38d7040ca10b8106ff0fa4acf4">uvSettingsInit</a>(){</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#if ENABLE_FLASH_SETTINGS</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> setting_success = get_settings_from_flash();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span>(setting_success == <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a">UV_ABORTED</a>){</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        setting_success = <a class="code" href="uvfr__settings_8c.html#a42f7a1907bfe84d7b0f9fb4e2260018b">setupDefaultSettings</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    } <span class="keywordflow">else</span> <span class="keywordflow">if</span>(setting_success == <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a>){</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a>;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="uvfr__settings_8c.html#a42f7a1907bfe84d7b0f9fb4e2260018b">setupDefaultSettings</a>();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span>(setting_success == <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }<span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="comment">//handle the resulting error, maybe soft reboot ngl</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    }</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="uvfr__settings_8c.html#a42f7a1907bfe84d7b0f9fb4e2260018b">setupDefaultSettings</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="uvfr__settings_8c.html#aa4405e1cc3fcec217efd4de0ea6b55ee">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="uvfr__settings_8c.html#aa4405e1cc3fcec217efd4de0ea6b55ee">uvSettingsProgrammerTask</a>(<span class="keywordtype">void</span>* args){</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="structuv__task__info.html">uv_task_info</a>* params = (<a class="code" href="structuv__task__info.html">uv_task_info</a>*) args;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span>* new_tmp_settings = NULL;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">for</span>(;;){</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="auvfr__state__engine_8h_html_aef3770e45bbacbf527fd93dd80eea9b9"><div class="ttname"><a href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a></div><div class="ttdeci">enum uv_status_t uv_status</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00016">uvfr_state_engine.h:16</a></div></div>
-<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00115">uvfr_utils.h:115</a></div></div>
-<div class="ttc" id="auvfr__state__engine_8c_html_a0b9e8325d1d8f1027a7f563e4e8f22cb"><div class="ttname"><a href="uvfr__state__engine_8c.html#a0b9e8325d1d8f1027a7f563e4e8f22cb">uvFree</a></div><div class="ttdeci">uvFree(args)</div></div>
-<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a">UV_ABORTED</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00118">uvfr_utils.h:118</a></div></div>
+<div class="ttc" id="astructuv__vehicle__settings_html_adbfed76ceedc0479ff023fea9ba7a84c"><div class="ttname"><a href="structuv__vehicle__settings.html#adbfed76ceedc0479ff023fea9ba7a84c">uv_vehicle_settings::os_settings</a></div><div class="ttdeci">struct uv_os_settings * os_settings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00034">uvfr_settings.h:34</a></div></div>
+<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9">UV_OK</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00167">uvfr_utils.h:167</a></div></div>
+<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a">UV_ABORTED</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00170">uvfr_utils.h:170</a></div></div>
+<div class="ttc" id="astructuv__task__info_html"><div class="ttname"><a href="structuv__task__info.html">uv_task_info</a></div><div class="ttdoc">This struct is designed to hold neccessary information about an RTOS task that will be managed by uvf...</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00220">uvfr_state_engine.h:220</a></div></div>
 <div class="ttc" id="auvfr__utils_8h_html"><div class="ttname"><a href="uvfr__utils_8h.html">uvfr_utils.h</a></div></div>
-<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9e"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a></div><div class="ttdeci">uv_status_t</div><div class="ttdoc">This is meant to be a return type from functions that indicates what is actually going on.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00114">uvfr_utils.h:114</a></div></div>
-<div class="ttc" id="auvfr__settings_8c_html_a80856a38d7040ca10b8106ff0fa4acf4"><div class="ttname"><a href="uvfr__settings_8c.html#a80856a38d7040ca10b8106ff0fa4acf4">uvSettingsInit</a></div><div class="ttdeci">enum uv_status_t uvSettingsInit()</div><div class="ttdoc">this function does one thing, and one thing only, it checks if we have custom settings,...</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8c_source.html#l00058">uvfr_settings.c:58</a></div></div>
-<div class="ttc" id="auvfr__settings_8c_html_a4648237563030182a8309d8c75e12205"><div class="ttname"><a href="uvfr__settings_8c.html#a4648237563030182a8309d8c75e12205">nukeSettings</a></div><div class="ttdeci">void nukeSettings(uv_vehicle_settings **settings_to_delete)</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8c_source.html#l00045">uvfr_settings.c:45</a></div></div>
-<div class="ttc" id="auvfr__settings_8c_html_a42f7a1907bfe84d7b0f9fb4e2260018b"><div class="ttname"><a href="uvfr__settings_8c.html#a42f7a1907bfe84d7b0f9fb4e2260018b">setupDefaultSettings</a></div><div class="ttdeci">void setupDefaultSettings()</div><div class="ttdoc">Function that allocates the neccessary space for all the vehicle settings, and handles sets all of th...</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8c_source.html#l00040">uvfr_settings.c:40</a></div></div>
+<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9e"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a></div><div class="ttdeci">uv_status_t</div><div class="ttdoc">This is meant to be a return type from functions that indicates what is actually going on.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00166">uvfr_utils.h:166</a></div></div>
+<div class="ttc" id="auvfr__settings_8c_html_a80856a38d7040ca10b8106ff0fa4acf4"><div class="ttname"><a href="uvfr__settings_8c.html#a80856a38d7040ca10b8106ff0fa4acf4">uvSettingsInit</a></div><div class="ttdeci">enum uv_status_t uvSettingsInit()</div><div class="ttdoc">this function does one thing, and one thing only, it checks if we have custom settings,...</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8c_source.html#l00064">uvfr_settings.c:64</a></div></div>
+<div class="ttc" id="auvfr__settings_8c_html_a4648237563030182a8309d8c75e12205"><div class="ttname"><a href="uvfr__settings_8c.html#a4648237563030182a8309d8c75e12205">nukeSettings</a></div><div class="ttdeci">void nukeSettings(uv_vehicle_settings **settings_to_delete)</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8c_source.html#l00051">uvfr_settings.c:51</a></div></div>
+<div class="ttc" id="auvfr__settings_8c_html_aa4405e1cc3fcec217efd4de0ea6b55ee"><div class="ttname"><a href="uvfr__settings_8c.html#aa4405e1cc3fcec217efd4de0ea6b55ee">uvSettingsProgrammerTask</a></div><div class="ttdeci">void uvSettingsProgrammerTask(void *args)</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8c_source.html#l00088">uvfr_settings.c:88</a></div></div>
+<div class="ttc" id="auvfr__settings_8c_html_a42f7a1907bfe84d7b0f9fb4e2260018b"><div class="ttname"><a href="uvfr__settings_8c.html#a42f7a1907bfe84d7b0f9fb4e2260018b">setupDefaultSettings</a></div><div class="ttdeci">void setupDefaultSettings()</div><div class="ttdoc">Function that allocates the neccessary space for all the vehicle settings, and handles sets all of th...</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8c_source.html#l00042">uvfr_settings.c:42</a></div></div>
+<div class="ttc" id="astructuv__os__settings_html"><div class="ttname"><a href="structuv__os__settings.html">uv_os_settings</a></div><div class="ttdoc">Settings that dictate state engine behavior.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8h_source.html#l00177">uvfr_state_engine.h:177</a></div></div>
 <div class="ttc" id="auvfr__settings_8c_html_a03566822d1b8893362970a459bd67daf"><div class="ttname"><a href="uvfr__settings_8c.html#a03566822d1b8893362970a459bd67daf">current_vehicle_settings</a></div><div class="ttdeci">uv_vehicle_settings * current_vehicle_settings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8c_source.html#l00015">uvfr_settings.c:15</a></div></div>
-<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00117">uvfr_utils.h:117</a></div></div>
+<div class="ttc" id="acan_8h_html_aef3770e45bbacbf527fd93dd80eea9b9"><div class="ttname"><a href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a></div><div class="ttdeci">enum uv_status_t uv_status</div><div class="ttdef"><b>Definition:</b> <a href="can_8h_source.html#l00044">can.h:44</a></div></div>
+<div class="ttc" id="auvfr__utils_8h_html_a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0"><div class="ttname"><a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0">UV_ERROR</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00169">uvfr_utils.h:169</a></div></div>
 <div class="ttc" id="astructuv__vehicle__settings_html"><div class="ttname"><a href="structuv__vehicle__settings.html">uv_vehicle_settings</a></div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00032">uvfr_settings.h:32</a></div></div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div><div class="ttdoc">: Header for main.c file. This file contains the common defines of the application.</div></div>
+<div class="ttc" id="agroup__state__engine_html_gad9e02be6d2d0bc1ab5cd9fd8cae34230"><div class="ttname"><a href="group__state__engine.html#gad9e02be6d2d0bc1ab5cd9fd8cae34230">default_os_settings</a></div><div class="ttdeci">struct uv_os_settings default_os_settings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__state__engine_8c_source.html#l00055">uvfr_state_engine.c:55</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

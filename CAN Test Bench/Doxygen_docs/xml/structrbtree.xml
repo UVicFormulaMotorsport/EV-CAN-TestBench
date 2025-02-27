@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="structrbtree" kind="struct" language="C++" prot="public">
+    <compoundname>rbtree</compoundname>
+    <includes refid="rb__tree_8h" local="no">rb_tree.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structrbtree_1ae3cb89936027ca5ecc26318e09357dc5" prot="public" static="no" mutable="no">
+        <type>int(*</type>
+        <definition>int(* rbtree::compare) (const void *, const void *)</definition>
+        <argsstring>)(const void *, const void *)</argsstring>
+        <name>compare</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Function to compare between two different nodes </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/rb_tree.h" line="40" column="1" bodyfile="Core/Inc/rb_tree.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="rb__tree_8c_1abce051a2c66739dc7d5cd3f8bd81868a" compoundref="rb__tree_8c" startline="553" endline="566">checkOrder</referencedby>
+        <referencedby refid="rb__tree_8c_1ae0e30dc26796a50c51186dc2279a3c4b" compoundref="rb__tree_8c" startline="28" endline="56">rbCreate</referencedby>
+        <referencedby refid="rb__tree_8c_1ad7470a946dc18fdea53de8efa48ba4eb" compoundref="rb__tree_8c" startline="71" endline="86">rbFind</referencedby>
+        <referencedby refid="rb__tree_8c_1aeb5491e8c286b8dbc868df0c31dba799" compoundref="rb__tree_8c" startline="207" endline="286">rbInsert</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structrbtree_1ac338e8815338ba0bc2fbb9a97ad7cc27" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* rbtree::print) (void *)</definition>
+        <argsstring>)(void *)</argsstring>
+        <name>print</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>For printing purposes. NOT YET IMPLEMENTED ON ANY SYSTEMS IN THE CAR </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/rb_tree.h" line="41" column="1" bodyfile="Core/Inc/rb_tree.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structrbtree_1aee517470215137b01402d349e2650355" prot="public" static="no" mutable="no">
+        <type>void(*</type>
+        <definition>void(* rbtree::destroy) (void *)</definition>
+        <argsstring>)(void *)</argsstring>
+        <name>destroy</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Destructor function for whatever data is stored in the tree </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/rb_tree.h" line="42" column="1" bodyfile="Core/Inc/rb_tree.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="rb__tree_8c_1a0c6878a92eb6e665e3bc9849053e1d5a" compoundref="rb__tree_8c" startline="649" endline="701">destroyAllNodes</referencedby>
+        <referencedby refid="rb__tree_8c_1ae0e30dc26796a50c51186dc2279a3c4b" compoundref="rb__tree_8c" startline="28" endline="56">rbCreate</referencedby>
+        <referencedby refid="rb__tree_8c_1a8b7898139f560f35aa433a637c2a5381" compoundref="rb__tree_8c" startline="360" endline="449">rbDelete</referencedby>
+        <referencedby refid="rb__tree_8c_1aeb5491e8c286b8dbc868df0c31dba799" compoundref="rb__tree_8c" startline="207" endline="286">rbInsert</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structrbtree_1ad865f18384b6a5872aceefe23ade18d9" prot="public" static="no" mutable="no">
+        <type><ref refid="structrbnode" kindref="compound">rbnode</ref></type>
+        <definition>rbnode rbtree::root</definition>
+        <argsstring></argsstring>
+        <name>root</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Root of actual tree </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/rb_tree.h" line="44" column="8" bodyfile="Core/Inc/rb_tree.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="rb__tree_8c_1ae0e30dc26796a50c51186dc2279a3c4b" compoundref="rb__tree_8c" startline="28" endline="56">rbCreate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structrbtree_1a1175ffa360f63b405305a04acfa2c433" prot="public" static="no" mutable="no">
+        <type><ref refid="structrbnode" kindref="compound">rbnode</ref></type>
+        <definition>rbnode rbtree::nil</definition>
+        <argsstring></argsstring>
+        <name>nil</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>The &quot;NIL&quot; node of the tree, used to avoid fucked null errors </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/rb_tree.h" line="45" column="8" bodyfile="Core/Inc/rb_tree.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="rb__tree_8c_1ae0e30dc26796a50c51186dc2279a3c4b" compoundref="rb__tree_8c" startline="28" endline="56">rbCreate</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structrbtree_1ae02fd70761cb8965d5f74dd3e922628a" prot="public" static="no" mutable="no">
+        <type><ref refid="structrbnode" kindref="compound">rbnode</ref> *</type>
+        <definition>rbnode* rbtree::min</definition>
+        <argsstring></argsstring>
+        <name>min</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Pointer to minimum element </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/rb_tree.h" line="50" column="8" bodyfile="Core/Inc/rb_tree.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="rb__tree_8c_1ae0e30dc26796a50c51186dc2279a3c4b" compoundref="rb__tree_8c" startline="28" endline="56">rbCreate</referencedby>
+        <referencedby refid="rb__tree_8c_1a8b7898139f560f35aa433a637c2a5381" compoundref="rb__tree_8c" startline="360" endline="449">rbDelete</referencedby>
+        <referencedby refid="rb__tree_8c_1aeb5491e8c286b8dbc868df0c31dba799" compoundref="rb__tree_8c" startline="207" endline="286">rbInsert</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="structrbtree_1aeb463910a21f07530d9f4c723aa1327a" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int rbtree::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>number of items stored in the tree </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/rb_tree.h" line="53" column="5" bodyfile="Core/Inc/rb_tree.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="rb__tree_8c_1a0c6878a92eb6e665e3bc9849053e1d5a" compoundref="rb__tree_8c" startline="649" endline="701">destroyAllNodes</referencedby>
+        <referencedby refid="rb__tree_8c_1ae0e30dc26796a50c51186dc2279a3c4b" compoundref="rb__tree_8c" startline="28" endline="56">rbCreate</referencedby>
+        <referencedby refid="rb__tree_8c_1a8b7898139f560f35aa433a637c2a5381" compoundref="rb__tree_8c" startline="360" endline="449">rbDelete</referencedby>
+        <referencedby refid="rb__tree_8c_1aeb5491e8c286b8dbc868df0c31dba799" compoundref="rb__tree_8c" startline="207" endline="286">rbInsert</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>struct representing a binary search tree </para>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="2">
+        <label>rbnode</label>
+        <link refid="structrbnode"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>right</edgelabel>
+          <edgelabel>left</edgelabel>
+          <edgelabel>parent</edgelabel>
+        </childnode>
+      </node>
+      <node id="1">
+        <label>rbtree</label>
+        <link refid="structrbtree"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>root</edgelabel>
+          <edgelabel>nil</edgelabel>
+          <edgelabel>min</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Core/Inc/rb_tree.h" line="39" column="15" bodyfile="Core/Inc/rb_tree.h" bodystart="39" bodyend="54"/>
+    <listofallmembers>
+      <member refid="structrbtree_1ae3cb89936027ca5ecc26318e09357dc5" prot="public" virt="non-virtual"><scope>rbtree</scope><name>compare</name></member>
+      <member refid="structrbtree_1aeb463910a21f07530d9f4c723aa1327a" prot="public" virt="non-virtual"><scope>rbtree</scope><name>count</name></member>
+      <member refid="structrbtree_1aee517470215137b01402d349e2650355" prot="public" virt="non-virtual"><scope>rbtree</scope><name>destroy</name></member>
+      <member refid="structrbtree_1ae02fd70761cb8965d5f74dd3e922628a" prot="public" virt="non-virtual"><scope>rbtree</scope><name>min</name></member>
+      <member refid="structrbtree_1a1175ffa360f63b405305a04acfa2c433" prot="public" virt="non-virtual"><scope>rbtree</scope><name>nil</name></member>
+      <member refid="structrbtree_1ac338e8815338ba0bc2fbb9a97ad7cc27" prot="public" virt="non-virtual"><scope>rbtree</scope><name>print</name></member>
+      <member refid="structrbtree_1ad865f18384b6a5872aceefe23ade18d9" prot="public" virt="non-virtual"><scope>rbtree</scope><name>root</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

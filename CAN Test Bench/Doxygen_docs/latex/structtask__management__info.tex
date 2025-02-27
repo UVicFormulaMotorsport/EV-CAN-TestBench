@@ -2,6 +2,11 @@
 \label{structtask__management__info}\index{task\_management\_info@{task\_management\_info}}
 
 
+Struct to contain data about a parent task.  
+
+
+
+
 {\ttfamily \#include $<$uvfr\+\_\+state\+\_\+engine.\+h$>$}
 
 \doxysubsection*{Data Fields}
@@ -9,41 +14,49 @@
 \item 
 Task\+Handle\+\_\+t \mbox{\hyperlink{structtask__management__info_a29b374b2d26cc5a52c75160816da83aa}{task\+\_\+handle}}
 \item 
-Queue\+Handle\+\_\+t \mbox{\hyperlink{structtask__management__info_ad2c88854aa7eea3f3fdc38c859011cef}{task\+\_\+management\+\_\+queue}}
+Queue\+Handle\+\_\+t \mbox{\hyperlink{structtask__management__info_a82d650741c82974c81a22c6bdd8c556d}{parent\+\_\+msg\+\_\+queue}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Struct to contain data about a parent task. 
 
+This contains the information required for the child task to communicate with it\textquotesingle{}s parent.
 
-Definition at line 64 of file uvfr\+\_\+state\+\_\+engine.\+h.
+This will be a queue, since one parent task can in theory have several child tasks 
+
+Definition at line 154 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
 \doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structtask__management__info_a82d650741c82974c81a22c6bdd8c556d}\label{structtask__management__info_a82d650741c82974c81a22c6bdd8c556d}} 
+\index{task\_management\_info@{task\_management\_info}!parent\_msg\_queue@{parent\_msg\_queue}}
+\index{parent\_msg\_queue@{parent\_msg\_queue}!task\_management\_info@{task\_management\_info}}
+\doxysubsubsection{\texorpdfstring{parent\_msg\_queue}{parent\_msg\_queue}}
+{\footnotesize\ttfamily Queue\+Handle\+\_\+t task\+\_\+management\+\_\+info\+::parent\+\_\+msg\+\_\+queue}
+
+
+
+Definition at line 156 of file uvfr\+\_\+state\+\_\+engine.\+h.
+
+
+
+Referenced by uv\+Task\+Manager().
+
 \mbox{\Hypertarget{structtask__management__info_a29b374b2d26cc5a52c75160816da83aa}\label{structtask__management__info_a29b374b2d26cc5a52c75160816da83aa}} 
 \index{task\_management\_info@{task\_management\_info}!task\_handle@{task\_handle}}
 \index{task\_handle@{task\_handle}!task\_management\_info@{task\_management\_info}}
 \doxysubsubsection{\texorpdfstring{task\_handle}{task\_handle}}
 {\footnotesize\ttfamily Task\+Handle\+\_\+t task\+\_\+management\+\_\+info\+::task\+\_\+handle}
 
+Actual handle of parent 
 
-
-Definition at line 65 of file uvfr\+\_\+state\+\_\+engine.\+h.
-
-
-
-Referenced by uv\+S\+V\+C\+Task\+Manager().
-
-\mbox{\Hypertarget{structtask__management__info_ad2c88854aa7eea3f3fdc38c859011cef}\label{structtask__management__info_ad2c88854aa7eea3f3fdc38c859011cef}} 
-\index{task\_management\_info@{task\_management\_info}!task\_management\_queue@{task\_management\_queue}}
-\index{task\_management\_queue@{task\_management\_queue}!task\_management\_info@{task\_management\_info}}
-\doxysubsubsection{\texorpdfstring{task\_management\_queue}{task\_management\_queue}}
-{\footnotesize\ttfamily Queue\+Handle\+\_\+t task\+\_\+management\+\_\+info\+::task\+\_\+management\+\_\+queue}
+Definition at line 155 of file uvfr\+\_\+state\+\_\+engine.\+h.
 
 
 
-Definition at line 66 of file uvfr\+\_\+state\+\_\+engine.\+h.
+Referenced by uv\+S\+V\+C\+Task\+Manager(), and uv\+Task\+Manager().
 
 
 

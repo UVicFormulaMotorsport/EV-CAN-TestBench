@@ -15,6 +15,9 @@
 #define DEFAULT_MOTOR_CONTROLLER_CAN_TIMEOUT ((uv_timespan_ms)200)
 
 // Need to add enums for human readable register addresses and such
+// Add these to motor_controller.h
+#define SERIAL_NUMBER_REGISTER 0x1A  // Replace 0x1A with the actual register address
+#define FIRMWARE_VERSION_REGISTER 0x1B  // Replace 0x1B with the actual register address
 
 
 enum motor_controller_speed_parameters{
@@ -87,7 +90,7 @@ enum motor_controller_status_information_errors_warnings{
 	internal_hardware_voltage_problem = 1<<6, // bit 14
 	bleed_resistor_overload = 1<<7, // bit 15
 	// The high and low bytes will be split up and we'll check errors and warnings separately
-	// warnins - again, see can messages excel sheet / manuals
+	// warnings - again, see can messages excel sheet / manuals
 	parameter_conflict_detected = 1<<8, // bit 16
 	special_CPU_fault = 1<<9, // bit 17
 	rotate_field_enable_not_present_norun = 1<<10, // bit 18 // without run active
@@ -117,10 +120,10 @@ enum motor_controller_PI_values{
 	accelerate_ramp = 0x35,
 	dismantling_ramp = 0xED,
 	recuperation_ramp = 0xC7,
-	proportional_gain = 0x1C,
-	integral_time_constant = 0x1D,
-	integral_memory_max = 0x2B,
-	proportional_gain_2 = 0xC9, // This is for when the current is more than max setpoint
+	proportional_gain = 0x1C,//register id changes depending on speed and current controller 0x2c
+	integral_time_constant = 0x1D, //0x2d
+	integral_memory_max = 0x2B, //0x3b
+	proportional_gain_2 = 0xC9, // This is for when the current is more than max set point
 	current_feed_forward = 0xCB,
 	ramp_set_current = 0x25,
 
@@ -143,21 +146,35 @@ enum motor_controller_startup{
 	firmware_version = 0x1B,
 };
 
+//settings for motor controller
 typedef struct motor_controllor_settings{
+	//can transmit 0x200
+    uint32_t can_id_tx;
+	//can receive 0x201
+    uint32_t can_id_rx;
+   //can timeout 2s?
 	uint32_t mc_CAN_timeout;
+	//double check length
+	//kp - gain 0x2c - 10
+	uint8_t proportional_gain;
+	//ti - reset time 0x2d - 400
+	uint32_t integral_time_constant;
+	//Tim - max value integral 0x3b - 60%
+	uint8_t integral_memory_max;
+
 }motor_controller_settings;
 
 // Function Declarations
-void MC_Parse_Message(int DLC, uint8_t Data[]);
-void MC_Request_Data(uint8_t RegID);
-void MC_Send_Data(uint8_t RegID, uint8_t data_to_send[], uint8_t size);
-void MC_Torque_Control(int todo);
-void MC_Speed_Control(int todo);
-void MC_Check_Error_Warning(uint8_t Data[]);
-void MC_Check_Serial_Number(uint8_t Data[]);
-void MC_Check_Firmware(uint8_t Data[]);
-
+//void MC_Parse_Message(int DLC, uint8_t Data[]);
+//void MC_Request_Data(uint8_t RegID);
+//void MC_Send_Data(uint8_t RegID, uint8_t data_to_send[], uint8_t size);
+//void MC_Torque_Control(int todo);
+//void MC_Speed_Control(int todo);
+//void MC_Check_Error_Warning(uint8_t Data[]);
+//void MC_Check_Serial_Number(uint8_t Data[]);
+//void MC_Check_Firmware(uint8_t Data[]);
 void MC_Startup(void* args);
+
 
 
 

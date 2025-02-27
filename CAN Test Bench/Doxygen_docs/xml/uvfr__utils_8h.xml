@@ -1,0 +1,2220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="uvfr__utils_8h" kind="file" language="C++">
+    <compoundname>uvfr_utils.h</compoundname>
+    <includes refid="uvfr__global__config_8h" local="yes">uvfr_global_config.h</includes>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includes local="yes">cmsis_os.h</includes>
+    <includes refid="adc_8h" local="yes">adc.h</includes>
+    <includes refid="can_8h" local="yes">can.h</includes>
+    <includes refid="dma_8h" local="yes">dma.h</includes>
+    <includes refid="tim_8h" local="yes">tim.h</includes>
+    <includes refid="gpio_8h" local="yes">gpio.h</includes>
+    <includes refid="spi_8h" local="yes">spi.h</includes>
+    <includes local="yes">FreeRTOS.h</includes>
+    <includes local="yes">task.h</includes>
+    <includes local="yes">message_buffer.h</includes>
+    <includes refid="uvfr__settings_8h" local="yes">uvfr_settings.h</includes>
+    <includes refid="uvfr__state__engine_8h" local="yes">uvfr_state_engine.h</includes>
+    <includes refid="rb__tree_8h" local="yes">rb_tree.h</includes>
+    <includes refid="bms_8h" local="yes">bms.h</includes>
+    <includes refid="motor__controller_8h" local="yes">motor_controller.h</includes>
+    <includes refid="dash_8h" local="yes">dash.h</includes>
+    <includes refid="imd_8h" local="yes">imd.h</includes>
+    <includes refid="pdu_8h" local="yes">pdu.h</includes>
+    <includes refid="daq_8h" local="yes">daq.h</includes>
+    <includes refid="oled_8h" local="yes">oled.h</includes>
+    <includes refid="driving__loop_8h" local="yes">driving_loop.h</includes>
+    <includes refid="temp__monitoring_8h" local="yes">temp_monitoring.h</includes>
+    <includes refid="odometer_8h" local="yes">odometer.h</includes>
+    <includes refid="_free_r_t_o_s_config_8h" local="yes">FreeRTOSConfig.h</includes>
+    <includes local="yes">stdint.h</includes>
+    <includes local="no">stdlib.h</includes>
+    <includedby refid="main_8h" local="yes">Core/Inc/main.h</includedby>
+    <includedby refid="can_8h" local="yes">Core/Inc/can.h</includedby>
+    <includedby refid="motor__controller_8h" local="yes">Core/Inc/motor_controller.h</includedby>
+    <includedby refid="driving__loop_8h" local="yes">Core/Inc/driving_loop.h</includedby>
+    <includedby refid="uvfr__settings_8h" local="yes">Core/Inc/uvfr_settings.h</includedby>
+    <includedby refid="daq_8h" local="yes">Core/Inc/daq.h</includedby>
+    <includedby refid="bms_8h" local="yes">Core/Inc/bms.h</includedby>
+    <includedby refid="uvfr__state__engine_8h" local="yes">Core/Inc/uvfr_state_engine.h</includedby>
+    <includedby refid="oled_8h" local="yes">Core/Inc/oled.h</includedby>
+    <includedby refid="temp__monitoring_8h" local="yes">Core/Inc/temp_monitoring.h</includedby>
+    <includedby refid="uvfr__vehicle__commands_8h" local="yes">Core/Inc/uvfr_vehicle_commands.h</includedby>
+    <includedby refid="can_8c" local="yes">Core/Src/can.c</includedby>
+    <includedby refid="daq_8c" local="yes">Core/Src/daq.c</includedby>
+    <includedby refid="driving__loop_8c" local="yes">Core/Src/driving_loop.c</includedby>
+    <includedby refid="freertos_8c" local="yes">Core/Src/freertos.c</includedby>
+    <includedby refid="imd_8c" local="yes">Core/Src/imd.c</includedby>
+    <includedby refid="odometer_8c" local="yes">Core/Src/odometer.c</includedby>
+    <includedby refid="oled_8c" local="yes">Core/Src/oled.c</includedby>
+    <includedby refid="rb__tree_8c" local="yes">Core/Src/rb_tree.c</includedby>
+    <includedby refid="temp__monitoring_8c" local="yes">Core/Src/temp_monitoring.c</includedby>
+    <includedby refid="uvfr__settings_8c" local="yes">Core/Src/uvfr_settings.c</includedby>
+    <includedby refid="uvfr__state__engine_8c" local="yes">Core/Src/uvfr_state_engine.c</includedby>
+    <includedby refid="uvfr__utils_8c" local="yes">Core/Src/uvfr_utils.c</includedby>
+    <includedby refid="uvfr__vehicle__commands_8c" local="yes">Core/Src/uvfr_vehicle_commands.c</includedby>
+    <incdepgraph>
+      <node id="5">
+        <label>stdarg.h</label>
+      </node>
+      <node id="11">
+        <label>tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>stdint.h</label>
+      </node>
+      <node id="32">
+        <label>stdlib.h</label>
+      </node>
+      <node id="27">
+        <label>oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="7">
+        <label>adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>cmsis_os.h</label>
+      </node>
+      <node id="1">
+        <label>Core/Inc/uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>message_buffer.h</label>
+      </node>
+      <node id="22">
+        <label>bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>rb_tree.h</label>
+        <link refid="rb__tree_8h"/>
+      </node>
+      <node id="9">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="8">
+        <label>can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>uvfr_global_config.h</label>
+        <link refid="uvfr__global__config_8h"/>
+      </node>
+      <node id="30">
+        <label>FreeRTOSConfig.h</label>
+        <link refid="_free_r_t_o_s_config_8h"/>
+      </node>
+      <node id="23">
+        <label>uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>odometer.h</label>
+        <link refid="odometer_8h"/>
+      </node>
+      <node id="4">
+        <label>stm32f4xx_hal.h</label>
+      </node>
+      <node id="14">
+        <label>FreeRTOS.h</label>
+      </node>
+      <node id="10">
+        <label>dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>task.h</label>
+      </node>
+      <node id="3">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="16">
+        <label>Core/Inc/tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>Core/Inc/imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="37">
+        <label>Core/Src/daq.c</label>
+        <link refid="daq_8c"/>
+      </node>
+      <node id="27">
+        <label>Core/Inc/dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>Core/Inc/driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>Core/Inc/temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Core/Src/pdu.c</label>
+        <link refid="pdu_8c"/>
+      </node>
+      <node id="9">
+        <label>Core/Src/dash.c</label>
+        <link refid="dash_8c"/>
+      </node>
+      <node id="17">
+        <label>Core/Src/tim.c</label>
+        <link refid="tim_8c"/>
+      </node>
+      <node id="44">
+        <label>Core/Src/uvfr_state_engine.c</label>
+        <link refid="uvfr__state__engine_8c"/>
+      </node>
+      <node id="39">
+        <label>Core/Inc/oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>Core/Inc/adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="33">
+        <label>Core/Src/stm32f4xx_hal_msp.c</label>
+        <link refid="stm32f4xx__hal__msp_8c"/>
+      </node>
+      <node id="1">
+        <label>Core/Inc/uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>Core/Src/odometer.c</label>
+        <link refid="odometer_8c"/>
+      </node>
+      <node id="31">
+        <label>Core/Src/freertos.c</label>
+        <link refid="freertos_8c"/>
+      </node>
+      <node id="7">
+        <label>Core/Src/bms.c</label>
+        <link refid="bms_8c"/>
+      </node>
+      <node id="26">
+        <label>Core/Inc/bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="12">
+        <label>Core/Src/motor_controller.c</label>
+        <link refid="motor__controller_8c"/>
+      </node>
+      <node id="35">
+        <label>Core/Src/uvfr_settings.c</label>
+        <link refid="uvfr__settings_8c"/>
+      </node>
+      <node id="10">
+        <label>Core/Src/driving_loop.c</label>
+        <link refid="driving__loop_8c"/>
+      </node>
+      <node id="21">
+        <label>Core/Inc/spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>Core/Inc/pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Core/Src/gpio.c</label>
+        <link refid="gpio_8c"/>
+      </node>
+      <node id="23">
+        <label>Core/Inc/motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>Core/Inc/uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>Core/Src/rb_tree.c</label>
+        <link refid="rb__tree_8c"/>
+      </node>
+      <node id="15">
+        <label>Core/Src/dma.c</label>
+        <link refid="dma_8c"/>
+      </node>
+      <node id="20">
+        <label>Core/Src/temp_monitoring.c</label>
+        <link refid="temp__monitoring_8c"/>
+      </node>
+      <node id="46">
+        <label>Core/Src/uvfr_vehicle_commands.c</label>
+        <link refid="uvfr__vehicle__commands_8c"/>
+      </node>
+      <node id="36">
+        <label>Core/Inc/daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>Core/Inc/gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="45">
+        <label>Core/Src/uvfr_utils.c</label>
+        <link refid="uvfr__utils_8c"/>
+      </node>
+      <node id="22">
+        <label>Core/Src/spi.c</label>
+        <link refid="spi_8c"/>
+      </node>
+      <node id="30">
+        <label>Core/Src/constants.c</label>
+        <link refid="constants_8c"/>
+      </node>
+      <node id="11">
+        <label>Core/Src/imd.c</label>
+        <link refid="imd_8c"/>
+      </node>
+      <node id="6">
+        <label>Core/Inc/can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>Core/Src/stm32f4xx_it.c</label>
+        <link refid="stm32f4xx__it_8c"/>
+      </node>
+      <node id="38">
+        <label>Core/Inc/uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>Core/Src/can.c</label>
+        <link refid="can_8c"/>
+      </node>
+      <node id="41">
+        <label>Core/Inc/uvfr_vehicle_commands.h</label>
+        <link refid="uvfr__vehicle__commands_8h"/>
+      </node>
+      <node id="32">
+        <label>Core/Src/oled.c</label>
+        <link refid="oled_8c"/>
+      </node>
+      <node id="4">
+        <label>Core/Src/adc.c</label>
+        <link refid="adc_8c"/>
+      </node>
+      <node id="5">
+        <label>Core/Src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="14">
+        <label>Core/Inc/dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Core/Inc/main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="1" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="structuv__mutex__info" prot="public">uv_mutex_info</innerclass>
+    <innerclass refid="structuv__binary__semaphore__info" prot="public">uv_binary_semaphore_info</innerclass>
+    <innerclass refid="structuv__semaphore__info" prot="public">uv_semaphore_info</innerclass>
+    <innerclass refid="unionaccess__control__info" prot="public">access_control_info</innerclass>
+    <innerclass refid="structuv___c_a_n__msg" prot="public">uv_CAN_msg</innerclass>
+    <innerclass refid="structuv__init__struct" prot="public">uv_init_struct</innerclass>
+    <innerclass refid="structuv__task__msg__t" prot="public">uv_task_msg_t</innerclass>
+    <innerclass refid="structp__status" prot="public">p_status</innerclass>
+    <innerclass refid="structuv__init__task__args" prot="public">uv_init_task_args</innerclass>
+    <innerclass refid="structuv__internal__params" prot="public">uv_internal_params</innerclass>
+    <innerclass refid="structuv__init__task__response" prot="public">uv_init_task_response</innerclass>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__utility__macros_1ga483c9de27db573099572f5485ef841c9" prot="public" static="no">
+        <name>_BV</name>
+        <param><defname>x</defname></param>
+        <initializer><ref refid="group__utility__macros_1gaa17e4b09cf528c30099398ddedc48955" kindref="member">_BV_16</ref>(x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="69" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gadb4693d786f01e486ce4191758995c8f" prot="public" static="no">
+        <name>_BV_8</name>
+        <param><defname>x</defname></param>
+        <initializer>((uint8_t)(0x01U &gt;&gt; x))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="70" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gaa17e4b09cf528c30099398ddedc48955" prot="public" static="no">
+        <name>_BV_16</name>
+        <param><defname>x</defname></param>
+        <initializer>((uint16_t)(0x01U &gt;&gt; x))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="71" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga581e5838a8a85f12137dd310b210024d" prot="public" static="no">
+        <name>_BV_32</name>
+        <param><defname>x</defname></param>
+        <initializer>((uint32_t)(0x01U &gt;&gt; x))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="72" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gac590e01547ebac3946ea03be39e9a891" prot="public" static="no">
+        <name>endianSwap</name>
+        <param><defname>x</defname></param>
+        <initializer><ref refid="group__utility__macros_1gaaffae84b1475df9ae84949feb94f556b" kindref="member">endianSwap16</ref>(x)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="74" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga250d3a099625ba439eb4ba4304d5faae" prot="public" static="no">
+        <name>endianSwap8</name>
+        <param><defname>x</defname></param>
+        <initializer>x</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="75" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gaaffae84b1475df9ae84949feb94f556b" prot="public" static="no">
+        <name>endianSwap16</name>
+        <param><defname>x</defname></param>
+        <initializer>(((x &amp; 0x00FF)&lt;&lt;8) | ((x &amp; 0xFF00)&gt;&gt;8))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="76" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gacb855e60a6051d73730aa95259a085af" prot="public" static="no">
+        <name>endianSwap32</name>
+        <param><defname>x</defname></param>
+        <initializer>(((x &amp; 0x000000FF)&lt;&lt;16)|((x &amp; 0x0000FF00)&lt;&lt;8)|((x &amp; 0x00FF0000)&gt;&gt;8)|((x &amp; 0xFF000000)&gt;&gt;16))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="77" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga829f8b8ab166c6d07df7023ee0b68300" prot="public" static="no">
+        <name>deserializeSmallE16</name>
+        <param><defname>x</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>((x[i])|(x[i+1]&lt;&lt;8))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="79" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga6c69adff0f827031b2ec0a2220aa1fc8" prot="public" static="no">
+        <name>deserializeSmallE32</name>
+        <param><defname>x</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>((x[i])|(x[i+1]&lt;&lt;8)|(x[i+2]&lt;&lt;16)|(x[i+3]&lt;&lt;24))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="80" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gadeeabe9f9f082a786e959610607229ae" prot="public" static="no">
+        <name>deserializeBigE16</name>
+        <param><defname>x</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>((x[i]&lt;&lt;8)|(x[i+1]))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="81" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga3c5631fa43a00757c6dd44f55650b051" prot="public" static="no">
+        <name>deserializeBigE32</name>
+        <param><defname>x</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>((x[i]&lt;&lt;24)|(x[i+1]&lt;&lt;16)|(x[i+2]&lt;&lt;8)|(x[i+3]))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="82" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga5c017766f44df98dde492a5e406e221c" prot="public" static="no">
+        <name>serializeSmallE16</name>
+        <param><defname>x</defname></param>
+        <param><defname>d</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>x[i]=d&amp;0x00FF; x[i+1]=(d&amp;0xFF00)&gt;&gt;8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="84" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga0fa9d4460bcee65d79e048b43dc879fd" prot="public" static="no">
+        <name>serializeSmallE32</name>
+        <param><defname>x</defname></param>
+        <param><defname>d</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>x[i]=d&amp;0x000000FF; x[i+1]=(d&amp;0x0000FF00)&gt;&gt;8; x[i+2]=(d&amp;0x00FF0000)&gt;&gt;16; x[i+3]=(d&amp;0xFF000000)&gt;&gt;24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="85" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga505ca43923e2bb2162e218c3b8484357" prot="public" static="no">
+        <name>serializeBigE16</name>
+        <param><defname>x</defname></param>
+        <param><defname>d</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>x[i+1]=d&amp;0x00FF; x[i]=(d&amp;0xFF00)&gt;&gt;8</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="86" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga053aa19e84e50fd8c74f8d4bb0d7820f" prot="public" static="no">
+        <name>serializeBigE32</name>
+        <param><defname>x</defname></param>
+        <param><defname>d</defname></param>
+        <param><defname>i</defname></param>
+        <initializer>x[i+3]=d&amp;0x000000FF; x[i+2]=(d&amp;0x0000FF00)&gt;&gt;8; x[i+1]=(d&amp;0x00FF0000)&gt;&gt;16; x[i]=(d&amp;0xFF000000)&gt;&gt;24</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="87" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga50e87beac8a57dd01bdaed51450269e3" prot="public" static="no">
+        <name>setBits</name>
+        <param><defname>x</defname></param>
+        <param><defname>msk</defname></param>
+        <param><defname>data</defname></param>
+        <initializer>x=(x&amp;(~msk)|data)</initializer>
+        <briefdescription>
+<para>macro to set bits of an int without touching the ones we dont want to edit </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Usage: Will set the values of certain bits of an int. This depends on the following however: <parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>x</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>represents the value you want to edit. Can be any signed or unsigned integer type. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>msk</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bits of X will only be altered if the matching bit of msk is a 1 </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Bits of data will map to bits of x, provided that the corresponding bit of msk is a one</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+In practice this looks like the following: <programlisting><codeline><highlight class="normal">uint8_t<sp/>num<sp/>=<sp/>0xF0;<sp/><sp/>//<sp/>int<sp/>is<sp/>0b11110000</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>mask<sp/>=<sp/>0x22;<sp/>//<sp/>msk<sp/>is<sp/>0b00100010</highlight></codeline>
+<codeline><highlight class="normal">uint8_t<sp/>data<sp/>=<sp/>0x0F;<sp/>//<sp/>val<sp/>is<sp/>0b00001111</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//now<sp/>we<sp/>deploy<sp/>the<sp/>macro</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">setBits(num,mask,data);</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//now,<sp/>num<sp/>=<sp/>0b11010010</highlight></codeline>
+</programlisting> </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="112" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="112" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gade3043fb92536f8e1a616ba8aaef4ab9" prot="public" static="no">
+        <name>isPowerOfTwo</name>
+        <param><defname>x</defname></param>
+        <initializer>(x&amp;&amp;(!(x&amp;(x-1))))</initializer>
+        <briefdescription>
+<para>Returns a truthy value if &quot;x&quot; is a power of two. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="117" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="117" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gaac2f65c6267d74d5d5136f82bf217efa" prot="public" static="no">
+        <name>safePtrRead</name>
+        <param><defname>x</defname></param>
+        <initializer>(*((x)?x:uvPanic(&quot;nullptr_deref&quot;,0)))</initializer>
+        <briefdescription>
+<para>lil treat to help us avoid the dreaded null pointer dereference </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="122" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1gaf506fac19ab4ad3f5b7ddd00643e0b46" prot="public" static="no">
+        <name>safePtrWrite</name>
+        <param><defname>p</defname></param>
+        <param><defname>x</defname></param>
+        <initializer>(*((p)?p:&amp;x))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="123" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga65e9886d74aaee76545e83dd09011727" prot="public" static="no">
+        <name>false</name>
+        <initializer>0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wish.com Boolean </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="127" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="127" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__utility__macros_1ga41f9c5fb8b08eb5dc3edce4dcb37fee7" prot="public" static="no">
+        <name>true</name>
+        <initializer>!<ref refid="group__utility__macros_1ga65e9886d74aaee76545e83dd09011727" kindref="member">false</ref></initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="128" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__utils_8h_1a40d625666ff5a3c5918ec7591f0628ed" prot="public" static="no">
+        <name>MAX_INIT_TIME</name>
+        <initializer>2500</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="145" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="145" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__utils_8h_1a4808a3bb38a3243b37a3690b9a02eba7" prot="public" static="no">
+        <name>INIT_CHECK_PERIOD</name>
+        <initializer>100</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="146" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="146" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__utils_8h_1abdad0cac69564db7eec85ef103281130" prot="public" static="no">
+        <name>UV_CAN1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="153" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="153" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__utils_8h_1a0b946cc6e8a3f7995d65c1921cfe989d" prot="public" static="no">
+        <name>UV_CAN2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="154" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="154" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__utils_8h_1a16b23f220af0f78310f4fe6cfeb6ab0d" prot="public" static="no">
+        <name>USE_OLED_DEBUG</name>
+        <initializer>1</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="157" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="157" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__utils_8h_1aa55012016c572366a0747ff7298c7fec" prot="public" static="no">
+        <name>UV_CAN_EXTENDED_ID</name>
+        <initializer>0x01</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="262" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="262" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__utils_8h_1a3c2758e5f0e3f8d8e1470616418f60c8" prot="public" static="no">
+        <name>UV_CAN_CHANNEL_MASK</name>
+        <initializer>0b00000110</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="263" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="263" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="uvfr__utils_8h_1aa6688039909b8ed4eca05ab7a36fa8bd" prot="public" static="no">
+        <name>UV_CAN_DYNAMIC_MEM</name>
+        <initializer>0b00001000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="264" column="9" bodyfile="Core/Inc/uvfr_utils.h" bodystart="264" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9e" prot="public" static="no" strong="no">
+        <type></type>
+        <name>uv_status_t</name>
+        <enumvalue id="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" prot="public">
+          <name>UV_OK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea87c01f9029276637a8c9568fd67efcac" prot="public">
+          <name>UV_WARNING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" prot="public">
+          <name>UV_ERROR</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a" prot="public">
+          <name>UV_ABORTED</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>This is meant to be a return type from functions that indicates what is actually going on. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this as a return value for functions you want to know the success of. In general, any function you write must return something, as well as account for any possible errors that may have occurred. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="166" column="25" bodyfile="Core/Inc/uvfr_utils.h" bodystart="166" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="enum" id="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14" prot="public" static="no" strong="no">
+        <type></type>
+        <name>data_type</name>
+        <enumvalue id="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d" prot="public">
+          <name>UV_UINT8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318" prot="public">
+          <name>UV_INT8</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0" prot="public">
+          <name>UV_UINT16</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787" prot="public">
+          <name>UV_INT16</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0" prot="public">
+          <name>UV_UINT32</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc" prot="public">
+          <name>UV_INT32</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9" prot="public">
+          <name>UV_FLOAT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038" prot="public">
+          <name>UV_DOUBLE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a4e148426880e8cf1e81ceea15ddf2d7a" prot="public">
+          <name>UV_INT64</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a04c45245ce9c00f905a60cc34cca2de6" prot="public">
+          <name>UV_UINT64</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de" prot="public">
+          <name>UV_STRING</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Represents the data type of some variable. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="177" column="15" bodyfile="Core/Inc/uvfr_utils.h" bodystart="177" bodyend="190"/>
+      </memberdef>
+      <memberdef kind="enum" id="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1" prot="public" static="no" strong="no">
+        <type></type>
+        <name>uv_driving_mode_t</name>
+        <enumvalue id="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1aebc81705969b8c5ae986b0b2ec08d1d5" prot="public">
+          <name>normal</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1ac67554de85b7a3c2ac961da6faf22e1e" prot="public">
+          <name>accel</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1a6e980d942af313712cd3ac6e66c002a5" prot="public">
+          <name>econ</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1af5d257c586a4a993f56fac4a77d35531" prot="public">
+          <name>limp</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="194" column="23" bodyfile="Core/Inc/uvfr_utils.h" bodystart="194" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="enum" id="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0" prot="public" static="no" strong="no">
+        <type></type>
+        <name>uv_external_device</name>
+        <enumvalue id="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a9c632ecb370b78547a390d1b5cf59671" prot="public">
+          <name>MOTOR_CONTROLLER</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0aca1b897aad8f93e76df69c23bc732f2e" prot="public">
+          <name>BMS</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a8c41c05a63a15c5d188d02f6f4db4303" prot="public">
+          <name>IMD</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a5c9bd57c4115223d6c0954b9c2438262" prot="public">
+          <name>PDU</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>ID for external devices, which allows us to know what&apos;s good with them. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="204" column="24" bodyfile="Core/Inc/uvfr_utils.h" bodystart="204" bodyend="209"/>
+      </memberdef>
+      <memberdef kind="enum" id="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8c" prot="public" static="no" strong="no">
+        <type></type>
+        <name>access_control_t</name>
+        <enumvalue id="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8cafa7de31bfd82966f6473ed632aaf4358" prot="public">
+          <name>UV_NONE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8ca2b6a5d6871e45de18fab3b20d5eb415b" prot="public">
+          <name>UV_DUMB_FLAG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8ca2730429072de1e61487e948824682288" prot="public">
+          <name>UV_MUTEX</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8cafd11e147a45f39dc7384973d2d413cb8" prot="public">
+          <name>UV_BINARY_SEMAPHORE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8ca3f79dc438166cce27d710db648212f3f" prot="public">
+          <name>UV_SEMAPHORE</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="211" column="30" bodyfile="Core/Inc/uvfr_utils.h" bodystart="211" bodyend="217"/>
+      </memberdef>
+      <memberdef kind="enum" id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0" prot="public" static="no" strong="no">
+        <type></type>
+        <name>uv_msg_type_t</name>
+        <enumvalue id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a177375f17a35e857332eaa8257d69828" prot="public">
+          <name>UV_TASK_START_COMMAND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a2c3c485ade048e2c4f5ea03084ec8303" prot="public">
+          <name>UV_TASK_DELETE_COMMAND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0ae0d7301df0967632c5ee33579903e3c0" prot="public">
+          <name>UV_TASK_SUSPEND_COMMAND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a316743e83f3e750384743efc5d0fc222" prot="public">
+          <name>UV_COMMAND_ACKNOWLEDGEMENT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a01bdfc6895e649a6e3a8ab2753c91e98" prot="public">
+          <name>UV_TASK_STATUS_REPORT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0aaf1294570b3749c466ed23c61b36a2da" prot="public">
+          <name>UV_ERROR_REPORT</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0ac15cb73f9ea395ab88e1ed539f448bd9" prot="public">
+          <name>UV_WAKEUP</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0ab101873d13add058eea62b85ba752394" prot="public">
+          <name>UV_PARAM_REQUEST</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a62f939f7ac5c846756ae44422f04b6f3" prot="public">
+          <name>UV_PARAM_READY</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a6a2bfefeed4656cb00151759346573f7" prot="public">
+          <name>UV_RAW_DATA_TRANSFER</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0ad11ac6253dd171a0da8ddbe8f22b8922" prot="public">
+          <name>UV_SC_COMMAND</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a1656d54e7fad0fc7b4ea4b113a866eae" prot="public">
+          <name>UV_INVALID_MSG</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a2cba2eda91eccb3d355a0f2dc64f8a36" prot="public">
+          <name>UV_ASSIGN_TASK</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum dictating the meaning of a generic message. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="222" column="27" bodyfile="Core/Inc/uvfr_utils.h" bodystart="222" bodyend="237"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="uvfr__utils_8h_1a0ecf26b576b9a54eca656b9be7ba6a06" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t bool</definition>
+        <argsstring></argsstring>
+        <name>bool</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="134" column="17" bodyfile="Core/Inc/uvfr_utils.h" bodystart="134" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1aa6ffd72eb4909ddb38c37a1369e13f09" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t uv_task_id</definition>
+        <argsstring></argsstring>
+        <name>uv_task_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="135" column="17" bodyfile="Core/Inc/uvfr_utils.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1ae1b70a2c1baa7da5592e7324008636e4" prot="public" static="no">
+        <type>enum <ref refid="group__state__engine__api_1gaf11e8677926913f2dd803fabbed3455c" kindref="member">uv_task_cmd_e</ref></type>
+        <definition>typedef enum uv_task_cmd_e uv_task_cmd</definition>
+        <argsstring></argsstring>
+        <name>uv_task_cmd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="135" column="17" bodyfile="Core/Inc/uvfr_utils.h" bodystart="136" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1a96651e94773864de5bcf9028ab64ad19" prot="public" static="no">
+        <type>uint8_t</type>
+        <definition>typedef uint8_t uv_ext_device_id</definition>
+        <argsstring></argsstring>
+        <name>uv_ext_device_id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="138" column="17" bodyfile="Core/Inc/uvfr_utils.h" bodystart="138" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1af1ca0b89ee88cdf48a7640d6ec793350" prot="public" static="no">
+        <type>uint32_t</type>
+        <definition>typedef uint32_t uv_timespan_ms</definition>
+        <argsstring></argsstring>
+        <name>uv_timespan_ms</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="139" column="18" bodyfile="Core/Inc/uvfr_utils.h" bodystart="139" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1aef3770e45bbacbf527fd93dd80eea9b9" prot="public" static="no">
+        <type>enum <ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9e" kindref="member">uv_status_t</ref></type>
+        <definition>typedef enum uv_status_t uv_status</definition>
+        <argsstring></argsstring>
+        <name>uv_status</name>
+        <briefdescription>
+<para>This is meant to be a return type from functions that indicates what is actually going on. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Use this as a return value for functions you want to know the success of. In general, any function you write must return something, as well as account for any possible errors that may have occurred. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="171" column="10"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1a25c322a5b050bc1ab514e6d3e47c56a5" prot="public" static="no">
+        <type>enum <ref refid="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8c" kindref="member">access_control_t</ref></type>
+        <definition>typedef enum access_control_t access_control_type</definition>
+        <argsstring></argsstring>
+        <name>access_control_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="217" column="20"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1ae0e8ee9ac0315ecdd228d9358e395c3d" prot="public" static="no">
+        <type>enum <ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0" kindref="member">uv_msg_type_t</ref></type>
+        <definition>typedef enum uv_msg_type_t uv_msg_type</definition>
+        <argsstring></argsstring>
+        <name>uv_msg_type</name>
+        <briefdescription>
+<para>Enum dictating the meaning of a generic message. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="237" column="12"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1a93fd2ffb9029bc071a783fbfe4e3fcc9" prot="public" static="no">
+        <type>union <ref refid="unionaccess__control__info" kindref="compound">access_control_info</ref></type>
+        <definition>typedef union access_control_info access_control_info</definition>
+        <argsstring></argsstring>
+        <name>access_control_info</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="259" column="20"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1ad857192b5d0529e73642f1293d6bed75" prot="public" static="no">
+        <type>struct <ref refid="structuv___c_a_n__msg" kindref="compound">uv_CAN_msg</ref></type>
+        <definition>typedef struct uv_CAN_msg uv_CAN_msg</definition>
+        <argsstring></argsstring>
+        <name>uv_CAN_msg</name>
+        <briefdescription>
+<para>Representative of a CAN message. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="278" column="11"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1a43d8765a7826292bdbd7d5d9f6b865fd" prot="public" static="no">
+        <type>struct <ref refid="structuv__init__struct" kindref="compound">uv_init_struct</ref></type>
+        <definition>typedef struct uv_init_struct uv_init_struct</definition>
+        <argsstring></argsstring>
+        <name>uv_init_struct</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>contains info relevant to initializing the vehicle </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="287" column="15"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1af54e76be0a4de86596cdf342473361e3" prot="public" static="no">
+        <type>struct <ref refid="structuv__task__msg__t" kindref="compound">uv_task_msg_t</ref></type>
+        <definition>typedef struct uv_task_msg_t uv_task_msg</definition>
+        <argsstring></argsstring>
+        <name>uv_task_msg</name>
+        <briefdescription>
+<para>Struct containing a message between two tasks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a generic type that is best used in situations where the message could mean a variety of different things. For niche applications or where efficiency is paramount, we recommend creating a bespoke protocol. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="309" column="12"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1a861993718f780fec899b00c842bae43b" prot="public" static="no">
+        <type>struct <ref refid="structp__status" kindref="compound">p_status</ref></type>
+        <definition>typedef struct p_status p_status</definition>
+        <argsstring></argsstring>
+        <name>p_status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="321" column="9"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1a22371cac9dbfb95de19acc59e359d3df" prot="public" static="no">
+        <type>struct <ref refid="structuv__init__task__args" kindref="compound">uv_init_task_args</ref></type>
+        <definition>typedef struct uv_init_task_args uv_init_task_args</definition>
+        <argsstring></argsstring>
+        <name>uv_init_task_args</name>
+        <briefdescription>
+<para>Struct designed to act like the <computeroutput><ref refid="structuv__task__info" kindref="compound">uv_task_info</ref></computeroutput> struct, but for the initialisation tasks. As a result it takes fewer arguments. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="333" column="18"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1ab92fc0d70c77e3d9bf8b15b5f9cb91a8" prot="public" static="no">
+        <type>struct <ref refid="structuv__internal__params" kindref="compound">uv_internal_params</ref></type>
+        <definition>typedef struct uv_internal_params uv_internal_params</definition>
+        <argsstring></argsstring>
+        <name>uv_internal_params</name>
+        <briefdescription>
+<para>Data used by the uvfr_utils library to do what it needs to do :) </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is a global variable that is initialized at some point at launch </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="346" column="19"/>
+      </memberdef>
+      <memberdef kind="typedef" id="uvfr__utils_8h_1a8e8a2c49abd23762e28f61fe5c9cb882" prot="public" static="no">
+        <type>struct <ref refid="structuv__init__task__response" kindref="compound">uv_init_task_response</ref></type>
+        <definition>typedef struct uv_init_task_response uv_init_task_response</definition>
+        <argsstring></argsstring>
+        <name>uv_init_task_response</name>
+        <briefdescription>
+<para>Struct representing the response of one of the initialization tasks. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Is returned in the initialization queue, and is read by <computeroutput><ref refid="uvfr__utils_8h_1a6d40598f9d8daa89ca159a2e87f4fd01" kindref="member">uvInit()</ref></computeroutput> to determine whether the initialization of the internal device has failed or succeeded. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="360" column="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="uvfr__utils_8h_1a660f31748ce0b90d471a4f5441ee3cb1" prot="public" static="no" mutable="no">
+        <type><ref refid="structuv__internal__params" kindref="compound">uv_internal_params</ref></type>
+        <definition>uv_internal_params global_context</definition>
+        <argsstring></argsstring>
+        <name>global_context</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="365" column="27" declfile="Core/Inc/uvfr_utils.h" declline="365" declcolumn="27"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="uvfr__utils_8h_1a6d40598f9d8daa89ca159a2e87f4fd01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void uvInit</definition>
+        <argsstring>(void *arguments)</argsstring>
+        <name>uvInit</name>
+        <param>
+          <type>void *</type>
+          <declname>arguments</declname>
+        </param>
+        <briefdescription>
+<para>: Function that initializes all of the car&apos;s stuff. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This is an RTOS task, and it serves to setup all of the car&apos;s different functions. at this point in our execution, we have already initialized all of our favorite hardware peripherals using HAL. Now we get to configure our convoluted system of OS-level settings and state machines.</para>
+<para>It executes the following functions, in order:<itemizedlist>
+<listitem><para>Load Vehicle Settings</para>
+</listitem><listitem><para>Initialize and Start State Machine</para>
+</listitem><listitem><para>Start Service Tasks, such as CAN, ADC, etc...</para>
+</listitem><listitem><para>Initialize External Devices such as BMS, IMD, Motor Controller</para>
+</listitem><listitem><para>Validate that these devices have actually booted up</para>
+</listitem><listitem><para>Set vehicle state to <computeroutput>UV_READY</computeroutput> </para>
+<para>Pretty important shit if you ask me. </para>
+</listitem></itemizedlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para>First on the block is our settings. The uv_settings are a bit strange, in the following way. We will check if we have saved custom settings, or if these settings are the default or not. It will then perform a checksum on the settings, and validate them to ensure they are safe If it fails to validate the settings, it will attempt to return to factory default.</para>
+<para>If it is unable to return even to factory default settings, then we are in HUGE trouble, and some catastrophic bug has occurred. If it fails to even start this, it will not be safe to drive We must therefore panic.</para>
+<para>Next up we will attempt to initialize the state engine. If this fails, then we are in another case where we are genuinely unsafe to drive. This will create the prototypes for a bajillion tasks that will be started and stopped. Which tasks are currently running, depends on the whims of the state engine. Since the state engine is critical to our ability to handle errors and implausibilitys, we cannot proceed without a fully operational state engine.</para>
+<para>Once the state machine is initialized we get to actually start the thing.</para>
+<para>Once we have initialized the state engine, what we want to do is create the prototypes of all the tasks that will be running.</para>
+<para>Now we are going to create a bunch of tasks that will initialize our car&apos;s external devices. The reason that these are RTOS tasks, is that it takes a buncha time to verify the existance of some devices. As a direct result, we can sorta just wait around and check that each task sends a message confirming that it has successfully executed. :) However, first we need to actually create a Queue for these tasks to use <programlisting><codeline><highlight class="normal"><sp/><sp/>/</highlight></codeline>
+<codeline><highlight class="normal">QueueHandle_t<sp/>init_validation_queue<sp/>=<sp/>xQueueCreate(8,sizeof(uv_init_task_response));</highlight></codeline>
+<codeline><highlight class="normal">if(init_validation_queue<sp/>==<sp/>NULL){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>__uvInitPanic();</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**<sp/></highlight></codeline>
+</programlisting> The next big thing on our plate is checking the status of all external devices we need, and initializing them with appropriate parameters. These are split into tasks because it takes a bit of time, especially for devices that need to be configured via CANBus such as the motor controller. That is why it is split the way it is, to allow these to run somewhat concurrently <programlisting><codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">BaseType_t<sp/>retval;</highlight></codeline>
+<codeline><highlight class="normal">//osThreadDef_t<sp/>MC_init_thread<sp/>=<sp/>{&quot;MC_init&quot;,MC_Startup,osPriorityNormal,128,0};</highlight></codeline>
+<codeline><highlight class="normal">uv_init_task_args*<sp/>MC_init_args<sp/>=<sp/>uvMalloc(sizeof(uv_init_task_args));</highlight></codeline>
+<codeline><highlight class="normal">MC_init_args-&gt;init_info_queue<sp/>=<sp/>init_validation_queue;</highlight></codeline>
+<codeline><highlight class="normal">MC_init_args-&gt;specific_args<sp/>=<sp/>&amp;(current_vehicle_settings-&gt;mc_settings);</highlight></codeline>
+<codeline><highlight class="normal">//MC_init_args-&gt;meta_task_handle<sp/>=<sp/>osThreadCreate(&amp;MC_init_thread,MC_init_args);</highlight></codeline>
+<codeline><highlight class="normal">//vTaskResume(<sp/>MC_init_args-&gt;meta_task_handle<sp/>);</highlight></codeline>
+<codeline><highlight class="normal">retval<sp/>=<sp/>xTaskCreate(MC_Startup,&quot;MC_init&quot;,128,MC_init_args,osPriorityAboveNormal,&amp;(MC_init_args-&gt;meta_task_handle));</highlight></codeline>
+<codeline><highlight class="normal">if(retval<sp/>!=<sp/>pdPASS){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//FUCK</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>error_msg<sp/>=<sp/>&quot;bruh&quot;;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">/**<sp/></highlight></codeline>
+</programlisting> This thread is for initializing the BMS <programlisting><codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">//osThreadDef_t<sp/>BMS_init_thread<sp/>=<sp/>{&quot;BMS_init&quot;,BMS_Init,osPriorityNormal,128,0};</highlight></codeline>
+<codeline><highlight class="normal">uv_init_task_args*<sp/>BMS_init_args<sp/>=<sp/>uvMalloc(sizeof(uv_init_task_args));</highlight></codeline>
+<codeline><highlight class="normal">BMS_init_args-&gt;init_info_queue<sp/>=<sp/>init_validation_queue;</highlight></codeline>
+<codeline><highlight class="normal">BMS_init_args-&gt;specific_args<sp/>=<sp/>&amp;(current_vehicle_settings-&gt;bms_settings);</highlight></codeline>
+<codeline><highlight class="normal">//BMS_init_args-&gt;meta_task_handle<sp/>=<sp/>osThreadCreate(&amp;BMS_init_thread,BMS_init_args);</highlight></codeline>
+<codeline><highlight class="normal">retval<sp/>=<sp/>xTaskCreate(BMS_Init,&quot;BMS_init&quot;,128,BMS_init_args,osPriorityAboveNormal,&amp;(BMS_init_args-&gt;meta_task_handle));</highlight></codeline>
+<codeline><highlight class="normal">if(retval<sp/>!=<sp/>pdPASS){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>//FUCK</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>error_msg<sp/>=<sp/>&quot;bruh&quot;;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline><highlight class="normal">/**<sp/></highlight></codeline>
+</programlisting> This variable is a tracker that tracks which devices have successfully initialized <programlisting><codeline><highlight class="normal"><sp/>*/</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">uv_init_task_args*<sp/>IMD_init_args<sp/>=<sp/>uvMalloc(sizeof(uv_init_task_args));</highlight></codeline>
+<codeline><highlight class="normal">IMD_init_args-&gt;init_info_queue<sp/>=<sp/>init_validation_queue;</highlight></codeline>
+<codeline><highlight class="normal">IMD_init_args-&gt;specific_args<sp/>=<sp/>&amp;(current_vehicle_settings-&gt;imd_settings);</highlight></codeline>
+<codeline><highlight class="normal">retval<sp/>=<sp/>xTaskCreate(initIMD,&quot;BMS_init&quot;,128,IMD_init_args,osPriorityAboveNormal,&amp;(IMD_init_args-&gt;meta_task_handle));</highlight></codeline>
+<codeline><highlight class="normal">if(retval<sp/>!=<sp/>pdPASS){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//FUCK</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>error_msg<sp/>=<sp/>&quot;bruh&quot;;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">uv_init_task_args*<sp/>PDU_init_args<sp/>=<sp/>uvMalloc(sizeof(uv_init_task_args));</highlight></codeline>
+<codeline><highlight class="normal">PDU_init_args-&gt;init_info_queue<sp/>=<sp/>init_validation_queue;</highlight></codeline>
+<codeline><highlight class="normal">PDU_init_args-&gt;specific_args<sp/>=<sp/>&amp;(current_vehicle_settings-&gt;imd_settings);</highlight></codeline>
+<codeline><highlight class="normal">retval<sp/>=<sp/>xTaskCreate(initPDU,&quot;PDU_init&quot;,128,PDU_init_args,osPriorityAboveNormal,&amp;(PDU_init_args-&gt;meta_task_handle));<sp/>//pass<sp/>in<sp/>the<sp/>right<sp/>settings,<sp/>dumdum</highlight></codeline>
+<codeline><highlight class="normal">if(retval<sp/>!=<sp/>pdPASS){</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//FUCK</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/>error_msg<sp/>=<sp/>&quot;bruh&quot;;</highlight></codeline>
+<codeline><highlight class="normal">}</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">uint16_t<sp/>ext_devices_status<sp/>=<sp/>0x000F;<sp/>//Tracks<sp/>which<sp/>devices<sp/>are<sp/>currently<sp/>setup</highlight></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">/**<sp/></highlight></codeline>
+</programlisting></para>
+<para>Wait for all the spawned in tasks to do their thing. This should not take that long, but we wanna be sure that everything is chill If we are say, missing a BMS, then it will not allow you to proceed past the initialisation step This is handled by a message buffer, that takes inputs from all of the tasks</para>
+<para>We allocate space for a response from the initialization.</para>
+<para>Clean up, clean up, everybody clean up, clean up, clean up, everybody do your share! The following code cleans up all the threads that were running, and free up used memory</para>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="368" column="6" bodyfile="Core/Src/uvfr_utils.c" bodystart="39" bodyend="231" declfile="Core/Inc/uvfr_utils.h" declline="368" declcolumn="6"/>
+        <references refid="uvfr__utils_8c_1a92b5ac44171d49acd084c274385a043a" compoundref="uvfr__utils_8c" startline="271" endline="285">__uvInitPanic</references>
+        <references refid="bms_8h_1aa9af83736568f74c94d41f3f16adf513" compoundref="bms_8c" startline="11" endline="27">BMS_Init</references>
+        <references refid="structuv__vehicle__settings_1a6cdca5b5474080f1dff4d19ef96435e1" compoundref="uvfr__settings_8h" startline="40">uv_vehicle_settings::bms_settings</references>
+        <references refid="group__state__engine__api_1gaa3ad3e8df75177c00265881c16563212" compoundref="uvfr__state__engine_8c" startline="99" endline="156">changeVehicleState</references>
+        <references refid="uvfr__settings_8h_1a03566822d1b8893362970a459bd67daf" compoundref="uvfr__settings_8c" startline="15">current_vehicle_settings</references>
+        <references refid="structuv__init__task__response_1adfcb943d08344e528ad3d49c5c428918" compoundref="uvfr__utils_8h" startline="357">uv_init_task_response::device</references>
+        <references refid="structuv__init__task__response_1af29fdddeaddc456d2028cc1ad471bae1" compoundref="uvfr__utils_8h" startline="359">uv_init_task_response::errmsg</references>
+        <references refid="structuv__vehicle__settings_1a5b56318f394bef60ff7da0b4995183e0" compoundref="uvfr__settings_8h" startline="39">uv_vehicle_settings::imd_settings</references>
+        <references refid="uvfr__utils_8h_1a4808a3bb38a3243b37a3690b9a02eba7" compoundref="uvfr__utils_8h" startline="146">INIT_CHECK_PERIOD</references>
+        <references refid="structuv__init__task__args_1adec47e7a54822cacfb8fcfc35a22157f" compoundref="uvfr__utils_8h" startline="331">uv_init_task_args::init_info_queue</references>
+        <references refid="uvfr__utils_8c_1a142da7a698285a444ffffb0d1d791023" compoundref="freertos_8c" startline="51">init_task_handle</references>
+        <references refid="imd_8h_1a19b4fd879f065cfe6e1b7bb3400cd0c3" compoundref="imd_8c" startline="554" endline="566">initIMD</references>
+        <references refid="pdu_8h_1afaa6671d51bcd0687c87ac635ff70d95" compoundref="pdu_8c" startline="183" endline="195">initPDU</references>
+        <references refid="uvfr__utils_8h_1a40d625666ff5a3c5918ec7591f0628ed" compoundref="uvfr__utils_8h" startline="145">MAX_INIT_TIME</references>
+        <references refid="structuv__vehicle__settings_1ad0b0375d2c1674abc6f972eec47e9cb7" compoundref="uvfr__settings_8h" startline="35">uv_vehicle_settings::mc_settings</references>
+        <references refid="motor__controller_8h_1aed1407e1e0fd59dc7c5e5d6db671f0ab" compoundref="motor__controller_8c" startline="739" endline="803">MC_Startup</references>
+        <references refid="structuv__init__task__args_1a3b81430245e7f832dc1112e53b0ef7ad" compoundref="uvfr__utils_8h" startline="332">uv_init_task_args::meta_task_handle</references>
+        <references refid="structuv__init__task__response_1ab0bb4394cc62070f8d366ab3a55ff227" compoundref="uvfr__utils_8h" startline="358">uv_init_task_response::nchar</references>
+        <references refid="structuv__init__task__args_1a61a9b579a1e65a3875a4edf3201a39f3" compoundref="uvfr__utils_8h" startline="330">uv_init_task_args::specific_args</references>
+        <references refid="structuv__init__task__response_1a56b3df74c10cdc59e8e1b9d4c1f36af7" compoundref="uvfr__utils_8h" startline="356">uv_init_task_response::status</references>
+        <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
+        <references refid="group__state__engine__api_1gga259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8" compoundref="uvfr__state__engine_8h" startline="83">UV_READY</references>
+        <references refid="group__state__engine__api_1ga5c608f3832c45eac6e2da198d4ef1ba0" compoundref="uvfr__state__engine_8c" startline="164" endline="185">uvInitStateEngine</references>
+        <references refid="uvfr__settings_8h_1a80856a38d7040ca10b8106ff0fa4acf4" compoundref="uvfr__settings_8c" startline="64" endline="86">uvSettingsInit</references>
+        <references refid="group__state__engine__api_1ga2ad1d74b5783a51355c047be6642fab8" compoundref="uvfr__state__engine_8c" startline="192" endline="246">uvStartStateMachine</references>
+        <referencedby refid="main_8c_1abade755e13d07c10889ae83143656158" compoundref="freertos_8c" startline="160" endline="201">MX_FREERTOS_Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="uvfr__utils_8h_1a92b5ac44171d49acd084c274385a043a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void __uvInitPanic</definition>
+        <argsstring>()</argsstring>
+        <name>__uvInitPanic</name>
+        <briefdescription>
+<para>Low Level Panic, that does not require the full UVFR utils functionality to be operational. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="attention"><para>Calling _uvInitPanic() is irreversable and will cause the vehicle to hang itself. This is only to be used as a last resort to stop the vehicle from entering an invalid state. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="370" column="6" bodyfile="Core/Src/uvfr_utils.c" bodystart="271" bodyend="285" declfile="Core/Inc/uvfr_utils.h" declline="370" declcolumn="6"/>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
+        <referencedby refid="group__state__engine__api_1ga5c608f3832c45eac6e2da198d4ef1ba0" compoundref="uvfr__state__engine_8c" startline="164" endline="185">uvInitStateEngine</referencedby>
+        <referencedby refid="group__state__engine_1gaff684308203d45e9e16ad3d115c54279" compoundref="uvfr__state__engine_8c" startline="1341" endline="1398">uvSVCTaskManager</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="uvfr__utils_8h_1a0186c036688c7852cf0ceaee96b343a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="can_8h_1aef3770e45bbacbf527fd93dd80eea9b9" kindref="member">uv_status</ref></type>
+        <definition>uv_status uvIsPTRValid</definition>
+        <argsstring>(void *ptr)</argsstring>
+        <name>uvIsPTRValid</name>
+        <param>
+          <type>void *</type>
+          <declname>ptr</declname>
+        </param>
+        <briefdescription>
+<para>function that checks to make sure a pointer points to a place it is allowed to point to </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The primary motivation for this is to avoid trying to dereference a pointer that doesnt exist, and triggering the <computeroutput>HardFaultHandler()</computeroutput>. That is never a fun time. This allows us to exit gracefully instead of getting stuck in an IRQ handler</para>
+<para>Exiting gracefully can be pretty neat sometimes. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/uvfr_utils.h" line="395" column="11" bodyfile="Core/Src/uvfr_utils.c" bodystart="401" bodyend="458" declfile="Core/Inc/uvfr_utils.h" declline="395" declcolumn="11"/>
+        <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" compoundref="uvfr__utils_8h" startline="169">UV_ERROR</references>
+        <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" compoundref="uvfr__utils_8h" startline="167">UV_OK</references>
+        <references refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea87c01f9029276637a8c9568fd67efcac" compoundref="uvfr__utils_8h" startline="168">UV_WARNING</references>
+        <referencedby refid="uvfr__utils_8c_1ad372aabf81974eb44819f326172a563b" compoundref="uvfr__utils_8c" startline="328" endline="345">__uvFreeCritSection</referencedby>
+        <referencedby refid="uvfr__utils_8c_1a67fb0753300c33287657882ccff64e42" compoundref="uvfr__utils_8c" startline="379" endline="391">__uvFreeOS</referencedby>
+        <referencedby refid="uvfr__utils_8c_1a498966c0f95bfa592d26b625a93fa1a3" compoundref="uvfr__utils_8c" startline="353" endline="374">__uvMallocOS</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="author"><para>Byron Oser </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"></codeline>
+<codeline lineno="21"><highlight class="preprocessor">#ifndef<sp/>INC_UVFR_UTILS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INC_UVFR_UTILS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="uvfr__global__config_8h" kindref="compound">uvfr_global_config.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;cmsis_os.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="adc_8h" kindref="compound">adc.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="can_8h" kindref="compound">can.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dma_8h" kindref="compound">dma.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="tim_8h" kindref="compound">tim.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="gpio_8h" kindref="compound">gpio.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="spi_8h" kindref="compound">spi.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;FreeRTOS.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;task.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;message_buffer.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="uvfr__settings_8h" kindref="compound">uvfr_settings.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="uvfr__state__engine_8h" kindref="compound">uvfr_state_engine.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="rb__tree_8h" kindref="compound">rb_tree.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="bms_8h" kindref="compound">bms.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="motor__controller_8h" kindref="compound">motor_controller.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="dash_8h" kindref="compound">dash.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="imd_8h" kindref="compound">imd.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="pdu_8h" kindref="compound">pdu.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="daq_8h" kindref="compound">daq.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">//Only<sp/>used<sp/>for<sp/>debugging</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="oled_8h" kindref="compound">oled.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">//mainstay<sp/>meat<sp/>and<sp/>potatoes<sp/>tasks</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="driving__loop_8h" kindref="compound">driving_loop.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="temp__monitoring_8h" kindref="compound">temp_monitoring.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="odometer_8h" kindref="compound">odometer.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="_free_r_t_o_s_config_8h" kindref="compound">FreeRTOSConfig.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">//#include<sp/>&quot;stdlib.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;stdint.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stdlib.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight></codeline>
+<codeline lineno="69" refid="group__utility__macros_1ga483c9de27db573099572f5485ef841c9" refkind="member"><highlight class="preprocessor">#define<sp/>_BV(x)<sp/>_BV_16(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70" refid="group__utility__macros_1gadb4693d786f01e486ce4191758995c8f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_BV_8(x)<sp/>((uint8_t)(0x01U<sp/>&gt;&gt;<sp/>x))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71" refid="group__utility__macros_1gaa17e4b09cf528c30099398ddedc48955" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_BV_16(x)<sp/>((uint16_t)(0x01U<sp/>&gt;&gt;<sp/>x))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="72" refid="group__utility__macros_1ga581e5838a8a85f12137dd310b210024d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>_BV_32(x)<sp/>((uint32_t)(0x01U<sp/>&gt;&gt;<sp/>x))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="group__utility__macros_1gac590e01547ebac3946ea03be39e9a891" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>endianSwap(x)<sp/>endianSwap16(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75" refid="group__utility__macros_1ga250d3a099625ba439eb4ba4304d5faae" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>endianSwap8(x)<sp/>x<sp/>//if<sp/>someone<sp/>calls<sp/>this,<sp/>they<sp/>are<sp/>mentally<sp/>retarded,<sp/>but<sp/>here<sp/>ya<sp/>go<sp/>I<sp/>guess</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="group__utility__macros_1gaaffae84b1475df9ae84949feb94f556b" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>endianSwap16(x)<sp/>(((x<sp/>&amp;<sp/>0x00FF)&lt;&lt;8)<sp/>|<sp/>((x<sp/>&amp;<sp/>0xFF00)&gt;&gt;8))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="77" refid="group__utility__macros_1gacb855e60a6051d73730aa95259a085af" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>endianSwap32(x)<sp/>(((x<sp/>&amp;<sp/>0x000000FF)&lt;&lt;16)|((x<sp/>&amp;<sp/>0x0000FF00)&lt;&lt;8)|((x<sp/>&amp;<sp/>0x00FF0000)&gt;&gt;8)|((x<sp/>&amp;<sp/>0xFF000000)&gt;&gt;16))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79" refid="group__utility__macros_1ga829f8b8ab166c6d07df7023ee0b68300" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>deserializeSmallE16(x,i)<sp/>((x[i])|(x[i+1]&lt;&lt;8))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="80" refid="group__utility__macros_1ga6c69adff0f827031b2ec0a2220aa1fc8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>deserializeSmallE32(x,i)<sp/>((x[i])|(x[i+1]&lt;&lt;8)|(x[i+2]&lt;&lt;16)|(x[i+3]&lt;&lt;24))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="81" refid="group__utility__macros_1gadeeabe9f9f082a786e959610607229ae" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>deserializeBigE16(x,i)<sp/>((x[i]&lt;&lt;8)|(x[i+1]))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82" refid="group__utility__macros_1ga3c5631fa43a00757c6dd44f55650b051" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>deserializeBigE32(x,i)<sp/>((x[i]&lt;&lt;24)|(x[i+1]&lt;&lt;16)|(x[i+2]&lt;&lt;8)|(x[i+3]))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84" refid="group__utility__macros_1ga5c017766f44df98dde492a5e406e221c" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>serializeSmallE16(x,d,i)<sp/>x[i]=d&amp;0x00FF;<sp/>x[i+1]=(d&amp;0xFF00)&gt;&gt;8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="85" refid="group__utility__macros_1ga0fa9d4460bcee65d79e048b43dc879fd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>serializeSmallE32(x,d,i)<sp/>x[i]=d&amp;0x000000FF;<sp/>x[i+1]=(d&amp;0x0000FF00)&gt;&gt;8;<sp/>x[i+2]=(d&amp;0x00FF0000)&gt;&gt;16;<sp/>x[i+3]=(d&amp;0xFF000000)&gt;&gt;24</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86" refid="group__utility__macros_1ga505ca43923e2bb2162e218c3b8484357" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>serializeBigE16(x,d,i)<sp/>x[i+1]=d&amp;0x00FF;<sp/>x[i]=(d&amp;0xFF00)&gt;&gt;8</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87" refid="group__utility__macros_1ga053aa19e84e50fd8c74f8d4bb0d7820f" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>serializeBigE32(x,d,i)x[i+3]=d&amp;0x000000FF;<sp/>x[i+2]=(d&amp;0x0000FF00)&gt;&gt;8;<sp/>x[i+1]=(d&amp;0x00FF0000)&gt;&gt;16;<sp/>x[i]=(d&amp;0xFF000000)&gt;&gt;24</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="112" refid="group__utility__macros_1ga50e87beac8a57dd01bdaed51450269e3" refkind="member"><highlight class="preprocessor">#define<sp/>setBits(x,msk,data)<sp/>x=(x&amp;(~msk)|data)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="113"><highlight class="normal"></highlight></codeline>
+<codeline lineno="117" refid="group__utility__macros_1gade3043fb92536f8e1a616ba8aaef4ab9" refkind="member"><highlight class="preprocessor">#define<sp/>isPowerOfTwo(x)<sp/>(x&amp;&amp;(!(x&amp;(x-1))))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="122" refid="group__utility__macros_1gaac2f65c6267d74d5d5136f82bf217efa" refkind="member"><highlight class="preprocessor">#define<sp/>safePtrRead(x)<sp/>(*((x)?x:uvPanic(&quot;nullptr_deref&quot;,0)))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123" refid="group__utility__macros_1gaf506fac19ab4ad3f5b7ddd00643e0b46" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>safePtrWrite(p,x)<sp/>(*((p)?p:&amp;x))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127" refid="group__utility__macros_1ga65e9886d74aaee76545e83dd09011727" refkind="member"><highlight class="preprocessor">#define<sp/>false<sp/>0</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="128" refid="group__utility__macros_1ga41f9c5fb8b08eb5dc3edce4dcb37fee7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>true<sp/>!false</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="comment">//Typedefs<sp/>used<sp/>throughout<sp/>vehicle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134" refid="uvfr__utils_8h_1a0ecf26b576b9a54eca656b9be7ba6a06" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="uvfr__utils_8h_1a0ecf26b576b9a54eca656b9be7ba6a06" kindref="member">bool</ref>;</highlight></codeline>
+<codeline lineno="135" refid="uvfr__utils_8h_1aa6ffd72eb4909ddb38c37a1369e13f09" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="uvfr__utils_8h_1aa6ffd72eb4909ddb38c37a1369e13f09" kindref="member">uv_task_id</ref>;</highlight></codeline>
+<codeline lineno="136" refid="uvfr__utils_8h_1ae1b70a2c1baa7da5592e7324008636e4" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__state__engine__api_1gaf11e8677926913f2dd803fabbed3455c" kindref="member">uv_task_cmd_e</ref><sp/><ref refid="uvfr__utils_8h_1ae1b70a2c1baa7da5592e7324008636e4" kindref="member">uv_task_cmd</ref>;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight><highlight class="comment">//typedef<sp/>enum</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138" refid="uvfr__utils_8h_1a96651e94773864de5bcf9028ab64ad19" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint8_t<sp/><ref refid="uvfr__utils_8h_1a96651e94773864de5bcf9028ab64ad19" kindref="member">uv_ext_device_id</ref>;</highlight></codeline>
+<codeline lineno="139" refid="uvfr__utils_8h_1af1ca0b89ee88cdf48a7640d6ec793350" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>uint32_t<sp/><ref refid="uvfr__utils_8h_1af1ca0b89ee88cdf48a7640d6ec793350" kindref="member">uv_timespan_ms</ref>;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight><highlight class="comment">//Time<sp/>limits<sp/>for<sp/>the<sp/>initialization.<sp/>Car<sp/>has<sp/>2.5<sp/>seconds<sp/>to<sp/>initialize<sp/>all<sp/>peripherals,<sp/>before<sp/>it<sp/>decides<sp/>that<sp/>something<sp/>has<sp/>gone<sp/>horrifically<sp/>wrong</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="145" refid="uvfr__utils_8h_1a40d625666ff5a3c5918ec7591f0628ed" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MAX_INIT_TIME<sp/>2500//if<sp/>the<sp/>car<sp/>takes<sp/>more<sp/>than<sp/>2.5<sp/>seconds<sp/>to<sp/>boot,<sp/>something<sp/>seems<sp/>a<sp/>little<sp/>fishy</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="uvfr__utils_8h_1a4808a3bb38a3243b37a3690b9a02eba7" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>INIT_CHECK_PERIOD<sp/>100</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="147"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148"><highlight class="normal"></highlight><highlight class="comment">//Memory<sp/>management<sp/>macros</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="149"><highlight class="normal"></highlight></codeline>
+<codeline lineno="150"><highlight class="normal"></highlight></codeline>
+<codeline lineno="151"><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal"></highlight><highlight class="comment">//Some<sp/>fun<sp/>CAN<sp/>macros</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="153" refid="uvfr__utils_8h_1abdad0cac69564db7eec85ef103281130" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UV_CAN1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154" refid="uvfr__utils_8h_1a0b946cc6e8a3f7995d65c1921cfe989d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UV_CAN2</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="155"><highlight class="normal"></highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight><highlight class="comment">//Feature<sp/>flags</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157" refid="uvfr__utils_8h_1a16b23f220af0f78310f4fe6cfeb6ab0d" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>USE_OLED_DEBUG<sp/>1</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="166" refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9e" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9e" kindref="member">uv_status_t</ref>{</highlight></codeline>
+<codeline lineno="167" refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea93b7493f003cb72e7b6138f2794b58e9" kindref="member">UV_OK</ref>,</highlight></codeline>
+<codeline lineno="168" refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea87c01f9029276637a8c9568fd67efcac" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea87c01f9029276637a8c9568fd67efcac" kindref="member">UV_WARNING</ref>,</highlight></codeline>
+<codeline lineno="169" refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea480ef4e56d17703f0629bfe1e06bc4f0" kindref="member">UV_ERROR</ref>,</highlight></codeline>
+<codeline lineno="170" refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a" kindref="member">UV_ABORTED</ref><sp/></highlight><highlight class="comment">//nothing<sp/>wrong<sp/>per<sp/>say,</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal">}<ref refid="uvfr__utils_8h_1aef3770e45bbacbf527fd93dd80eea9b9" kindref="member">uv_status</ref>;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177" refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="178" refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d" kindref="member">UV_UINT8</ref>,</highlight></codeline>
+<codeline lineno="179" refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318" kindref="member">UV_INT8</ref>,</highlight></codeline>
+<codeline lineno="180" refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0" kindref="member">UV_UINT16</ref>,</highlight></codeline>
+<codeline lineno="181" refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787" kindref="member">UV_INT16</ref>,</highlight></codeline>
+<codeline lineno="182" refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0" kindref="member">UV_UINT32</ref>,</highlight></codeline>
+<codeline lineno="183" refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc" kindref="member">UV_INT32</ref>,</highlight></codeline>
+<codeline lineno="184" refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9" kindref="member">UV_FLOAT</ref>,</highlight></codeline>
+<codeline lineno="185" refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038" kindref="member">UV_DOUBLE</ref>,</highlight></codeline>
+<codeline lineno="186" refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a4e148426880e8cf1e81ceea15ddf2d7a" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a4e148426880e8cf1e81ceea15ddf2d7a" kindref="member">UV_INT64</ref>,</highlight></codeline>
+<codeline lineno="187" refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a04c45245ce9c00f905a60cc34cca2de6" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a04c45245ce9c00f905a60cc34cca2de6" kindref="member">UV_UINT64</ref>,</highlight></codeline>
+<codeline lineno="188" refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de" kindref="member">UV_STRING</ref></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal">}<ref refid="uvfr__utils_8h_1ac2ad7f431e3446fddcd9b6b9f93c4c14" kindref="member">data_type</ref>;</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"></highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"></highlight><highlight class="comment">//not<sp/>really<sp/>sure<sp/>how<sp/>I<sp/>want<sp/>this<sp/>implemented<sp/>yet.<sp/>Variable<sp/>number<sp/>of<sp/>driving<sp/>modes?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="194" refid="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1" kindref="member">uv_driving_mode_t</ref>{</highlight></codeline>
+<codeline lineno="195" refid="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1aebc81705969b8c5ae986b0b2ec08d1d5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1aebc81705969b8c5ae986b0b2ec08d1d5" kindref="member">normal</ref>,</highlight></codeline>
+<codeline lineno="196" refid="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1ac67554de85b7a3c2ac961da6faf22e1e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1ac67554de85b7a3c2ac961da6faf22e1e" kindref="member">accel</ref>,</highlight></codeline>
+<codeline lineno="197" refid="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1a6e980d942af313712cd3ac6e66c002a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1a6e980d942af313712cd3ac6e66c002a5" kindref="member">econ</ref>,</highlight></codeline>
+<codeline lineno="198" refid="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1af5d257c586a4a993f56fac4a77d35531" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1acd907d24ac9b557d684429bb0cd1ddb1af5d257c586a4a993f56fac4a77d35531" kindref="member">limp</ref></highlight></codeline>
+<codeline lineno="199"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="204" refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0" refkind="member"><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0" kindref="member">uv_external_device</ref>{</highlight></codeline>
+<codeline lineno="205" refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a9c632ecb370b78547a390d1b5cf59671" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a9c632ecb370b78547a390d1b5cf59671" kindref="member">MOTOR_CONTROLLER</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="206" refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0aca1b897aad8f93e76df69c23bc732f2e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0aca1b897aad8f93e76df69c23bc732f2e" kindref="member">BMS</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="207" refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a8c41c05a63a15c5d188d02f6f4db4303" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a8c41c05a63a15c5d188d02f6f4db4303" kindref="member">IMD</ref><sp/>=<sp/>2,</highlight></codeline>
+<codeline lineno="208" refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a5c9bd57c4115223d6c0954b9c2438262" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ad70cbc8929c4ad7a5901cd9eef5ca9b0a5c9bd57c4115223d6c0954b9c2438262" kindref="member">PDU</ref><sp/>=<sp/>3</highlight></codeline>
+<codeline lineno="209"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="210"><highlight class="normal"></highlight></codeline>
+<codeline lineno="211" refid="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8c" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8c" kindref="member">access_control_t</ref>{</highlight></codeline>
+<codeline lineno="212" refid="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8cafa7de31bfd82966f6473ed632aaf4358" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8cafa7de31bfd82966f6473ed632aaf4358" kindref="member">UV_NONE</ref>,</highlight></codeline>
+<codeline lineno="213" refid="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8ca2b6a5d6871e45de18fab3b20d5eb415b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8ca2b6a5d6871e45de18fab3b20d5eb415b" kindref="member">UV_DUMB_FLAG</ref>,</highlight></codeline>
+<codeline lineno="214" refid="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8ca2730429072de1e61487e948824682288" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8ca2730429072de1e61487e948824682288" kindref="member">UV_MUTEX</ref>,</highlight></codeline>
+<codeline lineno="215" refid="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8cafd11e147a45f39dc7384973d2d413cb8" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8cafd11e147a45f39dc7384973d2d413cb8" kindref="member">UV_BINARY_SEMAPHORE</ref>,</highlight></codeline>
+<codeline lineno="216" refid="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8ca3f79dc438166cce27d710db648212f3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ac4bac060238ca2be3b3b3ca25c77cc8ca3f79dc438166cce27d710db648212f3f" kindref="member">UV_SEMAPHORE</ref></highlight></codeline>
+<codeline lineno="217"><highlight class="normal">}<ref refid="uvfr__utils_8h_1a25c322a5b050bc1ab514e6d3e47c56a5" kindref="member">access_control_type</ref>;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"></highlight></codeline>
+<codeline lineno="222" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0" refkind="member"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0" kindref="member">uv_msg_type_t</ref>{</highlight></codeline>
+<codeline lineno="223" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a177375f17a35e857332eaa8257d69828" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a177375f17a35e857332eaa8257d69828" kindref="member">UV_TASK_START_COMMAND</ref>,</highlight></codeline>
+<codeline lineno="224" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a2c3c485ade048e2c4f5ea03084ec8303" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a2c3c485ade048e2c4f5ea03084ec8303" kindref="member">UV_TASK_DELETE_COMMAND</ref>,</highlight></codeline>
+<codeline lineno="225" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0ae0d7301df0967632c5ee33579903e3c0" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0ae0d7301df0967632c5ee33579903e3c0" kindref="member">UV_TASK_SUSPEND_COMMAND</ref>,</highlight></codeline>
+<codeline lineno="226" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a316743e83f3e750384743efc5d0fc222" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a316743e83f3e750384743efc5d0fc222" kindref="member">UV_COMMAND_ACKNOWLEDGEMENT</ref>,</highlight></codeline>
+<codeline lineno="227" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a01bdfc6895e649a6e3a8ab2753c91e98" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a01bdfc6895e649a6e3a8ab2753c91e98" kindref="member">UV_TASK_STATUS_REPORT</ref>,</highlight></codeline>
+<codeline lineno="228" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0aaf1294570b3749c466ed23c61b36a2da" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0aaf1294570b3749c466ed23c61b36a2da" kindref="member">UV_ERROR_REPORT</ref>,</highlight></codeline>
+<codeline lineno="229" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0ac15cb73f9ea395ab88e1ed539f448bd9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0ac15cb73f9ea395ab88e1ed539f448bd9" kindref="member">UV_WAKEUP</ref>,</highlight></codeline>
+<codeline lineno="230" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0ab101873d13add058eea62b85ba752394" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0ab101873d13add058eea62b85ba752394" kindref="member">UV_PARAM_REQUEST</ref>,</highlight></codeline>
+<codeline lineno="231" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a62f939f7ac5c846756ae44422f04b6f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a62f939f7ac5c846756ae44422f04b6f3" kindref="member">UV_PARAM_READY</ref>,</highlight></codeline>
+<codeline lineno="232" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a6a2bfefeed4656cb00151759346573f7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a6a2bfefeed4656cb00151759346573f7" kindref="member">UV_RAW_DATA_TRANSFER</ref>,</highlight></codeline>
+<codeline lineno="233" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0ad11ac6253dd171a0da8ddbe8f22b8922" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0ad11ac6253dd171a0da8ddbe8f22b8922" kindref="member">UV_SC_COMMAND</ref>,</highlight></codeline>
+<codeline lineno="234" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a1656d54e7fad0fc7b4ea4b113a866eae" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a1656d54e7fad0fc7b4ea4b113a866eae" kindref="member">UV_INVALID_MSG</ref>,</highlight></codeline>
+<codeline lineno="235" refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a2cba2eda91eccb3d355a0f2dc64f8a36" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1ab1a7ab8d68287c5f3027a59e355d32e0a2cba2eda91eccb3d355a0f2dc64f8a36" kindref="member">UV_ASSIGN_TASK</ref></highlight></codeline>
+<codeline lineno="236"><highlight class="normal"></highlight></codeline>
+<codeline lineno="237"><highlight class="normal">}<ref refid="uvfr__utils_8h_1ae0e8ee9ac0315ecdd228d9358e395c3d" kindref="member">uv_msg_type</ref>;</highlight></codeline>
+<codeline lineno="238"><highlight class="normal"></highlight></codeline>
+<codeline lineno="239" refid="structuv__mutex__info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structuv__mutex__info" kindref="compound">uv_mutex_info</ref>{</highlight></codeline>
+<codeline lineno="240" refid="structuv__mutex__info_1af10ace48777aeac50d43a95573251885" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SemaphoreHandle_t<sp/><ref refid="structuv__mutex__info_1af10ace48777aeac50d43a95573251885" kindref="member">handle</ref>;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"></highlight></codeline>
+<codeline lineno="244" refid="structuv__binary__semaphore__info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structuv__binary__semaphore__info" kindref="compound">uv_binary_semaphore_info</ref>{</highlight></codeline>
+<codeline lineno="245" refid="structuv__binary__semaphore__info_1a0bef92923f20ad17bf1cbfba456b7c47" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SemaphoreHandle_t<sp/><ref refid="structuv__binary__semaphore__info_1a0bef92923f20ad17bf1cbfba456b7c47" kindref="member">handle</ref>;</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"></highlight></codeline>
+<codeline lineno="247"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"></highlight></codeline>
+<codeline lineno="249" refid="structuv__semaphore__info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structuv__semaphore__info" kindref="compound">uv_semaphore_info</ref>{</highlight></codeline>
+<codeline lineno="250" refid="structuv__semaphore__info_1ac9c6ddf858eba9ccf628a5e080dfb480" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>SemaphoreHandle_t<sp/><ref refid="structuv__semaphore__info_1ac9c6ddf858eba9ccf628a5e080dfb480" kindref="member">handle</ref>;</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"></highlight></codeline>
+<codeline lineno="252"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"></highlight></codeline>
+<codeline lineno="254" refid="unionaccess__control__info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">union<sp/></highlight><highlight class="normal"><ref refid="unionaccess__control__info" kindref="compound">access_control_info</ref>{</highlight></codeline>
+<codeline lineno="255" refid="unionaccess__control__info_1af0d083b46d231baa8e040c8666cbbdb3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structuv__mutex__info" kindref="compound">uv_mutex_info</ref><sp/><ref refid="unionaccess__control__info_1af0d083b46d231baa8e040c8666cbbdb3" kindref="member">mutex</ref>;</highlight></codeline>
+<codeline lineno="256" refid="unionaccess__control__info_1a0165e868a0423f7d0f5ea750ca20760e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structuv__binary__semaphore__info" kindref="compound">uv_binary_semaphore_info</ref><sp/><ref refid="unionaccess__control__info_1a0165e868a0423f7d0f5ea750ca20760e" kindref="member">bin_semaphore</ref>;</highlight></codeline>
+<codeline lineno="257" refid="unionaccess__control__info_1a62c8e641c4d4d5d778c5e0f710bbddd1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structuv__semaphore__info" kindref="compound">uv_semaphore_info</ref><sp/><ref refid="unionaccess__control__info_1a62c8e641c4d4d5d778c5e0f710bbddd1" kindref="member">semaphore</ref>;</highlight></codeline>
+<codeline lineno="258"><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal">}<ref refid="uvfr__utils_8h_1a93fd2ffb9029bc071a783fbfe4e3fcc9" kindref="member">access_control_info</ref>;</highlight></codeline>
+<codeline lineno="260"><highlight class="normal"></highlight></codeline>
+<codeline lineno="261"><highlight class="normal"></highlight></codeline>
+<codeline lineno="262" refid="uvfr__utils_8h_1aa55012016c572366a0747ff7298c7fec" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UV_CAN_EXTENDED_ID<sp/>0x01</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="263" refid="uvfr__utils_8h_1a3c2758e5f0e3f8d8e1470616418f60c8" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UV_CAN_CHANNEL_MASK<sp/>0b00000110</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="264" refid="uvfr__utils_8h_1aa6688039909b8ed4eca05ab7a36fa8bd" refkind="member"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>UV_CAN_DYNAMIC_MEM<sp/><sp/>0b00001000</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="265"><highlight class="normal"></highlight></codeline>
+<codeline lineno="266"><highlight class="normal"></highlight></codeline>
+<codeline lineno="270" refid="structuv___c_a_n__msg" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structuv___c_a_n__msg" kindref="compound">uv_CAN_msg</ref>{</highlight></codeline>
+<codeline lineno="271" refid="structuv___c_a_n__msg_1a3a3fdc7fed06a631fefa58ea44052d8d" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structuv___c_a_n__msg_1a3a3fdc7fed06a631fefa58ea44052d8d" kindref="member">flags</ref>;<sp/></highlight></codeline>
+<codeline lineno="275" refid="structuv___c_a_n__msg_1aa74af3745c8b56910d7c309245541d37" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structuv___c_a_n__msg_1aa74af3745c8b56910d7c309245541d37" kindref="member">dlc</ref>;<sp/></highlight></codeline>
+<codeline lineno="276" refid="structuv___c_a_n__msg_1aae369fbabe3cc5b71a89bb641c24aace" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structuv___c_a_n__msg_1aae369fbabe3cc5b71a89bb641c24aace" kindref="member">msg_id</ref>;<sp/></highlight></codeline>
+<codeline lineno="277" refid="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structuv___c_a_n__msg_1aec63cc112176da7895d0cfc8b32e6935" kindref="member">data</ref>[8];<sp/></highlight></codeline>
+<codeline lineno="278"><highlight class="normal">}<ref refid="uvfr__utils_8h_1ad857192b5d0529e73642f1293d6bed75" kindref="member">uv_CAN_msg</ref>;</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="284" refid="structuv__init__struct" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structuv__init__struct" kindref="compound">uv_init_struct</ref>{</highlight></codeline>
+<codeline lineno="285" refid="structuv__init__struct_1a5275182451a7f4931006e5ff393f1cdb" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="structuv__init__struct_1a5275182451a7f4931006e5ff393f1cdb" kindref="member">use_default_settings</ref>;</highlight><highlight class="comment">//Flag<sp/>for<sp/>using<sp/>default<sp/>settings</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal">}<ref refid="uvfr__utils_8h_1a43d8765a7826292bdbd7d5d9f6b865fd" kindref="member">uv_init_struct</ref>;</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"></highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="290"><highlight class="normal"></highlight></codeline>
+<codeline lineno="291"><highlight class="normal"></highlight></codeline>
+<codeline lineno="292"><highlight class="normal"></highlight></codeline>
+<codeline lineno="293"><highlight class="normal"></highlight></codeline>
+<codeline lineno="294"><highlight class="normal"></highlight></codeline>
+<codeline lineno="301" refid="structuv__task__msg__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structuv__task__msg__t" kindref="compound">uv_task_msg_t</ref>{</highlight></codeline>
+<codeline lineno="302" refid="structuv__task__msg__t_1a55ec83138e3f306f2a54059835a86b4f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint32_t<sp/><ref refid="structuv__task__msg__t_1a55ec83138e3f306f2a54059835a86b4f" kindref="member">message_type</ref>;</highlight></codeline>
+<codeline lineno="303" refid="structuv__task__msg__t_1ac308e85e87284abc3a1edc9e9fb963e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structuv__task__info" kindref="compound">uv_task_info</ref>*<sp/><ref refid="structuv__task__msg__t_1ac308e85e87284abc3a1edc9e9fb963e1" kindref="member">sender</ref>;</highlight></codeline>
+<codeline lineno="304" refid="structuv__task__msg__t_1a08a1b8f5551ea5ca5694bf764b6a9ca5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structuv__task__info" kindref="compound">uv_task_info</ref>*<sp/><ref refid="structuv__task__msg__t_1a08a1b8f5551ea5ca5694bf764b6a9ca5" kindref="member">intended_recipient</ref>;</highlight></codeline>
+<codeline lineno="305" refid="structuv__task__msg__t_1a3f1a92858e8ce24bdfde9ee72be4c8aa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TickType_t<sp/><ref refid="structuv__task__msg__t_1a3f1a92858e8ce24bdfde9ee72be4c8aa" kindref="member">time_sent</ref>;</highlight></codeline>
+<codeline lineno="306" refid="structuv__task__msg__t_1a2fc3897d5e2c4f0b92f3dee0981a7182" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="structuv__task__msg__t_1a2fc3897d5e2c4f0b92f3dee0981a7182" kindref="member">message_size</ref>;</highlight></codeline>
+<codeline lineno="307" refid="structuv__task__msg__t_1a4d48277de745dfd9168f7809af04ef3f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="structuv__task__msg__t_1a4d48277de745dfd9168f7809af04ef3f" kindref="member">msg_contents</ref>;</highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal">}<ref refid="uvfr__utils_8h_1af54e76be0a4de86596cdf342473361e3" kindref="member">uv_task_msg</ref>;</highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight></codeline>
+<codeline lineno="315"><highlight class="normal"></highlight></codeline>
+<codeline lineno="316"><highlight class="normal"></highlight></codeline>
+<codeline lineno="317" refid="structp__status" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structp__status" kindref="compound">p_status</ref>{</highlight></codeline>
+<codeline lineno="318" refid="structp__status_1a4053f93722537baa0dd9c8ffe6d6fb58" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="can_8h_1aef3770e45bbacbf527fd93dd80eea9b9" kindref="member">uv_status</ref><sp/><ref refid="structp__status_1a4053f93722537baa0dd9c8ffe6d6fb58" kindref="member">peripheral_status</ref>;</highlight></codeline>
+<codeline lineno="319" refid="structp__status_1a2e584964eb592d625397399d090bb7ba" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TickType_t<sp/><ref refid="structp__status_1a2e584964eb592d625397399d090bb7ba" kindref="member">activation_time</ref>;</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"></highlight></codeline>
+<codeline lineno="321"><highlight class="normal">}<ref refid="uvfr__utils_8h_1a861993718f780fec899b00c842bae43b" kindref="member">p_status</ref>;</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"></highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="329" refid="structuv__init__task__args" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structuv__init__task__args" kindref="compound">uv_init_task_args</ref>{</highlight></codeline>
+<codeline lineno="330" refid="structuv__init__task__args_1a61a9b579a1e65a3875a4edf3201a39f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="structuv__init__task__args_1a61a9b579a1e65a3875a4edf3201a39f3" kindref="member">specific_args</ref>;<sp/></highlight><highlight class="comment">//anything<sp/>specific<sp/>here?<sp/>This<sp/>probably<sp/>comes<sp/>from<sp/>the<sp/>device<sp/>settings.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="331" refid="structuv__init__task__args_1adec47e7a54822cacfb8fcfc35a22157f" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>QueueHandle_t<sp/><ref refid="structuv__init__task__args_1adec47e7a54822cacfb8fcfc35a22157f" kindref="member">init_info_queue</ref>;<sp/></highlight><highlight class="comment">//reference<sp/>to<sp/>the<sp/>initialisation<sp/>queue</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="332" refid="structuv__init__task__args_1a3b81430245e7f832dc1112e53b0ef7ad" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>TaskHandle_t<sp/><ref refid="structuv__init__task__args_1a3b81430245e7f832dc1112e53b0ef7ad" kindref="member">meta_task_handle</ref>;<sp/></highlight><highlight class="comment">//Handle<sp/>to<sp/>itself,<sp/>which<sp/>it<sp/>can<sp/>use<sp/>to<sp/>delete<sp/>itself</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="333"><highlight class="normal">}<ref refid="uvfr__utils_8h_1a22371cac9dbfb95de19acc59e359d3df" kindref="member">uv_init_task_args</ref>;</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"></highlight></codeline>
+<codeline lineno="335"><highlight class="normal"></highlight></codeline>
+<codeline lineno="341" refid="structuv__internal__params" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structuv__internal__params" kindref="compound">uv_internal_params</ref>{</highlight></codeline>
+<codeline lineno="342" refid="structuv__internal__params_1a2d9661461ade0854d6f1082af72efb62" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structuv__init__struct" kindref="compound">uv_init_struct</ref>*<sp/><ref refid="structuv__internal__params_1a2d9661461ade0854d6f1082af72efb62" kindref="member">init_params</ref>;</highlight></codeline>
+<codeline lineno="343" refid="structuv__internal__params_1ae2718f795900eeef5b28e3696c96a675" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structuv__vehicle__settings" kindref="compound">uv_vehicle_settings</ref>*<sp/><ref refid="structuv__internal__params_1ae2718f795900eeef5b28e3696c96a675" kindref="member">vehicle_settings</ref>;</highlight></codeline>
+<codeline lineno="344" refid="structuv__internal__params_1a89db87ec62e0afc9c0ef6a9c327df2c3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structp__status" kindref="compound">p_status</ref><sp/><ref refid="structuv__internal__params_1a89db87ec62e0afc9c0ef6a9c327df2c3" kindref="member">peripheral_status</ref>[8];</highlight></codeline>
+<codeline lineno="345" refid="structuv__internal__params_1a12f5abffdd80a5b28d8bbfaf9e310336" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint16_t<sp/><ref refid="structuv__internal__params_1a12f5abffdd80a5b28d8bbfaf9e310336" kindref="member">e_code</ref>[8];</highlight></codeline>
+<codeline lineno="346"><highlight class="normal">}<ref refid="uvfr__utils_8h_1ab92fc0d70c77e3d9bf8b15b5f9cb91a8" kindref="member">uv_internal_params</ref>;</highlight></codeline>
+<codeline lineno="347"><highlight class="normal"></highlight></codeline>
+<codeline lineno="348"><highlight class="normal"></highlight></codeline>
+<codeline lineno="355" refid="structuv__init__task__response" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structuv__init__task__response" kindref="compound">uv_init_task_response</ref>{</highlight></codeline>
+<codeline lineno="356" refid="structuv__init__task__response_1a56b3df74c10cdc59e8e1b9d4c1f36af7" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="can_8h_1aef3770e45bbacbf527fd93dd80eea9b9" kindref="member">uv_status</ref><sp/><ref refid="structuv__init__task__response_1a56b3df74c10cdc59e8e1b9d4c1f36af7" kindref="member">status</ref>;<sp/></highlight><highlight class="comment">//Did<sp/>it<sp/>succeed?<sp/>This<sp/>gets<sp/>to<sp/>be<sp/>a<sp/>UV_OK<sp/>if<sp/>success</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="357" refid="structuv__init__task__response_1adfcb943d08344e528ad3d49c5c428918" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="uvfr__utils_8h_1a96651e94773864de5bcf9028ab64ad19" kindref="member">uv_ext_device_id</ref><sp/><ref refid="structuv__init__task__response_1adfcb943d08344e528ad3d49c5c428918" kindref="member">device</ref>;<sp/></highlight><highlight class="comment">//Which<sp/>device<sp/>was<sp/>it</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="358" refid="structuv__init__task__response_1ab0bb4394cc62070f8d366ab3a55ff227" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>uint8_t<sp/><ref refid="structuv__init__task__response_1ab0bb4394cc62070f8d366ab3a55ff227" kindref="member">nchar</ref>;</highlight></codeline>
+<codeline lineno="359" refid="structuv__init__task__response_1af29fdddeaddc456d2028cc1ad471bae1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/><ref refid="structuv__init__task__response_1af29fdddeaddc456d2028cc1ad471bae1" kindref="member">errmsg</ref>;<sp/></highlight><highlight class="comment">//if<sp/>we<sp/>didn&apos;t<sp/>succeed,<sp/>then<sp/>what<sp/>went<sp/>wrong?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal">}<ref refid="uvfr__utils_8h_1a8e8a2c49abd23762e28f61fe5c9cb882" kindref="member">uv_init_task_response</ref>;</highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight></codeline>
+<codeline lineno="363"><highlight class="normal"></highlight></codeline>
+<codeline lineno="364"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>UV_UTILS_SRC_IMPLIMENTATION</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="365"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/><ref refid="structuv__internal__params" kindref="compound">uv_internal_params</ref><sp/><ref refid="uvfr__utils_8h_1a660f31748ce0b90d471a4f5441ee3cb1" kindref="member">global_context</ref>;</highlight></codeline>
+<codeline lineno="366"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal"></highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a6d40598f9d8daa89ca159a2e87f4fd01" kindref="member">uvInit</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>arguments);</highlight></codeline>
+<codeline lineno="369"><highlight class="normal"></highlight></codeline>
+<codeline lineno="370"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="uvfr__utils_8h_1a92b5ac44171d49acd084c274385a043a" kindref="member">__uvInitPanic</ref>();</highlight></codeline>
+<codeline lineno="371"><highlight class="normal"></highlight></codeline>
+<codeline lineno="372"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>uvMalloc</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>USE_OS_MEM_MGMT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="374"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/><ref refid="uvfr__utils_8c_1a498966c0f95bfa592d26b625a93fa1a3" kindref="member">__uvMallocOS</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>memrequest);</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvMalloc(x)<sp/>__uvMallocOS(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight><highlight class="preprocessor">#else<sp/>//default<sp/>to<sp/>STDlib</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="377"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/><ref refid="uvfr__utils_8c_1abc00b3cb1c3b54fe4490c08ef85a293a" kindref="member">__uvMallocCritSection</ref>(</highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>memrequest);</highlight></codeline>
+<codeline lineno="378"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvMalloc(x)<sp/>__uvMallocCritSection(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="379"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//OS<sp/>mem<sp/>mgmt?</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//allow<sp/>macro<sp/>override</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"></highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>uvFree</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>USE_OS_MEM_MGMT</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="385"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="can_8h_1aef3770e45bbacbf527fd93dd80eea9b9" kindref="member">uv_status</ref><sp/><ref refid="uvfr__utils_8c_1a67fb0753300c33287657882ccff64e42" kindref="member">__uvFreeOS</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>ptr);</highlight></codeline>
+<codeline lineno="386"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvFree(x)<sp/>__uvFreeOS(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="387"><highlight class="normal"></highlight></codeline>
+<codeline lineno="388"><highlight class="normal"></highlight><highlight class="preprocessor">#else</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="can_8h_1aef3770e45bbacbf527fd93dd80eea9b9" kindref="member">uv_status</ref><sp/><ref refid="uvfr__utils_8c_1ad372aabf81974eb44819f326172a563b" kindref="member">__uvFreeCritSection</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>ptr);</highlight></codeline>
+<codeline lineno="390"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/>#define<sp/>uvFree(x)<sp/>__uvFreeCritSection(x)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="391"><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//OS<sp/>mem<sp/>mgmt</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//Allows<sp/>macro<sp/>overriding</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="394"><highlight class="normal"></highlight></codeline>
+<codeline lineno="395"><highlight class="normal"><ref refid="can_8h_1aef3770e45bbacbf527fd93dd80eea9b9" kindref="member">uv_status</ref><sp/><ref refid="uvfr__utils_8h_1a0186c036688c7852cf0ceaee96b343a3" kindref="member">uvIsPTRValid</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">*<sp/>ptr);</highlight></codeline>
+<codeline lineno="396"><highlight class="normal"></highlight></codeline>
+<codeline lineno="397"><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal"></highlight></codeline>
+<codeline lineno="399"><highlight class="normal"></highlight></codeline>
+<codeline lineno="400"><highlight class="normal"></highlight></codeline>
+<codeline lineno="401"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>INC_UVFR_UTILS_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="Core/Inc/uvfr_utils.h"/>
+  </compounddef>
+</doxygen>

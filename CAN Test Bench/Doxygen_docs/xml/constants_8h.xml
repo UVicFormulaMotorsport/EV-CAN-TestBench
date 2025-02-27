@@ -1,0 +1,670 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="constants_8h" kind="file" language="C++">
+    <compoundname>constants.h</compoundname>
+    <includedby refid="can_8h" local="yes">Core/Inc/can.h</includedby>
+    <includedby refid="bms_8c" local="yes">Core/Src/bms.c</includedby>
+    <includedby refid="can_8c" local="yes">Core/Src/can.c</includedby>
+    <includedby refid="imd_8c" local="yes">Core/Src/imd.c</includedby>
+    <includedby refid="main_8c" local="yes">Core/Src/main.c</includedby>
+    <includedby refid="pdu_8c" local="yes">Core/Src/pdu.c</includedby>
+    <invincdepgraph>
+      <node id="10">
+        <label>Core/Inc/tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>Core/Inc/imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>Core/Src/daq.c</label>
+        <link refid="daq_8c"/>
+      </node>
+      <node id="25">
+        <label>Core/Inc/dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>Core/Inc/driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+      </node>
+      <node id="41">
+        <label>Core/Inc/temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>Core/Src/pdu.c</label>
+        <link refid="pdu_8c"/>
+      </node>
+      <node id="26">
+        <label>Core/Src/dash.c</label>
+        <link refid="dash_8c"/>
+      </node>
+      <node id="12">
+        <label>Core/Src/tim.c</label>
+        <link refid="tim_8c"/>
+      </node>
+      <node id="45">
+        <label>Core/Src/uvfr_state_engine.c</label>
+        <link refid="uvfr__state__engine_8c"/>
+      </node>
+      <node id="40">
+        <label>Core/Inc/oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="5">
+        <label>Core/Inc/adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>Core/Src/stm32f4xx_hal_msp.c</label>
+        <link refid="stm32f4xx__hal__msp_8c"/>
+      </node>
+      <node id="3">
+        <label>Core/Inc/uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="37" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="39" relation="include">
+        </childnode>
+        <childnode refid="40" relation="include">
+        </childnode>
+        <childnode refid="41" relation="include">
+        </childnode>
+        <childnode refid="42" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="43" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="44" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+        <childnode refid="45" relation="include">
+        </childnode>
+        <childnode refid="46" relation="include">
+        </childnode>
+        <childnode refid="47" relation="include">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>Core/Src/odometer.c</label>
+        <link refid="odometer_8c"/>
+      </node>
+      <node id="32">
+        <label>Core/Src/freertos.c</label>
+        <link refid="freertos_8c"/>
+      </node>
+      <node id="11">
+        <label>Core/Src/bms.c</label>
+        <link refid="bms_8c"/>
+      </node>
+      <node id="24">
+        <label>Core/Inc/bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>Core/Src/motor_controller.c</label>
+        <link refid="motor__controller_8c"/>
+      </node>
+      <node id="36">
+        <label>Core/Src/uvfr_settings.c</label>
+        <link refid="uvfr__settings_8c"/>
+      </node>
+      <node id="21">
+        <label>Core/Src/driving_loop.c</label>
+        <link refid="driving__loop_8c"/>
+      </node>
+      <node id="16">
+        <label>Core/Inc/spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>Core/Inc/pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>Core/Src/gpio.c</label>
+        <link refid="gpio_8c"/>
+      </node>
+      <node id="18">
+        <label>Core/Inc/motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Core/Inc/uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="44">
+        <label>Core/Src/rb_tree.c</label>
+        <link refid="rb__tree_8c"/>
+      </node>
+      <node id="9">
+        <label>Core/Src/dma.c</label>
+        <link refid="dma_8c"/>
+      </node>
+      <node id="15">
+        <label>Core/Src/temp_monitoring.c</label>
+        <link refid="temp__monitoring_8c"/>
+      </node>
+      <node id="47">
+        <label>Core/Src/uvfr_vehicle_commands.c</label>
+        <link refid="uvfr__vehicle__commands_8c"/>
+      </node>
+      <node id="37">
+        <label>Core/Inc/daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="38" relation="include">
+        </childnode>
+      </node>
+      <node id="13">
+        <label>Core/Inc/gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>Core/Src/uvfr_utils.c</label>
+        <link refid="uvfr__utils_8c"/>
+      </node>
+      <node id="17">
+        <label>Core/Src/spi.c</label>
+        <link refid="spi_8c"/>
+      </node>
+      <node id="31">
+        <label>Core/Src/constants.c</label>
+        <link refid="constants_8c"/>
+      </node>
+      <node id="28">
+        <label>Core/Src/imd.c</label>
+        <link refid="imd_8c"/>
+      </node>
+      <node id="1">
+        <label>Core/Inc/constants.h</label>
+        <link refid="constants_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>Core/Inc/can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>Core/Src/stm32f4xx_it.c</label>
+        <link refid="stm32f4xx__it_8c"/>
+      </node>
+      <node id="39">
+        <label>Core/Inc/uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>Core/Src/can.c</label>
+        <link refid="can_8c"/>
+      </node>
+      <node id="42">
+        <label>Core/Inc/uvfr_vehicle_commands.h</label>
+        <link refid="uvfr__vehicle__commands_8h"/>
+      </node>
+      <node id="33">
+        <label>Core/Src/oled.c</label>
+        <link refid="oled_8c"/>
+      </node>
+      <node id="6">
+        <label>Core/Src/adc.c</label>
+        <link refid="adc_8c"/>
+      </node>
+      <node id="7">
+        <label>Core/Src/main.c</label>
+        <link refid="main_8c"/>
+      </node>
+      <node id="8">
+        <label>Core/Inc/dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>Core/Inc/main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="34" relation="include">
+        </childnode>
+        <childnode refid="35" relation="include">
+        </childnode>
+        <childnode refid="36" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="constants_8h_1a1d489aa29fe8cf552f71b550e8088272" prot="public" static="no" strong="no">
+        <type></type>
+        <name>CAN_IDs</name>
+        <enumvalue id="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a242c64f8aaa09a26d5f586483d692f83" prot="public">
+          <name>IMD_CAN_ID_Tx</name>
+          <initializer>= 0xA100101</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a0bce8b96d081881e0395e5ed297850e1" prot="public">
+          <name>IMD_CAN_ID_Rx</name>
+          <initializer>= 0xA100100</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" prot="public">
+          <name>PDU_CAN_ID_Tx</name>
+          <initializer>= 0x710</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="constants_8h_1a1d489aa29fe8cf552f71b550e8088272ada3b10f39c76a2dc2b19e9f5b02952a5" prot="public">
+          <name>MC_CAN_ID_Tx</name>
+          <initializer>= 0x201</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a45b8c0a27ffd1b8b160dda4c491eaad9" prot="public">
+          <name>MC_CAN_ID_Rx</name>
+          <initializer>= 0x181</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/constants.h" line="15" column="13" bodyfile="Core/Inc/constants.h" bodystart="15" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" prot="public" static="no" mutable="no">
+        <type>CAN_TxHeaderTypeDef</type>
+        <definition>CAN_TxHeaderTypeDef TxHeader</definition>
+        <argsstring></argsstring>
+        <name>TxHeader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/constants.h" line="6" column="30" bodyfile="Core/Src/constants.c" bodystart="4" bodyend="-1" declfile="Core/Inc/constants.h" declline="6" declcolumn="30"/>
+        <referencedby refid="can_8c_1ae025787f17f6312df1e71c731b2a0fe4" compoundref="can_8c" startline="476" endline="503">__uvCANtxCritSection</referencedby>
+        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="551" endline="610">CANbusTxSvcDaemon</referencedby>
+        <referencedby refid="imd_8c_1aeb7c937639c5385f5d2b4e3a4e60250f" compoundref="imd_8c" startline="180" endline="191">IMD_Request_Status</referencedby>
+        <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
+        <referencedby refid="can_8c_1a1ee5cd592134235b6c07f676784d47c3" compoundref="can_8c" startline="150" endline="226">MX_CAN2_Init</referencedby>
+        <referencedby refid="pdu_8c_1ad7b67b3c1618a7c50a5d6d9f9e13a89f" compoundref="pdu_8c" startline="48" endline="60">PDU_disable_brake_light</referencedby>
+        <referencedby refid="pdu_8c_1aebeb35957c80be85dc938efe72c8e825" compoundref="pdu_8c" startline="170" endline="181">PDU_disable_coolant_pump</referencedby>
+        <referencedby refid="pdu_8c_1a3c665494b7f9fb4e025ff31d24c97072" compoundref="pdu_8c" startline="136" endline="155">PDU_disable_cooling_fans</referencedby>
+        <referencedby refid="pdu_8c_1a6b189c4013c1cb97ff696a9bc05def5e" compoundref="pdu_8c" startline="74" endline="85">PDU_disable_motor_controller</referencedby>
+        <referencedby refid="pdu_8c_1a67ed21c50014c891cc0031655a30aef9" compoundref="pdu_8c" startline="100" endline="111">PDU_disable_shutdown_circuit</referencedby>
+        <referencedby refid="pdu_8c_1aa5479c0d6ab8d58683e99bf102d60db8" compoundref="pdu_8c" startline="34" endline="46">PDU_enable_brake_light</referencedby>
+        <referencedby refid="pdu_8c_1aef2fd854287906cac1734f08a6edcf2a" compoundref="pdu_8c" startline="158" endline="169">PDU_enable_coolant_pump</referencedby>
+        <referencedby refid="pdu_8c_1a9d736981007eb7fc9691275dc7b6c05c" compoundref="pdu_8c" startline="115" endline="134">PDU_enable_cooling_fans</referencedby>
+        <referencedby refid="pdu_8c_1ae3eaaae4438e04d63fe04cc23a201810" compoundref="pdu_8c" startline="62" endline="73">PDU_enable_motor_controller</referencedby>
+        <referencedby refid="pdu_8c_1a0f2b86f2db7ee86b014ccc246c8b674d" compoundref="pdu_8c" startline="87" endline="98">PDU_enable_shutdown_circuit</referencedby>
+        <referencedby refid="pdu_8c_1a42e33c33fc1dea26555ff7b20984b186" compoundref="pdu_8c" startline="11" endline="31">PDU_speaker_chirp</referencedby>
+        <referencedby refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="70" endline="157">tempMonitorTask</referencedby>
+        <referencedby refid="dash_8c_1a66f84461e5c75202d12edfd8ea7c7f62" compoundref="dash_8c" startline="29" endline="45">Update_Batt_Temp</referencedby>
+        <referencedby refid="dash_8c_1ab26e477047a5166efc8f2b34dbd38872" compoundref="dash_8c" startline="9" endline="26">Update_RPM</referencedby>
+        <referencedby refid="dash_8c_1a30155b58ef3801f5693e953d4139d55f" compoundref="dash_8c" startline="48" endline="64">Update_State_Of_Charge</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="constants_8h_1a6ee6e13063b860648180eea65852cc71" prot="public" static="no" mutable="no">
+        <type>CAN_RxHeaderTypeDef</type>
+        <definition>CAN_RxHeaderTypeDef RxHeader</definition>
+        <argsstring></argsstring>
+        <name>RxHeader</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/constants.h" line="7" column="30" bodyfile="Core/Src/constants.c" bodystart="5" bodyend="-1" declfile="Core/Inc/constants.h" declline="7" declcolumn="30"/>
+        <referencedby refid="can_8c_1a4e0742fef0f265347a75b7fa12012229" compoundref="can_8c" startline="298" endline="335">HAL_CAN_RxFifo0MsgPendingCallback</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="constants_8h_1af553c31425b32bd9c020380c942ed3bd" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t TxData[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>TxData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/constants.h" line="9" column="30" bodyfile="Core/Src/constants.c" bodystart="7" bodyend="-1" declfile="Core/Inc/constants.h" declline="9" declcolumn="30"/>
+        <referencedby refid="imd_8c_1aeb7c937639c5385f5d2b4e3a4e60250f" compoundref="imd_8c" startline="180" endline="191">IMD_Request_Status</referencedby>
+        <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
+        <referencedby refid="pdu_8c_1ad7b67b3c1618a7c50a5d6d9f9e13a89f" compoundref="pdu_8c" startline="48" endline="60">PDU_disable_brake_light</referencedby>
+        <referencedby refid="pdu_8c_1aebeb35957c80be85dc938efe72c8e825" compoundref="pdu_8c" startline="170" endline="181">PDU_disable_coolant_pump</referencedby>
+        <referencedby refid="pdu_8c_1a3c665494b7f9fb4e025ff31d24c97072" compoundref="pdu_8c" startline="136" endline="155">PDU_disable_cooling_fans</referencedby>
+        <referencedby refid="pdu_8c_1a6b189c4013c1cb97ff696a9bc05def5e" compoundref="pdu_8c" startline="74" endline="85">PDU_disable_motor_controller</referencedby>
+        <referencedby refid="pdu_8c_1a67ed21c50014c891cc0031655a30aef9" compoundref="pdu_8c" startline="100" endline="111">PDU_disable_shutdown_circuit</referencedby>
+        <referencedby refid="pdu_8c_1aa5479c0d6ab8d58683e99bf102d60db8" compoundref="pdu_8c" startline="34" endline="46">PDU_enable_brake_light</referencedby>
+        <referencedby refid="pdu_8c_1aef2fd854287906cac1734f08a6edcf2a" compoundref="pdu_8c" startline="158" endline="169">PDU_enable_coolant_pump</referencedby>
+        <referencedby refid="pdu_8c_1a9d736981007eb7fc9691275dc7b6c05c" compoundref="pdu_8c" startline="115" endline="134">PDU_enable_cooling_fans</referencedby>
+        <referencedby refid="pdu_8c_1ae3eaaae4438e04d63fe04cc23a201810" compoundref="pdu_8c" startline="62" endline="73">PDU_enable_motor_controller</referencedby>
+        <referencedby refid="pdu_8c_1a0f2b86f2db7ee86b014ccc246c8b674d" compoundref="pdu_8c" startline="87" endline="98">PDU_enable_shutdown_circuit</referencedby>
+        <referencedby refid="pdu_8c_1a42e33c33fc1dea26555ff7b20984b186" compoundref="pdu_8c" startline="11" endline="31">PDU_speaker_chirp</referencedby>
+        <referencedby refid="temp__monitoring_8c_1a2a1d7fee4cea6ce07e4d4acc1b2ca752" compoundref="temp__monitoring_8c" startline="70" endline="157">tempMonitorTask</referencedby>
+        <referencedby refid="dash_8c_1a66f84461e5c75202d12edfd8ea7c7f62" compoundref="dash_8c" startline="29" endline="45">Update_Batt_Temp</referencedby>
+        <referencedby refid="dash_8c_1ab26e477047a5166efc8f2b34dbd38872" compoundref="dash_8c" startline="9" endline="26">Update_RPM</referencedby>
+        <referencedby refid="dash_8c_1a30155b58ef3801f5693e953d4139d55f" compoundref="dash_8c" startline="48" endline="64">Update_State_Of_Charge</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" prot="public" static="no" mutable="no">
+        <type>uint32_t</type>
+        <definition>uint32_t TxMailbox</definition>
+        <argsstring></argsstring>
+        <name>TxMailbox</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/constants.h" line="10" column="30" bodyfile="Core/Src/constants.c" bodystart="8" bodyend="-1" declfile="Core/Inc/constants.h" declline="10" declcolumn="30"/>
+        <referencedby refid="can_8c_1ae025787f17f6312df1e71c731b2a0fe4" compoundref="can_8c" startline="476" endline="503">__uvCANtxCritSection</referencedby>
+        <referencedby refid="can_8c_1a2357e197a9ac26277eec808769fe409f" compoundref="can_8c" startline="551" endline="610">CANbusTxSvcDaemon</referencedby>
+        <referencedby refid="imd_8c_1aeb7c937639c5385f5d2b4e3a4e60250f" compoundref="imd_8c" startline="180" endline="191">IMD_Request_Status</referencedby>
+        <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
+        <referencedby refid="motor__controller_8c_1af6b3a4911f1bdac54d84b4dcc7b7ec4a" compoundref="motor__controller_8c" startline="230" endline="249">MC_Request_Data</referencedby>
+        <referencedby refid="motor__controller_8c_1a71371a5194c9b5c725abec77feffbc38" compoundref="motor__controller_8c" startline="62" endline="97">MotorControllerSpinTest</referencedby>
+        <referencedby refid="pdu_8c_1ad7b67b3c1618a7c50a5d6d9f9e13a89f" compoundref="pdu_8c" startline="48" endline="60">PDU_disable_brake_light</referencedby>
+        <referencedby refid="pdu_8c_1aebeb35957c80be85dc938efe72c8e825" compoundref="pdu_8c" startline="170" endline="181">PDU_disable_coolant_pump</referencedby>
+        <referencedby refid="pdu_8c_1a3c665494b7f9fb4e025ff31d24c97072" compoundref="pdu_8c" startline="136" endline="155">PDU_disable_cooling_fans</referencedby>
+        <referencedby refid="pdu_8c_1a6b189c4013c1cb97ff696a9bc05def5e" compoundref="pdu_8c" startline="74" endline="85">PDU_disable_motor_controller</referencedby>
+        <referencedby refid="pdu_8c_1a67ed21c50014c891cc0031655a30aef9" compoundref="pdu_8c" startline="100" endline="111">PDU_disable_shutdown_circuit</referencedby>
+        <referencedby refid="pdu_8c_1aa5479c0d6ab8d58683e99bf102d60db8" compoundref="pdu_8c" startline="34" endline="46">PDU_enable_brake_light</referencedby>
+        <referencedby refid="pdu_8c_1aef2fd854287906cac1734f08a6edcf2a" compoundref="pdu_8c" startline="158" endline="169">PDU_enable_coolant_pump</referencedby>
+        <referencedby refid="pdu_8c_1a9d736981007eb7fc9691275dc7b6c05c" compoundref="pdu_8c" startline="115" endline="134">PDU_enable_cooling_fans</referencedby>
+        <referencedby refid="pdu_8c_1ae3eaaae4438e04d63fe04cc23a201810" compoundref="pdu_8c" startline="62" endline="73">PDU_enable_motor_controller</referencedby>
+        <referencedby refid="pdu_8c_1a0f2b86f2db7ee86b014ccc246c8b674d" compoundref="pdu_8c" startline="87" endline="98">PDU_enable_shutdown_circuit</referencedby>
+        <referencedby refid="pdu_8c_1a42e33c33fc1dea26555ff7b20984b186" compoundref="pdu_8c" startline="11" endline="31">PDU_speaker_chirp</referencedby>
+        <referencedby refid="dash_8c_1a66f84461e5c75202d12edfd8ea7c7f62" compoundref="dash_8c" startline="29" endline="45">Update_Batt_Temp</referencedby>
+        <referencedby refid="dash_8c_1ab26e477047a5166efc8f2b34dbd38872" compoundref="dash_8c" startline="9" endline="26">Update_RPM</referencedby>
+        <referencedby refid="dash_8c_1a30155b58ef3801f5693e953d4139d55f" compoundref="dash_8c" startline="48" endline="64">Update_State_Of_Charge</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="constants_8h_1a14629afcc7f0b2d62c2b617b07d98184" prot="public" static="no" mutable="no">
+        <type>uint8_t</type>
+        <definition>uint8_t RxData[8]</definition>
+        <argsstring>[8]</argsstring>
+        <name>RxData</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Inc/constants.h" line="11" column="30" bodyfile="Core/Src/constants.c" bodystart="9" bodyend="-1" declfile="Core/Inc/constants.h" declline="11" declcolumn="30"/>
+        <referencedby refid="motor__controller_8c_1aed1407e1e0fd59dc7c5e5d6db671f0ab" compoundref="motor__controller_8c" startline="739" endline="803">MC_Startup</referencedby>
+        <referencedby refid="motor__controller_8c_1a71371a5194c9b5c725abec77feffbc38" compoundref="motor__controller_8c" startline="62" endline="97">MotorControllerSpinTest</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>SOME_UNIQUE_NAME_HERE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>SOME_UNIQUE_NAME_HERE</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/>your<sp/>declarations<sp/>(and<sp/>certain<sp/>types<sp/>of<sp/>definitions)<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>CAN_TxHeaderTypeDef<sp/><sp/><sp/><ref refid="constants_8h_1a3e35a666d459f2ac92fc7c35334ff0ff" kindref="member">TxHeader</ref>;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>CAN_RxHeaderTypeDef<sp/><sp/><sp/><ref refid="constants_8h_1a6ee6e13063b860648180eea65852cc71" kindref="member">RxHeader</ref>;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1af553c31425b32bd9c020380c942ed3bd" kindref="member">TxData</ref>[8];</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint32_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1aedd1e4ac418a9697f9f41a2713d49569" kindref="member">TxMailbox</ref>;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/>uint8_t<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a14629afcc7f0b2d62c2b617b07d98184" kindref="member">RxData</ref>[8];</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="comment">//<sp/>For<sp/>constant<sp/>CAN<sp/>IDs,<sp/>might<sp/>be<sp/>easier<sp/>to<sp/>put<sp/>them<sp/>in<sp/>here</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15" refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272" kindref="member">CAN_IDs</ref>{</highlight></codeline>
+<codeline lineno="16" refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a242c64f8aaa09a26d5f586483d692f83" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a242c64f8aaa09a26d5f586483d692f83" kindref="member">IMD_CAN_ID_Tx</ref><sp/>=<sp/>0xA100101,<sp/></highlight><highlight class="comment">//<sp/>This<sp/>is<sp/>the<sp/>ID<sp/>for<sp/>MCU<sp/>sending<sp/>msg<sp/>to<sp/>IMD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a0bce8b96d081881e0395e5ed297850e1" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a0bce8b96d081881e0395e5ed297850e1" kindref="member">IMD_CAN_ID_Rx</ref><sp/>=<sp/>0xA100100,</highlight><highlight class="comment">//<sp/>MCU<sp/>will<sp/>receive<sp/>messages<sp/>with<sp/>this<sp/>id<sp/>from<sp/>IMD</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="18" refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a939d69ebf3209d25684658ce7333f57b" kindref="member">PDU_CAN_ID_Tx</ref><sp/>=<sp/>0x710,<sp/></highlight><highlight class="comment">//<sp/>ID<sp/>to<sp/>send<sp/>messages<sp/>to<sp/>the<sp/>PDU</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19" refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272ada3b10f39c76a2dc2b19e9f5b02952a5" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272ada3b10f39c76a2dc2b19e9f5b02952a5" kindref="member">MC_CAN_ID_Tx</ref><sp/>=<sp/>0x201,<sp/></highlight><highlight class="comment">//<sp/>We<sp/>send<sp/>messages<sp/>to<sp/>the<sp/>motor<sp/>controller<sp/>with<sp/>this<sp/>ID</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="20" refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a45b8c0a27ffd1b8b160dda4c491eaad9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="constants_8h_1a1d489aa29fe8cf552f71b550e8088272a45b8c0a27ffd1b8b160dda4c491eaad9" kindref="member">MC_CAN_ID_Rx</ref><sp/>=<sp/>0x181,</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>TODO<sp/>figure<sp/>out<sp/>BMS<sp/>IDs</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//BMS_COBIE_ID<sp/>=<sp/>((uint32_t)0x20U),</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//BMS_HEARTBEAT_ID<sp/>=<sp/>((uint32_t)0x80U),</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//BMS_MSG_ID_1<sp/>=<sp/>((uint32_t)(0x180U<sp/>+<sp/>BMS_COBIE_ID)),</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//BMS_MSG_ID_2<sp/>=<sp/>((uint32_t)(0x280U<sp/>+<sp/>BMS_COBIE_ID)),</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//BMS_MSG_ID_3<sp/>=<sp/>((uint32_t)(0x380U<sp/>+<sp/>BMS_COBIE_ID)),</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Core/Inc/constants.h"/>
+  </compounddef>
+</doxygen>

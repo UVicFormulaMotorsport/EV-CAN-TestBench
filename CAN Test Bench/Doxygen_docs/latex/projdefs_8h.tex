@@ -1,0 +1,698 @@
+\hypertarget{projdefs_8h}{}\doxysection{Middlewares/\+Third\+\_\+\+Party/\+Free\+R\+T\+O\+S/\+Source/include/projdefs.h File Reference}
+\label{projdefs_8h}\index{Middlewares/Third\_Party/FreeRTOS/Source/include/projdefs.h@{Middlewares/Third\_Party/FreeRTOS/Source/include/projdefs.h}}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a353d0f62b82a402cb3db63706c81ec3f}{pd\+M\+S\+\_\+\+T\+O\+\_\+\+T\+I\+C\+KS}}(x\+Time\+In\+Ms)~( ( Tick\+Type\+\_\+t ) ( ( ( Tick\+Type\+\_\+t ) ( x\+Time\+In\+Ms ) $\ast$ ( Tick\+Type\+\_\+t ) \mbox{\hyperlink{_free_r_t_o_s_config_8h_a2f0258dd1e3b877e5bc013be54c2db6a}{config\+T\+I\+C\+K\+\_\+\+R\+A\+T\+E\+\_\+\+HZ}} ) / ( Tick\+Type\+\_\+t ) 1000 ) )
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_aa56260e937e7e203026707e5ba944273}{pd\+F\+A\+L\+SE}}~( ( Base\+Type\+\_\+t ) 0 )
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_af268cf937960eb029256bd9c4d949fbe}{pd\+T\+R\+UE}}~( ( Base\+Type\+\_\+t ) 1 )
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a07848d3078849bd32353c69d30a479b3}{pd\+P\+A\+SS}}~( \mbox{\hyperlink{projdefs_8h_af268cf937960eb029256bd9c4d949fbe}{pd\+T\+R\+UE}} )
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a99e2866c8cf4fe86db87dab62e7d6aa6}{pd\+F\+A\+IL}}~( \mbox{\hyperlink{projdefs_8h_aa56260e937e7e203026707e5ba944273}{pd\+F\+A\+L\+SE}} )
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a4d79b09954b1efa73ad8d87a36b4a575}{err\+Q\+U\+E\+U\+E\+\_\+\+E\+M\+P\+TY}}~( ( Base\+Type\+\_\+t ) 0 )
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_ae40de11e4044a83a97d2cb5d00ce608b}{err\+Q\+U\+E\+U\+E\+\_\+\+F\+U\+LL}}~( ( Base\+Type\+\_\+t ) 0 )
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a0b024e12cbca6f5018f5f1a43818b03d}{err\+C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+A\+L\+L\+O\+C\+A\+T\+E\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+D\+\_\+\+M\+E\+M\+O\+RY}}~( -\/1 )
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a4a7ca54ee5527cd7a14830956e05ea55}{err\+Q\+U\+E\+U\+E\+\_\+\+B\+L\+O\+C\+K\+ED}}~( -\/4 )
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a3b2e2afaa2851576dfc2779a7fea59b4}{err\+Q\+U\+E\+U\+E\+\_\+\+Y\+I\+E\+LD}}~( -\/5 )
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a28e14ad7e9d0b2045897446f72558d7f}{config\+U\+S\+E\+\_\+\+L\+I\+S\+T\+\_\+\+D\+A\+T\+A\+\_\+\+I\+N\+T\+E\+G\+R\+I\+T\+Y\+\_\+\+C\+H\+E\+C\+K\+\_\+\+B\+Y\+T\+ES}}~0
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a692e23284a1eff2b98132042b0c2c99d}{pd\+I\+N\+T\+E\+G\+R\+I\+T\+Y\+\_\+\+C\+H\+E\+C\+K\+\_\+\+V\+A\+L\+UE}}~0x5a5a5a5a\+UL
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_ad836dd7abef3eced71f4ce24d39debd9}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+N\+O\+NE}}~0	/$\ast$ No errors $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_ada626b9e09610adf001a0d78c21ed754}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+E\+NT}}~2	/$\ast$ No such file or directory $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a48cbefbca1a9ad5fd3f014580e294c8e}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+I\+N\+TR}}~4	/$\ast$ Interrupted system call $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a7bb52f7cee93081fcd871ced9cbf86a6}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+IO}}~5	/$\ast$ I/O error $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a84867230ed86089284031935cab091a5}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+X\+IO}}~6	/$\ast$ No such device or address $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a242052c4e8decc6757bf2d1f0f9dde41}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+B\+A\+DF}}~9	/$\ast$ Bad file number $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a19316c64bd0788538b164b6241e4c49b}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+A\+G\+A\+IN}}~11	/$\ast$ No more processes $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a4cbad67c49bf49adbd0c9c1917a0e5e6}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+W\+O\+U\+L\+D\+B\+L\+O\+CK}}~11	/$\ast$ Operation would block $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a5efcf687f972542033358c1a24510aee}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+M\+EM}}~12	/$\ast$ Not enough memory $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_ad5b2326f6a7eb09257f78f587f43e187}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+A\+C\+C\+ES}}~13	/$\ast$ Permission denied $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a1b3f9dd5c52d752b70357ed51b38c7f4}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+F\+A\+U\+LT}}~14	/$\ast$ Bad address $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_aa367bb36d26bc86c9346916fc7c5792c}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+B\+U\+SY}}~16	/$\ast$ Mount device busy $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_aaf394d4b1eedda0075836a98138e2e82}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+E\+X\+I\+ST}}~17	/$\ast$ File exists $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a75aadb287c3f7089edb7f1c85319b105}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+X\+D\+EV}}~18	/$\ast$ Cross-\/device link $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a0a8f4a6b857f6c64e9c2d887bbc26beb}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+D\+EV}}~19	/$\ast$ No such device $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a664d5546ffc5cfbd7c28c02ee704030f}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+T\+D\+IR}}~20	/$\ast$ Not a directory $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_ac85e69368d9755a4e1b5121eb3a81979}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+I\+S\+D\+IR}}~21	/$\ast$ Is a directory $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a684b79fd72418beaf37e423323131ca7}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+I\+N\+V\+AL}}~22	/$\ast$ Invalid argument $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_ada91bb26e0b830b169433aae5ce857cc}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+S\+PC}}~28	/$\ast$ No space left on device $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a441a754724ed5708ac0d31d10e97dbec}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+S\+P\+I\+PE}}~29	/$\ast$ Illegal seek $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a83094f3620b1d91ed85f98347b481c29}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+R\+O\+FS}}~30	/$\ast$ Read only file system $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_ab32e968fc64c5ddcd1f2b1de9debd576}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+U\+N\+A\+T\+CH}}~42	/$\ast$ Protocol driver not attached $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_acdf56904272b8eaec505400e0e13ca87}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+B\+A\+DE}}~50	/$\ast$ Invalid exchange $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_ae603b5c76827b60243bd8f12718c1a41}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+F\+T\+Y\+PE}}~79	/$\ast$ Inappropriate file type or format $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a3dba13bfcdeb497752d19139ba2f463f}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+M\+F\+I\+LE}}~89	/$\ast$ No more files $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a01a1dbf74da4d89538fdd9d424404808}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+T\+E\+M\+P\+TY}}~90	/$\ast$ Directory not empty $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_aca50b0cb0218ab93d38e387ca7740c92}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+A\+M\+E\+T\+O\+O\+L\+O\+NG}}~91	/$\ast$ File or path name too long $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a583344ca8f038153e0c988559064b6b6}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+O\+P\+N\+O\+T\+S\+U\+PP}}~95	/$\ast$ Operation not supported on transport endpoint $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a311c6d46f86eb3f6e029473e34a4b290}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+B\+U\+FS}}~105	/$\ast$ No buffer space available $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a3260d6cafcdb3971622605ac4d3bf3d2}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+P\+R\+O\+T\+O\+O\+PT}}~109	/$\ast$ Protocol not available $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a0c4f8236084d1cabcbff216e1b8fac7b}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+A\+D\+D\+R\+I\+N\+U\+SE}}~112	/$\ast$ Address already in use $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_addf14e54d85281da325711c219b6f0e7}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+T\+I\+M\+E\+D\+O\+UT}}~116	/$\ast$ Connection timed out $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a6f713f2c3c90756396311337496a80b2}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+I\+N\+P\+R\+O\+G\+R\+E\+SS}}~119	/$\ast$ Connection already in progress $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_af2407a2a0cbe16241a81bf2c1b63ff24}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+A\+L\+R\+E\+A\+DY}}~120	/$\ast$ Socket already connected $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a85d8fca5d9fb100e674ebd9b6b29e08d}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+A\+D\+D\+R\+N\+O\+T\+A\+V\+A\+IL}}~125	/$\ast$ Address not available $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a5ebe20f940ba0710bfc993cd98895360}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+I\+S\+C\+O\+NN}}~127	/$\ast$ Socket is already connected $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a2038d432f2a030e1c3ecdeb68676f920}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+T\+C\+O\+NN}}~128	/$\ast$ Socket is not connected $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a232fc23c4f0ff1aa323b38c3cc7a25fb}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+M\+E\+D\+I\+UM}}~135	/$\ast$ No medium inserted $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_afcb862c20a4c9641dd537770e969b8b1}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+I\+L\+S\+EQ}}~138	/$\ast$ An invalid U\+TF-\/16 sequence was encountered. $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a354147f9f9a35e025af5f660ff7be0bf}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+C\+A\+N\+C\+E\+L\+ED}}~140	/$\ast$ Operation canceled. $\ast$/
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a2677d93f2de37bcd907c6967c583fd10}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}}~0
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_abe2dcfba890834ec10e4d8a25dac7c59}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+B\+I\+G\+\_\+\+E\+N\+D\+I\+AN}}~1
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a4599a4d1e3c89bcce5301f82028561c1}{pd\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}}~\mbox{\hyperlink{projdefs_8h_a2677d93f2de37bcd907c6967c583fd10}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}}
+\item 
+\#define \mbox{\hyperlink{projdefs_8h_a1ec99243cefac216db217f0d2ba20cd5}{pd\+B\+I\+G\+\_\+\+E\+N\+D\+I\+AN}}~\mbox{\hyperlink{projdefs_8h_abe2dcfba890834ec10e4d8a25dac7c59}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+B\+I\+G\+\_\+\+E\+N\+D\+I\+AN}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef void($\ast$ \mbox{\hyperlink{projdefs_8h_a9b32502ff92c255c686dacde53c1cba0}{Task\+Function\+\_\+t}}) (void $\ast$)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{projdefs_8h_a28e14ad7e9d0b2045897446f72558d7f}\label{projdefs_8h_a28e14ad7e9d0b2045897446f72558d7f}} 
+\index{projdefs.h@{projdefs.h}!configUSE\_LIST\_DATA\_INTEGRITY\_CHECK\_BYTES@{configUSE\_LIST\_DATA\_INTEGRITY\_CHECK\_BYTES}}
+\index{configUSE\_LIST\_DATA\_INTEGRITY\_CHECK\_BYTES@{configUSE\_LIST\_DATA\_INTEGRITY\_CHECK\_BYTES}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{configUSE\_LIST\_DATA\_INTEGRITY\_CHECK\_BYTES}{configUSE\_LIST\_DATA\_INTEGRITY\_CHECK\_BYTES}}
+{\footnotesize\ttfamily \#define config\+U\+S\+E\+\_\+\+L\+I\+S\+T\+\_\+\+D\+A\+T\+A\+\_\+\+I\+N\+T\+E\+G\+R\+I\+T\+Y\+\_\+\+C\+H\+E\+C\+K\+\_\+\+B\+Y\+T\+ES~0}
+
+
+
+Definition at line 59 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a0b024e12cbca6f5018f5f1a43818b03d}\label{projdefs_8h_a0b024e12cbca6f5018f5f1a43818b03d}} 
+\index{projdefs.h@{projdefs.h}!errCOULD\_NOT\_ALLOCATE\_REQUIRED\_MEMORY@{errCOULD\_NOT\_ALLOCATE\_REQUIRED\_MEMORY}}
+\index{errCOULD\_NOT\_ALLOCATE\_REQUIRED\_MEMORY@{errCOULD\_NOT\_ALLOCATE\_REQUIRED\_MEMORY}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{errCOULD\_NOT\_ALLOCATE\_REQUIRED\_MEMORY}{errCOULD\_NOT\_ALLOCATE\_REQUIRED\_MEMORY}}
+{\footnotesize\ttfamily \#define err\+C\+O\+U\+L\+D\+\_\+\+N\+O\+T\+\_\+\+A\+L\+L\+O\+C\+A\+T\+E\+\_\+\+R\+E\+Q\+U\+I\+R\+E\+D\+\_\+\+M\+E\+M\+O\+RY~( -\/1 )}
+
+
+
+Definition at line 53 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a4a7ca54ee5527cd7a14830956e05ea55}\label{projdefs_8h_a4a7ca54ee5527cd7a14830956e05ea55}} 
+\index{projdefs.h@{projdefs.h}!errQUEUE\_BLOCKED@{errQUEUE\_BLOCKED}}
+\index{errQUEUE\_BLOCKED@{errQUEUE\_BLOCKED}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{errQUEUE\_BLOCKED}{errQUEUE\_BLOCKED}}
+{\footnotesize\ttfamily \#define err\+Q\+U\+E\+U\+E\+\_\+\+B\+L\+O\+C\+K\+ED~( -\/4 )}
+
+
+
+Definition at line 54 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a4d79b09954b1efa73ad8d87a36b4a575}\label{projdefs_8h_a4d79b09954b1efa73ad8d87a36b4a575}} 
+\index{projdefs.h@{projdefs.h}!errQUEUE\_EMPTY@{errQUEUE\_EMPTY}}
+\index{errQUEUE\_EMPTY@{errQUEUE\_EMPTY}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{errQUEUE\_EMPTY}{errQUEUE\_EMPTY}}
+{\footnotesize\ttfamily \#define err\+Q\+U\+E\+U\+E\+\_\+\+E\+M\+P\+TY~( ( Base\+Type\+\_\+t ) 0 )}
+
+
+
+Definition at line 49 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_ae40de11e4044a83a97d2cb5d00ce608b}\label{projdefs_8h_ae40de11e4044a83a97d2cb5d00ce608b}} 
+\index{projdefs.h@{projdefs.h}!errQUEUE\_FULL@{errQUEUE\_FULL}}
+\index{errQUEUE\_FULL@{errQUEUE\_FULL}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{errQUEUE\_FULL}{errQUEUE\_FULL}}
+{\footnotesize\ttfamily \#define err\+Q\+U\+E\+U\+E\+\_\+\+F\+U\+LL~( ( Base\+Type\+\_\+t ) 0 )}
+
+
+
+Definition at line 50 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a3b2e2afaa2851576dfc2779a7fea59b4}\label{projdefs_8h_a3b2e2afaa2851576dfc2779a7fea59b4}} 
+\index{projdefs.h@{projdefs.h}!errQUEUE\_YIELD@{errQUEUE\_YIELD}}
+\index{errQUEUE\_YIELD@{errQUEUE\_YIELD}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{errQUEUE\_YIELD}{errQUEUE\_YIELD}}
+{\footnotesize\ttfamily \#define err\+Q\+U\+E\+U\+E\+\_\+\+Y\+I\+E\+LD~( -\/5 )}
+
+
+
+Definition at line 55 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a1ec99243cefac216db217f0d2ba20cd5}\label{projdefs_8h_a1ec99243cefac216db217f0d2ba20cd5}} 
+\index{projdefs.h@{projdefs.h}!pdBIG\_ENDIAN@{pdBIG\_ENDIAN}}
+\index{pdBIG\_ENDIAN@{pdBIG\_ENDIAN}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdBIG\_ENDIAN}{pdBIG\_ENDIAN}}
+{\footnotesize\ttfamily \#define pd\+B\+I\+G\+\_\+\+E\+N\+D\+I\+AN~\mbox{\hyperlink{projdefs_8h_abe2dcfba890834ec10e4d8a25dac7c59}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+B\+I\+G\+\_\+\+E\+N\+D\+I\+AN}}}
+
+
+
+Definition at line 118 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a99e2866c8cf4fe86db87dab62e7d6aa6}\label{projdefs_8h_a99e2866c8cf4fe86db87dab62e7d6aa6}} 
+\index{projdefs.h@{projdefs.h}!pdFAIL@{pdFAIL}}
+\index{pdFAIL@{pdFAIL}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFAIL}{pdFAIL}}
+{\footnotesize\ttfamily \#define pd\+F\+A\+IL~( \mbox{\hyperlink{projdefs_8h_aa56260e937e7e203026707e5ba944273}{pd\+F\+A\+L\+SE}} )}
+
+
+
+Definition at line 48 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_aa56260e937e7e203026707e5ba944273}\label{projdefs_8h_aa56260e937e7e203026707e5ba944273}} 
+\index{projdefs.h@{projdefs.h}!pdFALSE@{pdFALSE}}
+\index{pdFALSE@{pdFALSE}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFALSE}{pdFALSE}}
+{\footnotesize\ttfamily \#define pd\+F\+A\+L\+SE~( ( Base\+Type\+\_\+t ) 0 )}
+
+
+
+Definition at line 44 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_abe2dcfba890834ec10e4d8a25dac7c59}\label{projdefs_8h_abe2dcfba890834ec10e4d8a25dac7c59}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_BIG\_ENDIAN@{pdFREERTOS\_BIG\_ENDIAN}}
+\index{pdFREERTOS\_BIG\_ENDIAN@{pdFREERTOS\_BIG\_ENDIAN}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_BIG\_ENDIAN}{pdFREERTOS\_BIG\_ENDIAN}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+B\+I\+G\+\_\+\+E\+N\+D\+I\+AN~1}
+
+
+
+Definition at line 114 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_ad5b2326f6a7eb09257f78f587f43e187}\label{projdefs_8h_ad5b2326f6a7eb09257f78f587f43e187}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EACCES@{pdFREERTOS\_ERRNO\_EACCES}}
+\index{pdFREERTOS\_ERRNO\_EACCES@{pdFREERTOS\_ERRNO\_EACCES}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EACCES}{pdFREERTOS\_ERRNO\_EACCES}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+A\+C\+C\+ES~13	/$\ast$ Permission denied $\ast$/}
+
+
+
+Definition at line 79 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a0c4f8236084d1cabcbff216e1b8fac7b}\label{projdefs_8h_a0c4f8236084d1cabcbff216e1b8fac7b}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EADDRINUSE@{pdFREERTOS\_ERRNO\_EADDRINUSE}}
+\index{pdFREERTOS\_ERRNO\_EADDRINUSE@{pdFREERTOS\_ERRNO\_EADDRINUSE}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EADDRINUSE}{pdFREERTOS\_ERRNO\_EADDRINUSE}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+A\+D\+D\+R\+I\+N\+U\+SE~112	/$\ast$ Address already in use $\ast$/}
+
+
+
+Definition at line 100 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a85d8fca5d9fb100e674ebd9b6b29e08d}\label{projdefs_8h_a85d8fca5d9fb100e674ebd9b6b29e08d}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EADDRNOTAVAIL@{pdFREERTOS\_ERRNO\_EADDRNOTAVAIL}}
+\index{pdFREERTOS\_ERRNO\_EADDRNOTAVAIL@{pdFREERTOS\_ERRNO\_EADDRNOTAVAIL}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EADDRNOTAVAIL}{pdFREERTOS\_ERRNO\_EADDRNOTAVAIL}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+A\+D\+D\+R\+N\+O\+T\+A\+V\+A\+IL~125	/$\ast$ Address not available $\ast$/}
+
+
+
+Definition at line 104 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a19316c64bd0788538b164b6241e4c49b}\label{projdefs_8h_a19316c64bd0788538b164b6241e4c49b}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EAGAIN@{pdFREERTOS\_ERRNO\_EAGAIN}}
+\index{pdFREERTOS\_ERRNO\_EAGAIN@{pdFREERTOS\_ERRNO\_EAGAIN}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EAGAIN}{pdFREERTOS\_ERRNO\_EAGAIN}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+A\+G\+A\+IN~11	/$\ast$ No more processes $\ast$/}
+
+
+
+Definition at line 76 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_af2407a2a0cbe16241a81bf2c1b63ff24}\label{projdefs_8h_af2407a2a0cbe16241a81bf2c1b63ff24}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EALREADY@{pdFREERTOS\_ERRNO\_EALREADY}}
+\index{pdFREERTOS\_ERRNO\_EALREADY@{pdFREERTOS\_ERRNO\_EALREADY}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EALREADY}{pdFREERTOS\_ERRNO\_EALREADY}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+A\+L\+R\+E\+A\+DY~120	/$\ast$ Socket already connected $\ast$/}
+
+
+
+Definition at line 103 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_acdf56904272b8eaec505400e0e13ca87}\label{projdefs_8h_acdf56904272b8eaec505400e0e13ca87}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EBADE@{pdFREERTOS\_ERRNO\_EBADE}}
+\index{pdFREERTOS\_ERRNO\_EBADE@{pdFREERTOS\_ERRNO\_EBADE}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EBADE}{pdFREERTOS\_ERRNO\_EBADE}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+B\+A\+DE~50	/$\ast$ Invalid exchange $\ast$/}
+
+
+
+Definition at line 92 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a242052c4e8decc6757bf2d1f0f9dde41}\label{projdefs_8h_a242052c4e8decc6757bf2d1f0f9dde41}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EBADF@{pdFREERTOS\_ERRNO\_EBADF}}
+\index{pdFREERTOS\_ERRNO\_EBADF@{pdFREERTOS\_ERRNO\_EBADF}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EBADF}{pdFREERTOS\_ERRNO\_EBADF}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+B\+A\+DF~9	/$\ast$ Bad file number $\ast$/}
+
+
+
+Definition at line 75 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_aa367bb36d26bc86c9346916fc7c5792c}\label{projdefs_8h_aa367bb36d26bc86c9346916fc7c5792c}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EBUSY@{pdFREERTOS\_ERRNO\_EBUSY}}
+\index{pdFREERTOS\_ERRNO\_EBUSY@{pdFREERTOS\_ERRNO\_EBUSY}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EBUSY}{pdFREERTOS\_ERRNO\_EBUSY}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+B\+U\+SY~16	/$\ast$ Mount device busy $\ast$/}
+
+
+
+Definition at line 81 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a354147f9f9a35e025af5f660ff7be0bf}\label{projdefs_8h_a354147f9f9a35e025af5f660ff7be0bf}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ECANCELED@{pdFREERTOS\_ERRNO\_ECANCELED}}
+\index{pdFREERTOS\_ERRNO\_ECANCELED@{pdFREERTOS\_ERRNO\_ECANCELED}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ECANCELED}{pdFREERTOS\_ERRNO\_ECANCELED}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+C\+A\+N\+C\+E\+L\+ED~140	/$\ast$ Operation canceled. $\ast$/}
+
+
+
+Definition at line 109 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_aaf394d4b1eedda0075836a98138e2e82}\label{projdefs_8h_aaf394d4b1eedda0075836a98138e2e82}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EEXIST@{pdFREERTOS\_ERRNO\_EEXIST}}
+\index{pdFREERTOS\_ERRNO\_EEXIST@{pdFREERTOS\_ERRNO\_EEXIST}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EEXIST}{pdFREERTOS\_ERRNO\_EEXIST}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+E\+X\+I\+ST~17	/$\ast$ File exists $\ast$/}
+
+
+
+Definition at line 82 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a1b3f9dd5c52d752b70357ed51b38c7f4}\label{projdefs_8h_a1b3f9dd5c52d752b70357ed51b38c7f4}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EFAULT@{pdFREERTOS\_ERRNO\_EFAULT}}
+\index{pdFREERTOS\_ERRNO\_EFAULT@{pdFREERTOS\_ERRNO\_EFAULT}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EFAULT}{pdFREERTOS\_ERRNO\_EFAULT}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+F\+A\+U\+LT~14	/$\ast$ Bad address $\ast$/}
+
+
+
+Definition at line 80 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_ae603b5c76827b60243bd8f12718c1a41}\label{projdefs_8h_ae603b5c76827b60243bd8f12718c1a41}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EFTYPE@{pdFREERTOS\_ERRNO\_EFTYPE}}
+\index{pdFREERTOS\_ERRNO\_EFTYPE@{pdFREERTOS\_ERRNO\_EFTYPE}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EFTYPE}{pdFREERTOS\_ERRNO\_EFTYPE}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+F\+T\+Y\+PE~79	/$\ast$ Inappropriate file type or format $\ast$/}
+
+
+
+Definition at line 93 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_afcb862c20a4c9641dd537770e969b8b1}\label{projdefs_8h_afcb862c20a4c9641dd537770e969b8b1}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EILSEQ@{pdFREERTOS\_ERRNO\_EILSEQ}}
+\index{pdFREERTOS\_ERRNO\_EILSEQ@{pdFREERTOS\_ERRNO\_EILSEQ}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EILSEQ}{pdFREERTOS\_ERRNO\_EILSEQ}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+I\+L\+S\+EQ~138	/$\ast$ An invalid U\+TF-\/16 sequence was encountered. $\ast$/}
+
+
+
+Definition at line 108 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a6f713f2c3c90756396311337496a80b2}\label{projdefs_8h_a6f713f2c3c90756396311337496a80b2}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EINPROGRESS@{pdFREERTOS\_ERRNO\_EINPROGRESS}}
+\index{pdFREERTOS\_ERRNO\_EINPROGRESS@{pdFREERTOS\_ERRNO\_EINPROGRESS}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EINPROGRESS}{pdFREERTOS\_ERRNO\_EINPROGRESS}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+I\+N\+P\+R\+O\+G\+R\+E\+SS~119	/$\ast$ Connection already in progress $\ast$/}
+
+
+
+Definition at line 102 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a48cbefbca1a9ad5fd3f014580e294c8e}\label{projdefs_8h_a48cbefbca1a9ad5fd3f014580e294c8e}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EINTR@{pdFREERTOS\_ERRNO\_EINTR}}
+\index{pdFREERTOS\_ERRNO\_EINTR@{pdFREERTOS\_ERRNO\_EINTR}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EINTR}{pdFREERTOS\_ERRNO\_EINTR}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+I\+N\+TR~4	/$\ast$ Interrupted system call $\ast$/}
+
+
+
+Definition at line 72 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a684b79fd72418beaf37e423323131ca7}\label{projdefs_8h_a684b79fd72418beaf37e423323131ca7}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EINVAL@{pdFREERTOS\_ERRNO\_EINVAL}}
+\index{pdFREERTOS\_ERRNO\_EINVAL@{pdFREERTOS\_ERRNO\_EINVAL}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EINVAL}{pdFREERTOS\_ERRNO\_EINVAL}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+I\+N\+V\+AL~22	/$\ast$ Invalid argument $\ast$/}
+
+
+
+Definition at line 87 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a7bb52f7cee93081fcd871ced9cbf86a6}\label{projdefs_8h_a7bb52f7cee93081fcd871ced9cbf86a6}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EIO@{pdFREERTOS\_ERRNO\_EIO}}
+\index{pdFREERTOS\_ERRNO\_EIO@{pdFREERTOS\_ERRNO\_EIO}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EIO}{pdFREERTOS\_ERRNO\_EIO}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+IO~5	/$\ast$ I/O error $\ast$/}
+
+
+
+Definition at line 73 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a5ebe20f940ba0710bfc993cd98895360}\label{projdefs_8h_a5ebe20f940ba0710bfc993cd98895360}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EISCONN@{pdFREERTOS\_ERRNO\_EISCONN}}
+\index{pdFREERTOS\_ERRNO\_EISCONN@{pdFREERTOS\_ERRNO\_EISCONN}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EISCONN}{pdFREERTOS\_ERRNO\_EISCONN}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+I\+S\+C\+O\+NN~127	/$\ast$ Socket is already connected $\ast$/}
+
+
+
+Definition at line 105 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_ac85e69368d9755a4e1b5121eb3a81979}\label{projdefs_8h_ac85e69368d9755a4e1b5121eb3a81979}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EISDIR@{pdFREERTOS\_ERRNO\_EISDIR}}
+\index{pdFREERTOS\_ERRNO\_EISDIR@{pdFREERTOS\_ERRNO\_EISDIR}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EISDIR}{pdFREERTOS\_ERRNO\_EISDIR}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+I\+S\+D\+IR~21	/$\ast$ Is a directory $\ast$/}
+
+
+
+Definition at line 86 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_aca50b0cb0218ab93d38e387ca7740c92}\label{projdefs_8h_aca50b0cb0218ab93d38e387ca7740c92}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ENAMETOOLONG@{pdFREERTOS\_ERRNO\_ENAMETOOLONG}}
+\index{pdFREERTOS\_ERRNO\_ENAMETOOLONG@{pdFREERTOS\_ERRNO\_ENAMETOOLONG}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ENAMETOOLONG}{pdFREERTOS\_ERRNO\_ENAMETOOLONG}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+A\+M\+E\+T\+O\+O\+L\+O\+NG~91	/$\ast$ File or path name too long $\ast$/}
+
+
+
+Definition at line 96 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a3dba13bfcdeb497752d19139ba2f463f}\label{projdefs_8h_a3dba13bfcdeb497752d19139ba2f463f}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ENMFILE@{pdFREERTOS\_ERRNO\_ENMFILE}}
+\index{pdFREERTOS\_ERRNO\_ENMFILE@{pdFREERTOS\_ERRNO\_ENMFILE}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ENMFILE}{pdFREERTOS\_ERRNO\_ENMFILE}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+M\+F\+I\+LE~89	/$\ast$ No more files $\ast$/}
+
+
+
+Definition at line 94 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a311c6d46f86eb3f6e029473e34a4b290}\label{projdefs_8h_a311c6d46f86eb3f6e029473e34a4b290}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ENOBUFS@{pdFREERTOS\_ERRNO\_ENOBUFS}}
+\index{pdFREERTOS\_ERRNO\_ENOBUFS@{pdFREERTOS\_ERRNO\_ENOBUFS}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ENOBUFS}{pdFREERTOS\_ERRNO\_ENOBUFS}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+B\+U\+FS~105	/$\ast$ No buffer space available $\ast$/}
+
+
+
+Definition at line 98 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a0a8f4a6b857f6c64e9c2d887bbc26beb}\label{projdefs_8h_a0a8f4a6b857f6c64e9c2d887bbc26beb}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ENODEV@{pdFREERTOS\_ERRNO\_ENODEV}}
+\index{pdFREERTOS\_ERRNO\_ENODEV@{pdFREERTOS\_ERRNO\_ENODEV}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ENODEV}{pdFREERTOS\_ERRNO\_ENODEV}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+D\+EV~19	/$\ast$ No such device $\ast$/}
+
+
+
+Definition at line 84 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_ada626b9e09610adf001a0d78c21ed754}\label{projdefs_8h_ada626b9e09610adf001a0d78c21ed754}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ENOENT@{pdFREERTOS\_ERRNO\_ENOENT}}
+\index{pdFREERTOS\_ERRNO\_ENOENT@{pdFREERTOS\_ERRNO\_ENOENT}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ENOENT}{pdFREERTOS\_ERRNO\_ENOENT}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+E\+NT~2	/$\ast$ No such file or directory $\ast$/}
+
+
+
+Definition at line 71 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a232fc23c4f0ff1aa323b38c3cc7a25fb}\label{projdefs_8h_a232fc23c4f0ff1aa323b38c3cc7a25fb}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ENOMEDIUM@{pdFREERTOS\_ERRNO\_ENOMEDIUM}}
+\index{pdFREERTOS\_ERRNO\_ENOMEDIUM@{pdFREERTOS\_ERRNO\_ENOMEDIUM}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ENOMEDIUM}{pdFREERTOS\_ERRNO\_ENOMEDIUM}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+M\+E\+D\+I\+UM~135	/$\ast$ No medium inserted $\ast$/}
+
+
+
+Definition at line 107 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a5efcf687f972542033358c1a24510aee}\label{projdefs_8h_a5efcf687f972542033358c1a24510aee}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ENOMEM@{pdFREERTOS\_ERRNO\_ENOMEM}}
+\index{pdFREERTOS\_ERRNO\_ENOMEM@{pdFREERTOS\_ERRNO\_ENOMEM}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ENOMEM}{pdFREERTOS\_ERRNO\_ENOMEM}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+M\+EM~12	/$\ast$ Not enough memory $\ast$/}
+
+
+
+Definition at line 78 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a3260d6cafcdb3971622605ac4d3bf3d2}\label{projdefs_8h_a3260d6cafcdb3971622605ac4d3bf3d2}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ENOPROTOOPT@{pdFREERTOS\_ERRNO\_ENOPROTOOPT}}
+\index{pdFREERTOS\_ERRNO\_ENOPROTOOPT@{pdFREERTOS\_ERRNO\_ENOPROTOOPT}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ENOPROTOOPT}{pdFREERTOS\_ERRNO\_ENOPROTOOPT}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+P\+R\+O\+T\+O\+O\+PT~109	/$\ast$ Protocol not available $\ast$/}
+
+
+
+Definition at line 99 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_ada91bb26e0b830b169433aae5ce857cc}\label{projdefs_8h_ada91bb26e0b830b169433aae5ce857cc}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ENOSPC@{pdFREERTOS\_ERRNO\_ENOSPC}}
+\index{pdFREERTOS\_ERRNO\_ENOSPC@{pdFREERTOS\_ERRNO\_ENOSPC}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ENOSPC}{pdFREERTOS\_ERRNO\_ENOSPC}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+S\+PC~28	/$\ast$ No space left on device $\ast$/}
+
+
+
+Definition at line 88 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a2038d432f2a030e1c3ecdeb68676f920}\label{projdefs_8h_a2038d432f2a030e1c3ecdeb68676f920}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ENOTCONN@{pdFREERTOS\_ERRNO\_ENOTCONN}}
+\index{pdFREERTOS\_ERRNO\_ENOTCONN@{pdFREERTOS\_ERRNO\_ENOTCONN}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ENOTCONN}{pdFREERTOS\_ERRNO\_ENOTCONN}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+T\+C\+O\+NN~128	/$\ast$ Socket is not connected $\ast$/}
+
+
+
+Definition at line 106 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a664d5546ffc5cfbd7c28c02ee704030f}\label{projdefs_8h_a664d5546ffc5cfbd7c28c02ee704030f}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ENOTDIR@{pdFREERTOS\_ERRNO\_ENOTDIR}}
+\index{pdFREERTOS\_ERRNO\_ENOTDIR@{pdFREERTOS\_ERRNO\_ENOTDIR}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ENOTDIR}{pdFREERTOS\_ERRNO\_ENOTDIR}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+T\+D\+IR~20	/$\ast$ Not a directory $\ast$/}
+
+
+
+Definition at line 85 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a01a1dbf74da4d89538fdd9d424404808}\label{projdefs_8h_a01a1dbf74da4d89538fdd9d424404808}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ENOTEMPTY@{pdFREERTOS\_ERRNO\_ENOTEMPTY}}
+\index{pdFREERTOS\_ERRNO\_ENOTEMPTY@{pdFREERTOS\_ERRNO\_ENOTEMPTY}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ENOTEMPTY}{pdFREERTOS\_ERRNO\_ENOTEMPTY}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+O\+T\+E\+M\+P\+TY~90	/$\ast$ Directory not empty $\ast$/}
+
+
+
+Definition at line 95 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a84867230ed86089284031935cab091a5}\label{projdefs_8h_a84867230ed86089284031935cab091a5}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ENXIO@{pdFREERTOS\_ERRNO\_ENXIO}}
+\index{pdFREERTOS\_ERRNO\_ENXIO@{pdFREERTOS\_ERRNO\_ENXIO}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ENXIO}{pdFREERTOS\_ERRNO\_ENXIO}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+N\+X\+IO~6	/$\ast$ No such device or address $\ast$/}
+
+
+
+Definition at line 74 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a583344ca8f038153e0c988559064b6b6}\label{projdefs_8h_a583344ca8f038153e0c988559064b6b6}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EOPNOTSUPP@{pdFREERTOS\_ERRNO\_EOPNOTSUPP}}
+\index{pdFREERTOS\_ERRNO\_EOPNOTSUPP@{pdFREERTOS\_ERRNO\_EOPNOTSUPP}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EOPNOTSUPP}{pdFREERTOS\_ERRNO\_EOPNOTSUPP}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+O\+P\+N\+O\+T\+S\+U\+PP~95	/$\ast$ Operation not supported on transport endpoint $\ast$/}
+
+
+
+Definition at line 97 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a83094f3620b1d91ed85f98347b481c29}\label{projdefs_8h_a83094f3620b1d91ed85f98347b481c29}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EROFS@{pdFREERTOS\_ERRNO\_EROFS}}
+\index{pdFREERTOS\_ERRNO\_EROFS@{pdFREERTOS\_ERRNO\_EROFS}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EROFS}{pdFREERTOS\_ERRNO\_EROFS}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+R\+O\+FS~30	/$\ast$ Read only file system $\ast$/}
+
+
+
+Definition at line 90 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a441a754724ed5708ac0d31d10e97dbec}\label{projdefs_8h_a441a754724ed5708ac0d31d10e97dbec}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ESPIPE@{pdFREERTOS\_ERRNO\_ESPIPE}}
+\index{pdFREERTOS\_ERRNO\_ESPIPE@{pdFREERTOS\_ERRNO\_ESPIPE}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ESPIPE}{pdFREERTOS\_ERRNO\_ESPIPE}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+S\+P\+I\+PE~29	/$\ast$ Illegal seek $\ast$/}
+
+
+
+Definition at line 89 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_addf14e54d85281da325711c219b6f0e7}\label{projdefs_8h_addf14e54d85281da325711c219b6f0e7}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_ETIMEDOUT@{pdFREERTOS\_ERRNO\_ETIMEDOUT}}
+\index{pdFREERTOS\_ERRNO\_ETIMEDOUT@{pdFREERTOS\_ERRNO\_ETIMEDOUT}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_ETIMEDOUT}{pdFREERTOS\_ERRNO\_ETIMEDOUT}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+T\+I\+M\+E\+D\+O\+UT~116	/$\ast$ Connection timed out $\ast$/}
+
+
+
+Definition at line 101 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_ab32e968fc64c5ddcd1f2b1de9debd576}\label{projdefs_8h_ab32e968fc64c5ddcd1f2b1de9debd576}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EUNATCH@{pdFREERTOS\_ERRNO\_EUNATCH}}
+\index{pdFREERTOS\_ERRNO\_EUNATCH@{pdFREERTOS\_ERRNO\_EUNATCH}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EUNATCH}{pdFREERTOS\_ERRNO\_EUNATCH}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+U\+N\+A\+T\+CH~42	/$\ast$ Protocol driver not attached $\ast$/}
+
+
+
+Definition at line 91 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a4cbad67c49bf49adbd0c9c1917a0e5e6}\label{projdefs_8h_a4cbad67c49bf49adbd0c9c1917a0e5e6}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EWOULDBLOCK@{pdFREERTOS\_ERRNO\_EWOULDBLOCK}}
+\index{pdFREERTOS\_ERRNO\_EWOULDBLOCK@{pdFREERTOS\_ERRNO\_EWOULDBLOCK}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EWOULDBLOCK}{pdFREERTOS\_ERRNO\_EWOULDBLOCK}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+W\+O\+U\+L\+D\+B\+L\+O\+CK~11	/$\ast$ Operation would block $\ast$/}
+
+
+
+Definition at line 77 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a75aadb287c3f7089edb7f1c85319b105}\label{projdefs_8h_a75aadb287c3f7089edb7f1c85319b105}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_EXDEV@{pdFREERTOS\_ERRNO\_EXDEV}}
+\index{pdFREERTOS\_ERRNO\_EXDEV@{pdFREERTOS\_ERRNO\_EXDEV}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_EXDEV}{pdFREERTOS\_ERRNO\_EXDEV}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+E\+X\+D\+EV~18	/$\ast$ Cross-\/device link $\ast$/}
+
+
+
+Definition at line 83 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_ad836dd7abef3eced71f4ce24d39debd9}\label{projdefs_8h_ad836dd7abef3eced71f4ce24d39debd9}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_ERRNO\_NONE@{pdFREERTOS\_ERRNO\_NONE}}
+\index{pdFREERTOS\_ERRNO\_NONE@{pdFREERTOS\_ERRNO\_NONE}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_ERRNO\_NONE}{pdFREERTOS\_ERRNO\_NONE}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+E\+R\+R\+N\+O\+\_\+\+N\+O\+NE~0	/$\ast$ No errors $\ast$/}
+
+
+
+Definition at line 70 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a2677d93f2de37bcd907c6967c583fd10}\label{projdefs_8h_a2677d93f2de37bcd907c6967c583fd10}} 
+\index{projdefs.h@{projdefs.h}!pdFREERTOS\_LITTLE\_ENDIAN@{pdFREERTOS\_LITTLE\_ENDIAN}}
+\index{pdFREERTOS\_LITTLE\_ENDIAN@{pdFREERTOS\_LITTLE\_ENDIAN}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdFREERTOS\_LITTLE\_ENDIAN}{pdFREERTOS\_LITTLE\_ENDIAN}}
+{\footnotesize\ttfamily \#define pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN~0}
+
+
+
+Definition at line 113 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a692e23284a1eff2b98132042b0c2c99d}\label{projdefs_8h_a692e23284a1eff2b98132042b0c2c99d}} 
+\index{projdefs.h@{projdefs.h}!pdINTEGRITY\_CHECK\_VALUE@{pdINTEGRITY\_CHECK\_VALUE}}
+\index{pdINTEGRITY\_CHECK\_VALUE@{pdINTEGRITY\_CHECK\_VALUE}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdINTEGRITY\_CHECK\_VALUE}{pdINTEGRITY\_CHECK\_VALUE}}
+{\footnotesize\ttfamily \#define pd\+I\+N\+T\+E\+G\+R\+I\+T\+Y\+\_\+\+C\+H\+E\+C\+K\+\_\+\+V\+A\+L\+UE~0x5a5a5a5a\+UL}
+
+
+
+Definition at line 65 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a4599a4d1e3c89bcce5301f82028561c1}\label{projdefs_8h_a4599a4d1e3c89bcce5301f82028561c1}} 
+\index{projdefs.h@{projdefs.h}!pdLITTLE\_ENDIAN@{pdLITTLE\_ENDIAN}}
+\index{pdLITTLE\_ENDIAN@{pdLITTLE\_ENDIAN}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdLITTLE\_ENDIAN}{pdLITTLE\_ENDIAN}}
+{\footnotesize\ttfamily \#define pd\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN~\mbox{\hyperlink{projdefs_8h_a2677d93f2de37bcd907c6967c583fd10}{pd\+F\+R\+E\+E\+R\+T\+O\+S\+\_\+\+L\+I\+T\+T\+L\+E\+\_\+\+E\+N\+D\+I\+AN}}}
+
+
+
+Definition at line 117 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a353d0f62b82a402cb3db63706c81ec3f}\label{projdefs_8h_a353d0f62b82a402cb3db63706c81ec3f}} 
+\index{projdefs.h@{projdefs.h}!pdMS\_TO\_TICKS@{pdMS\_TO\_TICKS}}
+\index{pdMS\_TO\_TICKS@{pdMS\_TO\_TICKS}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdMS\_TO\_TICKS}{pdMS\_TO\_TICKS}}
+{\footnotesize\ttfamily \#define pd\+M\+S\+\_\+\+T\+O\+\_\+\+T\+I\+C\+KS(\begin{DoxyParamCaption}\item[{}]{x\+Time\+In\+Ms }\end{DoxyParamCaption})~( ( Tick\+Type\+\_\+t ) ( ( ( Tick\+Type\+\_\+t ) ( x\+Time\+In\+Ms ) $\ast$ ( Tick\+Type\+\_\+t ) \mbox{\hyperlink{_free_r_t_o_s_config_8h_a2f0258dd1e3b877e5bc013be54c2db6a}{config\+T\+I\+C\+K\+\_\+\+R\+A\+T\+E\+\_\+\+HZ}} ) / ( Tick\+Type\+\_\+t ) 1000 ) )}
+
+
+
+Definition at line 41 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_a07848d3078849bd32353c69d30a479b3}\label{projdefs_8h_a07848d3078849bd32353c69d30a479b3}} 
+\index{projdefs.h@{projdefs.h}!pdPASS@{pdPASS}}
+\index{pdPASS@{pdPASS}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdPASS}{pdPASS}}
+{\footnotesize\ttfamily \#define pd\+P\+A\+SS~( \mbox{\hyperlink{projdefs_8h_af268cf937960eb029256bd9c4d949fbe}{pd\+T\+R\+UE}} )}
+
+
+
+Definition at line 47 of file projdefs.\+h.
+
+\mbox{\Hypertarget{projdefs_8h_af268cf937960eb029256bd9c4d949fbe}\label{projdefs_8h_af268cf937960eb029256bd9c4d949fbe}} 
+\index{projdefs.h@{projdefs.h}!pdTRUE@{pdTRUE}}
+\index{pdTRUE@{pdTRUE}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{pdTRUE}{pdTRUE}}
+{\footnotesize\ttfamily \#define pd\+T\+R\+UE~( ( Base\+Type\+\_\+t ) 1 )}
+
+
+
+Definition at line 45 of file projdefs.\+h.
+
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{projdefs_8h_a9b32502ff92c255c686dacde53c1cba0}\label{projdefs_8h_a9b32502ff92c255c686dacde53c1cba0}} 
+\index{projdefs.h@{projdefs.h}!TaskFunction\_t@{TaskFunction\_t}}
+\index{TaskFunction\_t@{TaskFunction\_t}!projdefs.h@{projdefs.h}}
+\doxysubsubsection{\texorpdfstring{TaskFunction\_t}{TaskFunction\_t}}
+{\footnotesize\ttfamily typedef void($\ast$ Task\+Function\+\_\+t) (void $\ast$)}
+
+
+
+Definition at line 35 of file projdefs.\+h.
+

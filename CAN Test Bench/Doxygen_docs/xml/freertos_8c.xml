@@ -1,0 +1,772 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.16">
+  <compounddef id="freertos_8c" kind="file" language="C++">
+    <compoundname>freertos.c</compoundname>
+    <includes local="yes">FreeRTOS.h</includes>
+    <includes local="yes">task.h</includes>
+    <includes refid="main_8h" local="yes">main.h</includes>
+    <includes local="yes">cmsis_os.h</includes>
+    <includes refid="uvfr__utils_8h" local="yes">uvfr_utils.h</includes>
+    <incdepgraph>
+      <node id="6">
+        <label>stdarg.h</label>
+      </node>
+      <node id="14">
+        <label>tim.h</label>
+        <link refid="tim_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>imd.h</label>
+        <link refid="imd_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>dash.h</label>
+        <link refid="dash_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="20">
+        <label>driving_loop.h</label>
+        <link refid="driving__loop_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>temp_monitoring.h</label>
+        <link refid="temp__monitoring_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="32">
+        <label>stdint.h</label>
+      </node>
+      <node id="33">
+        <label>stdlib.h</label>
+      </node>
+      <node id="28">
+        <label>oled.h</label>
+        <link refid="oled_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>adc.h</label>
+        <link refid="adc_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="9">
+        <label>cmsis_os.h</label>
+      </node>
+      <node id="7">
+        <label>uvfr_utils.h</label>
+        <link refid="uvfr__utils_8h"/>
+        <childnode refid="8" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
+        <childnode refid="11" relation="include">
+        </childnode>
+        <childnode refid="13" relation="include">
+        </childnode>
+        <childnode refid="14" relation="include">
+        </childnode>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="16" relation="include">
+        </childnode>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="25" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="27" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="29" relation="include">
+        </childnode>
+        <childnode refid="30" relation="include">
+        </childnode>
+        <childnode refid="31" relation="include">
+        </childnode>
+        <childnode refid="32" relation="include">
+        </childnode>
+        <childnode refid="33" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>message_buffer.h</label>
+      </node>
+      <node id="1">
+        <label>Core/Src/freertos.c</label>
+        <link refid="freertos_8c"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+        <childnode refid="3" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="9" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="23">
+        <label>bms.h</label>
+        <link refid="bms_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>spi.h</label>
+        <link refid="spi_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>pdu.h</label>
+        <link refid="pdu_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>motor_controller.h</label>
+        <link refid="motor__controller_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>uvfr_settings.h</label>
+        <link refid="uvfr__settings_8h"/>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="20" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>daq.h</label>
+        <link refid="daq_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>gpio.h</label>
+        <link refid="gpio_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>rb_tree.h</label>
+        <link refid="rb__tree_8h"/>
+      </node>
+      <node id="12">
+        <label>constants.h</label>
+        <link refid="constants_8h"/>
+      </node>
+      <node id="11">
+        <label>can.h</label>
+        <link refid="can_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+        <childnode refid="12" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="8">
+        <label>uvfr_global_config.h</label>
+        <link refid="uvfr__global__config_8h"/>
+      </node>
+      <node id="31">
+        <label>FreeRTOSConfig.h</label>
+        <link refid="_free_r_t_o_s_config_8h"/>
+      </node>
+      <node id="24">
+        <label>uvfr_state_engine.h</label>
+        <link refid="uvfr__state__engine_8h"/>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>odometer.h</label>
+        <link refid="odometer_8h"/>
+      </node>
+      <node id="5">
+        <label>stm32f4xx_hal.h</label>
+      </node>
+      <node id="2">
+        <label>FreeRTOS.h</label>
+      </node>
+      <node id="13">
+        <label>dma.h</label>
+        <link refid="dma_8h"/>
+        <childnode refid="4" relation="include">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>task.h</label>
+      </node>
+      <node id="4">
+        <label>main.h</label>
+        <link refid="main_8h"/>
+        <childnode refid="5" relation="include">
+        </childnode>
+        <childnode refid="6" relation="include">
+        </childnode>
+        <childnode refid="7" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+      <sectiondef kind="var">
+      <memberdef kind="variable" id="freertos_8c_1a3afad2adffd2b662e26b56ede2b1ccc5" prot="public" static="no" mutable="no">
+        <type><ref refid="structuv__init__struct" kindref="compound">uv_init_struct</ref></type>
+        <definition>uv_init_struct init_settings</definition>
+        <argsstring></argsstring>
+        <name>init_settings</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>File Name : <ref refid="freertos_8c" kindref="compound">freertos.c</ref> Description : Code for freertos applications</para>
+<para><simplesect kind="attention"><para></para>
+</simplesect>
+Copyright (c) 2024 STMicroelectronics. All rights reserved.</para>
+<para>This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-IS. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="48" column="16" bodyfile="Core/Src/freertos.c" bodystart="48" bodyend="-1"/>
+        <referencedby refid="main_8c_1abade755e13d07c10889ae83143656158" compoundref="freertos_8c" startline="160" endline="201">MX_FREERTOS_Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="freertos_8c_1a142da7a698285a444ffffb0d1d791023" prot="public" static="no" mutable="no">
+        <type>TaskHandle_t</type>
+        <definition>TaskHandle_t init_task_handle</definition>
+        <argsstring></argsstring>
+        <name>init_task_handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="51" column="14" bodyfile="Core/Src/freertos.c" bodystart="51" bodyend="-1"/>
+        <referencedby refid="main_8c_1abade755e13d07c10889ae83143656158" compoundref="freertos_8c" startline="160" endline="201">MX_FREERTOS_Init</referencedby>
+        <referencedby refid="uvfr__utils_8c_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="freertos_8c_1aa658fe134a5d1309d7a15c8116fa142c" prot="public" static="no" mutable="no">
+        <type>osThreadId</type>
+        <definition>osThreadId defaultTaskHandle</definition>
+        <argsstring></argsstring>
+        <name>defaultTaskHandle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="53" column="12" bodyfile="Core/Src/freertos.c" bodystart="53" bodyend="-1"/>
+        <referencedby refid="main_8c_1abade755e13d07c10889ae83143656158" compoundref="freertos_8c" startline="160" endline="201">MX_FREERTOS_Init</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="freertos_8c_1a2dd1013c5ef8f355ac2f1479e36ec659" prot="public" static="yes" mutable="no">
+        <type>StaticTask_t</type>
+        <definition>StaticTask_t xIdleTaskTCBBuffer</definition>
+        <argsstring></argsstring>
+        <name>xIdleTaskTCBBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="129" column="21" bodyfile="Core/Src/freertos.c" bodystart="129" bodyend="-1"/>
+        <referencedby refid="freertos_8c_1a1988aa923b19fa6f31c93afa7773f793" compoundref="freertos_8c" startline="132" endline="138">vApplicationGetIdleTaskMemory</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="freertos_8c_1af311b04396149ce536fe1a3b5f127445" prot="public" static="yes" mutable="no">
+        <type>StackType_t</type>
+        <definition>StackType_t xIdleStack[configMINIMAL_STACK_SIZE]</definition>
+        <argsstring>[configMINIMAL_STACK_SIZE]</argsstring>
+        <name>xIdleStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="130" column="20" bodyfile="Core/Src/freertos.c" bodystart="130" bodyend="-1"/>
+        <referencedby refid="freertos_8c_1a1988aa923b19fa6f31c93afa7773f793" compoundref="freertos_8c" startline="132" endline="138">vApplicationGetIdleTaskMemory</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="freertos_8c_1a38d479dc434b1716ec493c97d862680e" prot="public" static="yes" mutable="no">
+        <type>StaticTask_t</type>
+        <definition>StaticTask_t xTimerTaskTCBBuffer</definition>
+        <argsstring></argsstring>
+        <name>xTimerTaskTCBBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="143" column="21" bodyfile="Core/Src/freertos.c" bodystart="143" bodyend="-1"/>
+        <referencedby refid="freertos_8c_1a1e80ecbd3fc2d04f18d6409ffa893a86" compoundref="freertos_8c" startline="146" endline="152">vApplicationGetTimerTaskMemory</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="freertos_8c_1ac4bbf08a713d317769fd40e9474a279b" prot="public" static="yes" mutable="no">
+        <type>StackType_t</type>
+        <definition>StackType_t xTimerStack[configTIMER_TASK_STACK_DEPTH]</definition>
+        <argsstring>[configTIMER_TASK_STACK_DEPTH]</argsstring>
+        <name>xTimerStack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="144" column="20" bodyfile="Core/Src/freertos.c" bodystart="144" bodyend="-1"/>
+        <referencedby refid="freertos_8c_1a1e80ecbd3fc2d04f18d6409ffa893a86" compoundref="freertos_8c" startline="146" endline="152">vApplicationGetTimerTaskMemory</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="freertos_8c_1a016544463b4842ced7191baf8f449cea" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void StartDefaultTask</definition>
+        <argsstring>(void const *argument)</argsstring>
+        <name>StartDefaultTask</name>
+        <param>
+          <type>void const *</type>
+          <declname>argument</declname>
+        </param>
+        <briefdescription>
+<para>Function implementing the defaultTask thread. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="attention"><para>DO NOT EVER CALL THIS. IT EXISTS TO STOP A COMPILER ERROR IN THE MX_FREERTOS_INIT FUNCTION </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="209" column="6" bodyfile="Core/Src/freertos.c" bodystart="209" bodyend="218" declfile="Core/Src/freertos.c" declline="60" declcolumn="6"/>
+        <referencedby refid="main_8c_1abade755e13d07c10889ae83143656158" compoundref="freertos_8c" startline="160" endline="201">MX_FREERTOS_Init</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="freertos_8c_1abade755e13d07c10889ae83143656158" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MX_FREERTOS_Init</definition>
+        <argsstring>(void)</argsstring>
+        <name>MX_FREERTOS_Init</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>FreeRTOS initialization. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>None</parametername>
+</parameternamelist>
+<parameterdescription>
+<para></para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+<para><simplesect kind="attention"><para>DONT YOU FUCKING DARE DELETE THESE GOTO STATEMENTS, THEY ARE CRITICAL TO STOP THE OS FROM HANGING ITSELF</para>
+</simplesect>
+</para>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="160" column="6" bodyfile="Core/Src/freertos.c" bodystart="160" bodyend="201" declfile="Core/Src/freertos.c" declline="62" declcolumn="6"/>
+        <references refid="freertos_8c_1aa658fe134a5d1309d7a15c8116fa142c" compoundref="freertos_8c" startline="53">defaultTaskHandle</references>
+        <references refid="freertos_8c_1a3afad2adffd2b662e26b56ede2b1ccc5" compoundref="freertos_8c" startline="48">init_settings</references>
+        <references refid="freertos_8c_1a142da7a698285a444ffffb0d1d791023" compoundref="freertos_8c" startline="51">init_task_handle</references>
+        <references refid="freertos_8c_1a016544463b4842ced7191baf8f449cea" compoundref="freertos_8c" startline="209" endline="218">StartDefaultTask</references>
+        <references refid="structuv__init__struct_1a5275182451a7f4931006e5ff393f1cdb" compoundref="uvfr__utils_8h" startline="285">uv_init_struct::use_default_settings</references>
+        <references refid="uvfr__utils_8h_1a6d40598f9d8daa89ca159a2e87f4fd01" compoundref="uvfr__utils_8c" startline="39" endline="231">uvInit</references>
+        <referencedby refid="main_8c_1a840291bc02cba5474a4cb46a9b9566fe" compoundref="main_8c" startline="97" endline="211">main</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="freertos_8c_1a1988aa923b19fa6f31c93afa7773f793" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vApplicationGetIdleTaskMemory</definition>
+        <argsstring>(StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize)</argsstring>
+        <name>vApplicationGetIdleTaskMemory</name>
+        <param>
+          <type>StaticTask_t **</type>
+          <declname>ppxIdleTaskTCBBuffer</declname>
+        </param>
+        <param>
+          <type>StackType_t **</type>
+          <declname>ppxIdleTaskStackBuffer</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>pulIdleTaskStackSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="132" column="6" bodyfile="Core/Src/freertos.c" bodystart="132" bodyend="138" declfile="Core/Src/freertos.c" declline="65" declcolumn="6"/>
+        <references refid="_free_r_t_o_s_config_8h_1a6c534a6cf8a00528fe0be42083484f9a" compoundref="_free_r_t_o_s_config_8h" startline="66">configMINIMAL_STACK_SIZE</references>
+        <references refid="freertos_8c_1af311b04396149ce536fe1a3b5f127445" compoundref="freertos_8c" startline="130">xIdleStack</references>
+        <references refid="freertos_8c_1a2dd1013c5ef8f355ac2f1479e36ec659" compoundref="freertos_8c" startline="129">xIdleTaskTCBBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="freertos_8c_1a1e80ecbd3fc2d04f18d6409ffa893a86" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vApplicationGetTimerTaskMemory</definition>
+        <argsstring>(StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **ppxTimerTaskStackBuffer, uint32_t *pulTimerTaskStackSize)</argsstring>
+        <name>vApplicationGetTimerTaskMemory</name>
+        <param>
+          <type>StaticTask_t **</type>
+          <declname>ppxTimerTaskTCBBuffer</declname>
+        </param>
+        <param>
+          <type>StackType_t **</type>
+          <declname>ppxTimerTaskStackBuffer</declname>
+        </param>
+        <param>
+          <type>uint32_t *</type>
+          <declname>pulTimerTaskStackSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="146" column="6" bodyfile="Core/Src/freertos.c" bodystart="146" bodyend="152" declfile="Core/Src/freertos.c" declline="68" declcolumn="6"/>
+        <references refid="_free_r_t_o_s_config_8h_1aed7c7ebcdee603583a55e8ce04e55841" compoundref="_free_r_t_o_s_config_8h" startline="97">configTIMER_TASK_STACK_DEPTH</references>
+        <references refid="freertos_8c_1ac4bbf08a713d317769fd40e9474a279b" compoundref="freertos_8c" startline="144">xTimerStack</references>
+        <references refid="freertos_8c_1a38d479dc434b1716ec493c97d862680e" compoundref="freertos_8c" startline="143">xTimerTaskTCBBuffer</references>
+      </memberdef>
+      <memberdef kind="function" id="freertos_8c_1a109d34fc5d6dd8982815445df5790016" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>__weak void vApplicationTickHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>vApplicationTickHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="76" column="13" bodyfile="Core/Src/freertos.c" bodystart="76" bodyend="85" declfile="Core/Src/freertos.c" declline="71" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="freertos_8c_1a771797a7892e3fb45ba038b6317f956e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>__weak void vApplicationStackOverflowHook</definition>
+        <argsstring>(TaskHandle_t xTask, signed char *pcTaskName)</argsstring>
+        <name>vApplicationStackOverflowHook</name>
+        <param>
+          <type>TaskHandle_t</type>
+          <declname>xTask</declname>
+        </param>
+        <param>
+          <type>signed char *</type>
+          <declname>pcTaskName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="89" column="13" bodyfile="Core/Src/freertos.c" bodystart="89" bodyend="99" declfile="Core/Src/freertos.c" declline="72" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="freertos_8c_1a92b5bd8c1938973f010621d23aa88c3d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>__weak void vApplicationMallocFailedHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>vApplicationMallocFailedHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="108" column="13" bodyfile="Core/Src/freertos.c" bodystart="108" bodyend="125" declfile="Core/Src/freertos.c" declline="73" declcolumn="6"/>
+      </memberdef>
+      <memberdef kind="function" id="freertos_8c_1a97fd430f36f8b065226e2bff9bad1de5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void vApplicationIdleHook</definition>
+        <argsstring>(void)</argsstring>
+        <name>vApplicationIdleHook</name>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Core/Src/freertos.c" line="101" column="6" bodyfile="Core/Src/freertos.c" bodystart="101" bodyend="104"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Header<sp/>*/</highlight></codeline>
+<codeline lineno="18"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Header<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Includes<sp/>------------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;FreeRTOS.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;task.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="main_8h" kindref="compound">main.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;cmsis_os.h&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>includes<sp/>----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="uvfr__utils_8h" kindref="compound">uvfr_utils.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Includes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>typedef<sp/>-----------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PTD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PTD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>define<sp/>------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PD<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>macro<sp/>-------------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>PM<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>PM<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>variables<sp/>---------------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Variables<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48" refid="freertos_8c_1a3afad2adffd2b662e26b56ede2b1ccc5" refkind="member"><highlight class="normal"><ref refid="structuv__init__struct" kindref="compound">uv_init_struct</ref><sp/><ref refid="freertos_8c_1a3afad2adffd2b662e26b56ede2b1ccc5" kindref="member">init_settings</ref>;</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51" refid="uvfr__utils_8c_1a142da7a698285a444ffffb0d1d791023" refkind="member"><highlight class="normal">TaskHandle_t<sp/><ref refid="freertos_8c_1a142da7a698285a444ffffb0d1d791023" kindref="member">init_task_handle</ref>;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Variables<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53" refid="freertos_8c_1aa658fe134a5d1309d7a15c8116fa142c" refkind="member"><highlight class="normal">osThreadId<sp/><ref refid="freertos_8c_1aa658fe134a5d1309d7a15c8116fa142c" kindref="member">defaultTaskHandle</ref>;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>function<sp/>prototypes<sp/>-----------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>FunctionPrototypes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>FunctionPrototypes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1a016544463b4842ced7191baf8f449cea" kindref="member">StartDefaultTask</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/>argument);</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1abade755e13d07c10889ae83143656158" kindref="member">MX_FREERTOS_Init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);<sp/></highlight><highlight class="comment">/*<sp/>(MISRA<sp/>C<sp/>2004<sp/>rule<sp/>8.1)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>GetIdleTaskMemory<sp/>prototype<sp/>(linked<sp/>to<sp/>static<sp/>allocation<sp/>support)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1a1988aa923b19fa6f31c93afa7773f793" kindref="member">vApplicationGetIdleTaskMemory</ref>(<sp/>StaticTask_t<sp/>**ppxIdleTaskTCBBuffer,<sp/>StackType_t<sp/>**ppxIdleTaskStackBuffer,<sp/>uint32_t<sp/>*pulIdleTaskStackSize<sp/>);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>GetTimerTaskMemory<sp/>prototype<sp/>(linked<sp/>to<sp/>static<sp/>allocation<sp/>support)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1a1e80ecbd3fc2d04f18d6409ffa893a86" kindref="member">vApplicationGetTimerTaskMemory</ref>(<sp/>StaticTask_t<sp/>**ppxTimerTaskTCBBuffer,<sp/>StackType_t<sp/>**ppxTimerTaskStackBuffer,<sp/>uint32_t<sp/>*pulTimerTaskStackSize<sp/>);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Hook<sp/>prototypes<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1a109d34fc5d6dd8982815445df5790016" kindref="member">vApplicationTickHook</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1a771797a7892e3fb45ba038b6317f956e" kindref="member">vApplicationStackOverflowHook</ref>(TaskHandle_t<sp/>xTask,<sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pcTaskName);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1a92b5bd8c1938973f010621d23aa88c3d" kindref="member">vApplicationMallocFailedHook</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>3<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="76" refid="freertos_8c_1a109d34fc5d6dd8982815445df5790016" refkind="member"><highlight class="normal">__weak<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1a109d34fc5d6dd8982815445df5790016" kindref="member">vApplicationTickHook</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>)</highlight></codeline>
+<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>This<sp/>function<sp/>will<sp/>be<sp/>called<sp/>by<sp/>each<sp/>tick<sp/>interrupt<sp/>if</highlight></codeline>
+<codeline lineno="79"><highlight class="comment"><sp/><sp/><sp/>configUSE_TICK_HOOK<sp/>is<sp/>set<sp/>to<sp/>1<sp/>in<sp/>FreeRTOSConfig.h.<sp/>User<sp/>code<sp/>can<sp/>be</highlight></codeline>
+<codeline lineno="80"><highlight class="comment"><sp/><sp/><sp/>added<sp/>here,<sp/>but<sp/>the<sp/>tick<sp/>hook<sp/>is<sp/>called<sp/>from<sp/>an<sp/>interrupt<sp/>context,<sp/>so</highlight></codeline>
+<codeline lineno="81"><highlight class="comment"><sp/><sp/><sp/>code<sp/>must<sp/>not<sp/>attempt<sp/>to<sp/>block,<sp/>and<sp/>only<sp/>the<sp/>interrupt<sp/>safe<sp/>FreeRTOS<sp/>API</highlight></codeline>
+<codeline lineno="82"><highlight class="comment"><sp/><sp/><sp/>functions<sp/>can<sp/>be<sp/>used<sp/>(those<sp/>that<sp/>end<sp/>in<sp/>FromISR()).<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>3<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>4<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="89" refid="freertos_8c_1a771797a7892e3fb45ba038b6317f956e" refkind="member"><highlight class="normal">__weak<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1a771797a7892e3fb45ba038b6317f956e" kindref="member">vApplicationStackOverflowHook</ref>(TaskHandle_t<sp/>xTask,<sp/></highlight><highlight class="keywordtype">signed</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*pcTaskName)</highlight></codeline>
+<codeline lineno="90"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>Run<sp/>time<sp/>stack<sp/>overflow<sp/>checking<sp/>is<sp/>performed<sp/>if</highlight></codeline>
+<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/>configCHECK_FOR_STACK_OVERFLOW<sp/>is<sp/>defined<sp/>to<sp/>1<sp/>or<sp/>2.<sp/>This<sp/>hook<sp/>function<sp/>is</highlight></codeline>
+<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/>called<sp/>if<sp/>a<sp/>stack<sp/>overflow<sp/>is<sp/>detected.<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1){</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//THIS<sp/>IS<sp/>VERY<sp/>MUCH<sp/>NOT<sp/>GOOD.<sp/>BIG<sp/>SUCK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//double<sp/>plus<sp/>ungood</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="99"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"></highlight></codeline>
+<codeline lineno="101" refid="freertos_8c_1a97fd430f36f8b065226e2bff9bad1de5" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1a97fd430f36f8b065226e2bff9bad1de5" kindref="member">vApplicationIdleHook</ref>(<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>){</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>i++;</highlight></codeline>
+<codeline lineno="104"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>4<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>5<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="108" refid="freertos_8c_1a92b5bd8c1938973f010621d23aa88c3d" refkind="member"><highlight class="normal">__weak<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1a92b5bd8c1938973f010621d23aa88c3d" kindref="member">vApplicationMallocFailedHook</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="109"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>vApplicationMallocFailedHook()<sp/>will<sp/>only<sp/>be<sp/>called<sp/>if</highlight></codeline>
+<codeline lineno="111"><highlight class="comment"><sp/><sp/><sp/>configUSE_MALLOC_FAILED_HOOK<sp/>is<sp/>set<sp/>to<sp/>1<sp/>in<sp/>FreeRTOSConfig.h.<sp/>It<sp/>is<sp/>a<sp/>hook</highlight></codeline>
+<codeline lineno="112"><highlight class="comment"><sp/><sp/><sp/>function<sp/>that<sp/>will<sp/>get<sp/>called<sp/>if<sp/>a<sp/>call<sp/>to<sp/>pvPortMalloc()<sp/>fails.</highlight></codeline>
+<codeline lineno="113"><highlight class="comment"><sp/><sp/><sp/>pvPortMalloc()<sp/>is<sp/>called<sp/>internally<sp/>by<sp/>the<sp/>kernel<sp/>whenever<sp/>a<sp/>task,<sp/>queue,</highlight></codeline>
+<codeline lineno="114"><highlight class="comment"><sp/><sp/><sp/>timer<sp/>or<sp/>semaphore<sp/>is<sp/>created.<sp/>It<sp/>is<sp/>also<sp/>called<sp/>by<sp/>various<sp/>parts<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="115"><highlight class="comment"><sp/><sp/><sp/>demo<sp/>application.<sp/>If<sp/>heap_1.c<sp/>or<sp/>heap_2.c<sp/>are<sp/>used,<sp/>then<sp/>the<sp/>size<sp/>of<sp/>the</highlight></codeline>
+<codeline lineno="116"><highlight class="comment"><sp/><sp/><sp/>heap<sp/>available<sp/>to<sp/>pvPortMalloc()<sp/>is<sp/>defined<sp/>by<sp/>configTOTAL_HEAP_SIZE<sp/>in</highlight></codeline>
+<codeline lineno="117"><highlight class="comment"><sp/><sp/><sp/>FreeRTOSConfig.h,<sp/>and<sp/>the<sp/>xPortGetFreeHeapSize()<sp/>API<sp/>function<sp/>can<sp/>be<sp/>used</highlight></codeline>
+<codeline lineno="118"><highlight class="comment"><sp/><sp/><sp/>to<sp/>query<sp/>the<sp/>size<sp/>of<sp/>free<sp/>heap<sp/>space<sp/>that<sp/>remains<sp/>(although<sp/>it<sp/>does<sp/>not</highlight></codeline>
+<codeline lineno="119"><highlight class="comment"><sp/><sp/><sp/>provide<sp/>information<sp/>on<sp/>how<sp/>the<sp/>remaining<sp/>heap<sp/>might<sp/>be<sp/>fragmented).<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1){</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//THIS<sp/>IS<sp/>VERY<sp/>MUCH<sp/>NOT<sp/>GOOD.<sp/>BIG<sp/>SUCK</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//double<sp/>plus<sp/>ungood</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="125"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="126"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>5<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>GET_IDLE_TASK_MEMORY<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="129" refid="freertos_8c_1a2dd1013c5ef8f355ac2f1479e36ec659" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>StaticTask_t<sp/><ref refid="freertos_8c_1a2dd1013c5ef8f355ac2f1479e36ec659" kindref="member">xIdleTaskTCBBuffer</ref>;</highlight></codeline>
+<codeline lineno="130" refid="freertos_8c_1af311b04396149ce536fe1a3b5f127445" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>StackType_t<sp/><ref refid="freertos_8c_1af311b04396149ce536fe1a3b5f127445" kindref="member">xIdleStack</ref>[<ref refid="_free_r_t_o_s_config_8h_1a6c534a6cf8a00528fe0be42083484f9a" kindref="member">configMINIMAL_STACK_SIZE</ref>];</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"></highlight></codeline>
+<codeline lineno="132" refid="freertos_8c_1a1988aa923b19fa6f31c93afa7773f793" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1a1988aa923b19fa6f31c93afa7773f793" kindref="member">vApplicationGetIdleTaskMemory</ref>(<sp/>StaticTask_t<sp/>**ppxIdleTaskTCBBuffer,<sp/>StackType_t<sp/>**ppxIdleTaskStackBuffer,<sp/>uint32_t<sp/>*pulIdleTaskStackSize<sp/>)</highlight></codeline>
+<codeline lineno="133"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/>*ppxIdleTaskTCBBuffer<sp/>=<sp/>&amp;<ref refid="freertos_8c_1a2dd1013c5ef8f355ac2f1479e36ec659" kindref="member">xIdleTaskTCBBuffer</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/>*ppxIdleTaskStackBuffer<sp/>=<sp/>&amp;<ref refid="freertos_8c_1af311b04396149ce536fe1a3b5f127445" kindref="member">xIdleStack</ref>[0];</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/>*pulIdleTaskStackSize<sp/>=<sp/><ref refid="_free_r_t_o_s_config_8h_1a6c534a6cf8a00528fe0be42083484f9a" kindref="member">configMINIMAL_STACK_SIZE</ref>;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>place<sp/>for<sp/>user<sp/>code<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="138"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>GET_IDLE_TASK_MEMORY<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>GET_TIMER_TASK_MEMORY<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143" refid="freertos_8c_1a38d479dc434b1716ec493c97d862680e" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>StaticTask_t<sp/><ref refid="freertos_8c_1a38d479dc434b1716ec493c97d862680e" kindref="member">xTimerTaskTCBBuffer</ref>;</highlight></codeline>
+<codeline lineno="144" refid="freertos_8c_1ac4bbf08a713d317769fd40e9474a279b" refkind="member"><highlight class="normal"></highlight><highlight class="keyword">static</highlight><highlight class="normal"><sp/>StackType_t<sp/><ref refid="freertos_8c_1ac4bbf08a713d317769fd40e9474a279b" kindref="member">xTimerStack</ref>[<ref refid="_free_r_t_o_s_config_8h_1aed7c7ebcdee603583a55e8ce04e55841" kindref="member">configTIMER_TASK_STACK_DEPTH</ref>];</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="146" refid="freertos_8c_1a1e80ecbd3fc2d04f18d6409ffa893a86" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1a1e80ecbd3fc2d04f18d6409ffa893a86" kindref="member">vApplicationGetTimerTaskMemory</ref>(<sp/>StaticTask_t<sp/>**ppxTimerTaskTCBBuffer,<sp/>StackType_t<sp/>**ppxTimerTaskStackBuffer,<sp/>uint32_t<sp/>*pulTimerTaskStackSize<sp/>)</highlight></codeline>
+<codeline lineno="147"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/>*ppxTimerTaskTCBBuffer<sp/>=<sp/>&amp;<ref refid="freertos_8c_1a38d479dc434b1716ec493c97d862680e" kindref="member">xTimerTaskTCBBuffer</ref>;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/>*ppxTimerTaskStackBuffer<sp/>=<sp/>&amp;<ref refid="freertos_8c_1ac4bbf08a713d317769fd40e9474a279b" kindref="member">xTimerStack</ref>[0];</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/>*pulTimerTaskStackSize<sp/>=<sp/><ref refid="_free_r_t_o_s_config_8h_1aed7c7ebcdee603583a55e8ce04e55841" kindref="member">configTIMER_TASK_STACK_DEPTH</ref>;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>place<sp/>for<sp/>user<sp/>code<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="152"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>GET_TIMER_TASK_MEMORY<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="154"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160" refid="main_8c_1abade755e13d07c10889ae83143656158" refkind="member"><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1abade755e13d07c10889ae83143656158" kindref="member">MX_FREERTOS_Init</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>{</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Init<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="freertos_8c_1a3afad2adffd2b662e26b56ede2b1ccc5" kindref="member">init_settings</ref>.<ref refid="structuv__init__struct_1a5275182451a7f4931006e5ff393f1cdb" kindref="member">use_default_settings</ref><sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Init<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>RTOS_MUTEX<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>add<sp/>mutexes,<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>RTOS_MUTEX<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>RTOS_SEMAPHORES<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>add<sp/>semaphores,<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>RTOS_SEMAPHORES<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="172"><highlight class="normal"></highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>RTOS_TIMERS<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>start<sp/>timers,<sp/>add<sp/>new<sp/>ones,<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>RTOS_TIMERS<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="176"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>RTOS_QUEUES<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>add<sp/>queues,<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//EVIL<sp/>GOTO<sp/>HACK<sp/>-<sp/>DO<sp/>NOT<sp/>TOUCH</highlight></codeline>
+<codeline lineno="181"><highlight class="comment"></highlight><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">goto</highlight><highlight class="normal"><sp/>MX_FREERTOS_INIT_IGNORE_CMSIS;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>RTOS_QUEUES<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Create<sp/>the<sp/>thread(s)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>definition<sp/>and<sp/>creation<sp/>of<sp/>defaultTask<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="normal"><sp/><sp/>osThreadDef(defaultTask,<sp/><ref refid="freertos_8c_1a016544463b4842ced7191baf8f449cea" kindref="member">StartDefaultTask</ref>,<sp/>osPriorityNormal,<sp/>0,<sp/>128);</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><ref refid="freertos_8c_1aa658fe134a5d1309d7a15c8116fa142c" kindref="member">defaultTaskHandle</ref><sp/>=<sp/>osThreadCreate(osThread(defaultTask),<sp/>NULL);</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>RTOS_THREADS<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>add<sp/>threads,<sp/>...<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/>MX_FREERTOS_INIT_IGNORE_CMSIS:</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/>BaseType_t<sp/>x_task_return<sp/>=<sp/>xTaskCreate(<ref refid="uvfr__utils_8h_1a6d40598f9d8daa89ca159a2e87f4fd01" kindref="member">uvInit</ref>,</highlight><highlight class="stringliteral">&quot;init&quot;</highlight><highlight class="normal">,512,&amp;<ref refid="freertos_8c_1a3afad2adffd2b662e26b56ede2b1ccc5" kindref="member">init_settings</ref>,osPriorityNormal,&amp;<ref refid="freertos_8c_1a142da7a698285a444ffffb0d1d791023" kindref="member">init_task_handle</ref>);</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal">(x_task_return<sp/>!=<sp/>pdPASS){</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal">(1){</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Program<sp/>hangs<sp/>itself,<sp/>like<sp/>bro,<sp/>we<sp/>couldnt<sp/>even<sp/>create<sp/>the<sp/>INITIALISATION<sp/>task,<sp/>thats<sp/>fucked</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="199"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>RTOS_THREADS<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Header_StartDefaultTask<sp/>*/</highlight></codeline>
+<codeline lineno="208"><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Header_StartDefaultTask<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="209" refid="freertos_8c_1a016544463b4842ced7191baf8f449cea" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="freertos_8c_1a016544463b4842ced7191baf8f449cea" kindref="member">StartDefaultTask</ref>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>*<sp/>argument)</highlight></codeline>
+<codeline lineno="210"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="211"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>StartDefaultTask<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="212"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>Infinite<sp/>loop<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="213"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal">(;;)</highlight></codeline>
+<codeline lineno="214"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/>osDelay(1);</highlight></codeline>
+<codeline lineno="216"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="217"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>StartDefaultTask<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="218"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>Private<sp/>application<sp/>code<sp/>--------------------------------------------------*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="221"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>BEGIN<sp/>Application<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="222"><highlight class="normal"></highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>USER<sp/>CODE<sp/>END<sp/>Application<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="Core/Src/freertos.c"/>
+  </compounddef>
+</doxygen>

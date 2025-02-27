@@ -1,0 +1,103 @@
+\hypertarget{structuv__task__msg__t}{}\doxysection{uv\+\_\+task\+\_\+msg\+\_\+t Struct Reference}
+\label{structuv__task__msg__t}\index{uv\_task\_msg\_t@{uv\_task\_msg\_t}}
+
+
+Struct containing a message between two tasks.  
+
+
+
+
+{\ttfamily \#include $<$uvfr\+\_\+utils.\+h$>$}
+
+\doxysubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structuv__task__msg__t_a55ec83138e3f306f2a54059835a86b4f}{message\+\_\+type}}
+\item 
+\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$ \mbox{\hyperlink{structuv__task__msg__t_ac308e85e87284abc3a1edc9e9fb963e1}{sender}}
+\item 
+\mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}} $\ast$ \mbox{\hyperlink{structuv__task__msg__t_a08a1b8f5551ea5ca5694bf764b6a9ca5}{intended\+\_\+recipient}}
+\item 
+Tick\+Type\+\_\+t \mbox{\hyperlink{structuv__task__msg__t_a3f1a92858e8ce24bdfde9ee72be4c8aa}{time\+\_\+sent}}
+\item 
+size\+\_\+t \mbox{\hyperlink{structuv__task__msg__t_a2fc3897d5e2c4f0b92f3dee0981a7182}{message\+\_\+size}}
+\item 
+void $\ast$ \mbox{\hyperlink{structuv__task__msg__t_a4d48277de745dfd9168f7809af04ef3f}{msg\+\_\+contents}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Struct containing a message between two tasks. 
+
+This is a generic type that is best used in situations where the message could mean a variety of different things. For niche applications or where efficiency is paramount, we recommend creating a bespoke protocol. 
+
+Definition at line 301 of file uvfr\+\_\+utils.\+h.
+
+
+
+\doxysubsection{Field Documentation}
+\mbox{\Hypertarget{structuv__task__msg__t_a08a1b8f5551ea5ca5694bf764b6a9ca5}\label{structuv__task__msg__t_a08a1b8f5551ea5ca5694bf764b6a9ca5}} 
+\index{uv\_task\_msg\_t@{uv\_task\_msg\_t}!intended\_recipient@{intended\_recipient}}
+\index{intended\_recipient@{intended\_recipient}!uv\_task\_msg\_t@{uv\_task\_msg\_t}}
+\doxysubsubsection{\texorpdfstring{intended\_recipient}{intended\_recipient}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}}$\ast$ uv\+\_\+task\+\_\+msg\+\_\+t\+::intended\+\_\+recipient}
+
+
+
+Definition at line 304 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{structuv__task__msg__t_a2fc3897d5e2c4f0b92f3dee0981a7182}\label{structuv__task__msg__t_a2fc3897d5e2c4f0b92f3dee0981a7182}} 
+\index{uv\_task\_msg\_t@{uv\_task\_msg\_t}!message\_size@{message\_size}}
+\index{message\_size@{message\_size}!uv\_task\_msg\_t@{uv\_task\_msg\_t}}
+\doxysubsubsection{\texorpdfstring{message\_size}{message\_size}}
+{\footnotesize\ttfamily size\+\_\+t uv\+\_\+task\+\_\+msg\+\_\+t\+::message\+\_\+size}
+
+
+
+Definition at line 306 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{structuv__task__msg__t_a55ec83138e3f306f2a54059835a86b4f}\label{structuv__task__msg__t_a55ec83138e3f306f2a54059835a86b4f}} 
+\index{uv\_task\_msg\_t@{uv\_task\_msg\_t}!message\_type@{message\_type}}
+\index{message\_type@{message\_type}!uv\_task\_msg\_t@{uv\_task\_msg\_t}}
+\doxysubsubsection{\texorpdfstring{message\_type}{message\_type}}
+{\footnotesize\ttfamily uint32\+\_\+t uv\+\_\+task\+\_\+msg\+\_\+t\+::message\+\_\+type}
+
+
+
+Definition at line 302 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{structuv__task__msg__t_a4d48277de745dfd9168f7809af04ef3f}\label{structuv__task__msg__t_a4d48277de745dfd9168f7809af04ef3f}} 
+\index{uv\_task\_msg\_t@{uv\_task\_msg\_t}!msg\_contents@{msg\_contents}}
+\index{msg\_contents@{msg\_contents}!uv\_task\_msg\_t@{uv\_task\_msg\_t}}
+\doxysubsubsection{\texorpdfstring{msg\_contents}{msg\_contents}}
+{\footnotesize\ttfamily void$\ast$ uv\+\_\+task\+\_\+msg\+\_\+t\+::msg\+\_\+contents}
+
+
+
+Definition at line 307 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{structuv__task__msg__t_ac308e85e87284abc3a1edc9e9fb963e1}\label{structuv__task__msg__t_ac308e85e87284abc3a1edc9e9fb963e1}} 
+\index{uv\_task\_msg\_t@{uv\_task\_msg\_t}!sender@{sender}}
+\index{sender@{sender}!uv\_task\_msg\_t@{uv\_task\_msg\_t}}
+\doxysubsubsection{\texorpdfstring{sender}{sender}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structuv__task__info}{uv\+\_\+task\+\_\+info}}$\ast$ uv\+\_\+task\+\_\+msg\+\_\+t\+::sender}
+
+
+
+Definition at line 303 of file uvfr\+\_\+utils.\+h.
+
+\mbox{\Hypertarget{structuv__task__msg__t_a3f1a92858e8ce24bdfde9ee72be4c8aa}\label{structuv__task__msg__t_a3f1a92858e8ce24bdfde9ee72be4c8aa}} 
+\index{uv\_task\_msg\_t@{uv\_task\_msg\_t}!time\_sent@{time\_sent}}
+\index{time\_sent@{time\_sent}!uv\_task\_msg\_t@{uv\_task\_msg\_t}}
+\doxysubsubsection{\texorpdfstring{time\_sent}{time\_sent}}
+{\footnotesize\ttfamily Tick\+Type\+\_\+t uv\+\_\+task\+\_\+msg\+\_\+t\+::time\+\_\+sent}
+
+
+
+Definition at line 305 of file uvfr\+\_\+utils.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+Inc/\mbox{\hyperlink{uvfr__utils_8h}{uvfr\+\_\+utils.\+h}}\end{DoxyCompactItemize}

@@ -97,7 +97,8 @@ $(document).ready(function(){initNavTree('uvfr__utils_8h.html','');});
 <div class="title">uvfr_utils.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="uvfr__global__config_8h_source.html">uvfr_global_config.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;cmsis_os.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="adc_8h_source.html">adc.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="can_8h_source.html">can.h</a>&quot;</code><br />
@@ -107,8 +108,10 @@ $(document).ready(function(){initNavTree('uvfr__utils_8h.html','');});
 <code>#include &quot;<a class="el" href="spi_8h_source.html">spi.h</a>&quot;</code><br />
 <code>#include &quot;FreeRTOS.h&quot;</code><br />
 <code>#include &quot;task.h&quot;</code><br />
+<code>#include &quot;message_buffer.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="uvfr__settings_8h_source.html">uvfr_settings.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="uvfr__state__engine_8h_source.html">uvfr_state_engine.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="rb__tree_8h_source.html">rb_tree.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="bms_8h_source.html">bms.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="motor__controller_8h_source.html">motor_controller.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="dash_8h_source.html">dash.h</a>&quot;</code><br />
@@ -136,13 +139,12 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="unionaccess__control__info.html">access_control_info</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuv___c_a_n__msg.html">uv_CAN_msg</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representative of a CAN message.  <a href="structuv___c_a_n__msg.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuv__init__struct.html">uv_init_struct</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuv__task__info.html">uv_task_info</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This struct is designed to hold neccessary information about an RTOS task that will be managed by uvfr_state_engine.  <a href="structuv__task__info.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtm__data.html">tm_data</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structuv__task__msg__t.html">uv_task_msg_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct containing a message between two tasks.  <a href="structuv__task__msg__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structp__status.html">p_status</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,42 +160,53 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a483c9de27db573099572f5485ef841c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a483c9de27db573099572f5485ef841c9">_BV</a>(x)&#160;&#160;&#160;<a class="el" href="uvfr__utils_8h.html#aa17e4b09cf528c30099398ddedc48955">_BV_16</a>(x)</td></tr>
-<tr class="separator:a483c9de27db573099572f5485ef841c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb4693d786f01e486ce4191758995c8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#adb4693d786f01e486ce4191758995c8f">_BV_8</a>(x)&#160;&#160;&#160;((uint8_t)(0x01U &gt;&gt; x))</td></tr>
-<tr class="separator:adb4693d786f01e486ce4191758995c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa17e4b09cf528c30099398ddedc48955"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#aa17e4b09cf528c30099398ddedc48955">_BV_16</a>(x)&#160;&#160;&#160;((uint16_t)(0x01U &gt;&gt; x))</td></tr>
-<tr class="separator:aa17e4b09cf528c30099398ddedc48955"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a581e5838a8a85f12137dd310b210024d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a581e5838a8a85f12137dd310b210024d">_BV_32</a>(x)&#160;&#160;&#160;((uint32_t)(0x01U &gt;&gt; x))</td></tr>
-<tr class="separator:a581e5838a8a85f12137dd310b210024d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac590e01547ebac3946ea03be39e9a891"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#ac590e01547ebac3946ea03be39e9a891">endianSwap</a>(x)&#160;&#160;&#160;<a class="el" href="uvfr__utils_8h.html#aaffae84b1475df9ae84949feb94f556b">endianSwap16</a>(x)</td></tr>
-<tr class="separator:ac590e01547ebac3946ea03be39e9a891"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a250d3a099625ba439eb4ba4304d5faae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a250d3a099625ba439eb4ba4304d5faae">endianSwap8</a>(x)&#160;&#160;&#160;x</td></tr>
-<tr class="separator:a250d3a099625ba439eb4ba4304d5faae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaffae84b1475df9ae84949feb94f556b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#aaffae84b1475df9ae84949feb94f556b">endianSwap16</a>(x)&#160;&#160;&#160;(((x &amp; 0x00FF)&lt;&lt;8) | ((x &amp; 0xFF00)&gt;&gt;8))</td></tr>
-<tr class="separator:aaffae84b1475df9ae84949feb94f556b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb855e60a6051d73730aa95259a085af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#acb855e60a6051d73730aa95259a085af">endianSwap32</a>(x)&#160;&#160;&#160;(((x &amp; 0x000000FF)&lt;&lt;16)|((x &amp; 0x0000FF00)&lt;&lt;8)|((x &amp; 0x00FF0000)&gt;&gt;8)|((x &amp; 0xFF000000)&gt;&gt;16))</td></tr>
-<tr class="separator:acb855e60a6051d73730aa95259a085af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a829f8b8ab166c6d07df7023ee0b68300"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a829f8b8ab166c6d07df7023ee0b68300">deserializeSmallE16</a>(x,  i)&#160;&#160;&#160;((x[i])|(x[i+1]&lt;&lt;8))</td></tr>
-<tr class="separator:a829f8b8ab166c6d07df7023ee0b68300"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c69adff0f827031b2ec0a2220aa1fc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a6c69adff0f827031b2ec0a2220aa1fc8">deserializeSmallE32</a>(x,  i)&#160;&#160;&#160;((x[i])|(x[i+1]&lt;&lt;8)|(x[i+2]&lt;&lt;16)|(x[i+3]&lt;&lt;24))</td></tr>
-<tr class="separator:a6c69adff0f827031b2ec0a2220aa1fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adeeabe9f9f082a786e959610607229ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#adeeabe9f9f082a786e959610607229ae">deserializeBigE16</a>(x,  i)&#160;&#160;&#160;((x[i]&lt;&lt;8)|(x[i+1]))</td></tr>
-<tr class="separator:adeeabe9f9f082a786e959610607229ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c5631fa43a00757c6dd44f55650b051"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a3c5631fa43a00757c6dd44f55650b051">deserializeBigE32</a>(x,  i)&#160;&#160;&#160;((x[i]&lt;&lt;24)|(x[i+1]&lt;&lt;16)|(x[i+2]&lt;&lt;8)|(x[i+3]))</td></tr>
-<tr class="separator:a3c5631fa43a00757c6dd44f55650b051"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5c017766f44df98dde492a5e406e221c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a5c017766f44df98dde492a5e406e221c">serializeSmallE16</a>(x,  d,  i)&#160;&#160;&#160;x[i]=d&amp;0x00FF; x[i+1]=(d&amp;0xFF00)&gt;&gt;8</td></tr>
-<tr class="separator:a5c017766f44df98dde492a5e406e221c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fa9d4460bcee65d79e048b43dc879fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a0fa9d4460bcee65d79e048b43dc879fd">serializeSmallE32</a>(x,  d,  i)&#160;&#160;&#160;x[i]=d&amp;0x000000FF; x[i+1]=(d&amp;0x0000FF00)&gt;&gt;8; x[i+2]=(d&amp;0x00FF0000)&gt;&gt;16; x[i+3]=(d&amp;0xFF000000)&gt;&gt;24</td></tr>
-<tr class="separator:a0fa9d4460bcee65d79e048b43dc879fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a505ca43923e2bb2162e218c3b8484357"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a505ca43923e2bb2162e218c3b8484357">serializeBigE16</a>(x,  d,  i)&#160;&#160;&#160;x[i+1]=d&amp;0x00FF; x[i]=(d&amp;0xFF00)&gt;&gt;8</td></tr>
-<tr class="separator:a505ca43923e2bb2162e218c3b8484357"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a053aa19e84e50fd8c74f8d4bb0d7820f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a053aa19e84e50fd8c74f8d4bb0d7820f">serializeBigE32</a>(x,  d,  i)&#160;&#160;&#160;x[i+3]=d&amp;0x000000FF; x[i+2]=(d&amp;0x0000FF00)&gt;&gt;8; x[i+1]=(d&amp;0x00FF0000)&gt;&gt;16; x[i]=(d&amp;0xFF000000)&gt;&gt;24</td></tr>
-<tr class="separator:a053aa19e84e50fd8c74f8d4bb0d7820f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a65e9886d74aaee76545e83dd09011727"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a65e9886d74aaee76545e83dd09011727">false</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:a65e9886d74aaee76545e83dd09011727"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41f9c5fb8b08eb5dc3edce4dcb37fee7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a>&#160;&#160;&#160;!<a class="el" href="uvfr__utils_8h.html#a65e9886d74aaee76545e83dd09011727">false</a></td></tr>
-<tr class="separator:a41f9c5fb8b08eb5dc3edce4dcb37fee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga483c9de27db573099572f5485ef841c9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#ga483c9de27db573099572f5485ef841c9">_BV</a>(x)&#160;&#160;&#160;<a class="el" href="group__utility__macros.html#gaa17e4b09cf528c30099398ddedc48955">_BV_16</a>(x)</td></tr>
+<tr class="separator:ga483c9de27db573099572f5485ef841c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb4693d786f01e486ce4191758995c8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#gadb4693d786f01e486ce4191758995c8f">_BV_8</a>(x)&#160;&#160;&#160;((uint8_t)(0x01U &gt;&gt; x))</td></tr>
+<tr class="separator:gadb4693d786f01e486ce4191758995c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa17e4b09cf528c30099398ddedc48955"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#gaa17e4b09cf528c30099398ddedc48955">_BV_16</a>(x)&#160;&#160;&#160;((uint16_t)(0x01U &gt;&gt; x))</td></tr>
+<tr class="separator:gaa17e4b09cf528c30099398ddedc48955"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga581e5838a8a85f12137dd310b210024d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#ga581e5838a8a85f12137dd310b210024d">_BV_32</a>(x)&#160;&#160;&#160;((uint32_t)(0x01U &gt;&gt; x))</td></tr>
+<tr class="separator:ga581e5838a8a85f12137dd310b210024d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac590e01547ebac3946ea03be39e9a891"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#gac590e01547ebac3946ea03be39e9a891">endianSwap</a>(x)&#160;&#160;&#160;<a class="el" href="group__utility__macros.html#gaaffae84b1475df9ae84949feb94f556b">endianSwap16</a>(x)</td></tr>
+<tr class="separator:gac590e01547ebac3946ea03be39e9a891"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga250d3a099625ba439eb4ba4304d5faae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#ga250d3a099625ba439eb4ba4304d5faae">endianSwap8</a>(x)&#160;&#160;&#160;x</td></tr>
+<tr class="separator:ga250d3a099625ba439eb4ba4304d5faae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaffae84b1475df9ae84949feb94f556b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#gaaffae84b1475df9ae84949feb94f556b">endianSwap16</a>(x)&#160;&#160;&#160;(((x &amp; 0x00FF)&lt;&lt;8) | ((x &amp; 0xFF00)&gt;&gt;8))</td></tr>
+<tr class="separator:gaaffae84b1475df9ae84949feb94f556b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacb855e60a6051d73730aa95259a085af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#gacb855e60a6051d73730aa95259a085af">endianSwap32</a>(x)&#160;&#160;&#160;(((x &amp; 0x000000FF)&lt;&lt;16)|((x &amp; 0x0000FF00)&lt;&lt;8)|((x &amp; 0x00FF0000)&gt;&gt;8)|((x &amp; 0xFF000000)&gt;&gt;16))</td></tr>
+<tr class="separator:gacb855e60a6051d73730aa95259a085af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga829f8b8ab166c6d07df7023ee0b68300"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#ga829f8b8ab166c6d07df7023ee0b68300">deserializeSmallE16</a>(x,  i)&#160;&#160;&#160;((x[i])|(x[i+1]&lt;&lt;8))</td></tr>
+<tr class="separator:ga829f8b8ab166c6d07df7023ee0b68300"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6c69adff0f827031b2ec0a2220aa1fc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#ga6c69adff0f827031b2ec0a2220aa1fc8">deserializeSmallE32</a>(x,  i)&#160;&#160;&#160;((x[i])|(x[i+1]&lt;&lt;8)|(x[i+2]&lt;&lt;16)|(x[i+3]&lt;&lt;24))</td></tr>
+<tr class="separator:ga6c69adff0f827031b2ec0a2220aa1fc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadeeabe9f9f082a786e959610607229ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#gadeeabe9f9f082a786e959610607229ae">deserializeBigE16</a>(x,  i)&#160;&#160;&#160;((x[i]&lt;&lt;8)|(x[i+1]))</td></tr>
+<tr class="separator:gadeeabe9f9f082a786e959610607229ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3c5631fa43a00757c6dd44f55650b051"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#ga3c5631fa43a00757c6dd44f55650b051">deserializeBigE32</a>(x,  i)&#160;&#160;&#160;((x[i]&lt;&lt;24)|(x[i+1]&lt;&lt;16)|(x[i+2]&lt;&lt;8)|(x[i+3]))</td></tr>
+<tr class="separator:ga3c5631fa43a00757c6dd44f55650b051"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5c017766f44df98dde492a5e406e221c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#ga5c017766f44df98dde492a5e406e221c">serializeSmallE16</a>(x,  d,  i)&#160;&#160;&#160;x[i]=d&amp;0x00FF; x[i+1]=(d&amp;0xFF00)&gt;&gt;8</td></tr>
+<tr class="separator:ga5c017766f44df98dde492a5e406e221c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0fa9d4460bcee65d79e048b43dc879fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#ga0fa9d4460bcee65d79e048b43dc879fd">serializeSmallE32</a>(x,  d,  i)&#160;&#160;&#160;x[i]=d&amp;0x000000FF; x[i+1]=(d&amp;0x0000FF00)&gt;&gt;8; x[i+2]=(d&amp;0x00FF0000)&gt;&gt;16; x[i+3]=(d&amp;0xFF000000)&gt;&gt;24</td></tr>
+<tr class="separator:ga0fa9d4460bcee65d79e048b43dc879fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga505ca43923e2bb2162e218c3b8484357"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#ga505ca43923e2bb2162e218c3b8484357">serializeBigE16</a>(x,  d,  i)&#160;&#160;&#160;x[i+1]=d&amp;0x00FF; x[i]=(d&amp;0xFF00)&gt;&gt;8</td></tr>
+<tr class="separator:ga505ca43923e2bb2162e218c3b8484357"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga053aa19e84e50fd8c74f8d4bb0d7820f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#ga053aa19e84e50fd8c74f8d4bb0d7820f">serializeBigE32</a>(x,  d,  i)&#160;&#160;&#160;x[i+3]=d&amp;0x000000FF; x[i+2]=(d&amp;0x0000FF00)&gt;&gt;8; x[i+1]=(d&amp;0x00FF0000)&gt;&gt;16; x[i]=(d&amp;0xFF000000)&gt;&gt;24</td></tr>
+<tr class="separator:ga053aa19e84e50fd8c74f8d4bb0d7820f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga50e87beac8a57dd01bdaed51450269e3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#ga50e87beac8a57dd01bdaed51450269e3">setBits</a>(x,  msk,  data)&#160;&#160;&#160;x=(x&amp;(~msk)|data)</td></tr>
+<tr class="memdesc:ga50e87beac8a57dd01bdaed51450269e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">macro to set bits of an int without touching the ones we dont want to edit  <a href="group__utility__macros.html#ga50e87beac8a57dd01bdaed51450269e3">More...</a><br /></td></tr>
+<tr class="separator:ga50e87beac8a57dd01bdaed51450269e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gade3043fb92536f8e1a616ba8aaef4ab9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#gade3043fb92536f8e1a616ba8aaef4ab9">isPowerOfTwo</a>(x)&#160;&#160;&#160;(x&amp;&amp;(!(x&amp;(x-1))))</td></tr>
+<tr class="memdesc:gade3043fb92536f8e1a616ba8aaef4ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a truthy value if "x" is a power of two.  <a href="group__utility__macros.html#gade3043fb92536f8e1a616ba8aaef4ab9">More...</a><br /></td></tr>
+<tr class="separator:gade3043fb92536f8e1a616ba8aaef4ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaac2f65c6267d74d5d5136f82bf217efa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#gaac2f65c6267d74d5d5136f82bf217efa">safePtrRead</a>(x)&#160;&#160;&#160;(*((x)?x:uvPanic(&quot;nullptr_deref&quot;,0)))</td></tr>
+<tr class="memdesc:gaac2f65c6267d74d5d5136f82bf217efa"><td class="mdescLeft">&#160;</td><td class="mdescRight">lil treat to help us avoid the dreaded null pointer dereference  <a href="group__utility__macros.html#gaac2f65c6267d74d5d5136f82bf217efa">More...</a><br /></td></tr>
+<tr class="separator:gaac2f65c6267d74d5d5136f82bf217efa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf506fac19ab4ad3f5b7ddd00643e0b46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#gaf506fac19ab4ad3f5b7ddd00643e0b46">safePtrWrite</a>(p,  x)&#160;&#160;&#160;(*((p)?p:&amp;x))</td></tr>
+<tr class="separator:gaf506fac19ab4ad3f5b7ddd00643e0b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga65e9886d74aaee76545e83dd09011727"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#ga65e9886d74aaee76545e83dd09011727">false</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ga65e9886d74aaee76545e83dd09011727"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga41f9c5fb8b08eb5dc3edce4dcb37fee7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__utility__macros.html#ga41f9c5fb8b08eb5dc3edce4dcb37fee7">true</a>&#160;&#160;&#160;!<a class="el" href="group__utility__macros.html#ga65e9886d74aaee76545e83dd09011727">false</a></td></tr>
+<tr class="separator:ga41f9c5fb8b08eb5dc3edce4dcb37fee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40d625666ff5a3c5918ec7591f0628ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a40d625666ff5a3c5918ec7591f0628ed">MAX_INIT_TIME</a>&#160;&#160;&#160;2500</td></tr>
 <tr class="separator:a40d625666ff5a3c5918ec7591f0628ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4808a3bb38a3243b37a3690b9a02eba7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a4808a3bb38a3243b37a3690b9a02eba7">INIT_CHECK_PERIOD</a>&#160;&#160;&#160;100</td></tr>
@@ -208,20 +221,8 @@ Macros</h2></td></tr>
 <tr class="separator:aa55012016c572366a0747ff7298c7fec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c2758e5f0e3f8d8e1470616418f60c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a3c2758e5f0e3f8d8e1470616418f60c8">UV_CAN_CHANNEL_MASK</a>&#160;&#160;&#160;0b00000110</td></tr>
 <tr class="separator:a3c2758e5f0e3f8d8e1470616418f60c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a253c75b331d0976b9a414657cef780cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a253c75b331d0976b9a414657cef780cd">UV_TASK_VEHICLE_APPLICATION</a>&#160;&#160;&#160;0b00000001</td></tr>
-<tr class="separator:a253c75b331d0976b9a414657cef780cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3142d67aec5c34719e90cf122948f1db"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a3142d67aec5c34719e90cf122948f1db">UV_TASK_PERIODIC_SVC</a>&#160;&#160;&#160;0b00000010</td></tr>
-<tr class="separator:a3142d67aec5c34719e90cf122948f1db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae81d88a64e53c686e8e0fd01bfe723d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#aae81d88a64e53c686e8e0fd01bfe723d">UV_TASK_DORMANT_SVC</a>&#160;&#160;&#160;0b00000011</td></tr>
-<tr class="separator:aae81d88a64e53c686e8e0fd01bfe723d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96c7c915194ecba48edd70def54a700b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a96c7c915194ecba48edd70def54a700b">UV_TASK_MANAGER_MASK</a>&#160;&#160;&#160;0b00000011</td></tr>
-<tr class="separator:a96c7c915194ecba48edd70def54a700b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afc49f7a5303ebabaa3fc0886d67f3e9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#afc49f7a5303ebabaa3fc0886d67f3e9a">UV_TASK_LOG_START_STOP_TIME</a>&#160;&#160;&#160;0b00000100</td></tr>
-<tr class="separator:afc49f7a5303ebabaa3fc0886d67f3e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c0d91f0feee4f7b0816b3c06b61b459"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a0c0d91f0feee4f7b0816b3c06b61b459">UV_TASK_LOG_MEM_USAGE</a>&#160;&#160;&#160;0b00001000</td></tr>
-<tr class="separator:a0c0d91f0feee4f7b0816b3c06b61b459"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d87bda0a72990876364bd8764777cb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a4d87bda0a72990876364bd8764777cb2">UV_TASK_SCD_IGNORE</a>&#160;&#160;&#160;0b00010000</td></tr>
-<tr class="separator:a4d87bda0a72990876364bd8764777cb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6688039909b8ed4eca05ab7a36fa8bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#aa6688039909b8ed4eca05ab7a36fa8bd">UV_CAN_DYNAMIC_MEM</a>&#160;&#160;&#160;0b00001000</td></tr>
+<tr class="separator:aa6688039909b8ed4eca05ab7a36fa8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -229,7 +230,7 @@ Typedefs</h2></td></tr>
 <tr class="separator:a0ecf26b576b9a54eca656b9be7ba6a06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6ffd72eb4909ddb38c37a1369e13f09"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#aa6ffd72eb4909ddb38c37a1369e13f09">uv_task_id</a></td></tr>
 <tr class="separator:aa6ffd72eb4909ddb38c37a1369e13f09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1b70a2c1baa7da5592e7324008636e4"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455c">uv_task_cmd_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#ae1b70a2c1baa7da5592e7324008636e4">uv_task_cmd</a></td></tr>
+<tr class="memitem:ae1b70a2c1baa7da5592e7324008636e4"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="group__state__engine__api.html#gaf11e8677926913f2dd803fabbed3455c">uv_task_cmd_e</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#ae1b70a2c1baa7da5592e7324008636e4">uv_task_cmd</a></td></tr>
 <tr class="separator:ae1b70a2c1baa7da5592e7324008636e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96651e94773864de5bcf9028ab64ad19"><td class="memItemLeft" align="right" valign="top">typedef uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a96651e94773864de5bcf9028ab64ad19">uv_ext_device_id</a></td></tr>
 <tr class="separator:a96651e94773864de5bcf9028ab64ad19"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -238,23 +239,21 @@ Typedefs</h2></td></tr>
 <tr class="memitem:aef3770e45bbacbf527fd93dd80eea9b9"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a></td></tr>
 <tr class="memdesc:aef3770e45bbacbf527fd93dd80eea9b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is meant to be a return type from functions that indicates what is actually going on.  <a href="uvfr__utils_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">More...</a><br /></td></tr>
 <tr class="separator:aef3770e45bbacbf527fd93dd80eea9b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82006c09ffd194e360785bb51a39ec3f"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="uvfr__utils_8h.html#ac94b6bd11853173599ccff034055cc88">uv_task_state_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a82006c09ffd194e360785bb51a39ec3f">uv_task_status</a></td></tr>
-<tr class="separator:a82006c09ffd194e360785bb51a39ec3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0faa8cc05082e150c515bbddea144d90"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="uvfr__utils_8h.html#a6166ed80f8e3bd62f1e7e6122c8817f6">task_priority</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a0faa8cc05082e150c515bbddea144d90">task_priority</a></td></tr>
-<tr class="separator:a0faa8cc05082e150c515bbddea144d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25c322a5b050bc1ab514e6d3e47c56a5"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="uvfr__utils_8h.html#ac4bac060238ca2be3b3b3ca25c77cc8c">access_control_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a25c322a5b050bc1ab514e6d3e47c56a5">access_control_type</a></td></tr>
 <tr class="separator:a25c322a5b050bc1ab514e6d3e47c56a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0e8ee9ac0315ecdd228d9358e395c3d"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0">uv_msg_type_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#ae0e8ee9ac0315ecdd228d9358e395c3d">uv_msg_type</a></td></tr>
+<tr class="memdesc:ae0e8ee9ac0315ecdd228d9358e395c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum dictating the meaning of a generic message.  <a href="uvfr__utils_8h.html#ae0e8ee9ac0315ecdd228d9358e395c3d">More...</a><br /></td></tr>
+<tr class="separator:ae0e8ee9ac0315ecdd228d9358e395c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93fd2ffb9029bc071a783fbfe4e3fcc9"><td class="memItemLeft" align="right" valign="top">typedef union <a class="el" href="unionaccess__control__info.html">access_control_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a93fd2ffb9029bc071a783fbfe4e3fcc9">access_control_info</a></td></tr>
 <tr class="separator:a93fd2ffb9029bc071a783fbfe4e3fcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad857192b5d0529e73642f1293d6bed75"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structuv___c_a_n__msg.html">uv_CAN_msg</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#ad857192b5d0529e73642f1293d6bed75">uv_CAN_msg</a></td></tr>
+<tr class="memdesc:ad857192b5d0529e73642f1293d6bed75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Representative of a CAN message.  <a href="uvfr__utils_8h.html#ad857192b5d0529e73642f1293d6bed75">More...</a><br /></td></tr>
 <tr class="separator:ad857192b5d0529e73642f1293d6bed75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43d8765a7826292bdbd7d5d9f6b865fd"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structuv__init__struct.html">uv_init_struct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a43d8765a7826292bdbd7d5d9f6b865fd">uv_init_struct</a></td></tr>
 <tr class="separator:a43d8765a7826292bdbd7d5d9f6b865fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebe69bead1b7c3a1371ffe610708e0ef"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structuv__task__info.html">uv_task_info</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#aebe69bead1b7c3a1371ffe610708e0ef">uv_task_info</a></td></tr>
-<tr class="memdesc:aebe69bead1b7c3a1371ffe610708e0ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">This struct is designed to hold neccessary information about an RTOS task that will be managed by uvfr_state_engine.  <a href="uvfr__utils_8h.html#aebe69bead1b7c3a1371ffe610708e0ef">More...</a><br /></td></tr>
-<tr class="separator:aebe69bead1b7c3a1371ffe610708e0ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae05f8b07c18b39ec17c66903ecf90af9"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structtm__data.html">tm_data</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#ae05f8b07c18b39ec17c66903ecf90af9">task_management_data</a></td></tr>
-<tr class="separator:ae05f8b07c18b39ec17c66903ecf90af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af54e76be0a4de86596cdf342473361e3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structuv__task__msg__t.html">uv_task_msg_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#af54e76be0a4de86596cdf342473361e3">uv_task_msg</a></td></tr>
+<tr class="memdesc:af54e76be0a4de86596cdf342473361e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct containing a message between two tasks.  <a href="uvfr__utils_8h.html#af54e76be0a4de86596cdf342473361e3">More...</a><br /></td></tr>
+<tr class="separator:af54e76be0a4de86596cdf342473361e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a861993718f780fec899b00c842bae43b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structp__status.html">p_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a861993718f780fec899b00c842bae43b">p_status</a></td></tr>
 <tr class="separator:a861993718f780fec899b00c842bae43b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22371cac9dbfb95de19acc59e359d3df"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structuv__init__task__args.html">uv_init_task_args</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a22371cac9dbfb95de19acc59e359d3df">uv_init_task_args</a></td></tr>
@@ -276,39 +275,24 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a71c52c44be11d0980910401cb9b5fb9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is meant to be a return type from functions that indicates what is actually going on.  <a href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">More...</a><br /></td></tr>
 <tr class="separator:a71c52c44be11d0980910401cb9b5fb9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac94b6bd11853173599ccff034055cc88"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#ac94b6bd11853173599ccff034055cc88">uv_task_state_t</a> { <a class="el" href="uvfr__utils_8h.html#ac94b6bd11853173599ccff034055cc88a529c3f9ad3ef9a8e387d875c7a118c7e">UV_TASK_NOT_STARTED</a>, 
-<a class="el" href="uvfr__utils_8h.html#ac94b6bd11853173599ccff034055cc88af6465f57e0b6515721c5cbebd769e691">UV_TASK_DELETED</a>, 
-<a class="el" href="uvfr__utils_8h.html#ac94b6bd11853173599ccff034055cc88ad4da927019afea812b31d46d28b7354c">UV_TASK_RUNNING</a>, 
-<a class="el" href="uvfr__utils_8h.html#ac94b6bd11853173599ccff034055cc88a147f6febce613c666fe922907472ca0f">UV_TASK_SUSPENDED</a>
- }</td></tr>
-<tr class="separator:ac94b6bd11853173599ccff034055cc88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6166ed80f8e3bd62f1e7e6122c8817f6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a6166ed80f8e3bd62f1e7e6122c8817f6">task_priority</a> { <br />
-&#160;&#160;<a class="el" href="uvfr__utils_8h.html#a6166ed80f8e3bd62f1e7e6122c8817f6ae1e0864e3b20ced26bebc93aa0766aec">IDLE_TASK_PRIORITY</a>, 
-<a class="el" href="uvfr__utils_8h.html#a6166ed80f8e3bd62f1e7e6122c8817f6adb8ee22a232a2787f32ba28da55c43c1">LOW_PRIORITY</a>, 
-<a class="el" href="uvfr__utils_8h.html#a6166ed80f8e3bd62f1e7e6122c8817f6afe8b192d5f5af86fd93c4f84f7ef3383">BELOW_NORMAL</a>, 
-<a class="el" href="uvfr__utils_8h.html#a6166ed80f8e3bd62f1e7e6122c8817f6a06b314d863076d54942e065d90c179c4">MEDIUM_PRIORITY</a>, 
+<tr class="memitem:ac2ad7f431e3446fddcd9b6b9f93c4c14"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14">data_type</a> { <br />
+&#160;&#160;<a class="el" href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d">UV_UINT8</a>, 
+<a class="el" href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318">UV_INT8</a>, 
+<a class="el" href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0">UV_UINT16</a>, 
+<a class="el" href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787">UV_INT16</a>, 
 <br />
-&#160;&#160;<a class="el" href="uvfr__utils_8h.html#a6166ed80f8e3bd62f1e7e6122c8817f6a052e6887345173e8b7556738c28fa920">ABOVE_NORMAL</a>, 
-<a class="el" href="uvfr__utils_8h.html#a6166ed80f8e3bd62f1e7e6122c8817f6acb1785f11dd02aa7f5d164fb314c594e">HIGH_PRIORITY</a>, 
-<a class="el" href="uvfr__utils_8h.html#a6166ed80f8e3bd62f1e7e6122c8817f6aa20ceda9447596a05151a4a66db46a92">REALTIME_PRIORITY</a>
+&#160;&#160;<a class="el" href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0">UV_UINT32</a>, 
+<a class="el" href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc">UV_INT32</a>, 
+<a class="el" href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9">UV_FLOAT</a>, 
+<a class="el" href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038">UV_DOUBLE</a>, 
 <br />
- }</td></tr>
-<tr class="separator:a6166ed80f8e3bd62f1e7e6122c8817f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a259abff5a03eaf908dc8f03d99f478e4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4">uv_vehicle_state_t</a> { <br />
-&#160;&#160;<a class="el" href="uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4a5e3e7ecab0a58b320912cb4129641579">UV_INIT</a> = 0x0001, 
-<a class="el" href="uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8">UV_READY</a> = 0x0002, 
-<a class="el" href="uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4abed5371c079ef927fb67d8bb8e8aa286">PROGRAMMING</a> = 0x0004, 
-<a class="el" href="uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969">UV_DRIVING</a> = 0x0008, 
-<br />
-&#160;&#160;<a class="el" href="uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4abfddf18c580c465bb3c27b522aa4e4a9">UV_SUSPENDED</a> = 0x0010, 
-<a class="el" href="uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4a7ff39f8abdc9adbfd693e412e4aaeb6e">UV_LAUNCH_CONTROL</a> = 0x0020, 
-<a class="el" href="uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4ac1fcacc095b8c0f1c9f452d51815bcb5">UV_ERROR_STATE</a> = 0x0040, 
-<a class="el" href="uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4afdfc4cdb8c5210e05bdfdc3df51f80ff">UV_BOOT</a> = 0x0080, 
-<br />
-&#160;&#160;<a class="el" href="uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4a2d3dc239e61931f9f779b71e84005b1b">UV_HALT</a> = 0x0100
+&#160;&#160;<a class="el" href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a4e148426880e8cf1e81ceea15ddf2d7a">UV_INT64</a>, 
+<a class="el" href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a04c45245ce9c00f905a60cc34cca2de6">UV_UINT64</a>, 
+<a class="el" href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de">UV_STRING</a>
 <br />
  }</td></tr>
-<tr class="separator:a259abff5a03eaf908dc8f03d99f478e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:ac2ad7f431e3446fddcd9b6b9f93c4c14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Represents the data type of some variable.  <a href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14">More...</a><br /></td></tr>
+<tr class="separator:ac2ad7f431e3446fddcd9b6b9f93c4c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd907d24ac9b557d684429bb0cd1ddb1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#acd907d24ac9b557d684429bb0cd1ddb1">uv_driving_mode_t</a> { <a class="el" href="uvfr__utils_8h.html#acd907d24ac9b557d684429bb0cd1ddb1aebc81705969b8c5ae986b0b2ec08d1d5">normal</a>, 
 <a class="el" href="uvfr__utils_8h.html#acd907d24ac9b557d684429bb0cd1ddb1ac67554de85b7a3c2ac961da6faf22e1e">accel</a>, 
 <a class="el" href="uvfr__utils_8h.html#acd907d24ac9b557d684429bb0cd1ddb1a6e980d942af313712cd3ac6e66c002a5">econ</a>, 
@@ -332,6 +316,27 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:ac4bac060238ca2be3b3b3ca25c77cc8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1a7ab8d68287c5f3027a59e355d32e0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0">uv_msg_type_t</a> { <br />
+&#160;&#160;<a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0a177375f17a35e857332eaa8257d69828">UV_TASK_START_COMMAND</a>, 
+<a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0a2c3c485ade048e2c4f5ea03084ec8303">UV_TASK_DELETE_COMMAND</a>, 
+<a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0ae0d7301df0967632c5ee33579903e3c0">UV_TASK_SUSPEND_COMMAND</a>, 
+<a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0a316743e83f3e750384743efc5d0fc222">UV_COMMAND_ACKNOWLEDGEMENT</a>, 
+<br />
+&#160;&#160;<a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0a01bdfc6895e649a6e3a8ab2753c91e98">UV_TASK_STATUS_REPORT</a>, 
+<a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0aaf1294570b3749c466ed23c61b36a2da">UV_ERROR_REPORT</a>, 
+<a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0ac15cb73f9ea395ab88e1ed539f448bd9">UV_WAKEUP</a>, 
+<a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0ab101873d13add058eea62b85ba752394">UV_PARAM_REQUEST</a>, 
+<br />
+&#160;&#160;<a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0a62f939f7ac5c846756ae44422f04b6f3">UV_PARAM_READY</a>, 
+<a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0a6a2bfefeed4656cb00151759346573f7">UV_RAW_DATA_TRANSFER</a>, 
+<a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0ad11ac6253dd171a0da8ddbe8f22b8922">UV_SC_COMMAND</a>, 
+<a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0a1656d54e7fad0fc7b4ea4b113a866eae">UV_INVALID_MSG</a>, 
+<br />
+&#160;&#160;<a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0a2cba2eda91eccb3d355a0f2dc64f8a36">UV_ASSIGN_TASK</a>
+<br />
+ }</td></tr>
+<tr class="memdesc:ab1a7ab8d68287c5f3027a59e355d32e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum dictating the meaning of a generic message.  <a href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0">More...</a><br /></td></tr>
+<tr class="separator:ab1a7ab8d68287c5f3027a59e355d32e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -341,7 +346,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a92b5ac44171d49acd084c274385a043a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a92b5ac44171d49acd084c274385a043a">__uvInitPanic</a> ()</td></tr>
 <tr class="memdesc:a92b5ac44171d49acd084c274385a043a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Low Level Panic, that does not require the full UVFR utils functionality to be operational.  <a href="uvfr__utils_8h.html#a92b5ac44171d49acd084c274385a043a">More...</a><br /></td></tr>
 <tr class="separator:a92b5ac44171d49acd084c274385a043a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0186c036688c7852cf0ceaee96b343a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a0186c036688c7852cf0ceaee96b343a3">uvIsPTRValid</a> (void *ptr)</td></tr>
+<tr class="memitem:a0186c036688c7852cf0ceaee96b343a3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a0186c036688c7852cf0ceaee96b343a3">uvIsPTRValid</a> (void *ptr)</td></tr>
 <tr class="memdesc:a0186c036688c7852cf0ceaee96b343a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">function that checks to make sure a pointer points to a place it is allowed to point to  <a href="uvfr__utils_8h.html#a0186c036688c7852cf0ceaee96b343a3">More...</a><br /></td></tr>
 <tr class="separator:a0186c036688c7852cf0ceaee96b343a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -350,303 +355,11 @@ Variables</h2></td></tr>
 <tr class="memitem:a660f31748ce0b90d471a4f5441ee3cb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structuv__internal__params.html">uv_internal_params</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uvfr__utils_8h.html#a660f31748ce0b90d471a4f5441ee3cb1">global_context</a></td></tr>
 <tr class="separator:a660f31748ce0b90d471a4f5441ee3cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a483c9de27db573099572f5485ef841c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a483c9de27db573099572f5485ef841c9">&#9670;&nbsp;</a></span>_BV</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><dl class="section author"><dt>Author</dt><dd>Byron Oser </dd></dl>
 
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _BV</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="uvfr__utils_8h.html#aa17e4b09cf528c30099398ddedc48955">_BV_16</a>(x)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00051">51</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="aa17e4b09cf528c30099398ddedc48955"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa17e4b09cf528c30099398ddedc48955">&#9670;&nbsp;</a></span>_BV_16</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _BV_16</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;((uint16_t)(0x01U &gt;&gt; x))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00053">53</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a581e5838a8a85f12137dd310b210024d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a581e5838a8a85f12137dd310b210024d">&#9670;&nbsp;</a></span>_BV_32</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _BV_32</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;((uint32_t)(0x01U &gt;&gt; x))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00054">54</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="adb4693d786f01e486ce4191758995c8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb4693d786f01e486ce4191758995c8f">&#9670;&nbsp;</a></span>_BV_8</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define _BV_8</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;((uint8_t)(0x01U &gt;&gt; x))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00052">52</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="adeeabe9f9f082a786e959610607229ae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adeeabe9f9f082a786e959610607229ae">&#9670;&nbsp;</a></span>deserializeBigE16</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define deserializeBigE16</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">i&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((x[i]&lt;&lt;8)|(x[i+1]))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00063">63</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a3c5631fa43a00757c6dd44f55650b051"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3c5631fa43a00757c6dd44f55650b051">&#9670;&nbsp;</a></span>deserializeBigE32</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define deserializeBigE32</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">i&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((x[i]&lt;&lt;24)|(x[i+1]&lt;&lt;16)|(x[i+2]&lt;&lt;8)|(x[i+3]))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00064">64</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a829f8b8ab166c6d07df7023ee0b68300"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a829f8b8ab166c6d07df7023ee0b68300">&#9670;&nbsp;</a></span>deserializeSmallE16</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define deserializeSmallE16</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">i&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((x[i])|(x[i+1]&lt;&lt;8))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00061">61</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a6c69adff0f827031b2ec0a2220aa1fc8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6c69adff0f827031b2ec0a2220aa1fc8">&#9670;&nbsp;</a></span>deserializeSmallE32</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define deserializeSmallE32</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">i&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;((x[i])|(x[i+1]&lt;&lt;8)|(x[i+2]&lt;&lt;16)|(x[i+3]&lt;&lt;24))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00062">62</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="ac590e01547ebac3946ea03be39e9a891"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac590e01547ebac3946ea03be39e9a891">&#9670;&nbsp;</a></span>endianSwap</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define endianSwap</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;<a class="el" href="uvfr__utils_8h.html#aaffae84b1475df9ae84949feb94f556b">endianSwap16</a>(x)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00056">56</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="aaffae84b1475df9ae84949feb94f556b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaffae84b1475df9ae84949feb94f556b">&#9670;&nbsp;</a></span>endianSwap16</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define endianSwap16</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(((x &amp; 0x00FF)&lt;&lt;8) | ((x &amp; 0xFF00)&gt;&gt;8))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00058">58</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="acb855e60a6051d73730aa95259a085af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb855e60a6051d73730aa95259a085af">&#9670;&nbsp;</a></span>endianSwap32</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define endianSwap32</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;(((x &amp; 0x000000FF)&lt;&lt;16)|((x &amp; 0x0000FF00)&lt;&lt;8)|((x &amp; 0x00FF0000)&gt;&gt;8)|((x &amp; 0xFF000000)&gt;&gt;16))</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00059">59</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a250d3a099625ba439eb4ba4304d5faae"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a250d3a099625ba439eb4ba4304d5faae">&#9670;&nbsp;</a></span>endianSwap8</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define endianSwap8</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x</td><td>)</td>
-          <td>&#160;&#160;&#160;x</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00057">57</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a65e9886d74aaee76545e83dd09011727"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a65e9886d74aaee76545e83dd09011727">&#9670;&nbsp;</a></span>false</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define false&#160;&#160;&#160;0</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00072">72</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
+<p class="definition">Definition in file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a4808a3bb38a3243b37a3690b9a02eba7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4808a3bb38a3243b37a3690b9a02eba7">&#9670;&nbsp;</a></span>INIT_CHECK_PERIOD</h2>
 
@@ -659,7 +372,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00088">88</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00146">146</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -675,167 +388,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00087">87</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a505ca43923e2bb2162e218c3b8484357"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a505ca43923e2bb2162e218c3b8484357">&#9670;&nbsp;</a></span>serializeBigE16</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define serializeBigE16</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">d, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">i&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;x[i+1]=d&amp;0x00FF; x[i]=(d&amp;0xFF00)&gt;&gt;8</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00068">68</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a053aa19e84e50fd8c74f8d4bb0d7820f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a053aa19e84e50fd8c74f8d4bb0d7820f">&#9670;&nbsp;</a></span>serializeBigE32</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define serializeBigE32</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">d, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">i&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;x[i+3]=d&amp;0x000000FF; x[i+2]=(d&amp;0x0000FF00)&gt;&gt;8; x[i+1]=(d&amp;0x00FF0000)&gt;&gt;16; x[i]=(d&amp;0xFF000000)&gt;&gt;24</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00069">69</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a5c017766f44df98dde492a5e406e221c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5c017766f44df98dde492a5e406e221c">&#9670;&nbsp;</a></span>serializeSmallE16</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define serializeSmallE16</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">d, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">i&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;x[i]=d&amp;0x00FF; x[i+1]=(d&amp;0xFF00)&gt;&gt;8</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00066">66</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a0fa9d4460bcee65d79e048b43dc879fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0fa9d4460bcee65d79e048b43dc879fd">&#9670;&nbsp;</a></span>serializeSmallE32</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define serializeSmallE32</td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">x, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">d, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname">i&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td>&#160;&#160;&#160;x[i]=d&amp;0x000000FF; x[i+1]=(d&amp;0x0000FF00)&gt;&gt;8; x[i+2]=(d&amp;0x00FF0000)&gt;&gt;16; x[i+3]=(d&amp;0xFF000000)&gt;&gt;24</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00067">67</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a41f9c5fb8b08eb5dc3edce4dcb37fee7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a41f9c5fb8b08eb5dc3edce4dcb37fee7">&#9670;&nbsp;</a></span>true</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define true&#160;&#160;&#160;!<a class="el" href="uvfr__utils_8h.html#a65e9886d74aaee76545e83dd09011727">false</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00073">73</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00145">145</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -851,7 +404,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00105">105</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00157">157</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -867,7 +420,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00101">101</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00153">153</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -883,7 +436,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00102">102</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00154">154</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -899,7 +452,23 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00205">205</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00263">263</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+
+</div>
+</div>
+<a id="aa6688039909b8ed4eca05ab7a36fa8bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6688039909b8ed4eca05ab7a36fa8bd">&#9670;&nbsp;</a></span>UV_CAN_DYNAMIC_MEM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UV_CAN_DYNAMIC_MEM&#160;&#160;&#160;0b00001000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00264">264</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -915,119 +484,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00204">204</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="aae81d88a64e53c686e8e0fd01bfe723d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae81d88a64e53c686e8e0fd01bfe723d">&#9670;&nbsp;</a></span>UV_TASK_DORMANT_SVC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UV_TASK_DORMANT_SVC&#160;&#160;&#160;0b00000011</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00228">228</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a0c0d91f0feee4f7b0816b3c06b61b459"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c0d91f0feee4f7b0816b3c06b61b459">&#9670;&nbsp;</a></span>UV_TASK_LOG_MEM_USAGE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UV_TASK_LOG_MEM_USAGE&#160;&#160;&#160;0b00001000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00231">231</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="afc49f7a5303ebabaa3fc0886d67f3e9a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afc49f7a5303ebabaa3fc0886d67f3e9a">&#9670;&nbsp;</a></span>UV_TASK_LOG_START_STOP_TIME</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UV_TASK_LOG_START_STOP_TIME&#160;&#160;&#160;0b00000100</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00230">230</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a96c7c915194ecba48edd70def54a700b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96c7c915194ecba48edd70def54a700b">&#9670;&nbsp;</a></span>UV_TASK_MANAGER_MASK</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UV_TASK_MANAGER_MASK&#160;&#160;&#160;0b00000011</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00229">229</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a3142d67aec5c34719e90cf122948f1db"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3142d67aec5c34719e90cf122948f1db">&#9670;&nbsp;</a></span>UV_TASK_PERIODIC_SVC</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UV_TASK_PERIODIC_SVC&#160;&#160;&#160;0b00000010</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00227">227</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a4d87bda0a72990876364bd8764777cb2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d87bda0a72990876364bd8764777cb2">&#9670;&nbsp;</a></span>UV_TASK_SCD_IGNORE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UV_TASK_SCD_IGNORE&#160;&#160;&#160;0b00010000</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00232">232</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a253c75b331d0976b9a414657cef780cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a253c75b331d0976b9a414657cef780cd">&#9670;&nbsp;</a></span>UV_TASK_VEHICLE_APPLICATION</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define UV_TASK_VEHICLE_APPLICATION&#160;&#160;&#160;0b00000001</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00226">226</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00262">262</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -1072,7 +529,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00077">77</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00134">134</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -1084,34 +541,6 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">typedef struct <a class="el" href="structp__status.html">p_status</a> <a class="el" href="structp__status.html">p_status</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae05f8b07c18b39ec17c66903ecf90af9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae05f8b07c18b39ec17c66903ecf90af9">&#9670;&nbsp;</a></span>task_management_data</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef struct <a class="el" href="structtm__data.html">tm_data</a> <a class="el" href="uvfr__utils_8h.html#ae05f8b07c18b39ec17c66903ecf90af9">task_management_data</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a0faa8cc05082e150c515bbddea144d90"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0faa8cc05082e150c515bbddea144d90">&#9670;&nbsp;</a></span>task_priority</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="uvfr__utils_8h.html#a6166ed80f8e3bd62f1e7e6122c8817f6">task_priority</a> <a class="el" href="uvfr__utils_8h.html#a6166ed80f8e3bd62f1e7e6122c8817f6">task_priority</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1130,6 +559,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Representative of a CAN message. </p>
+
 </div>
 </div>
 <a id="a96651e94773864de5bcf9028ab64ad19"></a>
@@ -1144,7 +575,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00081">81</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00138">138</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -1213,6 +644,22 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="ae0e8ee9ac0315ecdd228d9358e395c3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0e8ee9ac0315ecdd228d9358e395c3d">&#9670;&nbsp;</a></span>uv_msg_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0">uv_msg_type_t</a> <a class="el" href="uvfr__utils_8h.html#ae0e8ee9ac0315ecdd228d9358e395c3d">uv_msg_type</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enum dictating the meaning of a generic message. </p>
+
+</div>
+</div>
 <a id="aef3770e45bbacbf527fd93dd80eea9b9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aef3770e45bbacbf527fd93dd80eea9b9">&#9670;&nbsp;</a></span>uv_status</h2>
 
@@ -1220,7 +667,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> <a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a></td>
+          <td class="memname">typedef enum <a class="el" href="uvfr__utils_8h.html#a71c52c44be11d0980910401cb9b5fb9e">uv_status_t</a> <a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -1237,12 +684,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef enum <a class="el" href="uvfr__state__engine_8h.html#af11e8677926913f2dd803fabbed3455c">uv_task_cmd_e</a> <a class="el" href="uvfr__state__engine_8h.html#ae1b70a2c1baa7da5592e7324008636e4">uv_task_cmd</a></td>
+          <td class="memname">typedef enum <a class="el" href="group__state__engine__api.html#gaf11e8677926913f2dd803fabbed3455c">uv_task_cmd_e</a> <a class="el" href="group__state__engine__api.html#gae1b70a2c1baa7da5592e7324008636e4">uv_task_cmd</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00079">79</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00136">136</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -1258,42 +705,24 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00078">78</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00135">135</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
-<a id="aebe69bead1b7c3a1371ffe610708e0ef"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebe69bead1b7c3a1371ffe610708e0ef">&#9670;&nbsp;</a></span>uv_task_info</h2>
+<a id="af54e76be0a4de86596cdf342473361e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af54e76be0a4de86596cdf342473361e3">&#9670;&nbsp;</a></span>uv_task_msg</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef struct <a class="el" href="structuv__task__info.html">uv_task_info</a> <a class="el" href="structuv__task__info.html">uv_task_info</a></td>
+          <td class="memname">typedef struct <a class="el" href="structuv__task__msg__t.html">uv_task_msg_t</a> <a class="el" href="uvfr__utils_8h.html#af54e76be0a4de86596cdf342473361e3">uv_task_msg</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>This struct is designed to hold neccessary information about an RTOS task that will be managed by uvfr_state_engine. </p>
-<p><code>task_id</code> is an internal ID assigned to every task and is used by uvfr_utils. <code>task_name</code> is the name of the task. This must be less than 15 characters, and ended with a null terminator.</p>
-<p><code>task_function</code> is a pointer to the function we want the task to run <code>task_priority</code> is the priority of the task <code>max_instances</code> is the number of legal instances</p>
-<p><code>task_state</code> is an internal representation of what the task is up to. This is needed because the RTOS task may not actually exist. <code>active_states</code> dictates when the states are active</p>
-<p><code>task_handle</code> is an osThreadId created by FreeRTOS when it initializes the task. <code>next</code> exists because this shit needs to exist in a linked list, and my ass is too lazy to create a generic struct with it</p>
-<p><code>cmd_data</code> stores the command we really want this task to execute </p>
-
-</div>
-</div>
-<a id="a82006c09ffd194e360785bb51a39ec3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82006c09ffd194e360785bb51a39ec3f">&#9670;&nbsp;</a></span>uv_task_status</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">typedef enum <a class="el" href="uvfr__utils_8h.html#ac94b6bd11853173599ccff034055cc88">uv_task_state_t</a>  <a class="el" href="uvfr__utils_8h.html#a82006c09ffd194e360785bb51a39ec3f">uv_task_status</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Struct containing a message between two tasks. </p>
+<p>This is a generic type that is best used in situations where the message could mean a variety of different things. For niche applications or where efficiency is paramount, we recommend creating a bespoke protocol. </p>
 
 </div>
 </div>
@@ -1304,12 +733,12 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef uint32_t <a class="el" href="uvfr__utils_8h.html#af1ca0b89ee88cdf48a7640d6ec793350">uv_timespan_ms</a></td>
+          <td class="memname">typedef uint32_t <a class="el" href="uvfr__state__engine_8h.html#af1ca0b89ee88cdf48a7640d6ec793350">uv_timespan_ms</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00082">82</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00139">139</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -1333,32 +762,38 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="ac4bac060238ca2be3b3b3ca25c77cc8ca3f79dc438166cce27d710db648212f3f"></a>UV_SEMAPHORE&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00173">173</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00211">211</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
-<a id="a6166ed80f8e3bd62f1e7e6122c8817f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6166ed80f8e3bd62f1e7e6122c8817f6">&#9670;&nbsp;</a></span>task_priority</h2>
+<a id="ac2ad7f431e3446fddcd9b6b9f93c4c14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2ad7f431e3446fddcd9b6b9f93c4c14">&#9670;&nbsp;</a></span>data_type</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="uvfr__utils_8h.html#a6166ed80f8e3bd62f1e7e6122c8817f6">task_priority</a></td>
+          <td class="memname">enum <a class="el" href="uvfr__utils_8h.html#ac2ad7f431e3446fddcd9b6b9f93c4c14">data_type</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Represents the data type of some variable. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a6166ed80f8e3bd62f1e7e6122c8817f6ae1e0864e3b20ced26bebc93aa0766aec"></a>IDLE_TASK_PRIORITY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6166ed80f8e3bd62f1e7e6122c8817f6adb8ee22a232a2787f32ba28da55c43c1"></a>LOW_PRIORITY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6166ed80f8e3bd62f1e7e6122c8817f6afe8b192d5f5af86fd93c4f84f7ef3383"></a>BELOW_NORMAL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6166ed80f8e3bd62f1e7e6122c8817f6a06b314d863076d54942e065d90c179c4"></a>MEDIUM_PRIORITY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6166ed80f8e3bd62f1e7e6122c8817f6a052e6887345173e8b7556738c28fa920"></a>ABOVE_NORMAL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6166ed80f8e3bd62f1e7e6122c8817f6acb1785f11dd02aa7f5d164fb314c594e"></a>HIGH_PRIORITY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a6166ed80f8e3bd62f1e7e6122c8817f6aa20ceda9447596a05151a4a66db46a92"></a>REALTIME_PRIORITY&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14a34d03a41af56f92f5a5d1ba5160c7c5d"></a>UV_UINT8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14afc1d693c03775a0150f794262ba05318"></a>UV_INT8&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14a536b610b4345a500e7eac0aa798d8fe0"></a>UV_UINT16&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14aa93cbcd4f2887f8817cdded087237787"></a>UV_INT16&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14ad3597a26fcf0676a97a4484f5093b0b0"></a>UV_UINT32&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14a6979c7ca371fd950f17243bc1db719cc"></a>UV_INT32&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14a48ad3f9df814bf40b8038f4ae5edbbc9"></a>UV_FLOAT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14a6e5d3d7903d59e8a69073ac6d7d2d038"></a>UV_DOUBLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14a4e148426880e8cf1e81ceea15ddf2d7a"></a>UV_INT64&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14a04c45245ce9c00f905a60cc34cca2de6"></a>UV_UINT64&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac2ad7f431e3446fddcd9b6b9f93c4c14a17e48aeaa85be166241ccf35b5c195de"></a>UV_STRING&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00130">130</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00177">177</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -1380,7 +815,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="acd907d24ac9b557d684429bb0cd1ddb1af5d257c586a4a993f56fac4a77d35531"></a>limp&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00156">156</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00194">194</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -1404,7 +839,40 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="ad70cbc8929c4ad7a5901cd9eef5ca9b0a5c9bd57c4115223d6c0954b9c2438262"></a>PDU&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00166">166</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00204">204</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+
+</div>
+</div>
+<a id="ab1a7ab8d68287c5f3027a59e355d32e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1a7ab8d68287c5f3027a59e355d32e0">&#9670;&nbsp;</a></span>uv_msg_type_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="uvfr__utils_8h.html#ab1a7ab8d68287c5f3027a59e355d32e0">uv_msg_type_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enum dictating the meaning of a generic message. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ab1a7ab8d68287c5f3027a59e355d32e0a177375f17a35e857332eaa8257d69828"></a>UV_TASK_START_COMMAND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1a7ab8d68287c5f3027a59e355d32e0a2c3c485ade048e2c4f5ea03084ec8303"></a>UV_TASK_DELETE_COMMAND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1a7ab8d68287c5f3027a59e355d32e0ae0d7301df0967632c5ee33579903e3c0"></a>UV_TASK_SUSPEND_COMMAND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1a7ab8d68287c5f3027a59e355d32e0a316743e83f3e750384743efc5d0fc222"></a>UV_COMMAND_ACKNOWLEDGEMENT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1a7ab8d68287c5f3027a59e355d32e0a01bdfc6895e649a6e3a8ab2753c91e98"></a>UV_TASK_STATUS_REPORT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1a7ab8d68287c5f3027a59e355d32e0aaf1294570b3749c466ed23c61b36a2da"></a>UV_ERROR_REPORT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1a7ab8d68287c5f3027a59e355d32e0ac15cb73f9ea395ab88e1ed539f448bd9"></a>UV_WAKEUP&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1a7ab8d68287c5f3027a59e355d32e0ab101873d13add058eea62b85ba752394"></a>UV_PARAM_REQUEST&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1a7ab8d68287c5f3027a59e355d32e0a62f939f7ac5c846756ae44422f04b6f3"></a>UV_PARAM_READY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1a7ab8d68287c5f3027a59e355d32e0a6a2bfefeed4656cb00151759346573f7"></a>UV_RAW_DATA_TRANSFER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1a7ab8d68287c5f3027a59e355d32e0ad11ac6253dd171a0da8ddbe8f22b8922"></a>UV_SC_COMMAND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1a7ab8d68287c5f3027a59e355d32e0a1656d54e7fad0fc7b4ea4b113a866eae"></a>UV_INVALID_MSG&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ab1a7ab8d68287c5f3027a59e355d32e0a2cba2eda91eccb3d355a0f2dc64f8a36"></a>UV_ASSIGN_TASK&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00222">222</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -1429,57 +897,7 @@ Variables</h2></td></tr>
 <tr><td class="fieldname"><a id="a71c52c44be11d0980910401cb9b5fb9ea6aa86f67f1dcd70789b27731c3ac4e7a"></a>UV_ABORTED&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00114">114</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="ac94b6bd11853173599ccff034055cc88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac94b6bd11853173599ccff034055cc88">&#9670;&nbsp;</a></span>uv_task_state_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="uvfr__utils_8h.html#ac94b6bd11853173599ccff034055cc88">uv_task_state_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac94b6bd11853173599ccff034055cc88a529c3f9ad3ef9a8e387d875c7a118c7e"></a>UV_TASK_NOT_STARTED&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac94b6bd11853173599ccff034055cc88af6465f57e0b6515721c5cbebd769e691"></a>UV_TASK_DELETED&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac94b6bd11853173599ccff034055cc88ad4da927019afea812b31d46d28b7354c"></a>UV_TASK_RUNNING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="ac94b6bd11853173599ccff034055cc88a147f6febce613c666fe922907472ca0f"></a>UV_TASK_SUSPENDED&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00123">123</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
-
-</div>
-</div>
-<a id="a259abff5a03eaf908dc8f03d99f478e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a259abff5a03eaf908dc8f03d99f478e4">&#9670;&nbsp;</a></span>uv_vehicle_state_t</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="uvfr__utils_8h.html#a259abff5a03eaf908dc8f03d99f478e4">uv_vehicle_state_t</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Type made to represent the state of the vehicle, and the location in the state machine The states are powers of two to make it easier to discern tasks that need to happen in multiple states </p>
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a259abff5a03eaf908dc8f03d99f478e4a5e3e7ecab0a58b320912cb4129641579"></a>UV_INIT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a259abff5a03eaf908dc8f03d99f478e4a9ec1eef180c6208b25b08f0526dc5eb8"></a>UV_READY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a259abff5a03eaf908dc8f03d99f478e4abed5371c079ef927fb67d8bb8e8aa286"></a>PROGRAMMING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a259abff5a03eaf908dc8f03d99f478e4aa4f9f0d81d66079ab97ea3abc3808969"></a>UV_DRIVING&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a259abff5a03eaf908dc8f03d99f478e4abfddf18c580c465bb3c27b522aa4e4a9"></a>UV_SUSPENDED&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a259abff5a03eaf908dc8f03d99f478e4a7ff39f8abdc9adbfd693e412e4aaeb6e"></a>UV_LAUNCH_CONTROL&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a259abff5a03eaf908dc8f03d99f478e4ac1fcacc095b8c0f1c9f452d51815bcb5"></a>UV_ERROR_STATE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a259abff5a03eaf908dc8f03d99f478e4afdfc4cdb8c5210e05bdfdc3df51f80ff"></a>UV_BOOT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a259abff5a03eaf908dc8f03d99f478e4a2d3dc239e61931f9f779b71e84005b1b"></a>UV_HALT&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00143">143</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8h_source.html#l00166">166</a> of file <a class="el" href="uvfr__utils_8h_source.html">uvfr_utils.h</a>.</p>
 
 </div>
 </div>
@@ -1502,9 +920,9 @@ Variables</h2></td></tr>
 <p>Low Level Panic, that does not require the full UVFR utils functionality to be operational. </p>
 <dl class="section attention"><dt>Attention</dt><dd>Calling _uvInitPanic() is irreversable and will cause the vehicle to hang itself. This is only to be used as a last resort to stop the vehicle from entering an invalid state. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8c_source.html#l00300">300</a> of file <a class="el" href="uvfr__utils_8c_source.html">uvfr_utils.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8c_source.html#l00271">271</a> of file <a class="el" href="uvfr__utils_8c_source.html">uvfr_utils.c</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00037">uvInit()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00202">uvInitStateEngine()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00929">uvSVCTaskManager()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00039">uvInit()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00164">uvInitStateEngine()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l01341">uvSVCTaskManager()</a>.</p>
 
 </div>
 </div>
@@ -1553,7 +971,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="comment">//osThreadDef_t MC_init_thread = {&quot;MC_init&quot;,MC_Startup,osPriorityNormal,128,0};</span></div>
 <div class="line"><a class="code" href="structuv__init__task__args.html">uv_init_task_args</a>* MC_init_args = uvMalloc(<span class="keyword">sizeof</span>(<a class="code" href="structuv__init__task__args.html">uv_init_task_args</a>));</div>
 <div class="line">MC_init_args-&gt;<a class="code" href="structuv__init__task__args.html#adec47e7a54822cacfb8fcfc35a22157f">init_info_queue</a> = init_validation_queue;</div>
-<div class="line">MC_init_args-&gt;<a class="code" href="structuv__init__task__args.html#a61a9b579a1e65a3875a4edf3201a39f3">specific_args</a> = &amp;(<a class="code" href="uvfr__settings_8h.html#a03566822d1b8893362970a459bd67daf">current_vehicle_settings</a>-&gt;<a class="code" href="structuv__vehicle__settings.html#afe1add4c8e85f7fa1da768b50dee7b88">motor_controller_settings</a>);</div>
+<div class="line">MC_init_args-&gt;<a class="code" href="structuv__init__task__args.html#a61a9b579a1e65a3875a4edf3201a39f3">specific_args</a> = &amp;(<a class="code" href="uvfr__settings_8h.html#a03566822d1b8893362970a459bd67daf">current_vehicle_settings</a>-&gt;<a class="code" href="structuv__vehicle__settings.html#ad0b0375d2c1674abc6f972eec47e9cb7">mc_settings</a>);</div>
 <div class="line"><span class="comment">//MC_init_args-&gt;meta_task_handle = osThreadCreate(&amp;MC_init_thread,MC_init_args);</span></div>
 <div class="line"><span class="comment">//vTaskResume( MC_init_args-&gt;meta_task_handle );</span></div>
 <div class="line">retval = xTaskCreate(<a class="code" href="motor__controller_8h.html#aed1407e1e0fd59dc7c5e5d6db671f0ab">MC_Startup</a>,<span class="stringliteral">&quot;MC_init&quot;</span>,128,MC_init_args,osPriorityAboveNormal,&amp;(MC_init_args-&gt;<a class="code" href="structuv__init__task__args.html#a3b81430245e7f832dc1112e53b0ef7ad">meta_task_handle</a>));</div>
@@ -1567,7 +985,7 @@ Variables</h2></td></tr>
 <div class="line"><span class="comment">//osThreadDef_t BMS_init_thread = {&quot;BMS_init&quot;,BMS_Init,osPriorityNormal,128,0};</span></div>
 <div class="line"><a class="code" href="structuv__init__task__args.html">uv_init_task_args</a>* BMS_init_args = uvMalloc(<span class="keyword">sizeof</span>(<a class="code" href="structuv__init__task__args.html">uv_init_task_args</a>));</div>
 <div class="line">BMS_init_args-&gt;<a class="code" href="structuv__init__task__args.html#adec47e7a54822cacfb8fcfc35a22157f">init_info_queue</a> = init_validation_queue;</div>
-<div class="line">BMS_init_args-&gt;<a class="code" href="structuv__init__task__args.html#a61a9b579a1e65a3875a4edf3201a39f3">specific_args</a> = &amp;(<a class="code" href="uvfr__settings_8h.html#a03566822d1b8893362970a459bd67daf">current_vehicle_settings</a>-&gt;<a class="code" href="structuv__vehicle__settings.html#a0eeeba4e1c97c6bf86257c612da451e5">bms_settings</a>);</div>
+<div class="line">BMS_init_args-&gt;<a class="code" href="structuv__init__task__args.html#a61a9b579a1e65a3875a4edf3201a39f3">specific_args</a> = &amp;(<a class="code" href="uvfr__settings_8h.html#a03566822d1b8893362970a459bd67daf">current_vehicle_settings</a>-&gt;<a class="code" href="structuv__vehicle__settings.html#a6cdca5b5474080f1dff4d19ef96435e1">bms_settings</a>);</div>
 <div class="line"><span class="comment">//BMS_init_args-&gt;meta_task_handle = osThreadCreate(&amp;BMS_init_thread,BMS_init_args);</span></div>
 <div class="line">retval = xTaskCreate(<a class="code" href="bms_8h.html#aa9af83736568f74c94d41f3f16adf513">BMS_Init</a>,<span class="stringliteral">&quot;BMS_init&quot;</span>,128,BMS_init_args,osPriorityAboveNormal,&amp;(BMS_init_args-&gt;<a class="code" href="structuv__init__task__args.html#a3b81430245e7f832dc1112e53b0ef7ad">meta_task_handle</a>));</div>
 <div class="line"><span class="keywordflow">if</span>(retval != pdPASS){</div>
@@ -1604,11 +1022,11 @@ Variables</h2></td></tr>
 <p>We allocate space for a response from the initialization.</p>
 <p>Clean up, clean up, everybody clean up, clean up, clean up, everybody do your share! The following code cleans up all the threads that were running, and free up used memory</p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8c_source.html#l00037">37</a> of file <a class="el" href="uvfr__utils_8c_source.html">uvfr_utils.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8c_source.html#l00039">39</a> of file <a class="el" href="uvfr__utils_8c_source.html">uvfr_utils.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__utils_8c_source.html#l00300">__uvInitPanic()</a>, <a class="el" href="bms_8c_source.html#l00011">BMS_Init()</a>, <a class="el" href="uvfr__settings_8h_source.html#l00035">uv_vehicle_settings::bms_settings</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00426">changeVehicleState()</a>, <a class="el" href="uvfr__settings_8c_source.html#l00015">current_vehicle_settings</a>, <a class="el" href="uvfr__utils_8h_source.html#l00344">uv_init_task_response::device</a>, <a class="el" href="uvfr__utils_8h_source.html#l00346">uv_init_task_response::errmsg</a>, <a class="el" href="can_8c_source.html#l00038">handleCANbusError()</a>, <a class="el" href="can_8c_source.html#l00114">hcan2</a>, <a class="el" href="uvfr__settings_8h_source.html#l00038">uv_vehicle_settings::imd_settings</a>, <a class="el" href="uvfr__utils_8h_source.html#l00088">INIT_CHECK_PERIOD</a>, <a class="el" href="uvfr__utils_8h_source.html#l00316">uv_init_task_args::init_info_queue</a>, <a class="el" href="freertos_8c_source.html#l00051">init_task_handle</a>, <a class="el" href="imd_8c_source.html#l00554">initIMD()</a>, <a class="el" href="pdu_8c_source.html#l00183">initPDU()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00087">MAX_INIT_TIME</a>, <a class="el" href="motor__controller_8c_source.html#l00260">MC_Startup()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00317">uv_init_task_args::meta_task_handle</a>, <a class="el" href="uvfr__settings_8h_source.html#l00040">uv_vehicle_settings::motor_controller_settings</a>, <a class="el" href="uvfr__utils_8h_source.html#l00345">uv_init_task_response::nchar</a>, <a class="el" href="uvfr__utils_8h_source.html#l00315">uv_init_task_args::specific_args</a>, <a class="el" href="uvfr__utils_8h_source.html#l00343">uv_init_task_response::status</a>, <a class="el" href="constants_8c_source.html#l00007">TxData</a>, <a class="el" href="constants_8c_source.html#l00004">TxHeader</a>, <a class="el" href="constants_8c_source.html#l00008">TxMailbox</a>, <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>, <a class="el" href="uvfr__utils_8h_source.html#l00145">UV_READY</a>, <a class="el" href="uvfr__state__engine_8c.html#a0b9e8325d1d8f1027a7f563e4e8f22cb">uvFree()</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00202">uvInitStateEngine()</a>, <a class="el" href="uvfr__state__engine_8c.html#aaa277ffa1af90e363ed58510872d0fed">uvPanic()</a>, <a class="el" href="uvfr__settings_8c_source.html#l00058">uvSettingsInit()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00233">uvStartStateMachine()</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__utils_8c_source.html#l00271">__uvInitPanic()</a>, <a class="el" href="bms_8c_source.html#l00011">BMS_Init()</a>, <a class="el" href="uvfr__settings_8h_source.html#l00040">uv_vehicle_settings::bms_settings</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00099">changeVehicleState()</a>, <a class="el" href="uvfr__settings_8c_source.html#l00015">current_vehicle_settings</a>, <a class="el" href="uvfr__utils_8h_source.html#l00357">uv_init_task_response::device</a>, <a class="el" href="uvfr__utils_8h_source.html#l00359">uv_init_task_response::errmsg</a>, <a class="el" href="uvfr__settings_8h_source.html#l00039">uv_vehicle_settings::imd_settings</a>, <a class="el" href="uvfr__utils_8h_source.html#l00146">INIT_CHECK_PERIOD</a>, <a class="el" href="uvfr__utils_8h_source.html#l00331">uv_init_task_args::init_info_queue</a>, <a class="el" href="freertos_8c_source.html#l00051">init_task_handle</a>, <a class="el" href="imd_8c_source.html#l00554">initIMD()</a>, <a class="el" href="pdu_8c_source.html#l00183">initPDU()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00145">MAX_INIT_TIME</a>, <a class="el" href="uvfr__settings_8h_source.html#l00035">uv_vehicle_settings::mc_settings</a>, <a class="el" href="motor__controller_8c_source.html#l00739">MC_Startup()</a>, <a class="el" href="uvfr__utils_8h_source.html#l00332">uv_init_task_args::meta_task_handle</a>, <a class="el" href="uvfr__utils_8h_source.html#l00358">uv_init_task_response::nchar</a>, <a class="el" href="uvfr__utils_8h_source.html#l00330">uv_init_task_args::specific_args</a>, <a class="el" href="uvfr__utils_8h_source.html#l00356">uv_init_task_response::status</a>, <a class="el" href="uvfr__utils_8h_source.html#l00167">UV_OK</a>, <a class="el" href="uvfr__state__engine_8h_source.html#l00083">UV_READY</a>, <a class="el" href="uvfr__state__engine_8c_source.html#l00164">uvInitStateEngine()</a>, <a class="el" href="uvfr__settings_8c_source.html#l00064">uvSettingsInit()</a>, and <a class="el" href="uvfr__state__engine_8c_source.html#l00192">uvStartStateMachine()</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="freertos_8c_source.html#l00141">MX_FREERTOS_Init()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="freertos_8c_source.html#l00160">MX_FREERTOS_Init()</a>.</p>
 
 </div>
 </div>
@@ -1619,7 +1037,7 @@ Variables</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="uvfr__state__engine_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> uvIsPTRValid </td>
+          <td class="memname"><a class="el" href="can_8h.html#aef3770e45bbacbf527fd93dd80eea9b9">uv_status</a> uvIsPTRValid </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>ptr</em></td><td>)</td>
@@ -1632,11 +1050,11 @@ Variables</h2></td></tr>
 <p>The primary motivation for this is to avoid trying to dereference a pointer that doesnt exist, and triggering the <code>HardFaultHandler()</code>. That is never a fun time. This allows us to exit gracefully instead of getting stuck in an IRQ handler</p>
 <p>Exiting gracefully can be pretty neat sometimes. </p>
 
-<p class="definition">Definition at line <a class="el" href="uvfr__utils_8c_source.html#l00430">430</a> of file <a class="el" href="uvfr__utils_8c_source.html">uvfr_utils.c</a>.</p>
+<p class="definition">Definition at line <a class="el" href="uvfr__utils_8c_source.html#l00401">401</a> of file <a class="el" href="uvfr__utils_8c_source.html">uvfr_utils.c</a>.</p>
 
-<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00117">UV_ERROR</a>, <a class="el" href="uvfr__utils_8h_source.html#l00115">UV_OK</a>, and <a class="el" href="uvfr__utils_8h_source.html#l00116">UV_WARNING</a>.</p>
+<p class="reference">References <a class="el" href="uvfr__utils_8h_source.html#l00169">UV_ERROR</a>, <a class="el" href="uvfr__utils_8h_source.html#l00167">UV_OK</a>, and <a class="el" href="uvfr__utils_8h_source.html#l00168">UV_WARNING</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00357">__uvFreeCritSection()</a>, <a class="el" href="uvfr__utils_8c_source.html#l00408">__uvFreeOS()</a>, and <a class="el" href="uvfr__utils_8c_source.html#l00382">__uvMallocOS()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="uvfr__utils_8c_source.html#l00328">__uvFreeCritSection()</a>, <a class="el" href="uvfr__utils_8c_source.html#l00379">__uvFreeOS()</a>, and <a class="el" href="uvfr__utils_8c_source.html#l00353">__uvMallocOS()</a>.</p>
 
 </div>
 </div>
@@ -1657,20 +1075,20 @@ Variables</h2></td></tr>
 </div>
 </div><!-- contents -->
 </div><!-- doc-content -->
+<div class="ttc" id="astructuv__vehicle__settings_html_a6cdca5b5474080f1dff4d19ef96435e1"><div class="ttname"><a href="structuv__vehicle__settings.html#a6cdca5b5474080f1dff4d19ef96435e1">uv_vehicle_settings::bms_settings</a></div><div class="ttdeci">bms_settings_t * bms_settings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00040">uvfr_settings.h:40</a></div></div>
 <div class="ttc" id="auvfr__settings_8h_html_a03566822d1b8893362970a459bd67daf"><div class="ttname"><a href="uvfr__settings_8h.html#a03566822d1b8893362970a459bd67daf">current_vehicle_settings</a></div><div class="ttdeci">uv_vehicle_settings * current_vehicle_settings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8c_source.html#l00015">uvfr_settings.c:15</a></div></div>
-<div class="ttc" id="amotor__controller_8h_html_aed1407e1e0fd59dc7c5e5d6db671f0ab"><div class="ttname"><a href="motor__controller_8h.html#aed1407e1e0fd59dc7c5e5d6db671f0ab">MC_Startup</a></div><div class="ttdeci">void MC_Startup(void *args)</div><div class="ttdef"><b>Definition:</b> <a href="motor__controller_8c_source.html#l00260">motor_controller.c:260</a></div></div>
-<div class="ttc" id="astructuv__vehicle__settings_html_afe1add4c8e85f7fa1da768b50dee7b88"><div class="ttname"><a href="structuv__vehicle__settings.html#afe1add4c8e85f7fa1da768b50dee7b88">uv_vehicle_settings::motor_controller_settings</a></div><div class="ttdeci">struct motor_controller_settings_t motor_controller_settings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00040">uvfr_settings.h:40</a></div></div>
+<div class="ttc" id="amotor__controller_8h_html_aed1407e1e0fd59dc7c5e5d6db671f0ab"><div class="ttname"><a href="motor__controller_8h.html#aed1407e1e0fd59dc7c5e5d6db671f0ab">MC_Startup</a></div><div class="ttdeci">void MC_Startup(void *args)</div><div class="ttdef"><b>Definition:</b> <a href="motor__controller_8c_source.html#l00739">motor_controller.c:739</a></div></div>
 <div class="ttc" id="abms_8h_html_aa9af83736568f74c94d41f3f16adf513"><div class="ttname"><a href="bms_8h.html#aa9af83736568f74c94d41f3f16adf513">BMS_Init</a></div><div class="ttdeci">void BMS_Init(void *args)</div><div class="ttdef"><b>Definition:</b> <a href="bms_8c_source.html#l00011">bms.c:11</a></div></div>
-<div class="ttc" id="astructuv__init__task__args_html_a3b81430245e7f832dc1112e53b0ef7ad"><div class="ttname"><a href="structuv__init__task__args.html#a3b81430245e7f832dc1112e53b0ef7ad">uv_init_task_args::meta_task_handle</a></div><div class="ttdeci">TaskHandle_t meta_task_handle</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00317">uvfr_utils.h:317</a></div></div>
-<div class="ttc" id="astructuv__init__task__response_html"><div class="ttname"><a href="structuv__init__task__response.html">uv_init_task_response</a></div><div class="ttdoc">Struct representing the response of one of the initialization tasks.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00342">uvfr_utils.h:342</a></div></div>
-<div class="ttc" id="astructuv__init__task__args_html_adec47e7a54822cacfb8fcfc35a22157f"><div class="ttname"><a href="structuv__init__task__args.html#adec47e7a54822cacfb8fcfc35a22157f">uv_init_task_args::init_info_queue</a></div><div class="ttdeci">QueueHandle_t init_info_queue</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00316">uvfr_utils.h:316</a></div></div>
-<div class="ttc" id="astructuv__vehicle__settings_html_a0eeeba4e1c97c6bf86257c612da451e5"><div class="ttname"><a href="structuv__vehicle__settings.html#a0eeeba4e1c97c6bf86257c612da451e5">uv_vehicle_settings::bms_settings</a></div><div class="ttdeci">bms_settings_t bms_settings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00035">uvfr_settings.h:35</a></div></div>
-<div class="ttc" id="auvfr__utils_8h_html_a92b5ac44171d49acd084c274385a043a"><div class="ttname"><a href="uvfr__utils_8h.html#a92b5ac44171d49acd084c274385a043a">__uvInitPanic</a></div><div class="ttdeci">void __uvInitPanic()</div><div class="ttdoc">Low Level Panic, that does not require the full UVFR utils functionality to be operational.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8c_source.html#l00300">uvfr_utils.c:300</a></div></div>
+<div class="ttc" id="astructuv__init__task__args_html_a3b81430245e7f832dc1112e53b0ef7ad"><div class="ttname"><a href="structuv__init__task__args.html#a3b81430245e7f832dc1112e53b0ef7ad">uv_init_task_args::meta_task_handle</a></div><div class="ttdeci">TaskHandle_t meta_task_handle</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00332">uvfr_utils.h:332</a></div></div>
+<div class="ttc" id="astructuv__init__task__response_html"><div class="ttname"><a href="structuv__init__task__response.html">uv_init_task_response</a></div><div class="ttdoc">Struct representing the response of one of the initialization tasks.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00355">uvfr_utils.h:355</a></div></div>
+<div class="ttc" id="astructuv__init__task__args_html_adec47e7a54822cacfb8fcfc35a22157f"><div class="ttname"><a href="structuv__init__task__args.html#adec47e7a54822cacfb8fcfc35a22157f">uv_init_task_args::init_info_queue</a></div><div class="ttdeci">QueueHandle_t init_info_queue</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00331">uvfr_utils.h:331</a></div></div>
+<div class="ttc" id="auvfr__utils_8h_html_a92b5ac44171d49acd084c274385a043a"><div class="ttname"><a href="uvfr__utils_8h.html#a92b5ac44171d49acd084c274385a043a">__uvInitPanic</a></div><div class="ttdeci">void __uvInitPanic()</div><div class="ttdoc">Low Level Panic, that does not require the full UVFR utils functionality to be operational.</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8c_source.html#l00271">uvfr_utils.c:271</a></div></div>
 <div class="ttc" id="apdu_8h_html_afaa6671d51bcd0687c87ac635ff70d95"><div class="ttname"><a href="pdu_8h.html#afaa6671d51bcd0687c87ac635ff70d95">initPDU</a></div><div class="ttdeci">void initPDU(void *args)</div><div class="ttdef"><b>Definition:</b> <a href="pdu_8c_source.html#l00183">pdu.c:183</a></div></div>
-<div class="ttc" id="astructuv__init__task__args_html"><div class="ttname"><a href="structuv__init__task__args.html">uv_init_task_args</a></div><div class="ttdoc">Struct designed to act like the uv_task_info struct, but for the initialisation tasks....</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00314">uvfr_utils.h:314</a></div></div>
+<div class="ttc" id="astructuv__init__task__args_html"><div class="ttname"><a href="structuv__init__task__args.html">uv_init_task_args</a></div><div class="ttdoc">Struct designed to act like the uv_task_info struct, but for the initialisation tasks....</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00329">uvfr_utils.h:329</a></div></div>
+<div class="ttc" id="astructuv__vehicle__settings_html_ad0b0375d2c1674abc6f972eec47e9cb7"><div class="ttname"><a href="structuv__vehicle__settings.html#ad0b0375d2c1674abc6f972eec47e9cb7">uv_vehicle_settings::mc_settings</a></div><div class="ttdeci">struct motor_controller_settings * mc_settings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00035">uvfr_settings.h:35</a></div></div>
 <div class="ttc" id="aimd_8h_html_a19b4fd879f065cfe6e1b7bb3400cd0c3"><div class="ttname"><a href="imd_8h.html#a19b4fd879f065cfe6e1b7bb3400cd0c3">initIMD</a></div><div class="ttdeci">void initIMD(void *args)</div><div class="ttdef"><b>Definition:</b> <a href="imd_8c_source.html#l00554">imd.c:554</a></div></div>
-<div class="ttc" id="astructuv__vehicle__settings_html_a5b56318f394bef60ff7da0b4995183e0"><div class="ttname"><a href="structuv__vehicle__settings.html#a5b56318f394bef60ff7da0b4995183e0">uv_vehicle_settings::imd_settings</a></div><div class="ttdeci">void * imd_settings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00038">uvfr_settings.h:38</a></div></div>
-<div class="ttc" id="astructuv__init__task__args_html_a61a9b579a1e65a3875a4edf3201a39f3"><div class="ttname"><a href="structuv__init__task__args.html#a61a9b579a1e65a3875a4edf3201a39f3">uv_init_task_args::specific_args</a></div><div class="ttdeci">void * specific_args</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00315">uvfr_utils.h:315</a></div></div>
+<div class="ttc" id="astructuv__vehicle__settings_html_a5b56318f394bef60ff7da0b4995183e0"><div class="ttname"><a href="structuv__vehicle__settings.html#a5b56318f394bef60ff7da0b4995183e0">uv_vehicle_settings::imd_settings</a></div><div class="ttdeci">void * imd_settings</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__settings_8h_source.html#l00039">uvfr_settings.h:39</a></div></div>
+<div class="ttc" id="astructuv__init__task__args_html_a61a9b579a1e65a3875a4edf3201a39f3"><div class="ttname"><a href="structuv__init__task__args.html#a61a9b579a1e65a3875a4edf3201a39f3">uv_init_task_args::specific_args</a></div><div class="ttdeci">void * specific_args</div><div class="ttdef"><b>Definition:</b> <a href="uvfr__utils_8h_source.html#l00330">uvfr_utils.h:330</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

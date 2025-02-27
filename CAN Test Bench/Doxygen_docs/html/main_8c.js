@@ -1,5 +1,6 @@
 var main_8c =
 [
+    [ "DEBUG_CAN_IN_MAIN", "main_8c.html#a764dcd92a2e2229e53e2090201243643", null ],
     [ "Error_Handler", "main_8c.html#a1730ffe1e560465665eb47d9264826f9", null ],
     [ "HAL_ADC_ConvCpltCallback", "main_8c.html#af20a88180db1113be1e89266917d148b", null ],
     [ "HAL_ADC_LevelOutOfWindowCallback", "main_8c.html#a8cf5c59c6355fe7cf3c10816c761b9c2", null ],

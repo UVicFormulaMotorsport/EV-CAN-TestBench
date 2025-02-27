@@ -16,11 +16,15 @@ void \mbox{\hyperlink{uvfr__settings_8c_a42f7a1907bfe84d7b0f9fb4e2260018b}{setup
 void \mbox{\hyperlink{uvfr__settings_8c_a4648237563030182a8309d8c75e12205}{nuke\+Settings}} (\mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}} $\ast$$\ast$settings\+\_\+to\+\_\+delete)
 \item 
 enum \mbox{\hyperlink{uvfr__utils_8h_a71c52c44be11d0980910401cb9b5fb9e}{uv\+\_\+status\+\_\+t}} \mbox{\hyperlink{uvfr__settings_8c_a80856a38d7040ca10b8106ff0fa4acf4}{uv\+Settings\+Init}} ()
-\begin{DoxyCompactList}\small\item\em this function does one thing, and one thing only, it checks if we have custom settings, then it attempts to get them. If it fails, then we revert to factory defaults. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em this function does one thing, and one thing only, it checks if we have custom settings, then it attempts to get them. If it fails, then we revert to factory defaults. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{uvfr__settings_8c_aa4405e1cc3fcec217efd4de0ea6b55ee}{uv\+Settings\+Programmer\+Task}} (void $\ast$args)
+\end{DoxyCompactItemize}
 \doxysubsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{structuv__vehicle__settings}{uv\+\_\+vehicle\+\_\+settings}} $\ast$ \mbox{\hyperlink{uvfr__settings_8c_a03566822d1b8893362970a459bd67daf}{current\+\_\+vehicle\+\_\+settings}} = N\+U\+LL
+\item 
+struct \mbox{\hyperlink{structuv__os__settings}{uv\+\_\+os\+\_\+settings}} \mbox{\hyperlink{group__state__engine_gad9e02be6d2d0bc1ab5cd9fd8cae34230}{default\+\_\+os\+\_\+settings}}
 \end{DoxyCompactItemize}
 
 
@@ -46,11 +50,7 @@ Definition at line 7 of file uvfr\+\_\+settings.\+c.
 
 
 
-Definition at line 45 of file uvfr\+\_\+settings.\+c.
-
-
-
-References uv\+Free().
+Definition at line 51 of file uvfr\+\_\+settings.\+c.
 
 \mbox{\Hypertarget{uvfr__settings_8c_a42f7a1907bfe84d7b0f9fb4e2260018b}\label{uvfr__settings_8c_a42f7a1907bfe84d7b0f9fb4e2260018b}} 
 \index{uvfr\_settings.c@{uvfr\_settings.c}!setupDefaultSettings@{setupDefaultSettings}}
@@ -64,11 +64,11 @@ Function that allocates the neccessary space for all the vehicle settings, and h
 
 
 
-Definition at line 40 of file uvfr\+\_\+settings.\+c.
+Definition at line 42 of file uvfr\+\_\+settings.\+c.
 
 
 
-References current\+\_\+vehicle\+\_\+settings.
+References current\+\_\+vehicle\+\_\+settings, default\+\_\+os\+\_\+settings, and uv\+\_\+vehicle\+\_\+settings\+::os\+\_\+settings.
 
 
 
@@ -86,7 +86,7 @@ this function does one thing, and one thing only, it checks if we have custom se
 
 
 
-Definition at line 58 of file uvfr\+\_\+settings.\+c.
+Definition at line 64 of file uvfr\+\_\+settings.\+c.
 
 
 
@@ -95,6 +95,16 @@ References setup\+Default\+Settings(), U\+V\+\_\+\+A\+B\+O\+R\+T\+ED, U\+V\+\_\+
 
 
 Referenced by uv\+Init().
+
+\mbox{\Hypertarget{uvfr__settings_8c_aa4405e1cc3fcec217efd4de0ea6b55ee}\label{uvfr__settings_8c_aa4405e1cc3fcec217efd4de0ea6b55ee}} 
+\index{uvfr\_settings.c@{uvfr\_settings.c}!uvSettingsProgrammerTask@{uvSettingsProgrammerTask}}
+\index{uvSettingsProgrammerTask@{uvSettingsProgrammerTask}!uvfr\_settings.c@{uvfr\_settings.c}}
+\doxysubsubsection{\texorpdfstring{uvSettingsProgrammerTask()}{uvSettingsProgrammerTask()}}
+{\footnotesize\ttfamily void uv\+Settings\+Programmer\+Task (\begin{DoxyParamCaption}\item[{void $\ast$}]{args }\end{DoxyParamCaption})}
+
+
+
+Definition at line 88 of file uvfr\+\_\+settings.\+c.
 
 
 
@@ -111,5 +121,5 @@ Definition at line 15 of file uvfr\+\_\+settings.\+c.
 
 
 
-Referenced by setup\+Default\+Settings(), and uv\+Init().
+Referenced by setup\+Default\+Settings(), uv\+Init(), and uv\+Start\+State\+Machine().
 

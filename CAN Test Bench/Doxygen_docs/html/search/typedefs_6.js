@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['task_5fmanagement_5fdata_1307',['task_management_data',['../uvfr__utils_8h.html#ae05f8b07c18b39ec17c66903ecf90af9',1,'uvfr_utils.h']]],
-  ['task_5fmanagement_5finfo_1308',['task_management_info',['../uvfr__state__engine_8h.html#ae41267a13309a303a826aa55c4873a31',1,'uvfr_state_engine.h']]],
-  ['task_5fpriority_1309',['task_priority',['../uvfr__utils_8h.html#a0faa8cc05082e150c515bbddea144d90',1,'uvfr_utils.h']]]
+  ['mc_5fpower_1690',['MC_POWER',['../driving__loop_8h.html#a93f3b2b453b1ad01d8555f12e529dfed',1,'driving_loop.h']]],
+  ['mc_5frpm_1691',['MC_RPM',['../driving__loop_8h.html#abd1701d9bbc137696fe99b6df6eb7d3e',1,'driving_loop.h']]],
+  ['mc_5ftorque_1692',['MC_Torque',['../driving__loop_8h.html#a5ec2330fa2301c68498a6ff0825998c9',1,'driving_loop.h']]],
+  ['motor_5fcontroller_5fsettings_1693',['motor_controller_settings',['../motor__controller_8h.html#ac9389d71d481a5381fe1d1e23b1e4ecc',1,'motor_controller.h']]]
 ];

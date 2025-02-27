@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['p_5fstatus_1305',['p_status',['../uvfr__utils_8h.html#a861993718f780fec899b00c842bae43b',1,'uvfr_utils.h']]]
+  ['exp_5ftorque_5fmap_5fargs_1688',['exp_torque_map_args',['../driving__loop_8h.html#aa86f54df15fe3c127ae83c1fecbb5d24',1,'driving_loop.h']]]
 ];

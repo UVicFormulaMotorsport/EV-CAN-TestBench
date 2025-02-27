@@ -43,12 +43,11 @@ enum uv_status_t initDrivingLoop(void *argument){
 	dl_task->task_function = StartDrivingLoop;
 	dl_task->task_priority = osPriorityHigh;
 
-	dl_task->max_instances = 1;
 	dl_task->stack_size = 256;
 
 	dl_task->active_states = UV_DRIVING;
 	dl_task->suspension_states = 0x00;
-	dl_task->deletion_states = UV_READY | PROGRAMMING | UV_LAUNCH_CONTROL | UV_ERROR_STATE;
+	dl_task->deletion_states = UV_INIT|UV_READY | PROGRAMMING | UV_SUSPENDED | UV_LAUNCH_CONTROL | UV_ERROR_STATE;
 
 	dl_task->task_period = 100;//0.1 seconds
 
@@ -108,6 +107,9 @@ void StartDrivingLoop(void * argument){
 
 
 		if(params->cmd_data == UV_KILL_CMD){
+
+
+
 			killSelf(params);
 		}else if(params->cmd_data == UV_SUSPEND_CMD){
 			suspendSelf(params);
@@ -163,7 +165,7 @@ void StartDrivingLoop(void * argument){
 
 		//Brake Plausibility Check
 
-		/** @heading Brake Plausibility Check
+		/** Brake Plausibility Check
 		 *
 		 * The way that this works is that if the brake pressure is greater than some threshold,
 		 * and the accelerator pedal position is also greater than some threshold, the thing will
